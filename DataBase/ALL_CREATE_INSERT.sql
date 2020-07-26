@@ -31,4 +31,4 @@ CREATE TABLE IF NOT EXISTS CreditCards (
 
 
 # - - - - - - - - - - - - - - - - - - - - Insert Data - - - - - - - - - - - - - - - - - - - -  #
-# Phần này Hiếu sẽ viết scrip insert sau, hoặc hướng dẫn AE tự viết! [Dùng excel đổ data cho nhanh]
+# Phần này Hiếu sẽ viết Script Insert sau, hoặc hướng dẫn AE tự viết! [Dùng excel đổ data cho nhanh]
