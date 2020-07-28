@@ -1,0 +1,14 @@
+Hiếu iceTea | 00:32 2020-07-28
+- - - - -
+
+FIX lỗi: vendor/autoload.php: failed to open stream
+
+- - - - -
+
+1. Mở Git Bash, di chuyển đến thư mục project, gõ lệnh:
+composer install
+
+2. tạo file [.env] theo file mẫu: [.env.example]
+
+3. vào PHPStorm, mở Terminal, gõ lệnh:
+php artisan key:generate
