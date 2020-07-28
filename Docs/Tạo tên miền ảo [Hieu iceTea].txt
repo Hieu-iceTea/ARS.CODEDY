@@ -1,0 +1,36 @@
+Hiếu iceTea - 17:30 2020-07-28
+
+
+1. Sửa file: C:\Windows\System32\drivers\etc  ->  host
+
+
+127.0.0.1		localhost
+127.0.0.1		ARS.CODEDY
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+
+2. Sửa file: C:\xampp\apache\conf\extra  ->  httpd-vhosts.conf
+
+
+
+<VirtualHost *:80>
+	DocumentRoot "C:/xampp/htdocs"
+	ServerName localhost
+</VirtualHost>
+
+
+
+<VirtualHost *:80>
+DocumentRoot "C:\xampp\htdocs\ARS.CODEDY\public"
+ServerName ARS.CODEDY
+</VirtualHost>
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+3. Chú ý: đường dẫn thư mục
