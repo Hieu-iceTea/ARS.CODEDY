@@ -19,3 +19,4 @@ Route::get('/',[
 ]);
 
 Route::get('/contact','PageController@getContact');
+Route::get('/News','PageController@getNews');
