@@ -8,11 +8,11 @@
 @section('Nav')
     <nav class="main_nav">
         <ul class="d-flex flex-row align-items-start justify-content-start">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="about.html">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="">About us</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">News</a></li>
+            <li><a href="/contact">Contact</a></li>
         </ul>
     </nav>
 @endsection
