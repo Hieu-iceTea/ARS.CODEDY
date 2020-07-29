@@ -17,3 +17,5 @@ Route::get('/',[
     'as'=>'Home',
     'uses'=>'PageController@getIndex'
 ]);
+
+Route::get('/contact','PageController@getContact');

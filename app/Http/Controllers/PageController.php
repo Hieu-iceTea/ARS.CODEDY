@@ -9,4 +9,8 @@ class PageController extends Controller
    public function getIndex(){
        return view('Page.Home',['style'=>'main_styles.css']);
    }
+
+    public function getContact(){
+       return view('Page.Contact');
+    }
 }
