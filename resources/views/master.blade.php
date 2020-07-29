@@ -3,6 +3,7 @@
 <!-- Head -->
 <head>
     <title>ARS.CODEDY</title>
+    <link rel="shortcut icon" type="image/x-icon" href="source/images/favicon.ico">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Travello template project">
@@ -26,7 +27,7 @@
                 <div class="col">
                     <div class="header_content d-flex flex-row align-items-center justify-content-start">
                         <div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
-                            <div class="logo"><a href="/">Travello</a></div>
+                            <div class="logo"><a href="/">ARS.CODEDY</a></div>
                             @yield('nav')
                             <div class="header_phone ml-auto">Call us: 00-56 445 678 33</div>
 
