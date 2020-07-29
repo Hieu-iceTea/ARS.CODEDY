@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="source/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="source/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
     <link rel="stylesheet" type="text/css" href="source/plugins/OwlCarousel2-2.2.1/animate.css">
-    <link rel="stylesheet" type="text/css" href="source/styles/main_styles.css">
+    @yield('style')
     <link rel="stylesheet" type="text/css" href="source/styles/responsive.css">
 </head>
 
