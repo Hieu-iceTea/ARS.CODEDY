@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('index',[
+Route::get('/',[
     'as'=>'Home',
     'uses'=>'PageController@getIndex'
 ]);
