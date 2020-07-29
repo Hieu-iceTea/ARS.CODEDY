@@ -17,7 +17,7 @@
     </nav>
 @endsection
 
-<!-- Home Background  -->
+<!-- Home Background Header-->
 @section('Background_header')
     <div class="home">
 
