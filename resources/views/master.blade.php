@@ -36,10 +36,12 @@
                                     <li class="{{ (request()->is('services')) ? 'active' : '' }}"><a href="services">Services</a></li>
                                     <li class="{{ (request()->is('news')) ? 'active' : '' }}"><a href="news">News</a></li>
                                     <li class="{{ (request()->is('contact')) ? 'active' : '' }}"><a href="contact">Contact</a></li>
+                                    <li class="{{ (request()->is('ticket')) ? 'active' : '' }}"><a href="ticket">Ticket</a></li>
+                                    <li class="{{ (request()->is('schedule')) ? 'active' : '' }}"><a href="schedule">Schedule</a></li>
                                 </ul>
                             </nav>
 
-                            <div class="header_phone ml-auto">Call us: 00-56 445 678 33</div>
+{{--                            <div class="header_phone ml-auto">Call us: 00-56 445 678 33</div>--}}
 
                             <!-- Hamburger -->
 
@@ -82,6 +84,8 @@
                 <li><a href="services">Services</a></li>
                 <li><a href="news">News</a></li>
                 <li><a href="contact">Contact</a></li>
+                <li><a href="ticket">Ticket</a></li>
+                <li><a href="schedule">Schedule</a></li>
             </ul>
         </div>
         <div class="menu_social">

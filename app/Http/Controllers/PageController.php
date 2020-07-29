@@ -67,4 +67,8 @@ class PageController extends Controller
     public function getAbout(){
         return view('Page.about');
     }
+
+    public function getServices() {
+        return view('Page.services');
+    }
 }

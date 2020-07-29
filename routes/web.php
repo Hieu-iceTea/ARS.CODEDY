@@ -56,7 +56,6 @@ Route::get('/ticket/edit/{id}', [
 ]);
 
 
-
 /**
  * Show schedule
  */
@@ -99,6 +98,7 @@ Route::get('/account/registration', [
 
 //END Site-Map (Hiếu iceTea)
 
-Route::get('/contact','PageController@getContact');
-Route::get('/about','PageController@getAbout');
-Route::get('/news','PageController@getNews');
+Route::get('/contact', 'PageController@getContact');
+Route::get('/about', 'PageController@getAbout');
+Route::get('/news', 'PageController@getNews');
+Route::get('/services', 'PageController@getServices');
