@@ -9,10 +9,10 @@
     <nav class="main_nav">
         <ul class="d-flex flex-row align-items-start justify-content-start">
             <li class="active"><a href="/">Home</a></li>
-            <li><a href="">About us</a></li>
-            <li><a href="">Services</a></li>
-            <li><a href="">News</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="about">About us</a></li>
+            <li><a href="services">Services</a></li>
+            <li><a href="news">News</a></li>
+            <li><a href="contact">Contact</a></li>
         </ul>
     </nav>
 @endsection
@@ -85,85 +85,112 @@
         </div>
 
     </div>
-@endsection
-<!-- Content Home -->
-@section('Content')
-<!-- Intro -->
 
-<div class="intro">
-    <div class="intro_background" style="background-image:url(source/images/intro.png)"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="intro_container">
-                    <div class="row">
-
-                        <!-- Intro Item -->
-                        <div class="col-lg-4 intro_col">
-                            <div class="intro_item d-flex flex-row align-items-end justify-content-start">
-                                <div class="intro_icon"><img src="source/images/beach.svg" alt=""></div>
-                                <div class="intro_content">
-                                    <div class="intro_title">Top Destinations</div>
-                                    <div class="intro_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
+    <!-- Search -->
+    <div class="home_search">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="home_search_container">
+                        <div class="home_search_title">Search for your trip</div>
+                        <div class="home_search_content">
+                            <form action="#" class="home_search_form" id="home_search_form">
+                                <div
+                                    class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+                                    <input type="text" class="search_input search_input_1" placeholder="City"
+                                           required="required">
+                                    <input type="text" class="search_input search_input_2" placeholder="Departure"
+                                           required="required">
+                                    <input type="text" class="search_input search_input_3" placeholder="Arrival"
+                                           required="required">
+                                    <input type="text" class="search_input search_input_4" placeholder="Budget"
+                                           required="required">
+                                    <button class="home_search_button">search</button>
                                 </div>
-                            </div>
+                            </form>
                         </div>
-
-                        <!-- Intro Item -->
-                        <div class="col-lg-4 intro_col">
-                            <div class="intro_item d-flex flex-row align-items-end justify-content-start">
-                                <div class="intro_icon"><img src="source/images/wallet.svg" alt=""></div>
-                                <div class="intro_content">
-                                    <div class="intro_title">The Best Prices</div>
-                                    <div class="intro_subtitle"><p>Sollicitudin mauris lobortis in.</p></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Intro Item -->
-                        <div class="col-lg-4 intro_col">
-                            <div class="intro_item d-flex flex-row align-items-end justify-content-start">
-                                <div class="intro_icon"><img src="source/images/suitcase.svg" alt=""></div>
-                                <div class="intro_content">
-                                    <div class="intro_title">Amazing Services</div>
-                                    <div class="intro_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Destinations -->
+    <!-- Intro -->
 
-<div class="destinations" id="destinations">
-    <div class="container">
-        <div class="row">
-            <div class="col text-center">
-                <div class="section_subtitle">simply amazing places</div>
-                <div class="section_title"><h2>Popular Destinations</h2></div>
-            </div>
-        </div>
-        <div class="row destinations_row">
-            <div class="col">
-                <div class="destinations_container item_grid">
+    <div class="intro">
+        <div class="intro_background" style="background-image:url(source/images/intro.png)"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="intro_container">
+                        <div class="row">
 
-                    <!-- Destination -->
-                    <div class="destination item">
-                        <div class="destination_image">
-                            <img src="source/images/destination_1.jpg" alt="">
-                            <div class="spec_offer text-center"><a href="#">Special Offer</a></div>
-                        </div>
-                        <div class="destination_content">
-                            <div class="destination_title"><a href="destinations.html">Bali</a></div>
-                            <div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-                            <div class="destination_price">From $679</div>
+                            <!-- Intro Item -->
+                            <div class="col-lg-4 intro_col">
+                                <div class="intro_item d-flex flex-row align-items-end justify-content-start">
+                                    <div class="intro_icon"><img src="source/images/beach.svg" alt=""></div>
+                                    <div class="intro_content">
+                                        <div class="intro_title">Top Destinations</div>
+                                        <div class="intro_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Intro Item -->
+                            <div class="col-lg-4 intro_col">
+                                <div class="intro_item d-flex flex-row align-items-end justify-content-start">
+                                    <div class="intro_icon"><img src="source/images/wallet.svg" alt=""></div>
+                                    <div class="intro_content">
+                                        <div class="intro_title">The Best Prices</div>
+                                        <div class="intro_subtitle"><p>Sollicitudin mauris lobortis in.</p></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Intro Item -->
+                            <div class="col-lg-4 intro_col">
+                                <div class="intro_item d-flex flex-row align-items-end justify-content-start">
+                                    <div class="intro_icon"><img src="source/images/suitcase.svg" alt=""></div>
+                                    <div class="intro_content">
+                                        <div class="intro_title">Amazing Services</div>
+                                        <div class="intro_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Destinations -->
+
+    <div class="destinations" id="destinations">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="section_subtitle">simply amazing places</div>
+                    <div class="section_title"><h2>Popular Destinations</h2></div>
+                </div>
+            </div>
+            <div class="row destinations_row">
+                <div class="col">
+                    <div class="destinations_container item_grid">
+
+                        <!-- Destination -->
+                        <div class="destination item">
+                            <div class="destination_image">
+                                <img src="source/images/destination_1.jpg" alt="">
+                                <div class="spec_offer text-center"><a href="#">Special Offer</a></div>
+                            </div>
+                            <div class="destination_content">
+                                <div class="destination_title"><a href="destinations.html">Bali</a></div>
+                                <div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
+                                <div class="destination_price">From $679</div>
+                            </div>
+                        </div>
 
                     <!-- Destination -->
                     <div class="destination item">
