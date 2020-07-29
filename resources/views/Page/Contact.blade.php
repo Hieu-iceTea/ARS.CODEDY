@@ -1,7 +1,5 @@
 @extends('master')
 
-<?php $activeContact = 'active'; ?>
-
 <!-- Style Main_style-->
 @section('style')
     <link rel="stylesheet" type="text/css" href="source/styles/contact.css">

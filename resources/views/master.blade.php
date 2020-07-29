@@ -31,11 +31,11 @@
 
                             <nav class="main_nav">
                                 <ul class="d-flex flex-row align-items-start justify-content-start">
-                                    <li class="{{$activeHome ?? ''}}"><a href="/">Home</a></li>
-                                    <li class="{{$activeAbout ?? ''}}"><a href="about">About us</a></li>
-                                    <li class="{{$activeServices ?? ''}}"><a href="services">Services</a></li>
-                                    <li class="{{$activeNews ?? ''}}"><a href="news">News</a></li>
-                                    <li class="{{$activeContact ?? ''}}"><a href="contact">Contact</a></li>
+                                    <li class="{{ (request()->is('/')) ? 'active' : '' }}"><a href="/">Home</a></li>
+                                    <li class="{{ (request()->is('about')) ? 'active' : '' }}"><a href="about">About us</a></li>
+                                    <li class="{{ (request()->is('services')) ? 'active' : '' }}"><a href="services">Services</a></li>
+                                    <li class="{{ (request()->is('news')) ? 'active' : '' }}"><a href="news">News</a></li>
+                                    <li class="{{ (request()->is('contact')) ? 'active' : '' }}"><a href="contact">Contact</a></li>
                                 </ul>
                             </nav>
 
