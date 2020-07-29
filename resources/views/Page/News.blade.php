@@ -1,9 +1,12 @@
 @extends('master')
-<!-- Style News-->
+
+<!-- Style Main_style-->
 @section('style')
     <link rel="stylesheet" type="text/css" href="source/styles/news.css">
+    <link rel="stylesheet" type="text/css" href="source/styles/news_responsive.css">
 @endsection
-<!-- Nav News -->
+
+<!-- Menu Nav Header-->
 @section('Nav')
     <nav class="main_nav">
         <ul class="d-flex flex-row align-items-start justify-content-start">
@@ -15,14 +18,43 @@
         </ul>
     </nav>
 @endsection
-<!-- Home Background Header-->
-@section('Background_header')
+
+<!-- Content Contact -->
+@section('Content')
     <div class="home">
         <div class="background_image" style="background-image:url(source/images/news.jpg)"></div>
     </div>
-@endsection
-<!-- Content-->
-@section('Content')
+
+    <!-- Search -->
+
+    <div class="home_search">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="home_search_container">
+                        <div class="home_search_title">Search for your trip</div>
+                        <div class="home_search_content">
+                            <form action="#" class="home_search_form" id="home_search_form">
+                                <div
+                                    class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+                                    <input type="text" class="search_input search_input_1" placeholder="City"
+                                           required="required">
+                                    <input type="text" class="search_input search_input_2" placeholder="Departure"
+                                           required="required">
+                                    <input type="text" class="search_input search_input_3" placeholder="Arrival"
+                                           required="required">
+                                    <input type="text" class="search_input search_input_4" placeholder="Budget"
+                                           required="required">
+                                    <button class="home_search_button">search</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- News -->
 
     <div class="news">
@@ -197,5 +229,9 @@
             </div>
         </div>
     </div>
+@endsection
 
+@section('script')
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
+    <script src="source/js/contact.js"></script>
 @endsection
