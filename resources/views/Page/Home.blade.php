@@ -4,6 +4,19 @@
     <link rel="stylesheet" type="text/css" href="source/styles/main_styles.css">
 @endsection
 
+<!-- Menu Nav Header-->
+@section('Nav')
+    <nav class="main_nav">
+        <ul class="d-flex flex-row align-items-start justify-content-start">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+@endsection
+
 <!-- Content Home -->
 @section('Content')
 <!-- Intro -->

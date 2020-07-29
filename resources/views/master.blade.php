@@ -29,15 +29,7 @@
                     <div class="header_content d-flex flex-row align-items-center justify-content-start">
                         <div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
                             <div class="logo"><a href="index.html">Travello</a></div>
-                            <nav class="main_nav">
-                                <ul class="d-flex flex-row align-items-start justify-content-start">
-                                    <li class="active"><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About us</a></li>
-                                    <li><a href="#">Services</a></li>
-                                    <li><a href="news.html">News</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
-                            </nav>
+                            @yield('Nav')
                             <div class="header_phone ml-auto">Call us: 00-56 445 678 33</div>
 
                             <!-- Hamburger -->
