@@ -115,7 +115,7 @@
     <!-- Content Home -->
     @yield('Content')
 
-    <-- Footer -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="source/images/footer_1.jpg" data-speed="0.8"></div>
         <div class="container">
