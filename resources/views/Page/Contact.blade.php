@@ -19,6 +19,12 @@
     </nav>
 @endsection
 
+@section('Background_header')
+    <div class="home">
+        <div class="background_image" style="background-image:url(source/images/contact.jpg)"></div>
+    </div>
+@endsection
+
 @section('Content')
 
     <!-- Contact -->
