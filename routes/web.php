@@ -19,4 +19,5 @@ Route::get('/',[
 ]);
 
 Route::get('/contact','PageController@getContact');
+Route::get('/about','PageController@getAbout');
 Route::get('/news','PageController@getNews');

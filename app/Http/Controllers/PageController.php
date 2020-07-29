@@ -13,7 +13,12 @@ class PageController extends Controller
     public function getContact(){
        return view('Page.Contact');
     }
+
     public function getNews(){
         return view('Page.News');
+    }
+
+    public function getAbout(){
+        return view('Page.About');
     }
 }
