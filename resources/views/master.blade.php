@@ -202,6 +202,7 @@
 <script src="source/plugins/scrollTo/jquery.scrollTo.min.js"></script>
 <script src="source/plugins/easing/easing.js"></script>
 <script src="source/plugins/parallax-js-master/parallax.min.js"></script>
+@yield('script')
 <script src="source/js/custom.js"></script>
 </body>
 </html>

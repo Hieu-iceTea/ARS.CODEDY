@@ -3,6 +3,7 @@
 <!-- Style Main_style-->
 @section('style')
     <link rel="stylesheet" type="text/css" href="source/styles/contact.css">
+    <link rel="stylesheet" type="text/css" href="source/styles/contact_responsive.css">
 @endsection
 
 <!-- Menu Nav Header-->
@@ -87,4 +88,8 @@
         </div>
     </div>
 
+    @section('script')
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
+    <script src="source/js/contact.js"></script>
+    @endsection
 @endsection
