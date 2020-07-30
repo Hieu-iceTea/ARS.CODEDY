@@ -115,7 +115,7 @@
     <!-- Why Choose Us -->
 
     <div class="why">
-        <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="source/images/why.jpg" data-speed="0.8"></div>
+        <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/why.jpg" data-speed="0.8"></div>
         <div class="container">
             <div class="row">
                 <div class="col text-center">
@@ -250,8 +250,15 @@
             </div>
         </div>
     </div>
+
 @endsection
 
 @section('script')
+    <script src="source/plugins/greensock/TweenMax.min.js"></script>
+    <script src="source/plugins/greensock/TimelineMax.min.js"></script>
+    <script src="source/plugins/scrollmagic/ScrollMagic.min.js"></script>
+    <script src="source/plugins/greensock/animation.gsap.min.js"></script>
+    <script src="source/plugins/greensock/ScrollToPlugin.min.js"></script>
+    <script src="source/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
     <script src="source/js/about.js"></script>
 @endsection
