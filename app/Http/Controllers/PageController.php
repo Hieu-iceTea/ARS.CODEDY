@@ -11,7 +11,9 @@ class PageController extends Controller
     {
         return view('Page.Home');
     }
+    public function demo(){
 
+    }
     public function getBooking($tab)
     {
         return view('Page.booking.step' . $tab);
