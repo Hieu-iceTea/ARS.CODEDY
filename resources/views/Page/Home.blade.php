@@ -84,18 +84,105 @@
                     <div class="home_search_container">
                         <div class="home_search_title">Search for your trip</div>
                         <div class="home_search_content">
-                            <form action="#" class="home_search_form" id="home_search_form">
+                            <form action="booking/1" method="get" class="home_search_form" id="home_search_form">
                                 <div
                                     class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-                                    <input type="text" class="search_input search_input_1" placeholder="City"
-                                           required="required">
-                                    <input type="text" class="search_input search_input_2" placeholder="Departure"
-                                           required="required">
-                                    <input type="text" class="search_input search_input_3" placeholder="Arrival"
-                                           required="required">
-                                    <input type="text" class="search_input search_input_4" placeholder="Budget"
-                                           required="required">
-                                    <button class="home_search_button">search</button>
+
+                                    <select class="search_input search_input_1" id="from" name="from"
+                                            required="required">
+                                        <option selected value="">-- From --</option>
+                                        <option value=0>Ha Noi</option>
+                                        <option value=1>Ho Chi Minh</option>
+                                        <option value=2>Da Lat</option>
+                                        <option value=0>Ha Noi</option>
+                                        <option value=1>Ho Chi Minh</option>
+                                        <option value=2>Da Lat</option>
+                                        <option value=0>Ha Noi</option>
+                                        <option value=1>Ho Chi Minh</option>
+                                        <option value=2>Da Lat</option>
+                                        <option value=0>Ha Noi</option>
+                                        <option value=1>Ho Chi Minh</option>
+                                        <option value=2>Da Lat</option>
+                                    </select>
+
+                                    <select class="search_input search_input_2" id="to" name="to"
+                                            required="required">
+                                        <option selected value="">-- To --</option>
+                                        <option value=0>Ha Noi</option>
+                                        <option value=1>Ho Chi Minh</option>
+                                        <option value=2>Da Lat</option>
+                                        <option value=0>Ha Noi</option>
+                                        <option value=1>Ho Chi Minh</option>
+                                        <option value=2>Da Lat</option>
+                                        <option value=0>Ha Noi</option>
+                                        <option value=1>Ho Chi Minh</option>
+                                        <option value=2>Da Lat</option>
+                                        <option value=0>Ha Noi</option>
+                                        <option value=1>Ho Chi Minh</option>
+                                        <option value=2>Da Lat</option>
+
+                                    </select>
+
+                                    <input type="date" class="search_input search_input_3" id="departure"
+                                           name="departure" placeholder="Departure" required>
+
+
+                                    <div class="search_input search_input_4">
+
+                                        <div class="dropdown">
+                                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Passenger: <span id="number-of-passenger">1</span>
+                                            </button>
+
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <div class="dropdown-item">
+                                                    <label for="adult">Adult:</label>
+                                                    <span class="float-right">
+                                                        <input type="text" class="search_input" id="adult"
+                                                               name="adult" value=1 required>
+                                                        <button class="" type="button">
+                                                            <i class="fa fa-minus"></i>
+                                                        </button>
+                                                        <button class="" type="button">
+                                                            <i class="fa fa-plus"></i>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                                <div class="dropdown-divider"></div>
+
+                                                <div class="dropdown-item">
+                                                    <label for="children">Children:</label>
+                                                    <span class="float-right">
+                                                        <input type="text" class="search_input" id="children"
+                                                               name="children" value=0 required>
+                                                        <button class="" type="button">
+                                                            <i class="fa fa-minus"></i>
+                                                        </button>
+                                                        <button class="" type="button">
+                                                            <i class="fa fa-plus"></i>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                                <div class="dropdown-divider"></div>
+
+                                                <div class="dropdown-item">
+                                                    <label for="baby">Baby:</label>
+                                                    <span class="float-right">
+                                                        <input type="text" class="search_input" id="baby"
+                                                               name="baby" value=0 required>
+                                                        <button class="" type="button">
+                                                            <i class="fa fa-minus"></i>
+                                                        </button>
+                                                        <button class="" type="button">
+                                                            <i class="fa fa-plus"></i>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="home_search_button" type="submit">search</button>
                                 </div>
                             </form>
                         </div>
@@ -104,6 +191,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- Intro -->
 
