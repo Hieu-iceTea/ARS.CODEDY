@@ -77,7 +77,7 @@
     </div>
 
     <!-- Search -->
-    <div class="home_search">
+    <div class="home_search search_flight">
         <div class="container">
             <div class="row">
                 <div class="col">

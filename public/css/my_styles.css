@@ -39,70 +39,70 @@
 ************/
 
 
-.search_input_1 {
+.search_flight .search_input_1 {
     width: 23%;
 }
 
-.search_input_2 {
+.search_flight .search_input_2 {
     width: 23%;
 }
 
-.search_input_3 {
+.search_flight .search_input_3 {
     width: 15%;
 }
 
-.search_input_4 {
+.search_flight .search_input_4 {
     width: 15%;
 }
 
-.search_input_4 .dropdown #dropdownMenuButton {
+.search_flight .search_input_4 .dropdown #dropdownMenuButton {
     padding: 0;
     background: none;
     line-height: 50px;
     color: #72728c;
 }
 
-.search_input_4 .dropdown #dropdownMenuButton:focus {
+.search_flight .search_input_4 .dropdown #dropdownMenuButton:focus {
     box-shadow: none;
 }
 
-.search_input_4 .dropdown .dropdown-toggle::after {
+.search_flight .search_input_4 .dropdown .dropdown-toggle::after {
     margin-left: 2em;
     color: #72728c;
 }
 
-.search_input_4 .dropdown .dropdown-menu {
+.search_flight .search_input_4 .dropdown .dropdown-menu {
     width: 220px;
     z-index: 10000000 !important;
     left: -17px !important;
     padding: 0;
 }
 
-.search_input_4 .dropdown .dropdown-menu .dropdown-divider {
+.search_flight .search_input_4 .dropdown .dropdown-menu .dropdown-divider {
     margin: 0;
 }
 
-.search_input_4 .dropdown .dropdown-menu .dropdown-item {
+.search_flight .search_input_4 .dropdown .dropdown-menu .dropdown-item {
     height: 55px;
     line-height: 48px;
 }
 
-.search_input_4 .dropdown .dropdown-menu .dropdown-item:active {
+.search_flight .search_input_4 .dropdown .dropdown-menu .dropdown-item:active {
     background-color: snow;
 }
 
-.search_input_4 .dropdown .dropdown-menu .dropdown-item label {
+.search_flight .search_input_4 .dropdown .dropdown-menu .dropdown-item label {
     color: #72728c;
 }
 
-.search_input_4 .dropdown .dropdown-menu .dropdown-item input {
+.search_flight .search_input_4 .dropdown .dropdown-menu .dropdown-item input {
     width: 30px;
     height: 30px;
     padding-left: 11px;
     margin-right: 10px;
 }
 
-.search_input_4 .dropdown .dropdown-menu .dropdown-item button {
+.search_flight .search_input_4 .dropdown .dropdown-menu .dropdown-item button {
     width: 28px;
     height: 28px;
     line-height: 28px;
