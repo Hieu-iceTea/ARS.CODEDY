@@ -2,14 +2,12 @@
 
 <!-- Style Main_style-->
 @section('style')
-    <link rel="stylesheet" type="text/css" href="source/styles/about.css">
-    <link rel="stylesheet" type="text/css" href="source/styles/about_responsive.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/about.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/about_responsive.css') }}">
 @endsection
 
 <!-- Content Home -->
 @section('Content')
-    <!-- Home -->
-
     <div class="home">
         <div class="background_image" style="background-image:url(source/images/about.jpg)"></div>
     </div>
@@ -254,14 +252,5 @@
 @endsection
 
 @section('script')
-
-    <script type="text/javascript" src="{{ asset('plugins/greensock/TweenMax.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('plugins/greensock/TimelineMax.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('plugins/scrollmagic/ScrollMagic.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('plugins/greensock/animation.gsap.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('plugins/greensock/ScrollToPlugin.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('plugins/greensock/ScrollToPlugin.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('plugins/greensock/ScrollToPlugin.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/about.js') }}"></script>
 @endsection
