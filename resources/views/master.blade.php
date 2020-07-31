@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('plugins/OwlCarousel2-2.2.1/animate.css') }}">
     @yield('style')
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/my_style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/my_styles.css') }}">
 </head>
 
 <body>
