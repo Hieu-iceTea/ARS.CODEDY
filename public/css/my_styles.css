@@ -117,11 +117,18 @@
 /************
 2. Booking/1 - Danh sách chuyến bay tìm được:
 ************/
+.main {
+    background-color: #EDF3F7 !important;
+    padding: 20px;
+}
+.media img {
+    width: 80px;
+}
 
 
-/************
-3. Booking/2 - Thông tin hành khách:
-************/
+    /************
+    3. Booking/2 - Thông tin hành khách:
+    ************/
 
 
 /************
