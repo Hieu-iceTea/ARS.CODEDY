@@ -4,7 +4,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main_styles.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
-    <<link rel="stylesheet" type="text/css" href="fontawesome-free-5.12.1-web/css/all.css" />
+    <<link rel="stylesheet" type="text/css" href="{{ asset('fontawesome-free-5.12.1-web/css/all.css') }}" />
 @endsection
 @section('Content')
     <div class="home">
@@ -16,7 +16,7 @@
                 <div class="row">
                     <div class="col-sm-3">
                         <p class="bg-primary">
-                            <span class="badge badge-light">4</span> Notifications
+                            <span class="badge badge-light">4</span>SSS Notifications
                         </p>
                     </div>
                     <div class="col-sm-3">
@@ -37,18 +37,14 @@
                 </div>
             </div>
 
-            <div class="container">
-                <div class="row mt-5">
-                    <div class="col-8">
-                        <div class="row">
-                            <div class="media">
-                                <div class="media-body">
-                                    <i class="fas fa-user-friends"></i>
-                                    <h5 class="mt-0">Media heading</h5>
-                                    Cras sit amet nibh libero,
-                                </div>
-                            </div>
-                        </div>
+            <div class="container my-3">
+                <div class="row">
+                    <div class="col-lg-3" style="font-size: 500%" >
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <div class="col-lg-3 mt-4" style="margin-left: -170px;">
+                        <p>Who will fly</p>
+                        <p>Your passenger data</p>
                     </div>
                 </div>
             </div>
@@ -129,18 +125,14 @@
                                     </div>
                                 </div>
 
-                                <div class="container">
-                                    <div class="row mt-5">
-                                        <div class="col-8">
-                                            <div class="row">
-                                                <div class="media">
-                                                    <div class="media-body">
-                                                        <i class="fas fa-user-friends"></i>
-                                                        <h5 class="mt-0">Media heading</h5>
-                                                        Cras sit amet nibh libero,
-                                                    </div>
-                                                </div>
-                                            </div>
+                                <div class="container my-3">
+                                    <div class="row">
+                                        <div class="col-lg-3" style="font-size: 500%" >
+                                            <i class="far fa-user"></i>
+                                        </div>
+                                        <div class="col-lg-3 mt-4" style="margin-left: -100px;">
+                                            <p>Who will fly</p>
+                                            <p>Your passenger data</p>
                                         </div>
                                     </div>
                                 </div>
