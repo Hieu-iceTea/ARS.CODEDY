@@ -4,7 +4,6 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main_styles.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
-    <<link rel="stylesheet" type="text/css" href="{{ asset('fontawesome-free-5.12.1-web/css/all.css') }}" />
 @endsection
 @section('Content')
     <div class="home">
@@ -40,7 +39,7 @@
             <div class="container my-3">
                 <div class="row">
                     <div class="col-lg-3" style="font-size: 500%" >
-                        <i class="fas fa-user-friends"></i>
+                        <i class="fa fa-users" aria-hidden="true"></i>
                     </div>
                     <div class="col-lg-3 mt-4" style="margin-left: -170px;">
                         <p>Who will fly</p>
@@ -128,7 +127,7 @@
                                 <div class="container my-3">
                                     <div class="row">
                                         <div class="col-lg-3" style="font-size: 500%" >
-                                            <i class="far fa-user"></i>
+                                            <i class="fa fa-users" aria-hidden="true"></i>
                                         </div>
                                         <div class="col-lg-3 mt-4" style="margin-left: -100px;">
                                             <p>Who will fly</p>
@@ -257,34 +256,38 @@
                                 </div>
                             </div>
                         </div>
+{{--                        Thanh toán--}}
+                        <div class="col-4">
+                            <div class="card  w-100"  style="width: 18rem;">
+                                <img class="card-img-top" src="https://via.placeholder.com/200" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text">Hà Nội đến Đà Nẵng</p>
+                                    <p class="card-text">khứ hồi | 1 người lớn</p>
+                                    <br>
+                                    <p class="card-text">Thay đổi lịch trình chuyến bay</p>
+                                </div>
+                            </div>
+                            <div class="card mt-3  w-100" style="width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tổng tiền : 3000.000.000 vnđ</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted"></h6>
+                                    <p class="card-text">Bao gồm tuế và phí dịch vụ</p>
+                                    <a href="#" class="card-link"></a>
+                                    <a href="#" class="card-link"></a>
+                                </div>
+                            </div>
+                            <div class="card mt-3  w-100" style="width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">tóm tắt : 2.500.000</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted"></h6>
+                                    <p class="card-text">HNA tới ĐNA</p>
+                                    <p class="card-text">CN 02/08/2020 | 19:25 - 20:30</p>
+                                    <p class="card-text">Người lớn 1 * 2.500.000 = 2.500.000 </p>
 
-                        <div class="col-lg-4">
-                            <div class="card  w-100 width_card_w100">
-                                <img class="card-img-top" src="https://via.placeholder.com/250" alt="Card image cap">
-                                <div class="card-body">
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                            <div class="card mt-3  w-100 width_card_w100">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="card-link">Card link</a>
-                                    <a href="#" class="card-link">Another link</a>
-                                </div>
-                            </div>
-                            <div class="card mt-3  w-100 width_card_w100">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="card-link">Card link</a>
-                                    <a href="#" class="card-link">Another link</a>
                                 </div>
                             </div>
 
-                            <button type="button" class="btn btn-success mt-3 w-100">Success</button>
+                            <button type="button" class="btn btn-success mt-3 w-100">tiếp theo</button>
                         </div>
                     </div>
                 </div>
