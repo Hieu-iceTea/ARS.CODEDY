@@ -8,6 +8,7 @@
 
 <!-- Content Home -->
 @section('Content')
+    <!-- Home Background Header-->
     <div class="home">
 
         <!-- Home Slider -->
@@ -72,10 +73,10 @@
                 </ul>
             </div>
         </div>
+
     </div>
 
     <!-- Search -->
-
     <div class="home_search">
         <div class="container">
             <div class="row">
@@ -84,11 +85,16 @@
                         <div class="home_search_title">Search for your trip</div>
                         <div class="home_search_content">
                             <form action="#" class="home_search_form" id="home_search_form">
-                                <div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-                                    <input type="text" class="search_input search_input_1" placeholder="City" required="required">
-                                    <input type="text" class="search_input search_input_2" placeholder="Departure" required="required">
-                                    <input type="text" class="search_input search_input_3" placeholder="Arrival" required="required">
-                                    <input type="text" class="search_input search_input_4" placeholder="Budget" required="required">
+                                <div
+                                    class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+                                    <input type="text" class="search_input search_input_1" placeholder="City"
+                                           required="required">
+                                    <input type="text" class="search_input search_input_2" placeholder="Departure"
+                                           required="required">
+                                    <input type="text" class="search_input search_input_3" placeholder="Arrival"
+                                           required="required">
+                                    <input type="text" class="search_input search_input_4" placeholder="Budget"
+                                           required="required">
                                     <button class="home_search_button">search</button>
                                 </div>
                             </form>
@@ -245,7 +251,8 @@
     <!-- Testimonials -->
 
     <div class="testimonials" id="testimonials">
-        <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="source/images/testimonials.jpg" data-speed="0.8"></div>
+        <div class="parallax_background parallax-window" data-parallax="scroll"
+             data-image-src="source/images/testimonials.jpg" data-speed="0.8"></div>
         <div class="container">
             <div class="row">
                 <div class="col text-center">
@@ -262,9 +269,13 @@
 
                             <!-- Slide -->
                             <div class="owl-item text-center">
-                                <div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. lobortis dolor. Cras placerat lectus a posuere aliquet. Curabitur quis vehicula odio.</div>
+                                <div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    lobortis dolor. Cras placerat lectus a posuere aliquet. Curabitur quis vehicula
+                                    odio.
+                                </div>
                                 <div class="testimonial_author">
-                                    <div class="testimonial_author_content d-flex flex-row align-items-end justify-content-start">
+                                    <div
+                                        class="testimonial_author_content d-flex flex-row align-items-end justify-content-start">
                                         <div>john turner,</div>
                                         <div>client</div>
                                     </div>
@@ -273,9 +284,13 @@
 
                             <!-- Slide -->
                             <div class="owl-item text-center">
-                                <div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. lobortis dolor. Cras placerat lectus a posuere aliquet. Curabitur quis vehicula odio.</div>
+                                <div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    lobortis dolor. Cras placerat lectus a posuere aliquet. Curabitur quis vehicula
+                                    odio.
+                                </div>
                                 <div class="testimonial_author">
-                                    <div class="testimonial_author_content d-flex flex-row align-items-end justify-content-start">
+                                    <div
+                                        class="testimonial_author_content d-flex flex-row align-items-end justify-content-start">
                                         <div>john turner,</div>
                                         <div>client</div>
                                     </div>
@@ -284,9 +299,13 @@
 
                             <!-- Slide -->
                             <div class="owl-item text-center">
-                                <div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. lobortis dolor. Cras placerat lectus a posuere aliquet. Curabitur quis vehicula odio.</div>
+                                <div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    lobortis dolor. Cras placerat lectus a posuere aliquet. Curabitur quis vehicula
+                                    odio.
+                                </div>
                                 <div class="testimonial_author">
-                                    <div class="testimonial_author_content d-flex flex-row align-items-end justify-content-start">
+                                    <div
+                                        class="testimonial_author_content d-flex flex-row align-items-end justify-content-start">
                                         <div>john turner,</div>
                                         <div>client</div>
                                     </div>
@@ -330,7 +349,8 @@
                                     </ul>
                                 </div>
                                 <div class="news_post_text">
-                                    <p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.Tempor massa et laoreet.</p>
+                                    <p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo.
+                                        Vivamus massa.Tempor massa et laoreet.</p>
                                 </div>
                             </div>
                         </div>
@@ -350,7 +370,8 @@
                                     </ul>
                                 </div>
                                 <div class="news_post_text">
-                                    <p>Tempor massa et laoreet malesuada. Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo.</p>
+                                    <p>Tempor massa et laoreet malesuada. Pellentesque sit amet elementum ccumsan sit
+                                        amet mattis eget, tristique at leo.</p>
                                 </div>
                             </div>
                         </div>
@@ -370,7 +391,8 @@
                                     </ul>
                                 </div>
                                 <div class="news_post_text">
-                                    <p>Vivamus massa.Tempor massa et laoreet malesuada. Aliquam nulla nisl, accumsan sit amet mattis.</p>
+                                    <p>Vivamus massa.Tempor massa et laoreet malesuada. Aliquam nulla nisl, accumsan sit
+                                        amet mattis.</p>
                                 </div>
                             </div>
                         </div>
@@ -381,7 +403,7 @@
                 <!-- News Sidebar -->
                 <div class="col-xl-4">
                     <div class="travello">
-                        <div class="background_image" style="background-image:url(source/travello.jpg)"></div>
+                        <div class="background_image" style="background-image:url(source/images/travello.jpg)"></div>
                         <div class="travello_content">
                             <div class="travello_content_inner">
                                 <div></div>
@@ -404,5 +426,5 @@
 @endsection
 
 @section('script')
-    <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
+    <script src="source/js/custom.js"></script>
 @endsection

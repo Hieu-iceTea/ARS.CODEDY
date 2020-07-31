@@ -107,7 +107,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="parallax_background parallax-window" data-parallax="scroll"
-             data-image-src="../source/images/footer_1.jpg" data-speed="0.8"></div>
+             data-image-src="source/images/footer_1.jpg" data-speed="0.8"></div>
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -148,7 +148,7 @@
                         <div class="col-xl-4 footer_contact_col">
                             <div
                                 class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
-                                <div class="footer_contact_icon"><img src="../source/images/sign.svg" alt=""></div>
+                                <div class="footer_contact_icon"><img src="source/images/sign.svg" alt=""></div>
                                 <div class="footer_contact_title">give us a call</div>
                                 <div class="footer_contact_list">
                                     <ul>
@@ -163,7 +163,7 @@
                         <div class="col-xl-4 footer_contact_col">
                             <div
                                 class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
-                                <div class="footer_contact_icon"><img src="../source/images/trekking.svg" alt=""></div>
+                                <div class="footer_contact_icon"><img src="source/images/trekking.svg" alt=""></div>
                                 <div class="footer_contact_title">come & drop by</div>
                                 <div class="footer_contact_list">
                                     <ul style="max-width:190px">
@@ -177,7 +177,7 @@
                         <div class="col-xl-4 footer_contact_col">
                             <div
                                 class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
-                                <div class="footer_contact_icon"><img src="../source/images/around.svg" alt=""></div>
+                                <div class="footer_contact_icon"><img src="source/images/around.svg" alt=""></div>
                                 <div class="footer_contact_title">send us a message</div>
                                 <div class="footer_contact_list">
                                     <ul>
@@ -201,15 +201,15 @@
     </footer>
 
 </div>
-<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/popper.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/plugins/Isotope/isotope.pkgd.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/plugins/scrollTo/jquery.scrollTo.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/plugins/easing/easing.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/plugins/parallax-js-master/parallax.min.js') }}"></script>
 
+<script src="source/js/jquery-3.2.1.min.js"></script>
+<script src="source/styles/bootstrap4/popper.js"></script>
+<script src="source/styles/bootstrap4/bootstrap.min.js"></script>
+<script src="source/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="source/plugins/Isotope/isotope.pkgd.min.js"></script>
+<script src="source/plugins/scrollTo/jquery.scrollTo.min.js"></script>
+<script src="source/plugins/easing/easing.js"></script>
+<script src="source/plugins/parallax-js-master/parallax.min.js"></script>
 @yield('script')
 
 </body>
