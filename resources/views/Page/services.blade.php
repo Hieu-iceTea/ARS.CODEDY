@@ -4,6 +4,7 @@
 @section('style')
     <link rel="stylesheet" type="text/css" href="source/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="source/styles/responsive.css">
+
 @endsection
 
 <!-- Content Home -->
@@ -39,5 +40,4 @@
 @endsection
 
 @section('script')
-    <script src="source/js/custom.js"></script>
-@endsection
+   endsection

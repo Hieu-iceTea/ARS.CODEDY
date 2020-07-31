@@ -2,8 +2,8 @@
 
 <!-- Style Main_style-->
 @section('style')
-    <link rel="stylesheet" type="text/css" href="source/styles/news.css">
-    <link rel="stylesheet" type="text/css" href="source/styles/news_responsive.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/news.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
 @endsection
 
 <!-- Content Contact -->
@@ -219,6 +219,5 @@
 @endsection
 
 @section('script')
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
-    <script src="source/js/contact.js"></script>
+    <script type="text/javascript" src="{{ asset('js/news.js') }}"></script>
 @endsection

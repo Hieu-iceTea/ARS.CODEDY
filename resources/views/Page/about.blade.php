@@ -254,11 +254,14 @@
 @endsection
 
 @section('script')
-    <script src="source/plugins/greensock/TweenMax.min.js"></script>
-    <script src="source/plugins/greensock/TimelineMax.min.js"></script>
-    <script src="source/plugins/scrollmagic/ScrollMagic.min.js"></script>
-    <script src="source/plugins/greensock/animation.gsap.min.js"></script>
-    <script src="source/plugins/greensock/ScrollToPlugin.min.js"></script>
-    <script src="source/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-    <script src="source/js/about.js"></script>
+
+    <script type="text/javascript" src="{{ asset('plugins/greensock/TweenMax.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('plugins/greensock/TimelineMax.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('plugins/scrollmagic/ScrollMagic.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('plugins/greensock/animation.gsap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('plugins/greensock/ScrollToPlugin.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('plugins/greensock/ScrollToPlugin.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('plugins/greensock/ScrollToPlugin.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/about.js') }}"></script>
 @endsection
