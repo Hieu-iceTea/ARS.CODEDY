@@ -514,5 +514,5 @@
 @endsection
 
 @section('script')
-    <script src="source/js/custom.js"></script>
+    <script src="js/custom.js"></script>
 @endsection
