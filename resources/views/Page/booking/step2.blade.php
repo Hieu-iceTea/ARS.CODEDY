@@ -4,7 +4,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main_styles.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
-    <<link rel="stylesheet" type="text/css" href="fontawesome-free-5.12.1-web/css/all.css" />
+    <<link rel="stylesheet" type="text/css" href="{{ asset('fontawesome-free-5.12.1-web/css/all.css') }}" />
 @endsection
 @section('Content')
     <div class="home">
@@ -16,7 +16,7 @@
                 <div class="row">
                     <div class="col-sm-3">
                         <p class="bg-primary">
-                            <span class="badge badge-light">4</span> Notifications
+                            <span class="badge badge-light">4</span>SSS Notifications
                         </p>
                     </div>
                     <div class="col-sm-3">
@@ -37,18 +37,14 @@
                 </div>
             </div>
 
-            <div class="container">
-                <div class="row mt-5">
-                    <div class="col-8">
-                        <div class="row">
-                            <div class="media">
-                                <div class="media-body">
-                                    <i class="fas fa-user-friends"></i>
-                                    <h5 class="mt-0">Media heading</h5>
-                                    Cras sit amet nibh libero,
-                                </div>
-                            </div>
-                        </div>
+            <div class="container my-3">
+                <div class="row">
+                    <div class="col-lg-3" style="font-size: 500%" >
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <div class="col-lg-3 mt-4" style="margin-left: -170px;">
+                        <p>Who will fly</p>
+                        <p>Your passenger data</p>
                     </div>
                 </div>
             </div>
@@ -58,15 +54,15 @@
                         <div class="col-lg-8">
                             <div class="row">
 {{--                                Khách hàng--}}
-                                <div class="card" style="width: 45rem;">
-                                    <div style="border:1px solid black;border-radius: 4px 4px 0px 0px;background-color: #33597C">
-                                        <p style="color: white;margin-left: 15px">Hành khách</p>
+                                <div class="card width_card">
+                                    <div class="bg-title">
+                                        <p class="title">Hành khách</p>
                                     </div>
                                     <div class="container">
                                         <div class="row">
                                             <div class="m-lg-3">
                                                 <div>Danh xưng*</div>
-                                                <div class="input-group" style="width: 10rem">
+                                                <div class="input-group width_input_opption">
                                                     <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
                                                         <option selected>Danh xưng</option>
                                                         <option value="1">One</option>
@@ -77,7 +73,7 @@
                                             </div>
                                             <div class="m-lg-3">
                                                 <div>Tên đệm và tên*</div>
-                                                <div class="input-group mb-3" style="width: 14rem">
+                                                <div class="input-group mb-3 width_input_content">
                                                     <div class="input-group-prepend">
                                                     </div>
                                                     <input type="text" class="form-control" placeholder="Tên đệm và tên" aria-label="Username" aria-describedby="basic-addon1">
@@ -85,20 +81,20 @@
                                             </div>
                                             <div class="m-lg-3">
                                                 <div>Họ*</div>
-                                                <div class="input-group mb-3" style="width: 14rem">
+                                                <div class="input-group mb-3 width_input_content">
                                                     <div class="input-group-prepend">
                                                     </div>
                                                     <input type="text" class="form-control" placeholder="Tên đệm và tên" aria-label="Username" aria-describedby="basic-addon1">
                                                 </div>
                                             </div>
-                                            <p class="ml-3" style="margin-top: -35px">Vui lòng điền đầy đủ họ tên theo giấy tờ tùy thân</p>
+                                            <p class="ml-3 margin_content_notification">Vui lòng điền đầy đủ họ tên theo giấy tờ tùy thân</p>
                                         </div>
                                     </div>
-                                    <div class="container" style="margin-top: -25px">
+                                    <div class="container margin_top_container">
                                         <div class="row">
                                             <div class="m-lg-3">
                                                 <div>Ngày sinh</div>
-                                                <div class="input-group mb-3" style="width: 10rem">
+                                                <div class="input-group mb-3 width_input_opption">
                                                     <div class="input-group-prepend">
                                                     </div>
                                                     <input type="text" class="form-control" placeholder="Ngày sinh" aria-label="Username" aria-describedby="basic-addon1">
@@ -106,7 +102,7 @@
                                             </div>
                                             <div class="m-lg-3">
                                                 <div>Quốc tịch*</div>
-                                                <div class="input-group" style="width: 14rem">
+                                                <div class="input-group width_input_content">
                                                     <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
                                                         <option selected>Việt Nam</option>
                                                         <option value="1">One</option>
@@ -120,7 +116,7 @@
                                     <div style="margin-top: -40px">
                                         <div class="m-lg-3" >
                                             <div>Số Hội Viên</div>
-                                            <div class="input-group mb-3" style="width: 18rem">
+                                            <div class="input-group mb-3 width_card_w100">
                                                 <div class="input-group-prepend">
                                                 </div>
                                                 <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
@@ -129,32 +125,28 @@
                                     </div>
                                 </div>
 
-                                <div class="container">
-                                    <div class="row mt-5">
-                                        <div class="col-8">
-                                            <div class="row">
-                                                <div class="media">
-                                                    <div class="media-body">
-                                                        <i class="fas fa-user-friends"></i>
-                                                        <h5 class="mt-0">Media heading</h5>
-                                                        Cras sit amet nibh libero,
-                                                    </div>
-                                                </div>
-                                            </div>
+                                <div class="container my-3">
+                                    <div class="row">
+                                        <div class="col-lg-3" style="font-size: 500%" >
+                                            <i class="far fa-user"></i>
+                                        </div>
+                                        <div class="col-lg-3 mt-4" style="margin-left: -100px;">
+                                            <p>Who will fly</p>
+                                            <p>Your passenger data</p>
                                         </div>
                                     </div>
                                 </div>
 
 {{--                                Thông tin liên hệ--}}
-                                <div class="card" style="width: 45rem;">
-                                    <div style="border:1px solid black;border-radius: 4px 4px 0px 0px;background-color: #33597C">
-                                        <p style="color: white;margin-left: 15px">Thông tin liên hệ</p>
+                                <div class="card width_card">
+                                    <div class="bg-title">
+                                        <p class="title">Thông tin liên hệ</p>
                                     </div>
                                     <div class="container">
                                         <div class="row">
                                             <div class="m-lg-3">
                                                 <div>Danh xưng*</div>
-                                                <div class="input-group" style="width: 10rem">
+                                                <div class="input-group width_input_opption">
                                                     <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
                                                         <option selected>Danh xưng</option>
                                                         <option value="1">One</option>
@@ -165,7 +157,7 @@
                                             </div>
                                             <div class="m-lg-3">
                                                 <div>Tên đệm và tên*</div>
-                                                <div class="input-group mb-3" style="width: 14rem">
+                                                <div class="input-group mb-3">
                                                     <div class="input-group-prepend">
                                                     </div>
                                                     <input type="text" class="form-control" placeholder="Tên đệm và tên" aria-label="Username" aria-describedby="basic-addon1">
@@ -173,32 +165,32 @@
                                             </div>
                                             <div class="m-lg-3">
                                                 <div>Họ*</div>
-                                                <div class="input-group mb-3" style="width: 14rem">
+                                                <div class="input-group mb-3">
                                                     <div class="input-group-prepend">
                                                     </div>
                                                     <input type="text" class="form-control" placeholder="Tên đệm và tên" aria-label="Username" aria-describedby="basic-addon1">
                                                 </div>
                                             </div>
-                                            <p class="ml-3" style="margin-top: -35px">Vui lòng điền đầy đủ họ tên theo giấy tờ tùy thân</p>
-                                            <div class="container" style="margin-top: -25px">
+                                            <p class="ml-3 margin_content_notification">Vui lòng điền đầy đủ họ tên theo giấy tờ tùy thân</p>
+                                            <div class="container margin_top_container">
                                                 <div class="row">
                                                     <div class="m-lg-3">
                                                         <div>Email*</div>
-                                                        <div class="input-group mb-3" style="width: 24rem">
+                                                        <div class="input-group mb-3 width_input_prepend">
                                                             <div class="input-group-prepend">
                                                             </div>
                                                             <input type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
                                                         </div>
                                                     </div>
-                                                    <input type="checkbox" class="mt-5" style="width: 18px;height: 18px"><p class=" ml-2" style="font-size:80%;margin-top: 35px">
+                                                    <input type="checkbox" class="mt-5 size_checkbox"><p class=" ml-2" >
                                                         Đăng ký để cập nhập thông tin mới nhất từ hãng và<br> các chương trình khuyến mại</p>
                                                 </div>
                                             </div>
-                                            <div class="container" style="margin-top: -35px">
+                                            <div class="container margin_content_notification">
                                                 <div class="row">
                                                     <div class="m-lg-3">
                                                         <div>Số điện thoại*</div>
-                                                        <div class="input-group" style="width: 10rem">
+                                                        <div class="input-group width_input_opption">
                                                             <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
                                                                 <option selected>+84 (Viet Nam)</option>
                                                                 <option value="1">One</option>
@@ -214,16 +206,16 @@
                                                             <input type="text" class="form-control" placeholder="Số điện thoại" aria-label="Username" aria-describedby="basic-addon1" style="margin-top: 21px">
                                                         </div>
                                                     </div>
-                                                    <input type="checkbox" class="mt-5" style="width: 18px;height: 18px"><p class=" ml-2" style="font-size:80%;margin-top: 35px">Đăng ký để nhận tin tức về các ưu đãi, khuyến mại<br>
+                                                    <input type="checkbox" class="mt-5 size_checkbox" ><p class=" ml-2 content_promotion">Đăng ký để nhận tin tức về các ưu đãi, khuyến mại<br>
                                                         mới nhất từ Bamboo Airways</p>
 
-                                                    <p class="ml-3" style="font-size: 80%;margin-top: -25px">Lưu ý: Quý khách vui lòng cung cấp thông tin chính xác, Bamboo Airways sẽ<br> sử dụng để liên lạc và hỗ trợ Quý khách trong trường hợp cần thiết.</p>
+                                                    <p class="ml-3 note_information">Lưu ý: Quý khách vui lòng cung cấp thông tin chính xác, Bamboo Airways sẽ<br> sử dụng để liên lạc và hỗ trợ Quý khách trong trường hợp cần thiết.</p>
 
-                                                    <div class="container" style="margin-top: -10px">
+                                                    <div class="container margin_top_container">
                                                         <div class="row">
                                                             <div class="m-lg-3">
                                                                 <div>Tên Đường*</div>
-                                                                <div class="input-group mb-3" style="width: 24rem">
+                                                                <div class="input-group mb-3 width_input_prepend">
                                                                     <div class="input-group-prepend">
                                                                     </div>
                                                                     <input type="text" class="form-control" placeholder="Phố" aria-label="Username" aria-describedby="basic-addon1">
@@ -231,11 +223,11 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="container" style="margin-top: -25px">
+                                                    <div class="container margin_top_container">
                                                         <div class="row">
                                                             <div class="m-lg-3">
                                                                 <div>Thành Phố*</div>
-                                                                <div class="input-group mb-3" style="width: 20rem">
+                                                                <div class="input-group mb-3 width_input-group">
                                                                     <div class="input-group-prepend">
                                                                     </div>
                                                                     <input type="text" class="form-control" placeholder="Thành phố" aria-label="Username" aria-describedby="basic-addon1">
@@ -243,7 +235,7 @@
                                                             </div>
                                                             <div class="m-lg-3">
                                                                 <div>Quốc gia*</div>
-                                                                <div class="input-group" style="width: 20rem">
+                                                                <div class="input-group width_input-group">
                                                                     <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
                                                                         <option selected>Việt Nam</option>
                                                                         <option value="1">One</option>
@@ -252,7 +244,7 @@
                                                                     </select>
                                                                 </div>
                                                             </div>
-                                                            <p class="ml-3" style="font-size: 80%;margin-top: -25px">(1) Tôi đồng ý nhận email thông báo. Để biết thêm thông tin liên quan đến việc Bamboo Airways xử lý thông tin cá nhân của khách hàng, vui lòng xem chi tiết tại
+                                                            <p class="ml-3 note_information">(1) Tôi đồng ý nhận email thông báo. Để biết thêm thông tin liên quan đến việc Bamboo Airways xử lý thông tin cá nhân của khách hàng, vui lòng xem chi tiết tại
                                                                 Chính sách bảo mật , Điều kiện sử dụng chức năng đặt chỗ trực tuyến và Điều khoản sử dụng website.
                                                             </p>
                                                         </div>
@@ -267,13 +259,13 @@
                         </div>
 
                         <div class="col-lg-4">
-                            <div class="card  w-100"  style="width: 18rem;">
+                            <div class="card  w-100 width_card_w100">
                                 <img class="card-img-top" src="https://via.placeholder.com/250" alt="Card image cap">
                                 <div class="card-body">
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 </div>
                             </div>
-                            <div class="card mt-3  w-100" style="width: 18rem;">
+                            <div class="card mt-3  w-100 width_card_w100">
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
                                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
@@ -282,7 +274,7 @@
                                     <a href="#" class="card-link">Another link</a>
                                 </div>
                             </div>
-                            <div class="card mt-3  w-100" style="width: 18rem;">
+                            <div class="card mt-3  w-100 width_card_w100">
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
                                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
@@ -296,6 +288,7 @@
                         </div>
                     </div>
                 </div>
+        </div>
         </div>
     </div>
 @endsection
