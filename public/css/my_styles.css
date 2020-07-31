@@ -138,6 +138,39 @@
 6. Ticket/index - Danh sách vé:
 ************/
 
+.page_ticket .search_input_1 {
+    width: 26%;
+}
+
+.page_ticket .search_input_2 {
+    width: 16%;
+}
+
+.page_ticket .search_input_3 {
+    width: 16%;
+}
+
+.page_ticket .search_input_4 {
+    width: 16%;
+}
+
+.ticket_list {
+    margin: 50px 0;
+}
+
+.page_ticket .table_title h4 {
+    height: 50px;
+    line-height: 50px;
+    background-color: #F2F5F6;
+    color: #2e2e2e;
+    padding-left: 35px;
+    margin-bottom: 15px;
+}
+
+.page_ticket .home_slider_content_container
+{
+    top: 20%;
+}
 
 /************
 7. Ticket/detail - Xem chi tiết vé:
