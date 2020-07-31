@@ -2,8 +2,8 @@
 
 <!-- Style Main_style-->
 @section('style')
-    <link rel="stylesheet" type="text/css" href="source/styles/main_styles.css">
-    <link rel="stylesheet" type="text/css" href="source/styles/responsive.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/main_styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
 @endsection
 
 <!-- Content Home -->
@@ -39,5 +39,5 @@
 @endsection
 
 @section('script')
-    <script src="source/js/custom.js"></script>
+    <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
 @endsection
