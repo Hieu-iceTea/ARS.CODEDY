@@ -32,16 +32,16 @@
                             <nav class="main_nav">
                                 <ul class="d-flex flex-row align-items-start justify-content-start">
                                     <li class="{{ (request()->is('/')) ? 'active' : '' }}"><a href="/">Home</a></li>
-                                    <li class="{{ (request()->is('about')) ? 'active' : '' }}"><a href="about">About us</a></li>
-                                    {{--<li class="{{ (request()->is('services')) ? 'active' : '' }}"><a href="services">Services</a></li>--}}
-                                    <li class="{{ (request()->is('news')) ? 'active' : '' }}"><a href="news">News</a></li>
-                                    {{--<li class="{{ (request()->is('contact')) ? 'active' : '' }}"><a href="contact">Contact</a></li>--}}
-                                    <li class="{{ (request()->is('ticket')) ? 'active' : '' }}"><a href="ticket">Ticket</a></li>
-                                    <li class="{{ (request()->is('schedule')) ? 'active' : '' }}"><a href="schedule">Schedule</a></li>
+                                    <li class="{{ (request()->is('about')) ? 'active' : '' }}"><a href="/about">About us</a></li>
+                                    {{--<li class="{{ (request()->is('services')) ? 'active' : '' }}"><a href="/services">Services</a></li>--}}
+                                    <li class="{{ (request()->is('news')) ? 'active' : '' }}"><a href="/news">News</a></li>
+                                    {{--<li class="{{ (request()->is('contact')) ? 'active' : '' }}"><a href="/contact">Contact</a></li>--}}
+                                    <li class="{{ (request()->is('ticket')) ? 'active' : '' }}"><a href="/ticket">Ticket</a></li>
+                                    <li class="{{ (request()->is('schedule')) ? 'active' : '' }}"><a href="/schedule">Schedule</a></li>
                                 </ul>
                             </nav>
 
-                            <div class="header_phone ml-auto"><a style="color: white" href="contact">Call us: 00-56 445 678 33</a></div>
+                            <div class="header_phone ml-auto"><a style="color: white" href="/contact">Call us: 00-56 445 678 33</a></div>
 
                             <!-- Hamburger -->
 
@@ -79,13 +79,13 @@
         </div>
         <div class="menu_content">
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="about">About us</a></li>
-                {{--<li><a href="services">Services</a></li>--}}
-                <li><a href="news">News</a></li>
-                {{--<li><a href="contact">Contact</a></li>--}}
-                <li><a href="ticket">Ticket</a></li>
-                <li><a href="schedule">Schedule</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About us</a></li>
+                {{--<li><a href="/services">Services</a></li>--}}
+                <li><a href="/news">News</a></li>
+                {{--<li><a href="/contact">Contact</a></li>--}}
+                <li><a href="/ticket">Ticket</a></li>
+                <li><a href="/schedule">Schedule</a></li>
             </ul>
         </div>
         <div class="menu_social">
