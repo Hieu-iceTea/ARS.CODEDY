@@ -84,17 +84,34 @@
                     <div class="home_search_container">
                         <div class="home_search_title">Search for your trip</div>
                         <div class="home_search_content">
-                            <form action="#" class="home_search_form" id="home_search_form">
+                            <form action="booking/1" method="get" class="home_search_form" id="home_search_form">
                                 <div
                                     class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-                                    <input type="text" class="search_input search_input_1" placeholder="City"
+
+                                    <select class="search_input search_input_1" id="from" name="from"
+                                            required="required">
+                                        <option selected value="">-- From --</option>
+                                        <option value=0>Ha Noi</option>
+                                        <option value=1>Ho Chi Minh</option>
+                                        <option value=2>Da Lat</option>
+                                    </select>
+
+                                    <select class="search_input search_input_2" id="to" name="to"
+                                            required="required">
+                                        <option selected value="">-- To --</option>
+                                        <option value=0>Ha Noi</option>
+                                        <option value=1>Ho Chi Minh</option>
+                                        <option value=2>Da Lat</option>
+                                    </select>
+
+                                    <input type="date" class="search_input search_input_3" id="departure"
+                                           name="departure" placeholder="Departure" required>
+
+
+
+                                    <input type="text" class="search_input search_input_4" id="passenger" name="passenger" placeholder="Passenger"
                                            required="required">
-                                    <input type="text" class="search_input search_input_2" placeholder="Departure"
-                                           required="required">
-                                    <input type="text" class="search_input search_input_3" placeholder="Arrival"
-                                           required="required">
-                                    <input type="text" class="search_input search_input_4" placeholder="Budget"
-                                           required="required">
+
                                     <button class="home_search_button">search</button>
                                 </div>
                             </form>
