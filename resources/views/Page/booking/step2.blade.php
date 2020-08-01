@@ -1,7 +1,6 @@
 @extends('master')
 <!-- Style Main_style-->
 @section('style')
-
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main_styles.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
 @endsection

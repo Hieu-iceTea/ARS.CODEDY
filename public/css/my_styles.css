@@ -117,13 +117,7 @@
 /************
 2. Booking/1 - Danh sách chuyến bay tìm được:
 ************/
-.main {
-    background-color: #EDF3F7 !important;
-    padding: 20px;
-}
-.media img {
-    width: 80px;
-}
+
 
 
 /************
@@ -190,7 +184,20 @@
 /************
 5. Booking/4 - Thanh toán:
 ************/
+.mainPayment{
+    background-color: #EDF3F7 !important;
+}
 
+.media img {
+    width: 50px;
+    height: 50px;
+}
+.media h5{
+    margin-top:-5px ;
+}
+.media span {
+    margin-top: 10px;
+}
 
 /************
 6. Ticket/index - Danh sách vé:
