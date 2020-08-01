@@ -178,7 +178,26 @@
 /************
 4. Booking/3 - Dịch vụ bổ sung:
 ************/
+.section-header
+{
+    color: #00305B;
+}
 
+.color-blue
+{
+    color: #1b4b72;
+}
+
+.checkbox
+{
+    margin-top: 5rem;
+    padding-left: 0.6rem;
+}
+
+.contents
+{
+    margin-top: 2rem;
+}
 
 /************
 5. Booking/4 - Thanh toán:
