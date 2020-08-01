@@ -117,12 +117,162 @@
 /************
 2. Booking/1 - Danh sách chuyến bay tìm được:
 ************/
-
-
-
-/************
-3. Booking/2 - Thông tin hành khách:
-************/
+.mainStep1 {
+    background-color: #EDF3F7;
+    padding: 50px;
+    letter-spacing: 0.5px;
+}
+.mainStep1 .step1-progress .col-sm-3 p {
+    color: #33597C;
+    background-color: #ECE9E9;
+    padding: 5px;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+}
+.mainStep1 .step1-progress .active p{
+    background-color: #33597C;
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+}
+.mainStep1 .step1-progress .col-sm-3 p span {
+    background-color: white;
+    margin: -10px 10px 0 0;
+}
+.mainStep1 .locale-vi .media h5{
+    font-size: 15px;
+    font-family: 'Oswald', sans-serif;
+    color: #33597C;
+}
+.mainStep1 .locale-vi .media h4{
+    font-size: 22px;
+    color: #33597C;
+    font-weight: 300;
+}
+.mainStep1 .locale-vi .media h4 spam{
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold
+}
+.mainStep1 .Active-date .col {
+    background-color:#33597C;
+    padding-left: 65px;
+    padding-top:6px;
+    height: 40px;
+    color: white;
+}
+.mainStep1 .Active-date .col p {
+    color: white;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+}
+.mainStep1 .title .col-3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+}
+.mainStep1 .title .eco {
+    color: #64AF53;
+}
+.mainStep1 .title .plus{
+    color: #4EBDEC;
+}
+.mainStep1 .title .business{
+    color: #33597C;
+}
+.mainStep1 .content-step1{
+    padding: 10px;
+    border: 0.5px solid #ECE9E9;
+    box-shadow: 5px 10px 8px #dcdcdc;
+    background-color: white;
+}
+.mainStep1 .content-step1 .date-fly{
+    display: flex
+}
+.mainStep1 .content-step1 .date-fly  li .text-center{
+    font-size: 15px;
+    font-family: 'Oswald', sans-serif;
+    color: #33597C;
+    font-weight: bold
+}
+.mainStep1 .content-step1 .check {
+    height: 150px;
+    padding: 10px;
+    color: white;
+}
+.mainStep1 .content-step1 .check span{
+    font-size: 15px;font-family: 'Oswald', sans-serif;color: #FFF;font-weight: bold;
+}
+.mainStep1 .content-step1 .check p{
+    font-size: 15px;font-family: 'Oswald', sans-serif;color: white;font-weight: 500;
+}
+.mainStep1 .content-step1 .eco {
+    background-color: #64AF53;
+}
+.mainStep1 .content-step1 .plus{
+    background-color: #4EBDEC;
+}
+.mainStep1 .content-step1 .business{
+    background-color: #33597C;
+}
+.mainStep1 .cart-info img{
+    width: 100%;
+    height: 120px;
+}
+.mainStep1 .cart-info h4 {
+    font-size: 20px;
+    color: #33597C;
+}
+.mainStep1 .cart-info h4 spam {
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold !important;
+}
+.mainStep1 .cart-info p{
+    font-size: 16px;
+    font-family: 'Oswald', sans-serif;
+}
+.mainStep1 .cart-info .card-text {
+    color:  #33597C;
+    font-weight: 500;
+}
+.mainStep1 .cart-info .card-text-link{
+    color: red;
+    font-weight: 400;
+}
+.mainStep1 .card-Clearfix h5{
+    font-size: 15px;
+    color: #33597C;
+    font-weight: 600;
+}
+.mainStep1 .card-Clearfix p{
+    font-size: 10px;color: black;font-weight: 600;
+}
+.mainStep1 .cart-content h5 {
+    font-size: 15px;
+    color: #33597C;
+    font-weight: 600;
+}
+.mainStep1 .cart-content h4{
+    font-size: 10px;
+    color: black;
+    font-weight: 600;
+}
+.mainStep1 .cart-content p{
+    font-size: 12px;color: black;font-weight: 600;
+}
+.mainStep1 .cart-content p span{
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
+.mainStep1 button{
+    background-color: #64AF53;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+}
+    /************
+    3. Booking/2 - Thông tin hành khách:
+    ************/
 .title{
     color: white;
 }
