@@ -36,8 +36,6 @@
                         </p>
                     </div>
                 </div>
-
-
 {{--                Phần chính của trang--}}
                 <div class="row">
 {{--                Content--}}
@@ -168,37 +166,36 @@
 {{--               Thanh bên trái như nhau k cần sửa--}}
                     <div class="col-sm-12 mt-5 col-lg-4">
                         <div class="container">
-                    <div class="card w-100 ml-5"  style="width: 10rem;">
-                        <img class="card-img-top" src="https://via.placeholder.com/200" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Hà Nội đến Đà Nẵng</p>
-                            <p class="card-text">khứ hồi | 1 người lớn</p>
-                            <br>
-                            <p class="card-text">Thay đổi lịch trình chuyến bay</p>
+                        <div class="card cart-info  w-100 ml-5"  style="width: 10rem;">
+                            <img class="card-img-top" src="../source/images/destination_5.jpg" alt="Card image cap">
+                            <div class="card-body text-center">
+                                <h4> <spam>Hồ Chí Minh</spam> (SGN) tới <spam>Hà Nội </spam>(HAN)</h4>
+                                <p class="card-text">Khứ Hồi | 1 Người Lớn</p>
+                                <p class="card-text-link"><a href="" style="text-decoration: none">Thay đổi lịch trình chuyến bay</a></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card mt-3  w-100 ml-5" style="width: 10rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Tổng tiền : 3000.000.000 vnđ</h5>
-                            <h6 class="card-subtitle mb-2 text-muted"></h6>
-                            <p class="card-text">Bao gồm tuế và phí dịch vụ</p>
-                            <a href="#" class="card-link"></a>
-                            <a href="#" class="card-link"></a>
-                        </div>
-                    </div>
-                    <div class="card mt-3  w-100 ml-5" style="width: 10rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">tóm tắt : 2.500.000</h5>
-                            <h6 class="card-subtitle mb-2 text-muted"></h6>
-                            <p class="card-text">HNA tới ĐNA</p>
-                            <p class="card-text">CN 02/08/2020 | 19:25 - 20:30</p>
-                            <p class="card-text">Người lớn 1 * 2.500.000 = 2.500.000 </p>
+                        <div class="card-Clearfix card mt-3  w-100 ml-5" style="width: 10rem;">
+                            <div class="card-body text-center">
+                                <h5 class="card-title" ><span style="font-size: 20px;color: #33597C;font-weight: 600">Tổng Tiền</span> : 3000.000.000 vnđ</h5>
+                                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                                <p class="card-text">Bao gồm tuế và phí dịch vụ</p>
 
+                            </div>
                         </div>
-                    </div>
+                        <div class="card mt-3 cart-content w-100 ml-5" style="width: 10rem;">
+                            <div class="card-body text-center">
+                                <h5 class="card-title" style=""><span style="font-size: 20px;color: #33597C;font-weight: 600">Tổng Tiền</span> : 3000.000.000 vnđ</h5>
 
-                    <button type="button" class="btn btn-success mt-3 w-75 ml-5">tiếp theo</button>
-                </div>
+                                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                                <h4 style=""> <spam style="font-family: 'Oswald', sans-serif;font-weight: bold"></spam> (SGN) tới <spam style="font-family: 'Oswald', sans-serif;font-weight: bold"></spam>(HAN)</h4>
+                                <p class="card-text" >CN 02/08/2020 | 19:25 - 20:30</p>
+                                <p class="card-text">Người lớn 1 * 2.500.000 = <span>2.500.000</span></p>
+                            </div>
+                        </div>
+                        <div class="w-100 ml-5">
+                        <button type="button" class="btn btn-success mt-3 w-100">Tiếp Theo</button>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>
