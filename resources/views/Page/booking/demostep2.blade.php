@@ -1,19 +1,15 @@
 @extends('master')
-
 <!-- Style Main_style-->
 @section('style')
+
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main_styles.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/my_styles') }}">
 @endsection
-
-<!-- Content Home -->
 @section('Content')
-    <!-- Home Background Header-->
     <div class="home">
         <div class="background_image" style="background-image:url(../source/images/contact.jpg)"></div>
     </div>
-    <!-- Search -->
+
     <div class="home_search page_ticket">
         <div class="container">
             <div class="row">
@@ -72,47 +68,50 @@
             </div>
         </div>
     </div>
-    <div class="mainStep1 " style="">
-        <div class=" mt-5 mb-4">
+
+    <div class="main">
+        <div class="Progress mt-5 mb-4">
             <div class="container">
-                <div class="step1-progress row">
-                    <div class="col-sm-3 ">
-                        <p>
-                            <span class="badge badge-light">1</span> Chuyến Bay
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="bg-light">
+                            <span class="badge badge-light">1</span> Chuyến bay
                         </p>
                     </div>
-                    <div class="col-sm-3  active">
-                        <p>
-                            <span class="badge badge-light" >2</span>Thông Tin Khách Hàng
+                    <div class="col-sm-3"style="background-color: #33597C;height: 23px;">
+                        <p style ="color: white">
+                            <span class="badge badge-light">2</span> Thông tin hành khách
                         </p>
                     </div>
-                    <div class="col-sm-3 ">
-                        <p>
-                            <span class="badge badge-light">3</span>Dịch Vụ Bổ Sung
+                    <div class="col-sm-3">
+                        <p class="bg-light">
+                            <span class="badge badge-light">3</span> Dịch vụ bổ sung
                         </p>
                     </div>
-                    <div class="col-sm-3 ">
-                        <p>
-                            <span class="badge badge-light">4</span> Thanh Toán
+                    <div class="col-sm-3">
+                        <p class="bg-light" >
+                            <span class="badge badge-light">4</span> Thanh toán
                         </p>
                     </div>
                 </div>
-                <div class=" row mt-5">
+            </div>
+
+            <div class="container my-3">
+                <div class="row">
+                    <div class="col-lg-3 color_title_booking2" style="font-size: 500%" >
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-lg-3 mt-4" style="margin-left: -170px;">
+                        <p class=" color_title_booking2">Who will fly</p>
+                        <p class=" color_title_booking2">Your passenger data</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
                     <div class="col-lg-8">
                         <div class="row">
-
-                            <div class="container mb-4">
-                                <div class="row">
-                                    <div class="col-lg-3" style="font-size: 500%;margin-top: -30px" >
-                                        <i class="fa fa-users color_title_booking2" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="col-lg-4 booking2_who">
-                                        <p class="color_title_booking2 booking2_font_family" style="font-size: 150%">Ai sẽ bay</p>
-                                        <p class="color_title_booking2 booking2_font_family" style="font-size: 150%;margin-top: -20px">dữ liệu hành khách của bạn</p>
-                                    </div>
-                                </div>
-                            </div>
-
                             {{--                                đăng nhập và đặt chỗ nhanh hơn--}}
                             <div class="card width_card mb-5">
                                 <div class="container">
@@ -121,22 +120,22 @@
                                             <i class="fa fa-address-book" aria-hidden="true" style="font-size: 400%;margin: 30px 20px 20px 20px"></i>
                                         </div>
                                         <div class="col-lg-6">
-                                            <p class="mt-4 color_title_booking2 booking2_login">Đăng nhập và đặt chỗ nhanh hơn</p>
+                                            <p class="mt-5 color_title_booking2" style="margin-left: -20px">Đăng nhập và đặt chỗ nhanh hơn</p>
                                         </div>
                                         <div style="margin:30px 0px 0px -73px"><input type="checkbox" class="size_checkbox"></div>
-                                        <p style="margin:-78px 10px 0px 440px" class="booking2_font_family color_title_booking2">Tôi muốn đăng nhập bằng tài khoản của
+                                        <p style="font-size: 75%;margin:-78px 10px 0px 440px" class=" color_title_booking2">Tôi muốn đăng nhập bằng tài khoản của
                                             Bamboo</p>
 
-                                        <div style="margin: -25px 0px 0px -310px"><input type="checkbox" class="size_checkbox"></div>
-                                        <p style="margin:-30px 0px 20px 440px" class="booking2_font_family color_title_booking2">Tiếp tục mà không cần đăng nhập</p>
+                                        <div style="margin: -25px 0px 0px -286px"><input type="checkbox" class="size_checkbox"></div>
+                                        <p style="font-size: 75%;margin:-25px 0px 20px 440px" class=" color_title_booking2">Tiếp tục mà không cần đăng nhập</p>
                                     </div>
                                 </div>
                             </div>
 
                             {{--                                Khách hàng--}}
-                            <div class="card width_card booking2_font_family">
+                            <div class="card width_card">
                                 <div class="bg-title">
-                                    <p class="title ml-3">Hành khách</p>
+                                    <p class="title">Hành khách</p>
                                 </div>
                                 <div class="container">
                                     <div class="row">
@@ -167,7 +166,7 @@
                                                 <input type="text" class="form-control" placeholder="Tên đệm và tên" aria-label="Username" aria-describedby="basic-addon1">
                                             </div>
                                         </div>
-                                        <p class="ml-3 margin_content_notification" style="font-size: 80%">Vui lòng điền đầy đủ họ tên theo giấy tờ tùy thân</p>
+                                        <p class="ml-3 margin_content_notification">Vui lòng điền đầy đủ họ tên theo giấy tờ tùy thân</p>
                                     </div>
                                 </div>
                                 <div class="container margin_top_container">
@@ -177,7 +176,7 @@
                                             <div class="input-group mb-3 width_input_opption">
                                                 <div class="input-group-prepend">
                                                 </div>
-                                                <input type="text" class="form-control" placeholder="dd/mm/yyyy" aria-label="Username" aria-describedby="basic-addon1">
+                                                <input type="text" class="form-control" placeholder="Ngày sinh" aria-label="Username" aria-describedby="basic-addon1">
                                             </div>
                                         </div>
                                         <div class="m-lg-3">
@@ -205,24 +204,24 @@
                                 </div>
                             </div>
 
-                            <p class="booking2_font_family color_title_booking2" style="margin-left: 640px">Mục bắt buộc*</p>
+                            <p class=" color_title_booking2" style="margin-left: 620px">Mục bắt buộc*</p>
 
-                            <div class="container my-4">
+                            <div class="container">
                                 <div class="row">
-                                    <div class="col-lg-3" style="font-size: 500%;margin-top: -30px" >
+                                    <div class="col-lg-3" style="font-size: 500%" >
                                         <i class="fa fa-users color_title_booking2" aria-hidden="true"></i>
                                     </div>
-                                    <div class="col-lg-4 booking2_who">
-                                        <p class="color_title_booking2 booking2_font_family" style="font-size: 150%">Ai đặt chỗ</p>
-                                        <p class="color_title_booking2 booking2_font_family" style="font-size: 150%;margin-top: -20px">Thông tin liên lạc</p>
+                                    <div class="col-lg-4 mt-4" style="margin-left: -70px">
+                                        <p class="color_title_booking2">Who booked</p>
+                                        <p class="color_title_booking2">Your contact information</p>
                                     </div>
                                 </div>
                             </div>
 
                             {{--                                Thông tin liên hệ--}}
-                            <div class="card width_card booking2_font_family">
+                            <div class="card width_card">
                                 <div class="bg-title">
-                                    <p class="title ml-3">Thông tin liên hệ</p>
+                                    <p class="title">Thông tin liên hệ</p>
                                 </div>
                                 <div class="container">
                                     <div class="row">
@@ -242,7 +241,7 @@
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
                                                 </div>
-                                                <input type="text" class="form-control" placeholder="Tên đệm và tên" aria-label="Username" aria-describedby="basic-addon1" style="width: 220px">
+                                                <input type="text" class="form-control" placeholder="Tên đệm và tên" aria-label="Username" aria-describedby="basic-addon1">
                                             </div>
                                         </div>
                                         <div class="m-lg-3">
@@ -250,10 +249,10 @@
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
                                                 </div>
-                                                <input type="text" class="form-control" placeholder="Tên đệm và tên" aria-label="Username" aria-describedby="basic-addon1" style="width: 220px">
+                                                <input type="text" class="form-control" placeholder="Tên đệm và tên" aria-label="Username" aria-describedby="basic-addon1">
                                             </div>
                                         </div>
-                                        <p class="ml-3 margin_content_notification" style="font-size: 80%">Vui lòng điền đầy đủ họ tên theo giấy tờ tùy thân</p>
+                                        <p class="ml-3 margin_content_notification">Vui lòng điền đầy đủ họ tên theo giấy tờ tùy thân</p>
                                         <div class="container margin_top_container">
                                             <div class="row">
                                                 <div class="m-lg-3">
@@ -261,7 +260,7 @@
                                                     <div class="input-group mb-3 width_input_prepend">
                                                         <div class="input-group-prepend">
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" >
+                                                        <input type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
                                                     </div>
                                                 </div>
                                                 <input type="checkbox" class="mt-5 size_checkbox"><p class=" ml-2" >
@@ -281,8 +280,8 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="m-lg-3 " >
-                                                    <div class="input-group mb-3 width_input_opption">
+                                                <div class="m-lg-3" >
+                                                    <div class="input-group mb-3" style="width: 12rem">
                                                         <div class="input-group-prepend">
                                                         </div>
                                                         <input type="text" class="form-control" placeholder="Số điện thoại" aria-label="Username" aria-describedby="basic-addon1" style="margin-top: 21px">
@@ -291,7 +290,7 @@
                                                 <input type="checkbox" class="mt-5 size_checkbox" ><p class=" ml-2 content_promotion">Đăng ký để nhận tin tức về các ưu đãi, khuyến mại<br>
                                                     mới nhất từ Bamboo Airways</p>
 
-                                                <p class="ml-3 mb-3 note_information">Lưu ý: Quý khách vui lòng cung cấp thông tin chính xác, Bamboo Airways sẽ<br> sử dụng để liên lạc và hỗ trợ Quý khách trong trường hợp cần thiết.</p>
+                                                <p class="ml-3 note_information">Lưu ý: Quý khách vui lòng cung cấp thông tin chính xác, Bamboo Airways sẽ<br> sử dụng để liên lạc và hỗ trợ Quý khách trong trường hợp cần thiết.</p>
 
                                                 <div class="container margin_top_container">
                                                     <div class="row">
@@ -340,45 +339,45 @@
                         </div>
                     </div>
 
-
+                    {{--                        Thanh toán--}}
                     <div class="col-4">
-                        <div class="card cart-info  w-100"  style="width: 18rem;">
-                            <img class="card-img-top" src="../source/images/destination_5.jpg" alt="Card image cap">
-                            <div class="card-body text-center">
-                                <h4> <spam>Hồ Chí Minh</spam> (SGN) tới <spam>Hà Nội </spam>(HAN)</h4>
-                                <p class="card-text">Khứ Hồi | 1 Người Lớn</p>
-                                <p class="card-text-link"><a href="" style="text-decoration: none">Thay đổi lịch trình chuyến bay</a></p>
+                        <div class="card  w-100"  style="width: 18rem;">
+                            <img class="card-img-top" src="https://via.placeholder.com/200" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text">Hà Nội đến Đà Nẵng</p>
+                                <p class="card-text">khứ hồi | 1 người lớn</p>
+                                <br>
+                                <p class="card-text">Thay đổi lịch trình chuyến bay</p>
                             </div>
                         </div>
-                        <div class="card-Clearfix card mt-3  w-100" style="width: 18rem;">
-                            <div class="card-body text-center">
-                                <h5 class="card-title" ><span style="font-size: 20px;color: #33597C;font-weight: 600">Tổng Tiền</span> : 3000.000.000 vnđ</h5>
+                        <div class="card mt-3  w-100" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Tổng tiền : 3000.000.000 vnđ</h5>
                                 <h6 class="card-subtitle mb-2 text-muted"></h6>
                                 <p class="card-text">Bao gồm tuế và phí dịch vụ</p>
-
+                                <a href="#" class="card-link"></a>
+                                <a href="#" class="card-link"></a>
                             </div>
                         </div>
-                        <div class="card mt-3 cart-content w-100" style="width: 18rem;">
-                            <div class="card-body text-center">
-                                <h5 class="card-title" style=""><span style="font-size: 20px;color: #33597C;font-weight: 600">Tổng Tiền</span> : 3000.000.000 vnđ</h5>
-
+                        <div class="card mt-3  w-100" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">tóm tắt : 2.500.000</h5>
                                 <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                <h4 style=""> <spam style="font-family: 'Oswald', sans-serif;font-weight: bold"></spam> (SGN) tới <spam style="font-family: 'Oswald', sans-serif;font-weight: bold"></spam>(HAN)</h4>
-                                <p class="card-text" >CN 02/08/2020 | 19:25 - 20:30</p>
-                                <p class="card-text">Người lớn 1 * 2.500.000 = <span>2.500.000</span></p>
+                                <p class="card-text">HNA tới ĐNA</p>
+                                <p class="card-text">CN 02/08/2020 | 19:25 - 20:30</p>
+                                <p class="card-text">Người lớn 1 * 2.500.000 = 2.500.000 </p>
+
                             </div>
                         </div>
 
-                        <button type="button" class="btn mt-3 w-100">Tiếp Theo</button>
+                        <button type="button" class="btn btn-success mt-3 w-100">tiếp theo</button>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
-
+    </div>
 @endsection
-
 @section('script')
     <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
 @endsection

@@ -273,6 +273,36 @@
     /************
     3. Booking/2 - Thông tin hành khách:
     ************/
+.booking2_who{
+    margin-left: -90px;
+    margin-top: -10px;
+    font-family: 'Oswald', sans-serif;
+}
+.booking2_login{
+    margin-left: -30px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 120%;
+}
+.booking2_progress{
+    color: #33597C;
+    background-color: #ECE9E9;
+    padding: 5px;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+}
+.booking2_active{
+    background-color: #33597C;
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+}
+.booking2_button{
+    background-color: #64AF53;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+}
 .title{
     color: white;
 }
@@ -306,7 +336,7 @@
     height: 18px;
 }
 .width_input_opption{
-    width: 10rem;
+    width: 9rem;
 }
 .margin_content_notification{
     margin-top: -35px
@@ -315,7 +345,7 @@
     margin-top: -25px;
 }
 .width_input_prepend{
-    width: 24rem;
+    width: 20rem;
 }
 .size_icon{
     width: 50px;
@@ -323,6 +353,12 @@
 }
 .color_title_booking2{
     color: #33597C;
+}
+.booking2_font_family{
+    font-family: 'Oswald', sans-serif;
+}
+.color-on{
+    color: #B8B1B1;
 }
 
 /************
