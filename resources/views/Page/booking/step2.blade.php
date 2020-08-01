@@ -101,13 +101,13 @@
                     <div class="col-lg-8">
                         <div class="row">
 
-                            <div class="container mb-4">
+                            <div class="container mb-3">
                                 <div class="row">
-                                    <div class="col-lg-3" style="font-size: 500%;margin-top: -30px" >
+                                    <div class="col-lg-3" style="font-size: 400%;margin-top: -30px" >
                                         <i class="fa fa-users color_title_booking2" aria-hidden="true"></i>
                                     </div>
                                     <div class="col-lg-4 booking2_who">
-                                        <p class="color_title_booking2 booking2_font_family" style="font-size: 150%">Ai sẽ bay</p>
+                                        <p class="color_title_booking2 booking2_font_family" style="font-size: 150%;margin-top: -10px"><strong>Ai sẽ bay</strong></p>
                                         <p class="color_title_booking2 booking2_font_family" style="font-size: 150%;margin-top: -20px">dữ liệu hành khách của bạn</p>
                                     </div>
                                 </div>
@@ -136,7 +136,7 @@
                             {{--                                Khách hàng--}}
                             <div class="card width_card booking2_font_family">
                                 <div class="bg-title">
-                                    <p class="title ml-3">Hành khách</p>
+                                    <p class="title ml-3 my-1" style="font-size: 120%"><strong>Hành khách</strong></p>
                                 </div>
                                 <div class="container">
                                     <div class="row">
@@ -207,22 +207,22 @@
 
                             <p class="booking2_font_family color_title_booking2" style="margin-left: 640px">Mục bắt buộc*</p>
 
-                            <div class="container my-4">
+                            <div class="container my-3">
                                 <div class="row">
-                                    <div class="col-lg-3" style="font-size: 500%;margin-top: -30px" >
+                                    <div class="col-lg-3" style="font-size: 400%;margin-top: -30px" >
                                         <i class="fa fa-users color_title_booking2" aria-hidden="true"></i>
                                     </div>
                                     <div class="col-lg-4 booking2_who">
-                                        <p class="color_title_booking2 booking2_font_family" style="font-size: 150%">Ai đặt chỗ</p>
-                                        <p class="color_title_booking2 booking2_font_family" style="font-size: 150%;margin-top: -20px">Thông tin liên lạc</p>
+                                        <p class="color_title_booking2 booking2_font_family" style="font-size: 150%;margin-top: -10px"><strong>Ai sẽ bay</strong></p>
+                                        <p class="color_title_booking2 booking2_font_family" style="font-size: 150%;margin-top: -20px">dữ liệu hành khách của bạn</p>
                                     </div>
                                 </div>
                             </div>
 
                             {{--                                Thông tin liên hệ--}}
                             <div class="card width_card booking2_font_family">
-                                <div class="bg-title">
-                                    <p class="title ml-3">Thông tin liên hệ</p>
+                                <div class="bg-title" style="height: 40px">
+                                    <p class="title ml-3 my-1" style="font-size: 120%"><strong>Thông tin liên hệ</strong></p>
                                 </div>
                                 <div class="container">
                                     <div class="row">
