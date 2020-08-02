@@ -134,7 +134,7 @@
                             <div class="col-3 business">Bamboo Business</div>
                         </div>
                         <form action="">
-                        <div class="content-step1 row mt-3" style="">
+                            <div class="content-step1 row mt-3" style="">
                             <div class="col-3">
                                 <ul  class="date-fly w-100">
                                     <li class="mr-3 w-25">
@@ -181,8 +181,7 @@
                                     </div>
                             </div>
                         </div>
-
-                        <div class="content-step1 row mt-3" style="">
+                            <div class="content-step1 row mt-3" style="">
                             <div class="col-3">
                                 <ul  class="date-fly w-100">
                                     <li class="mr-3 w-25">
@@ -231,7 +230,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="content-step1 row mt-3" style="">
+                            <div class="content-step1 row mt-3" style="">
                             <div class="col-3">
                                 <ul  class="date-fly w-100">
                                     <li class="mr-3 w-25">
@@ -256,7 +255,7 @@
                                 </ul>
                             </div>
                            <div class="col-9">
-                               <form action="">
+
                                  <div class="row">
                                      <div class="col-4 text-right ">
                                          <div class="check eco" style="">
@@ -277,10 +276,10 @@
                                          </div>
                                      </div>
                                  </div>
-                               </form>
+
                            </div>
                         </div>
-                        <div class="content-step1 row mt-3" style="">
+                            <div class="content-step1 row mt-3" style="">
                             <div class="col-3">
                                 <ul  class="date-fly w-100">
                                     <li class="mr-3 w-25">
@@ -305,7 +304,7 @@
                                 </ul>
                             </div>
                             <div class="col-9">
-                                <form action="">
+
                                     <div class="row">
                                         <div class="col-4 text-right ">
                                             <div class="check eco" style="">
@@ -326,7 +325,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </form>
+                               
                             </div>
                         </div>
                         </form>
