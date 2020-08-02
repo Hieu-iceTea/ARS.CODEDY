@@ -112,7 +112,6 @@
                         </p>
                     </div>
                 </div>
-                <div class="row mt-5">
                     <div class="col-8">
                         <div class="row">
                             <h4 style="color: #33597C; font-weight: 700;margin: 15px 0">Xem lại hành trình</h4>

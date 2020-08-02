@@ -145,6 +145,10 @@
     font-family: 'Oswald', sans-serif;
     color: #33597C;
 }
+.mainStep1 .locale-vi .media .logo {
+    width: 40px;
+    height: 40px;
+}
 .mainStep1 .locale-vi .media h4{
     font-size: 22px;
     color: #33597C;

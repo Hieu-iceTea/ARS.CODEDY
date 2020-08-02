@@ -212,5 +212,6 @@
 <script src="{{ asset('plugins/parallax-js-master/parallax.min.js') }}"></script>
 @yield('script')
 
+
 </body>
 </html>
