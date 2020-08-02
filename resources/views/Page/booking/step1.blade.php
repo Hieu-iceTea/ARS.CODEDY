@@ -144,7 +144,6 @@
                                 </ul>
                             </div>
                             <div class="col-9">
-                                <form action="">
                                     <div class="row">
                                         <div class="col-4 text-right ">
                                             <div class="check eco" style="">
@@ -165,7 +164,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                </form>
                             </div>
                         </div>
                         <div class="content-step1 row mt-3" style="">

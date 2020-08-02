@@ -201,7 +201,8 @@
     color: white;
 }
 .mainStep1 .content-step1 .check span{
-    font-size: 15px;font-family: 'Oswald', sans-serif;color: #FFF;font-weight: bold;
+    font-size: 15px;font-family: 'Oswald', sans-serif;
+    color: #FFF;font-weight: bold;
 }
 .mainStep1 .content-step1 .check p{
     font-size: 15px;font-family: 'Oswald', sans-serif;color: white;font-weight: 500;
@@ -223,7 +224,7 @@
     font-size: 20px;
     color: #33597C;
 }
-.mainStep1 .cart-info h4 spam {
+.mainStep1 .cart-info h4 span {
     font-family: 'Oswald', sans-serif;
     font-weight: bold !important;
 }
@@ -264,11 +265,18 @@
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
 }
-.mainStep1 button{
+.mainStep1 .contineu{
     background-color: #64AF53;
-    font-size: 20px;
+    font-size: 18px;
     color: white;
-    font-weight: 600;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
+.mainStep1 .contineu:hover{
+    color: #33597C;
+}
+.mainStep1 a i {
+    font-size: 20px;
 }
     /************
     3. Booking/2 - Thông tin hành khách:
@@ -388,24 +396,133 @@
 /************
 5. Booking/4 - Thanh toán:
 ************/
-.mainPayment{
-    background-color: #EDF3F7 !important;
+.mainStep1 .title-step4 h4 {
+    color: #33597C;
+    font-weight: 700;
+    margin: 15px 0;
+    font-size: 15px;font-family: 'Oswald', sans-serif;
+    font-size: 20px;
 }
+.mainStep1 .fligh-step4  .card{
+    border: 0.5px solid #ECE9E9;
+    box-shadow: 5px 10px 8px #dcdcdc;
+    background-color: white;
 
-.media img {
-    width: 50px;
+}
+.mainStep1 .fligh-step4 .card-header {
+    background-color: #33597C;
+    color: white;
+    height: 50px
+}
+.mainStep1 .fligh-step4 .card-header  .card-title img{
+    width: 40px;
+    height: 40px;
+}
+.mainStep1 .fligh-step4 .card-header  .card-title span {
+    margin-top: 5px;
+    font-family: 'Oswald', sans-serif;
+}
+.mainStep1 .fligh-step4 .card-body h4 {
+    font-size: 20px;
+    color: #33597C;
+    font-weight: 600;
+   font-family: 'Oswald', sans-serif;
+}
+.mainStep1 .fligh-step4 .card-body h5 {
+    font-size: 17px;
+    color: #33597C;
+    font-weight: 500;
+    font-family: 'Oswald', sans-serif;
+}
+.mainStep1 .fligh-step4 .card-body p {
+    font-size: 13px;
+    color: black;
+    font-family: 'Oswald', sans-serif;
+}
+.mainStep1 .customer-step4  .card .card-header {
+    background-color: #33597C;
+    color: white;
     height: 50px;
 }
-.media h5{
-    margin-top:-5px ;
+.mainStep1 .customer-step4 .card-header h5 {
+    padding-left: 50px;
+    margin-top: 5px;
+    font-family: 'Oswald', sans-serif;
 }
-.media span {
+.mainStep1 .customer-step4 {
+    border: 0.5px solid #ECE9E9;
+    box-shadow: 5px 10px 8px #dcdcdc;
+    background-color: white;
+}
+.mainStep1 .customer-step4 .card-body h5 {
+    font-size: 17px;
+    color: #33597C;
+    font-weight: 500;
+    font-family: 'Oswald', sans-serif;
+}
+.mainStep1 .customer-step4 .card-body h5 span {
+    color: black;
+}
+.solutionpayment {
+    border: 0.5px solid #ECE9E9;
+    box-shadow: 5px 10px 8px #dcdcdc;
+    background-color: white;
+}
+.solutionpayment .title .card-header{
+    background-color: #33597C;
+    color: white;
+    height: 50px;
+}
+.solutionpayment .title .card-header h5 {
+    padding-left: 50px;
+    margin-top: 5px;
+    font-family: 'Oswald', sans-serif;
+}
+.solutionpayment .card-body .row  .title {
+    font-size: 13px;
+    color:  #33597C;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.info-ticker .card .card-header {
+    background-color: #33597C; color: white; height: 50px
+}
+.info-ticker .card .card-header h5 {
+    padding-left: 50px;
+    margin-top: 5px;
+    font-family: 'Oswald', sans-serif;
+}
+.info-ticker .container .card-body .card-title {
+    font-size: 17px;
+    color: #33597C;
+    font-weight: 500;
+    font-family: 'Oswald', sans-serif;
+}
+.info-ticker .container .card-body .card-text {
+    font-size: 15px;
+    color: black;
+    font-family: 'Oswald', sans-serif;
+}
+.info-ticker .container .card-body h4 {
     margin-top: 10px;
+    font-size: 20px;
+    color: #33597C;
 }
-
-/************
-6. Ticket/index - Danh sách vé:
-************/
+.info-ticker .card .check {
+    background-color: #e2e2e3; color: #000000; height: 50px
+}
+.info-ticker .card .check h5 {
+    margin-top: 5px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+}
+.info-ticker .card .check input {
+    margin-right: 12px;
+}
+    /************
+    6. Ticket/index - Danh sách vé:
+    ************/
 
 .page_ticket .search_input_1 {
     width: 26%;

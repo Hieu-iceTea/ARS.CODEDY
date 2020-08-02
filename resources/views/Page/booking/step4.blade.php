@@ -26,7 +26,6 @@
         </div>
 
     </div>
-
     <!-- Search -->
     <div class="home_search page_ticket">
         <div class="container">
@@ -144,15 +143,7 @@
                                 <h5 class="card-title">1.Nguyễn Văn B</h5>
                             </div>
                         </div>
-                    </div>
-                    <div class="row mt-1 mr-3">
-                        <h4 style="color: #33597C; font-weight: 700;margin: 15px 0">Chi tiết thanh toán</h4>
 
-                    </div>
-                    <div class="row mt-4 ">
-                        <div class="card w-100">
-                            <div class="card-header "style="background-color: #33597C; color: white; height: 62px"">
-                            <h5 class="media" style="margin-top: 5px"> Phương thức thanh toán</h5>
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -193,7 +184,6 @@
                                             <a href="#" class="card-link"></a>
                                         </div>
                                     </div>
-                                </div>
 
 
                             </div>
@@ -233,40 +223,11 @@
                                             <a href="#" class="card-link"></a>
                                         </div>
                                     </div>
-                                </div>
 
 
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="media">
-                        <img class="mr-3" src="1085493.png" alt="Generic placeholder image">
-                        <div class="media-body">
-                            <h5 class="mt-0">Chuyến đi</h5>
-                            Hà Nội đến Đà Nẵng
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="card w-100">
-                        <div class="card-header"style="background-color: #33597C; color: white; height: 62px">
-                            <h5 class="media" style="margin-top: 5px"> Phương thức thanh toán</h5>
-                        </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="card-body">
-                                        <h5 class="card-title">19:25 1h5m 19:30</h5>
-                                        <h5 class="card-title">HAN ARS.CODDY ĐNA</h5>
-                                        <p class="card-text">Gía vé(người lớn)</p>
-                                        <p class="card-text">phí an ninh soi chiếu</p>
-                                        <p class="card-text">Phí sân bay nội địa</p>
-                                        <p class="card-text">Phí tiện ích thanh toán</p>
-                                        <p class="card-text">Phụ thu quản trị hệ thống</p>
-                                        <p class="card-text">Tổng VAT</p>
-                                        <p class="card-text">Tổng chi phí chuyến bay</p>
 
                                     </div>
                                 </div>
@@ -321,16 +282,6 @@
                     </div>
                 </div>
 
-                <button type="button" class="btn btn-success mt-3 w-100">tiếp theo</button>
-            </div>
-        </div>
-        <div class="row mt-5 justify-content-center">
-            <div class="row">
-                <div class="containt">
-                    <div class="col">
-                        <div class="card" style="width: 60rem">
-                            <div class="card-header">
-                                <p> <input type="radio" aria-label="Radio button for following text input">  Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             </div>
                             <div class="card-body">
                                 <blockquote class="blockquote mb-0 text-right">
@@ -345,12 +296,7 @@
                 </div>
             </div>
         </div>
-        <div class="row  mt-5  justify-content-center">
-            <button type="button" class="btn btn-success w-25">Chấp nhận và thanh toán ngay</button>
-        </div>
     </div>
-    </div>
-
 
 @endsection
 
