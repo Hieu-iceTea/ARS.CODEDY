@@ -2,16 +2,30 @@
 
 <!-- Style Main_style-->
 @section('style')
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/main_styles.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/destinations.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/destinations_responsive.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/my_styles') }}">
 @endsection
 
 <!-- Content Home -->
 @section('Content')
-    <!-- Home Background Header-->
-    <div class="home">
-        <div class="background_image" style="background-image:url(../source/images/contact.jpg)"></div>
+    <!-- Home -->
+
+    <div class="home page_ticket">
+
+        <div class="background_image" style="background-image:url(../source/images/destinations.jpg)"></div>
+        <div class="home_slider_content_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_slider_content">
+                            <div class="home_title"><h2>Flight list </h2></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <!-- Search -->
     <div class="home_search page_ticket">
@@ -101,10 +115,10 @@
                     <div class="col-8">
                         <div class="locale-vi row">
                             <div class="media">
-                                <img class="mr-3" src="../source/images/iconfight.png" alt="Generic placeholder image">
+                                <img class="mr-3"  class ="logo"src="{{ asset('source/images/iconfight.png') }}" style="width: 40px;height: 40px" alt="Generic placeholder image">
                                 <div class="media-body">
                                     <h5 class="mt-0"  style="">Chuyến đi</h5>
-                                    <h4> <spam>Hồ Chí Minh</spam> (SGN) tới <spam>Hà Nội </spam>(HAN)</h4>
+                                    <h4> <span>Hồ Chí Minh</span> (SGN) tới <span>Hà Nội </span>(HAN)</h4>
                                 </div>
                             </div>
                         </div>
@@ -119,6 +133,7 @@
                             <div class="col-3 plus">Bamboo Plus</div>
                             <div class="col-3 business">Bamboo Business</div>
                         </div>
+                        <form action="">
                         <div class="content-step1 row mt-3" style="">
                             <div class="col-3">
                                 <ul  class="date-fly w-100">
@@ -314,13 +329,13 @@
                                 </form>
                             </div>
                         </div>
-
+                        </form>
                     </div>
                     <div class=" col-4 " >
                         <div class="card cart-info  w-100"  style="width: 18rem;">
                             <img class="card-img-top" src="../source/images/destination_5.jpg" alt="Card image cap">
                             <div class="card-body text-center" style="position: sticky; top:0;z-index: 10">
-                                <h4> <spam>Hồ Chí Minh</spam> (SGN) tới <spam>Hà Nội </spam>(HAN)</h4>
+                                <h4> <span>Hồ Chí Minh</span> (SGN) tới <span>Hà Nội </span>(HAN)</h4>
                                 <p class="card-text">Khứ Hồi | 1 Người Lớn</p>
                                 <p class="card-text-link"><a href="" style="text-decoration: none">Thay đổi lịch trình chuyến bay</a></p>
                             </div>
@@ -338,13 +353,13 @@
                                 <h5 class="card-title" style=""><span style="font-size: 20px;color: #33597C;font-weight: 600">Tổng Tiền</span> : 3000.000.000 vnđ</h5>
 
                                 <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                <h4 style=""> <spam style="font-family: 'Oswald', sans-serif;font-weight: bold"></spam> (SGN) tới <spam style="font-family: 'Oswald', sans-serif;font-weight: bold"></spam>(HAN)</h4>
+                                <h4 style=""> <span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span> (SGN) tới <span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span>(HAN)</h4>
                                 <p class="card-text" >CN 02/08/2020 | 19:25 - 20:30</p>
                                 <p class="card-text">Người lớn 1 * 2.500.000 = <span>2.500.000</span></p>
                             </div>
                         </div>
 
-                        <button type="button" class="btn mt-3 w-100 position-sticky">Tiếp Theo</button>
+                        <a type="button"  href="" class="btn mt-3 w-100 position-sticky contineu">Tiếp Theo  <span><i class="fa fa-angle-right"></i></span></a>
                     </div>
                 </div>
 
@@ -355,5 +370,5 @@
 @endsection
 
 @section('script')
-    <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/destinations.js') }}"></script>
 @endsection
