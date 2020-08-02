@@ -143,66 +143,29 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col-3 text-right ">
-                                <div class="check eco" style="">
-                                    <form action=""><span>Chọn chuyến bay </span><input  class="ml-1" type="radio" id="male" name="gender" value="male"></form>
-                                    <p style="">599,000 VND</p>
-                                </div>
-                            </div>
-                            <div class="col-3 text-right">
-                                <div class="check plus">
-                                    <form action=""><span>Chọn chuyến bay </span><input  class="ml-1" type="radio" id="male" name="gender" value="male"></form>
-                                    <p>599,000 VND</p>
-                                </div>
-                            </div>
-                            <div class="col-3 text-right">
-                                <div class="check business">
-                                    <form action=""><span>Chọn chuyến bay </span><input  class="ml-1" type="radio" id="male" name="gender" value="male"></form>
-                                    <p>599,000 VND</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content-step1 row mt-3" style="">
-                            <div class="col-3">
-                                <ul  class="date-fly w-100">
-                                    <li class="mr-3 w-25">
-                                        <ul class="text-center">
-                                            <li>19:25</li>
-                                            <li>DLI</li>
-                                        </ul>
-                                    </li>
-                                    <li class="mr-1 w-75 ">
-                                        <ul class="text-center">
-                                            <li>01h:55m</li>
-                                            <li style="font-size: 14px;">QH 1424</li>
-                                            <li style="font-size: 10px;">Airbus A320t</li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <ul class="text-center">
-                                            <li>21:20</li>
-                                            <li>HAN</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-3 text-right ">
-                                <div class="check eco" style="">
-                                    <form action=""><span>Chọn chuyến bay </span><input  class="ml-1" type="radio" id="male" name="gender" value="male"></form>
-                                    <p style="">599,000 VND</p>
-                                </div>
-                            </div>
-                            <div class="col-3 text-right">
-                                <div class="check plus">
-                                    <form action=""><span>Chọn chuyến bay </span><input  class="ml-1" type="radio" id="male" name="gender" value="male"></form>
-                                    <p>599,000 VND</p>
-                                </div>
-                            </div>
-                            <div class="col-3 text-right">
-                                <div class="check business">
-                                    <form action=""><span>Chọn chuyến bay </span><input  class="ml-1" type="radio" id="male" name="gender" value="male"></form>
-                                    <p>599,000 VND</p>
-                                </div>
+                            <div class="col-9">
+                                <form action="">
+                                    <div class="row">
+                                        <div class="col-4 text-right ">
+                                            <div class="check eco" style="">
+                                                <span>Chọn chuyến bay </span><input  class="ml-1" type="radio" id="male" name="gender" value="male">
+                                                <p style="">599,000 VND</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 text-right">
+                                            <div class="check plus">
+                                                <span>Chọn chuyến bay </span><input  class="ml-1" type="radio" id="male" name="gender" value="male">
+                                                <p>599,000 VND</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 text-right">
+                                            <div class="check business">
+                                                <span>Chọn chuyến bay </span><input  class="ml-1" type="radio" id="male" name="gender" value="male">
+                                                <p>599,000 VND</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                         <div class="content-step1 row mt-3" style="">
@@ -229,23 +192,29 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col-3 text-right ">
-                                <div class="check eco" style="">
-                                    <form action=""><span>Chọn chuyến bay </span><input  class="ml-1" type="radio" id="male" name="gender" value="male"></form>
-                                    <p style="">599,000 VND</p>
-                                </div>
-                            </div>
-                            <div class="col-3 text-right">
-                                <div class="check plus">
-                                    <form action=""><span>Chọn chuyến bay </span><input  class="ml-1" type="radio" id="male" name="gender" value="male"></form>
-                                    <p>599,000 VND</p>
-                                </div>
-                            </div>
-                            <div class="col-3 text-right">
-                                <div class="check business">
-                                    <form action=""><span>Chọn chuyến bay </span><input  class="ml-1" type="radio" id="male" name="gender" value="male"></form>
-                                    <p>599,000 VND</p>
-                                </div>
+                            <div class="col-9">
+                                <form action="">
+                                    <div class="row">
+                                        <div class="col-4 text-right ">
+                                            <div class="check eco" style="">
+                                                <span>Chọn chuyến bay </span><input  class="ml-1" type="radio" id="male" name="gender" value="male">
+                                                <p style="">599,000 VND</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 text-right">
+                                            <div class="check plus">
+                                                <span>Chọn chuyến bay </span><input  class="ml-1" type="radio" id="male" name="gender" value="male">
+                                                <p>599,000 VND</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 text-right">
+                                            <div class="check business">
+                                                <span>Chọn chuyến bay </span><input  class="ml-1" type="radio" id="male" name="gender" value="male">
+                                                <p>599,000 VND</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                         <div class="content-step1 row mt-3" style="">
@@ -272,32 +241,86 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col-3 text-right ">
-                                <div class="check eco" style="">
-                                    <form action=""><span>Chọn chuyến bay </span><input  class="ml-1" type="radio" id="male" name="gender" value="male"></form>
-                                    <p style="">599,000 VND</p>
-                                </div>
+                           <div class="col-9">
+                               <form action="">
+                                 <div class="row">
+                                     <div class="col-4 text-right ">
+                                         <div class="check eco" style="">
+                                             <span>Chọn chuyến bay </span><input  class="ml-1" type="radio" id="male" name="gender" value="male">
+                                             <p style="">599,000 VND</p>
+                                         </div>
+                                     </div>
+                                     <div class="col-4 text-right">
+                                         <div class="check plus">
+                                             <span>Chọn chuyến bay </span><input  class="ml-1" type="radio" id="male" name="gender" value="male">
+                                             <p>599,000 VND</p>
+                                         </div>
+                                     </div>
+                                     <div class="col-4 text-right">
+                                         <div class="check business">
+                                             <span>Chọn chuyến bay </span><input  class="ml-1" type="radio" id="male" name="gender" value="male">
+                                             <p>599,000 VND</p>
+                                         </div>
+                                     </div>
+                                 </div>
+                               </form>
+                           </div>
+                        </div>
+                        <div class="content-step1 row mt-3" style="">
+                            <div class="col-3">
+                                <ul  class="date-fly w-100">
+                                    <li class="mr-3 w-25">
+                                        <ul class="text-center">
+                                            <li>19:25</li>
+                                            <li>DLI</li>
+                                        </ul>
+                                    </li>
+                                    <li class="mr-1 w-75 ">
+                                        <ul class="text-center">
+                                            <li>01h:55m</li>
+                                            <li style="font-size: 14px;">QH 1424</li>
+                                            <li style="font-size: 10px;">Airbus A320t</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul class="text-center">
+                                            <li>21:20</li>
+                                            <li>HAN</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="col-3 text-right">
-                                <div class="check plus">
-                                    <form action=""><span>Chọn chuyến bay </span><input  class="ml-1" type="radio" id="male" name="gender" value="male"></form>
-                                    <p>599,000 VND</p>
-                                </div>
-                            </div>
-                            <div class="col-3 text-right">
-                                <div class="check business">
-                                    <form action=""><span>Chọn chuyến bay </span><input  class="ml-1" type="radio" id="male" name="gender" value="male"></form>
-                                    <p>599,000 VND</p>
-                                </div>
+                            <div class="col-9">
+                                <form action="">
+                                    <div class="row">
+                                        <div class="col-4 text-right ">
+                                            <div class="check eco" style="">
+                                                <span>Chọn chuyến bay </span><input  class="ml-1" type="radio" id="male" name="gender" value="male">
+                                                <p style="">599,000 VND</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 text-right">
+                                            <div class="check plus">
+                                                <span>Chọn chuyến bay </span><input  class="ml-1" type="radio" id="male" name="gender" value="male">
+                                                <p>599,000 VND</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 text-right">
+                                            <div class="check business">
+                                                <span>Chọn chuyến bay </span><input  class="ml-1" type="radio" id="male" name="gender" value="male">
+                                                <p>599,000 VND</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-
 
                     </div>
-                    <div class="col-4">
+                    <div class=" col-4 " >
                         <div class="card cart-info  w-100"  style="width: 18rem;">
                             <img class="card-img-top" src="../source/images/destination_5.jpg" alt="Card image cap">
-                            <div class="card-body text-center">
+                            <div class="card-body text-center" style="position: sticky; top:0;z-index: 10">
                                 <h4> <spam>Hồ Chí Minh</spam> (SGN) tới <spam>Hà Nội </spam>(HAN)</h4>
                                 <p class="card-text">Khứ Hồi | 1 Người Lớn</p>
                                 <p class="card-text-link"><a href="" style="text-decoration: none">Thay đổi lịch trình chuyến bay</a></p>
@@ -322,7 +345,7 @@
                             </div>
                         </div>
 
-                        <button type="button" class="btn mt-3 w-100">Tiếp Theo</button>
+                        <button type="button" class="btn mt-3 w-100 position-sticky">Tiếp Theo</button>
                     </div>
                 </div>
 
