@@ -28,64 +28,6 @@
 
     </div>
     <!-- Search -->
-    <div class="home_search page_ticket">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="home_search_container">
-                        <div class="home_search_title">Search for your ticket</div>
-                        <div class="home_search_content">
-                            <form action="../ticket" method="get" class="home_search_form" id="home_search_form">
-                                <div
-                                    class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-
-                                    <input type="text" class="search_input search_input_1" id="code" name="code"
-                                           placeholder="Code">
-
-                                    <select class="search_input search_input_2" id="from" name="from">
-                                        <option selected value="">-- From --</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                    </select>
-
-                                    <select class="search_input search_input_3" id="to" name="to">
-                                        <option selected value="">-- To --</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                    </select>
-
-                                    <input type="date" class="search_input search_input_4" id="departure"
-                                           name="departure" min="2020-07-31">
-
-                                    <button class="home_search_button" type="submit">search</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="mainStep1 " style="">
         <div class=" mt-5 mb-4">
             <div class="container">
@@ -325,7 +267,7 @@
                                             </div>
                                         </div>
                                     </div>
-                               
+
                             </div>
                         </div>
                         </form>
