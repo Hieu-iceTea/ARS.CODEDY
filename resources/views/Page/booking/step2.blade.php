@@ -10,68 +10,24 @@
 <!-- Content Home -->
 @section('Content')
     <!-- Home Background Header-->
-    <div class="home">
-        <div class="background_image" style="background-image:url(../source/images/contact.jpg)"></div>
-    </div>
-    <!-- Search -->
-    <div class="home_search page_ticket">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="home_search_container">
-                        <div class="home_search_title">Search for your ticket</div>
-                        <div class="home_search_content">
-                            <form action="../ticket" method="get" class="home_search_form" id="home_search_form">
-                                <div
-                                    class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+    <div class="home page_ticket" style="height: 586px">
 
-                                    <input type="text" class="search_input search_input_1" id="code" name="code"
-                                           placeholder="Code">
-
-                                    <select class="search_input search_input_2" id="from" name="from">
-                                        <option selected value="">-- From --</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                    </select>
-
-                                    <select class="search_input search_input_3" id="to" name="to">
-                                        <option selected value="">-- To --</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                    </select>
-
-                                    <input type="date" class="search_input search_input_4" id="departure"
-                                           name="departure" min="2020-07-31">
-
-                                    <button class="home_search_button" type="submit">search</button>
-                                </div>
-                            </form>
+        <div class="background_image" style="background-image:url(../source/images/destinations.jpg)"></div>
+        <div class="home_slider_content_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_slider_content">
+                            <div class="home_title"><h2>Customer information </h2></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
+
+
     <div class="mainStep1 " style="">
         <div class=" mt-5 mb-4">
             <div class="container">
@@ -123,11 +79,11 @@
                                         <div class="col-lg-6">
                                             <p class="mt-4 color_title_booking2 booking2_login">Đăng nhập và đặt chỗ nhanh hơn</p>
                                         </div>
-                                        <div style="margin:30px 0px 0px -73px"><input type="checkbox" class="size_checkbox"></div>
+                                        <div style="margin:30px 0px 0px -73px"><input type="radio" name="checkbox" value="checkbox1" class="size_checkbox"></div>
                                         <p style="margin:-78px 10px 0px 440px" class="booking2_font_family color_title_booking2">Tôi muốn đăng nhập bằng tài khoản của
                                             Bamboo</p>
 
-                                        <div style="margin: -25px 0px 0px -310px"><input type="checkbox" class="size_checkbox"></div>
+                                        <div style="margin: -25px 0px 0px -310px"><input type="radio" name="checkbox" value="checkbox2" class="size_checkbox"></div>
                                         <p style="margin:-30px 0px 20px 440px" class="booking2_font_family color_title_booking2">Tiếp tục mà không cần đăng nhập</p>
                                     </div>
                                 </div>
@@ -177,7 +133,9 @@
                                             <div class="input-group mb-3 width_input_opption">
                                                 <div class="input-group-prepend">
                                                 </div>
-                                                <input type="text" class="form-control" placeholder="dd/mm/yyyy" aria-label="Username" aria-describedby="basic-addon1">
+{{--                                                <input type="text" class="form-control" placeholder="dd/mm/yyyy" aria-label="Username" aria-describedby="basic-addon1">--}}
+                                                <input type="date" class="form-control" id="departure"
+                                                       name="departure" placeholder="Departure" required>
                                             </div>
                                         </div>
                                         <div class="m-lg-3">
@@ -264,7 +222,7 @@
                                                         <input type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" >
                                                     </div>
                                                 </div>
-                                                <input type="checkbox" class="mt-5 size_checkbox"><p class=" ml-2" >
+                                                <input type="radio" name="checkboxx" value="checkbox3" class="mt-5 size_checkbox"><p class=" ml-2" >
                                                 <p style="font-size: 80%;margin-top: 35px">Đăng ký để cập nhập thông tin mới nhất từ hãng và<br> các chương trình khuyến mại</p>
                                             </div>
                                         </div>
@@ -288,7 +246,7 @@
                                                         <input type="text" class="form-control" placeholder="Số điện thoại" aria-label="Username" aria-describedby="basic-addon1" style="margin-top: 21px">
                                                     </div>
                                                 </div>
-                                                <input type="checkbox" class="mt-5 size_checkbox" ><p class=" ml-2 content_promotion">Đăng ký để nhận tin tức về các ưu đãi, khuyến mại<br>
+                                                <input type="radio" name="checkboxx" value="checkbox4" class="mt-5 size_checkbox" ><p class=" ml-2 content_promotion">Đăng ký để nhận tin tức về các ưu đãi, khuyến mại<br>
                                                     mới nhất từ Bamboo Airways</p>
 
                                                 <p class="ml-3 mb-3 note_information">Lưu ý: Quý khách vui lòng cung cấp thông tin chính xác, Bamboo Airways sẽ<br> sử dụng để liên lạc và hỗ trợ Quý khách trong trường hợp cần thiết.</p>
@@ -369,7 +327,7 @@
                             </div>
                         </div>
 
-                        <button type="button" class="btn mt-3 w-100">Tiếp Theo</button>
+                        <a type="button"  href="" class="btn mt-3 w-100 position-sticky contineu">Tiếp Theo  <span><i class="fa fa-angle-right"></i></span></a>
                     </div>
                 </div>
 
