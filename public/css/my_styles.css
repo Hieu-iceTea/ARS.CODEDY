@@ -588,11 +588,15 @@
     border: 0.5px solid #ECE9E9;
     box-shadow: 5px 10px 8px #dcdcdc;
     background-color: white;
+    text-transform: uppercase;
 }
+
 .schedule-index .container .heade-table{
     background-color: #33597C;
     color: white;
-    text-transform: uppercase;
+}
+.schedule-index .container .table .active tr:hover{
+    background-color: #b4cfff;
 }
 
 /************

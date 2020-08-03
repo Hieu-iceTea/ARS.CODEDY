@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="row">
-                <table class="table text-center">
+                <table class="table">
                     <thead class="heade-table">
                     <tr>
                         <th scope="col">CODE</th>
@@ -71,7 +71,7 @@
                         <th scope="col">STATUS</th>
                     </tr>
                     </thead>
-                    <tbody class="text-uppercase">
+                    <tbody class="active text-uppercase">
                     <tr class="">
                         <th scope="row">tm</th>
                         <td>hÀ NÔI, vIỆT nAM</td>
