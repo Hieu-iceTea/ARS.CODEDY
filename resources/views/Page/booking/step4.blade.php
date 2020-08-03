@@ -19,7 +19,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="home_slider_content">
-                            <div class="home_title"><h2>Manage your tickets</h2></div>
+                            <div class="home_title mt-5"><h2>Infomation your tickets</h2></div>
                         </div>
                     </div>
                 </div>
@@ -28,69 +28,11 @@
 
     </div>
     <!-- Search -->
-    <div class="home_search page_ticket">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="home_search_container">
-                        <div class="home_search_title">Search for your ticket</div>
-                        <div class="home_search_content">
-                            <form action="../ticket" method="get" class="home_search_form" id="home_search_form">
-                                <div
-                                    class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-
-                                    <input type="text" class="search_input search_input_1" id="code" name="code"
-                                           placeholder="Code">
-
-                                    <select class="search_input search_input_2" id="from" name="from">
-                                        <option selected value="">-- From --</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                    </select>
-
-                                    <select class="search_input search_input_3" id="to" name="to">
-                                        <option selected value="">-- To --</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                    </select>
-
-                                    <input type="date" class="search_input search_input_4" id="departure"
-                                           name="departure" min="2020-07-31">
-
-                                    <button class="home_search_button" type="submit">search</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="mainStep1 " style="">
         <div class=" mt-5 mb-4">
             <div class="container">
                 <div class="step1-progress row">
-                    <div class="col-sm-3 active ">
+                    <div class="col-sm-3  ">
                         <p>
                             <span class="badge badge-light">1</span> Chuyến Bay
                         </p>
@@ -105,7 +47,7 @@
                             <span class="badge badge-light">3</span>Dịch Vụ Bổ Sung
                         </p>
                     </div>
-                    <div class="col-sm-3 ">
+                    <div class="col-sm-3 active ">
                         <p>
                             <span class="badge badge-light">4</span> Thanh Toán
                         </p>
@@ -119,7 +61,7 @@
                         <div class="fligh-step4 row">
                             <div class="card w-100">
                                 <div class="card-header "style="">
-                                    <h5 class="media card-title"> <img class="mr-3" src="{{ asset('source/images/iconfight.png') }}" alt="Generic placeholder image">  <span>Chuyến bay</span></h5>
+                                    <h5 class="media card-title"> <span>Chuyến bay</span></h5>
                                 </div>
                                 <div class="card-body">
                                     <h4> Ngày khởi hành: thứ ngày tháng năm</h4>
@@ -286,7 +228,7 @@
                             <div class="card w-100">
                                 <div class="card-header check">
                                     <form action="">
-                                        <h5 class="media" style=""> <input type="radio" aria-label="Radio button for following text input">Tôi Đã Đọc Và Chấp Nhận Điều Khoản Sử Dụng Cũng Như Chính
+                                        <h5 class="media" style=""> <input type="checkbox" aria-label="Radio button for following text input">Tôi Đã Đọc Và Chấp Nhận Điều Khoản Sử Dụng Cũng Như Chính
                                             Sách Bảo Mặt Của Hãng Hàng Không</h5>
                                     </form>
                                 </div>
@@ -308,7 +250,7 @@
                     </div>
                     <div class=" col-4 " >
                         <div class="card cart-info  w-100"  style="width: 18rem;">
-                            <img class="card-img-top" src="../source/images/destination_5.jpg" alt="Card image cap">
+                            <img class="card-img-top" src="{{ asset('source/images/destination_5.jpg') }}" alt="Card image cap">
                             <div class="card-body text-center" style="position: sticky; top:0;z-index: 10">
                                 <h4> <span>Hồ Chí Minh</span> (SGN) tới <span>Hà Nội </span>(HAN)</h4>
                                 <p class="card-text">Khứ Hồi | 1 Người Lớn</p>

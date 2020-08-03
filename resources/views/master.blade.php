@@ -148,7 +148,7 @@
                         <div class="col-xl-4 footer_contact_col">
                             <div
                                 class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
-                                <div class="footer_contact_icon"><img src="source/images/sign.svg" alt=""></div>
+                                <div class="footer_contact_icon"><img src="{{asset('source/images/sign.svg')}}" alt=""></div>
                                 <div class="footer_contact_title">give us a call</div>
                                 <div class="footer_contact_list">
                                     <ul>
@@ -163,7 +163,7 @@
                         <div class="col-xl-4 footer_contact_col">
                             <div
                                 class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
-                                <div class="footer_contact_icon"><img src="source/images/trekking.svg" alt=""></div>
+                                <div class="footer_contact_icon"><img src="{{ asset('source/images/trekking.svg') }}" alt=""></div>
                                 <div class="footer_contact_title">come & drop by</div>
                                 <div class="footer_contact_list">
                                     <ul style="max-width:190px">
@@ -177,7 +177,7 @@
                         <div class="col-xl-4 footer_contact_col">
                             <div
                                 class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
-                                <div class="footer_contact_icon"><img src="source/images/around.svg" alt=""></div>
+                                <div class="footer_contact_icon"><img src="{{ asset('source/images/around.svg') }}" alt=""></div>
                                 <div class="footer_contact_title">send us a message</div>
                                 <div class="footer_contact_list">
                                     <ul>
