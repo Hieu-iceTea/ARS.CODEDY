@@ -574,7 +574,26 @@
 /************
 9. Schedule/index -  Tìm kiếm hành trình theo mã:
 ************/
-
+.schedule-index{
+    background-color: #EDF3F7;
+}
+.schedule-index .container .row .title-flight h4{
+    margin-top: 50px;
+    color: #33597C;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+.schedule-index .table {
+    margin-bottom: 100px;
+    border: 0.5px solid #ECE9E9;
+    box-shadow: 5px 10px 8px #dcdcdc;
+    background-color: white;
+}
+.schedule-index .container .heade-table{
+    background-color: #33597C;
+    color: white;
+    text-transform: uppercase;
+}
 
 /************
 10. Schedule/detail - Xem chi tiết hành trình:
