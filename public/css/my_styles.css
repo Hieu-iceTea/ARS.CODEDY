@@ -596,7 +596,8 @@
     color: white;
 }
 .schedule-index .container .table .active tr:hover{
-    background-color: #b4cfff;
+    background-color: #f8f9fa;
+    color: #33597C;
 }
 
 /************
