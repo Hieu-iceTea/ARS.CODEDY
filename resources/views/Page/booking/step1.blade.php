@@ -34,22 +34,22 @@
                 <div class="step1-progress row">
                     <div class="col-sm-3 active ">
                         <p>
-                            <span class="badge badge-light">1</span> Chuyến Bay
+                            <span class="badge badge-light">1</span> Flight
                         </p>
                     </div>
                     <div class="col-sm-3 ">
                         <p>
-                            <span class="badge badge-light" >2</span>Thông Tin Khách Hàng
+                            <span class="badge badge-light" >2</span>Customer information
                         </p>
                     </div>
                     <div class="col-sm-3 ">
                         <p>
-                            <span class="badge badge-light">3</span>Dịch Vụ Bổ Sung
+                            <span class="badge badge-light">3</span>Bonus services
                         </p>
                     </div>
                     <div class="col-sm-3 ">
                         <p>
-                            <span class="badge badge-light">4</span> Thanh Toán
+                            <span class="badge badge-light">4</span> Pay
                         </p>
                     </div>
                 </div>
@@ -61,14 +61,15 @@
                             <div class="media">
                                 <img class="mr-3"  class ="logo"src="{{ asset('source/images/iconfight.png') }}" style="width: 40px;height: 40px" alt="Generic placeholder image">
                                 <div class="media-body">
-                                    <h5 class="mt-0"  style="">Chuyến đi</h5>
-                                    <h4> <span>Hồ Chí Minh</span> (SGN) tới <span>Hà Nội </span>(HAN)</h4>
+                                    <h5 class="mt-0"  style="">Trip
+                                    </h5>
+                                    <h4> <span>Ho Chi Minh</span> (SGN) go <span>Ha Noi </span>(HAN)</h4>
                                 </div>
                             </div>
                         </div>
                         <div class="Active-date row">
                             <div class="col" style="">
-                                <p>  Thứ Năm, 30. Tháng Bảy 2020</p>
+                                <p>  Thursday, July 30, 2020</p>
                             </div>
                         </div>
                         <div class="title row mt-4">
@@ -105,21 +106,21 @@
                                     <div class="row">
                                         <div class="col-4 text-right ">
                                             <div class="check eco" style="">
-                                                <span>Chọn chuyến bay </span>
+                                                <span>Choose a flight </span>
                                                 <input  class="ml-1" type="radio" id="check" name ="check-flight" value="flight-two-eco">
                                                 <p style="">599,000 VND</p>
                                             </div>
                                         </div>
                                         <div class="col-4 text-right">
                                             <div class="check plus">
-                                                <span>Chọn chuyến bay </span>
+                                                <span>Choose a flight </span>
                                                 <input  class="ml-1" type="radio" id="check" name="check-flight" value="flight-tow-plus">
                                                 <p>599,000 VND</p>
                                             </div>
                                         </div>
                                         <div class="col-4 text-right">
                                             <div class="check business">
-                                                <span>Chọn chuyến bay </span>
+                                                <span>Choose a flight </span>
                                                 <input  class="ml-1" type="radio" id="check" name="check-flight" value="flight-tow-business">
                                                 <p>599,000 VND</p>
                                             </div>
@@ -155,21 +156,21 @@
                                 <div class="row">
                                     <div class="col-4 text-right ">
                                         <div class="check eco" style="">
-                                            <span>Chọn chuyến bay </span>
+                                            <span>Choose a flight </span>
                                             <input  class="ml-1" type="radio" id="check" name ="check-flight" value="flight-one-eco">
                                             <p style="">599,000 VND</p>
                                         </div>
                                     </div>
                                     <div class="col-4 text-right">
                                         <div class="check plus">
-                                            <span>Chọn chuyến bay </span>
+                                            <span>Choose a flight </span>
                                             <input  class="ml-1" type="radio" id="check" name="check-flight" value="flight-one-plus">
                                             <p>599,000 VND</p>
                                         </div>
                                     </div>
                                     <div class="col-4 text-right">
                                         <div class="check business">
-                                            <span>Chọn chuyến bay </span>
+                                            <span>Choose a flight </span>
                                             <input  class="ml-1" type="radio" id="check" name="check-flight" value="flight-one-business">
                                             <p>599,000 VND</p>
                                         </div>
@@ -205,21 +206,21 @@
                                 <div class="row">
                                     <div class="col-4 text-right ">
                                         <div class="check eco" style="">
-                                            <span>Chọn chuyến bay </span>
+                                            <span>Choose a flight </span>
                                             <input  class="ml-1" type="radio" id="check" name ="check-flight" value="flight-one-eco">
                                             <p style="">599,000 VND</p>
                                         </div>
                                     </div>
                                     <div class="col-4 text-right">
                                         <div class="check plus">
-                                            <span>Chọn chuyến bay </span>
+                                            <span>Choose a flight </span>
                                             <input  class="ml-1" type="radio" id="check" name="check-flight" value="flight-one-plus">
                                             <p>599,000 VND</p>
                                         </div>
                                     </div>
                                     <div class="col-4 text-right">
                                         <div class="check business">
-                                            <span>Chọn chuyến bay </span>
+                                            <span>Choose a flight </span>
                                             <input  class="ml-1" type="radio" id="check" name="check-flight" value="flight-one-business">
                                             <p>599,000 VND</p>
                                         </div>
@@ -232,30 +233,30 @@
                         <div class="card cart-info  w-100"  style="width: 18rem;">
                             <img class="card-img-top" src="{{ asset('source/images/destination_5.jpg') }}" alt="Card image cap">
                             <div class="card-body text-center" style="position: sticky; top:0;z-index: 10">
-                                <h4> <span>Hồ Chí Minh</span> (SGN) tới <span>Hà Nội </span>(HAN)</h4>
-                                <p class="card-text">Khứ Hồi | 1 Người Lớn</p>
-                                <p class="card-text-link"><a href="" style="text-decoration: none">Thay đổi lịch trình chuyến bay</a></p>
+                                <h4> <span>Ho Chi Minh</span> (SGN) go <span>Ha Noi </span>(HAN)</h4>
+                                <p class="card-text">Round-trip | 1 Adults</p>
+                                <p class="card-text-link"><a href="" style="text-decoration: none">Change flight schedules</a></p>
                             </div>
                         </div>
                         <div class="card-Clearfix card mt-3  w-100" style="width: 18rem;">
                             <div class="card-body text-center">
-                                <h5 class="card-title" ><span style="font-size: 20px;color: #33597C;font-weight: 600">Tổng Tiền</span> : 3000.000.000 vnđ</h5>
+                                <h5 class="card-title" ><span style="font-size: 20px;color: #33597C;font-weight: 600">Total Money</span> : 3000.000.000 vnđ</h5>
                                 <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                <p class="card-text">Bao gồm tuế và phí dịch vụ</p>
+                                <p class="card-text">Includes minnows and service fees</p>
 
                             </div>
                         </div>
                         <div class="card mt-3 cart-content w-100" style="width: 18rem;">
                             <div class="card-body text-center">
-                                <h5 class="card-title" style=""><span style="font-size: 20px;color: #33597C;font-weight: 600">Tổng Tiền</span> : 3000.000.000 vnđ</h5>
+                                <h5 class="card-title" style=""><span style="font-size: 20px;color: #33597C;font-weight: 600">Total Money</span> : 3000.000.000 vnđ</h5>
                                 <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                <h4 style=""> <span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span> (SGN) tới <span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span>(HAN)</h4>
+                                <h4 style=""> <span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span> (SGN) go <span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span>(HAN)</h4>
                                 <p class="card-text" >CN 02/08/2020 | 19:25 - 20:30</p>
-                                <p class="card-text">Người lớn 1 * 2.500.000 = <span>2.500.000</span></p>
+                                <p class="card-text">Adults 1 * 2.500.000 = <span>2.500.000</span></p>
                             </div>
                         </div>
 
-                        <button type="submit"  href="" class="btn mt-3 w-100 position-sticky contineu">Tiếp Theo  <span><i class="fa fa-angle-right"></i></span></button>
+                        <button type="submit"  href="" class="btn mt-3 w-100 position-sticky contineu">Continew  <span><i class="fa fa-angle-right"></i></span></button>
                     </div>
                 </div>
                 </form>

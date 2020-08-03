@@ -98,9 +98,9 @@
             </div>
 
             <div class="row">
-                <div class="col">
-                    <table class="table table-hover ">
-                        <thead>
+
+                    <table class="table table-info-tickets table-hover ">
+                        <thead class="table-top">
                         <tr>
                             <th scope="col">Code</th>
                             <th scope="col">From</th>
@@ -110,7 +110,31 @@
                             <th scope="col">Function</th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="active">
+                        <tr>
+                            <th scope="row">VN-6859</th>
+                            <td>HaNoi, VietNam</td>
+                            <td>HoChiMinh, VietNam</td>
+                            <td>08/08/2020</td>
+                            <td>5 (Adult: 1, Children: 4, Baby: 0)</td>
+                            <td>
+                                <a href="/ticket/detail/1">View</a>
+                                |
+                                <a href="/ticket/edit/1">Edit</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">VN-6859</th>
+                            <td>HaNoi, VietNam</td>
+                            <td>HoChiMinh, VietNam</td>
+                            <td>08/08/2020</td>
+                            <td>5 (Adult: 1, Children: 4, Baby: 0)</td>
+                            <td>
+                                <a href="/ticket/detail/1">View</a>
+                                |
+                                <a href="/ticket/edit/1">Edit</a>
+                            </td>
+                        </tr>
                         <tr>
                             <th scope="row">VN-6859</th>
                             <td>HaNoi, VietNam</td>
@@ -149,7 +173,7 @@
                         </tr>
                         </tbody>
                     </table>
-                </div>
+
             </div>
 
         </div>
