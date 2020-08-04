@@ -32,7 +32,7 @@
         <div class=" mt-5 mb-4">
             <div class="container">
                 <div class="step1-progress row">
-                    <div class="col-sm-3  ">
+                    <div class="col-sm-3 w-100 ">
                         <p>
                             <span class="badge badge-light">1</span> Flight
                         </p>
@@ -53,37 +53,47 @@
                         </p>
                     </div>
                 </div>
+                <form action="/">
                 <div class=" row mt-5">
+                        <div class="col-lg-8 col  w-100">
+                            <div class="title-step4 row">
+                                <h4 style="">Review The Journey</h4>
+                            </div>
+                            <div class="fligh-step4 row">
 
+                                <div class="card w-100">
+                                    <div class="card-header "style="">
+                                        <h5 class="media card-title"> <span>Flight</span></h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <h4> Departure day:: thứ ngày tháng năm</h4>
                                         <p>00:00 Ha Noi</p>
+                                        <p>01:55 Ho Chi Minh</p>
+                                        <h5> ARS.CODERY Flight time</h5>
                                         <h5 class="card-text-link">Ticket type: </h5>
 
                                     </div>
                                 </div>
 
                             </div>
-                        <div class="customer-step4 row mt-4 ">
-                            <div class="card w-100">
                             <div class="customer-step4 row mt-4 ">
                                 <div class="card w-100">
                                     <div class="card-header">
                                         <h5 class="card-title">Passenger</h5>
                                     </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title"><span>1. </span>Nguyễn Văn A</h5>
+                                        <h5 class="card-title"><span>2. </span>Nguyễn Văn B</h5>
+                                    </div>
                                 </div>
 
-                        </div>
-                        <div class="title-step4 row">
-                            <h4 style="">Payment details</h4>
-                        </div>
-                                    <p class="ml-3 title">Choose your preferred payment method </p>
-                                </div>
-                                                <a href="#" class="card-link"></a>
-                                                <a href="#" class="card-link"></a>
                             </div>
                             <div class="title-step4 row">
                                 <h4 style="">Payment details</h4>
                             </div>
                             <div class="solutionpayment row  ">
+                                <div class=" title card w-100">
+                                    <div class="card-header "style="">
                                         <h5 class="media" style="margin-top: 5px"> Payment methods</h5>
                                     </div>
                                     <div class="card-body">

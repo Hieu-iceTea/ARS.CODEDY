@@ -37,7 +37,7 @@
                             <div class="card bg-light">
                                 <h4>Are you ready to join the ARS Club program? Come on, let's get started!</h4>
                                 <p>We need some details about you to create a membership account</p>
-                                <form action="Register.php" method="post">
+                                <form action="login">
                                     <h4 class="name">Username</h4>
                                     <input type="text" class="user" name="username" placeholder="Username"><br>
 
@@ -68,7 +68,7 @@
                                     <input type="tel" class="phone" name="phone" placeholder="Phone">
 
                                     <div class="form-group">
-                                        <button class="btn" name="button">Register</button>
+                                        <button class="btn" type="submit" name="button">Register</button>
                                     </div>
                                 </form>
                             </div>

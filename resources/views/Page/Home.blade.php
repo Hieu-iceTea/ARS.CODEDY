@@ -149,18 +149,6 @@
                                                     </span>
                                                 </div>
                                                 <div class="dropdown-item-drive"></div>
-                                                <div class="dropdown-item">
-                                                    <label for="baby">Baby:</label>
-                                                    <span class="float-right number">
-                                                         <div class="qua-col">
-                                                    <div class="quantity">
-                                                        <div class="pro-qty-num1">
-                                                            <input type="text" value="0">
-                                                     </div>
-                                                </div>
-                                            </div>
-                                                    </span>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>

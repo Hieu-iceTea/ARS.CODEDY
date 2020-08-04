@@ -95,24 +95,22 @@
     color: #72728c;
 }
 
-.search_flight .search_input_4 .dropdown .dropdown-menu .dropdown-item input {
-    width: 30px;
-    height: 30px;
-    padding-left: 11px;
-    margin-right: 10px;
-}
-
-.search_flight .search_input_4 .dropdown .dropdown-menu .dropdown-item button {
-    width: 28px;
-    height: 28px;
-    line-height: 28px;
-    border-radius: 50%;
-    border: #72728c solid 1px;
-    color: #72728c;
-    background-color: transparent;
-    font-size: 10px;
+.qua-col .quantity .pro-qty .dec{
     cursor: pointer;
     padding: 10px;
+    color: black;
+    font-size: 20px;
+}
+.qua-col .quantity .pro-qty  .inc{
+    cursor: pointer;
+    padding: 10px;
+    color: black;
+    font-size: 25px;
+}
+.qua-col .quantity .pro-qty input {
+    width: 20px;
+    height: 20px;
+    border: none;
 }
 
 /************
@@ -648,6 +646,7 @@
     margin: 8px 0;
     box-sizing: border-box;
     font-family: 'Oswald', sans-serif;
+    outline: none;
 }
 .user
 {
@@ -823,14 +822,12 @@
     margin-bottom: 20px
 }
 #main .login .login-body input{
-    margin-top: 20px;
-    border-top: 0;
-    border-right: 0;
-    border-left: 0;
-    border-bottom: 1px solid black;
+    border: none;
+    border-bottom: 1px solid #000000;
     background: transparent;
+    outline: none;
+    height: 40px;
     width: 100%;
-    box-sizing: border-box;
 }
 ::-webkit-input-placeholder {
     color: #33597C;

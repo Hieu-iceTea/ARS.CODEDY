@@ -99,12 +99,12 @@
                                 <h4> Welcome to ars.codedy airline</h4>
                             </div>
                             <div class="login-body">
-                                <form action="" rep>
+                                <form action="" >
                                     <div class="">
                                         <input type="text" name="username" placeholder="Username">
                                     </div>
                                     <div class="">
-                                        <input type="text" name="password" placeholder="Password" >
+                                        <input type="password" name="password" placeholder="Password" >
                                     </div>
                                     <div class="check d-flex mt-4">
                                         <div class="custom-control mr-5 custom-checkbox">
@@ -112,8 +112,8 @@
                                             <label class="custom-control-label" for="defaultChecked2">Remember me</label>
                                         </div>
                                         <div>
-                                            <a href="#" class="txt3 ml-3">
-                                                Forgot password
+                                            <a href="registration" class="txt3 ml-3">
+                                                Registration
                                             </a>
                                         </div>
                                     </div>

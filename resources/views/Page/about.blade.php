@@ -10,31 +10,23 @@
 @section('Content')
     <div class="home">
         <div class="background_image" style="background-image:url(source/images/about.jpg)"></div>
-    </div>
-
-    <!-- Search -->
-
-    <div class="home_search">
-        <div class="container">
-            <div class="row">
                 <div class="col">
                     <div class="home_search_container">
-                        <div class="home_search_title">Search for your trip</div>
-                        <div class="home_search_content">
-                            <form action="#" class="home_search_form" id="home_search_form">
-                                <div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-                                    <input type="text" class="search_input search_input_1" placeholder="City" required="required">
-                                    <input type="text" class="search_input search_input_2" placeholder="Departure" required="required">
-                                    <input type="text" class="search_input search_input_3" placeholder="Arrival" required="required">
-                                    <input type="text" class="search_input search_input_4" placeholder="Budget" required="required">
-                                    <button class="home_search_button">search</button>
-                                </div>
-                            </form>
+    <div class="home page_ticket">
+
+        <div class="background_image" style="background-image:url(source/images/destinations.jpg)"></div>
+        <div class="home_slider_content_container mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_slider_content">
+                            <div class="home_title"><h2>About Us</h2></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 
     <!-- About -->
@@ -58,7 +50,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="about_image"><img src="source/images/about_1.jpg" alt=""></div>
+                    <div class="about_image"><img src="{{asset('source/images/about_1.jpg')}}" alt=""></div>
                 </div>
             </div>
         </div>
@@ -113,7 +105,7 @@
     <!-- Why Choose Us -->
 
     <div class="why">
-        <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/why.jpg" data-speed="0.8"></div>
+        <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{ asset('source/images/why.jpg') }}" data-speed="0.8"></div>
         <div class="container">
             <div class="row">
                 <div class="col text-center">
@@ -251,5 +243,10 @@
 
 @endsection
 @section('script')
-    <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
+    <script src="{{ asset('plugins/greensock/TweenMax.min.js') }}"></script>
+    <script src="{{ asset('plugins/greensock/TimelineMax.min.js') }}"></script>
+    <script src="{{ asset('plugins/scrollmagic/ScrollMagic.min.js') }}"></script>
+    <script src="{{ asset('plugins/greensock/animation.gsap.min.js') }}"></script>
+    <script src="{{ asset('plugins/greensock/ScrollToPlugin.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/about.js') }}"></script>
 @endsection

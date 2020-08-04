@@ -74,9 +74,9 @@
                         </div>
                         <div class="title row mt-4">
                             <div class="col-3"></div>
-                            <div class="col-3 eco" >Bamboo Eco</div>
-                            <div class="col-3 plus">Bamboo Plus</div>
-                            <div class="col-3 business">Bamboo Business</div>
+                            <div class="col-3 eco" >ARS Eco</div>
+                            <div class="col-3 plus">ARS Plus</div>
+                            <div class="col-3 business">ARS Business</div>
                         </div>
                         <div class="content-step1 row mt-3" style="">
                                 <div class="col-3">
