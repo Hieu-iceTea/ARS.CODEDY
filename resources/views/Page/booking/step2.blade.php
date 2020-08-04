@@ -171,8 +171,8 @@
                                         <i class="fa fa-users color_title_booking2" aria-hidden="true"></i>
                                     </div>
                                     <div class="col-lg-4 booking2_who">
-                                        <p class="color_title_booking2 booking2_font_family" style="font-size: 150%;margin-top: -10px"><strong>Ai sẽ bay</strong></p>
-                                        <p class="color_title_booking2 booking2_font_family" style="font-size: 150%;margin-top: -20px">dữ liệu hành khách của bạn</p>
+                                        <p class="color_title_booking2 booking2_font_family" style="font-size: 150%;margin-top: -10px"><strong>Ai đặt chỗ</strong></p>
+                                        <p class="color_title_booking2 booking2_font_family" style="font-size: 150%;margin-top: -20px">Thông tin liên lạc của bạn</p>
                                     </div>
                                 </div>
                             </div>
@@ -327,7 +327,7 @@
                             </div>
                         </div>
 
-                        <a type="button"  href="" class="btn mt-3 w-100 position-sticky contineu">Tiếp Theo  <span><i class="fa fa-angle-right"></i></span></a>
+                        <a type="button"  href="http://ars.codedy/booking/3" class="btn mt-3 w-100 position-sticky contineu">Tiếp Theo  <span><i class="fa fa-angle-right"></i></span></a>
                     </div>
                 </div>
 
