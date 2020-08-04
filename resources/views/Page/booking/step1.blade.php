@@ -56,7 +56,7 @@
                 <form action="2" method="get" name="check" >
                 <div class=" row mt-5">
 
-                    <div class="col-8">
+                    <div class="col-lg-8 col-sm-12">
                         <div class="locale-vi row">
                             <div class="media">
                                 <img class="mr-3"  class ="logo"src="{{ asset('source/images/iconfight.png') }}" style="width: 40px;height: 40px" alt="Generic placeholder image">
@@ -229,7 +229,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class=" col-4 " >
+                    <div class=" col-lg-4 mt-5" >
                         <div class="card cart-info  w-100"  style="width: 18rem;">
                             <img class="card-img-top" src="{{ asset('source/images/destination_5.jpg') }}" alt="Card image cap">
                             <div class="card-body text-center" style="position: sticky; top:0;z-index: 10">

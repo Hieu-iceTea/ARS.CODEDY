@@ -34,41 +34,41 @@
                 <div class="step1-progress row">
                     <div class="col-sm-3  ">
                         <p>
-                            <span class="badge badge-light">1</span> Chuyến Bay
+                            <span class="badge badge-light">1</span> Flight
                         </p>
                     </div>
                     <div class="col-sm-3 ">
                         <p>
-                            <span class="badge badge-light" >2</span>Thông Tin Khách Hàng
+                            <span class="badge badge-light" >2</span>Customer information
                         </p>
                     </div>
                     <div class="col-sm-3 ">
                         <p>
-                            <span class="badge badge-light">3</span>Dịch Vụ Bổ Sung
+                            <span class="badge badge-light">3</span>Bonus services
                         </p>
                     </div>
-                    <div class="col-sm-3 active ">
+                    <div class="col-sm-3 active">
                         <p>
-                            <span class="badge badge-light">4</span> Thanh Toán
+                            <span class="badge badge-light">4</span> Pay
                         </p>
                     </div>
                 </div>
                 <div class=" row mt-5">
                     <div class="col-8">
                         <div class="title-step4 row">
-                            <h4 style="">Xem Lại Hành Trình</h4>
+                            <h4 style="">Review The Journey</h4>
                         </div>
                         <div class="fligh-step4 row">
                             <div class="card w-100">
                                 <div class="card-header "style="">
-                                    <h5 class="media card-title"> <span>Chuyến bay</span></h5>
+                                    <h5 class="media card-title"> <span>Flight</span></h5>
                                 </div>
                                 <div class="card-body">
-                                    <h4> Ngày khởi hành: thứ ngày tháng năm</h4>
-                                    <p>00:00 Hà Nội</p>
-                                    <p>00:00 Hà Nội</p>
-                                    <h5> ARS.CODERY Thời gian bay</h5>
-                                    <h5 class="card-text-link">Loại vé: </h5>
+                                    <h4> Departure day:: thứ ngày tháng năm</h4>
+                                    <p>00:00 Ha Noi</p>
+                                    <p>01:55 Ho Chi Minh</p>
+                                    <h5> ARS.CODERY Flight time</h5>
+                                    <h5 class="card-text-link">Ticket type: </h5>
 
                                 </div>
                             </div>
@@ -76,7 +76,7 @@
                         <div class="customer-step4 row mt-4 ">
                             <div class="card w-100">
                                 <div class="card-header">
-                                    <h5 class="card-title">Hành khách</h5>
+                                    <h5 class="card-title">Passenger</h5>
                                 </div>
                             <div class="card-body">
                                 <h5 class="card-title"><span>1. </span>Nguyễn Văn A</h5>
@@ -86,22 +86,22 @@
 
                         </div>
                         <div class="title-step4 row">
-                            <h4 style="">Chi tiết thanh toán</h4>
+                            <h4 style="">Payment details</h4>
                         </div>
                         <div class="solutionpayment row  ">
                             <div class=" title card w-100">
                                 <div class="card-header "style="">
-                                    <h5 class="media" style="margin-top: 5px"> Phương thức thanh toán</h5>
+                                    <h5 class="media" style="margin-top: 5px"> Payment methods</h5>
                                 </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <p class="ml-3 title">Chọn phương thức thanh toán yêu thích</p>
+                                    <p class="ml-3 title">Choose your preferred payment method </p>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="card" style="width: 14rem;">
                                             <div class="card-body">
-                                                <h5 class="card-title">Thẻ tín dụng</h5>
+                                                <h5 class="card-title">Credit</h5>
                                                 <img src="{{ asset('source/images/apple-pay-1.png') }}" class ="w-75" alt="">
                                                 <p class="card-text"></p>
                                                 <a href="#" class="card-link"></a>
@@ -188,7 +188,7 @@
                         <div class="info-ticker mt-4 row">
                             <div class="card w-100">
                                 <div class="card-header">
-                                    <h5 class="media" style=""> Thông tin chi tiết vé</h5>
+                                    <h5 class="media" style=""> Ticket details</h5>
                                 </div>
                                 <div class="container">
                                     <div class="row">
@@ -196,13 +196,13 @@
                                             <div class="card-body">
                                                 <h5 class="card-title"><span class="mr-1">19:25  </span> <span class="mr-1">01h:55m  </span> <span> 19:30</span></h5>
                                                 <h5 class="card-title"><span class="mr-1">HAN  </span> <span class="mr-1">ARS.CODDY  </span> <span> ĐNA</span></h5>
-                                                <p class="card-text">Gía vé(người lớn)</p>
-                                                <p class="card-text">phí an ninh soi chiếu</p>
-                                                <p class="card-text">Phí sân bay nội địa</p>
-                                                <p class="card-text">Phí tiện ích thanh toán</p>
-                                                <p class="card-text">Phụ thu quản trị hệ thống</p>
-                                                <h4 >Tổng VAT</h4>
-                                                <h4 >Tổng chi phí chuyến bay</h4>
+                                                <p class="card-text">Ticket price (adult)</p>
+                                                <p class="card-text">Security screening fee</p>
+                                                <p class="card-text">Domestic airport charges</p>
+                                                <p class="card-text">Utility fee paid</p>
+                                                <p class="card-text">Surcharge for system administration</p>
+                                                <h4 >Total VAT</h4>
+                                                <h4 >Total flight costs</h4>
 
                                             </div>
                                         </div>
@@ -228,17 +228,17 @@
                             <div class="card w-100">
                                 <div class="card-header check">
                                     <form action="">
-                                        <h5 class="media" style=""> <input type="checkbox" aria-label="Radio button for following text input">Tôi Đã Đọc Và Chấp Nhận Điều Khoản Sử Dụng Cũng Như Chính
-                                            Sách Bảo Mặt Của Hãng Hàng Không</h5>
+                                        <h5 class="media" style=""> <input type="checkbox" aria-label="Radio button for following text input">I have read and accept the terms of use as well as the main
+                                            Book Face Protection Of Airlines</h5>
                                     </form>
                                 </div>
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-12 text-right ">
                                             <div class="card-body">
-                                                <p class="card-text">Chính sách bảo mật</p>
-                                                <p class="card-text">Điều kiện sử dụng chức năng đặt chỗ trực tuyến</p>
-                                                <p class="card-text">Giá vé trực tuyến</p>
+                                                <p class="card-text">Privacy Policy</p>
+                                                <p class="card-text">Conditions for using the online booking function</p>
+                                                <p class="card-text">Online ticket prices</p>
 
                                             </div>
                                         </div>
@@ -246,35 +246,36 @@
                                 </div>
                             </div>
                         </div>
-                        <a type="button"  href="" class="btn mt-3 w-100 position-sticky contineu">Chấp nhận và thanh toán ngay <span><i class="fa fa-angle-right"></i></span></a>
+                        <a type="button"  href="" class="btn mt-3 w-100 position-sticky contineu">Accept and pay immediately <span><i class="fa fa-angle-right"></i></span></a>
                     </div>
-                    <div class=" col-4 " >
+                    <div class=" col-lg-4 mt-5" >
                         <div class="card cart-info  w-100"  style="width: 18rem;">
                             <img class="card-img-top" src="{{ asset('source/images/destination_5.jpg') }}" alt="Card image cap">
                             <div class="card-body text-center" style="position: sticky; top:0;z-index: 10">
-                                <h4> <span>Hồ Chí Minh</span> (SGN) tới <span>Hà Nội </span>(HAN)</h4>
-                                <p class="card-text">Khứ Hồi | 1 Người Lớn</p>
-                                <p class="card-text-link"><a href="" style="text-decoration: none">Thay đổi lịch trình chuyến bay</a></p>
+                                <h4> <span>Ho Chi Minh</span> (SGN) go <span>Ha Noi </span>(HAN)</h4>
+                                <p class="card-text">Round-trip | 1 Adults</p>
+                                <p class="card-text-link"><a href="" style="text-decoration: none">Change flight schedules</a></p>
                             </div>
                         </div>
                         <div class="card-Clearfix card mt-3  w-100" style="width: 18rem;">
                             <div class="card-body text-center">
-                                <h5 class="card-title" ><span style="font-size: 20px;color: #33597C;font-weight: 600">Tổng Tiền</span> : 3000.000.000 vnđ</h5>
+                                <h5 class="card-title" ><span style="font-size: 20px;color: #33597C;font-weight: 600">Total Money</span> : 3000.000.000 vnđ</h5>
                                 <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                <p class="card-text">Bao gồm tuế và phí dịch vụ</p>
+                                <p class="card-text">Includes minnows and service fees</p>
 
                             </div>
                         </div>
                         <div class="card mt-3 cart-content w-100" style="width: 18rem;">
                             <div class="card-body text-center">
-                                <h5 class="card-title" style=""><span style="font-size: 20px;color: #33597C;font-weight: 600">Tổng Tiền</span> : 3000.000.000 vnđ</h5>
-
+                                <h5 class="card-title" style=""><span style="font-size: 20px;color: #33597C;font-weight: 600">Total Money</span> : 3000.000.000 vnđ</h5>
                                 <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                <h4 style=""> <span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span> (SGN) tới <span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span>(HAN)</h4>
+                                <h4 style=""> <span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span> (SGN) go <span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span>(HAN)</h4>
                                 <p class="card-text" >CN 02/08/2020 | 19:25 - 20:30</p>
-                                <p class="card-text">Người lớn 1 * 2.500.000 = <span>2.500.000</span></p>
+                                <p class="card-text">Adults 1 * 2.500.000 = <span>2.500.000</span></p>
                             </div>
                         </div>
+
+                        <button type="submit"  href="" class="btn mt-3 w-100 position-sticky contineu">Continew  <span><i class="fa fa-angle-right"></i></span></button>
                     </div>
                 </div>
 

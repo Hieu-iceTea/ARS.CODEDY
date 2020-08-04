@@ -29,24 +29,24 @@
         <div class=" mt-5 mb-4">
             <div class="container">
                 <div class="step1-progress row">
-                    <div class="col-sm-3 ">
+                    <div class="col-sm-3  ">
                         <p>
-                            <span class="badge badge-light">1</span> Chuyến Bay
+                            <span class="badge badge-light">1</span> Flight
                         </p>
                     </div>
                     <div class="col-sm-3 ">
                         <p>
-                            <span class="badge badge-light" >2</span>Thông Tin Khách Hàng
+                            <span class="badge badge-light" >2</span>Customer information
                         </p>
                     </div>
-                    <div class="col-sm-3 active ">
+                    <div class="col-sm-3 active">
                         <p>
-                            <span class="badge badge-light">3</span>Dịch Vụ Bổ Sung
+                            <span class="badge badge-light">3</span>Bonus services
                         </p>
                     </div>
                     <div class="col-sm-3 ">
                         <p>
-                            <span class="badge badge-light">4</span> Thanh Toán
+                            <span class="badge badge-light">4</span> Pay
                         </p>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                                         <h3>
                                             <i class="fa fa-suitcase" aria-hidden="true"></i>
                                             <span></span>
-                                            Lựa chọn bổ sung
+                                            Additional options
                                         </h3>
                                     </div>
                                 </div>
@@ -78,15 +78,15 @@
                                                         <div class="column-inner color-blue">
                                                             <h3><i class="fa fa-wheelchair" aria-hidden="true"></i></h3>
                                                             <h4></h4>
-                                                            <h4>Chọn chỗ ngồi ưu thích của bạn</h4>
+                                                            <h4>Choose your preferred seat</h4>
                                                         </div>
                                                     </div>
                                                     <div class="col-4 list">
                                                         <div class="column-inner">
                                                             <ul class="">
-                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Lựa chọn chỗ ngồi cá nhân</p></li>
-                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Ghế ngồi tiêu chuẩn</p></li>
-                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Chỗ ngồi rộng chân</p></li>
+                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Individual seat selection</p></li>
+                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Standard seats</p></li>
+                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Wide leg seat</p></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -114,15 +114,15 @@
                                                             <h3><i class="fa fa-id-card" aria-hidden="true"></i>
                                                             </h3>
                                                             <h4></h4>
-                                                            <h4>Ưa tiên làm thủ tục</h4>
+                                                            <h4>Preferred procedures</h4>
                                                         </div>
                                                     </div>
                                                     <div class="col-4 list">
                                                         <div class="column-inner">
                                                             <ul class="">
-                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Tiết kiệm thời gian</p></li>
-                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Được sử dụng quầy ưu tiên</p></li>
-                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Được sử dụng lối đi ưu tiên tại cửa khởi hành</p></li>
+                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span> Time saving</p></li>
+                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Used priority counters</p></li>
+                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Use priority walkways at the departure gate</p></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -150,15 +150,15 @@
                                                             <h3><i class="fa fa-diamond" aria-hidden="true"></i>
                                                             </h3>
                                                             <h4></h4>
-                                                            <h4>Sử dụng phòng chờ thương gia</h4>
+                                                            <h4>Use the business lounge</h4>
                                                         </div>
                                                     </div>
                                                     <div class="col-4 list">
                                                         <div class="column-inner">
                                                             <ul class="">
-                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Khẳng định đẳng cấo</p></li>
-                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Tận hưởng không gian riêng tư</p></li>
-                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Trải nghiệm dịch vụ sang trọng</p></li>
+                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Affirmation class</p></li>
+                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Enjoy the private space</p></li>
+                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Experience luxury service</p></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -176,30 +176,30 @@
                             <div class="card cart-info  w-100"  style="width: 18rem;">
                                 <img class="card-img-top" src="{{ asset('source/images/destination_5.jpg') }}" alt="Card image cap">
                                 <div class="card-body text-center" style="position: sticky; top:0;z-index: 10">
-                                    <h4> <span>Hồ Chí Minh</span> (SGN) tới <span>Hà Nội </span>(HAN)</h4>
-                                    <p class="card-text">Khứ Hồi | 1 Người Lớn</p>
-                                    <p class="card-text-link"><a href="" style="text-decoration: none">Thay đổi lịch trình chuyến bay</a></p>
+                                    <h4> <span>Ho Chi Minh</span> (SGN) go <span>Ha Noi </span>(HAN)</h4>
+                                    <p class="card-text">Round-trip | 1 Adults</p>
+                                    <p class="card-text-link"><a href="" style="text-decoration: none">Change flight schedules</a></p>
                                 </div>
                             </div>
                             <div class="card-Clearfix card mt-3  w-100" style="width: 18rem;">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title" ><span style="font-size: 20px;color: #33597C;font-weight: 600">Tổng Tiền</span> : 3000.000.000 vnđ</h5>
+                                    <h5 class="card-title" ><span style="font-size: 20px;color: #33597C;font-weight: 600">Total Money</span> : 3000.000.000 vnđ</h5>
                                     <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                    <p class="card-text">Bao gồm tuế và phí dịch vụ</p>
+                                    <p class="card-text">Includes minnows and service fees</p>
 
                                 </div>
                             </div>
                             <div class="card mt-3 cart-content w-100" style="width: 18rem;">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title" style=""><span style="font-size: 20px;color: #33597C;font-weight: 600">Tổng Tiền</span> : 3000.000.000 vnđ</h5>
+                                    <h5 class="card-title" style=""><span style="font-size: 20px;color: #33597C;font-weight: 600">Total Money</span> : 3000.000.000 vnđ</h5>
                                     <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                    <h4 style=""> <span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span> (SGN) tới <span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span>(HAN)</h4>
+                                    <h4 style=""> <span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span> (SGN) go <span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span>(HAN)</h4>
                                     <p class="card-text" >CN 02/08/2020 | 19:25 - 20:30</p>
-                                    <p class="card-text">Người lớn 1 * 2.500.000 = <span>2.500.000</span></p>
+                                    <p class="card-text">Adults 1 * 2.500.000 = <span>2.500.000</span></p>
                                 </div>
                             </div>
 
-                            <button type="submit"  href="" class="btn mt-3 w-100 position-sticky contineu">Tiếp Theo  <span><i class="fa fa-angle-right"></i></span></button>
+                            <button type="submit"  href="" class="btn mt-3 w-100 position-sticky contineu">Continew  <span><i class="fa fa-angle-right"></i></span></button>
                         </div>
                     </div>
                 </form>
