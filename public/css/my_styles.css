@@ -291,11 +291,26 @@
 }
 .booking2_color_title{
     color: white;
+    font-weight: 600;
+}
+.title{
+    color: white;
+}
+.bg-title{
+    border:1px solid black;
+    border-radius: 4px 4px 0px 0px;
     background-color: #33597C;
 }
 .booking2_color_logo{
     color: #33597C;
 }
+.booking2_font_family{
+    font-family: 'Oswald', sans-serif;
+}
+.color-on{
+    color: #B8B1B1;
+}
+
 /************
 4. Booking/3 - Dịch vụ bổ sung:
 ************/
@@ -570,7 +585,11 @@
 ************/
 .content_main
 {
-    margin-left: 15%;
+    font-family: 'Oswald', sans-serif;
+    /*text-align: center;*/
+    margin-top: 30%;
+    margin-bottom: -30%;
+
 }
 #name
 {
@@ -585,7 +604,6 @@
     width: 125px;
     color: #1b4b72;
     font-size: 18px;
-    font-weight: 700;
 }
 
 .gender
@@ -603,15 +621,15 @@
     /*position: absolute;*/
     /*transform: translate(-50%,-50%);*/
 
-    width: 647px;
+    width: 650px;
     height: auto;
     background-color: rgba(255, 255, 255, 0.68);
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     text-align: center;
     padding-top: 20px;
+    padding-right: 50px;
 
 }
 
@@ -623,6 +641,7 @@
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
 }
 .user
 {
@@ -658,12 +677,13 @@
     left: 70px;
     top: -40px;
     line-height: 40px;
-    width: 240px;
+    width: 230px;
     border-radius: 6px;
     padding: 0 22px;
     font-size: 16px;
     color: #555;
     margin-bottom: -3rem;
+    margin-right: 10px;
 }
 
 .lastlabel
@@ -672,12 +692,13 @@
     left: 70px;
     top: -40px;
     line-height: 40px;
-    width: 240px;
+    width: 230px;
     border-radius: 6px;
     padding: 0 22px;
     font-size: 16px;
     color: #555;
     margin-bottom: -3rem;
+    margin-left: 10px;
 }
 .email
 {
@@ -742,6 +763,12 @@
     font-size: 20px;
     color: white;
     font-weight: bold;
+    text-align: center;
+}
+
+.content_main .card .form-group
+{
+    margin-left: 3rem;
 }
 /************
 15. Login
@@ -753,6 +780,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    font-family: 'Oswald', sans-serif;
+    margin-top: 15%;
+    margin-bottom: -15%;
 }
 #main .login {
     padding: 40px;
