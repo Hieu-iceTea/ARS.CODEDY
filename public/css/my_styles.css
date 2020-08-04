@@ -112,6 +112,7 @@
     background-color: transparent;
     font-size: 10px;
     cursor: pointer;
+    padding: 10px;
 }
 
 /************
@@ -292,6 +293,7 @@
 .booking2_color_title{
     color: white;
     font-weight: 600;
+    background-color: #33597C;
 }
 .title{
     color: white;
@@ -342,7 +344,11 @@
 {
     margin-top: 2rem;
 }
-
+.description .intro-services .col-4 img{
+    width: 100%;
+    height: 150px;
+    margin-right: -15px !important;
+}
 /************
 5. Booking/4 - Thanh toán:
 ************/

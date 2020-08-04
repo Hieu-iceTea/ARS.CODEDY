@@ -32,22 +32,22 @@
         <div class=" mt-5 mb-4">
             <div class="container">
                 <div class="step1-progress row">
-                    <div class="col-sm-3 active ">
+                    <div class="col-3 col-sm-3  active ">
                         <p>
                             <span class="badge badge-light">1</span> Flight
                         </p>
                     </div>
-                    <div class="col-sm-3 ">
+                    <div class="col-3 col-sm-3  ">
                         <p>
                             <span class="badge badge-light" >2</span>Customer information
                         </p>
                     </div>
-                    <div class="col-sm-3 ">
+                    <div class="col-3 col-sm-3  ">
                         <p>
                             <span class="badge badge-light">3</span>Bonus services
                         </p>
                     </div>
-                    <div class="col-sm-3 ">
+                    <div class="col-3 col-sm-3  ">
                         <p>
                             <span class="badge badge-light">4</span> Pay
                         </p>

@@ -307,9 +307,7 @@
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="col-4">
+                        <div class="col-lg-4 mt-5">
                             <div class="card cart-info  w-100"  style="width: 18rem;">
                                 <img class="card-img-top" src="../source/images/destination_5.jpg" alt="Card image cap">
                                 <div class="card-body text-center">

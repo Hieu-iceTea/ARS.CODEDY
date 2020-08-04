@@ -132,51 +132,33 @@
                                         <div class="dropdown">
                                             <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
                                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Passenger: <span id="number-of-passenger">1</span>
+                                                Passenger: <span id="number-of-passenger">0</span>
                                             </button>
 
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <div class="dropdown-item">
-                                                    <label for="adult">Adult:</label>
-                                                    <span class="float-right">
-                                                        <input type="text" class="search_input" id="adult"
-                                                               name="adult" value=1 required>
-                                                        <button class="" type="button">
-                                                            <i class="fa fa-minus"></i>
-                                                        </button>
-                                                        <button class="" type="button">
-                                                            <i class="fa fa-plus"></i>
-                                                        </button>
-                                                    </span>
-                                                </div>
-                                                <div class="dropdown-divider"></div>
-
-                                                <div class="dropdown-item">
-                                                    <label for="children">Children:</label>
-                                                    <span class="float-right">
-                                                        <input type="text" class="search_input" id="children"
-                                                               name="children" value=0 required>
-                                                        <button class="" type="button">
-                                                            <i class="fa fa-minus"></i>
-                                                        </button>
-                                                        <button class="" type="button">
-                                                            <i class="fa fa-plus"></i>
-                                                        </button>
-                                                    </span>
-                                                </div>
-                                                <div class="dropdown-divider"></div>
-
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonâs">
                                                 <div class="dropdown-item">
                                                     <label for="baby">Baby:</label>
-                                                    <span class="float-right">
-                                                        <input type="text" class="search_input" id="baby"
-                                                               name="baby" value=0 required>
-                                                        <button class="" type="button">
-                                                            <i class="fa fa-minus"></i>
-                                                        </button>
-                                                        <button class="" type="button">
-                                                            <i class="fa fa-plus"></i>
-                                                        </button>
+                                                    <span class="float-right number">
+                                                         <div class="qua-col">
+                                                    <div class="quantity">
+                                                        <div class="pro-qty">
+                                                            <input type="text" value="0">
+                                                     </div>
+                                                </div>
+                                            </div>
+                                                    </span>
+                                                </div>
+                                                <div class="dropdown-item-drive"></div>
+                                                <div class="dropdown-item">
+                                                    <label for="baby">Baby:</label>
+                                                    <span class="float-right number">
+                                                         <div class="qua-col">
+                                                    <div class="quantity">
+                                                        <div class="pro-qty-num1">
+                                                            <input type="text" value="0">
+                                                     </div>
+                                                </div>
+                                            </div>
                                                     </span>
                                                 </div>
                                             </div>

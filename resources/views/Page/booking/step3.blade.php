@@ -50,9 +50,9 @@
                         </p>
                     </div>
                 </div>
-                <form action="2" method="get" name="check" >
+                <form action="4" method="get" name="check" >
                     <div class=" row mt-5">
-                        <div class="col-8" style="width-max: 500px;">
+                        <div class="col-lg-8" style="width-max: 500px;">
                             <div class="container">
                                 <div class="row mt-5" >
                                     <div class="section-header color-blue">
@@ -73,7 +73,7 @@
                                                 </label>
                                             </div>
                                             <div class="col-11" style="background-color: white">
-                                                <div class="row">
+                                                <div class="row intro-services">
                                                     <div class="col-4 intro">
                                                         <div class="column-inner color-blue">
                                                             <h3><i class="fa fa-wheelchair" aria-hidden="true"></i></h3>
@@ -91,7 +91,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-4">
-                                                        <img src="https://www.bambooairways.com/reservation/common/framework/en_US/public/img/extras-seats.jpg" class="rounded mx-auto d-block" width="220px" alt="">
+                                                        <img src="{{ asset('source/images/booking_4_1.jpg') }}" class="rounded mx-auto d-block"  alt="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -108,26 +108,25 @@
                                                 </label>
                                             </div>
                                             <div class="col-11" style="background-color: white">
-                                                <div class="row">
+                                                <div class="row intro-services">
                                                     <div class="col-4 intro">
                                                         <div class="column-inner color-blue">
-                                                            <h3><i class="fa fa-id-card" aria-hidden="true"></i>
-                                                            </h3>
+                                                            <h3><i class="fa fa-wheelchair" aria-hidden="true"></i></h3>
                                                             <h4></h4>
-                                                            <h4>Preferred procedures</h4>
+                                                            <h4>Choose your preferred seat</h4>
                                                         </div>
                                                     </div>
                                                     <div class="col-4 list">
                                                         <div class="column-inner">
                                                             <ul class="">
-                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span> Time saving</p></li>
-                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Used priority counters</p></li>
-                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Use priority walkways at the departure gate</p></li>
+                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Individual seat selection</p></li>
+                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Standard seats</p></li>
+                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Wide leg seat</p></li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                     <div class="col-4">
-                                                        <img src="https://www.bambooairways.com/reservation/common/framework/en_US/public/img/extras-luggage.jpg" alt="" width="220px">
+                                                        <img src="{{ asset('source/images/booking_4_2.jpg') }}" class="rounded mx-auto d-block"  alt="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -144,26 +143,25 @@
                                                 </label>
                                             </div>
                                             <div class="col-11" style="background-color: white">
-                                                <div class="row">
+                                                <div class="row intro-services">
                                                     <div class="col-4 intro">
                                                         <div class="column-inner color-blue">
-                                                            <h3><i class="fa fa-diamond" aria-hidden="true"></i>
-                                                            </h3>
+                                                            <h3><i class="fa fa-wheelchair" aria-hidden="true"></i></h3>
                                                             <h4></h4>
-                                                            <h4>Use the business lounge</h4>
+                                                            <h4>Choose your preferred seat</h4>
                                                         </div>
                                                     </div>
                                                     <div class="col-4 list">
                                                         <div class="column-inner">
                                                             <ul class="">
-                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Affirmation class</p></li>
-                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Enjoy the private space</p></li>
-                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Experience luxury service</p></li>
+                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Individual seat selection</p></li>
+                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Standard seats</p></li>
+                                                                <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Wide leg seat</p></li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                     <div class="col-4">
-                                                        <img src="https://www.bambooairways.com/reservation/common/framework/en_US/public/img/Priority-check-in.jpg" alt="" width="220px">
+                                                        <img src="{{ asset('source/images/booking_4_3.jpg') }}" class="rounded mx-auto d-block"  alt="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -172,7 +170,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class=" col-4" >
+                        <div class="col-lg-4 mt-5" >
                             <div class="card cart-info  w-100"  style="width: 18rem;">
                                 <img class="card-img-top" src="{{ asset('source/images/destination_5.jpg') }}" alt="Card image cap">
                                 <div class="card-body text-center" style="position: sticky; top:0;z-index: 10">

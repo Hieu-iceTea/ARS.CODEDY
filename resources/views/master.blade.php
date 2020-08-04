@@ -210,6 +210,7 @@
 <script src="{{ asset('plugins/scrollTo/jquery.scrollTo.min.js') }}"></script>
 <script src="{{ asset('plugins/easing/easing.js') }}"></script>
 <script src="{{ asset('plugins/parallax-js-master/parallax.min.js') }}"></script>
+<script src="{{ asset('js/home.js') }}"></script>
 @yield('script')
 
 
