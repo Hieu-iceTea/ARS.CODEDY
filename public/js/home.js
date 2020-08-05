@@ -1,7 +1,8 @@
+
 var proQty = $('.pro-qty');
-proQty.prepend('<span class="dec qtybtn">-</span>');
-proQty.append('<span class="inc qtybtn">+</span>');
-proQty.on('click', '.qtybtn', function () {
+proQty.prepend('<span class="dec number"><i class="fa fa-minus"></i></span>');
+proQty.append('<span class="inc number"> <i class="fa fa-plus"></i></span>');
+proQty.on('click', '.number', function () {
     var $button = $(this);
     var oldValue = $button.parent().find('input').val();
     if (oldValue < 10){
@@ -31,15 +32,27 @@ proQty.on('click', '.qtybtn', function () {
             }
         }
         $button.parent().find('input').val(newVal);
-        change(newVal);
+
     }
+
 });
+/*function sumPeople(){
+     let value1 = makeValue("value1");
+     let value2 = makeValue("value2");
+     let value3 = makeValue("value3");
+     let sumValue = value1+value2+value3;
+    change(sumValue);
+}
+function makeValue($id){
+    let value = document.getElementById($id).value;
+    return value;
+}
 function change($value){
     if ($value > 9){
-        document.getElementById('number-of-passenger').innerHTML = 0;
+        document.getElementsByName('number-of-passenger').innerHTML = 0;
     }
     else {
-        document.getElementById('number-of-passenger').innerHTML = $value;
+        document.getElementsByName('number-of-passenger').innerHTML = $value;
     }
-}
+}*/
 

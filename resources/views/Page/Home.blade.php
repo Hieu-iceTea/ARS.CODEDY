@@ -128,29 +128,50 @@
 
 
                                     <div class="search_input search_input_4">
-
-                                        <div class="dropdown">
-                                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
-                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Passenger: <span id="number-of-passenger">0</span>
-                                            </button>
-
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonâs">
-                                                <div class="dropdown-item">
-                                                    <label for="baby">Baby:</label>
-                                                    <span class="float-right number">
-                                                         <div class="qua-col">
-                                                    <div class="quantity">
-                                                        <div class="pro-qty">
-                                                            <input type="text" value="0">
-                                                     </div>
-                                                </div>
-                                            </div>
-                                                    </span>
-                                                </div>
-                                                <div class="dropdown-item-drive"></div>
-                                            </div>
+                                        <div class="title">
+                                            <p> Passenger  <span class="mr-4" id="number-of-passenger"></span> <a  data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="fa fa-angle-down rotate-icon "> </i> </a>  </p>
                                         </div>
+                                        <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                            <div class="people">
+                                                <table class="table">
+                                                    <tr>
+                                                        <td><p>Adults: </p></td>
+                                                        <td>
+                                                            <div class="quantity">
+                                                                <div class="pro-qty">
+                                                                    <input type="text" id="value1" value="0">
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><p>Adults: </p></td>
+                                                        <td>
+                                                            <div class="quantity">
+                                                                <div class="pro-qty">
+                                                                    <input type="text" id="value2" value="0">
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><p>Adults: </p></td>
+                                                        <td>
+                                                            <div class="quantity">
+                                                                <div class="pro-qty">
+                                                                    <input type="text" id="value3"  value="0">
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+
+                                            </div>
+
+
+                                        </div>
+
                                     </div>
                                     <button class="home_search_button" type="submit">search</button>
                                 </div>
@@ -166,7 +187,7 @@
     <!-- Intro -->
 
     <div class="intro">
-        <div class="intro_background" style="background-image:url(source/images/intro.png)"></div>
+        <div class="intro_background mt-5" style="background-image:url(source/images/intro.png)"></div>
         <div class="container">
             <div class="row">
                 <div class="col">

@@ -37,7 +37,9 @@
 /************
 1. Home - Trang chủ + Form tìm kiếm:
 ************/
-
+.search_flight{
+    margin-top: -20px;
+}
 
 .search_flight .search_input_1 {
     width: 23%;
@@ -54,63 +56,61 @@
 .search_flight .search_input_4 {
     width: 15%;
 }
+.search_flight .search_input_4 .people {
+    width: 200px!important;
+    background-color: white;
+}
+.search_flight .search_input_4 .people {
 
-.search_flight .search_input_4 .dropdown #dropdownMenuButton {
-    padding: 0;
-    background: none;
-    line-height: 50px;
+}
+.search_flight .search_input_4 .title p{
+    color: #72728c;
+    background: #f2f5f6;
+    border: none;
+    outline: none;
+    padding-left: 9px;
+    margin-top: 13px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    letter-spacing:0.6px;
+}
+.search_flight .search_input_4 .title p a{
+    background-color: #F2F5F6;
     color: #72728c;
 }
-
-.search_flight .search_input_4 .dropdown #dropdownMenuButton:focus {
-    box-shadow: none;
+.search_flight .search_input_4 .title p a i {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
 }
-
-.search_flight .search_input_4 .dropdown .dropdown-toggle::after {
-    margin-left: 2em;
+.search_flight .search_input_4 .people  .quantity .pro-qty input
+{
+    outline: none;
+    width: 20px;
+    border: none;
+}
+.search_flight .search_input_4 .people  .table p{
     color: #72728c;
+    border: none;
+    outline: none;
+    padding-left: 9px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    letter-spacing:0.6px;
 }
-
-.search_flight .search_input_4 .dropdown .dropdown-menu {
-    width: 220px;
-    z-index: 10000000 !important;
-    left: -17px !important;
-    padding: 0;
+.search_flight .search_input_4 .people  .quantity .pro-qty span {
+    padding: 3px;
 }
-
-.search_flight .search_input_4 .dropdown .dropdown-menu .dropdown-divider {
-    margin: 0;
-}
-
-.search_flight .search_input_4 .dropdown .dropdown-menu .dropdown-item {
-    height: 55px;
-    line-height: 48px;
-}
-
-.search_flight .search_input_4 .dropdown .dropdown-menu .dropdown-item:active {
-    background-color: snow;
-}
-
-.search_flight .search_input_4 .dropdown .dropdown-menu .dropdown-item label {
-    color: #72728c;
-}
-
 .qua-col .quantity .pro-qty .dec{
     cursor: pointer;
-    padding: 10px;
-    color: black;
-    font-size: 20px;
+    margin-right: 3px;
+  
+    border: 1px solid black;
 }
 .qua-col .quantity .pro-qty  .inc{
     cursor: pointer;
-    padding: 10px;
-    color: black;
-    font-size: 25px;
-}
-.qua-col .quantity .pro-qty input {
-    width: 20px;
-    height: 20px;
-    border: none;
 }
 
 /************
@@ -807,7 +807,7 @@
 ************/
 #main{
     width: 600px;
-    height: 400px;
+    height: 500px;
     background-color: rgba(255, 255, 255, 0.68);
     top: 50%;
     left: 50%;
@@ -855,6 +855,7 @@
     outline: none;
     height: 40px;
     width: 100%;
+    margin: 20px;
 }
 ::-webkit-input-placeholder {
     color: #33597C;
