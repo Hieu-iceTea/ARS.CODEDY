@@ -30,7 +30,7 @@
     <!-- Body -->
     <div class="body_booking container-fluid">
         <div class="container">
-            <!-- Flight Progress -->
+            <!-- Flight booking process -->
             <div class="row flight_progress_row">
                 <div class="col-3 col-sm-3">
                     <div class="flightProgress active">
@@ -60,6 +60,7 @@
 
             <form action="2" method="get">
                 <div class="row">
+                    {{-- form main --}}
                     <div class="col-lg-9 col-sm-12 mt-5">
 
                         <div class="locale-vi row">
@@ -72,11 +73,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="Active-date row mt-4">
-                            <div class="col">
-                                <p>Thursday, July 30, 2020</p>
-                            </div>
-                        </div>
+                        <h5 class="row title_session mt-4">Thursday, July 30, 2020</h5>
 
                         <div class="title row mt-4">
                             <div class="col-3 "></div>
@@ -222,6 +219,8 @@
                         </div>
 
                     </div>
+
+                    {{-- cart_info bên phải --}}
                     <div class=" col-lg-3 mt-5">
                         <div class="card cart-info  w-100" style="width: 18rem;">
                             <img class="card-img-top" src="{{ asset('source/images/destination_5.jpg') }}"

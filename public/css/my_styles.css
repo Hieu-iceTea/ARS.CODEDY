@@ -37,7 +37,7 @@
 /************
 1. Home - Trang chủ + Form tìm kiếm:
 ************/
-.search_flight{
+.search_flight {
     margin-top: -20px;
 }
 
@@ -56,14 +56,17 @@
 .search_flight .search_input_4 {
     width: 15%;
 }
+
 .search_flight .search_input_4 .people {
-    width: 200px!important;
+    width: 200px !important;
     background-color: white;
 }
+
 .search_flight .search_input_4 .people {
 
 }
-.search_flight .search_input_4 .title p{
+
+.search_flight .search_input_4 .title p {
     color: #72728c;
     background: #f2f5f6;
     border: none;
@@ -73,24 +76,27 @@
     font-family: 'Oswald', sans-serif;
     font-size: 14px !important;
     font-weight: 500 !important;
-    letter-spacing:0.6px;
+    letter-spacing: 0.6px;
 }
-.search_flight .search_input_4 .title p a{
+
+.search_flight .search_input_4 .title p a {
     background-color: #F2F5F6;
     color: #72728c;
 }
+
 .search_flight .search_input_4 .title p a i {
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
 }
-.search_flight .search_input_4 .people  .quantity .pro-qty input
-{
+
+.search_flight .search_input_4 .people .quantity .pro-qty input {
     outline: none;
     width: 20px;
     border: none;
 }
-.search_flight .search_input_4 .people  .table p{
+
+.search_flight .search_input_4 .people .table p {
     color: #72728c;
     border: none;
     outline: none;
@@ -98,18 +104,21 @@
     font-family: 'Oswald', sans-serif;
     font-size: 14px !important;
     font-weight: 500 !important;
-    letter-spacing:0.6px;
+    letter-spacing: 0.6px;
 }
-.search_flight .search_input_4 .people  .quantity .pro-qty span {
+
+.search_flight .search_input_4 .people .quantity .pro-qty span {
     padding: 3px;
 }
-.qua-col .quantity .pro-qty .dec{
+
+.qua-col .quantity .pro-qty .dec {
     cursor: pointer;
     margin-right: 3px;
 
     border: 1px solid black;
 }
-.qua-col .quantity .pro-qty  .inc{
+
+.qua-col .quantity .pro-qty .inc {
     cursor: pointer;
 }
 
@@ -208,23 +217,20 @@
     font-weight: 300;
 }
 
-.body_booking .locale-vi .media h4 spam {
+.body_booking .locale-vi .media h4 span {
     font-family: 'Oswald', sans-serif;
     font-weight: bold
 }
 
-.body_booking .Active-date .col {
+.body_booking .title_session {
     background-color: #33597C;
-    padding-left: 30px;
-    padding-top: 6px;
+    padding-left: 25px;
+    line-height: 40px;
     height: 40px;
-    color: white;
-}
-
-.body_booking .Active-date .col p {
     color: white;
     font-family: 'Oswald', sans-serif;
     letter-spacing: 0.8px;
+    font-size: 16px;
 }
 
 .body_booking .title .col-3 {
@@ -379,72 +385,62 @@
 .body_booking a i {
     font-size: 20px;
 }
-    /************
-    3. Booking/2 - Thông tin hành khách:
-    ************/
 
-.booking2_font_family{
-    font-family: 'Oswald', sans-serif;
+/************
+3. Booking/2 - Thông tin hành khách:
+************/
+
+.form-control {
+    color: black;
 }
-.booking2_color_title{
+
+.title_card {
     color: white;
-    font-weight: 600;
     background-color: #33597C;
+    height: 40px;
+    line-height: 20px;
+    padding-left: 25px;
 }
-.title{
-    color: white;
-}
-.bg-title{
-    border:1px solid black;
-    border-radius: 4px 4px 0px 0px;
-    background-color: #33597C;
-}
-.booking2_color_logo{
+
+.booking2_color_logo {
     color: #33597C;
-}
-.booking2_font_family{
-    font-family: 'Oswald', sans-serif;
-}
-.color-on{
-    color: #B8B1B1;
 }
 
 /************
 4. Booking/3 - Dịch vụ bổ sung:
 ************/
-.section-header
-{
+.section-header {
     color: #00305b;
 }
 
-.color-blue
-{
+.color-blue {
     color: #1b4b72;
 }
 
-.checkbox
-{
+.checkbox {
     margin-top: 5rem;
     padding-left: 0.6rem;
 }
-.step1-progress .background_blue p
-{
-    background-color: #33597C;
-    color: white;
-    padding: 5px;
-    font-weight: bold;
-    font-family: 'Oswald', sans-serif;
-}
 
-.contents
-{
-    margin-top: 2rem;
-}
-.description .intro-services .col-4 img{
+.item_extra_service .intro-services .col-4 img {
     width: 100%;
     height: 150px;
     margin-right: -15px !important;
 }
+
+.item_extra_service .description {
+    padding-top: 10px;
+}
+
+
+.my_label {
+    background-color: #F0F2F5;
+    margin: 0;
+    text-align: center;
+    padding-top: 68px;
+    cursor: pointer;
+}
+
 /************
 5. Booking/4 - Thanh toán:
 ************/
@@ -452,128 +448,158 @@
     color: #33597C;
     font-weight: 700;
     margin: 15px 0;
-    font-size: 15px;font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-family: 'Oswald', sans-serif;
 
 }
-.mainStep1 .fligh-step4  .card{
+
+.mainStep1 .fligh-step4 .card {
     border: 0.5px solid #ECE9E9;
     box-shadow: 5px 10px 8px #dcdcdc;
     background-color: white;
 
 }
+
 .mainStep1 .fligh-step4 .card-header {
     background-color: #33597C;
     color: white;
     height: 50px
 }
-.mainStep1 .fligh-step4 .card-header  .card-title img{
+
+.mainStep1 .fligh-step4 .card-header .card-title img {
     width: 40px;
     height: 40px;
 }
-.mainStep1 .fligh-step4 .card-header  .card-title span {
+
+.mainStep1 .fligh-step4 .card-header .card-title span {
     margin-top: 5px;
     font-family: 'Oswald', sans-serif;
 }
+
 .mainStep1 .fligh-step4 .card-body h4 {
     font-size: 20px;
     color: #33597C;
     font-weight: 600;
-   font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', sans-serif;
 }
+
 .mainStep1 .fligh-step4 .card-body h5 {
     font-size: 17px;
     color: #33597C;
     font-weight: 500;
     font-family: 'Oswald', sans-serif;
 }
+
 .mainStep1 .fligh-step4 .card-body p {
     font-size: 13px;
     color: black;
     font-family: 'Oswald', sans-serif;
 }
-.mainStep1 .customer-step4  .card .card-header {
+
+.mainStep1 .customer-step4 .card .card-header {
     background-color: #33597C;
     color: white;
     height: 50px;
 }
+
 .mainStep1 .customer-step4 .card-header h5 {
     margin-top: 5px;
     font-family: 'Oswald', sans-serif;
 }
+
 .mainStep1 .customer-step4 {
     border: 0.5px solid #ECE9E9;
     box-shadow: 5px 10px 8px #dcdcdc;
     background-color: white;
 }
+
 .mainStep1 .customer-step4 .card-body h5 {
     font-size: 17px;
     color: #33597C;
     font-weight: 500;
     font-family: 'Oswald', sans-serif;
 }
+
 .mainStep1 .customer-step4 .card-body h5 span {
     color: black;
 }
+
 .mainStep1 .solutionpayment {
     border: 0.5px solid #ECE9E9;
     box-shadow: 5px 10px 8px #dcdcdc;
     background-color: white;
 }
-.mainStep1 .solutionpayment .title .card-header{
+
+.mainStep1 .solutionpayment .title .card-header {
     background-color: #33597C;
     color: white;
     height: 50px;
 }
+
 .mainStep1 .solutionpayment .title .card-header h5 {
 
     margin-top: 5px;
     font-family: 'Oswald', sans-serif;
 }
-.mainStep1 .solutionpayment .card-body .row  .title {
+
+.mainStep1 .solutionpayment .card-body .row .title {
     font-size: 13px;
-    color:  #33597C;
+    color: #33597C;
     font-family: 'Oswald', sans-serif;
     font-weight: 600;
     margin-bottom: 20px;
 }
+
 .mainStep1 .info-ticker .card .card-header {
-    background-color: #33597C; color: white; height: 50px
+    background-color: #33597C;
+    color: white;
+    height: 50px
 }
+
 .mainStep1 .info-ticker .card .card-header h5 {
 
     margin-top: 5px;
     font-family: 'Oswald', sans-serif;
 }
+
 .mainStep1 .info-ticker .container .card-body .card-title {
     font-size: 17px;
     color: #33597C;
     font-weight: 500;
     font-family: 'Oswald', sans-serif;
 }
+
 .mainStep1 .info-ticker .container .card-body .card-text {
     font-size: 15px;
     color: black;
     font-family: 'Oswald', sans-serif;
 }
+
 .mainStep1 .info-ticker .container .card-body h4 {
     margin-top: 10px;
     font-size: 20px;
     color: #33597C;
 }
+
 .mainStep1 .info-ticker .card .check {
-    background-color: #e2e2e3; color: #000000; height: 50px
+    background-color: #e2e2e3;
+    color: #000000;
+    height: 50px
 }
+
 .mainStep1 .info-ticker .card .check h5 {
     margin-top: 5px;
     font-family: 'Oswald', sans-serif;
     font-size: 14px;
 }
+
 .mainStep1 .info-ticker .card .check input {
     margin-right: 12px;
 }
-    /************
-    6. Ticket/index - Danh sách vé:
-    ************/
+
+/************
+6. Ticket/index - Danh sách vé:
+************/
 
 .page_ticket .search_input_1 {
     width: 26%;
@@ -601,10 +627,10 @@
     font-weight: bold;
 }
 
-.page_ticket .home_slider_content_container
-{
+.page_ticket .home_slider_content_container {
     top: 20%;
 }
+
 .ticket_list .row .table-info-tickets {
     margin-bottom: 100px;
     border: 0.5px solid #ECE9E9;
@@ -612,39 +638,45 @@
     background-color: white;
     text-transform: uppercase;
 }
-.ticket_list .row  .table-top {
+
+.ticket_list .row .table-top {
     background-color: #33597C;
     color: white;
 }
-.ticket_list .row .active tr{
+
+.ticket_list .row .active tr {
     font-size: 15px;
 }
-.ticket_list .row .active tr:hover{
+
+.ticket_list .row .active tr:hover {
     background-color: #f8f9fa;
     color: #33597C;
 }
+
 /************
 7. Ticket/detail - Xem chi tiết vé:
 ************/
 
-.detail_font_family tr{
+.detail_font_family tr {
     font-family: 'Oswald', sans-serif;
     font-size: 120%;
     text-align: center;
 }
-.detail-background{
+
+.detail-background {
     background-color: #1b4b72;
     font-size: 120%;
 }
-.ticket_title_color{
+
+.ticket_title_color {
     color: #1b4b72;
 }
 
-.ticket_number_guests{
+.ticket_number_guests {
     font-size: 250%;
 }
 
-.ticket_total_amount{
+.ticket_total_amount {
     font-size: 150%;
 }
 
@@ -652,7 +684,7 @@
 /************
 8. Ticket/edit - Sửa chi tiết vé:
 ************/
-.ticket_edit_button{
+.ticket_edit_button {
     background-color: #64AF53;
     font-size: 18px;
     color: white;
@@ -663,15 +695,17 @@
 /************
 9. Schedule/index -  Tìm kiếm hành trình theo mã:
 ************/
-.schedule-index{
+.schedule-index {
     background-color: #EDF3F7;
 }
-.schedule-index .container .row .title-flight h4{
+
+.schedule-index .container .row .title-flight h4 {
     margin-top: 50px;
     color: #33597C;
     font-weight: bold;
     margin-bottom: 50px;
 }
+
 .schedule-index .table {
     margin-bottom: 100px;
     border: 0.5px solid #ECE9E9;
@@ -680,11 +714,12 @@
     text-transform: uppercase;
 }
 
-.schedule-index .container .heade-table{
+.schedule-index .container .heade-table {
     background-color: #33597C;
     color: white;
 }
-.schedule-index .container .table .active tr:hover{
+
+.schedule-index .container .table .active tr:hover {
     background-color: #faf9f9;
     color: #33597C;
 }
@@ -712,22 +747,20 @@
 /************
 14. Register
 ************/
-.content_main
-{
+.content_main {
     font-family: 'Oswald', sans-serif;
     /*text-align: center;*/
     margin-top: 30%;
     margin-bottom: -30%;
 
 }
-#name
-{
+
+#name {
     width: 100%;
     height: 50px;
 }
 
-.name
-{
+.name {
     margin-left: 15px;
     margin-top: 10px;
     width: 125px;
@@ -735,15 +768,13 @@
     font-size: 18px;
 }
 
-.gender
-{
+.gender {
     margin-top: -30px;
     margin-bottom: 30px;
     margin-left: -237px;
 }
 
-.container .content_main .card
-{
+.container .content_main .card {
     /*width: 647px;*/
     /*height: auto;*/
     /*background-color: rgba(255, 255, 255, 0.68);*/
@@ -755,15 +786,14 @@
     background-color: rgba(255, 255, 255, 0.68);
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     text-align: center;
     padding-top: 20px;
     padding-right: 50px;
 
 }
 
-.content_main .card .input-group input
-{
+.content_main .card .input-group input {
     width: 100%;
     height: 40px;
     border: 1px solid #CAC7C7;
@@ -773,8 +803,8 @@
     font-family: 'Oswald', sans-serif;
     outline: none;
 }
-.user
-{
+
+.user {
     position: relative;
     left: 70px;
     top: -40px;
@@ -787,8 +817,7 @@
     margin-bottom: -3rem;
 }
 
-.pw
-{
+.pw {
     position: relative;
     left: 70px;
     top: -40px;
@@ -801,8 +830,7 @@
     margin-bottom: -3rem;
 }
 
-.firstlabel
-{
+.firstlabel {
     position: relative;
     left: 70px;
     top: -40px;
@@ -816,8 +844,7 @@
     margin-right: 10px;
 }
 
-.lastlabel
-{
+.lastlabel {
     position: relative;
     left: 70px;
     top: -40px;
@@ -830,8 +857,8 @@
     margin-bottom: -3rem;
     margin-left: 10px;
 }
-.email
-{
+
+.email {
     position: relative;
     left: 70px;
     top: -40px;
@@ -844,8 +871,7 @@
     margin-bottom: -3rem;
 }
 
-.phone
-{
+.phone {
     position: relative;
     left: 70px;
     top: -40px;
@@ -858,8 +884,7 @@
     margin-bottom: -3rem;
 }
 
-.address
-{
+.address {
     position: relative;
     left: 70px;
     top: -40px;
@@ -872,8 +897,7 @@
     margin-bottom: -3rem;
 }
 
-.date
-{
+.date {
     position: relative;
     left: 70px;
     top: -40px;
@@ -886,8 +910,7 @@
     margin-bottom: -3rem;
 }
 
-.content_main .card .form-group button
-{
+.content_main .card .form-group button {
     width: 150px;
     background-color: #77c23c;
     font-size: 20px;
@@ -896,47 +919,53 @@
     text-align: center;
 }
 
-.content_main .card .form-group
-{
+.content_main .card .form-group {
     margin-left: 3rem;
 }
+
 /************
 15. Login
 ************/
-#main{
+#main {
     width: 600px;
     height: 500px;
     background-color: rgba(255, 255, 255, 0.68);
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     font-family: 'Oswald', sans-serif;
     margin-top: 15%;
     margin-bottom: -15%;
 }
+
 #main .login {
     padding: 40px;
 }
-#main .login .logo{
+
+#main .login .logo {
     display: flex;
 }
-#main .login .logo img{
+
+#main .login .logo img {
     width: 60px;
     height: 60px;
     margin-right: 30px;
 }
+
 #main .login .logo h5 {
     font-size: 30px;
     font-weight: 900;
     font-family: 'Oswald', sans-serif;
     color: #33597C;
 }
-#main .login .logo span{
+
+#main .login .logo span {
     text-transform: uppercase;
     font-family: 'Oswald', sans-serif;
     color: #33597C;
     font-weight: bold;
 }
+
 #main .login .title h4 {
     font-size: 15px;
     font-weight: bold;
@@ -946,7 +975,8 @@
     margin-top: 20px;
     margin-bottom: 20px
 }
-#main .login .login-body input{
+
+#main .login .login-body input {
     border: none;
     border-bottom: 1px solid #000000;
     background: transparent;
@@ -955,10 +985,12 @@
     width: 100%;
     margin: 20px;
 }
+
 ::-webkit-input-placeholder {
     color: #33597C;
 }
-.login-body .submit-form button{
+
+.login-body .submit-form button {
     width: 150px;
     background-color: #77c23c;
     font-size: 20px;
@@ -966,8 +998,7 @@
     font-weight: bold;
 }
 
-#main .login .login-body .user
-{
+#main .login .login-body .user {
     margin-left: -91px;
 }
 
