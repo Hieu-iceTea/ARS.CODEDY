@@ -88,15 +88,15 @@
                 <td>VNĐ</td>
                 <td>Tickets left</td>
                 <td>Bamboo Bussiness</td>
-                <td rowspan="2">2</td>
-                <td rowspan="2">1.000.000Đ</td>
+                <td rowspan="2" class="ticket_number_guests">2</td>
+                <td rowspan="2" class="ticket_total_amount">1.000.000Đ</td>
             </tr>
             <tr>
                 <th scope="row">2</th>
                 <td>MH370</td>
-                <td>Truong Thanh Tu</td>
                 <td>Cash</td>
-                <td>VNĐ</td>
+                <td>VND</td>
+                <td>Tickets</td>
                 <td>Bamboo ECO</td>
             </tr>
             </tbody>
@@ -105,7 +105,7 @@
         <table class="table table-bordered detail_font_family mb-5">
             <thead class="thead-dark">
             <tr>
-                <th scope="col" colspan="5" class="detail-background" style="background-color: #1b4b72">Flight information</th>
+                <th scope="col" colspan="7" class="detail-background" style="background-color: #1b4b72">Flight information</th>
             </tr>
             </thead>
             <tbody>
@@ -114,6 +114,8 @@
                 <th>Flight code</th>
                 <th>From</th>
                 <th>To</th>
+                <th>Flight time</th>
+                <th>Time to</th>
                 <th>Describe</th>
             </tr>
             <tr>
@@ -121,6 +123,8 @@
                 <td>MH370</td>
                 <td>TP.Ho Chi Minh</td>
                 <td>Ha Noi</td>
+                <td>6:00 AM</td>
+                <td>8:15 AM</td>
                 <td></td>
             </tr>
             <tr>
@@ -128,6 +132,8 @@
                 <td>MH370</td>
                 <td>TP.Ho Chi Minh</td>
                 <td>Ha Noi</td>
+                <td>6:00 AM</td>
+                <td>8:15 AM</td>
                 <td></td>
             </tr>
             </tbody>

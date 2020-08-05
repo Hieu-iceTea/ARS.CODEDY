@@ -542,6 +542,15 @@
     color: #1b4b72;
 }
 
+.ticket_number_guests{
+    font-size: 250%;
+}
+
+.ticket_total_amount{
+    font-size: 150%;
+}
+
+
 /************
 8. Ticket/edit - Sửa chi tiết vé:
 ************/
