@@ -11,7 +11,7 @@
 @section('Content')
     <!-- Home -->
 
-    <div class="home page_ticket">
+    <div class="home home_booking">
 
         <div class="background_image" style="background-image:url({{ asset('source/images/destinations.jpg') }})"></div>
         <div class="home_slider_content_container">
@@ -28,31 +28,36 @@
 
     </div>
     <!-- Search -->
-    <div class="mainStep1 " style="">
+    <div class="body_booking" style="">
         <div class=" mt-5 mb-4">
             <div class="container">
-                <div class="step1-progress row">
-                    <div class="col-sm-3 w-100 ">
-                        <p>
-                            <span class="badge badge-light">1</span> Flight
-                        </p>
+                <div class="row flight_progress_row">
+                    <div class="col-3 col-sm-3">
+                        <div class="flightProgress">
+                            <div class="step_number">1</div>
+                            <div class="step_description">Flights</div>
+                        </div>
                     </div>
-                    <div class="col-sm-3 ">
-                        <p>
-                            <span class="badge badge-light" >2</span>Customer information
-                        </p>
+                    <div class="col-3 col-sm-3">
+                        <div class="flightProgress">
+                            <div class="step_number">2</div>
+                            <div class="step_description">Passenger details</div>
+                        </div>
                     </div>
-                    <div class="col-sm-3 ">
-                        <p>
-                            <span class="badge badge-light">3</span>Bonus services
-                        </p>
+                    <div class="col-3 col-sm-3">
+                        <div class="flightProgress">
+                            <div class="step_number">3</div>
+                            <div class="step_description">Extras</div>
+                        </div>
                     </div>
-                    <div class="col-sm-3 active">
-                        <p>
-                            <span class="badge badge-light">4</span> Pay
-                        </p>
+                    <div class="col-3 col-sm-3">
+                        <div class="flightProgress active">
+                            <div class="step_number">4</div>
+                            <div class="step_description">Payment</div>
+                        </div>
                     </div>
                 </div>
+
                 <form action="/">
                 <div class=" row mt-5">
                         <div class="col-lg-8 col  w-100">
@@ -249,7 +254,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a type="button"  href="" class="btn mt-3 w-100 position-sticky contineu">Accept and pay immediately <span><i class="fa fa-angle-right"></i></span></a>
+                            <a type="button"  href="" class="btn mt-3 w-100 position-sticky continue">Accept and pay immediately <span><i class="fa fa-angle-right"></i></span></a>
                         </div>
                         <div class=" col-lg-4 mt-5" >
                             <div class="card cart-info  w-100"  style="width: 18rem;">

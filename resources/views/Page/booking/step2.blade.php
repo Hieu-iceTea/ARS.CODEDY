@@ -10,7 +10,7 @@
 <!-- Content Home -->
 @section('Content')
     <!-- Home Background Header-->
-    <div class="home page_ticket" style="height: 586px">
+    <div class="home home_booking" style="height: 586px">
 
         <div class="background_image" style="background-image:url(../source/images/destinations.jpg)"></div>
         <div class="home_slider_content_container">
@@ -28,31 +28,36 @@
     </div>
 
 
-    <div class="mainStep1 " style="">
+    <div class="body_booking" style="">
         <div class=" mt-5 mb-4">
             <div class="container">
-                <div class="step1-progress row">
-                    <div class="col-sm-3 ">
-                        <p>
-                            <span class="badge badge-light">1</span> Chuyến Bay
-                        </p>
+                <div class="row flight_progress_row">
+                    <div class="col-3 col-sm-3">
+                        <div class="flightProgress">
+                            <div class="step_number">1</div>
+                            <div class="step_description">Flights</div>
+                        </div>
                     </div>
-                    <div class="col-sm-3  active">
-                        <p>
-                            <span class="badge badge-light" >2</span>Thông Tin Khách Hàng
-                        </p>
+                    <div class="col-3 col-sm-3">
+                        <div class="flightProgress active">
+                            <div class="step_number">2</div>
+                            <div class="step_description">Passenger details</div>
+                        </div>
                     </div>
-                    <div class="col-sm-3 ">
-                        <p>
-                            <span class="badge badge-light">3</span>Dịch Vụ Bổ Sung
-                        </p>
+                    <div class="col-3 col-sm-3">
+                        <div class="flightProgress">
+                            <div class="step_number">3</div>
+                            <div class="step_description">Extras</div>
+                        </div>
                     </div>
-                    <div class="col-sm-3 ">
-                        <p>
-                            <span class="badge badge-light">4</span> Thanh Toán
-                        </p>
+                    <div class="col-3 col-sm-3">
+                        <div class="flightProgress">
+                            <div class="step_number">4</div>
+                            <div class="step_description">Payment</div>
+                        </div>
                     </div>
                 </div>
+
                 <div class="container booking2_font_family">
                     <div class=" row mt-5">
                         <div class="col-lg-8 col-sm-12">
@@ -71,7 +76,8 @@
                                     <div class="row">
                                         <div class="col-6 my-4 ml-5">
                                             <div class="media">
-                                                <i class="fa fa-address-book" aria-hidden="true" style="font-size: 400%"></i>
+                                                <i class="fa fa-address-book" aria-hidden="true"
+                                                   style="font-size: 400%"></i>
                                                 <div class="media-body ml-4">
                                                     <h5 class="mt-2">Đăng nhập và đặt chỗ nhanh hơn</h5>
                                                 </div>
@@ -79,14 +85,18 @@
                                         </div>
                                         <div class="col-4 ml-3">
                                             <div class="form-check">
-                                                <input class="form-check-input mt-4" type="radio" name="checklogin" value="1" id="defaultCheck1" style="width: 20px;height: 20px">
-                                                <label class="form-check-label mt-3 ml-2" for="defaultCheck1" style="font-size: 90%">
+                                                <input class="form-check-input mt-4" type="radio" name="checklogin"
+                                                       value="1" id="defaultCheck1" style="width: 20px;height: 20px">
+                                                <label class="form-check-label mt-3 ml-2" for="defaultCheck1"
+                                                       style="font-size: 90%">
                                                     Tôi muốn đăng nhập bằng tài khoản của Bamboo
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input mt-3" type="radio" name="checklogin" value="2" id="defaultCheck1" style="width: 20px;height: 20px">
-                                                <label class="form-check-label mt-3 ml-2" for="defaultCheck1" style="font-size: 90%">
+                                                <input class="form-check-input mt-3" type="radio" name="checklogin"
+                                                       value="2" id="defaultCheck1" style="width: 20px;height: 20px">
+                                                <label class="form-check-label mt-3 ml-2" for="defaultCheck1"
+                                                       style="font-size: 90%">
                                                     Tiếp tục mà không cần đăng nhập
                                                 </label>
                                             </div>
@@ -103,7 +113,8 @@
                                             <div class="col-3">
                                                 <div>Danh xưng*</div>
                                                 <div class="input-group">
-                                                    <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                                    <select class="custom-select" id="inputGroupSelect04"
+                                                            aria-label="Example select with button addon">
                                                         <option selected>Danh xưng</option>
                                                         <option value="1">One</option>
                                                         <option value="2">Two</option>
@@ -116,7 +127,8 @@
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                     </div>
-                                                    <input type="text" class="form-control" placeholder="Tên đệm và tên" aria-label="Username" aria-describedby="basic-addon1">
+                                                    <input type="text" class="form-control" placeholder="Tên đệm và tên"
+                                                           aria-label="Username" aria-describedby="basic-addon1">
                                                 </div>
                                             </div>
                                             <div class="col-4">
@@ -124,12 +136,14 @@
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                     </div>
-                                                    <input type="text" class="form-control" placeholder="Họ" aria-label="Username" aria-describedby="basic-addon1">
+                                                    <input type="text" class="form-control" placeholder="Họ"
+                                                           aria-label="Username" aria-describedby="basic-addon1">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <p class="ml-3" style="font-size: 80%">Vui lòng điền đầy đủ họ tên theo  giấy tờ tùy thân</p>
+                                            <p class="ml-3" style="font-size: 80%">Vui lòng điền đầy đủ họ tên theo giấy
+                                                tờ tùy thân</p>
                                         </div>
                                         <div class="row mt-3">
                                             <div class="col-4">
@@ -144,7 +158,8 @@
                                             <div class="col-8">
                                                 <div>Quốc tịch*</div>
                                                 <div class="input-group w-75">
-                                                    <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                                    <select class="custom-select" id="inputGroupSelect04"
+                                                            aria-label="Example select with button addon">
                                                         <option selected>Việt Nam</option>
                                                         <option value="1">One</option>
                                                         <option value="2">Two</option>
@@ -159,7 +174,8 @@
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                     </div>
-                                                    <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                                                    <input type="text" class="form-control" placeholder=""
+                                                           aria-label="Username" aria-describedby="basic-addon1">
                                                 </div>
                                             </div>
                                         </div>
@@ -186,7 +202,8 @@
                                             <div class="col-3">
                                                 <div>Danh xưng*</div>
                                                 <div class="input-group">
-                                                    <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                                    <select class="custom-select" id="inputGroupSelect04"
+                                                            aria-label="Example select with button addon">
                                                         <option selected>Danh xưng</option>
                                                         <option value="1">One</option>
                                                         <option value="2">Two</option>
@@ -199,7 +216,8 @@
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                     </div>
-                                                    <input type="text" class="form-control" placeholder="Tên đệm và tên" aria-label="Username" aria-describedby="basic-addon1">
+                                                    <input type="text" class="form-control" placeholder="Tên đệm và tên"
+                                                           aria-label="Username" aria-describedby="basic-addon1">
                                                 </div>
                                             </div>
                                             <div class="col-4">
@@ -207,12 +225,14 @@
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                     </div>
-                                                    <input type="text" class="form-control" placeholder="Họ" aria-label="Username" aria-describedby="basic-addon1">
+                                                    <input type="text" class="form-control" placeholder="Họ"
+                                                           aria-label="Username" aria-describedby="basic-addon1">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <p class="ml-3" style="font-size: 80%">Vui lòng điền đầy đủ họ tên theo  giấy tờ tùy thân</p>
+                                            <p class="ml-3" style="font-size: 80%">Vui lòng điền đầy đủ họ tên theo giấy
+                                                tờ tùy thân</p>
                                         </div>
                                         <div class="row mt-3">
                                             <div class="col-6">
@@ -220,14 +240,19 @@
                                                 <div class="input-group mb-3 width_input_prepend">
                                                     <div class="input-group-prepend">
                                                     </div>
-                                                    <input type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" >
+                                                    <input type="text" class="form-control" placeholder="Email"
+                                                           aria-label="Username" aria-describedby="basic-addon1">
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-check">
-                                                    <input class="form-check-input mt-4" type="radio" name="check" value="1" id="defaultCheck1" style="width: 20px;height: 20px">
-                                                    <label class="form-check-label mt-3 ml-2" for="defaultCheck1" style="font-size: 80%">
-                                                        Đăng ký để cập nhập thông tin mới nhất từ hãng và các chương trình khuyến mại
+                                                    <input class="form-check-input mt-4" type="radio" name="check"
+                                                           value="1" id="defaultCheck1"
+                                                           style="width: 20px;height: 20px">
+                                                    <label class="form-check-label mt-3 ml-2" for="defaultCheck1"
+                                                           style="font-size: 80%">
+                                                        Đăng ký để cập nhập thông tin mới nhất từ hãng và các chương
+                                                        trình khuyến mại
                                                     </label>
                                                 </div>
                                             </div>
@@ -236,7 +261,8 @@
                                             <div class="col-3">
                                                 <div>Số điện thoại*</div>
                                                 <div class="input-group width_input_opption">
-                                                    <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                                    <select class="custom-select" id="inputGroupSelect04"
+                                                            aria-label="Example select with button addon">
                                                         <option selected>+84 (Viet Nam)</option>
                                                         <option value="1">One</option>
                                                         <option value="2">Two</option>
@@ -248,21 +274,29 @@
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                     </div>
-                                                    <input type="text" class="form-control" placeholder="Số điện thoại" aria-label="Username" aria-describedby="basic-addon1" style="margin-top: 21px">
+                                                    <input type="text" class="form-control" placeholder="Số điện thoại"
+                                                           aria-label="Username" aria-describedby="basic-addon1"
+                                                           style="margin-top: 21px">
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-check">
-                                                    <input class="form-check-input mt-4" type="radio" name="check" value="2" id="defaultCheck1" style="width: 20px;height: 20px">
-                                                    <label class="form-check-label mt-3 ml-2" for="defaultCheck1" style="font-size: 80%">
-                                                        Đăng ký để nhận tin tức về các ưu đãi, khuyến mại mới nhất từ Bamboo Airways
+                                                    <input class="form-check-input mt-4" type="radio" name="check"
+                                                           value="2" id="defaultCheck1"
+                                                           style="width: 20px;height: 20px">
+                                                    <label class="form-check-label mt-3 ml-2" for="defaultCheck1"
+                                                           style="font-size: 80%">
+                                                        Đăng ký để nhận tin tức về các ưu đãi, khuyến mại mới nhất từ
+                                                        Bamboo Airways
                                                     </label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-8">
-                                                <p style="font-size: 80%">Lưu ý: Quý khách vui lòng cung cấp thông tin chính xác, Bamboo Airways sẽ sử dụng để liên lạc và hỗ trợ Quý khách trong trường hợp cần thiết.</p>
+                                                <p style="font-size: 80%">Lưu ý: Quý khách vui lòng cung cấp thông tin
+                                                    chính xác, Bamboo Airways sẽ sử dụng để liên lạc và hỗ trợ Quý khách
+                                                    trong trường hợp cần thiết.</p>
                                             </div>
                                         </div>
                                         <div class="row mt-3">
@@ -271,7 +305,8 @@
                                                 <div class="input-group mb-3">
                                                     <div class="input-group-prepend">
                                                     </div>
-                                                    <input type="text" class="form-control" placeholder="Phố" aria-label="Username" aria-describedby="basic-addon1">
+                                                    <input type="text" class="form-control" placeholder="Phố"
+                                                           aria-label="Username" aria-describedby="basic-addon1">
                                                 </div>
                                             </div>
                                         </div>
@@ -281,13 +316,15 @@
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                     </div>
-                                                    <input type="text" class="form-control" placeholder="Thành phố" aria-label="Username" aria-describedby="basic-addon1">
+                                                    <input type="text" class="form-control" placeholder="Thành phố"
+                                                           aria-label="Username" aria-describedby="basic-addon1">
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div>Quốc gia*</div>
                                                 <div class="input-group">
-                                                    <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                                    <select class="custom-select" id="inputGroupSelect04"
+                                                            aria-label="Example select with button addon">
                                                         <option selected>Việt Nam</option>
                                                         <option value="1">One</option>
                                                         <option value="2">Two</option>
@@ -298,8 +335,11 @@
                                         </div>
                                         <div class="row mt-2">
                                             <div class="col-12">
-                                                <p style="font-size: 80%">(1) Tôi đồng ý nhận email thông báo. Để biết thêm thông tin liên quan đến việc Bamboo Airways xử lý thông tin cá nhân của khách hàng, vui lòng xem chi tiết tại
-                                                    Chính sách bảo mật , Điều kiện sử dụng chức năng đặt chỗ trực tuyến và Điều khoản sử dụng website.
+                                                <p style="font-size: 80%">(1) Tôi đồng ý nhận email thông báo. Để biết
+                                                    thêm thông tin liên quan đến việc Bamboo Airways xử lý thông tin cá
+                                                    nhân của khách hàng, vui lòng xem chi tiết tại
+                                                    Chính sách bảo mật , Điều kiện sử dụng chức năng đặt chỗ trực tuyến
+                                                    và Điều khoản sử dụng website.
                                                 </p>
                                             </div>
                                         </div>
@@ -308,17 +348,25 @@
                             </div>
                         </div>
                         <div class="col-lg-4 mt-5">
-                            <div class="card cart-info  w-100"  style="width: 18rem;">
+                            <div class="card cart-info  w-100" style="width: 18rem;">
                                 <img class="card-img-top" src="../source/images/destination_5.jpg" alt="Card image cap">
                                 <div class="card-body text-center">
-                                    <h4> <spam>Hồ Chí Minh</spam> (SGN) tới <spam>Hà Nội </spam>(HAN)</h4>
+                                    <h4>
+                                        <spam>Hồ Chí Minh</spam>
+                                        (SGN) tới
+                                        <spam>Hà Nội</spam>
+                                        (HAN)
+                                    </h4>
                                     <p class="card-text">Khứ Hồi | 1 Người Lớn</p>
-                                    <p class="card-text-link"><a href="" style="text-decoration: none">Thay đổi lịch trình chuyến bay</a></p>
+                                    <p class="card-text-link"><a href="" style="text-decoration: none">Thay đổi lịch
+                                            trình chuyến bay</a></p>
                                 </div>
                             </div>
                             <div class="card-Clearfix card mt-3  w-100" style="width: 18rem;">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title" ><span style="font-size: 20px;color: #33597C;font-weight: 600">Tổng Tiền</span> : 3000.000.000 vnđ</h5>
+                                    <h5 class="card-title"><span
+                                            style="font-size: 20px;color: #33597C;font-weight: 600">Tổng Tiền</span> :
+                                        3000.000.000 vnđ</h5>
                                     <h6 class="card-subtitle mb-2 text-muted"></h6>
                                     <p class="card-text">Bao gồm tuế và phí dịch vụ</p>
 
@@ -326,16 +374,25 @@
                             </div>
                             <div class="card mt-3 cart-content w-100" style="width: 18rem;">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title" style=""><span style="font-size: 20px;color: #33597C;font-weight: 600">Tổng Tiền</span> : 3000.000.000 vnđ</h5>
+                                    <h5 class="card-title" style=""><span
+                                            style="font-size: 20px;color: #33597C;font-weight: 600">Tổng Tiền</span> :
+                                        3000.000.000 vnđ</h5>
 
                                     <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                    <h4 style=""> <spam style="font-family: 'Oswald', sans-serif;font-weight: bold"></spam> (SGN) tới <spam style="font-family: 'Oswald', sans-serif;font-weight: bold"></spam>(HAN)</h4>
-                                    <p class="card-text" >CN 02/08/2020 | 19:25 - 20:30</p>
+                                    <h4 style="">
+                                        <spam style="font-family: 'Oswald', sans-serif;font-weight: bold"></spam>
+                                        (SGN) tới
+                                        <spam style="font-family: 'Oswald', sans-serif;font-weight: bold"></spam>
+                                        (HAN)
+                                    </h4>
+                                    <p class="card-text">CN 02/08/2020 | 19:25 - 20:30</p>
                                     <p class="card-text">Người lớn 1 * 2.500.000 = <span>2.500.000</span></p>
                                 </div>
                             </div>
 
-                            <a type="button"  href="http://ars.codedy/booking/3" class="btn mt-3 w-100 position-sticky contineu">Tiếp Theo  <span><i class="fa fa-angle-right"></i></span></a>
+                            <a type="button" href="http://ars.codedy/booking/3"
+                               class="btn mt-3 w-100 position-sticky continue">Continue<span><i
+                                        class="fa fa-angle-right"></i></span></a>
                         </div>
                     </div>
                 </div>
