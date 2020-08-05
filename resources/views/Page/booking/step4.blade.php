@@ -278,7 +278,6 @@
                                 </div>
                             </div>
 
-                            <button type="submit"  href="" class="btn mt-3 w-100 position-sticky contineu">Continew  <span><i class="fa fa-angle-right"></i></span></button>
                         </div>
                 </div>
                 </form>
