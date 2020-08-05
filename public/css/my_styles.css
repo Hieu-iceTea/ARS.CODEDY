@@ -529,6 +529,18 @@
 7. Ticket/detail - Xem chi tiết vé:
 ************/
 
+.detail_font_family tr{
+    font-family: 'Oswald', sans-serif;
+    font-size: 120%;
+    text-align: center;
+}
+.detail-background{
+    background-color: #1b4b72;
+    font-size: 120%;
+}
+.ticket_title_color{
+    color: #1b4b72;
+}
 
 /************
 8. Ticket/edit - Sửa chi tiết vé:
