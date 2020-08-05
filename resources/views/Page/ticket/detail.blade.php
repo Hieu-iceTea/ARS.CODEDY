@@ -62,6 +62,7 @@
             </tr>
             </tbody>
         </table>
+        <a type="button"  href="http://ars.codedy/ticket/edit/1" class="btn mt-3 mb-1 position-sticky ticket_edit_button" style="background-color: #64AF53;font-size: 18px;color: white;font-family: 'Oswald', sans-serif;font-weight: bold;width: 135px">Edit  <span><i class="fa fa-angle-right"></i></span></a>
 
 
         <table class="table table-bordered my-5 detail_font_family">

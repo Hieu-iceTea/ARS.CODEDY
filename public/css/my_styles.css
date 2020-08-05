@@ -554,7 +554,13 @@
 /************
 8. Ticket/edit - Sửa chi tiết vé:
 ************/
-
+.ticket_edit_button{
+    background-color: #64AF53;
+    font-size: 18px;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
 
 /************
 9. Schedule/index -  Tìm kiếm hành trình theo mã:
