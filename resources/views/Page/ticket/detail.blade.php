@@ -26,121 +26,162 @@
         </div>
 
     </div>
-<div class="tiket_detail">
-    <div class="container">
-        <div class="row ml-1 my-4 ticket_title_color">
-            <h2>Ticket details</h2>
+
+    <div class="container mb-5">
+        <div class="row mt-4">
+            <div class="col-8 ml-3">
+                <div class="row mb-4 booking2_color_logo">
+                    <div class="media">
+                        <i class="fa fa-plane" aria-hidden="true" style="font-size: 400%"></i>
+                        <div class="media-body ml-4">
+                            <h5 class="mt-0">Journey details</h5>
+                            <h4>Your current reservation</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 ticket_detail_fontfamily ticket_detail_fontsize ml-5">
+                <p class="ticket_detail_fontfamily ticket_detail_fontsize">Booking code: <a href=""><span class="ticket_detail_coloredit">ABC123</span></a></p>
+                <a href="">Cancellation</a> | <a href="">Pay</a>
+            </div>
+        </div>
+        <div class="card w-100">
+            <h5 class="card-header booking2_color_title tiket_detail_title">Flight information</h5>
+            <div class="row mt-3">
+                <div class="col-7 ml-5">
+                    <p class="ticket_detail_fontfamily ticket_detail_fontsize">Flight to go <span class="ticket_detail_coloredit"><strong>Sunday, 20/09/2020.</strong></span> from <span>Ha Noi</span> to <span>Ho Chi Minh</span></p>
+                </div>
+                <div class="col-4 ml-4">
+                    <p class=" ticket_detail_fontsize ticket_detail_fontfamily">Time remaining before takeoff: <span class="ticket_detail_coloredit">45d 19h 10m</span></p>
+                </div>
+            </div>
+            <div class="card m-4 ticket_detail_fontsize ticket_detail_fontfamily">
+                <div class="row">
+                    <div class="col-2 ml-4">
+                        <p class=" ticket_detail_fontsize ticket_detail_fontfamily ticket_detail_coloredit"><span>10:10</span></p>
+                        <p class="ticket_detail_fontfamily tiket_detail_add ticket_detail_coloredit"><span>Ha Noi</span></p>
+                    </div>
+                    <div class="col-1 tiket_detail_mode">
+                        <p class="ticket_detail_fontfamily ticket_detail_coloredit"> > </p>
+                    </div>
+                    <div class="col-2">
+                        <p class="ticket_detail_fontfamily ticket_detail_fontsize ticket_detail_coloredit"><span>12:15</span></p>
+                        <p class="ticket_detail_fontfamily tiket_detail_add ticket_detail_coloredit"><span>Ho Chi Minh</span></p>
+                    </div>
+                    <div class="col-2 mt-3">
+                        <p class="ticket_detail_fontfamily ticket_detail_fontsize ticket_detail_coloredit"><span>VN-556</span></p>
+                    </div>
+                    <div class="col-2 ticket_arsplus mt-3 mr-5" >
+                        <p class="ticket_detail_fontfamily">ARS Plus</p>
+                    </div>
+                    <div class="col-3 my-3 ml-5">
+                        <button type="submit" class="btn tiket_detail_continue position-sticky continue">Change fligh schedules
+                            <span><i class="fa fa-angle-right"></i></span></button>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <table class="table table-bordered detail_font_family">
-            <thead class="thead-dark">
-            <tr>
-                <th scope="col" colspan="5" class="detail-background" style="background-color: #1b4b72">Customer information</th>
-            </tr>
-            </thead>
-            <tbody class="font-style">
-            <tr>
-                <th scope="row">#</th>
-                <th>Full name</th>
-                <th>Gender</th>
-                <th>Date of birth</th>
-                <th>Guest type</th>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Vu Quang Huy</td>
-                <td>Male</td>
-                <td>20/02/2001</td>
-                <td>Adults</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Truong Thanh Tu</td>
-                <td>Female</td>
-                <td>01/01/2020</td>
-                <td>Baby</td>
-            </tr>
-            </tbody>
-        </table>
-        <a type="button"  href="http://ars.codedy/ticket/edit/1" class="btn mt-3 mb-1 position-sticky ticket_edit_button" style="background-color: #64AF53;font-size: 18px;color: white;font-family: 'Oswald', sans-serif;font-weight: bold;width: 135px">Edit  <span><i class="fa fa-angle-right"></i></span></a>
+        <div class="card w-100 mt-5 ">
+            <h5 class="card-header tiket_detail_title">Flight information</h5>
+            <div class="row mt-3">
+                <div class="card w-100 my-4 mx-5">
+                    <table class="table w-100">
+                        <thead class="ticket_detail_table">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Function</th>
+                        </tr>
+                        </thead>
+                        <tbody class="ticket_detail_table">
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Made</td>
+                            <td>Dang Kim Thi</td>
+                            <td>Adults</td>
+                            <td>Change passenger name</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Made</td>
+                            <td>Dang Kim Thi</td>
+                            <td>Adults</td>
+                            <td>Change passenger name</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Made</td>
+                            <td>Dang Kim Thi</td>
+                            <td>Adults</td>
+                            <td>Change passenger name</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
+        <div class="card w-100 mt-5">
+            <h5 class="card-header tiket_detail_title">Flight information</h5>
+            <div class="row mt-3">
+                <div class="card w-100 my-4 mx-5">
+                    <table class="table w-100">
+                        <thead class="ticket_detail_table">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Payment Type</th>
+                            <th scope="col">Amount of money</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                        </thead>
+                        <tbody class="ticket_detail_table">
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Master Card</td>
+                            <td>3.599.000 VND</td>
+                            <td>Finish</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
-        <table class="table table-bordered my-5 detail_font_family">
-            <thead class="thead-dark">
-            <tr>
-                <th scope="col" colspan="8" class="detail-background" style="background-color: #1b4b72">Ticket information</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row">#</th>
-                <th>Ticket code</th>
-                <th>Payment type</th>
-                <th>Price type</th>
-                <th>Status</th>
-                <th>Ticket type</th>
-                <th>Total number of guests</th>
-                <th>The total amount</th>
-            </tr>
-            <tr>
-                <th scope="row">1</th>
-                <td>MH370</td>
-                <td>Cash</td>
-                <td>VNĐ</td>
-                <td>Tickets left</td>
-                <td>Bamboo Bussiness</td>
-                <td rowspan="2" class="ticket_number_guests">2</td>
-                <td rowspan="2" class="ticket_total_amount">1.000.000Đ</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>MH370</td>
-                <td>Cash</td>
-                <td>VND</td>
-                <td>Tickets</td>
-                <td>Bamboo ECO</td>
-            </tr>
-            </tbody>
-        </table>
-
-        <table class="table table-bordered detail_font_family mb-5">
-            <thead class="thead-dark">
-            <tr>
-                <th scope="col" colspan="7" class="detail-background" style="background-color: #1b4b72">Flight information</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row">#</th>
-                <th>Flight code</th>
-                <th>From</th>
-                <th>To</th>
-                <th>Flight time</th>
-                <th>Time to</th>
-                <th>Describe</th>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>MH370</td>
-                <td>TP.Ho Chi Minh</td>
-                <td>Ha Noi</td>
-                <td>6:00 AM</td>
-                <td>8:15 AM</td>
-                <td></td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>MH370</td>
-                <td>TP.Ho Chi Minh</td>
-                <td>Ha Noi</td>
-                <td>6:00 AM</td>
-                <td>8:15 AM</td>
-                <td></td>
-            </tr>
-            </tbody>
-        </table>
+        <div class="card w-100 mt-5">
+            <h5 class="card-header tiket_detail_title">Flight information</h5>
+            <div class="row mt-3">
+                <div class="card w-100 my-4 mx-5">
+                    <table class="table w-100 ticket_detail_table">
+                        <thead class="ticket_detail_table">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                        </thead>
+                        <tbody class="ticket_detail_table">
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Add Luggage</td>
+                            <td>...</td>
+                            <td>3.599.000 VND</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Add Luggage</td>
+                            <td>...</td>
+                            <td>3.599.000 VND</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 
 @endsection
 

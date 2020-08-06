@@ -686,12 +686,76 @@
 /************
 8. Ticket/edit - Sửa chi tiết vé:
 ************/
-.ticket_edit_button {
-    background-color: #64AF53;
-    font-size: 18px;
-    color: white;
+.ticket_detail_fontfamily{
+    font-family: 'Oswald', sans-serif;
+}
+.ticket_detail_fontsize{
+    font-size: 120%;
+}
+
+.tiket_detail_continue {
+    background-color: white;
+    font-size: 13px;
+    color: #33597C;
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
+    border: 1px solid #33597C;
+}
+
+.tiket_detail_continue:hover {
+    color: white;
+    background-color: #33597C;
+}
+
+.tiket_detail_add{
+    margin: -20px 0px 0px 0px;
+}
+
+.ticket_arsplus{
+    border: 1px solid #33597C;
+    color: white;
+    height: 30px;
+    max-width:80px;
+    border-radius: 20px;
+    background-color: #33597C;
+}
+
+.ticket_arsplus p{
+    color: white;
+}
+
+.tiket_detail_mode{
+    margin-left: -50px;
+}
+.tiket_detail_mode p{
+    font-size: 25px;
+}
+.tiket_detail_mr_button{
+    margin-left: 70px;
+}
+
+.tiket_detail_title{
+    color: white;
+    background-color: #33597C;
+    line-height: 20px;
+    padding-left: 25px;
+}
+
+.ticket_detail_table{
+
+}
+
+.ticket_detail_table{
+    font-family: 'Oswald', sans-serif;
+    color: #33597C;
+}
+
+.ticket_detail_colorlink{
+    color: #2199E8;
+}
+
+.ticket_detail_coloredit{
+    color: #33597C;
 }
 
 /************
