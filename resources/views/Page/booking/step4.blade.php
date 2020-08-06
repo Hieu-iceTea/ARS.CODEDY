@@ -58,214 +58,236 @@
                 </div>
             </div>
 
-            <form action="/" method="get">
-                <div class="row mt-5">
+            <form action="" method="get">
+                <div class="row">
                     {{-- form main --}}
                     <div class="col-lg-9 col w-100">
-                        <div class="title-step4 row">
-                            <h4 style="">Review The Journey</h4>
+                        <!-- Review your trip -->
+                        <div class="row mt-5 mb-4">
+                            <div class="section-header color-blue">
+                                <h3>
+                                    <i class="fa fa-sun-o"></i>
+                                    Review your trip
+                                </h3>
+                            </div>
                         </div>
+
                         <div class="fligh-step4 row">
 
                             <div class="card w-100">
-                                <div class="card-header " style="">
-                                    <h5 class="media card-title"><span>Flight</span></h5>
-                                </div>
-                                <div class="card-body">
-                                    <h4> Departure day:: thứ ngày tháng năm</h4>
-                                    <p>00:00 Ha Noi</p>
-                                    <p>01:55 Ho Chi Minh</p>
-                                    <h5> ARS.CODERY Flight time</h5>
-                                    <h5 class="card-text-link">Ticket type: </h5>
+                                <h5 class="card-header title_card">Flight</h5>
 
+                                <div class="card-body">
+                                    <h4>Outbound flight: 20/08/2020</h4>
+                                    <table class="table table-borderless table-sm w-50 mb-1">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" style="color: #636466">07:15</th>
+                                            <td scope="col">Ha Noi</td>
+                                            <td scope="col"></td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row" style="color: #636466">09:25</th>
+                                            <td>Ho Chi Minh</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr style="color: #00305B">
+                                            <th scope="row"></th>
+                                            <td>VN-599</td>
+                                            <td>Travel time: 02h 10m</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <strong>Selected fare: ARS Plus</strong>
                                 </div>
                             </div>
-
                         </div>
+
                         <div class="customer-step4 row mt-4 ">
                             <div class="card w-100">
-                                <div class="card-header">
-                                    <h5 class="card-title">Passenger</h5>
-                                </div>
+                                <h5 class="card-header title_card">Passenger</h5>
                                 <div class="card-body">
-                                    <h5 class="card-title"><span>1. </span>Nguyễn Văn A</h5>
-                                    <h5 class="card-title"><span>2. </span>Nguyễn Văn B</h5>
+                                    <table class="table table-borderless table-sm w-75 mb-1">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" style="color: #636466">1. Nguyen Dinh Hieu</th>
+                                            <td scope="col" style="color: #00305B">Adults</td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row" style="color: #636466">2. Pham Minh Anh</th>
+                                            <td style="color: #00305B">Adults</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
-
                         </div>
-                        <div class="title-step4 row">
-                            <h4 style="">Payment details</h4>
+
+                        <div class="customer-step4 row mt-4 ">
+                            <div class="card w-100">
+                                <h5 class="card-header title_card">Extras</h5>
+                                <div class="card-body">
+                                    <table class="table table-borderless table-sm mb-1">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" style="color: #636466">1. Luggage</th>
+                                            <td scope="col" style="color: #00305B">100.000 VND</td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row" style="color: #636466">2. Meal</th>
+                                            <td style="color: #00305B">50.000 VND</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment details -->
+                        <div class="row mt-5 mb-4">
+                            <div class="section-header color-blue">
+                                <h3>
+                                    <i class="fa fa-credit-card"></i>
+                                    Payment details
+                                </h3>
+                            </div>
                         </div>
                         <div class="solutionpayment row  ">
                             <div class=" title card w-100">
-                                <div class="card-header " style="">
-                                    <h5 class="media" style="margin-top: 5px"> Payment methods</h5>
-                                </div>
-                                <div class="card-body">
+
+                                <h5 class="card-header title_card">Payment methods</h5>
+                                <div class="card-body ">
                                     <div class="row">
                                         <p class="ml-3 title">Choose your preferred payment method </p>
                                     </div>
+
                                     <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="card w-100 mt-1" style="width: 14rem;">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Credit</h5>
-                                                    <img src="{{ asset('source/images/apple-pay-1.png') }}" class="w-75"
-                                                         alt="">
-                                                    <p class="card-text"></p>
-                                                    <a href="#" class="card-link"></a>
-                                                    <a href="#" class="card-link"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mt-1">
-                                            <div class="card w-100" style="width: 14rem;">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">ViSa</h5>
-                                                    <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                                    <img src="{{ asset('source/images/apple-pay-1.png') }}" class="w-75"
-                                                         alt="">
 
-                                                    <p class="card-text"></p>
-                                                    <a href="#" class="card-link"></a>
-                                                    <a href="#" class="card-link"></a>
+                                        <!-- Pay Type Item -->
+                                        <div class="pay_type_item col-md-4 mt-2 mb-2">
+                                            <label for="pay_type_credit_id" style="display: inline; cursor: pointer">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Pay later</h5>
+                                                        <input type="radio" name="pay_type" id="pay_type_credit_id"
+                                                               value="pay_type_credit_id" required>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mt-1">
-                                            <div class="card w-100" style="width: 14rem;">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Card title</h5>
-                                                    <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                                    <img src="{{ asset('source/images/apple-pay-1.png') }}" class="w-75"
-                                                         alt="">
-
-                                                    <p class="card-text"></p>
-                                                    <a href="#" class="card-link"></a>
-                                                    <a href="#" class="card-link"></a>
-                                                </div>
-                                            </div>
+                                            </label>
                                         </div>
 
-
-                                    </div>
-                                    <div class="row mt-2">
-                                        <div class="col-md-4">
-                                            <div class="card w-100 mt-1" style="width: 14rem;">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Card title</h5>
-                                                    <img src="{{ asset('source/images/apple-pay-1.png') }}" class="w-75"
-                                                         alt="">
-
-                                                    <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                                    <p class="card-text"></p>
-                                                    <a href="#" class="card-link"></a>
-                                                    <a href="#" class="card-link"></a>
+                                        <div class="pay_type_item col-md-4 mt-2 mb-2">
+                                            <label for="pay_type_credit_id_2" style="display: inline; cursor: pointer">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Credit Card</h5>
+                                                        <input type="radio" name="pay_type" id="pay_type_credit_id_2"
+                                                               value="pay_type_credit_id_2" required>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="card w-100 mt-1" style="width: 14rem;">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Card title</h5>
-                                                    <img src="{{ asset('source/images/apple-pay-1.png') }}" class="w-75"
-                                                         alt="">
-
-                                                    <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                                    <p class="card-text"></p>
-                                                    <a href="#" class="card-link"></a>
-                                                    <a href="#" class="card-link"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="card w-100 mt-1" style="width: 14rem;">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Card title</h5>
-                                                    <img src="{{ asset('source/images/apple-pay-1.png') }}" class="w-75"
-                                                         alt="">
-
-                                                    <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                                    <p class="card-text"></p>
-                                                    <a href="#" class="card-link"></a>
-                                                    <a href="#" class="card-link"></a>
-                                                </div>
-                                            </div>
+                                            </label>
                                         </div>
 
+                                        <div class="pay_type_item col-md-4 mt-2 mb-2">
+                                            <label for="pay_type_credit_id_3" style="display: inline; cursor: pointer">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">VN Pay</h5>
+                                                        <input type="radio" name="pay_type" id="pay_type_credit_id_3"
+                                                               value="pay_type_credit_id_3" required>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
 
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+
+                        <!-- Ticket details -->
+                        <div class="row mt-5 mb-4">
+                            <div class="section-header color-blue">
+                                <h3>
+                                    <i class="fa fa-clipboard"></i>
+                                    Ticket details
+                                </h3>
                             </div>
                         </div>
 
                         <div class="info-ticker mt-4 row">
                             <div class="card w-100">
-                                <div class="card-header">
-                                    <h5 class="media" style=""> Ticket details</h5>
-                                </div>
+                                <h5 class="card-header title_card">Outbound flight: 20/08/2020</h5>
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-6">
+                                        <div class="col-12">
                                             <div class="card-body">
-                                                <h5 class="card-title"><span class="mr-1">19:25  </span> <span
-                                                        class="mr-1">01h:55m  </span> <span> 19:30</span></h5>
-                                                <h5 class="card-title"><span class="mr-1">HAN  </span> <span
-                                                        class="mr-1">ARS.CODDY  </span> <span> ĐNA</span></h5>
-                                                <p class="card-text">Ticket price (adult)</p>
-                                                <p class="card-text">Security screening fee</p>
-                                                <p class="card-text">Domestic airport charges</p>
-                                                <p class="card-text">Utility fee paid</p>
-                                                <p class="card-text">Surcharge for system administration</p>
-                                                <h4>Total VAT</h4>
-                                                <h4>Total flight costs</h4>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-6 text-right ">
-                                            <div class="card-body">
-                                                <br>
-                                                <br>
-                                                <p class="card-text">00.000VNĐ</p>
-                                                <p class="card-text">000.000VNĐ</p>
-                                                <p class="card-text">000.000VNĐ</p>
-                                                <p class="card-text">000.000VNĐ</p>
-                                                <p class="card-text">000.000VNĐ</p>
-                                                <p class="card-text">000.000VNĐ</p>
-                                                <p class="card-text">000.000VNĐ</p>
-
+                                                <table class="table table-borderless table-sm w-50 mb-1">
+                                                    <thead>
+                                                    <tr>
+                                                        <th scope="col" style="color: #636466">07:15</th>
+                                                        <td scope="col">Ha Noi</td>
+                                                        <td scope="col"></td>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <th scope="row" style="color: #636466">09:25</th>
+                                                        <td>Ho Chi Minh</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr style="color: #00305B">
+                                                        <th scope="row"></th>
+                                                        <td>VN-599</td>
+                                                        <td>Travel time: 02h 10m</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <hr>
+                                                <div>
+                                                    <p class="card-text d-inline">Fare (Adults)</p>
+                                                    <p class="card-text d-inline float-right">1 × 599,000 = 599,000
+                                                        VND</p>
+                                                </div>
+                                                <div>
+                                                    <p class="card-text d-inline">Airport security</p>
+                                                    <p class="card-text d-inline float-right ">20,000 VND</p>
+                                                </div>
+                                                <div>
+                                                    <p class="card-text d-inline">Passenger Service ChargePassenger
+                                                        Service Charge</p>
+                                                    <p class="card-text d-inline float-right ">100,000 VND</p>
+                                                </div>
+                                                <div>
+                                                    <p class="card-text d-inline">Convenient payment</p>
+                                                    <p class="card-text d-inline float-right ">50,000 VND</p>
+                                                </div>
+                                                <div>
+                                                    <p class="card-text d-inline">System and Admin Surcharge</p>
+                                                    <p class="card-text d-inline float-right ">320,000 VND</p>
+                                                </div>
+                                                <div class="mt-2">
+                                                    <h4 class="card-text d-inline">Total VAT</h4>
+                                                    <h4 class="card-text d-inline float-right ">97,000 VND</h4>
+                                                </div>
+                                                <div class="mt-2">
+                                                    <h4 class="card-text d-inline">Total flight cost</h4>
+                                                    <h4 class="card-text d-inline float-right ">1,186,000 VND</h4>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="info-ticker mt-4 row">
-                            <div class="card w-100">
-                                <div class="card-header check">
-                                    <form action="">
-                                        <h5 class="media" style=""><input type="checkbox"
-                                                                          aria-label="Radio button for following text input">I
-                                            have read and accept the terms of use as well as the main
-                                            Book Face Protection Of Airlines</h5>
-                                    </form>
-                                </div>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-12 text-right ">
-                                            <div class="card-body">
-                                                <p class="card-text">Privacy Policy</p>
-                                                <p class="card-text">Conditions for using the online booking
-                                                    function</p>
-                                                <p class="card-text">Online ticket prices</p>
 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Button submit -->
                         <button type="submit" class="btn mt-3 w-100 position-sticky continue">Accept and pay immediately
                             <span><i class="fa fa-angle-right"></i></span>
                         </button>
@@ -277,35 +299,41 @@
                             <img class="card-img-top" src="{{ asset('source/images/destination_5.jpg') }}"
                                  alt="Card image cap">
                             <div class="card-body text-center" style="position: sticky; top:0;z-index: 10">
-                                <h4><span>Ho Chi Minh</span> (SGN) go <span>Ha Noi </span>(HAN)</h4>
-                                <p class="card-text">Round-trip | 1 Adults</p>
-                                <p class="card-text-link"><a href="" style="text-decoration: none">Change flight
-                                        schedules</a></p>
+                                <h4><span>Ho Chi Minh</span> (SGN)</h4>
+                                <h4>to</h4>
+                                <h4><span>Ha Noi </span>(HAN)</h4>
+                                <p class="card-text">One-way | 1 Passenger</p>
                             </div>
                         </div>
-                        <div class="card-Clearfix card mt-3  w-100" style="width: 18rem;">
-                            <div class="card-body text-center">
-                                <h5 class="card-title"><span style="font-size: 20px;color: #33597C;font-weight: 600">Total Money</span>
-                                    : 3000.000.000 vnđ</h5>
-                                <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                <p class="card-text">Includes minnows and service fees</p>
+                        {{--                        <div class="card-Clearfix card mt-3  w-100" style="width: 18rem;">--}}
+                        {{--                            <div class="card-body text-center">--}}
+                        {{--                                <h5 class="card-title">--}}
+                        {{--                                    <span style="font-size: 20px;color: #33597C;font-weight: 600">Total Money--}}
+                        {{--                                    </span> :--}}
+                        {{--                                    3000.000.000 vnđ--}}
+                        {{--                                </h5>--}}
+                        {{--                                <h6 class="card-subtitle mb-2 text-muted"></h6>--}}
+                        {{--                                <p class="card-text">Includes minnows and service fees</p>--}}
 
-                            </div>
-                        </div>
-                        <div class="card mt-3 cart-content w-100" style="width: 18rem;">
-                            <div class="card-body text-center">
-                                <h5 class="card-title" style=""><span
-                                        style="font-size: 20px;color: #33597C;font-weight: 600">Total Money</span> :
-                                    3000.000.000 vnđ</h5>
-                                <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                <h4 style=""><span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span>
-                                    (SGN) go <span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span>(HAN)
-                                </h4>
-                                <p class="card-text">CN 02/08/2020 | 19:25 - 20:30</p>
-                                <p class="card-text">Adults 1 * 2.500.000 = <span>2.500.000</span></p>
-                            </div>
-                        </div>
+                        {{--                            </div>--}}
+                        {{--                        </div>--}}
+                        {{--                        <div class="card mt-3 cart-content w-100" style="width: 18rem;">--}}
+                        {{--                            <div class="card-body text-center">--}}
+                        {{--                                <h5 class="card-title" style="">--}}
+                        {{--                                    <span style="font-size: 20px;color: #33597C;font-weight: 600">Total Money</span> :--}}
+                        {{--                                    3000.000.000 vnđ</h5>--}}
+                        {{--                                <h6 class="card-subtitle mb-2 text-muted"></h6>--}}
+                        {{--                                <h4 style=""><span--}}
+                        {{--                                        style="font-family: 'Oswald', sans-serif;font-weight: bold"></span> (SGN) go--}}
+                        {{--                                    <span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span>(HAN)--}}
+                        {{--                                </h4>--}}
+                        {{--                                <p class="card-text">CN 02/08/2020 | 19:25 - 20:30</p>--}}
+                        {{--                                <p class="card-text">Adults 1 * 2.500.000 = <span>2.500.000</span></p>--}}
+                        {{--                            </div>--}}
+                        {{--                        </div>--}}
 
+                        {{--                        <button type="submit" class="btn mt-3 w-100 position-sticky continue">Continue--}}
+                        {{--                            <span><i class="fa fa-angle-right"></i></span></button>--}}
                     </div>
                 </div>
             </form>

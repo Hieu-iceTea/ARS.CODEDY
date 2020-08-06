@@ -444,31 +444,33 @@
 /************
 5. Booking/4 - Thanh toán:
 ************/
-.mainStep1 .title-step4 h4 {
-    color: #33597C;
-    font-weight: 700;
-    margin: 15px 0;
-    font-size: 15px;
-    font-family: 'Oswald', sans-serif;
 
+.body_booking .fligh-step4 .card-body h4 {
+    color: #00305B;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
 }
 
-.mainStep1 .fligh-step4 .card {
-    border: 0.5px solid #ECE9E9;
-    box-shadow: 5px 10px 8px #dcdcdc;
-    background-color: white;
-
+.body_booking .fligh-step4 .card-body strong {
+    color: #00305B;
+    font-size: 14px;
 }
 
-.mainStep1 .fligh-step4 .card-header {
-    background-color: #33597C;
-    color: white;
-    height: 50px
+.body_booking .pay_type_item .card-body {
+    text-align: center;
+    height: 150px;
+    padding-top: 30px;
 }
 
-.mainStep1 .fligh-step4 .card-header .card-title img {
-    width: 40px;
-    height: 40px;
+.body_booking .pay_type_item .card-body h5 {
+    color: #00458f;
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+
+.body_booking .pay_type_item .card-body input {
+    transform: scale(1.5);
 }
 
 .mainStep1 .fligh-step4 .card-header .card-title span {

@@ -82,13 +82,15 @@
                                         </label>
                                         <div class="col-10 col-sm-11" style="background-color: white">
                                             <div class="row intro-services">
+
                                                 <div class="col-4 intro">
                                                     <div class="column-inner color-blue">
-                                                        <h3><i class="fa fa-wheelchair" aria-hidden="true"></i></h3>
+                                                        <h3><i class="fa fa-star-o" aria-hidden="true"></i></h3>
                                                         <h4></h4>
                                                         <h4>Choose your preferred seat</h4>
                                                     </div>
                                                 </div>
+
                                                 <div class="col-4 description">
                                                     <div class="column-inner">
                                                         <ul class="">
@@ -101,6 +103,7 @@
                                                         </ul>
                                                     </div>
                                                 </div>
+
                                                 <div class="col-4">
                                                     <img src="{{ asset('source/images/booking_4_1.jpg') }}"
                                                          class="rounded mx-auto d-block" alt="">
@@ -123,7 +126,7 @@
                                             <div class="row intro-services">
                                                 <div class="col-4 intro">
                                                     <div class="column-inner color-blue">
-                                                        <h3><i class="fa fa-wheelchair" aria-hidden="true"></i></h3>
+                                                        <h3><i class="fa fa-star-o" aria-hidden="true"></i></h3>
                                                         <h4></h4>
                                                         <h4>Choose your preferred seat</h4>
                                                     </div>
@@ -162,7 +165,7 @@
                                             <div class="row intro-services">
                                                 <div class="col-4 intro">
                                                     <div class="column-inner color-blue">
-                                                        <h3><i class="fa fa-wheelchair" aria-hidden="true"></i></h3>
+                                                        <h3><i class="fa fa-star-o" aria-hidden="true"></i></h3>
                                                         <h4></h4>
                                                         <h4>Choose your preferred seat</h4>
                                                     </div>
@@ -193,39 +196,43 @@
                     </div>
 
                     {{-- cart_info bên phải --}}
-                    <div class="col-lg-3 mt-5">
+                    <div class=" col-lg-3 mt-5">
                         <div class="card cart-info  w-100" style="width: 18rem;">
                             <img class="card-img-top" src="{{ asset('source/images/destination_5.jpg') }}"
                                  alt="Card image cap">
                             <div class="card-body text-center" style="position: sticky; top:0;z-index: 10">
-                                <h4><span>Ho Chi Minh</span> (SGN) go <span>Ha Noi </span>(HAN)</h4>
-                                <p class="card-text">Round-trip | 1 Adults</p>
-                                <p class="card-text-link"><a href="" style="text-decoration: none">Change flight
-                                        schedules</a></p>
+                                <h4><span>Ho Chi Minh</span> (SGN)</h4>
+                                <h4>to</h4>
+                                <h4><span>Ha Noi </span>(HAN)</h4>
+                                <p class="card-text">One-way | 1 Passenger</p>
                             </div>
                         </div>
-                        <div class="card-Clearfix card mt-3  w-100" style="width: 18rem;">
-                            <div class="card-body text-center">
-                                <h5 class="card-title"><span style="font-size: 20px;color: #33597C;font-weight: 600">Total Money</span>
-                                    : 3000.000.000 vnđ</h5>
-                                <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                <p class="card-text">Includes minnows and service fees</p>
+                        {{--                        <div class="card-Clearfix card mt-3  w-100" style="width: 18rem;">--}}
+                        {{--                            <div class="card-body text-center">--}}
+                        {{--                                <h5 class="card-title">--}}
+                        {{--                                    <span style="font-size: 20px;color: #33597C;font-weight: 600">Total Money--}}
+                        {{--                                    </span> :--}}
+                        {{--                                    3000.000.000 vnđ--}}
+                        {{--                                </h5>--}}
+                        {{--                                <h6 class="card-subtitle mb-2 text-muted"></h6>--}}
+                        {{--                                <p class="card-text">Includes minnows and service fees</p>--}}
 
-                            </div>
-                        </div>
-                        <div class="card mt-3 cart-content w-100" style="width: 18rem;">
-                            <div class="card-body text-center">
-                                <h5 class="card-title" style=""><span
-                                        style="font-size: 20px;color: #33597C;font-weight: 600">Total Money</span> :
-                                    3000.000.000 vnđ</h5>
-                                <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                <h4 style=""><span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span>
-                                    (SGN) go <span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span>(HAN)
-                                </h4>
-                                <p class="card-text">CN 02/08/2020 | 19:25 - 20:30</p>
-                                <p class="card-text">Adults 1 * 2.500.000 = <span>2.500.000</span></p>
-                            </div>
-                        </div>
+                        {{--                            </div>--}}
+                        {{--                        </div>--}}
+                        {{--                        <div class="card mt-3 cart-content w-100" style="width: 18rem;">--}}
+                        {{--                            <div class="card-body text-center">--}}
+                        {{--                                <h5 class="card-title" style="">--}}
+                        {{--                                    <span style="font-size: 20px;color: #33597C;font-weight: 600">Total Money</span> :--}}
+                        {{--                                    3000.000.000 vnđ</h5>--}}
+                        {{--                                <h6 class="card-subtitle mb-2 text-muted"></h6>--}}
+                        {{--                                <h4 style=""><span--}}
+                        {{--                                        style="font-family: 'Oswald', sans-serif;font-weight: bold"></span> (SGN) go--}}
+                        {{--                                    <span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span>(HAN)--}}
+                        {{--                                </h4>--}}
+                        {{--                                <p class="card-text">CN 02/08/2020 | 19:25 - 20:30</p>--}}
+                        {{--                                <p class="card-text">Adults 1 * 2.500.000 = <span>2.500.000</span></p>--}}
+                        {{--                            </div>--}}
+                        {{--                        </div>--}}
 
                         <button type="submit" class="btn mt-3 w-100 position-sticky continue">Continue
                             <span><i class="fa fa-angle-right"></i></span></button>

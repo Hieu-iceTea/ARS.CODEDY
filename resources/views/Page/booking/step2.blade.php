@@ -135,7 +135,8 @@
                                         <div class="col-4">
                                             <div>Last/Family Name *</div>
                                             <div class="input-group">
-                                                <input name="lastname_1" type="text" class="form-control" placeholder="Last/Family Name"
+                                                <input name="lastname_1" type="text" class="form-control"
+                                                       placeholder="Last/Family Name"
                                                        aria-label="Username" aria-describedby="basic-addon1">
                                             </div>
                                         </div>
@@ -149,13 +150,15 @@
                                         <div class="col-4">
                                             <div>Date of birth *</div>
                                             <div class="input-group">
-                                                <input name="dob_1" type="date" class="form-control w-75" placeholder="Departure">
+                                                <input name="dob_1" type="date" class="form-control w-75"
+                                                       placeholder="Departure">
                                             </div>
                                         </div>
                                         <div class="col-8" style="display: none">
                                             <div>Come with the passengers</div>
                                             <div class="input-group">
-                                                <input name="with_passenger_1" type="text" class="form-control" placeholder=""
+                                                <input name="with_passenger_1" type="text" class="form-control"
+                                                       placeholder=""
                                                        aria-label="Username" aria-describedby="basic-addon1">
                                             </div>
                                         </div>
@@ -195,7 +198,8 @@
                                         <div class="col-4">
                                             <div>Last/Family Name *</div>
                                             <div class="input-group">
-                                                <input name="lastname_1" type="text" class="form-control" placeholder="Last/Family Name"
+                                                <input name="lastname_1" type="text" class="form-control"
+                                                       placeholder="Last/Family Name"
                                                        aria-label="Username" aria-describedby="basic-addon1">
                                             </div>
                                         </div>
@@ -209,13 +213,15 @@
                                         <div class="col-4">
                                             <div>Date of birth *</div>
                                             <div class="input-group">
-                                                <input name="dob_1" type="date" class="form-control w-75" placeholder="Departure">
+                                                <input name="dob_1" type="date" class="form-control w-75"
+                                                       placeholder="Departure">
                                             </div>
                                         </div>
                                         <div class="col-8" style="display: none">
                                             <div>Come with the passengers</div>
                                             <div class="input-group">
-                                                <input name="with_passenger_1" type="text" class="form-control" placeholder=""
+                                                <input name="with_passenger_1" type="text" class="form-control"
+                                                       placeholder=""
                                                        aria-label="Username" aria-describedby="basic-addon1">
                                             </div>
                                         </div>
@@ -255,7 +261,8 @@
                                         <div class="col-4">
                                             <div>Last/Family Name *</div>
                                             <div class="input-group">
-                                                <input name="lastname_1" type="text" class="form-control" placeholder="Last/Family Name"
+                                                <input name="lastname_1" type="text" class="form-control"
+                                                       placeholder="Last/Family Name"
                                                        aria-label="Username" aria-describedby="basic-addon1">
                                             </div>
                                         </div>
@@ -269,13 +276,15 @@
                                         <div class="col-4">
                                             <div>Date of birth *</div>
                                             <div class="input-group">
-                                                <input name="dob_1" type="date" class="form-control w-75" placeholder="Departure">
+                                                <input name="dob_1" type="date" class="form-control w-75"
+                                                       placeholder="Departure">
                                             </div>
                                         </div>
                                         <div class="col-8">
                                             <div>Come with the passengers</div>
                                             <div class="input-group">
-                                                <input name="with_passenger_1" type="text" class="form-control" placeholder=""
+                                                <input name="with_passenger_1" type="text" class="form-control"
+                                                       placeholder=""
                                                        aria-label="Username" aria-describedby="basic-addon1">
                                             </div>
                                         </div>
@@ -291,7 +300,7 @@
                         {{-- Thông tin liên hệ --}}
                         <div class="row my-4 booking2_color_logo">
                             <div class="media">
-                                <i class="fa fa-users" aria-hidden="true" style="font-size: 400%"></i>
+                                <i class="fa fa-user" style="font-size: 400%"></i>
                                 <div class="media-body ml-4">
                                     <h4 class="mt-0">Who is booking</h4>
                                     <h5>Your contact information</h5>
@@ -306,7 +315,8 @@
                                         <div class="col-3">
                                             <div>Gender *</div>
                                             <div class="input-group">
-                                                <select name="contact_gender" class="custom-select" id="inputGroupSelect04"
+                                                <select name="contact_gender" class="custom-select"
+                                                        id="inputGroupSelect04"
                                                         aria-label="Example select with button addon">
                                                     <option value="" selected>Gender</option>
                                                     <option value="1">Male</option>
@@ -327,7 +337,8 @@
                                             <div>Last/Family Name *</div>
                                             <div class="input-group">
 
-                                                <input name="contact_lastname" type="text" class="form-control" placeholder="Last/Family Name"
+                                                <input name="contact_lastname" type="text" class="form-control"
+                                                       placeholder="Last/Family Name"
                                                        aria-label="Username" aria-describedby="basic-addon1">
                                             </div>
                                         </div>
@@ -341,7 +352,8 @@
                                             <div>Email*</div>
                                             <div class="input-group mb-3 width_input_prepend">
 
-                                                <input name="contact_email" type="text" class="form-control" placeholder="Email"
+                                                <input name="contact_email" type="text" class="form-control"
+                                                       placeholder="Email"
                                                        aria-label="Username" aria-describedby="basic-addon1">
                                             </div>
                                         </div>
@@ -349,7 +361,8 @@
                                             <div>Phone *</div>
                                             <div class="input-group mb-3 width_input_prepend">
 
-                                                <input name="contact_phone" type="text" class="form-control" placeholder="Phone"
+                                                <input name="contact_phone" type="text" class="form-control"
+                                                       placeholder="Phone"
                                                        aria-label="Username" aria-describedby="basic-addon1">
                                             </div>
                                         </div>
@@ -365,7 +378,8 @@
                                         <div class="col-6">
                                             <div>Address *</div>
                                             <div class="input-group">
-                                                <input name="contact_address" type="text" class="form-control" placeholder="Address "
+                                                <input name="contact_address" type="text" class="form-control"
+                                                       placeholder="Address "
                                                        aria-label="Username" aria-describedby="basic-addon1">
                                             </div>
                                         </div>
@@ -386,48 +400,43 @@
                     </div>
 
                     {{-- cart_info bên phải --}}
-                    <div class="col-lg-3">
+                    <div class=" col-lg-3 mt-5">
                         <div class="card cart-info  w-100" style="width: 18rem;">
-                            <img class="card-img-top" src="../source/images/destination_5.jpg" alt="Card image cap">
-                            <div class="card-body text-center">
-                                <h4>
-                                    <span>Hồ Chí Minh</span>
-                                    (SGN) tới
-                                    <span>Hà Nội</span>
-                                    (HAN)
-                                </h4>
-                                <p class="card-text">Khứ Hồi | 1 Người Lớn</p>
-                                <p class="card-text-link"><a href="" style="text-decoration: none">Thay đổi lịch
-                                        trình chuyến bay</a></p>
+                            <img class="card-img-top" src="{{ asset('source/images/destination_5.jpg') }}"
+                                 alt="Card image cap">
+                            <div class="card-body text-center" style="position: sticky; top:0;z-index: 10">
+                                <h4><span>Ho Chi Minh</span> (SGN)</h4>
+                                <h4>to</h4>
+                                <h4><span>Ha Noi </span>(HAN)</h4>
+                                <p class="card-text">One-way | 1 Passenger</p>
                             </div>
                         </div>
-                        <div class="card-Clearfix card mt-3  w-100" style="width: 18rem;">
-                            <div class="card-body text-center">
-                                <h5 class="card-title"><span
-                                        style="font-size: 20px;color: #33597C;font-weight: 600">Tổng Tiền</span> :
-                                    3000.000.000 vnđ</h5>
-                                <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                <p class="card-text">Bao gồm tuế và phí dịch vụ</p>
+                        {{--                        <div class="card-Clearfix card mt-3  w-100" style="width: 18rem;">--}}
+                        {{--                            <div class="card-body text-center">--}}
+                        {{--                                <h5 class="card-title">--}}
+                        {{--                                    <span style="font-size: 20px;color: #33597C;font-weight: 600">Total Money--}}
+                        {{--                                    </span> :--}}
+                        {{--                                    3000.000.000 vnđ--}}
+                        {{--                                </h5>--}}
+                        {{--                                <h6 class="card-subtitle mb-2 text-muted"></h6>--}}
+                        {{--                                <p class="card-text">Includes minnows and service fees</p>--}}
 
-                            </div>
-                        </div>
-                        <div class="card mt-3 cart-content w-100" style="width: 18rem;">
-                            <div class="card-body text-center">
-                                <h5 class="card-title" style=""><span
-                                        style="font-size: 20px;color: #33597C;font-weight: 600">Tổng Tiền</span> :
-                                    3000.000.000 vnđ</h5>
-
-                                <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                <h4 style="">
-                                    <span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span>
-                                    (SGN) tới
-                                    <span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span>
-                                    (HAN)
-                                </h4>
-                                <p class="card-text">CN 02/08/2020 | 19:25 - 20:30</p>
-                                <p class="card-text">Người lớn 1 * 2.500.000 = <span>2.500.000</span></p>
-                            </div>
-                        </div>
+                        {{--                            </div>--}}
+                        {{--                        </div>--}}
+                        {{--                        <div class="card mt-3 cart-content w-100" style="width: 18rem;">--}}
+                        {{--                            <div class="card-body text-center">--}}
+                        {{--                                <h5 class="card-title" style="">--}}
+                        {{--                                    <span style="font-size: 20px;color: #33597C;font-weight: 600">Total Money</span> :--}}
+                        {{--                                    3000.000.000 vnđ</h5>--}}
+                        {{--                                <h6 class="card-subtitle mb-2 text-muted"></h6>--}}
+                        {{--                                <h4 style=""><span--}}
+                        {{--                                        style="font-family: 'Oswald', sans-serif;font-weight: bold"></span> (SGN) go--}}
+                        {{--                                    <span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span>(HAN)--}}
+                        {{--                                </h4>--}}
+                        {{--                                <p class="card-text">CN 02/08/2020 | 19:25 - 20:30</p>--}}
+                        {{--                                <p class="card-text">Adults 1 * 2.500.000 = <span>2.500.000</span></p>--}}
+                        {{--                            </div>--}}
+                        {{--                        </div>--}}
 
                         <button type="submit" class="btn mt-3 w-100 position-sticky continue">Continue
                             <span><i class="fa fa-angle-right"></i></span></button>
