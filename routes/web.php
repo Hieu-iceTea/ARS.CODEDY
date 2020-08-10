@@ -13,92 +13,76 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Site-Map (Hiếu iceTea)
+Route::group(['prefix' => ''], function () {
+    Route::get('', 'HomeController@index')->name('home');
 
-/**
- * Home
- */
-Route::get('/', [
-    'as' => 'Home',
-    'uses' => 'PageController@getIndex'
-]);
+    Route::group(['prefix' => 'booking'], function () {
+        Route::group(['prefix' => 'step-1'], function () {
+            Route::get('', 'BookingController@getStep1')->name('booking');
+            Route::post('', 'BookingController@postStep1');
+        });
 
-/**
- * booking
- */
-Route::get('/booking/{tab}', [
-    'as' => 'Booking',
-    'uses' => 'PageController@getBooking'
-]);
+        Route::group(['prefix' => 'step-2'], function () {
+            Route::get('', 'BookingController@getStep2');
+            Route::get('', 'BookingController@postStep2');
+        });
 
-/**
- * booking
- */
-Route::get('/ticket', [
-    'as' => 'Ticket',
-    'uses' => 'PageController@getTicket'
-]);
+        Route::group(['prefix' => 'step-3'], function () {
+            Route::get('', 'BookingController@getStep3');
+            Route::get('', 'BookingController@postStep3');
+        });
 
-/**
- * booking
- */
-Route::get('/ticket/detail/{id}', [
-    'as' => 'Ticket',
-    'uses' => 'PageController@getTicketDetail'
-]);
+        Route::group(['prefix' => 'step-4'], function () {
+            Route::get('', 'BookingController@getStep4');
+            Route::get('', 'BookingController@postStep4');
+        });
 
-/**
- * booking
- */
-Route::get('/ticket/edit/{id}', [
-    'as' => 'Ticket',
-    'uses' => 'PageController@getTicketEdit'
-]);
+        Route::get('complete', 'BookingController@complete');
+    });
 
+    Route::group(['prefix' => 'ticket'], function () {
+        Route::get('', 'TicketController@index')->name('ticket');
 
-/**
- * Show schedule
- */
-Route::get('/schedule', [
-    'as' => 'Schedule',
-    'uses' => 'PageController@getSchedule'
-]);
+        Route::get('detail/{id}', 'TicketController@detail');
 
-/**
- * Show detail schedule
- */
-Route::get('/schedule/detail/{code}', [
-    'as' => 'Schedule',
-    'uses' => 'PageController@getScheduleDetail'
-]);
+        Route::group(['prefix' => 'edit-schedule/{id}'], function () {
+            Route::get('', 'TicketController@editSchedule');
+            Route::post('', 'TicketController@updateSchedule');
+        });
 
-/**
- * Show info account
- */
-Route::get('/account', [
-    'as' => 'Schedule',
-    'uses' => 'PageController@getAccount'
-]);
+        Route::group(['prefix' => 'edit-passenger/{id}'], function () {
+            Route::get('', 'TicketController@editPassenger');
+            Route::post('', 'TicketController@updatePassenger');
+        });
 
-/**
- * login
- */
-Route::get('/account/login', [
-    'as' => 'Schedule',
-    'uses' => 'PageController@getLogin'
-]);
+        Route::get('payment/{id}', 'TicketController@payment');
+    });
 
-/**
- * registration
- */
-Route::get('/account/registration', [
-    'as' => 'Schedule',
-    'uses' => 'PageController@getRegistration'
-]);
+    Route::group(['prefix' => 'schedule'], function () {
+        Route::get('', 'ScheduleController@index')->name('schedule');
+    });
 
-//END Site-Map (Hiếu iceTea)
+    Route::group(['prefix' => 'member'], function () {
+        Route::get('', 'AccountController@index')->name('member');
 
-Route::get('/contact', 'PageController@getContact');
-Route::get('/about', 'PageController@getAbout');
-Route::get('/news', 'PageController@getNews');
-Route::get('/services', 'PageController@getServices');
+        Route::group(['prefix' => 'login'], function () {
+            Route::get('', 'MemberController@getLogin')->name('member.login');
+            Route::post('', 'MemberController@postLogin');
+        });
+
+        Route::group(['prefix' => 'register'], function () {
+            Route::get('', 'MemberController@getRegister')->name('member.register');
+            Route::post('', 'MemberController@postRegister');
+        });
+
+        Route::get('logout', 'MemberController@logout')->name('member.logout');
+    });
+
+    Route::get('about', 'PageController@about')->name('about');
+    Route::get('news', 'PageController@news')->name('news');
+    Route::get('contact', 'PageController@contact')->name('contact');
+});
+
+Route::group(['namespace' => 'Admin'], function () {
+    //Code is being completed here
+});
