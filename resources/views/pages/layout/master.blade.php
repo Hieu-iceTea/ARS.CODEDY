@@ -2,19 +2,20 @@
 <html lang="en">
 <!-- Head -->
 <head>
+    <base href="{{ asset('') }}/">
     <title>ARS.CODEDY</title>
     <link rel="shortcut icon" type="image/x-icon" href="source/images/favicon.ico">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Travello template project">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{asset('plugins/OwlCarousel2-2.2.1/owl.theme.default.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/OwlCarousel2-2.2.1/animate.css') }}">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="plugins/font-awesome-4.7.0/css/font-awesome.min.css') ">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css') ">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css') ">
     @yield('style')
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/my_styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="css/my_styles.css') ">
 </head>
 
 <body>
@@ -33,16 +34,21 @@
                             <nav class="main_nav">
                                 <ul class="d-flex flex-row align-items-start justify-content-start">
                                     <li class="{{ (request()->is('/')) ? 'active' : '' }}"><a href="/">Home</a></li>
-                                    <li class="{{ (request()->is('about')) ? 'active' : '' }}"><a href="/about">About us</a></li>
+                                    <li class="{{ (request()->is('about')) ? 'active' : '' }}"><a href="/about">About
+                                            us</a></li>
                                     {{--<li class="{{ (request()->is('services')) ? 'active' : '' }}"><a href="/services">Services</a></li>--}}
-                                    <li class="{{ (request()->is('news')) ? 'active' : '' }}"><a href="/news">News</a></li>
+                                    <li class="{{ (request()->is('news')) ? 'active' : '' }}"><a href="/news">News</a>
+                                    </li>
                                     {{--<li class="{{ (request()->is('contact')) ? 'active' : '' }}"><a href="/contact">Contact</a></li>--}}
-                                    <li class="{{ (request()->is('ticket')) ? 'active' : '' }}"><a href="/ticket">Ticket</a></li>
-                                    <li class="{{ (request()->is('schedule')) ? 'active' : '' }}"><a href="/schedule">Schedule</a></li>
+                                    <li class="{{ (request()->is('ticket')) ? 'active' : '' }}"><a
+                                            href="/ticket">Ticket</a></li>
+                                    <li class="{{ (request()->is('schedule')) ? 'active' : '' }}"><a href="/schedule">Schedule</a>
+                                    </li>
                                 </ul>
                             </nav>
 
-                            <div class="header_phone ml-auto"><a style="color: white" href="/contact">Call us: 00-56 445 678 33</a></div>
+                            <div class="header_phone ml-auto"><a style="color: white" href="/contact">Call us: 00-56 445
+                                    678 33</a></div>
 
                             <!-- Hamburger -->
 
@@ -103,9 +109,9 @@
     </div>
 
     <!-- Content Home -->
-    @yield('Content')
+@yield('Content')
 
-    <!-- Footer -->
+<!-- Footer -->
     <footer class="footer">
         <div class="parallax_background parallax-window" data-parallax="scroll"
              data-image-src="{{ asset('source/images/footer_1.jpg') }}" data-speed="0.8"></div>
@@ -149,7 +155,8 @@
                         <div class="col-xl-4 footer_contact_col">
                             <div
                                 class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
-                                <div class="footer_contact_icon"><img src="{{asset('source/images/sign.svg')}}" alt=""></div>
+                                <div class="footer_contact_icon"><img src="{{asset('source/images/sign.svg')}}" alt="">
+                                </div>
                                 <div class="footer_contact_title">give us a call</div>
                                 <div class="footer_contact_list">
                                     <ul>
@@ -164,7 +171,8 @@
                         <div class="col-xl-4 footer_contact_col">
                             <div
                                 class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
-                                <div class="footer_contact_icon"><img src="{{ asset('source/images/trekking.svg') }}" alt=""></div>
+                                <div class="footer_contact_icon"><img src="{{ asset('source/images/trekking.svg') }}"
+                                                                      alt=""></div>
                                 <div class="footer_contact_title">come & drop by</div>
                                 <div class="footer_contact_list">
                                     <ul style="max-width:190px">
@@ -178,7 +186,8 @@
                         <div class="col-xl-4 footer_contact_col">
                             <div
                                 class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
-                                <div class="footer_contact_icon"><img src="{{ asset('source/images/around.svg') }}" alt=""></div>
+                                <div class="footer_contact_icon"><img src="{{ asset('source/images/around.svg') }}"
+                                                                      alt=""></div>
                                 <div class="footer_contact_title">send us a message</div>
                                 <div class="footer_contact_list">
                                     <ul>
@@ -202,16 +211,16 @@
     </footer>
 
 </div>
-<script src="{{ asset('js/app.js') }}"></script>
-<script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
-<script src="{{ asset('styles/bootstrap4/popper.js') }}"></script>
-<script src="{{ asset('styles/bootstrap4/bootstrap.min.js') }}"></script>
-<script src="{{ asset('plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
-<script src="{{ asset('plugins/Isotope/isotope.pkgd.min.js') }}"></script>
-<script src="{{ asset('plugins/scrollTo/jquery.scrollTo.min.js') }}"></script>
-<script src="{{ asset('plugins/easing/easing.js') }}"></script>
-<script src="{{ asset('plugins/parallax-js-master/parallax.min.js') }}"></script>
-<script src="{{ asset('js/home.js') }}"></script>
+<script src="js/app.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/Isotope/isotope.pkgd.min.js"></script>
+<script src="plugins/scrollTo/jquery.scrollTo.min.js"></script>
+<script src="plugins/easing/easing.js') }}"></script>
+<script src="plugins/parallax-js-master/parallax.min.js"></script>
+<script src="js/my_script.js"></script>
 @yield('script')
 
 
