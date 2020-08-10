@@ -1,3 +1,12 @@
+/* Preloader */
+$(window).on('load', function () {
+    $('#preloader-active').delay(450).fadeOut('slow');
+    $('body').delay(450).css({
+        'overflow': 'visible'
+    });
+});
+/* end Preloader */
+
 
 var proQty = $('.pro-qty');
 proQty.on('click', '.number', function () {
@@ -6,11 +15,11 @@ proQty.on('click', '.number', function () {
 
     var $button = $(this);
     var oldValue = $button.parent().find('input').val();
-    if (oldValue == max){
+    if (oldValue == max) {
         var newVal = parseFloat(oldValue);
         $button.parent().find('input').val(newVal);
     }
-    if (oldValue < max){
+    if (oldValue < max) {
         if ($button.hasClass('inc')) {
             var newVal = parseFloat(oldValue) + 1;
         } else {
@@ -23,8 +32,7 @@ proQty.on('click', '.number', function () {
         }
         $button.parent().find('input').val(newVal);
         change(newVal);
-    }
-    else {
+    } else {
         oldValue = min;
         if ($button.hasClass('inc')) {
             var newVal = parseFloat(oldValue) + 1;
@@ -42,22 +50,23 @@ proQty.on('click', '.number', function () {
 
 });
 
-function sumPeople(){
+function sumPeople() {
     let value1 = makeValue("value1");
     let value2 = makeValue("value2");
     let value3 = makeValue("value3");
-    let sumValue = value1+value2+value3;
+    let sumValue = value1 + value2 + value3;
     change(sumValue);
 }
-function makeValue($id){
+
+function makeValue($id) {
     let value = document.getElementById($id).value;
     return value;
 }
-function change($value){
-    if ($value > 9){
+
+function change($value) {
+    if ($value > 9) {
         document.getElementsByName('number-of-passenger').innerHTML = 0;
-    }
-    else {
+    } else {
         document.getElementsByName('number-of-passenger').innerHTML = $value;
     }
 }
