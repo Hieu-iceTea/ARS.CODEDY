@@ -1,10 +1,10 @@
-@extends('master')
+@extends('pages.layout.master')
 
 <!-- Style Main_style-->
 @section('style')
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/main_styles.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/my_styles') }}">
+    <link rel="stylesheet" type="text/css" href="css/main_styles.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/my_styles">
 @endsection
 
 <!-- Content Home -->
@@ -12,7 +12,7 @@
     <!-- Home Background Header-->
     <div class="home page_ticket" style="height: 586px">
 
-        <div class="background_image" style="background-image:url(../../source/images/destinations.jpg)"></div>
+        <div class="background_image" style="background-image:url(img/destinations.jpg)"></div>
         <div class="home_slider_content_container">
             <div class="container">
                 <div class="row">
@@ -41,7 +41,8 @@
                 </div>
             </div>
             <div class="col-3 ticket_detail_fontfamily ticket_detail_fontsize ml-5">
-                <p class="ticket_detail_fontfamily ticket_detail_fontsize">Booking code: <a href=""><span class="ticket_detail_coloredit">ABC123</span></a></p>
+                <p class="ticket_detail_fontfamily ticket_detail_fontsize">Booking code: <a href=""><span
+                            class="ticket_detail_coloredit">ABC123</span></a></p>
                 <a href="">Cancellation</a> | <a href="">Pay</a>
             </div>
         </div>
@@ -49,33 +50,42 @@
             <h5 class="card-header booking2_color_title tiket_detail_title">Flight information</h5>
             <div class="row mt-3">
                 <div class="col-7 ml-5">
-                    <p class="ticket_detail_fontfamily ticket_detail_fontsize">Flight to go <span class="ticket_detail_coloredit"><strong>Sunday, 20/09/2020.</strong></span> from <span>Ha Noi</span> to <span>Ho Chi Minh</span></p>
+                    <p class="ticket_detail_fontfamily ticket_detail_fontsize">Flight to go <span
+                            class="ticket_detail_coloredit"><strong>Sunday, 20/09/2020.</strong></span> from <span>Ha Noi</span>
+                        to <span>Ho Chi Minh</span></p>
                 </div>
                 <div class="col-4 ml-4">
-                    <p class=" ticket_detail_fontsize ticket_detail_fontfamily">Time remaining before takeoff: <span class="ticket_detail_coloredit">45d 19h 10m</span></p>
+                    <p class=" ticket_detail_fontsize ticket_detail_fontfamily">Time remaining before takeoff: <span
+                            class="ticket_detail_coloredit">45d 19h 10m</span></p>
                 </div>
             </div>
             <div class="card m-4 ticket_detail_fontsize ticket_detail_fontfamily">
                 <div class="row">
                     <div class="col-2 ml-4">
-                        <p class=" ticket_detail_fontsize ticket_detail_fontfamily ticket_detail_coloredit"><span>10:10</span></p>
-                        <p class="ticket_detail_fontfamily tiket_detail_add ticket_detail_coloredit"><span>Ha Noi</span></p>
+                        <p class=" ticket_detail_fontsize ticket_detail_fontfamily ticket_detail_coloredit">
+                            <span>10:10</span></p>
+                        <p class="ticket_detail_fontfamily tiket_detail_add ticket_detail_coloredit"><span>Ha Noi</span>
+                        </p>
                     </div>
                     <div class="col-1 tiket_detail_mode">
                         <p class="ticket_detail_fontfamily ticket_detail_coloredit"> > </p>
                     </div>
                     <div class="col-2">
-                        <p class="ticket_detail_fontfamily ticket_detail_fontsize ticket_detail_coloredit"><span>12:15</span></p>
-                        <p class="ticket_detail_fontfamily tiket_detail_add ticket_detail_coloredit"><span>Ho Chi Minh</span></p>
+                        <p class="ticket_detail_fontfamily ticket_detail_fontsize ticket_detail_coloredit">
+                            <span>12:15</span></p>
+                        <p class="ticket_detail_fontfamily tiket_detail_add ticket_detail_coloredit">
+                            <span>Ho Chi Minh</span></p>
                     </div>
                     <div class="col-2 mt-3">
-                        <p class="ticket_detail_fontfamily ticket_detail_fontsize ticket_detail_coloredit"><span>VN-556</span></p>
+                        <p class="ticket_detail_fontfamily ticket_detail_fontsize ticket_detail_coloredit">
+                            <span>VN-556</span></p>
                     </div>
-                    <div class="col-2 ticket_arsplus mt-3 mr-5" >
+                    <div class="col-2 ticket_arsplus mt-3 mr-5">
                         <p class="ticket_detail_fontfamily">ARS Plus</p>
                     </div>
                     <div class="col-3 my-3 ml-5">
-                        <button type="submit" class="btn tiket_detail_continue position-sticky continue">Change fligh schedules
+                        <button type="submit" class="btn tiket_detail_continue position-sticky continue">Change fligh
+                            schedules
                             <span><i class="fa fa-angle-right"></i></span></button>
                     </div>
                 </div>
@@ -186,5 +196,5 @@
 @endsection
 
 @section('script')
-    <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
 @endsection

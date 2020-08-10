@@ -1,9 +1,9 @@
-@extends('master')
+@extends('pages.layout.master')
 
 <!-- Style Main_style-->
 @section('style')
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/destinations.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/destinations_responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="css/destinations.css">
+    <link rel="stylesheet" type="text/css" href="css/destinations_responsive.css">
 @endsection
 
 <!-- Content Home -->
@@ -12,7 +12,7 @@
 
     <div class="home home_booking">
         <div class="background_image"
-             style="background-image:url({{ asset('/source/images/destinations.jpg') }})"></div>
+             style="background-image:url(img/destinations.jpg)"></div>
         <div class="home_slider_content_container">
             <div class="container">
                 <div class="row">
@@ -105,7 +105,7 @@
                                                 </div>
 
                                                 <div class="col-4">
-                                                    <img src="{{ asset('source/images/booking_4_1.jpg') }}"
+                                                    <img src="img/booking_4_1.jpg"
                                                          class="rounded mx-auto d-block" alt="">
                                                 </div>
                                             </div>
@@ -144,7 +144,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
-                                                    <img src="{{ asset('source/images/booking_4_2.jpg') }}"
+                                                    <img src="img/booking_4_2.jpg"
                                                          class="rounded mx-auto d-block" alt="">
                                                 </div>
                                             </div>
@@ -183,7 +183,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
-                                                    <img src="{{ asset('source/images/booking_4_3.jpg') }}"
+                                                    <img src="img/booking_4_3.jpg"
                                                          class="rounded mx-auto d-block" alt="">
                                                 </div>
                                             </div>
@@ -198,7 +198,7 @@
                     {{-- cart_info bên phải --}}
                     <div class=" col-lg-3 mt-5">
                         <div class="card cart-info  w-100" style="width: 18rem;">
-                            <img class="card-img-top" src="{{ asset('source/images/destination_5.jpg') }}"
+                            <img class="card-img-top" src="img/destination_5.jpg"
                                  alt="Card image cap">
                             <div class="card-body text-center" style="position: sticky; top:0;z-index: 10">
                                 <h4><span>Ho Chi Minh</span> (SGN)</h4>
@@ -244,5 +244,5 @@
 
 @endsection
 @section('script')
-    <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
 @endsection

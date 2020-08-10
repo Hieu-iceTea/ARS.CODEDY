@@ -1,9 +1,9 @@
-@extends('master')
+@extends('pages.layout.master')
 
 <!-- Style Main_style-->
 @section('style')
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/news.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="css/news.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
 @endsection
 
 <!-- Content Contact -->
@@ -11,7 +11,7 @@
 
     <div class="home page_ticket">
 
-        <div class="background_image" style="background-image:url(source/images/news.jpg)"></div>
+        <div class="background_image" style="background-image:url(img/news.jpg)"></div>
         <div class="home_slider_content_container mt-5">
             <div class="container">
                 <div class="row">
@@ -26,7 +26,6 @@
 
     </div>
 
-
     <!-- News -->
 
     <div class="news">
@@ -39,7 +38,7 @@
 
                         <!-- News Post -->
                         <div class="news_post">
-                            <div class="news_post_image"><img src="{{ asset('source/images/news1.jpg') }}" alt=""></div>
+                            <div class="news_post_image"><img src="img/news1.jpg" alt=""></div>
                             <div class="news_post_content">
                                 <div class="news_post_date d-flex flex-row align-items-end justify-content-start">
                                     <div>02</div>
@@ -52,7 +51,10 @@
                                     </ul>
                                 </div>
                                 <div class="news_post_text">
-                                    <p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.Tempor massa et laoreet. Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.Tempor massa et laoreet.</p>
+                                    <p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo.
+                                        Vivamus massa.Tempor massa et laoreet. Pellentesque sit amet elementum ccumsan
+                                        sit amet mattis eget, tristique at leo. Vivamus massa.Tempor massa et
+                                        laoreet.</p>
                                 </div>
                                 <div class="news_post_link"><a href="#">Read More</a></div>
                             </div>
@@ -60,20 +62,24 @@
 
                         <!-- News Post -->
                         <div class="news_post">
-                            <div class="news_post_image"><img src="source/images/news_5.jpg" alt=""></div>
+                            <div class="news_post_image"><img src="img/news_5.jpg" alt=""></div>
                             <div class="news_post_content">
                                 <div class="news_post_date d-flex flex-row align-items-end justify-content-start">
                                     <div>02</div>
                                     <div>june</div>
                                 </div>
-                                <div class="news_post_title"><a href="#">10 Amazing Destination for you this summer</a></div>
+                                <div class="news_post_title"><a href="#">10 Amazing Destination for you this summer</a>
+                                </div>
                                 <div class="news_post_category">
                                     <ul>
                                         <li><a href="#">lifestyle & travel</a></li>
                                     </ul>
                                 </div>
                                 <div class="news_post_text">
-                                    <p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.Tempor massa et laoreet. Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.Tempor massa et laoreet.</p>
+                                    <p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo.
+                                        Vivamus massa.Tempor massa et laoreet. Pellentesque sit amet elementum ccumsan
+                                        sit amet mattis eget, tristique at leo. Vivamus massa.Tempor massa et
+                                        laoreet.</p>
                                 </div>
                                 <div class="news_post_link"><a href="#">Read More</a></div>
                             </div>
@@ -81,7 +87,7 @@
 
                         <!-- News Post -->
                         <div class="news_post">
-                            <div class="news_post_image"><img src="source/images/news_6.jpg" alt=""></div>
+                            <div class="news_post_image"><img src="img/news_6.jpg" alt=""></div>
                             <div class="news_post_content">
                                 <div class="news_post_date d-flex flex-row align-items-end justify-content-start">
                                     <div>02</div>
@@ -94,7 +100,10 @@
                                     </ul>
                                 </div>
                                 <div class="news_post_text">
-                                    <p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.Tempor massa et laoreet. Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.Tempor massa et laoreet.</p>
+                                    <p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo.
+                                        Vivamus massa.Tempor massa et laoreet. Pellentesque sit amet elementum ccumsan
+                                        sit amet mattis eget, tristique at leo. Vivamus massa.Tempor massa et
+                                        laoreet.</p>
                                 </div>
                                 <div class="news_post_link"><a href="#">Read More</a></div>
                             </div>
@@ -123,10 +132,22 @@
                             <div class="sidebar_title">Categories</div>
                             <div class="sidebar_list">
                                 <ul>
-                                    <li><a href="#"><div class="d-flex flex-row align-items-start justify-content-start">Travels<span class="ml-auto">(09)</span></div></a></li>
-                                    <li><a href="#"><div class="d-flex flex-row align-items-start justify-content-start">Organization<span class="ml-auto">(12)</span></div></a></li>
-                                    <li><a href="#"><div class="d-flex flex-row align-items-start justify-content-start">Tips & Tricks<span class="ml-auto">(16)</span></div></a></li>
-                                    <li><a href="#"><div class="d-flex flex-row align-items-start justify-content-start">Uncategorized<span class="ml-auto">(22)</span></div></a></li>
+                                    <li><a href="#">
+                                            <div class="d-flex flex-row align-items-start justify-content-start">Travels<span
+                                                    class="ml-auto">(09)</span></div>
+                                        </a></li>
+                                    <li><a href="#">
+                                            <div class="d-flex flex-row align-items-start justify-content-start">
+                                                Organization<span class="ml-auto">(12)</span></div>
+                                        </a></li>
+                                    <li><a href="#">
+                                            <div class="d-flex flex-row align-items-start justify-content-start">Tips &
+                                                Tricks<span class="ml-auto">(16)</span></div>
+                                        </a></li>
+                                    <li><a href="#">
+                                            <div class="d-flex flex-row align-items-start justify-content-start">
+                                                Uncategorized<span class="ml-auto">(22)</span></div>
+                                        </a></li>
                                 </ul>
                             </div>
                         </div>
@@ -138,9 +159,10 @@
 
                                 <!-- Latest Post -->
                                 <div class="latest_post d-flex flex-row align-items-start justify-content-start">
-                                    <div class="latest_post_image"><img src="source/images/latest_1.jpg" alt=""></div>
+                                    <div class="latest_post_image"><img src="img/latest_1.jpg" alt=""></div>
                                     <div class="latest_post_content">
-                                        <div class="latest_post_date d-flex flex-row align-items-end justify-content-start">
+                                        <div
+                                            class="latest_post_date d-flex flex-row align-items-end justify-content-start">
                                             <div class="latest_post_day">02</div>
                                             <div class="latest_post_month">june</div>
                                         </div>
@@ -151,9 +173,10 @@
 
                                 <!-- Latest Post -->
                                 <div class="latest_post d-flex flex-row align-items-start justify-content-start">
-                                    <div class="latest_post_image"><img src="source/images/latest_2.jpg" alt=""></div>
+                                    <div class="latest_post_image"><img src="img/latest_2.jpg" alt=""></div>
                                     <div class="latest_post_content">
-                                        <div class="latest_post_date d-flex flex-row align-items-end justify-content-start">
+                                        <div
+                                            class="latest_post_date d-flex flex-row align-items-end justify-content-start">
                                             <div class="latest_post_day">02</div>
                                             <div class="latest_post_month">june</div>
                                         </div>
@@ -164,9 +187,10 @@
 
                                 <!-- Latest Post -->
                                 <div class="latest_post d-flex flex-row align-items-start justify-content-start">
-                                    <div class="latest_post_image"><img src="source/images/latest_3.jpg" alt=""></div>
+                                    <div class="latest_post_image"><img src="img/latest_3.jpg" alt=""></div>
                                     <div class="latest_post_content">
-                                        <div class="latest_post_date d-flex flex-row align-items-end justify-content-start">
+                                        <div
+                                            class="latest_post_date d-flex flex-row align-items-end justify-content-start">
                                             <div class="latest_post_day">02</div>
                                             <div class="latest_post_month">june</div>
                                         </div>
@@ -179,7 +203,7 @@
                         </div>
 
                         <div class="travello">
-                            <div class="background_image" style="background-image:url(source/images/travello.jpg)"></div>
+                            <div class="background_image" style="background-image:url(img/travello.jpg)"></div>
                             <div class="travello_content">
                                 <div class="travello_content_inner">
                                     <div></div>
@@ -204,5 +228,5 @@
 @endsection
 
 @section('script')
-    <script type="text/javascript" src="{{ asset('js/news.js') }}"></script>
+    <script type="text/javascript" src="js/news.js"></script>
 @endsection

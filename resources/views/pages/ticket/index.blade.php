@@ -1,9 +1,9 @@
-@extends('master')
+@extends('pages.layout.master')
 
 <!-- Style Main_style-->
 @section('style')
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/destinations.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/destinations_responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="css/destinations.css">
+    <link rel="stylesheet" type="text/css" href="css/destinations_responsive.css">
 @endsection
 
 <!-- Content Home -->
@@ -12,7 +12,7 @@
 
     <div class="home page_ticket">
 
-        <div class="background_image" style="background-image:url(source/images/destinations.jpg)"></div>
+        <div class="background_image" style="background-image:url(img/destinations.jpg)"></div>
         <div class="home_slider_content_container">
             <div class="container">
                 <div class="row">
@@ -99,80 +99,80 @@
 
             <div class="row">
 
-                    <table class="table table-info-tickets table-hover ">
-                        <thead class="table-top">
-                        <tr>
-                            <th scope="col">Code</th>
-                            <th scope="col">From</th>
-                            <th scope="col">To</th>
-                            <th scope="col">Departure</th>
-                            <th scope="col">Passenger</th>
-                            <th scope="col">Function</th>
-                        </tr>
-                        </thead>
-                        <tbody class="active">
-                        <tr>
-                            <th scope="row">VN-6859</th>
-                            <td>HaNoi, VietNam</td>
-                            <td>HoChiMinh, VietNam</td>
-                            <td>08/08/2020</td>
-                            <td>5 (Adult: 1, Children: 4, Baby: 0)</td>
-                            <td>
-                                <a href="/ticket/detail/1">View</a>
-                                |
-                                <a href="/ticket/edit/1">Edit</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">VN-6859</th>
-                            <td>HaNoi, VietNam</td>
-                            <td>HoChiMinh, VietNam</td>
-                            <td>08/08/2020</td>
-                            <td>5 (Adult: 1, Children: 4, Baby: 0)</td>
-                            <td>
-                                <a href="/ticket/detail/1">View</a>
-                                |
-                                <a href="/ticket/edit/1">Edit</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">VN-6859</th>
-                            <td>HaNoi, VietNam</td>
-                            <td>HoChiMinh, VietNam</td>
-                            <td>08/08/2020</td>
-                            <td>5 (Adult: 1, Children: 4, Baby: 0)</td>
-                            <td>
-                                <a href="/ticket/detail/1">View</a>
-                                |
-                                <a href="/ticket/edit/1">Edit</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">VN-6859</th>
-                            <td>HaNoi, VietNam</td>
-                            <td>HoChiMinh, VietNam</td>
-                            <td>08/08/2020</td>
-                            <td>5 (Adult: 1, Children: 4, Baby: 0)</td>
-                            <td>
-                                <a href="/ticket/detail/1">View</a>
-                                |
-                                <a href="/ticket/edit/1">Edit</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">VN-6859</th>
-                            <td>HaNoi, VietNam</td>
-                            <td>HoChiMinh, VietNam</td>
-                            <td>08/08/2020</td>
-                            <td>5 (Adult: 1, Children: 4, Baby: 0)</td>
-                            <td>
-                                <a href="/ticket/detail/1">View</a>
-                                |
-                                <a href="/ticket/edit/1">Edit</a>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+                <table class="table table-info-tickets table-hover ">
+                    <thead class="table-top">
+                    <tr>
+                        <th scope="col">Code</th>
+                        <th scope="col">From</th>
+                        <th scope="col">To</th>
+                        <th scope="col">Departure</th>
+                        <th scope="col">Passenger</th>
+                        <th scope="col">Function</th>
+                    </tr>
+                    </thead>
+                    <tbody class="active">
+                    <tr>
+                        <th scope="row">VN-6859</th>
+                        <td>HaNoi, VietNam</td>
+                        <td>HoChiMinh, VietNam</td>
+                        <td>08/08/2020</td>
+                        <td>5 (Adult: 1, Children: 4, Baby: 0)</td>
+                        <td>
+                            <a href="/ticket/detail/1">View</a>
+                            |
+                            <a href="/ticket/edit/1">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">VN-6859</th>
+                        <td>HaNoi, VietNam</td>
+                        <td>HoChiMinh, VietNam</td>
+                        <td>08/08/2020</td>
+                        <td>5 (Adult: 1, Children: 4, Baby: 0)</td>
+                        <td>
+                            <a href="/ticket/detail/1">View</a>
+                            |
+                            <a href="/ticket/edit/1">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">VN-6859</th>
+                        <td>HaNoi, VietNam</td>
+                        <td>HoChiMinh, VietNam</td>
+                        <td>08/08/2020</td>
+                        <td>5 (Adult: 1, Children: 4, Baby: 0)</td>
+                        <td>
+                            <a href="/ticket/detail/1">View</a>
+                            |
+                            <a href="/ticket/edit/1">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">VN-6859</th>
+                        <td>HaNoi, VietNam</td>
+                        <td>HoChiMinh, VietNam</td>
+                        <td>08/08/2020</td>
+                        <td>5 (Adult: 1, Children: 4, Baby: 0)</td>
+                        <td>
+                            <a href="/ticket/detail/1">View</a>
+                            |
+                            <a href="/ticket/edit/1">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">VN-6859</th>
+                        <td>HaNoi, VietNam</td>
+                        <td>HoChiMinh, VietNam</td>
+                        <td>08/08/2020</td>
+                        <td>5 (Adult: 1, Children: 4, Baby: 0)</td>
+                        <td>
+                            <a href="/ticket/detail/1">View</a>
+                            |
+                            <a href="/ticket/edit/1">Edit</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
 
             </div>
 
@@ -182,5 +182,5 @@
 @endsection
 
 @section('script')
-    <script type="text/javascript" src="{{ asset('js/destinations.js') }}"></script>
+    <script type="text/javascript" src="js/destinations.js"></script>
 @endsection

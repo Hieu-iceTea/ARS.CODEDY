@@ -33,16 +33,20 @@
 
                             <nav class="main_nav">
                                 <ul class="d-flex flex-row align-items-start justify-content-start">
-                                    <li class="{{ (request()->is('/')) ? 'active' : '' }}"><a href="/">Home</a></li>
-                                    <li class="{{ (request()->is('about')) ? 'active' : '' }}"><a href="/about">About
-                                            us</a></li>
-                                    {{--<li class="{{ (request()->is('services')) ? 'active' : '' }}"><a href="/services">Services</a></li>--}}
-                                    <li class="{{ (request()->is('news')) ? 'active' : '' }}"><a href="/news">News</a>
+                                    <li class="{{ (request()->segment(1) == '') ? 'active' : '' }}">
+                                        <a href="/">Home</a>
                                     </li>
-                                    {{--<li class="{{ (request()->is('contact')) ? 'active' : '' }}"><a href="/contact">Contact</a></li>--}}
-                                    <li class="{{ (request()->is('ticket')) ? 'active' : '' }}"><a
-                                            href="/ticket">Ticket</a></li>
-                                    <li class="{{ (request()->is('schedule')) ? 'active' : '' }}"><a href="/schedule">Schedule</a>
+                                    <li class="{{ (request()->is('about')) ? 'active' : '' }}">
+                                        <a href="/about">About us</a>
+                                    </li>
+                                    <li class="{{ (request()->is('news')) ? 'active' : '' }}">
+                                        <a href="/news">News</a>
+                                    </li>
+                                    <li class="{{ (request()->is('ticket')) ? 'active' : '' }}">
+                                        <a href="/ticket">Ticket</a>
+                                    </li>
+                                    <li class="{{ (request()->is('schedule')) ? 'active' : '' }}">
+                                        <a href="/schedule">Schedule</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -88,9 +92,7 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About us</a></li>
-                {{--<li><a href="/services">Services</a></li>--}}
                 <li><a href="/news">News</a></li>
-                {{--<li><a href="/contact">Contact</a></li>--}}
                 <li><a href="/ticket">Ticket</a></li>
                 <li><a href="/schedule">Schedule</a></li>
             </ul>
@@ -209,8 +211,8 @@
                 href="#">CODEDY</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </div>
     </footer>
-
 </div>
+
 <script src="js/app.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/popper.js"></script>
@@ -222,7 +224,6 @@
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
 <script src="js/my_script.js"></script>
 @yield('script')
-
 
 </body>
 </html>

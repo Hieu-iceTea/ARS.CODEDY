@@ -1,11 +1,10 @@
-
-@extends('master')
+@extends('pages.layout.master')
 
 <!-- Style Main_style-->
 @section('style')
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/destinations.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/destinations_responsive.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/my_styles') }}">
+    <link rel="stylesheet" type="text/css" href="css/destinations.css">
+    <link rel="stylesheet" type="text/css" href="css/destinations_responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/my_styles">
 @endsection
 
 <!-- Content Home -->
@@ -13,7 +12,7 @@
     <!-- Home -->
 
     <div class="home page_ticket">
-        <div class="background_image" style="background-image:url({{ asset('/source/images/destinations.jpg') }})"></div>
+        <div class="background_image" style="background-image:url({{ asset('img/destinations.jpg') }})"></div>
         <div class="home_slider_content_container">
             <div class="container">
                 <div class="row">
@@ -46,7 +45,9 @@
 
                                     <div id="name">
                                         <h4 class="name">Name</h4>
-                                        <input type="text" class="firstlabel" name="first_name" placeholder="First Name"><input type="text" class="lastlabel" name="last_name" placeholder="Last Name"><br>
+                                        <input type="text" class="firstlabel" name="first_name"
+                                               placeholder="First Name"><input type="text" class="lastlabel"
+                                                                               name="last_name" placeholder="Last Name"><br>
                                     </div>
 
                                     <h4 class="name">Gender</h4>
@@ -82,5 +83,5 @@
 @endsection
 
 @section('script')
-    <script type="text/javascript" src="{{ asset('js/destinations.js') }}"></script>
+    <script type="text/javascript" src="js/destinations.js"></script>
 @endsection

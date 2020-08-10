@@ -1,9 +1,9 @@
-@extends('master')
+@extends('pages.layout.master')
 
 <!-- Style Main_style-->
 @section('style')
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/destinations.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/destinations_responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="css/destinations.css">
+    <link rel="stylesheet" type="text/css" href="css/destinations_responsive.css">
 @endsection
 
 <!-- Content Home -->
@@ -12,7 +12,7 @@
 
     <div class="home home_booking">
         <div class="background_image"
-             style="background-image:url({{ asset('/source/images/destinations.jpg') }})"></div>
+             style="background-image:url({{ asset('img/destinations.jpg') }})"></div>
         <div class="home_slider_content_container">
             <div class="container">
                 <div class="row">
@@ -65,7 +65,7 @@
 
                         <div class="locale-vi row">
                             <div class="media">
-                                <img class="logo mr-3 mt-2" src="{{ asset('source/images/iconfight.png') }}"
+                                <img class="logo mr-3 mt-2" src="{{ asset('img/iconfight.png') }}"
                                      style="width: 40px;height: 40px" alt="Generic placeholder image">
                                 <div class="media-body">
                                     <h5 class="mt-0" style="">Choose your flight</h5>
@@ -223,7 +223,7 @@
                     {{-- cart_info bên phải --}}
                     <div class=" col-lg-3 mt-5">
                         <div class="card cart-info  w-100" style="width: 18rem;">
-                            <img class="card-img-top" src="{{ asset('source/images/destination_5.jpg') }}"
+                            <img class="card-img-top" src="{{ asset('img/destination_5.jpg') }}"
                                  alt="Card image cap">
                             <div class="card-body text-center" style="position: sticky; top:0;z-index: 10">
                                 <h4><span>Ho Chi Minh</span> (SGN)</h4>

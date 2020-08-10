@@ -1,10 +1,10 @@
-@extends('master')
+@extends('pages.layout.master')
 
 <!-- Style Main_style-->
 @section('style')
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/main_styles.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/my_styles') }}">
+    <link rel="stylesheet" type="text/css" href="css/main_styles.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/my_styles">
 @endsection
 
 <!-- Content Home -->
@@ -12,7 +12,7 @@
     <!-- Home Background Header-->
     <div class="home page_ticket" style="height: 586px">
 
-        <div class="background_image" style="background-image:url(../../source/images/destinations.jpg)"></div>
+        <div class="background_image" style="background-image:url(img/destinations.jpg)"></div>
         <div class="home_slider_content_container">
             <div class="container">
                 <div class="row">
@@ -35,7 +35,9 @@
             <table class="table table-bordered detail_font_family">
                 <thead class="thead-dark">
                 <tr>
-                    <th scope="col" colspan="5" class="detail-background" style="background-color: #1b4b72">Customer information</th>
+                    <th scope="col" colspan="5" class="detail-background" style="background-color: #1b4b72">Customer
+                        information
+                    </th>
                 </tr>
                 </thead>
                 <tbody class="font-style">
@@ -63,12 +65,14 @@
                 </tbody>
             </table>
 
-            <a type="button"  href="" class="btn mt-3 mb-5 position-sticky" style="background-color: #64AF53;font-size: 18px;color: white;font-family: 'Oswald', sans-serif;font-weight: bold;width: 135px">Save  <span><i class="fa fa-angle-right"></i></span></a>
+            <a type="button" href="" class="btn mt-3 mb-5 position-sticky"
+               style="background-color: #64AF53;font-size: 18px;color: white;font-family: 'Oswald', sans-serif;font-weight: bold;width: 135px">Save
+                <span><i class="fa fa-angle-right"></i></span></a>
         </div>
     </div>
 
 @endsection
 
 @section('script')
-    <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
 @endsection

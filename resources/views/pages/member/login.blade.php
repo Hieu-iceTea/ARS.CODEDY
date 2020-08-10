@@ -10,7 +10,7 @@
 {{--    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}">--}}
 {{--    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">--}}
 {{--    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/OwlCarousel2-2.2.1/animate.css') }}">--}}
-{{--    <link rel="shortcut icon" type="image/x-icon" href="source/images/favicon.ico">--}}
+{{--    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">--}}
 {{--    style--}}
 {{--</head>--}}
 {{--<body>--}}
@@ -21,7 +21,7 @@
 {{--                <h5>ARS.CODEDY</h5> <span>airline</span>--}}
 {{--            </div>--}}
 {{--            <div class="icon">--}}
-{{--                <img class ="logo"src="{{ asset('source/images/iconfight.png') }}" style="width: 40px;height: 40px" alt="Generic placeholder image">--}}
+{{--                <img class ="logo"src="{{ asset('img/iconfight.png') }}" style="width: 40px;height: 40px" alt="Generic placeholder image">--}}
 {{--            </div>--}}
 {{--        </div>--}}
 {{--        <div class="title">--}}
@@ -59,28 +59,30 @@
 {{--</body>--}}
 {{--</html>--}}
 
-@extends('master')
+@extends('pages.layout.master')
+
 @section('style')
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/destinations.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/destinations_responsive.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/my_styles') }}">
+    <link rel="stylesheet" type="text/css" href="css/destinations.css">
+    <link rel="stylesheet" type="text/css" href="css/destinations_responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/my_styles">
 @endsection
 @section('Content')
     <div class="home page_ticket">
-    <div class="background_image" style="background-image:url({{ asset('/source/images/destinations.jpg') }})"></div>
-    <div class="home_slider_content_container">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="home_slider_content">
-                        <div class="home_title mt-5"><h2>Logins</h2></div>
+        <div class="background_image"
+             style="background-image:url({{ asset('img/destinations.jpg') }})"></div>
+        <div class="home_slider_content_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_slider_content">
+                            <div class="home_title mt-5"><h2>Logins</h2></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-</div>
+    </div>
     <div class="mainStep1 " style="">
         <div class=" mt-5 mb-4">
             <div class="container">
@@ -92,24 +94,26 @@
                                     <h5>ARS.CODEDY</h5> <span>airline</span>
                                 </div>
                                 {{--<div class="icon">
-                                    <img class ="logo"src="{{ asset('source/images/iconfight.png') }}" style="width: 40px;height: 40px" alt="Generic placeholder image">
+                                    <img class ="logo"src="{{ asset('img/iconfight.png') }}" style="width: 40px;height: 40px" alt="Generic placeholder image">
                                 </div>--}}
                             </div>
                             <div class="title">
                                 <h4> Welcome to ars.codedy airline</h4>
                             </div>
                             <div class="login-body">
-                                <form action="" >
+                                <form action="">
                                     <div class="">
                                         <input type="text" name="username" placeholder="Username">
                                     </div>
                                     <div class="">
-                                        <input type="password" name="password" placeholder="Password" >
+                                        <input type="password" name="password" placeholder="Password">
                                     </div>
                                     <div class="check d-flex mt-4">
                                         <div class="custom-control mr-5 custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="defaultChecked2" checked>
-                                            <label class="custom-control-label" for="defaultChecked2">Remember me</label>
+                                            <input type="checkbox" class="custom-control-input" id="defaultChecked2"
+                                                   checked>
+                                            <label class="custom-control-label" for="defaultChecked2">Remember
+                                                me</label>
                                         </div>
                                         <div>
                                             <a href="registration" class="txt3 ml-3">
@@ -130,5 +134,5 @@
     </div>
 @endsection
 @section('script')
-    <script type="text/javascript" src="{{ asset('js/destinations.js') }}"></script>
+    <script type="text/javascript" src="js/destinations.js"></script>
 @endsection

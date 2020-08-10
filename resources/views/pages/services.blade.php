@@ -1,9 +1,9 @@
-@extends('master')
+@extends('pages.layout.master')
 
 <!-- Style Main_style-->
 @section('style')
-    <link rel="stylesheet" type="text/css" href="source/styles/main_styles.css">
-    <link rel="stylesheet" type="text/css" href="source/styles/responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/main_styles.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
 
 @endsection
 
@@ -18,7 +18,7 @@
 
                 <!-- Slide -->
                 <div class="owl-item">
-                    <div class="background_image" style="background-image:url(source/images/home_slider.jpg)"></div>
+                    <div class="background_image" style="background-image:url(img/home_slider.jpg)"></div>
                     <div class="home_slider_content_container">
                         <div class="container">
                             <div class="row">

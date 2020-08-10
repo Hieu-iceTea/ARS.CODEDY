@@ -1,9 +1,9 @@
-@extends('master')
+@extends('pages.layout.master')
 
 <!-- Style Main_style-->
 @section('style')
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/contact.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/contact_responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="css/contact.css">
+    <link rel="stylesheet" type="text/css" href="css/contact_responsive.css">
 @endsection
 
 <!-- Content Contact -->
@@ -14,7 +14,7 @@
 
     <div class="home page_ticket">
 
-        <div class="background_image" style="background-image:url(source/images/contact.jpg)"></div>
+        <div class="background_image" style="background-image:url(img/contact.jpg)"></div>
         <div class="home_slider_content_container mt-5">
             <div class="container">
                 <div class="row">
@@ -114,5 +114,5 @@
 
 @section('script')
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
-    <script type="text/javascript" src="{{ asset('js/contact.js') }}"></script>
+    <script type="text/javascript" src="js/contact.js"></script>
 @endsection
