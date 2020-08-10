@@ -8,10 +8,6 @@
 
 <!-- Content Home -->
 @section('Content')
-    <div class="home">
-        <div class="background_image" style="background-image:url(source/images/about.jpg)"></div>
-                <div class="col">
-                    <div class="home_search_container">
     <div class="home page_ticket">
 
         <div class="background_image" style="background-image:url(source/images/destinations.jpg)"></div>

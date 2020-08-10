@@ -91,9 +91,9 @@
                                 <div class="media-body">
                                     <h5>ARS.CODEDY</h5> <span>airline</span>
                                 </div>
-                                <div class="icon">
+                                {{--<div class="icon">
                                     <img class ="logo"src="{{ asset('source/images/iconfight.png') }}" style="width: 40px;height: 40px" alt="Generic placeholder image">
-                                </div>
+                                </div>--}}
                             </div>
                             <div class="title">
                                 <h4> Welcome to ars.codedy airline</h4>

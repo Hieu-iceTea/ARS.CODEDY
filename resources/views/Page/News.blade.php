@@ -9,9 +9,8 @@
 <!-- Content Contact -->
 @section('Content')
 
+    <div class="home page_ticket">
 
-                        <div class="home_search_content">
-                            <form action="#" class="home_search_form" id="home_search_form">
         <div class="background_image" style="background-image:url(source/images/news.jpg)"></div>
         <div class="home_slider_content_container mt-5">
             <div class="container">
