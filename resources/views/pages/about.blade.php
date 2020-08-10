@@ -255,10 +255,10 @@
 
 @endsection
 @section('script')
-    <script src="plugins/greensock/TweenMax.min.j"></script>
-    <script src="plugins/greensock/TimelineMax.min.j"></script>
-    <script src="plugins/scrollmagic/ScrollMagic.min.j"></script>
-    <script src="plugins/greensock/animation.gsap.min.j"></script>
-    <script src="plugins/greensock/ScrollToPlugin.min.j"></script>
+    <script src="plugins/greensock/TweenMax.min.js"></script>
+    <script src="plugins/greensock/TimelineMax.min.js"></script>
+    <script src="../../plugins/scrollmagic/ScrollMagic.min.js"></script>
+    <script src="../../plugins/greensock/animation.gsap.min.js"></script>
+    <script src="../../plugins/greensock/ScrollToPlugin.min.js"></script>
     <script type="text/javascript" src="js/about.js"></script>
 @endsection
