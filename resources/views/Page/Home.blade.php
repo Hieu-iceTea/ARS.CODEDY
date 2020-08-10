@@ -129,37 +129,50 @@
 
                                     <div class="search_input search_input_4">
                                         <div class="title">
-                                            <p> Passenger  <span class="mr-4" id="number-of-passenger"></span> <a  data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="fa fa-angle-down rotate-icon "> </i> </a>  </p>
+                                            <p><a data-toggle="collapse" href="#multiCollapseExample1" role="button"
+                                                  aria-expanded="false" aria-controls="multiCollapseExample1"> Passenger
+                                                    <span class="mr-4" id="number-of-passenger"></span> <i
+                                                        class="fa fa-angle-down rotate-icon "> </i> </a></p>
                                         </div>
-                                        <div class="collapse multi-collapse" id="multiCollapseExample1">
-                                            <div class="people">
-                                                <table class="table">
+                                        <div class="search_input_ssenger collapse "
+                                             style="margin-top: -212px;margin-left: -20px" id="multiCollapseExample1">
+                                            <div class="people ">
+                                                <table class="table ">
                                                     <tr>
                                                         <td><p>Adults: </p></td>
                                                         <td>
                                                             <div class="quantity">
                                                                 <div class="pro-qty">
-                                                                    <input type="text" id="value1" value="0">
+                                                                    <span class="dec number"><i class="fa fa-minus"></i></span>
+                                                                    <input type="text" name="adults"  valuemin="1"
+                                                                           value="1">
+                                                                    <span class="inc number"> <i class="fa fa-plus"></i></span>
                                                                 </div>
                                                             </div>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td><p>Adults: </p></td>
+                                                        <td><p>Children: </p></td>
                                                         <td>
                                                             <div class="quantity">
                                                                 <div class="pro-qty">
-                                                                    <input type="text" id="value2" value="0">
+                                                                    <span class="dec number"><i class="fa fa-minus"></i></span>
+                                                                    <input type="text" id="value1" name="children"
+                                                                           value="0">
+                                                                    <span class="inc number"> <i class="fa fa-plus"></i></span>
                                                                 </div>
                                                             </div>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td><p>Adults: </p></td>
+                                                        <td><p>Infant: </p></td>
                                                         <td>
                                                             <div class="quantity">
                                                                 <div class="pro-qty">
-                                                                    <input type="text" id="value3"  value="0">
+                                                                    <span class="dec number"><i class="fa fa-minus"></i></span>
+                                                                    <input type="text" id="value1" name="Infant"
+                                                                           value="0">
+                                                                    <span class="inc number"> <i class="fa fa-plus"></i></span>
                                                                 </div>
                                                             </div>
                                                         </td>
