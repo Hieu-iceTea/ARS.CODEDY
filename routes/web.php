@@ -24,17 +24,17 @@ Route::group(['prefix' => ''], function () {
 
         Route::group(['prefix' => 'step-2'], function () {
             Route::get('', 'BookingController@getStep2');
-            Route::get('', 'BookingController@postStep2');
+            Route::post('', 'BookingController@postStep2');
         });
 
         Route::group(['prefix' => 'step-3'], function () {
             Route::get('', 'BookingController@getStep3');
-            Route::get('', 'BookingController@postStep3');
+            Route::post('', 'BookingController@postStep3');
         });
 
         Route::group(['prefix' => 'step-4'], function () {
             Route::get('', 'BookingController@getStep4');
-            Route::get('', 'BookingController@postStep4');
+            Route::post('', 'BookingController@postStep4');
         });
 
         Route::get('complete', 'BookingController@complete');
