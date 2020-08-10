@@ -6,32 +6,84 @@ use Illuminate\Http\Request;
 
 class BookingController extends Controller
 {
-    //Step 1 trong Booking
-    public function getStep1(){
-        return view('pages.booking.step1');
+    /**
+     * Show the form for Booking/Step-1.
+     *
+     */
+    public function getStep1()
+    {
+        return view('pages.booking.step-1');
     }
-    public function postStep1( Request $request){
 
+    /**
+     * Receive data and redirect to the next page.
+     *
+     */
+    public function postStep1(Request $request)
+    {
+        //
+        return redirect('booking/step-2');
     }
-    //Step 2 trong Booking
-    public function getStep2(){
-        return view('pages.booking.step2');
-    }
-    public function postStep2( Request $request){
 
+    /**
+     * Show the form for Booking/Step-2.
+     *
+     */
+    public function getStep2()
+    {
+        return view('pages.booking.step-2');
     }
-    //Step 3 trong Booking
-    public function getStep3(){
-        return view('pages.booking.step3');
-    }
-    public function postStep3( Request $request){
 
+    /**
+     * Receive data and redirect to the next page.
+     *
+     */
+    public function postStep2(Request $request)
+    {
+        //
+        return redirect('booking/step-3');
     }
-    //Step 4 trong Booking
-    public function getStep4(){
-        return view('pages.booking.step4');
-    }
-    public function postStep4( Request $request){
 
+    /**
+     * Show the form for Booking/Step-3.
+     *
+     */
+    public function getStep3()
+    {
+        return view('pages.booking.step-3');
+    }
+
+    /**
+     * Receive data and redirect to the next page.
+     *
+     */
+    public function postStep3(Request $request)
+    {
+        //
+        return redirect('booking/step-4');
+    }
+
+    /**
+     * Show the form for Booking/Step-4.
+     *
+     */
+    public function getStep4()
+    {
+        return view('pages.booking.step-4');
+    }
+
+    /**
+     * Receive data and redirect to the completed page.
+     *
+     */
+    public function postStep4(Request $request)
+    {
+        //
+        return redirect('booking/complete', 'complete')->with('status', 'complete');
+    }
+
+    public function complete()
+    {
+        return view('pages.booking.complete');
     }
 }

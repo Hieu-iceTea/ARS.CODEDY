@@ -1,5 +1,7 @@
 @extends('pages.layout.master')
 
+@section('title', 'Home')
+
 <!-- Style Main_style-->
 @section('style')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main_styles.css') }}">
@@ -82,7 +84,7 @@
             <div class="row">
                 <div class="col">
                     <div class="home_search_container">
-                        <div class="home_search_title">Search for your trip</div>
+                        <div class="home_search_title">Search for your flight</div>
                         <div class="home_search_content">
                             <form action="booking/1" method="get" class="home_search_form" id="home_search_form">
                                 <div

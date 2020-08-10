@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <!-- Head -->
 <head>
-    {{--<base href="{{ asset('') }}/">--}}
-    <title>ARS.CODEDY</title>
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <base href="{{ asset('/') }}">
+
+    <title>@yield('title') | ARS.CODEDY</title>
+
+    {{--<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">--}}
+    <link rel="shortcut icon" type="image/gif" href="img/favicon.gif">
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Travello template project">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" type="text/css" href="css/app.css">
     <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
     <link rel="stylesheet" type="text/css" href="plugins/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -19,9 +25,7 @@
 </head>
 
 <body>
-
 <div class="super_container">
-
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -36,17 +40,17 @@
                                     <li class="{{ (request()->segment(1) == '') ? 'active' : '' }}">
                                         <a href="/">Home</a>
                                     </li>
-                                    <li class="{{ (request()->is('about')) ? 'active' : '' }}">
+                                    <li class="{{ (request()->segment(1) == 'about') ? 'active' : '' }}">
                                         <a href="/about">About us</a>
                                     </li>
-                                    <li class="{{ (request()->is('news')) ? 'active' : '' }}">
-                                        <a href="/news">News</a>
+                                    <li class="{{ (request()->segment(1) == 'schedule') ? 'active' : '' }}">
+                                        <a href="/schedule">Schedule</a>
                                     </li>
-                                    <li class="{{ (request()->is('ticket')) ? 'active' : '' }}">
+                                    <li class="{{ (request()->segment(1) == 'ticket') ? 'active' : '' }}">
                                         <a href="/ticket">Ticket</a>
                                     </li>
-                                    <li class="{{ (request()->is('schedule')) ? 'active' : '' }}">
-                                        <a href="/schedule">Schedule</a>
+                                    <li class="{{ (request()->segment(1) == 'member') ? 'active' : '' }}">
+                                        <a href="/member">Member</a>
                                     </li>
                                 </ul>
                             </nav>

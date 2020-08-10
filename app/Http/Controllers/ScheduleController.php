@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 
 class ScheduleController extends Controller
 {
-    //Index của Schedule
+    /**
+     * Display a listing of the resource.
+     *
+     */
     public function index(){
         return view('pages.schedule.index');
     }

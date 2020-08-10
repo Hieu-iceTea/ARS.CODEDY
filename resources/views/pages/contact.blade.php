@@ -1,5 +1,7 @@
 @extends('pages.layout.master')
 
+@section('title', 'Contact')
+
 <!-- Style Main_style-->
 @section('style')
     <link rel="stylesheet" type="text/css" href="css/contact.css">

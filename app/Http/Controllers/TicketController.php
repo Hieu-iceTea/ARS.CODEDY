@@ -6,38 +6,76 @@ use Illuminate\Http\Request;
 
 class TicketController extends Controller
 {
-    //Index trong Ticket
-    public function index(){
+    /**
+     * Display a listing of the resource.
+     *
+     */
+    public function index()
+    {
         return view('pages.ticket.index');
     }
 
-    //Detaill của Ticket
-    public function detail($id){
+    /**
+     * Display the specified resource.
+     *
+     * @param int $id
+     */
+    public function detail($id)
+    {
         return view('pages.ticket.detail');
     }
 
-    //Edit shedule của Ticket
-    public function editSchedule($id){
-        return view('pages.ticket.edit-ticket');
+    /**
+     * Show the form for editing the schedule.
+     *
+     * @param int $id
+     */
+    public function editSchedule($id)
+    {
+        return view('pages.ticket.edit-schedule');
     }
 
-    //Update shedule của Ticket
-    public function updateSchedule(Request $request, $id){
-
+    /**
+     * Update the schedule in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
+     */
+    public function updateSchedule(Request $request, $id)
+    {
+        //
+        return redirect('ticket/detail/' . $id)->with('notification', 'Update successful');
     }
-    //Edit passenger của Ticket
-    public function editPassenger($id){
+
+    /**
+     * Show the form for editing the passenger.
+     *
+     * @param int $id
+     */
+    public function editPassenger($id)
+    {
         return view('pages.ticket.edit-passenger');
     }
 
-    //Update passenger của Ticket
-    public function updatePassenger(Request $request, $id){
-
+    /**
+     * Update the passenger in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
+     */
+    public function updatePassenger(Request $request, $id)
+    {
+        //
+        return redirect('ticket/detail/' . $id)->with('notification', 'Update successful');
     }
 
-    //Payment của Ticket
-    public function payment($id){
+    /**
+     * Complete payment.
+     *
+     * @param int $id
+     */
+    public function payment($id)
+    {
         return view('pages.ticket.payment');
     }
-
 }

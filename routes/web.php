@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['prefix' => ''], function () {
-    Route::get('', 'HomeController@index')->name('home');
+    Route::get('', 'PageController@index')->name('home');
 
     Route::group(['prefix' => 'booking'], function () {
         Route::group(['prefix' => 'step-1'], function () {
@@ -63,7 +63,7 @@ Route::group(['prefix' => ''], function () {
     });
 
     Route::group(['prefix' => 'member'], function () {
-        Route::get('', 'AccountController@index')->name('member');
+        Route::get('', 'MemberController@index')->name('member');
 
         Route::group(['prefix' => 'login'], function () {
             Route::get('', 'MemberController@getLogin')->name('member.login');
@@ -73,14 +73,22 @@ Route::group(['prefix' => ''], function () {
         Route::group(['prefix' => 'register'], function () {
             Route::get('', 'MemberController@getRegister')->name('member.register');
             Route::post('', 'MemberController@postRegister');
+
+            Route::get('verify', 'MemberController@getVerify');
+            Route::post('verify', 'MemberController@postVerify');
+        });
+
+        Route::group(['prefix' => 'edit-profile'], function () {
+            Route::get('', 'MemberController@editProfile');
+            Route::post('', 'MemberController@updateProfile');
         });
 
         Route::get('logout', 'MemberController@logout')->name('member.logout');
     });
 
     Route::get('about', 'PageController@about')->name('about');
-    Route::get('news', 'PageController@news')->name('news');
     Route::get('contact', 'PageController@contact')->name('contact');
+    Route::get('news', 'PageController@news')->name('news');
 });
 
 Route::group(['namespace' => 'Admin'], function () {
