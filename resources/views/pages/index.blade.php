@@ -1,4 +1,4 @@
-@extends('master')
+@extends('pages.layout.master')
 
 <!-- Style Main_style-->
 @section('style')
@@ -17,7 +17,7 @@
 
                 <!-- Slide -->
                 <div class="owl-item">
-                    <div class="background_image" style="background-image:url(source/images/home_slider.jpg)"></div>
+                    <div class="background_image" style="background-image:url(img/home_slider.jpg)"></div>
                     <div class="home_slider_content_container">
                         <div class="container">
                             <div class="row">
@@ -33,7 +33,7 @@
 
                 <!-- Slide -->
                 <div class="owl-item">
-                    <div class="background_image" style="background-image:url(source/images/home_slider.jpg)"></div>
+                    <div class="background_image" style="background-image:url(img/home_slider.jpg)"></div>
                     <div class="home_slider_content_container">
                         <div class="container">
                             <div class="row">
@@ -49,7 +49,7 @@
 
                 <!-- Slide -->
                 <div class="owl-item">
-                    <div class="background_image" style="background-image:url(source/images/home_slider.jpg)"></div>
+                    <div class="background_image" style="background-image:url(img/home_slider.jpg)"></div>
                     <div class="home_slider_content_container">
                         <div class="container">
                             <div class="row">
@@ -144,7 +144,7 @@
                                                             <div class="quantity">
                                                                 <div class="pro-qty">
                                                                     <span class="dec number"><i class="fa fa-minus"></i></span>
-                                                                    <input type="text" name="adults"  valuemin="1"
+                                                                    <input type="text" name="adults"  min="1"
                                                                            value="1">
                                                                     <span class="inc number"> <i class="fa fa-plus"></i></span>
                                                                 </div>
@@ -200,7 +200,7 @@
     <!-- Intro -->
 
     <div class="intro">
-        <div class="intro_background mt-5" style="background-image:url(source/images/intro.png)"></div>
+        <div class="intro_background mt-5" style="background-image:url(img/intro.png)"></div>
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -210,7 +210,7 @@
                             <!-- Intro Item -->
                             <div class="col-lg-4 intro_col">
                                 <div class="intro_item d-flex flex-row align-items-end justify-content-start">
-                                    <div class="intro_icon"><img src="source/images/beach.svg" alt=""></div>
+                                    <div class="intro_icon"><img src="img/beach.svg" alt=""></div>
                                     <div class="intro_content">
                                         <div class="intro_title">Top Destinations</div>
                                         <div class="intro_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
@@ -221,7 +221,7 @@
                             <!-- Intro Item -->
                             <div class="col-lg-4 intro_col">
                                 <div class="intro_item d-flex flex-row align-items-end justify-content-start">
-                                    <div class="intro_icon"><img src="source/images/wallet.svg" alt=""></div>
+                                    <div class="intro_icon"><img src="img/wallet.svg" alt=""></div>
                                     <div class="intro_content">
                                         <div class="intro_title">The Best Prices</div>
                                         <div class="intro_subtitle"><p>Sollicitudin mauris lobortis in.</p></div>
@@ -232,7 +232,7 @@
                             <!-- Intro Item -->
                             <div class="col-lg-4 intro_col">
                                 <div class="intro_item d-flex flex-row align-items-end justify-content-start">
-                                    <div class="intro_icon"><img src="source/images/suitcase.svg" alt=""></div>
+                                    <div class="intro_icon"><img src="img/suitcase.svg" alt=""></div>
                                     <div class="intro_content">
                                         <div class="intro_title">Amazing Services</div>
                                         <div class="intro_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
@@ -264,7 +264,7 @@
                         <!-- Destination -->
                         <div class="destination item">
                             <div class="destination_image">
-                                <img src="source/images/destination_1.jpg" alt="">
+                                <img src="img/destination_1.jpg" alt="">
                                 <div class="spec_offer text-center"><a href="#">Special Offer</a></div>
                             </div>
                             <div class="destination_content">
@@ -277,7 +277,7 @@
                         <!-- Destination -->
                         <div class="destination item">
                             <div class="destination_image">
-                                <img src="source/images/destination_2.jpg" alt="">
+                                <img src="img/destination_2.jpg" alt="">
                             </div>
                             <div class="destination_content">
                                 <div class="destination_title"><a href="destinations.html">Indonesia</a></div>
@@ -289,7 +289,7 @@
                         <!-- Destination -->
                         <div class="destination item">
                             <div class="destination_image">
-                                <img src="source/images/destination_3.jpg" alt="">
+                                <img src="img/destination_3.jpg" alt="">
                             </div>
                             <div class="destination_content">
                                 <div class="destination_title"><a href="destinations.html">San Francisco</a></div>
@@ -301,7 +301,7 @@
                         <!-- Destination -->
                         <div class="destination item">
                             <div class="destination_image">
-                                <img src="source/images/destination_4.jpg" alt="">
+                                <img src="img/destination_4.jpg" alt="">
                             </div>
                             <div class="destination_content">
                                 <div class="destination_title"><a href="destinations.html">Paris</a></div>
@@ -313,7 +313,7 @@
                         <!-- Destination -->
                         <div class="destination item">
                             <div class="destination_image">
-                                <img src="source/images/destination_5.jpg" alt="">
+                                <img src="img/destination_5.jpg" alt="">
                             </div>
                             <div class="destination_content">
                                 <div class="destination_title"><a href="destinations.html">Phi Phi Island</a></div>
@@ -325,7 +325,7 @@
                         <!-- Destination -->
                         <div class="destination item">
                             <div class="destination_image">
-                                <img src="source/images/destination_6.jpg" alt="">
+                                <img src="img/destination_6.jpg" alt="">
                             </div>
                             <div class="destination_content">
                                 <div class="destination_title"><a href="destinations.html">Mykonos</a></div>
@@ -344,7 +344,7 @@
 
     <div class="testimonials" id="testimonials">
         <div class="parallax_background parallax-window" data-parallax="scroll"
-             data-image-src="source/images/testimonials.jpg" data-speed="0.8"></div>
+             data-image-src="img/testimonials.jpg" data-speed="0.8"></div>
         <div class="container">
             <div class="row">
                 <div class="col text-center">
@@ -428,7 +428,7 @@
 
                         <!-- News Post -->
                         <div class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
-                            <div class="news_post_image"><img src="source/images/news_1.jpg" alt=""></div>
+                            <div class="news_post_image"><img src="img/news_1.jpg" alt=""></div>
                             <div class="news_post_content">
                                 <div class="news_post_date d-flex flex-row align-items-end justify-content-start">
                                     <div>02</div>
@@ -449,7 +449,7 @@
 
                         <!-- News Post -->
                         <div class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
-                            <div class="news_post_image"><img src="source/images/news_2.jpg" alt=""></div>
+                            <div class="news_post_image"><img src="img/news_2.jpg" alt=""></div>
                             <div class="news_post_content">
                                 <div class="news_post_date d-flex flex-row align-items-end justify-content-start">
                                     <div>01</div>
@@ -470,7 +470,7 @@
 
                         <!-- News Post -->
                         <div class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
-                            <div class="news_post_image"><img src="source/images/news_3.jpg" alt=""></div>
+                            <div class="news_post_image"><img src="img/news_3.jpg" alt=""></div>
                             <div class="news_post_content">
                                 <div class="news_post_date d-flex flex-row align-items-end justify-content-start">
                                     <div>29</div>
@@ -495,7 +495,7 @@
                 <!-- News Sidebar -->
                 <div class="col-xl-4">
                     <div class="travello">
-                        <div class="background_image" style="background-image:url(source/images/travello.jpg)"></div>
+                        <div class="background_image" style="background-image:url(img/travello.jpg)"></div>
                         <div class="travello_content">
                             <div class="travello_content_inner">
                                 <div></div>

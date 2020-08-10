@@ -2,20 +2,20 @@
 <html lang="en">
 <!-- Head -->
 <head>
-    <base href="{{ asset('') }}/">
+    {{--<base href="{{ asset('') }}/">--}}
     <title>ARS.CODEDY</title>
-    <link rel="shortcut icon" type="image/x-icon" href="source/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Travello template project">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/app.css">
     <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-    <link rel="stylesheet" type="text/css" href="plugins/font-awesome-4.7.0/css/font-awesome.min.css') ">
-    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css') ">
-    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css') ">
+    <link rel="stylesheet" type="text/css" href="plugins/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
     @yield('style')
-    <link rel="stylesheet" type="text/css" href="css/my_styles.css') ">
+    <link rel="stylesheet" type="text/css" href="css/my_styles.css">
 </head>
 
 <body>
@@ -76,7 +76,7 @@
     <!-- Menu -->
     <div class="menu">
         <div class="menu_header d-flex flex-row align-items-center justify-content-start">
-            <div class="menu_logo"><a href="index.html">Travello</a></div>
+            <div class="menu_logo"><a href="/">Travello</a></div>
             <div class="menu_close_container ml-auto">
                 <div class="menu_close">
                     <div></div>
@@ -114,7 +114,7 @@
 <!-- Footer -->
     <footer class="footer">
         <div class="parallax_background parallax-window" data-parallax="scroll"
-             data-image-src="{{ asset('source/images/footer_1.jpg') }}" data-speed="0.8"></div>
+             data-image-src="{{ asset('img/footer_1.jpg') }}" data-speed="0.8"></div>
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -155,7 +155,7 @@
                         <div class="col-xl-4 footer_contact_col">
                             <div
                                 class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
-                                <div class="footer_contact_icon"><img src="{{asset('source/images/sign.svg')}}" alt="">
+                                <div class="footer_contact_icon"><img src="{{asset('img/sign.svg')}}" alt="">
                                 </div>
                                 <div class="footer_contact_title">give us a call</div>
                                 <div class="footer_contact_list">
@@ -171,7 +171,7 @@
                         <div class="col-xl-4 footer_contact_col">
                             <div
                                 class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
-                                <div class="footer_contact_icon"><img src="{{ asset('source/images/trekking.svg') }}"
+                                <div class="footer_contact_icon"><img src="{{ asset('img/trekking.svg') }}"
                                                                       alt=""></div>
                                 <div class="footer_contact_title">come & drop by</div>
                                 <div class="footer_contact_list">
@@ -186,7 +186,7 @@
                         <div class="col-xl-4 footer_contact_col">
                             <div
                                 class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
-                                <div class="footer_contact_icon"><img src="{{ asset('source/images/around.svg') }}"
+                                <div class="footer_contact_icon"><img src="{{ asset('img/around.svg') }}"
                                                                       alt=""></div>
                                 <div class="footer_contact_title">send us a message</div>
                                 <div class="footer_contact_list">
@@ -213,12 +213,12 @@
 </div>
 <script src="js/app.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
-<script src="styles/bootstrap4/popper.js"></script>
-<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap4.min.js"></script>
 <script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
 <script src="plugins/Isotope/isotope.pkgd.min.js"></script>
 <script src="plugins/scrollTo/jquery.scrollTo.min.js"></script>
-<script src="plugins/easing/easing.js') }}"></script>
+<script src="plugins/easing/easing.js"></script>
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
 <script src="js/my_script.js"></script>
 @yield('script')
