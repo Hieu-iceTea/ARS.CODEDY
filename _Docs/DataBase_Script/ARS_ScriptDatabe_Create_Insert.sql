@@ -232,36 +232,36 @@ CREATE TABLE IF NOT EXISTS `flight_schedule`
 DROP TABLE IF EXISTS `ticket`;
 CREATE TABLE IF NOT EXISTS `ticket`
 (
-    `ticket_id`              INT AUTO_INCREMENT,
+    `ticket_id`          INT AUTO_INCREMENT,
 
-    `user_id`                INT UNSIGNED,
-    `flight_schedule_id`     INT UNSIGNED               NOT NULL,
-    `promotion_id`           INT UNSIGNED,
-    `pay_type_id`            INT UNSIGNED               NOT NULL,
-    `additional_service_ids` VARCHAR(128),
+    `user_id`            INT UNSIGNED,
+    `flight_schedule_id` INT UNSIGNED               NOT NULL,
+    `promotion_id`       INT UNSIGNED,
+    `pay_type_id`        INT UNSIGNED               NOT NULL,
+    `extra_service_ids`  VARCHAR(32),
 
-    `seat_type`              TINYINT UNSIGNED           NOT NULL,
-    `status`                 TINYINT UNSIGNED DEFAULT 0 NOT NULL,
+    `seat_type`          TINYINT UNSIGNED           NOT NULL,
+    `status`             TINYINT UNSIGNED DEFAULT 0 NOT NULL,
 
-    `code`                   VARCHAR(8)                 NOT NULL,
+    `code`               VARCHAR(8)                 NOT NULL,
 
-    `contact_gender`         BOOLEAN                    NOT NULL,
-    `contact_first_name`     VARCHAR(16)                NOT NULL,
-    `contact_last_name`      VARCHAR(16)                NOT NULL,
-    `contact_email`          VARCHAR(64)                NOT NULL,
-    `contact_phone`          VARCHAR(16)                NOT NULL,
-    `contact_address`        VARCHAR(128)               NOT NULL,
+    `contact_gender`     BOOLEAN                    NOT NULL,
+    `contact_first_name` VARCHAR(16)                NOT NULL,
+    `contact_last_name`  VARCHAR(16)                NOT NULL,
+    `contact_email`      VARCHAR(64)                NOT NULL,
+    `contact_phone`      VARCHAR(16)                NOT NULL,
+    `contact_address`    VARCHAR(128)               NOT NULL,
 
-    `total_price`            INT(16) UNSIGNED           NOT NULL,
-    `total_passenger`        INT(16) UNSIGNED           NOT NULL,
-    `description`            VARCHAR(16)                NOT NULL,
+    `total_price`        INT(16) UNSIGNED           NOT NULL,
+    `total_passenger`    INT(16) UNSIGNED           NOT NULL,
+    `description`        VARCHAR(16)                NOT NULL,
 
-    `created_by`             NVARCHAR(32)     DEFAULT 'ARS.CODEDY',
-    `created_at`             DATETIME         DEFAULT CURRENT_TIME,
-    `updated_by`             NVARCHAR(32)     DEFAULT NULL,
-    `updated_at`             DATETIME         DEFAULT NULL,
-    `version`                INT              DEFAULT 1,
-    `deleted`                BOOLEAN          DEFAULT FALSE,
+    `created_by`         NVARCHAR(32)     DEFAULT 'ARS.CODEDY',
+    `created_at`         DATETIME         DEFAULT CURRENT_TIME,
+    `updated_by`         NVARCHAR(32)     DEFAULT NULL,
+    `updated_at`         DATETIME         DEFAULT NULL,
+    `version`            INT              DEFAULT 1,
+    `deleted`            BOOLEAN          DEFAULT FALSE,
 
     PRIMARY KEY (`ticket_id`)
 ) ENGINE InnoDB;
@@ -271,7 +271,6 @@ CREATE TABLE IF NOT EXISTS `ticket`
 #                                             Insert Data                                             #
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = #
 #Password: 123456
-
 
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, gender, first_name, last_name, dob, phone, address)
 VALUES (1, 'Hieu-iceTea', 'DinhHieu8896@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 2, '2020-08-08', 0, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '0868663315', 'Nghệ An');
@@ -426,13 +425,13 @@ VALUE (10, 5, 2, 10, 10, 'VN-608', '2020-10-15 18:15:01', '2020-10-15 19:15:02',
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, description)
 VALUE (11, 5, 2, 7, 2, 'VN-609', '2020-10-15 21:15:03', '2020-10-15 22:15:03', 'Description');
 
-INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, additional_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, total_passenger, description)
+INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, extra_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, total_passenger, description)
 VALUES (1, 1, 1, 1, 1, '1,3', 2, 4, 'HIEU01', 1, 'Đình Hiếu', 'Nguyễn', 'DinhHieu8896@gmail.com', '0868663315', 'Hà Nội', 6900000, 3, 'Mô tả về vé này');
-INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, additional_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, total_passenger, description)
+INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, extra_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, total_passenger, description)
 VALUES (2, 1, 10, NULL, 1, '', 3, 2, 'HIEU02', 1, 'Đình Hiếu', 'Nguyễn', 'DinhHieu8896@gmail.com', '0868663315', 'Hà Nội', 2500000, 1, 'Mô tả về vé này');
-INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, additional_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, total_passenger, description)
+INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, extra_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, total_passenger, description)
 VALUES (3, NULL, 6, NULL, 1, '', 1, 1, 'DEMO01', 1, 'Thanh Tú', 'Trương', 'DinhHieu8896@gmail.com', '0868663315', 'Hà Nội', 1200000, 1, 'Mô tả về vé này');
-INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, additional_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, total_passenger, description)
+INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, extra_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, total_passenger, description)
 VALUES (4, NULL, 1, NULL, 1, '', 2, 2, 'DEMO02', 0, 'Kiều Linh', 'Trần', 'DinhHieu8896@gmail.com', '0868663315', 'Hà Nội', 2200000, 1, 'Mô tả về vé này');
-INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, additional_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, total_passenger, description)
+INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, extra_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, total_passenger, description)
 VALUES (5, NULL, 10, NULL, 1, '', 3, 3, 'DEMO03', 0, 'Thanh Mai', 'Phạm', 'DinhHieu8896@gmail.com', '0868663315', 'Hà Nội', 2500000, 1, 'Mô tả về vé này');
