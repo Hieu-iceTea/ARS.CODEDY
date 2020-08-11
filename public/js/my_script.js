@@ -7,6 +7,8 @@ $(window).on('load', function () {
 });
 /* end Preloader */
 
+$('#notificationModal').modal('show');
+$('#errorModal').modal('show');
 
 var proQty = $('.pro-qty');
 proQty.on('click', '.number', function () {

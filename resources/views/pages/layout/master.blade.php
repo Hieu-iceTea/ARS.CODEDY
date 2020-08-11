@@ -39,6 +39,9 @@
 </div>
 <!-- end Preloader Start -->
 
+@include('notifications.all')
+@include('errors.all')
+
 <div class="super_container">
     <!-- Header -->
     <header class="header">
