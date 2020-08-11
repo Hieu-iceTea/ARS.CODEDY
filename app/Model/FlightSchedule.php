@@ -16,15 +16,16 @@ class FlightSchedule extends Model
         return parent::all($columns)->where('deleted', false);
     }
 
-    public function airportTo()
-    {
-        return $this->hasOne(Airport::class, 'airport_to_id', 'airport_id');
-    }
-
     public function airportFrom()
     {
-        return $this->hasOne(Airport::class, 'airport_from_id', 'airport_id');
+        return $this->hasOne(Airport::class, 'airport_id', 'airport_from_id');
     }
+
+    public function airportTo()
+    {
+        return $this->hasOne(Airport::class, 'airport_id', 'airport_to_id');
+    }
+
 
     public function plane()
     {
