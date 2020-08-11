@@ -116,7 +116,7 @@
                                                 <div class="check eco">
                                                     <span>Select flight</span>
                                                     <input id="check_eco_{{ $flightSchedule->flight_schedule_id }}"
-                                                           class="ml-1" name="select_flight" value="eco" type="radio"
+                                                           class="ml-1" name="select_flight" value="1" type="radio"
                                                            required
                                                            onclick="setValue({{ $flightSchedule->flight_schedule_id }}, this.value, {{ $flightSchedule->priceSeatType->eco_price }})">
                                                     <p>{{ number_format($flightSchedule->priceSeatType->eco_price, 0, ',', '.') }}
@@ -129,7 +129,7 @@
                                                 <div class="check plus">
                                                     <span>Select flight </span>
                                                     <input id="check_plus_{{ $flightSchedule->flight_schedule_id }}"
-                                                           class="ml-1" name="select_flight" value="plus" type="radio"
+                                                           class="ml-1" name="select_flight" value="2" type="radio"
                                                            required
                                                            onclick="setValue({{ $flightSchedule->flight_schedule_id }}, this.value, {{ $flightSchedule->priceSeatType->plus_price }})">
                                                     <p>{{ number_format($flightSchedule->priceSeatType->plus_price, 0, ',', '.') }}
@@ -142,7 +142,7 @@
                                                 <div class="check business">
                                                     <span>Select flight </span>
                                                     <input id="check_business_{{ $flightSchedule->flight_schedule_id }}"
-                                                           class="ml-1" name="select_flight" value="business"
+                                                           class="ml-1" name="select_flight" value="3"
                                                            type="radio" required
                                                            onclick="setValue({{ $flightSchedule->flight_schedule_id }}, this.value, {{ $flightSchedule->priceSeatType->business_price }})">
                                                     <p>{{ number_format($flightSchedule->priceSeatType->business_price, 0, ',', '.') }}
@@ -201,9 +201,9 @@
                             <span><i class="fa fa-angle-right"></i></span></button>
                     </div>
                 </div>
-                <input type="hidden" name="flight_schedule_id" value="">
-                <input type="hidden" name="seat_type" value="">
-                <input type="hidden" name="seat_price" value="">
+                <input type="hidden" id="flight_schedule_id" name="flight_schedule_id" value="">
+                <input type="hidden" id="seat_type" name="seat_type" value="">
+                <input type="hidden" id="seat_price" name="seat_price" value="">
                 @csrf
             </form>
         </div>
@@ -211,7 +211,11 @@
 
     <script type="text/javascript">
         function setValue(flight_schedule_id, seat_type, seat_price) {
-            alert('Bạn chọn: ' + flight_schedule_id + seat_type + seat_price)
+            alert('[Bạn chọn] > flight_schedule_id: ' + flight_schedule_id + '| seat_type:' + seat_type + '| seat_price: ' + seat_price)
+
+            document.getElementById('flight_schedule_id').value = flight_schedule_id;
+            document.getElementById('seat_type').value = seat_type;
+            document.getElementById('seat_price').value = seat_price;
         }
     </script>
 
