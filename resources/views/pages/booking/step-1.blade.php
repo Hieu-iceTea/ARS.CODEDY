@@ -58,7 +58,7 @@
                 </div>
             </div>
 
-            <form action="2" method="get">
+            <form action="step-2" method="get">
                 <div class="row">
                     {{-- form main --}}
                     <div class="col-lg-9 col-sm-12 mt-5">
@@ -82,141 +82,79 @@
                             <div class="col-3 pl-3 business">ARS Business</div>
                         </div>
 
-                        {{--Row data select flight--}}
+                        {{-- Row data select flight --}}
+                        @foreach($flightSchedules as $flightSchedule)
+                            <div class="content-step1 row mt-3">
+                                <div class="col-3">
+                                    <ul class="date-fly w-100">
+                                        <li class="mr-3 w-25">
+                                            <ul class="text-center">
+                                                <li>{{ date('H:i', strtotime($flightSchedule->departure_at)) }}</li>
+                                                <li>{{ $flightSchedule->airportFrom->code }}</li>
+                                            </ul>
+                                        </li>
+                                        <li class="mr-1 w-75 ">
+                                            <ul class="text-center">
+                                                <li>{{ date('H\\h:i\\m', strtotime($flightSchedule->arrival_at) - strtotime($flightSchedule->departure_at)) }}</li>
+                                                <li style="font-size: 14px;">{{ $flightSchedule->code }}</li>
+                                                <li style="font-size: 10px;">{{ $flightSchedule->plane->name }}</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <ul class="text-center">
+                                                <li>{{ date('H:i', strtotime($flightSchedule->arrival_at)) }}</li>
+                                                <li>{{ $flightSchedule->airportTo->code }}</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
 
-                        <div class="content-step1 row mt-3">
-                            <div class="col-3">
-                                <ul class="date-fly w-100">
-                                    <li class="mr-3 w-25">
-                                        <ul class="text-center">
-                                            <li>19:25</li>
-                                            <li>DLI</li>
-                                        </ul>
-                                    </li>
-                                    <li class="mr-1 w-75 ">
-                                        <ul class="text-center">
-                                            <li>01h:55m</li>
-                                            <li style="font-size: 14px;">QH 1424</li>
-                                            <li style="font-size: 10px;">Airbus A320t</li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <ul class="text-center">
-                                            <li>21:20</li>
-                                            <li>HAN</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-
-                            </div>
-
-                            <div class="col-9">
-                                <div class="row">
-                                    <div class="col-4 text-right ">
-                                        <label for="check_eco_flight_schedule_id1">
-                                            <div class="check eco">
-                                                <span>Select flight</span>
-
-                                                <input class="ml-1" type="radio" id="check_eco_flight_schedule_id1"
-                                                       name="select_flight" required
-                                                       value="{'flight_schedule_id':1,'seat_type':'eco','price':'599000'}">
-                                                <p style="">599,000 VND</p>
-                                            </div>
-                                        </label>
-                                    </div>
-                                    <div class="col-4 text-right">
-                                        <label for="check_eco_flight_schedule_id2">
-                                            <div class="check plus">
-                                                <span>Select flight </span>
-                                                <input class="ml-1" type="radio" id="check_eco_flight_schedule_id2"
-                                                       name="select_flight"
-                                                       value="{'flight_schedule_id':1,'seat_type':'plus','price':'599000'}">
-                                                <p>599,000 VND</p>
-                                            </div>
-                                        </label>
-                                    </div>
-                                    <div class="col-4 text-right">
-                                        <label for="check_eco_flight_schedule_id3">
-                                            <div class="check business">
-                                                <span>Select flight </span>
-                                                <input class="ml-1" type="radio" id="check_eco_flight_schedule_id3"
-                                                       name="select_flight"
-                                                       value="{'flight_schedule_id':1,'seat_type':'business','price':'599000'}">
-                                                <p>599,000 VND</p>
-                                            </div>
-                                        </label>
+                                <div class="col-9">
+                                    <div class="row">
+                                        <div class="col-4 text-right ">
+                                            <label for="check_eco_{{ $flightSchedule->flight_schedule_id }}">
+                                                <div class="check eco">
+                                                    <span>Select flight</span>
+                                                    <input id="check_eco_{{ $flightSchedule->flight_schedule_id }}"
+                                                           class="ml-1" name="select_flight" value="eco" type="radio"
+                                                           required
+                                                           onclick="setValue({{ $flightSchedule->flight_schedule_id }}, this.value, {{ $flightSchedule->priceSeatType->eco_price }})">
+                                                    <p>{{ number_format($flightSchedule->priceSeatType->eco_price, 0, ',', '.') }}
+                                                        VND</p>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="col-4 text-right">
+                                            <label for="check_plus_{{ $flightSchedule->flight_schedule_id }}">
+                                                <div class="check plus">
+                                                    <span>Select flight </span>
+                                                    <input id="check_plus_{{ $flightSchedule->flight_schedule_id }}"
+                                                           class="ml-1" name="select_flight" value="plus" type="radio"
+                                                           required
+                                                           onclick="setValue({{ $flightSchedule->flight_schedule_id }}, this.value, {{ $flightSchedule->priceSeatType->plus_price }})">
+                                                    <p>{{ number_format($flightSchedule->priceSeatType->plus_price, 0, ',', '.') }}
+                                                        VND</p>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="col-4 text-right">
+                                            <label for="check_business_{{ $flightSchedule->flight_schedule_id }}">
+                                                <div class="check business">
+                                                    <span>Select flight </span>
+                                                    <input id="check_business_{{ $flightSchedule->flight_schedule_id }}"
+                                                           class="ml-1" name="select_flight" value="business"
+                                                           type="radio" required
+                                                           onclick="setValue({{ $flightSchedule->flight_schedule_id }}, this.value, {{ $flightSchedule->priceSeatType->business_price }})">
+                                                    <p>{{ number_format($flightSchedule->priceSeatType->business_price, 0, ',', '.') }}
+                                                        VND</p>
+                                                </div>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        {{--Row data select flight--}}
-
-                        <div class="content-step1 row mt-3">
-                            <div class="col-3">
-                                <ul class="date-fly w-100">
-                                    <li class="mr-3 w-25">
-                                        <ul class="text-center">
-                                            <li>19:25</li>
-                                            <li>DLI</li>
-                                        </ul>
-                                    </li>
-                                    <li class="mr-1 w-75 ">
-                                        <ul class="text-center">
-                                            <li>01h:55m</li>
-                                            <li style="font-size: 14px;">QH 1424</li>
-                                            <li style="font-size: 10px;">Airbus A320t</li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <ul class="text-center">
-                                            <li>21:20</li>
-                                            <li>HAN</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-
-                            </div>
-
-                            <div class="col-9">
-                                <div class="row">
-                                    <div class="col-4 text-right ">
-                                        <label for="check_eco_flight_schedule_id4">
-                                            <div class="check eco">
-                                                <span>Select flight</span>
-
-                                                <input class="ml-1" type="radio" id="check_eco_flight_schedule_id4"
-                                                       name="select_flight"
-                                                       value="{'flight_schedule_id':1,'seat_type':'eco','price':'599000'}">
-                                                <p style="">599,000 VND</p>
-                                            </div>
-                                        </label>
-                                    </div>
-                                    <div class="col-4 text-right">
-                                        <label for="check_eco_flight_schedule_id5">
-                                            <div class="check plus">
-                                                <span>Select flight </span>
-                                                <input class="ml-1" type="radio" id="check_eco_flight_schedule_id5"
-                                                       name="select_flight"
-                                                       value="{'flight_schedule_id':1,'seat_type':'plus','price':'599000'}">
-                                                <p>599,000 VND</p>
-                                            </div>
-                                        </label>
-                                    </div>
-                                    <div class="col-4 text-right">
-                                        <label for="check_eco_flight_schedule_id6">
-                                            <div class="check business">
-                                                <span>Select flight </span>
-                                                <input class="ml-1" type="radio" id="check_eco_flight_schedule_id6"
-                                                       name="select_flight"
-                                                       value="{'flight_schedule_id':1,'seat_type':'business','price':'599000'}">
-                                                <p>599,000 VND</p>
-                                            </div>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+                        {{-- ./ Row data select flight --}}
 
                     </div>
 
@@ -263,9 +201,19 @@
                             <span><i class="fa fa-angle-right"></i></span></button>
                     </div>
                 </div>
+                <input type="hidden" name="flight_schedule_id" value="">
+                <input type="hidden" name="seat_type" value="">
+                <input type="hidden" name="seat_price" value="">
+                @csrf
             </form>
         </div>
     </div>
+
+    <script type="text/javascript">
+        function setValue(flight_schedule_id, seat_type, seat_price) {
+            alert('Bạn chọn: ' + flight_schedule_id + seat_type + seat_price)
+        }
+    </script>
 
 @endsection
 

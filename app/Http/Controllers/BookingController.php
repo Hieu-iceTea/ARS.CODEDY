@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\FlightSchedule;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -10,9 +11,23 @@ class BookingController extends Controller
      * Show the form for Booking/Step-1.
      *
      */
-    public function getStep1()
+    public function getStep1(Request $request)
     {
-        return view('pages.booking.step-1');
+        //Get data from request:
+        $airport_from_id = $request->get('from');
+        $airport_to_id = $request->get('to');
+        $departure_at = $request->get('departure');
+
+        $adults = $request->get('adults');
+        $children = $request->get('children');
+        $infant = $request->get('infant');
+
+        $flightSchedules = FlightSchedule::where('airport_from_id', $airport_from_id)
+            ->where('airport_to_id', $airport_to_id)->get();
+
+        $data = ['flightSchedules' => $flightSchedules];
+
+        return view('pages.booking.step-1', $data);
     }
 
     /**
