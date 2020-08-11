@@ -15,4 +15,23 @@ class Ticket extends Model
     {
         return parent::all($columns)->where('deleted', false);
     }
+
+    public function user()
+    {
+        return $this->hasOne(User::class, 'user_id', 'user_id');
+    }
+
+    public function passenger()
+    {
+        return $this->hasMany(Passenger::class, 'ticket_id', 'ticket_id');
+    }
+
+    public function payType()
+    {
+        return $this->hasMany(PayType::class, 'pay_type_id', 'pay_type_id');
+    }
+
+    public function promotion() {
+        return $this->hasMany(Promotion::class, 'promotion_id', 'promotion_id');
+    }
 }
