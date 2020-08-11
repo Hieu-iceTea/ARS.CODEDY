@@ -86,42 +86,26 @@
                     <div class="home_search_container">
                         <div class="home_search_title">Search for your flight</div>
                         <div class="home_search_content">
-                            <form action="booking/1" method="get" class="home_search_form" id="home_search_form">
+                            <form action="booking/step-1" method="get" class="home_search_form" id="home_search_form">
                                 <div
                                     class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
 
+                                    {{--Hiện thị tên các sân bay đi--}}
                                     <select class="search_input search_input_1" id="from" name="from"
                                             required="required">
                                         <option selected value="">-- From --</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
+                                        @foreach($addressAirports as $addressAirport)
+                                            <option value=0>{{ $addressAirport->name }}</option>
+                                        @endforeach
                                     </select>
 
+                                    {{--Hiện thị tên các sân bay đến--}}
                                     <select class="search_input search_input_2" id="to" name="to"
                                             required="required">
                                         <option selected value="">-- To --</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
+                                        @foreach($addressAirports as $addressAirport)
+                                            <option value=0>{{ $addressAirport->name }}</option>
+                                        @endforeach
 
                                     </select>
 

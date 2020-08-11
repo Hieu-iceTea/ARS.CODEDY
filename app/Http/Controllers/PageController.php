@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Model\Airport;
 class PageController extends Controller
 {
     /**
@@ -12,7 +12,8 @@ class PageController extends Controller
      */
     public function index()
     {
-        return view('pages.index');
+        $addressAirports = Airport::select('name')->get();
+        return view('pages.index',compact('addressAirports'));
     }
 
     public function about()
