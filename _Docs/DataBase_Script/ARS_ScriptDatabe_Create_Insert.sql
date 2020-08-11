@@ -27,12 +27,13 @@ CREATE TABLE IF NOT EXISTS `user`
     `password`          VARCHAR(128)     NOT NULL,
     `level`             TINYINT UNSIGNED NOT NULL,
     `email_verified_at` DATETIME,
-    `verification_code` VARCHAR(8),
-    `remember_token`    VARCHAR(128),
+    `verification_code` VARCHAR(8)   DEFAULT NULL,
+    `remember_token`    VARCHAR(128) DEFAULT NULL,
 
     `gender`            BOOLEAN          NOT NULL,
     `first_name`        VARCHAR(64),
     `last_name`         VARCHAR(64),
+    `dob`               DATE             NOT NULL,
     `phone`             VARCHAR(16),
     `address`           VARCHAR(128),
 
@@ -115,12 +116,12 @@ CREATE TABLE IF NOT EXISTS `price_seat_type`
 (
     `price_seat_type_id`  INT AUTO_INCREMENT,
 
-    `eco_price`           INT(16) UNSIGNED NOT NULL,
-    `eco_qty_remain`      VARCHAR(16)      NOT NULL,
-    `plus_price`          INT(16) UNSIGNED NOT NULL,
-    `plus_qty_remain`     VARCHAR(16)      NOT NULL,
-    `business_price`      INT(16) UNSIGNED NOT NULL,
-    `business_qty_remain` VARCHAR(16)      NOT NULL,
+    `eco_price`           INT(16) UNSIGNED,
+    `eco_qty_remain`      INT(16) UNSIGNED,
+    `plus_price`          INT(16) UNSIGNED,
+    `plus_qty_remain`     INT(16) UNSIGNED,
+    `business_price`      INT(16) UNSIGNED,
+    `business_qty_remain` INT(16) UNSIGNED,
 
     `created_by`          NVARCHAR(32) DEFAULT 'ARS.CODEDY',
     `created_at`          DATETIME     DEFAULT CURRENT_TIME,
@@ -163,6 +164,7 @@ CREATE TABLE IF NOT EXISTS `pay_type`
     `pay_type_id` INT AUTO_INCREMENT,
 
     `name`        VARCHAR(16) NOT NULL,
+    `description` VARCHAR(128),
 
     `created_by`  NVARCHAR(32) DEFAULT 'ARS.CODEDY',
     `created_at`  DATETIME     DEFAULT CURRENT_TIME,
@@ -187,7 +189,7 @@ CREATE TABLE IF NOT EXISTS `passenger`
     `first_name`     VARCHAR(16)         NOT NULL,
     `last_name`      VARCHAR(16)         NOT NULL,
     `dob`            DATE                NOT NULL,
-    `with_passenger` DATETIME,
+    `with_passenger` VARCHAR(32),
 
     `created_by`     NVARCHAR(32) DEFAULT 'ARS.CODEDY',
     `created_at`     DATETIME     DEFAULT CURRENT_TIME,
@@ -269,9 +271,9 @@ CREATE TABLE IF NOT EXISTS `ticket`
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = #
 
 #Password: 123456
-INSERT INTO user (user_name, email, password, level, email_verified_at, verification_code, remember_token, gender,
-                  first_name, last_name, phone, address)
-VALUES ('user_name', 'email', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 0, '2020-08-08', NULL,
-        NULL, 0, 'first_name', 'last_name', 'phone', 'address');
+INSERT INTO user (user_name, email, password, level, email_verified_at, gender, first_name, last_name, dob, phone, address)
+VALUES ('host', 'host@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 0, '2020-08-08', 0, 'host', 'host', '1996-08-08', '0868663315', 'Hà Nội');
+
+
 
 
