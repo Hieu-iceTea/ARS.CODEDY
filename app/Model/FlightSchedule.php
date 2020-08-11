@@ -35,4 +35,9 @@ class FlightSchedule extends Model
     {
         return $this->hasOne(PriceSeatType::class, 'price_seat_type_id', 'price_seat_type_id');
     }
+
+    public function ticket()
+    {
+        return $this->hasMany(Ticket::class, 'ticket_id', 'ticket_id');
+    }
 }
