@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Ticket extends Model
 {
@@ -31,7 +32,28 @@ class Ticket extends Model
         return $this->hasMany(PayType::class, 'pay_type_id', 'pay_type_id');
     }
 
-    public function promotion() {
+    public function promotion()
+    {
         return $this->hasMany(Promotion::class, 'promotion_id', 'promotion_id');
+    }
+
+    public function extraServices()
+    {
+        $str = $this->extra_service_ids;
+
+        $extra_service_ids = Str::of($str)->explode(',');
+
+        $extraServices = [];
+
+        foreach ($extra_service_ids as $extra_service_id) {
+            $extraServices[] = ExtraService::find($extra_service_id);
+        }
+
+        return $extraServices;
+    }
+
+    public function flightSchedule()
+    {
+        return $this->hasOne(FlightSchedule::class, 'flight_schedule_id', 'flight_schedule_id');
     }
 }
