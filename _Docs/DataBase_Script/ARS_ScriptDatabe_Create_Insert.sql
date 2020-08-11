@@ -51,21 +51,21 @@ CREATE TABLE IF NOT EXISTS `user`
 DROP TABLE IF EXISTS `extra_service`;
 CREATE TABLE IF NOT EXISTS `extra_service`
 (
-    `additional_service_id` INT AUTO_INCREMENT,
+    `extra_service_id` INT AUTO_INCREMENT,
 
-    `name`                  VARCHAR(64)      NOT NULL,
-    `price`                 INT(16) UNSIGNED NOT NULL,
-    `image`                 VARCHAR(128)     NOT NULL,
-    `description`           TEXT             NOT NULL,
+    `name`             VARCHAR(64)      NOT NULL,
+    `price`            INT(16) UNSIGNED NOT NULL,
+    `image`            VARCHAR(128)     NOT NULL,
+    `description`      TEXT             NOT NULL,
 
-    `created_by`            NVARCHAR(32) DEFAULT 'ARS.CODEDY',
-    `created_at`            DATETIME     DEFAULT CURRENT_TIME,
-    `updated_by`            NVARCHAR(32) DEFAULT NULL,
-    `updated_at`            DATETIME     DEFAULT NULL,
-    `version`               INT          DEFAULT 1,
-    `deleted`               BOOLEAN      DEFAULT FALSE,
+    `created_by`       NVARCHAR(32) DEFAULT 'ARS.CODEDY',
+    `created_at`       DATETIME     DEFAULT CURRENT_TIME,
+    `updated_by`       NVARCHAR(32) DEFAULT NULL,
+    `updated_at`       DATETIME     DEFAULT NULL,
+    `version`          INT          DEFAULT 1,
+    `deleted`          BOOLEAN      DEFAULT FALSE,
 
-    PRIMARY KEY (`additional_service_id`)
+    PRIMARY KEY (`extra_service_id`)
 ) ENGINE InnoDB;
 
 #Create Table airport
@@ -74,10 +74,10 @@ CREATE TABLE IF NOT EXISTS `airport`
 (
     `airport_id`  INT AUTO_INCREMENT,
 
-    `location`    VARCHAR(64)  NOT NULL,
+    `location`    VARCHAR(64) NOT NULL,
 
     `code`        VARCHAR(8)  NOT NULL,
-    `name`        VARCHAR(32)  NOT NULL,
+    `name`        VARCHAR(32) NOT NULL,
     `description` VARCHAR(128),
 
     `created_by`  NVARCHAR(32) DEFAULT 'ARS.CODEDY',
@@ -266,11 +266,13 @@ CREATE TABLE IF NOT EXISTS `ticket`
     PRIMARY KEY (`ticket_id`)
 ) ENGINE InnoDB;
 
+
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = #
 #                                             Insert Data                                             #
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = #
-
 #Password: 123456
+
+
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, gender, first_name, last_name, dob, phone, address)
 VALUES (1, 'Hieu-iceTea', 'DinhHieu8896@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 2, '2020-08-08', 0, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '0868663315', 'Nghệ An');
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, gender, first_name, last_name, dob, phone, address)
@@ -288,15 +290,15 @@ VALUES (7, 'admin', 'admin_ars.codedy@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87Acu
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, gender, first_name, last_name, dob, phone, address)
 VALUES (8, 'member', 'member_ars.codedy@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf13', 2, '2020-08-08', 0, '', '', '2000-01-01', '', '');
 
-INSERT INTO extra_service (additional_service_id, name, price, image, description)
+INSERT INTO extra_service (extra_service_id, name, price, image, description)
 VALUE (1,  'Choose your preferred seat',  120000,  'choose_your_preferred_seat.jpg ', 'Description');
-INSERT INTO extra_service (additional_service_id, name, price, image, description)
+INSERT INTO extra_service (extra_service_id, name, price, image, description)
 VALUE (2,  'Luggage and special services',  2000,  'luggage_and_special_services.jpg ', 'Description');
-INSERT INTO extra_service (additional_service_id, name, price, image, description)
+INSERT INTO extra_service (extra_service_id, name, price, image, description)
 VALUE (3,  'Priority Check-in',  111000,  'priority_check_in.jpg ', 'Description');
-INSERT INTO extra_service (additional_service_id, name, price, image, description)
+INSERT INTO extra_service (extra_service_id, name, price, image, description)
 VALUE (4,  'Buy more baggage',  20000,  'buy_more_baggage.jpg ', 'Description');
-INSERT INTO extra_service (additional_service_id, name, price, image, description)
+INSERT INTO extra_service (extra_service_id, name, price, image, description)
 VALUE (5,  'Shipping services',  300000,  'shipping_services ', 'Description');
 
 INSERT INTO airport (airport_id, location, code, name, description)
@@ -434,4 +436,3 @@ INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_ty
 VALUES (4, NULL, 1, NULL, 1, '', 2, 2, 'DEMO02', 0, 'Kiều Linh', 'Trần', 'DinhHieu8896@gmail.com', '0868663315', 'Hà Nội', 2200000, 1, 'Mô tả về vé này');
 INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, additional_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, total_passenger, description)
 VALUES (5, NULL, 10, NULL, 1, '', 3, 3, 'DEMO03', 0, 'Thanh Mai', 'Phạm', 'DinhHieu8896@gmail.com', '0868663315', 'Hà Nội', 2500000, 1, 'Mô tả về vé này');
-
