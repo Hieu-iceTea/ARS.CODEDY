@@ -58,7 +58,7 @@
                 </div>
             </div>
 
-            <form action="4" method="get">
+            <form method="post">
                 <div class="row">
                     {{-- form main --}}
                     <div class="col-lg-9">
@@ -72,125 +72,52 @@
                                 </div>
                             </div>
 
-                            <div class="row mt-5 shadow">
-                                <div class="item_extra_service select-wrapper w-100">
-                                    <div class="row extra-header-row">
-                                        <label for="service_1" class="col-2 col-sm-1 my_label">
-                                            <input name="service_1" id="service_1" type="checkbox"
-                                                   class="extra-checkbox" data-extras="seats"
-                                                   autocomplete>
-                                        </label>
-                                        <div class="col-10 col-sm-11" style="background-color: white">
-                                            <div class="row intro-services">
+                            {{--item_extra_service--}}
+                            @foreach($extraServices as $extraService)
+                                <div class="row mt-5 shadow">
+                                    <div class="item_extra_service select-wrapper w-100">
+                                        <div class="row extra-header-row">
 
-                                                <div class="col-4 intro">
-                                                    <div class="column-inner color-blue">
-                                                        <h3><i class="fa fa-star-o" aria-hidden="true"></i></h3>
-                                                        <h4></h4>
-                                                        <h4>Choose your preferred seat</h4>
+                                            <label for="extra_service_{{ $extraService->extra_service_id }}"
+                                                   class="col-2 col-sm-1 my_label">
+                                                <input name="extra_service_ids[]" type="checkbox"
+                                                       value="{{ $extraService->extra_service_id }}"
+                                                       id="extra_service_{{ $extraService->extra_service_id }}"
+                                                       class="extra-checkbox" data-extras="seats">
+                                            </label>
+
+                                            <div class="col-10 col-sm-11" style="background-color: white">
+
+                                                <div class="row intro-services">
+
+                                                    <div class="col-4 intro">
+                                                        <div class="column-inner color-blue">
+                                                            <h5 class="mt-3">
+                                                                <i class="fa fa-star-o mr-2" aria-hidden="true"></i>
+                                                                {{ number_format($extraService->price, 0, ',', '.') }}
+                                                                VND
+                                                            </h5>
+                                                            <h4>{{ $extraService->name }}</h4>
+                                                        </div>
                                                     </div>
-                                                </div>
 
-                                                <div class="col-4 description">
-                                                    <div class="column-inner">
-                                                        <ul class="">
-                                                            <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Individual
-                                                                    seat selection</p></li>
-                                                            <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Standard
-                                                                    seats</p></li>
-                                                            <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Wide
-                                                                    leg seat</p></li>
-                                                        </ul>
+                                                    <div class="col-4 description">
+                                                        <div class="column-inner">
+                                                            {!! $extraService->description !!}
+                                                        </div>
                                                     </div>
-                                                </div>
 
-                                                <div class="col-4">
-                                                    <img src="img/booking_4_1.jpg"
-                                                         class="rounded mx-auto d-block" alt="">
+                                                    <div class="col-4">
+                                                        <img src="img/extra_service/{{ $extraService->image }}"
+                                                             class="rounded mx-auto d-block" alt="">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="row mt-5 shadow">
-                                <div class="item_extra_service select-wrapper w-100">
-                                    <div class="row extra-header-row">
-                                        <label for="service_2" class="col-2 col-sm-1 my_label">
-                                            <input name="service_2" id="service_2" type="checkbox"
-                                                   class="extra-checkbox" data-extras="seats"
-                                                   autocomplete>
-                                        </label>
-                                        <div class="col-11" style="background-color: white">
-                                            <div class="row intro-services">
-                                                <div class="col-4 intro">
-                                                    <div class="column-inner color-blue">
-                                                        <h3><i class="fa fa-star-o" aria-hidden="true"></i></h3>
-                                                        <h4></h4>
-                                                        <h4>Choose your preferred seat</h4>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4 description">
-                                                    <div class="column-inner">
-                                                        <ul class="">
-                                                            <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Individual
-                                                                    seat selection</p></li>
-                                                            <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Standard
-                                                                    seats</p></li>
-                                                            <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Wide
-                                                                    leg seat</p></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <img src="img/booking_4_2.jpg"
-                                                         class="rounded mx-auto d-block" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row mt-5 shadow">
-                                <div class="item_extra_service select-wrapper w-100">
-                                    <div class="row extra-header-row">
-                                        <label for="service_3" class="col-2 col-sm-1 my_label">
-                                            <input name="service_3" id="service_3" type="checkbox"
-                                                   class="extra-checkbox" data-extras="seats"
-                                                   autocomplete>
-                                        </label>
-                                        <div class="col-11" style="background-color: white">
-                                            <div class="row intro-services">
-                                                <div class="col-4 intro">
-                                                    <div class="column-inner color-blue">
-                                                        <h3><i class="fa fa-star-o" aria-hidden="true"></i></h3>
-                                                        <h4></h4>
-                                                        <h4>Choose your preferred seat</h4>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4 description">
-                                                    <div class="column-inner">
-                                                        <ul class="">
-                                                            <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Individual
-                                                                    seat selection</p></li>
-                                                            <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Standard
-                                                                    seats</p></li>
-                                                            <li><p><span><i class="fa fa-check" aria-hidden="true"></i></span>Wide
-                                                                    leg seat</p></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <img src="img/booking_4_3.jpg"
-                                                         class="rounded mx-auto d-block" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+                            {{-- ./ item_extra_service--}}
 
                         </div>
                     </div>
@@ -238,6 +165,7 @@
                             <span><i class="fa fa-angle-right"></i></span></button>
                     </div>
                 </div>
+                @csrf
             </form>
         </div>
     </div>

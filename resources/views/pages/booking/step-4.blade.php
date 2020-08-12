@@ -58,7 +58,8 @@
                 </div>
             </div>
 
-            <form action="" method="get">
+            <form method="post">
+                @csrf
                 <div class="row">
                     {{-- form main --}}
                     <div class="col-lg-9 col w-100">
@@ -78,29 +79,36 @@
                                 <h5 class="card-header title_card">Flight</h5>
 
                                 <div class="card-body">
-                                    <h4>Outbound flight: 20/08/2020</h4>
+                                    <h4>Outbound flight:
+                                        {{ date('l, F d, Y', strtotime($flightSchedule->departure_at)) }}
+                                    </h4>
                                     <table class="table table-borderless table-sm w-50 mb-1">
                                         <thead>
                                         <tr>
-                                            <th scope="col" style="color: #636466">07:15</th>
-                                            <td scope="col">Ha Noi</td>
+                                            <th scope="col"
+                                                style="color: #636466">{{ date('H:i', strtotime($flightSchedule->departure_at)) }}</th>
+                                            <td scope="col">{{ $flightSchedule->airportFrom->name }}</td>
                                             <td scope="col"></td>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <th scope="row" style="color: #636466">09:25</th>
-                                            <td>Ho Chi Minh</td>
+                                            <th scope="row"
+                                                style="color: #636466">{{ date('H:i', strtotime($flightSchedule->arrival_at)) }}</th>
+                                            <td>{{ $flightSchedule->airportTo->name }}</td>
                                             <td></td>
                                         </tr>
                                         <tr style="color: #00305B">
                                             <th scope="row"></th>
-                                            <td>VN-599</td>
-                                            <td>Travel time: 02h 10m</td>
+                                            <td>{{ $flightSchedule->code }}</td>
+                                            <td>Travel time:
+                                                {{ date('H\\h i\\m', strtotime($flightSchedule->arrival_at) - strtotime($flightSchedule->departure_at)) }}
+                                            </td>
                                         </tr>
                                         </tbody>
                                     </table>
-                                    <strong>Selected fare: ARS Plus</strong>
+                                    <strong>Selected fare:
+                                        ARS {{ \App\Utilities\Utility::$seat_type[$seat_type] }}</strong>
                                 </div>
                             </div>
                         </div>
@@ -111,16 +119,16 @@
                                 <div class="card-body">
                                     <table class="table table-borderless table-sm w-75 mb-1">
                                         <thead>
-                                        <tr>
-                                            <th scope="col" style="color: #636466">1. Nguyen Dinh Hieu</th>
-                                            <td scope="col" style="color: #00305B">Adults</td>
-                                        </tr>
+
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <th scope="row" style="color: #636466">2. Pham Minh Anh</th>
-                                            <td style="color: #00305B">Adults</td>
-                                        </tr>
+                                        @foreach($passengers as $key => $passenger)
+                                            <tr>
+                                                <th scope="row" style="color: #636466">{{ $key }}
+                                                    . {{ $passenger['first_name'] . ' , ' . $passenger['last_name'] }}</th>
+                                                <td style="color: #00305B">{{ \App\Utilities\Utility::$passenger_type[$passenger['passenger_type']] }}</td>
+                                            </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div>
@@ -131,18 +139,31 @@
                             <div class="card w-100">
                                 <h5 class="card-header title_card">Extras</h5>
                                 <div class="card-body">
-                                    <table class="table table-borderless table-sm mb-1">
+                                    <table class="table table-borderless table-sm w-75 mb-1">
                                         <thead>
-                                        <tr>
-                                            <th scope="col" style="color: #636466">1. Luggage</th>
-                                            <td scope="col" style="color: #00305B">100.000 VND</td>
-                                        </tr>
+
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <th scope="row" style="color: #636466">2. Meal</th>
-                                            <td style="color: #00305B">50.000 VND</td>
-                                        </tr>
+                                        @if($extra_service_ids ?? false)
+                                            @foreach($extra_service_ids as $key => $extra_service_id)
+                                                <tr>
+                                                    <th scope="row" style="color: #636466">{{ $key + 1 }}
+                                                        . {{ \App\Model\ExtraService::find($extra_service_id)->name }}
+                                                        Meal
+                                                    </th>
+                                                    <td style="color: #00305B">{{ number_format(\App\Model\ExtraService::find($extra_service_id)->price, 0, ',', '.') }}
+                                                        VND
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        @else
+                                            <tr>
+                                                <th scope="row" style="color: #636466">
+                                                    Not included extra service.
+                                                </th>
+
+                                            </tr>
+                                        @endif
                                         </tbody>
                                     </table>
                                 </div>
@@ -150,7 +171,7 @@
                         </div>
 
                         <!-- Payment details -->
-                        <div class="row mt-5 mb-4">
+                        <div class="row mt-5 mb-4" id="payment_details">
                             <div class="section-header color-blue">
                                 <h3>
                                     <i class="fa fa-credit-card"></i>
@@ -170,41 +191,22 @@
                                     <div class="row">
 
                                         <!-- Pay Type Item -->
-                                        <div class="pay_type_item col-md-4 mt-2 mb-2">
-                                            <label for="pay_type_credit_id" style="display: inline; cursor: pointer">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Pay later</h5>
-                                                        <input type="radio" name="pay_type" id="pay_type_credit_id"
-                                                               value="pay_type_credit_id" required>
+                                        @foreach($payTypes as $payType)
+                                            <div class="pay_type_item col-md-4 mt-2 mb-2">
+                                                <label for="pay_type_{{ $payType->pay_type_id }}"
+                                                       style="display: inline; cursor: pointer">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">{{ $payType->name }}</h5>
+                                                            <input type="radio" name="pay_type"
+                                                                   id="pay_type_{{ $payType->pay_type_id }}"
+                                                                   value="{{ $payType->pay_type_id }}"
+                                                                   {{ old('pay_type') == $payType->pay_type_id ? 'checked' : '' }} required>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </label>
-                                        </div>
-
-                                        <div class="pay_type_item col-md-4 mt-2 mb-2">
-                                            <label for="pay_type_credit_id_2" style="display: inline; cursor: pointer">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Credit Card</h5>
-                                                        <input type="radio" name="pay_type" id="pay_type_credit_id_2"
-                                                               value="pay_type_credit_id_2" required>
-                                                    </div>
-                                                </div>
-                                            </label>
-                                        </div>
-
-                                        <div class="pay_type_item col-md-4 mt-2 mb-2">
-                                            <label for="pay_type_credit_id_3" style="display: inline; cursor: pointer">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">VN Pay</h5>
-                                                        <input type="radio" name="pay_type" id="pay_type_credit_id_3"
-                                                               value="pay_type_credit_id_3" required>
-                                                    </div>
-                                                </div>
-                                            </label>
-                                        </div>
+                                                </label>
+                                            </div>
+                                        @endforeach
 
                                     </div>
                                 </div>
@@ -223,7 +225,8 @@
 
                         <div class="info-ticker mt-4 row">
                             <div class="card w-100">
-                                <h5 class="card-header title_card">Outbound flight: 20/08/2020</h5>
+                                <h5 class="card-header title_card">Outbound
+                                    flight: {{ date('l, F d, Y', strtotime($flightSchedule->departure_at)) }}</h5>
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-12">
@@ -231,33 +234,69 @@
                                                 <table class="table table-borderless table-sm w-50 mb-1">
                                                     <thead>
                                                     <tr>
-                                                        <th scope="col" style="color: #636466">07:15</th>
-                                                        <td scope="col">Ha Noi</td>
+                                                        <th scope="col"
+                                                            style="color: #636466">{{ date('H:i', strtotime($flightSchedule->departure_at)) }}</th>
+                                                        <td scope="col">{{ $flightSchedule->airportFrom->name }}</td>
                                                         <td scope="col"></td>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
                                                     <tr>
-                                                        <th scope="row" style="color: #636466">09:25</th>
-                                                        <td>Ho Chi Minh</td>
+                                                        <th scope="row"
+                                                            style="color: #636466">{{ date('H:i', strtotime($flightSchedule->arrival_at)) }}</th>
+                                                        <td>{{ $flightSchedule->airportTo->name }}</td>
                                                         <td></td>
                                                     </tr>
                                                     <tr style="color: #00305B">
                                                         <th scope="row"></th>
-                                                        <td>VN-599</td>
-                                                        <td>Travel time: 02h 10m</td>
+                                                        <td>{{ $flightSchedule->code }}</td>
+                                                        <td>Travel time:
+                                                            {{ date('H\\h i\\m', strtotime($flightSchedule->arrival_at) - strtotime($flightSchedule->departure_at)) }}
+                                                        </td>
                                                     </tr>
                                                     </tbody>
                                                 </table>
                                                 <hr>
+
                                                 <div>
                                                     <p class="card-text d-inline">Fare (Adults)</p>
-                                                    <p class="card-text d-inline float-right">1 × 599,000 = 599,000
-                                                        VND</p>
+                                                    <p class="card-text d-inline float-right">
+                                                        {{ $passenger_count['adults'] }}
+                                                        × {{ number_format($seat_price, 0, ',', '.') }}
+                                                        = <b>
+                                                            {{ number_format($seat_price * $passenger_count['adults'], 0, ',', '.') }}
+                                                            VND
+                                                        </b>
+                                                    </p>
                                                 </div>
+
                                                 <div>
+                                                    <p class="card-text d-inline">Fare (Children)</p>
+                                                    <p class="card-text d-inline float-right">
+                                                        {{ $passenger_count['children'] }}
+                                                        × {{ number_format($seat_price, 0, ',', '.') }}
+                                                        = <b>
+                                                            {{ number_format($seat_price * $passenger_count['children'], 0, ',', '.') }}
+                                                            VND
+                                                        </b>
+                                                    </p>
+                                                </div>
+
+                                                <div>
+                                                    <p class="card-text d-inline">Fare (Infant)</p>
+                                                    <p class="card-text d-inline float-right">
+                                                        {{ $passenger_count['infant'] }}
+                                                        × {{ number_format($seat_price, 0, ',', '.') }}
+                                                        = <b>
+                                                            {{ number_format($seat_price * $passenger_count['infant'], 0, ',', '.') }}
+                                                            VND
+                                                        </b>
+                                                    </p>
+                                                </div>
+
+                                                <div class="mt-2">
                                                     <p class="card-text d-inline">Airport security</p>
-                                                    <p class="card-text d-inline float-right ">20,000 VND</p>
+                                                    <p class="card-text d-inline float-right ">30,000 VND</p>
                                                 </div>
                                                 <div>
                                                     <p class="card-text d-inline">Passenger Service ChargePassenger
@@ -272,13 +311,20 @@
                                                     <p class="card-text d-inline">System and Admin Surcharge</p>
                                                     <p class="card-text d-inline float-right ">320,000 VND</p>
                                                 </div>
-                                                <div class="mt-2">
-                                                    <h4 class="card-text d-inline">Total VAT</h4>
-                                                    <h4 class="card-text d-inline float-right ">97,000 VND</h4>
+                                                <div class="mt-3">
+                                                    <h4 class="card-text d-inline">Total Fare</h4>
+                                                    <h4 class="card-text d-inline float-right ">
+                                                        {{ number_format($seat_price * $passenger_count['adults'] + $seat_price * $passenger_count['children'] + $seat_price * $passenger_count['infant'], 0, ',', '.') }}
+                                                        VND</h4>
                                                 </div>
                                                 <div class="mt-2">
                                                     <h4 class="card-text d-inline">Total flight cost</h4>
-                                                    <h4 class="card-text d-inline float-right ">1,186,000 VND</h4>
+                                                    <h4 class="card-text d-inline float-right text-black-50">
+                                                        <b>
+                                                            {{ number_format($seat_price * $passenger_count['adults'] + $seat_price * $passenger_count['children'] + $seat_price * $passenger_count['infant'] + 500000, 0, ',', '.') }}
+                                                            VND
+                                                        </b>
+                                                    </h4>
                                                 </div>
                                             </div>
                                         </div>

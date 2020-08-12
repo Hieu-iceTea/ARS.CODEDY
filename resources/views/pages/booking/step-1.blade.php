@@ -244,9 +244,10 @@
                 <input type="hidden" id="seat_type" name="seat_type" value="">
                 <input type="hidden" id="seat_price" name="seat_price" value="">
 
-                <input type="hidden" id="adults" name="adults" value="">
-                <input type="hidden" id="children" name="children" value="">
-                <input type="hidden" id="infant" name="infant" value="">
+                <input type="hidden" id="adults" name="passenger_count[adults]" value="">
+                <input type="hidden" id="children" name="passenger_count[children]" value="">
+                <input type="hidden" id="infant" name="passenger_count[infant]" value="">
+                <input type="hidden" id="total_passenger" name="passenger_count[total]" value="">
                 @csrf
             </form>
         </div>
@@ -261,6 +262,7 @@
             document.getElementById('adults').value = adults;
             document.getElementById('children').value = children;
             document.getElementById('infant').value = infant;
+            document.getElementById('total_passenger').value = adults + children + infant;
 
             //set value to label info
             // document.getElementById('sub_total').innerText = seat_price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
@@ -276,7 +278,6 @@
             document.getElementById('total_price_adults').innerText = total_price_adults.toLocaleString("vi-vn");
             document.getElementById('total_price_children').innerText = total_price_children.toLocaleString("vi-vn");
             document.getElementById('total_price_infant').innerText = total_price_infant.toLocaleString("vi-vn");
-            document.getElementById('total').innerText = total.toLocaleString("vi-vn");
         }
     </script>
 
