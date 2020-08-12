@@ -95,16 +95,16 @@
                                             required="required">
                                         <option selected value="">-- From --</option>
                                         @foreach($addressAirports as $addressAirport)
-                                            <option value=0>{{ $addressAirport->name }}</option>
+                                            <option value= {{ $addressAirport->airport_id }}>{{ $addressAirport->name }}</option>
                                         @endforeach
                                     </select>
 
                                     {{--Hiện thị tên các sân bay đến--}}
                                     <select class="search_input search_input_2" id="to" name="to"
-                                            required="required">
+                                            required="required" >
                                         <option selected value="">-- To --</option>
                                         @foreach($addressAirports as $addressAirport)
-                                            <option value=0>{{ $addressAirport->name }}</option>
+                                            <option value= {{ $addressAirport->airport_id }}>{{ $addressAirport->name }}</option>
                                         @endforeach
 
                                     </select>
