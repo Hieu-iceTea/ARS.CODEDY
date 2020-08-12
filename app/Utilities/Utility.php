@@ -19,4 +19,10 @@ class Utility
         3 => 'Business',
     ];
 
+    public static $passenger_type = [
+        1 => 'Adults',
+        2 => 'Children',
+        3 => 'Infant',
+    ];
+
 }
