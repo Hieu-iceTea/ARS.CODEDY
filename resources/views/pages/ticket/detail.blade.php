@@ -57,9 +57,9 @@
                 </div>
                 <div class="col-4 ml-4">
                     <p class=" ticket_detail_fontsize ticket_detail_fontfamily">Time remaining before takeoff:
-                        {{--<span class="ticket_detail_coloredit">
-                            {{ date(' d\\d H\\h:i\\m', strtotime($ticket->flightSchedule->departure_at) - strtotime(\Carbon\Carbon::now()->toDateTimeString())) }}
-                        </span>--}}
+                        <span class="ticket_detail_coloredit">
+                            {{ date(' m-d H:i', strtotime($ticket->flightSchedule->departure_at) - strtotime(\Carbon\Carbon::now()->toDateTimeString())) }}
+                        </span>
                     </p>
                 </div>
             </div>

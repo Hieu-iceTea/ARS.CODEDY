@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Model\Ticket;
 use App\Model\Airport;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class TicketController extends Controller
 {
@@ -31,6 +31,8 @@ class TicketController extends Controller
      */
     public function detail($id)
     {
+
+
         $ticket = Ticket::all()->where('ticket_id', $id)->first();
 
         return view('pages.ticket.detail', compact('ticket'));
