@@ -208,8 +208,8 @@
                             <div class="card-body text-center">
                                 <h5 class="card-title" style="">
                                     <span style="font-size: 20px;color: #33597C;font-weight: 600">Total</span> :
-                                    <span id="total">
-                                        0.000.000
+                                    <span id="total_price">
+                                        0
                                     </span>
                                     VND
                                 </h5>
@@ -274,10 +274,11 @@
             const total_price_adults = adults * seat_price;
             const total_price_children = children * seat_price;
             const total_price_infant = infant * seat_price;
-            const total = total_price_adults + total_price_children + total_price_infant;
+            const total_price = total_price_adults + total_price_children + total_price_infant;
             document.getElementById('total_price_adults').innerText = total_price_adults.toLocaleString("vi-vn");
             document.getElementById('total_price_children').innerText = total_price_children.toLocaleString("vi-vn");
             document.getElementById('total_price_infant').innerText = total_price_infant.toLocaleString("vi-vn");
+            document.getElementById('total_price').innerText = total_price.toLocaleString("vi-vn");
         }
     </script>
 
