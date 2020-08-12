@@ -29,7 +29,7 @@ class Ticket extends Model
 
     public function payType()
     {
-        return $this->hasMany(PayType::class, 'pay_type_id', 'pay_type_id');
+        return $this->hasOne(PayType::class, 'pay_type_id', 'pay_type_id');
     }
 
     public function promotion()

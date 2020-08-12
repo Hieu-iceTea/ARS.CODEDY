@@ -43,7 +43,7 @@ Route::group(['prefix' => ''], function () {
     Route::group(['prefix' => 'ticket'], function () {
         Route::get('', 'TicketController@index')->name('ticket');
 
-        Route::get('detail/{id}', 'TicketController@detail');
+        Route::get('detail/{id}', 'TicketController@detail')->name('detail');
 
         Route::group(['prefix' => 'edit-schedule/{id}'], function () {
             Route::get('', 'TicketController@editSchedule');

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Ticket;
+use App\Model\Airport;
 use Illuminate\Http\Request;
 
 class TicketController extends Controller
@@ -10,9 +12,16 @@ class TicketController extends Controller
      * Display a listing of the resource.
      *
      */
-    public function index()
+    public function index(Request $request)
+
     {
-        return view('pages.ticket.index');
+        $code = $request->get('code');
+
+        $tickets = Ticket::all()->where('user_id', 1);
+        $addressAirports = Airport::select('name', 'airport_id', 'location', 'code')->get();
+
+        return view('pages.ticket.index', compact('tickets', 'addressAirports'));
+
     }
 
     /**
@@ -22,7 +31,9 @@ class TicketController extends Controller
      */
     public function detail($id)
     {
-        return view('pages.ticket.detail');
+        $ticket = Ticket::all()->where('ticket_id', $id)->first();
+
+        return view('pages.ticket.detail', compact('ticket'));
     }
 
     /**

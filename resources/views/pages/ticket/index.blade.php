@@ -46,34 +46,22 @@
 
                                     <select class="search_input search_input_2" id="from" name="from">
                                         <option selected value="">-- From --</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
+                                        @foreach($addressAirports as $addressAirport)
+                                            <option
+                                                value= {{ $addressAirport->airport_id }}>{{ $addressAirport->location }}
+                                                | {{ $addressAirport->name }} ( {{ $addressAirport->code }} )
+                                            </option>
+                                        @endforeach
                                     </select>
 
                                     <select class="search_input search_input_3" id="to" name="to">
                                         <option selected value="">-- To --</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
-                                        <option value=0>Ha Noi</option>
-                                        <option value=1>Ho Chi Minh</option>
-                                        <option value=2>Da Lat</option>
+                                        @foreach($addressAirports as $addressAirport)
+                                            <option
+                                                value= {{ $addressAirport->airport_id }}>{{ $addressAirport->location }}
+                                                | {{ $addressAirport->name }} ( {{ $addressAirport->code }} )
+                                            </option>
+                                        @endforeach
                                     </select>
 
                                     <input type="date" class="search_input search_input_4" id="departure"
@@ -107,72 +95,28 @@
                         <th scope="col">Code</th>
                         <th scope="col">From</th>
                         <th scope="col">To</th>
-                        <th scope="col">Departure</th>
+                        <th scope="col">DEPARTURE AT</th>
                         <th scope="col">Passenger</th>
                         <th scope="col">Function</th>
                     </tr>
                     </thead>
                     <tbody class="active">
-                    <tr>
-                        <th scope="row">VN-6859</th>
-                        <td>HaNoi, VietNam</td>
-                        <td>HoChiMinh, VietNam</td>
-                        <td>08/08/2020</td>
-                        <td>5 (Adult: 1, Children: 4, Baby: 0)</td>
-                        <td>
-                            <a href="/ticket/detail/1">View</a>
-                            |
-                            <a href="/ticket/edit/1">Edit</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">VN-6859</th>
-                        <td>HaNoi, VietNam</td>
-                        <td>HoChiMinh, VietNam</td>
-                        <td>08/08/2020</td>
-                        <td>5 (Adult: 1, Children: 4, Baby: 0)</td>
-                        <td>
-                            <a href="/ticket/detail/1">View</a>
-                            |
-                            <a href="/ticket/edit/1">Edit</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">VN-6859</th>
-                        <td>HaNoi, VietNam</td>
-                        <td>HoChiMinh, VietNam</td>
-                        <td>08/08/2020</td>
-                        <td>5 (Adult: 1, Children: 4, Baby: 0)</td>
-                        <td>
-                            <a href="/ticket/detail/1">View</a>
-                            |
-                            <a href="/ticket/edit/1">Edit</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">VN-6859</th>
-                        <td>HaNoi, VietNam</td>
-                        <td>HoChiMinh, VietNam</td>
-                        <td>08/08/2020</td>
-                        <td>5 (Adult: 1, Children: 4, Baby: 0)</td>
-                        <td>
-                            <a href="/ticket/detail/1">View</a>
-                            |
-                            <a href="/ticket/edit/1">Edit</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">VN-6859</th>
-                        <td>HaNoi, VietNam</td>
-                        <td>HoChiMinh, VietNam</td>
-                        <td>08/08/2020</td>
-                        <td>5 (Adult: 1, Children: 4, Baby: 0)</td>
-                        <td>
-                            <a href="/ticket/detail/1">View</a>
-                            |
-                            <a href="/ticket/edit/1">Edit</a>
-                        </td>
-                    </tr>
+                    @foreach($tickets as $ticket)
+                        <tr>
+                            <th scope="row">{{ $ticket->flightSchedule->code }}</th>
+                            <td>{{ $ticket->flightSchedule->airportFrom->location }}</td>
+                            <td>{{ $ticket->flightSchedule->airportTo->location }}</td>
+                            <td>{{ $ticket->flightSchedule->departure_at }}</td>
+                            <td>{{ count($ticket->passenger->where('ticket_id',$ticket->ticket_id)) }} (
+                                Adult: {{count($ticket->passenger->where('passenger_type',1))}},
+                                Children:{{count($ticket->passenger->where('passenger_type',2))}},
+                                Baby: {{count($ticket->passenger->where('passenger_type',3))}})
+                            </td>
+                            <td>
+                                <a href="{{ Route('detail',$ticket->ticket_id) }}">View</a>
+                            </td>
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
 

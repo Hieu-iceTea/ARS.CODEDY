@@ -41,8 +41,8 @@
                 </div>
             </div>
             <div class="col-3 ticket_detail_fontfamily ticket_detail_fontsize ml-5">
-                <p class="ticket_detail_fontfamily ticket_detail_fontsize">Booking code: <a href=""><span
-                            class="ticket_detail_coloredit">ABC123</span></a></p>
+                <p class="ticket_detail_fontfamily ticket_detail_fontsize">Ticket code: <a href=""><span
+                            class="ticket_detail_coloredit">{{ $ticket->code }}</span></a></p>
                 <a href="">Cancellation</a> | <a href="">Pay</a>
             </div>
         </div>
@@ -51,20 +51,25 @@
             <div class="row mt-3">
                 <div class="col-7 ml-5">
                     <p class="ticket_detail_fontfamily ticket_detail_fontsize">Flight to go <span
-                            class="ticket_detail_coloredit"><strong>Sunday, 20/09/2020.</strong></span> from <span>Ha Noi</span>
-                        to <span>Ho Chi Minh</span></p>
+                            class="ticket_detail_coloredit"><strong>{{ date('l, F d, Y', strtotime($ticket->flightSchedule->departure_at)) }}.</strong></span>
+                        from <span>{{ $ticket->flightSchedule->airportFrom->location}}</span>
+                        to <span>{{ $ticket->flightSchedule->airportTo->location }}</span></p>
                 </div>
                 <div class="col-4 ml-4">
-                    <p class=" ticket_detail_fontsize ticket_detail_fontfamily">Time remaining before takeoff: <span
-                            class="ticket_detail_coloredit">45d 19h 10m</span></p>
+                    <p class=" ticket_detail_fontsize ticket_detail_fontfamily">Time remaining before takeoff:
+                        {{--<span class="ticket_detail_coloredit">
+                            {{ date(' d\\d H\\h:i\\m', strtotime($ticket->flightSchedule->departure_at) - strtotime(\Carbon\Carbon::now()->toDateTimeString())) }}
+                        </span>--}}
+                    </p>
                 </div>
             </div>
             <div class="card m-4 ticket_detail_fontsize ticket_detail_fontfamily">
                 <div class="row">
                     <div class="col-2 ml-4">
                         <p class=" ticket_detail_fontsize ticket_detail_fontfamily ticket_detail_coloredit">
-                            <span>10:10</span></p>
-                        <p class="ticket_detail_fontfamily tiket_detail_add ticket_detail_coloredit"><span>Ha Noi</span>
+                            <span>{{ date('H:i', strtotime($ticket->flightSchedule->departure_at)) }}</span></p>
+                        <p class="ticket_detail_fontfamily tiket_detail_add ticket_detail_coloredit">
+                            <span>{{ $ticket->flightSchedule->airportFrom->location}}</span>
                         </p>
                     </div>
                     <div class="col-1 tiket_detail_mode">
@@ -72,16 +77,17 @@
                     </div>
                     <div class="col-2">
                         <p class="ticket_detail_fontfamily ticket_detail_fontsize ticket_detail_coloredit">
-                            <span>12:15</span></p>
+                            <span>{{ date('H:i', strtotime($ticket->flightSchedule->arrival_at)) }}</span></p>
                         <p class="ticket_detail_fontfamily tiket_detail_add ticket_detail_coloredit">
-                            <span>Ho Chi Minh</span></p>
+                            <span>{{ $ticket->flightSchedule->airportTo->location }}</span></p>
                     </div>
                     <div class="col-2 mt-3">
                         <p class="ticket_detail_fontfamily ticket_detail_fontsize ticket_detail_coloredit">
-                            <span>VN-556</span></p>
+                            <span>{{ $ticket->flightSchedule->plane->code }}</span></p>
                     </div>
                     <div class="col-2 ticket_arsplus mt-3 mr-5">
-                        <p class="ticket_detail_fontfamily">ARS Plus</p>
+                        <p class="ticket_detail_fontfamily">
+                            ARS {{ \App\Utilities\Utility::$seat_type[$ticket->seat_type] }}</p>
                     </div>
                     <div class="col-3 my-3 ml-5">
                         <button type="submit" class="btn tiket_detail_continue position-sticky continue">Change fligh
@@ -107,27 +113,29 @@
                         </tr>
                         </thead>
                         <tbody class="ticket_detail_table">
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Made</td>
-                            <td>Dang Kim Thi</td>
-                            <td>Adults</td>
-                            <td>Change passenger name</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Made</td>
-                            <td>Dang Kim Thi</td>
-                            <td>Adults</td>
-                            <td>Change passenger name</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Made</td>
-                            <td>Dang Kim Thi</td>
-                            <td>Adults</td>
-                            <td>Change passenger name</td>
-                        </tr>
+
+                        @php($count = 1)
+
+                        @foreach($ticket->passenger as $key => $passenger)
+                            <tr>
+                                <th scope="row">{{ ++$key}}</th>
+                                @if($passenger->gender == 1)
+                                    <td>Made</td>
+                                @else
+                                    <td>Female</td>
+                                @endif
+                                <td>{{ $passenger->last_name.' '.$passenger->first_name }}</td>
+                                @if($passenger->passenger_type == 1)
+                                    <td>Adults</td>
+                                @elseif($passenger->passenger_type == 2)
+                                    <td>Children</td>
+                                @elseif($passenger->passenger_type == 3)
+                                    <td>Baby</td>
+                                @endif
+
+                                <td>Change passenger name</td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -149,10 +157,10 @@
                         </thead>
                         <tbody class="ticket_detail_table">
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Master Card</td>
-                            <td>3.599.000 VND</td>
-                            <td>Finish</td>
+                            <th scope="row">{{$count = 1}}</th>
+                            <td>{{ $ticket->payType->name }}</td>
+                            <td>{{ $ticket->total_price }} VND</td>
+                            <td>{{ \App\Utilities\Utility::$ticket_status[$ticket->status] }}</td>
                         </tr>
                         </tbody>
                     </table>
@@ -174,18 +182,16 @@
                         </tr>
                         </thead>
                         <tbody class="ticket_detail_table">
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Add Luggage</td>
-                            <td>...</td>
-                            <td>3.599.000 VND</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Add Luggage</td>
-                            <td>...</td>
-                            <td>3.599.000 VND</td>
-                        </tr>
+                        {{--{{ $count = 1 }}--}}
+                        @foreach($ticket->extraServices() as $key => $extraService)
+                            <tr>
+                                <th scope="row">{{ ++$key }}</th>
+                                <td>{{ $extraService->name}}</td>
+                                <td>{!! $extraService->description !!}</td>
+                                <td>{{ $extraService->price}} VND</td>
+                            </tr>
+                        @endforeach
+
                         </tbody>
                     </table>
                 </div>
