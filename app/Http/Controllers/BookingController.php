@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Airport;
 use App\Model\FlightSchedule;
 use Illuminate\Http\Request;
 
@@ -21,13 +22,37 @@ class BookingController extends Controller
         $adults = $request->get('adults');
         $children = $request->get('children');
         $infant = $request->get('infant');
+        $totalPassenger = $adults + $children + $infant;
 
+        //get data of Airport from DataBase:
+        $airport_from = Airport::all()->where('airport_id', $airport_from_id)->first();
+        $airport_to = Airport::all()->where('airport_id', $airport_to_id)->first();
+
+        $searchInput = [
+            'airport_from_name' => $airport_from->name,
+            'airport_from_code' => $airport_from->code,
+            'airport_to_name' => $airport_to->name,
+            'airport_to_code' => $airport_to->code,
+            'departure_at' => $departure_at,
+            'adults' => $adults,
+            'children' => $children,
+            'infant' => $infant,
+            'totalPassenger' => $totalPassenger,
+        ];
+
+        //get data Flight-Schedules from DataBase:
         $flightSchedules = FlightSchedule::where('airport_from_id', $airport_from_id)
-            ->where('airport_to_id', $airport_to_id)->get();
+            ->where('airport_to_id', $airport_to_id)
+            ->where('departure_at', 'like', '%' . $departure_at . '%')
+            ->get();
 
-        $data = ['flightSchedules' => $flightSchedules];
+        return view('pages.booking.step-1', compact('flightSchedules', 'searchInput'));
 
-        return view('pages.booking.step-1', $data);
+        //if (count($flightSchedules) > 0) {
+        //    return view('pages.booking.step-1', compact('flightSchedules', 'searchInput'));
+        //} else {
+        //    return redirect('/')->with('notification', 'Không tìm thấy chuyến bay nào')->with('preloader', 'none');
+        //}
     }
 
     /**
