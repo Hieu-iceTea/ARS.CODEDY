@@ -12,4 +12,11 @@ class Utility
         3 => 'Paid',
         4 => 'Finish',
     ];
+
+    public static $seat_type = [
+        1 => 'Eco',
+        2 => 'Plus',
+        3 => 'Business',
+    ];
+
 }
