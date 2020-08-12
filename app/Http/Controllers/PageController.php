@@ -12,7 +12,7 @@ class PageController extends Controller
      */
     public function index()
     {
-        $addressAirports = Airport::select('name','airport_id')->get();
+        $addressAirports = Airport::select('name','airport_id','location','code')->get();
         return view('pages.index',compact('addressAirports'));
     }
 
