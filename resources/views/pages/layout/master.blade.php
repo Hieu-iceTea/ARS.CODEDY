@@ -26,7 +26,7 @@
 
 <body>
 <!-- Preloader Start -->
-<div id="preloader-active">
+<div id="preloader-active" style="{{ Session::get('preloader') == 'none' ? 'display: none' : '' }}">
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="preloader-inner position-relative">
             <div class="preloader-circle"></div>
