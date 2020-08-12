@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `extra_service`
     `name`             VARCHAR(64)      NOT NULL,
     `price`            INT(16) UNSIGNED NOT NULL,
     `image`            VARCHAR(128)     NOT NULL,
-    `description`      TEXT             NOT NULL,
+    `description`      TEXT,
 
     `created_by`       NVARCHAR(32) DEFAULT 'ARS.CODEDY',
     `created_at`       DATETIME     DEFAULT CURRENT_TIME,
@@ -145,7 +145,7 @@ CREATE TABLE IF NOT EXISTS `promotion`
     `qty_total`       INT(4) UNSIGNED  NOT NULL,
     `qty_remain`      INT(4) UNSIGNED  NOT NULL,
     `expiration_date` DATETIME,
-    `description`     TEXT             NOT NULL,
+    `description`     TEXT,
 
     `created_by`      NVARCHAR(32) DEFAULT 'ARS.CODEDY',
     `created_at`      DATETIME     DEFAULT CURRENT_TIME,
@@ -241,7 +241,7 @@ CREATE TABLE IF NOT EXISTS `ticket`
     `extra_service_ids`  VARCHAR(32),
 
     `seat_type`          TINYINT UNSIGNED           NOT NULL,
-    `status`             TINYINT UNSIGNED DEFAULT 0 NOT NULL,
+    `status`             TINYINT UNSIGNED DEFAULT 1 NOT NULL,
 
     `code`               VARCHAR(8)                 NOT NULL,
 
@@ -254,7 +254,7 @@ CREATE TABLE IF NOT EXISTS `ticket`
 
     `total_price`        INT(16) UNSIGNED           NOT NULL,
     `total_passenger`    INT(16) UNSIGNED           NOT NULL,
-    `description`        VARCHAR(16)                NOT NULL,
+    `description`        VARCHAR(128),
 
     `created_by`         NVARCHAR(32)     DEFAULT 'ARS.CODEDY',
     `created_at`         DATETIME         DEFAULT CURRENT_TIME,
