@@ -95,7 +95,7 @@
                                             required="required">
                                         <option selected value="">-- From --</option>
                                         @foreach($addressAirports as $addressAirport)
-                                            <option value= {{ $addressAirport->airport_id }}>{{ $addressAirport->name }}</option>
+                                            <option value= {{ $addressAirport->airport_id }}>{{ $addressAirport->location }} | {{ $addressAirport->name }} ( {{ $addressAirport->code }} ) </option>
                                         @endforeach
                                     </select>
 
@@ -104,7 +104,7 @@
                                             required="required" >
                                         <option selected value="">-- To --</option>
                                         @foreach($addressAirports as $addressAirport)
-                                            <option value= {{ $addressAirport->airport_id }}>{{ $addressAirport->name }}</option>
+                                            <option value= {{ $addressAirport->airport_id }}>{{ $addressAirport->location }} | {{ $addressAirport->name }} ( {{ $addressAirport->code }} ) </option>
                                         @endforeach
 
                                     </select>
@@ -156,7 +156,7 @@
                                                             <div class="quantity">
                                                                 <div class="pro-qty">
                                                                     <span class="dec number"><i class="fa fa-minus"></i></span>
-                                                                    <input type="text" id="value1" name="Infant"
+                                                                    <input type="text" id="value1" name="infant"
                                                                            value="0">
                                                                     <span class="inc number"> <i class="fa fa-plus"></i></span>
                                                                 </div>
