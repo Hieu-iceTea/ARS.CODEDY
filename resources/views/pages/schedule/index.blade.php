@@ -38,14 +38,13 @@
                     <div class="home_search_container">
                         <div class="home_search_title">Search code Filght</div>
                         <div class="home_search_content">
-                            <form action="schedule/detail/VN-67" method="get" class="home_search_form"
+                            <form action="schedule" method="get" class="home_search_form"
                                   id="home_search_form">
                                 <div
                                     class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
 
-                                    <input type="text" class="search_input search_input_1  w-75" id="code"
-                                           name="IDFightSchedule"
-                                           placeholder="Code">
+                                    <input type="text" class="search_input search_input_1  w-75" id="code" name="code"
+                                           placeholder="enter code" value="{{ $code ?? '' }}">
                                     <button class="home_search_button ml-5" type="submit">search</button>
                                 </div>
                             </form>
@@ -61,75 +60,48 @@
         <div class="container">
             <div class="row ">
                 <div class="title-flight">
-                    <h4> Recent Flight</h4>
+                    @if($code == null)
+                        <h4> Recent Flight</h4>
+                    @else
+                        <h4>Result Research ({{ count($flightSchedules) }})</h4>
+                    @endif
                 </div>
             </div>
-            <div class="row">
-                <table class="table">
-                    <thead class="heade-table">
-                    <tr>
-                        <th scope="col">CODE</th>
-                        <th scope="col">TO</th>
-                        <th scope="col">FROM</th>
-                        <th scope="col">Estimated time to go</th>
-                        <th scope="col">Estimated Time of Arrival</th>
-                        <th scope="col">STATUS</th>
-                    </tr>
-                    </thead>
-                    <tbody class="active text-uppercase">
-                    <tr class="">
-                        <th scope="row">tm</th>
-                        <td>hÀ NÔI, vIỆT nAM</td>
-                        <td>hồ cHÍ mINH vIỆT nAM</td>
-                        <td>12-12-2020 20:50</td>
-                        <td>12-12-2020 20:50</td>
-                        <td>Confirm</td>
-                    </tr>
-                    <tr class="">
-                        <th scope="row">tm</th>
-                        <td>hÀ NÔI, vIỆT nAM</td>
-                        <td>hồ cHÍ mINH vIỆT nAM</td>
-                        <td>12-12-2020 20:50</td>
-                        <td>12-12-2020 20:50</td>
-                        <td>Confirm</td>
-                    </tr>
-                    <tr class="">
-                        <th scope="row">tm</th>
-                        <td>hÀ NÔI, vIỆT nAM</td>
-                        <td>hồ cHÍ mINH vIỆT nAM</td>
-                        <td>12-12-2020 20:50</td>
-                        <td>12-12-2020 20:50</td>
-                        <td>Confirm</td>
-                    </tr>
-                    <tr class="">
-                        <th scope="row">tm</th>
-                        <td>hÀ NÔI, vIỆT nAM</td>
-                        <td>hồ cHÍ mINH vIỆT nAM</td>
-                        <td>12-12-2020 20:50</td>
-                        <td>12-12-2020 20:50</td>
-                        <td>Confirm</td>
-                    </tr>
-                    <tr class="">
-                        <th scope="row">tm</th>
-                        <td>hÀ NÔI, vIỆT nAM</td>
-                        <td>hồ cHÍ mINH vIỆT nAM</td>
-                        <td>12-12-2020 20:50</td>
-                        <td>12-12-2020 20:50</td>
-                        <td>Confirm</td>
-                    </tr>
-                    <tr class="">
-                        <th scope="row">tm</th>
-                        <td>hÀ NÔI, vIỆT nAM</td>
-                        <td>hồ cHÍ mINH vIỆT nAM</td>
-                        <td>12-12-2020 20:50</td>
-                        <td>12-12-2020 20:50</td>
-                        <td>Confirm</td>
-                    </tr>
-                    </tbody>
-                </table>
+            @if(count($flightSchedules) != 0)
+                <div class="row">
+                    <table class="table">
+                        <thead class="heade-table">
+                        <tr>
+                            <th scope="col">CODE</th>
+                            <th scope="col">TO</th>
+                            <th scope="col">FROM</th>
+                            <th scope="col">Departure At</th>
+                            <th scope="col">Arrival At</th>
+                        </tr>
+                        </thead>
+                        <tbody class="active text-uppercase">
+                        @foreach($flightSchedules as $flightSchedule)
+                            <tr class="">
+                                <th scope="row">{{ $flightSchedule->code }}</th>
+                                <td>{{ $flightSchedule->airportFrom->name }}</td>
+                                <td>{{ $flightSchedule->airportTo->name }}</td>
+                                <td>{{ $flightSchedule->departure_at }}</td>
+                                <td>{{ $flightSchedule->arrival_at }}</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            @else
+                <div class="row">
+                    <div class=" col resultSearch" style="height: 200px;">
+                        <p class="text-black-50 bg-light"
+                           style="padding: 30px;width: 100%; height: 100px;box-shadow: 5px 10px 8px #dcdcdc;font-size: 22px;font-weight: bold; font-family: 'Oswald', sans-serif;">
+                            Your flight was not found</p>
+                    </div>
 
-
-            </div>
+                </div>
+            @endif
         </div>
     </div>
 @endsection

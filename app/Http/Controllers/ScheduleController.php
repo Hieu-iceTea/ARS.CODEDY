@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Model\FlightSchedule;
+use  App\Model\Airport;
 
 class ScheduleController extends Controller
 {
@@ -10,7 +12,13 @@ class ScheduleController extends Controller
      * Display a listing of the resource.
      *
      */
-    public function index(){
-        return view('pages.schedule.index');
+    public function index(Request $request)
+    {
+        $code = $request->get('code');
+
+        $flightScheduleModel = new FlightSchedule();
+        $flightSchedules = $flightScheduleModel->getFlightScheduleByCode($code);
+
+        return view('pages.schedule.index', compact('flightSchedules','code'));
     }
 }

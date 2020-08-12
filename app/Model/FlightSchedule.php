@@ -41,4 +41,25 @@ class FlightSchedule extends Model
     {
         return $this->hasMany(Ticket::class, 'ticket_id', 'ticket_id');
     }
+
+    /**
+     * get result search flight schedule by code flight schedule
+     *
+     * @param $code
+     * @return FlightSchedule[]|\Illuminate\Database\Eloquent\Collection
+     * @author truong-thanh-tu
+     */
+    public function getFlightScheduleByCode($code)
+    {
+        if ($code == null) {
+            $flightSchedules = $this::all();
+        } else {
+            $flightSchedules = $this::where('code','like', '%'.$code.'%')->get();
+            if ($flightSchedules == null ){
+
+            }
+        }
+
+        return $flightSchedules;
+    }
 }
