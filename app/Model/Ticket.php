@@ -41,6 +41,10 @@ class Ticket extends Model
     {
         $str = $this->extra_service_ids;
 
+        if ($str == '') {
+            return [];
+        }
+
         $extra_service_ids = Str::of($str)->explode(',');
 
         $extraServices = [];
