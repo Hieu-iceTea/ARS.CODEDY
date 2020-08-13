@@ -60,7 +60,7 @@
                                     <li class="{{ (request()->segment(1) == 'about') ? 'active' : '' }}">
                                         <a href="/about">About us</a>
                                     </li>
-                                    <li class="{{ (request()->segment(1) == 'schedule') ? 'active' : '' }}">
+                                    <li class="{{ (request()->segment(1) == 'schedule') ? 'active' : '' }}{{ (request()->segment(1) == 'booking') ? 'active' : '' }}">
                                         <a href="/schedule">Schedule</a>
                                     </li>
                                     <li class="{{ (request()->segment(1) == 'ticket') ? 'active' : '' }}">

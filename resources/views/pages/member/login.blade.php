@@ -61,6 +61,8 @@
 
 @extends('pages.layout.master')
 
+@section('title', 'Member - Login')
+
 @section('style')
     <link rel="stylesheet" type="text/css" href="css/destinations.css">
     <link rel="stylesheet" type="text/css" href="css/destinations_responsive.css">

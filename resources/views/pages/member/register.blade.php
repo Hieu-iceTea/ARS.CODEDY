@@ -1,5 +1,7 @@
 @extends('pages.layout.master')
 
+@section('title', 'Member - Register')
+
 <!-- Style Main_style-->
 @section('style')
     <link rel="stylesheet" type="text/css" href="css/destinations.css">
