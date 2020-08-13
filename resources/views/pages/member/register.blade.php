@@ -27,57 +27,79 @@
 
     </div>
     <!-- Search -->
-    <div class="mainStep1 " style="">
-        <div class=" mt-5 mb-4">
-            <div class="container">
-                <div class="step1-progress row">
-                    <div class="container">
-                        <div class="content_main">
-                            <div class="card bg-light">
-                                <h4>Are you ready to join the ARS Club program? Come on, let's get started!</h4>
-                                <p>We need some details about you to create a membership account</p>
-                                <form action="login">
-                                    <h4 class="name">Username</h4>
-                                    <input type="text" class="user" name="username" placeholder="Username"><br>
-
-                                    <h4 class="name">Password</h4>
-                                    <input type="password" class="pw" name="password" placeholder="Password"><br>
-
-                                    <div id="name">
-                                        <h4 class="name">Name</h4>
-                                        <input type="text" class="firstlabel" name="first_name"
-                                               placeholder="First Name"><input type="text" class="lastlabel"
-                                                                               name="last_name" placeholder="Last Name"><br>
-                                    </div>
-
-                                    <h4 class="name">Gender</h4>
-                                    <div class="gender">
-                                        <input type="radio" class="male" name="gender" value="male" checked> Male
-                                        <input type="radio" class="female" name="gender" value="female"> Female
-                                    </div>
-
-                                    <h4 class="name">Date of Birth</h4>
-                                    <input type="date" class="date" name="dateofbirth" placeholder="DD/MM/YYYY">
-
-                                    <h4 class="name">Email</h4>
-                                    <input type="email" class="email" name="email" placeholder="Email">
-
-                                    <h4 class="name">Address</h4>
-                                    <input type="text" class="address" name="addresss" placeholder="Address">
-
-                                    <h4 class="name">Phone</h4>
-                                    <input type="tel" class="phone" name="phone" placeholder="Phone">
-
-                                    <div class="form-group">
-                                        <button class="btn" type="submit" name="button">Register</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+    <div class="register_main">
+        <div class="container">
+            <div class="register">
+                <div class="title">
+                    <h4 style="">Are you ready to join the ARS Club program? Come on, let's get
+                        started!</h4>
+                    <p>We need some details about you to create a membership account</p>
                 </div>
+                <form action="login">
+
+                    <div class="user">
+                        <label for="username">
+                            <input type="text" name="username" id="username" placeholder="Username">
+                        </label>
+                    </div>
+
+                    <div class="pass">
+                        <label for="password">
+                            <input type="password" name="password" id="password" placeholder="Password">
+                        </label>
+                    </div>
+
+                    <div class="name">
+                        <label for="firstlabel">
+                            <input type="text" id="firstlabel" name="first_name"
+                                   placeholder="First Name">
+                        </label>
+                        <label for="lastlabel">
+                            <input type="text" class="lastlabel" name="last_name"
+                                   placeholder="Last Name">
+                        </label>
+                    </div>
+
+                    <div class="gender">
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label><br>
+                    </div>
+
+                    <div class="dob">
+                        <label for="dateofbirth">
+                            <input type="date" name="dateofbirth" id="dateofbirth" placeholder="DD/MM/YYYY">
+                        </label>
+                    </div>
+
+
+                    <div class="email">
+                        <label for="email">
+                            <input type="email" name="email" id="email" placeholder="Email">
+                        </label>
+                    </div>
+
+                    <div class="address">
+                        <label for="address">
+                            <input type="text" name="address" id="address" placeholder="Address">
+                        </label>
+                    </div>
+
+                    <div class="phone">
+                        <label for="phone">
+                            <input type="tel" name="phone" id="phone" placeholder="Phone">
+                        </label>
+                    </div>
+
+                    <div class="form-group text-center">
+                        <button class="btn "  type="submit" name="button">Register</button>
+                    </div>
+                </form>
             </div>
         </div>
+
+    </div>
     </div>
 
 @endsection

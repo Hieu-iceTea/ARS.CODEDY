@@ -933,189 +933,133 @@
 /************
 14. Register
 ************/
-.content_main {
+.register_main {
+    background-color: #EDF3F7;
+    padding: 20px;
+}
+
+.register_main .register {
+    width: 600px;
+    height: 700px;
+    background-color: #ffffff;
     font-family: 'Oswald', sans-serif;
-    /*text-align: center;*/
-    margin-top: 30%;
-    margin-bottom: -30%;
-
+    box-shadow: 5px 10px 8px #dcdcdc;
+    margin: 30px auto;
 }
 
-#name {
-    width: 100%;
-    height: 50px;
-}
-
-.name {
-    margin-left: 15px;
-    margin-top: 10px;
-    width: 125px;
-    color: #1b4b72;
-    font-size: 18px;
-}
-
-.gender {
-    margin-top: -30px;
-    margin-bottom: 30px;
-    margin-left: -237px;
-}
-
-.container .content_main .card {
-    /*width: 647px;*/
-    /*height: auto;*/
-    /*background-color: rgba(255, 255, 255, 0.68);*/
-    /*position: absolute;*/
-    /*transform: translate(-50%,-50%);*/
-
-    width: 650px;
-    height: auto;
-    background-color: rgba(255, 255, 255, 0.68);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.register_main .register .title {
+    font-weight: 900;
+    font-family: 'Oswald', sans-serif;
+    color: #33597C;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
-    padding-top: 20px;
-    padding-right: 50px;
+}
+
+.register_main .register form {
+    width: 400px;
+    margin: 0px auto;
+}
+
+.register_main .register form input {
+    margin-top: 10px;
+}
+
+.register_main .register .title p {
+    font-size: 15px;
 
 }
 
-.content_main .card .input-group input {
-    width: 100%;
-    height: 40px;
-    border: 1px solid #CAC7C7;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    font-family: 'Oswald', sans-serif;
+.register_main .register .title h4 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.register_main .register form .user input {
+    border: none;
+    border-bottom: 1px solid #000000;
+    background: transparent;
     outline: none;
+    height: 40px;
+    width: 400px;
 }
 
-.user {
-    position: relative;
-    left: 70px;
-    top: -40px;
-    line-height: 40px;
-    width: 480px;
-    border-radius: 6px;
-    padding: 0 22px;
-    font-size: 16px;
-    color: #555;
-    margin-bottom: -3rem;
+.register_main .register form .pass input {
+    border: none;
+    border-bottom: 1px solid #000000;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    width: 400px;
 }
 
-.pw {
-    position: relative;
-    left: 70px;
-    top: -40px;
-    line-height: 40px;
-    width: 480px;
-    border-radius: 6px;
-    padding: 0 22px;
-    font-size: 16px;
-    color: #555;
-    margin-bottom: -3rem;
+.register_main .register form .name input {
+    border: none;
+    border-bottom: 1px solid #000000;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    width: 190px;
 }
 
-.firstlabel {
-    position: relative;
-    left: 70px;
-    top: -40px;
-    line-height: 40px;
-    width: 230px;
-    border-radius: 6px;
-    padding: 0 22px;
-    font-size: 16px;
-    color: #555;
-    margin-bottom: -3rem;
-    margin-right: 10px;
+.register_main .register form .dob input {
+    border: none;
+    border-bottom: 1px solid #000000;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    width: 400px;
 }
 
-.lastlabel {
-    position: relative;
-    left: 70px;
-    top: -40px;
-    line-height: 40px;
-    width: 230px;
-    border-radius: 6px;
-    padding: 0 22px;
-    font-size: 16px;
-    color: #555;
-    margin-bottom: -3rem;
-    margin-left: 10px;
+.register_main .register form .email input {
+    border: none;
+    border-bottom: 1px solid #000000;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    width: 400px;
 }
 
-.email {
-    position: relative;
-    left: 70px;
-    top: -40px;
-    line-height: 40px;
-    width: 480px;
-    border-radius: 6px;
-    padding: 0 22px;
-    font-size: 16px;
-    color: #555;
-    margin-bottom: -3rem;
+.register_main .register form .address input {
+    border: none;
+    border-bottom: 1px solid #000000;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    width: 400px;
 }
 
-.phone {
-    position: relative;
-    left: 70px;
-    top: -40px;
-    line-height: 40px;
-    width: 480px;
-    border-radius: 6px;
-    padding: 0 22px;
-    font-size: 16px;
-    color: #555;
-    margin-bottom: -3rem;
+.register_main .register form .phone input {
+    border: none;
+    border-bottom: 1px solid #000000;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    width: 400px;
 }
-
-.address {
-    position: relative;
-    left: 70px;
-    top: -40px;
-    line-height: 40px;
-    width: 480px;
-    border-radius: 6px;
-    padding: 0 22px;
-    font-size: 16px;
-    color: #555;
-    margin-bottom: -3rem;
+.register_main .register form .form-group{
+    width: 400px;
+    margin-top: 10px;
 }
-
-.date {
-    position: relative;
-    left: 70px;
-    top: -40px;
-    line-height: 40px;
-    width: 480px;
-    border-radius: 6px;
-    padding: 0 22px;
-    font-size: 16px;
-    color: #555;
-    margin-bottom: -3rem;
-}
-
-.content_main .card .form-group button {
-    width: 150px;
+.register_main .register form .form-group button {
+    width: 200px;
     background-color: #77c23c;
     font-size: 20px;
-    color: white;
     font-weight: bold;
-    text-align: center;
-}
+    color: white;
+    margin: 10px auto;
 
-.content_main .card .form-group {
-    margin-left: 3rem;
 }
 
 /************
 15. Login
 ************/
-.login_main{
+.login_main {
     background-color: #EDF3F7;
     padding: 20px;
 }
+
 #main {
     width: 400px;
     height: 500px;
@@ -1162,10 +1106,12 @@
     margin-top: 20px;
     margin-bottom: 20px
 }
+
 #main .login .login-body {
     margin-top: 30px;
 }
-#main .login .login-body  input {
+
+#main .login .login-body input {
     border: none;
     border-bottom: 1px solid #000000;
     background: transparent;
@@ -1173,12 +1119,15 @@
     height: 40px;
     width: 100%;
 }
+
 ::-webkit-input-placeholder {
     color: #33597C;
 }
-#main .login-body  .check{
+
+#main .login-body .check {
     margin-top: 50px;
 }
+
 #main .login-body .submit-form button {
     width: 200px;
     background-color: #77c23c;
