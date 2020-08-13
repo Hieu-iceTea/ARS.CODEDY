@@ -1112,16 +1112,17 @@
 /************
 15. Login
 ************/
+.login_main{
+    background-color: #EDF3F7;
+    padding: 20px;
+}
 #main {
-    width: 600px;
+    width: 400px;
     height: 500px;
-    background-color: rgba(255, 255, 255, 0.68);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    background-color: #fff;
     font-family: 'Oswald', sans-serif;
-    margin-top: 15%;
-    margin-bottom: -15%;
+    box-shadow: 5px 10px 8px #dcdcdc;
+    margin: 30px auto;
 }
 
 #main .login {
@@ -1161,27 +1162,31 @@
     margin-top: 20px;
     margin-bottom: 20px
 }
-
-#main .login .login-body input {
+#main .login .login-body {
+    margin-top: 30px;
+}
+#main .login .login-body  input {
     border: none;
     border-bottom: 1px solid #000000;
     background: transparent;
     outline: none;
     height: 40px;
     width: 100%;
-    margin: 20px;
 }
-
 ::-webkit-input-placeholder {
     color: #33597C;
 }
-
-.login-body .submit-form button {
-    width: 150px;
+#main .login-body  .check{
+    margin-top: 50px;
+}
+#main .login-body .submit-form button {
+    width: 200px;
     background-color: #77c23c;
     font-size: 20px;
     color: white;
     font-weight: bold;
+    outline: none;
+    border: none;
 }
 
 #main .login .login-body .user {

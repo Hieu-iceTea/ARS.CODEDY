@@ -83,49 +83,44 @@
         </div>
 
     </div>
-    <div class="mainStep1 " style="">
-        <div class=" mt-5 mb-4">
-            <div class="container">
-                <div class="step1-progress row">
-                    <div id="main">
-                        <div class="login">
-                            <div class="logo">
-                                <div class="media-body">
-                                    <h5>ARS.CODEDY</h5> <span>airline</span>
+    <div class="login_main " style="">
+        <div class="container">
+            <div class="step1-progress row">
+                <div id="main">
+                    <div class="login">
+                        <div class="logo">
+                            <div class="media-body">
+                                <h5>ARS.CODEDY</h5> <span>airline</span>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h4> Welcome to ars.codedy airline</h4>
+                        </div>
+                        <div class="login-body">
+                            <form action="">
+                                <div class="">
+                                    <input type="text" name="username"  placeholder="Username">
                                 </div>
-                                {{--<div class="icon">
-                                    <img class ="logo"src="{{ asset('img/iconfight.png') }}" style="width: 40px;height: 40px" alt="Generic placeholder image">
-                                </div>--}}
-                            </div>
-                            <div class="title">
-                                <h4> Welcome to ars.codedy airline</h4>
-                            </div>
-                            <div class="login-body">
-                                <form action="">
-                                    <div class="">
-                                        <input type="text" name="username" placeholder="Username">
+                                <div class="mt-1">
+                                    <input type="password" name="password" placeholder="Password">
+                                </div>
+                                <div class="check d-flex">
+                                    <div class="custom-control mr-5 custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="defaultChecked2"
+                                               checked>
+                                        <label class="custom-control-label" for="defaultChecked2">Remember
+                                            me</label>
                                     </div>
-                                    <div class="">
-                                        <input type="password" name="password" placeholder="Password">
+                                    <div>
+                                        <a href="registration" class="txt3 ml-3">
+                                            Registration
+                                        </a>
                                     </div>
-                                    <div class="check d-flex mt-4">
-                                        <div class="custom-control mr-5 custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="defaultChecked2"
-                                                   checked>
-                                            <label class="custom-control-label" for="defaultChecked2">Remember
-                                                me</label>
-                                        </div>
-                                        <div>
-                                            <a href="registration" class="txt3 ml-3">
-                                                Registration
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="submit-form w-100 mt-3 text-center container-login100-form-btn">
-                                        <button type="button" class="btn ">Login</button>
-                                    </div>
-                                </form>
-                            </div>
+                                </div>
+                                <div class="submit-form w-100 mt-3 text-center container-login100-form-btn">
+                                    <button type="button" class="btn ">Login</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
