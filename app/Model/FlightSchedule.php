@@ -3,7 +3,7 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
-
+use \Illuminate\Database\Eloquent\Collection;
 class FlightSchedule extends Model
 {
     protected $table = 'flight_schedule';
@@ -52,11 +52,12 @@ class FlightSchedule extends Model
     public function getFlightScheduleByCode($code)
     {
         if ($code == null) {
-            $flightSchedules = $this::all();
+            $flightSchedules = $this::all()->sortByDesc('departure_at');;
         } else {
-            $flightSchedules = $this::where('code','like', '%'.$code.'%')->get();
-            if ($flightSchedules == null ){
-
+            $flightSchedules = $this::all()->where('code' ,'like',"%" .$code ."$")
+            ->sortByDesc('departure_at');
+            if ($flightSchedules != null) {
+                return $flightSchedules;
             }
         }
 
