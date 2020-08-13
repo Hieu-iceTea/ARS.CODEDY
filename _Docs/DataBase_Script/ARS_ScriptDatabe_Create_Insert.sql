@@ -78,6 +78,7 @@ CREATE TABLE IF NOT EXISTS `airport`
 
     `code`        VARCHAR(8)  NOT NULL,
     `name`        VARCHAR(32) NOT NULL,
+    `image`        VARCHAR(128) NOT NULL,
     `description` VARCHAR(128),
 
     `created_by`  NVARCHAR(32) DEFAULT 'ARS.CODEDY',
@@ -300,28 +301,28 @@ VALUE (4,  'Special meals on the plane',  140000,  'special-meals-on-the-plane.j
 INSERT INTO extra_service (extra_service_id, name, price, image, description)
 VALUE (5,  'Special care for babies',  150000,  'special-care-for-babies.jpg ', '<ul style=""list-style-type: disc;""><li>Baby stroller</li><li>Bassinet service</li><li>Portable in-flight bed for children</li></ul>');
 
-INSERT INTO airport (airport_id, location, code, name, description)
-VALUES (1, 'Hà Nội', 'HAN', 'Nội Bài', '');
-INSERT INTO airport (airport_id, location, code, name, description)
-VALUES (2, 'Hồ Chí Minh', 'SGN', 'Tân Sơn Nhất', '');
-INSERT INTO airport (airport_id, location, code, name, description)
-VALUES (3, 'Nghệ An', 'VII', 'Vinh', '');
-INSERT INTO airport (airport_id, location, code, name, description)
-VALUES (4, 'Thừa Thiên - Huế', 'HUI', 'Phú Bài', '');
-INSERT INTO airport (airport_id, location, code, name, description)
-VALUES (5, 'Đà Nẵng', 'DAD', 'Đà Nẵng', '');
-INSERT INTO airport (airport_id, location, code, name, description)
-VALUES (6, 'Bình Định', 'UIH', 'Phù Cát', '');
-INSERT INTO airport (airport_id, location, code, name, description)
-VALUES (7, 'Hải Phòng', 'HPH', 'Cát Bi', '');
-INSERT INTO airport (airport_id, location, code, name, description)
-VALUES (8, 'Khánh Hòa', 'CXR', 'Cam Ranh', '');
-INSERT INTO airport (airport_id, location, code, name, description)
-VALUES (9, 'Kiên Giang', 'PQC', 'Phú Quốc', '');
-INSERT INTO airport (airport_id, location, code, name, description)
-VALUES (10, 'Quảng Ninh', 'VDO', 'Vân Đồn', '');
-INSERT INTO airport (airport_id, location, code, name, description)
-VALUES (11, 'Cần Thơ', 'VCA', 'Cần Thơ', '');
+INSERT INTO airport (airport_id, location, code, name, image, description)
+VALUES (1, 'Hà Nội', 'HAN', 'Nội Bài', 'ha-noi.jpg' ,'');
+INSERT INTO airport (airport_id, location, code, name, image, description)
+VALUES (2, 'Hồ Chí Minh', 'SGN', 'Tân Sơn Nhất', 'ho-chi-minh.jpg' ,'');
+INSERT INTO airport (airport_id, location, code, name, image, description)
+VALUES (3, 'Nghệ An', 'VII', 'Vinh', 'nghe-an.jpg' ,'');
+INSERT INTO airport (airport_id, location, code, name, image, description)
+VALUES (4, 'Thừa Thiên - Huế', 'HUI', 'Phú Bài', 'hue.jpg' ,'');
+INSERT INTO airport (airport_id, location, code, name, image, description)
+VALUES (5, 'Đà Nẵng', 'DAD', 'Đà Nẵng', 'da-nang.jpg' ,'');
+INSERT INTO airport (airport_id, location, code, name, image, description)
+VALUES (6, 'Bình Định', 'UIH', 'Phù Cát', 'binh-dinh.jpg' ,'');
+INSERT INTO airport (airport_id, location, code, name, image, description)
+VALUES (7, 'Hải Phòng', 'HPH', 'Cát Bi', 'hai-phong.jpg' ,'');
+INSERT INTO airport (airport_id, location, code, name, image, description)
+VALUES (8, 'Khánh Hòa', 'CXR', 'Cam Ranh', 'khanh-hoa.jpg' ,'');
+INSERT INTO airport (airport_id, location, code, name, image, description)
+VALUES (9, 'Kiên Giang', 'PQC', 'Phú Quốc', 'kien-giang.jpg' ,'');
+INSERT INTO airport (airport_id, location, code, name, image, description)
+VALUES (10, 'Quảng Ninh', 'VDO', 'Vân Đồn', 'quang-ninh.jpg' ,'');
+INSERT INTO airport (airport_id, location, code, name, image, description)
+VALUES (11, 'Cần Thơ', 'VCA', 'Cần Thơ', 'can-tho.jpg' ,'');
 
 INSERT INTO plane (plane_id, code, name)
 VALUE (1, ' B787', ' Boeing B787');
