@@ -1,5 +1,7 @@
 @extends('pages.layout.master')
 
+@section('title', 'Booking - Step 1')
+
 <!-- Style Main_style-->
 @section('style')
     <link rel="stylesheet" type="text/css" href="css/destinations.css">
@@ -166,7 +168,7 @@
                             <div class="content-step1 row mt-3">
                                 <div class="col-12">
                                     <div class="row">
-                                        <h5>Không tìm thấy chuyến bay nào!</h5>
+                                        <h5>Sorry, we don't have any flights yet with your chosen information!</h5>
                                     </div>
                                 </div>
                             </div>
