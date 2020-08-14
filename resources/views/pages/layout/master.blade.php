@@ -72,8 +72,25 @@
                                 </ul>
                             </nav>
 
-                            <div class="header_phone ml-auto"><a style="color: white" href="/contact">Call us: 00-56 445
-                                    678 33</a></div>
+                            <div class="header_phone ml-auto">
+                                @auth
+                                    <a style="color: white" href="member">
+                                        {{ \Illuminate\Support\Facades\Auth::user()->user_name ?? '' }}
+                                    </a>
+                                    &nbsp;|&nbsp;
+                                    <a style="color: white" href="member/logout" onclick="return confirm('Are you sure you want to logout?')">
+                                        Logout
+                                    </a>
+                                @else
+                                    <a style="color: white" href="member/register">
+                                        Register
+                                    </a>
+                                    &nbsp;|&nbsp;
+                                    <a style="color: white" href="member/login">
+                                        Login
+                                    </a>
+                                @endauth
+                            </div>
 
                             <!-- Hamburger -->
 

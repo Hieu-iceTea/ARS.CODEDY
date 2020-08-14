@@ -62,28 +62,28 @@ Route::group(['prefix' => ''], function () {
         Route::get('', 'ScheduleController@index')->name('schedule');
     });
 
-    Route::group(['prefix' => 'member'], function () {
+    Route::group(['prefix' => 'member/login', 'middleware' => 'CheckMemberLogin'], function () {
+        Route::get('', 'MemberController@getLogin')->name('member.login');
+        Route::post('', 'MemberController@postLogin');
+    });
+
+    Route::get('member/logout', 'MemberController@logout')->name('member.logout');
+
+    Route::group(['prefix' => 'member/register', 'middleware' => 'CheckMemberLogin'], function () {
+        Route::get('', 'MemberController@getRegister')->name('member.register');
+        Route::post('', 'MemberController@postRegister');
+
+        Route::get('verify', 'MemberController@getVerify');
+        Route::post('verify', 'MemberController@postVerify');
+    });
+
+    Route::group(['prefix' => 'member', 'middleware' => 'CheckMemberLogin'], function () {
         Route::get('', 'MemberController@index')->name('member');
-
-        Route::group(['prefix' => 'login'], function () {
-            Route::get('', 'MemberController@getLogin')->name('member.login');
-            Route::post('', 'MemberController@postLogin');
-        });
-
-        Route::group(['prefix' => 'register'], function () {
-            Route::get('', 'MemberController@getRegister')->name('member.register');
-            Route::post('', 'MemberController@postRegister');
-
-            Route::get('verify', 'MemberController@getVerify');
-            Route::post('verify', 'MemberController@postVerify');
-        });
 
         Route::group(['prefix' => 'edit-profile'], function () {
             Route::get('', 'MemberController@editProfile');
             Route::post('', 'MemberController@updateProfile');
         });
-
-        Route::get('logout', 'MemberController@logout')->name('member.logout');
     });
 
     Route::get('about', 'PageController@about')->name('about');
