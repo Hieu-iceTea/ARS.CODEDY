@@ -179,7 +179,7 @@
                     {{-- cart_info bên phải --}}
                     <div class=" col-lg-3 mt-5">
                         <div class="card cart-info  w-100" style="width: 18rem;">
-                            <img class="card-img-top" src="{{ asset('img/destination_5.jpg') }}"
+                            <img class="card-img-top" src="img/airport/{{ $airport_to->image }}"
                                  alt="Card image cap">
                             <div class="card-body text-center" style="position: sticky; top:0;z-index: 10">
                                 <h4><span>{{ $searchInput['airport_from_name'] }}</span>

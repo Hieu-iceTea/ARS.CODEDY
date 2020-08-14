@@ -60,10 +60,8 @@ class BookingController extends Controller
             ->where('departure_at', 'like', '%' . $departure_at . '%')
             ->get();
 
-        //return view('pages.booking.step-1', compact('flightSchedules', 'searchInput'));
-
         if (count($flightSchedules) > 0) {
-            return view('pages.booking.step-1', compact('flightSchedules', 'searchInput'));
+            return view('pages.booking.step-1', compact('flightSchedules', 'searchInput', 'airport_to'));
         } else {
             return redirect('/')
                 ->with('notification', "Sorry, we don't have any flights yet with your chosen information!")
