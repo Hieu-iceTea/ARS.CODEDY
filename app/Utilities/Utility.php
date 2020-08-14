@@ -4,8 +4,11 @@
 namespace App\Utilities;
 
 
+use phpDocumentor\Reflection\Types\This;
+
 class Utility
 {
+
     public static $ticket_status = [
         1 => 'Unverified',
         2 => 'Reservations',
@@ -36,4 +39,12 @@ class Utility
         2 => 'MS',
     ];
 
+    const user_level_host = 0;
+    const user_level_admin = 1;
+    const user_level_member = 2;
+    public static $user_level = [
+        self::user_level_host => 'host',
+        self::user_level_admin => 'admin',
+        self::user_level_member => 'member',
+    ];
 }

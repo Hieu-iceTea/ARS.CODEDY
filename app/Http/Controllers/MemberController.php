@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Utilities\Utility;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MemberController extends Controller
 {
@@ -31,8 +33,23 @@ class MemberController extends Controller
      */
     public function postLogin(Request $request)
     {
-        //
-        return redirect()->route('member');
+        $credentials = ['user_name' => $request->user_name, 'password' => $request->password, 'level' => Utility::user_level_member];
+
+        if ($request->remember == 'remember') {
+            $remember = true;
+        } else {
+            $remember = false;
+        }
+
+        if (Auth::attempt($credentials, $remember)) {
+            return redirect()->intended('member');
+            //return redirect()->route('member');
+        } else {
+            return redirect()->back()
+                ->withInput()
+                ->withErrors('Sai tài khoản hoặc mật khẩu')
+                ->with('preloader', 'none');
+        }
     }
 
     /**
