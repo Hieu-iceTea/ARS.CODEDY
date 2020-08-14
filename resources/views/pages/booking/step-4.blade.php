@@ -201,6 +201,7 @@
                                                         <div class="card-body">
                                                             <h5 class="card-title">{{ $payType->name }}</h5>
                                                             <input type="radio" name="pay_type"
+                                                                   onclick="preloaderActive()"
                                                                    id="pay_type_{{ $payType->pay_type_id }}"
                                                                    value="{{ $payType->pay_type_id }}"
                                                                    {{ old('pay_type') == $payType->pay_type_id ? 'checked' : '' }} required>
@@ -297,6 +298,16 @@
                                                 </div>
 
                                                 <div class="mt-2">
+                                                    <p class="card-text d-inline">Total fee extra service</p>
+                                                    <p class="card-text d-inline float-right">
+                                                        <b>
+                                                            {{ number_format($extraService_total_price, 0, ',', '.') }}
+                                                            VND
+                                                        </b>
+                                                    </p>
+                                                </div>
+
+                                                <div class="mt-2">
                                                     <p class="card-text d-inline">Airport security</p>
                                                     <p class="card-text d-inline float-right ">30,000 VND</p>
                                                 </div>
@@ -316,14 +327,14 @@
                                                 <div class="mt-3">
                                                     <h4 class="card-text d-inline">Total Fare</h4>
                                                     <h4 class="card-text d-inline float-right ">
-                                                        {{ number_format($seat_price * $passenger_count['adults'] + $seat_price * $passenger_count['children'] + $seat_price * $passenger_count['infant'], 0, ',', '.') }}
+                                                        {{ number_format($seat_price * ($passenger_count['adults'] + $passenger_count['children'] + $passenger_count['infant']) + $extraService_total_price, 0, ',', '.') }}
                                                         VND</h4>
                                                 </div>
                                                 <div class="mt-2">
                                                     <h4 class="card-text d-inline">Total flight cost</h4>
                                                     <h4 class="card-text d-inline float-right text-black-50">
                                                         <b>
-                                                            {{ number_format($seat_price * $passenger_count['adults'] + $seat_price * $passenger_count['children'] + $seat_price * $passenger_count['infant'] + 500000, 0, ',', '.') }}
+                                                            {{ number_format($seat_price * ($passenger_count['adults'] + $passenger_count['children'] + $passenger_count['infant']) + $extraService_total_price + 500000, 0, ',', '.') }}
                                                             VND
                                                         </b>
                                                     </h4>
@@ -336,7 +347,9 @@
                         </div>
 
                         <!-- Button submit -->
-                        <button type="submit" class="btn mt-3 w-100 position-sticky continue">Accept and pay immediately
+                        <button type="submit" class="btn mt-3 w-100 position-sticky continue"
+                                onclick="preloaderActive(9999)">
+                            Accept and pay immediately
                             <span><i class="fa fa-angle-right"></i></span>
                         </button>
                     </div>
@@ -344,44 +357,18 @@
                     {{-- cart_info bên phải --}}
                     <div class=" col-lg-3 mt-5">
                         <div class="card cart-info  w-100" style="width: 18rem;">
-                            <img class="card-img-top" src="img/destination_5.jpg"
+                            <img class="card-img-top" src="{{ asset('img/destination_5.jpg') }}"
                                  alt="Card image cap">
                             <div class="card-body text-center" style="position: sticky; top:0;z-index: 10">
-                                <h4><span>Ho Chi Minh</span> (SGN)</h4>
+                                <h4><span>{{ $flightSchedule->airportFrom->name }}</span>
+                                    ({{ $flightSchedule->airportFrom->code }})</h4>
                                 <h4>to</h4>
-                                <h4><span>Ha Noi </span>(HAN)</h4>
-                                <p class="card-text">One-way | 1 Passenger</p>
+                                <h4><span>{{ $flightSchedule->airportTo->name }}</span>
+                                    ({{ $flightSchedule->airportTo->code }})</h4>
+                                <p class="card-text">{{--One-way | --}}{{ $passenger_count['total'] }}
+                                    Passenger</p>
                             </div>
                         </div>
-                        {{--                        <div class="card-Clearfix card mt-3  w-100" style="width: 18rem;">--}}
-                        {{--                            <div class="card-body text-center">--}}
-                        {{--                                <h5 class="card-title">--}}
-                        {{--                                    <span style="font-size: 20px;color: #33597C;font-weight: 600">Total Money--}}
-                        {{--                                    </span> :--}}
-                        {{--                                    3000.000.000 vnđ--}}
-                        {{--                                </h5>--}}
-                        {{--                                <h6 class="card-subtitle mb-2 text-muted"></h6>--}}
-                        {{--                                <p class="card-text">Includes minnows and service fees</p>--}}
-
-                        {{--                            </div>--}}
-                        {{--                        </div>--}}
-                        {{--                        <div class="card mt-3 cart-content w-100" style="width: 18rem;">--}}
-                        {{--                            <div class="card-body text-center">--}}
-                        {{--                                <h5 class="card-title" style="">--}}
-                        {{--                                    <span style="font-size: 20px;color: #33597C;font-weight: 600">Total Money</span> :--}}
-                        {{--                                    3000.000.000 vnđ</h5>--}}
-                        {{--                                <h6 class="card-subtitle mb-2 text-muted"></h6>--}}
-                        {{--                                <h4 style=""><span--}}
-                        {{--                                        style="font-family: 'Oswald', sans-serif;font-weight: bold"></span> (SGN) go--}}
-                        {{--                                    <span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span>(HAN)--}}
-                        {{--                                </h4>--}}
-                        {{--                                <p class="card-text">CN 02/08/2020 | 19:25 - 20:30</p>--}}
-                        {{--                                <p class="card-text">Adults 1 * 2.500.000 = <span>2.500.000</span></p>--}}
-                        {{--                            </div>--}}
-                        {{--                        </div>--}}
-
-                        {{--                        <button type="submit" class="btn mt-3 w-100 position-sticky continue">Continue--}}
-                        {{--                            <span><i class="fa fa-angle-right"></i></span></button>--}}
                     </div>
                 </div>
             </form>

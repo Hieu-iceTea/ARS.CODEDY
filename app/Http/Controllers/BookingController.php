@@ -114,7 +114,7 @@ class BookingController extends Controller
 
         $passenger_count = $booking_session['passenger_count'];
 
-        return view('pages.booking.step-2', compact('passenger_count'));
+        return view('pages.booking.step-2', compact('passenger_count', 'booking_session'));
     }
 
     /**
@@ -154,9 +154,10 @@ class BookingController extends Controller
                 ->with('preloader', 'none');
         }
 
+        $booking_session = Session::get('booking_session');
         $extraServices = ExtraService::all();
 
-        return view('pages.booking.step-3', compact('extraServices'));
+        return view('pages.booking.step-3', compact('extraServices', 'booking_session'));
     }
 
     /**
@@ -168,6 +169,7 @@ class BookingController extends Controller
         //get data from request:
         $new_data = [
             'extra_service_ids' => $request->get('extra_service_ids'),
+            'extraService_total_price' => $request->get('extraService_total_price'),
         ];
 
         //update booking_session:
@@ -240,7 +242,7 @@ class BookingController extends Controller
         $ticket->contact_email = $booking_session['contact']['contact_email'];
         $ticket->contact_phone = $booking_session['contact']['contact_phone'];
         $ticket->contact_address = $booking_session['contact']['contact_address'];
-        $ticket->total_price = $booking_session['passenger_count']['total'] * $booking_session['seat_price'];
+        $ticket->total_price = $booking_session['passenger_count']['total'] * $booking_session['seat_price'] + $booking_session['extraService_total_price'] + 500000;
         $ticket->total_passenger = $booking_session['passenger_count']['total'];
         //$ticket->description = 'description';
         $ticket->save();
@@ -299,10 +301,10 @@ class BookingController extends Controller
         //get data from Session:
         $session = Session::get($key) ?? [];
 
-        //update $session
+        //update $session:
         $session = array_merge($session, $data);
 
-        //put new data to session
+        //put new data to session:
         Session::put($key, $session);
     }
 }

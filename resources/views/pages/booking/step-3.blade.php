@@ -85,7 +85,9 @@
                                                 <input name="extra_service_ids[]" type="checkbox"
                                                        value="{{ $extraService->extra_service_id }}"
                                                        id="extra_service_{{ $extraService->extra_service_id }}"
-                                                       class="extra-checkbox" data-extras="seats">
+                                                       class="extra-checkbox" data-extras="seats"
+                                                       price="{{ $extraService->price }}"
+                                                       onclick="setValueExtraService()">
                                             </label>
 
                                             <div class="col-10 col-sm-11" style="background-color: white">
@@ -127,50 +129,111 @@
                     {{-- cart_info bên phải --}}
                     <div class=" col-lg-3 mt-5">
                         <div class="card cart-info  w-100" style="width: 18rem;">
-                            <img class="card-img-top" src="img/destination_5.jpg"
+                            <img class="card-img-top" src="{{ asset('img/destination_5.jpg') }}"
                                  alt="Card image cap">
                             <div class="card-body text-center" style="position: sticky; top:0;z-index: 10">
-                                <h4><span>Ho Chi Minh</span> (SGN)</h4>
+                                <h4><span>{{ $booking_session['flightSchedule']->airportFrom->name }}</span>
+                                    ({{ $booking_session['flightSchedule']->airportFrom->code }})</h4>
                                 <h4>to</h4>
-                                <h4><span>Ha Noi </span>(HAN)</h4>
-                                <p class="card-text">One-way | 1 Passenger</p>
+                                <h4><span>{{ $booking_session['flightSchedule']->airportTo->name }}</span>
+                                    ({{ $booking_session['flightSchedule']->airportTo->code }})</h4>
+                                <p class="card-text">{{--One-way | --}}{{ $booking_session['passenger_count']['total'] }}
+                                    Passenger</p>
                             </div>
                         </div>
-                        {{--                        <div class="card-Clearfix card mt-3  w-100" style="width: 18rem;">--}}
-                        {{--                            <div class="card-body text-center">--}}
-                        {{--                                <h5 class="card-title">--}}
-                        {{--                                    <span style="font-size: 20px;color: #33597C;font-weight: 600">Total Money--}}
-                        {{--                                    </span> :--}}
-                        {{--                                    3000.000.000 vnđ--}}
-                        {{--                                </h5>--}}
-                        {{--                                <h6 class="card-subtitle mb-2 text-muted"></h6>--}}
-                        {{--                                <p class="card-text">Includes minnows and service fees</p>--}}
+                        <div class="card-Clearfix card mt-3  w-100" style="width: 18rem;">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">
+                                    <span
+                                        style="font-size: 20px;color: #33597C;font-weight: 600">Sub Total
+                                    </span> :
+                                    <span class="sub_total">
+                                        {{ number_format($booking_session['seat_price'], 0, ',', '.') }}
+                                    </span> VND
+                                </h5>
+                                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                                <p class="card-text">Includes minnows and service fees</p>
 
-                        {{--                            </div>--}}
-                        {{--                        </div>--}}
-                        {{--                        <div class="card mt-3 cart-content w-100" style="width: 18rem;">--}}
-                        {{--                            <div class="card-body text-center">--}}
-                        {{--                                <h5 class="card-title" style="">--}}
-                        {{--                                    <span style="font-size: 20px;color: #33597C;font-weight: 600">Total Money</span> :--}}
-                        {{--                                    3000.000.000 vnđ</h5>--}}
-                        {{--                                <h6 class="card-subtitle mb-2 text-muted"></h6>--}}
-                        {{--                                <h4 style=""><span--}}
-                        {{--                                        style="font-family: 'Oswald', sans-serif;font-weight: bold"></span> (SGN) go--}}
-                        {{--                                    <span style="font-family: 'Oswald', sans-serif;font-weight: bold"></span>(HAN)--}}
-                        {{--                                </h4>--}}
-                        {{--                                <p class="card-text">CN 02/08/2020 | 19:25 - 20:30</p>--}}
-                        {{--                                <p class="card-text">Adults 1 * 2.500.000 = <span>2.500.000</span></p>--}}
-                        {{--                            </div>--}}
-                        {{--                        </div>--}}
+                            </div>
+                        </div>
+                        <div class="card mt-3 cart-content w-100" style="width: 18rem;">
+                            <div class="card-body text-center">
+                                <h5 class="card-title" style="">
+                                    <span style="font-size: 20px;color: #33597C;font-weight: 600">Total</span> :
+                                    <span id="total_price" style="font-size: 22px">
+                                        {{ number_format($booking_session['seat_price'] * $booking_session['passenger_count']['total'], 0, ',', '.') }}
+                                    </span>
+                                    VND
+                                </h5>
+                                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                                <h4 style=""><span
+                                        style="font-family: 'Oswald', sans-serif;font-weight: bold"></span>
+                                    ({{ $booking_session['flightSchedule']->airportFrom->code }}) to
+                                    <span
+                                        style="font-family: 'Oswald', sans-serif;font-weight: bold"></span>({{ $booking_session['flightSchedule']->airportTo->code }}
+                                    )
+                                </h4>
 
-                        <button type="submit" class="btn mt-3 w-100 position-sticky continue">Continue
-                            <span><i class="fa fa-angle-right"></i></span></button>
+                                <p class="card-text">{{ date('l, F d, Y', strtotime($booking_session['flightSchedule']->departure_at)) }}</p>
+                                <hr>
+
+                                <p class="card-text">Adults: {{ $booking_session['passenger_count']['adults'] }} *
+                                    <span
+                                        class="sub_total">{{ number_format($booking_session['seat_price'], 0, ',', '.') }}</span>
+                                    = <span
+                                        id="total_price_adults">{{ number_format($booking_session['passenger_count']['adults'] * $booking_session['seat_price'], 0, ',', '.') }}</span>
+                                </p>
+                                <p class="card-text">Children: {{ $booking_session['passenger_count']['children'] }} *
+                                    <span
+                                        class="sub_total">{{ number_format($booking_session['seat_price'], 0, ',', '.') }}</span>
+                                    = <span
+                                        id="total_price_children">{{ number_format($booking_session['passenger_count']['children'] * $booking_session['seat_price'], 0, ',', '.') }}</span>
+                                </p>
+                                <p class="card-text">Infant: {{ $booking_session['passenger_count']['infant'] }} *
+                                    <span
+                                        class="sub_total">{{ number_format($booking_session['seat_price'], 0, ',', '.') }}</span>
+                                    = <span
+                                        id="total_price_infant">{{ number_format($booking_session['passenger_count']['infant'] * $booking_session['seat_price'], 0, ',', '.') }}</span>
+                                </p>
+                                <hr>
+
+                                <p class="card-text">
+                                    Total fee extra service:
+                                    <span id="extraService_total_price">0</span> VND
+                                </p>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn mt-3 w-100 position-sticky continue">
+                            Continue <span><i class="fa fa-angle-right"></i></span>
+                        </button>
                     </div>
                 </div>
                 @csrf
+                <input type="hidden" name="extraService_total_price" value="0">
             </form>
         </div>
     </div>
+
+    <script>
+        function setValueExtraService() {
+            preloaderActive();
+
+            const extra_service_ids = document.getElementsByName('extra_service_ids[]');
+            let extraService_total_price = 0;
+
+            for (const extra_service_id of extra_service_ids) {
+                if (extra_service_id.checked) {
+                    extraService_total_price += Number.parseInt(extra_service_id.getAttribute("price"));
+                }
+            }
+
+            const total_price_booking_session = {{ $booking_session['seat_price'] * $booking_session['passenger_count']['total'] }};
+            document.getElementsByName('extraService_total_price')[0].value = extraService_total_price;
+            document.getElementById('extraService_total_price').innerText = extraService_total_price.toLocaleString("vi-vn");
+            document.getElementById('total_price').innerText = (extraService_total_price + total_price_booking_session).toLocaleString("vi-vn");
+        }
+    </script>
 
 @endsection
 @section('script')

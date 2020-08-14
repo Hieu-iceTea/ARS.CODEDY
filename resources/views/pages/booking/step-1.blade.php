@@ -257,6 +257,8 @@
 
     <script type="text/javascript">
         function setValue(flight_schedule_id, seat_type, seat_price, adults, children, infant) {
+            preloaderActive();
+
             //set value to hidden-field input
             document.getElementById('flight_schedule_id').value = flight_schedule_id;
             document.getElementById('seat_type').value = seat_type;
