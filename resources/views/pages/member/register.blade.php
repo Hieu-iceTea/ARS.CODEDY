@@ -1,6 +1,6 @@
 @extends('pages.layout.master')
 
-@section('title', 'Member - Register')
+@section('title', 'Schedule')
 
 <!-- Style Main_style-->
 @section('style')
@@ -14,13 +14,15 @@
     <!-- Home -->
 
     <div class="home page_ticket">
-        <div class="background_image" style="background-image:url({{ asset('img/destinations.jpg') }})"></div>
+
+        <div class="background_image"
+             style="background-image:url({{ asset('img/destinations.jpg') }})"></div>
         <div class="home_slider_content_container">
             <div class="container">
                 <div class="row">
                     <div class="col">
                         <div class="home_slider_content">
-                            <div class="home_title mt-5"><h2>Register </h2></div>
+                            {{--<div class="home_title "><h2>Flight Schedule</h2></div>--}}
                         </div>
                     </div>
                 </div>
@@ -29,6 +31,8 @@
 
     </div>
     <!-- Search -->
+
+    <!-- Schedule index -->
     <div class="register_main">
         <div class="container">
             <div class="register">
@@ -37,11 +41,10 @@
                         started!</h4>
                     <p>We need some details about you to create a membership account</p>
                 </div>
-                <form action="login">
-
+                <form method="post">
                     <div class="user">
                         <label for="username">
-                            <input type="text" name="username" id="username" placeholder="Username">
+                            <input type="text" name="user_name" id="username" placeholder="Username">
                         </label>
                     </div>
 
@@ -63,15 +66,15 @@
                     </div>
 
                     <div class="gender">
-                        <input type="radio" id="male" name="gender" value="male">
+                        <input type="radio" id="male" name="gender" value="1">
                         <label for="male">Male</label>
-                        <input type="radio" id="female" name="gender" value="female">
+                        <input type="radio" id="female" name="gender" value="2">
                         <label for="female">Female</label><br>
                     </div>
 
                     <div class="dob">
                         <label for="dateofbirth">
-                            <input type="date" name="dateofbirth" id="dateofbirth" placeholder="DD/MM/YYYY">
+                            <input type="date" name="dob" id="dateofbirth" placeholder="DD/MM/YYYY">
                         </label>
                     </div>
 
@@ -95,15 +98,12 @@
                     </div>
 
                     <div class="form-group text-center">
-                        <button class="btn "  type="submit" name="button">Register</button>
+                        <button class="btn " type="submit" name="button">Register</button>
                     </div>
                 </form>
             </div>
         </div>
-
     </div>
-    </div>
-
 @endsection
 
 @section('script')

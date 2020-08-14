@@ -940,7 +940,7 @@
     background-color: #ffffff;
     font-family: 'Oswald', sans-serif;
     box-shadow: 5px 10px 8px #dcdcdc;
-    margin: 30px auto;
+    margin: -420px auto 45px auto;
 }
 
 .register_main .register .title {
@@ -1051,49 +1051,57 @@
 /************
 15. Login
 ************/
+
 .login_main {
     background-color: #EDF3F7;
     padding: 20px;
 }
 
-#main {
+.login_main a{
+    color: #a5a5a5;
+}
+.login_main a:hover{
+    color: #33597C;
+}
+
+.login_main #main {
     width: 400px;
-    height: 500px;
+    height: 445px;
     background-color: #fff;
     font-family: 'Oswald', sans-serif;
     box-shadow: 5px 10px 8px #dcdcdc;
-    margin: 30px auto;
+    margin: -400px auto 45px auto;
 }
 
-#main .login {
+.login_main #main .login {
     padding: 40px;
 }
 
-#main .login .logo {
+.login_main #main .login .logo {
     display: flex;
 }
 
-#main .login .logo img {
+.login_main #main .login .logo img {
     width: 60px;
     height: 60px;
     margin-right: 30px;
 }
 
-#main .login .logo h5 {
+.login_main #main .login .logo h5 {
     font-size: 30px;
     font-weight: 900;
     font-family: 'Oswald', sans-serif;
     color: #33597C;
 }
 
-#main .login .logo span {
+.login_main #main .login .logo span {
     text-transform: uppercase;
     font-family: 'Oswald', sans-serif;
     color: #33597C;
     font-weight: bold;
 }
 
-#main .login .title h4 {
+.login_main #main .login .title h4 {
     font-size: 15px;
     font-weight: bold;
     font-family: 'Oswald', sans-serif;
@@ -1103,11 +1111,11 @@
     margin-bottom: 20px
 }
 
-#main .login .login-body {
+.login_main #main .login .login-body {
     margin-top: 30px;
 }
 
-#main .login .login-body input {
+.login_main #main .login .login-body input {
     border: none;
     border-bottom: 1px solid #000000;
     background: transparent;
@@ -1120,7 +1128,7 @@
     color: #33597C;
 }
 
-#main .login-body .check {
+.login_main #main .login-body .check {
     margin-top: 50px;
 }
 
