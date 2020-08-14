@@ -39,9 +39,9 @@ class Utility
         2 => 'MS',
     ];
 
-    const user_level_host = 0;
-    const user_level_admin = 1;
-    const user_level_member = 2;
+    const user_level_host = 1;
+    const user_level_admin = 2;
+    const user_level_member = 3;
     public static $user_level = [
         self::user_level_host => 'host',
         self::user_level_admin => 'admin',

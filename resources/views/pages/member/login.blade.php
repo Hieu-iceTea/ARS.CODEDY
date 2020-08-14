@@ -57,7 +57,7 @@
                                 </div>
                                 <div class="check d-flex">
                                     <div class="custom-control mr-5 custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" name="remember" id="defaultChecked2">
+                                        <input type="checkbox" class="custom-control-input" name="remember" value="remember" id="defaultChecked2">
                                         <label class="custom-control-label" for="defaultChecked2">
                                             Remember me
                                         </label>

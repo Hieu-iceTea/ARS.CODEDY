@@ -22,16 +22,16 @@ CREATE TABLE IF NOT EXISTS `user`
 (
     `user_id`           INT AUTO_INCREMENT,
 
-    `user_name`         VARCHAR(64)      NOT NULL,
-    `email`             VARCHAR(64)      NOT NULL,
-    `password`          VARCHAR(128)     NOT NULL,
-    `level`             TINYINT UNSIGNED NOT NULL,
+    `user_name`         VARCHAR(64) UNIQUE         NOT NULL,
+    `email`             VARCHAR(64)                NOT NULL,
+    `password`          VARCHAR(128)               NOT NULL,
+    `level`             TINYINT UNSIGNED DEFAULT 3 NOT NULL,
 
     `email_verified_at` DATETIME,
-    `verification_code` VARCHAR(8)   DEFAULT NULL,
-    `remember_token`    VARCHAR(128) DEFAULT NULL,
+    `verification_code` VARCHAR(8)       DEFAULT NULL,
+    `remember_token`    VARCHAR(128)     DEFAULT NULL,
 
-    `gender`            BOOLEAN          NOT NULL,
+    `gender`            BOOLEAN                    NOT NULL,
     `first_name`        VARCHAR(64),
     `last_name`         VARCHAR(64),
     `dob`               DATE,
@@ -39,14 +39,14 @@ CREATE TABLE IF NOT EXISTS `user`
     `address`           VARCHAR(128),
 
     `loyalty_number`    INT(8),
-    `active`            BOOLEAN      DEFAULT FALSE,
+    `active`            BOOLEAN          DEFAULT FALSE,
 
-    `created_by`        NVARCHAR(32) DEFAULT 'ARS.CODEDY',
-    `created_at`        DATETIME     DEFAULT CURRENT_TIME,
-    `updated_by`        NVARCHAR(32) DEFAULT NULL,
-    `updated_at`        DATETIME     DEFAULT NULL,
-    `version`           INT          DEFAULT 1,
-    `deleted`           BOOLEAN      DEFAULT FALSE,
+    `created_by`        NVARCHAR(32)     DEFAULT 'ARS.CODEDY',
+    `created_at`        DATETIME         DEFAULT CURRENT_TIME,
+    `updated_by`        NVARCHAR(32)     DEFAULT NULL,
+    `updated_at`        DATETIME         DEFAULT NULL,
+    `version`           INT              DEFAULT 1,
+    `deleted`           BOOLEAN          DEFAULT FALSE,
 
     PRIMARY KEY (`user_id`)
 ) ENGINE InnoDB;
@@ -277,23 +277,22 @@ CREATE TABLE IF NOT EXISTS `ticket`
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = #
 #Password: 123456
 
-
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
-VALUES (1, 'Hieu-iceTea', 'DinhHieu8896@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 2, '2020-08-08', 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '0868663315', 'Nghệ An', 123456, TRUE);
+VALUES (1, 'Hieu-iceTea', 'DinhHieu8896@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 3, '2020-08-08', 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '0868663315', 'Nghệ An', 123456, TRUE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
-VALUES (2, 'truong-thanh-tu', 'truongthanhtu03091998@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 2, '2020-08-08', 1, 'Thanh Tú', 'Trương', '1998-09-03', '0359077335', 'Huế', 123456, TRUE);
+VALUES (2, 'truong-thanh-tu', 'truongthanhtu03091998@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 3, '2020-08-08', 1, 'Thanh Tú', 'Trương', '1998-09-03', '0359077335', 'Huế', 123456, TRUE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
-VALUES (3, 'chanhoa', 'chanhoa28112k@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 2, '2020-08-08', 2, 'Chan Hòa', 'Đỗ Thị', '2000-01-01', '', '', 123456, TRUE);
+VALUES (3, 'chanhoa', 'chanhoa28112k@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 3, '2020-08-08', 2, 'Chan Hòa', 'Đỗ Thị', '2000-01-01', '', '', 123456, TRUE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
-VALUES (4, 'vuquanghuy2001', 'vuquanghuyxl1234@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 2, '2020-08-08', 1, 'Quang Huy', 'Vũ', '2000-01-01', '', '', 123456, TRUE);
+VALUES (4, 'vuquanghuy2001', 'vuquanghuyxl1234@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 3, '2020-08-08', 1, 'Quang Huy', 'Vũ', '2000-01-01', '', '', 123456, TRUE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
-VALUES (5, 'tuanpth1909', 'phamtuancules20@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 2, '2020-08-08', 1, 'Tuân', 'Phạm', '2000-01-01', '', '', 123456, TRUE);
+VALUES (5, 'tuanpth1909', 'phamtuancules20@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 3, '2020-08-08', 1, 'Tuân', 'Phạm', '2000-01-01', '', '', 123456, TRUE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
-VALUES (6, 'host', 'ars.codedy@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 0, '2020-08-08', 1, '', '', '2000-01-01', '', '', NULL, TRUE);
+VALUES (6, 'host', 'ars.codedy@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 1, '2020-08-08', 1, '', '', '2000-01-01', '', '', NULL, TRUE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
-VALUES (7, 'admin', 'admin_ars.codedy@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 1, '2020-08-08', 1, '', '', '2000-01-01', '', '', NULL, TRUE);
+VALUES (7, 'admin', 'admin_ars.codedy@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 2, '2020-08-08', 1, '', '', '2000-01-01', '', '', NULL, TRUE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
-VALUES (8, 'member', 'member_ars.codedy@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 2, '2020-08-08', 1, '', '', '2000-01-01', '', '', NULL, TRUE);
+VALUES (8, 'member', 'member_ars.codedy@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 3, '2020-08-08', 1, '', '', '2000-01-01', '', '', NULL, TRUE);
 
 INSERT INTO extra_service (extra_service_id, name, price, image, description)
 VALUE (1,  'Luggage and special services',  110000,  'luggage-and-special-services.jpg ', '<ul style=""list-style-type: disc;""><li>Total weight displayed includes free baggage allowance</li><li>Save up to 80 %</li><li>max. 40 kg per person</li></ul>');

@@ -67,13 +67,13 @@
                     <a href="ticket">My Flights</a>
                 </li>
                 <li>
-                    <a href="">My Activity</a>
+                    <a href="member">My Activity</a>
                 </li>
                 <li>
-                    <a href="">My Family</a>
+                    <a href="member">My Family</a>
                 </li>
                 <li>
-                    <a href="">Points Calculator</a>
+                    <a href="member">Points Calculator</a>
                 </li>
             </ul>
         </div>

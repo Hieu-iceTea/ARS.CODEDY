@@ -42,6 +42,7 @@
                     <p>We need some details about you to create a membership account</p>
                 </div>
                 <form method="post">
+                    @csrf
                     <div class="user">
                         <label for="username">
                             <input type="text" name="user_name" id="username" placeholder="Username">

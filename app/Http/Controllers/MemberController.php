@@ -6,6 +6,8 @@ use App\Model\User;
 use App\Utilities\Utility;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Str;
 
 class MemberController extends Controller
 {
@@ -34,13 +36,14 @@ class MemberController extends Controller
      */
     public function postLogin(Request $request)
     {
-        $credentials = ['user_name' => $request->user_name, 'password' => $request->password, 'level' => Utility::user_level_member, 'deleted' => FALSE];
+        $credentials = [
+            'user_name' => $request->get('user_name'),
+            'password' => $request->get('password'),
+            'level' => Utility::user_level_member,
+            'deleted' => FALSE,
+        ];
 
-        if ($request->remember == 'remember') {
-            $remember = true;
-        } else {
-            $remember = false;
-        }
+        $remember = $request->get('remember') == 'remember';
 
         if (Auth::attempt($credentials, $remember)) {
             return redirect()->intended('member');
@@ -69,8 +72,28 @@ class MemberController extends Controller
      */
     public function postRegister(Request $request)
     {
-        //
-        return redirect('member/register/verify');
+        //Lấy data từ form và thêm bản ghi vào DB
+        $user = new User();
+        $user->user_name = $request->get('user_name');
+        $user->email = $request->get('email');
+        $user->password = bcrypt($request->get('password'));
+        $user->verification_code = Str::upper(Str::random(6));
+        $user->gender = $request->get('gender');
+        $user->first_name = $request->get('first_name');
+        $user->last_name = $request->get('last_name');
+        $user->dob = $request->get('dob');
+        $user->phone = $request->get('phone');
+        $user->address = $request->get('address');
+        $user->save();
+
+        //Tự động đăng nhập sau khi đăng ký thành công
+        Auth::login($user);
+        //Auth::loginUsingId($user->user_id);
+
+        //Chuyển hướng đến trang xác nhận email sau khi đăng nhập
+        return redirect('member/verify/' . $user->user_id)
+            ->with('notification', 'Enter the verification code sent to your email to activate your account')
+            ->with('preloader', 'none');
     }
 
     /**
@@ -106,26 +129,44 @@ class MemberController extends Controller
     }
 
     /**
-     * Show the form for verify a new account.
+     * Show the form for verify a new account. & Activate a new account.
      *
+     * @param Request $request
+     * @param user_id $
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     * @throws \Exception
      */
-    public function getVerify()
+    public function getVerify(Request $request, $user_id)
     {
+        $verification_code = $request->get('verification_code');
+
+        if (isset($verification_code)) {
+            $user = User::all()
+                ->where('verification_code', $verification_code)
+                ->where('user_id', $user_id)->first();
+
+            if ($user == null) {
+                return back()
+                    ->withErrors('Mã xác thực không hợp lệ!')
+                    ->withInput()
+                    ->with('preloader', 'none');
+            } else {
+                User::where('user_id', $user->user_id)
+                    ->update([
+                        'active' => TRUE,
+                        'email_verified_at' => Date::now(),
+                        'verification_code' => null,
+                        'loyalty_number' => random_int(111111, 999999),
+                    ]);
+                return redirect()->route('member')
+                    ->with('notification', 'Xác thực thành công! Bây giờ bạn có thể dùng mọi chức năng với tài khoản của bạn.')
+                    ->with('preloader', 'none');
+            }
+        }
+
         return view('pages.member.verify');
     }
 
-    /**
-     * Activate a new account.
-     *
-     * @param \Illuminate\Http\Request $request
-     */
-    public function postVerify(Request $request)
-    {
-        //
-        return redirect()->route('member')
-            ->with('status', 'complete')
-            ->with('preloader', 'none');
-    }
 
     /**
      * Logout your account.
