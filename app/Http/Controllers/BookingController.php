@@ -24,7 +24,7 @@ class BookingController extends Controller
         //Kiểm tra phiên session còn tồn tại không? Nếu không thì quay về trang chủ và báo lỗi
         if ($request->get('from') == '') {
             return redirect('/')
-                ->with('notification', 'Search for your flight first!')
+                ->with('notification', 'Please search for your flight first!')
                 ->with('preloader', 'none');
         }
 
@@ -60,13 +60,15 @@ class BookingController extends Controller
             ->where('departure_at', 'like', '%' . $departure_at . '%')
             ->get();
 
-        return view('pages.booking.step-1', compact('flightSchedules', 'searchInput'));
+        //return view('pages.booking.step-1', compact('flightSchedules', 'searchInput'));
 
-        //if (count($flightSchedules) > 0) {
-        //    return view('pages.booking.step-1', compact('flightSchedules', 'searchInput'));
-        //} else {
-        //    return redirect('/')->with('notification', 'Không tìm thấy chuyến bay nào')->with('preloader', 'none');
-        //}
+        if (count($flightSchedules) > 0) {
+            return view('pages.booking.step-1', compact('flightSchedules', 'searchInput'));
+        } else {
+            return redirect('/')
+                ->with('notification', "Sorry, we don't have any flights yet with your chosen information!")
+                ->with('preloader', 'none');
+        }
     }
 
     /**
@@ -215,7 +217,7 @@ class BookingController extends Controller
             return back()
                 ->withInput()
                 ->setTargetUrl('#payment_details')
-                ->withErrors('Currently, we do not support online payments. Please choose the following payment in the payment method section')
+                ->withErrors('Currently, we do not support online payments. Please choose "Pay Later" in the payment methods section.')
                 ->with('preloader', 'none');
         }
         //Get data from Session & Request:
@@ -264,33 +266,32 @@ class BookingController extends Controller
         }
 
         //Send email:
-        $data = [
-            'verification_code' => Str::upper(Str::random(6)),
-            'contact_fullname' => $ticket->contact_first_name . '. ' . $ticket->contact_last_name,
-        ];
         $email_to = $ticket->contact_email;
-        Mail::send('pages.booking.email', $data, function ($message) use ($email_to) {
+        Mail::send('pages.booking.email', compact('ticket'), function ($message) use ($email_to) {
             $message->from('ars.codedy@gmail.com', 'ARS.CODEDY');
             $message->to($email_to, $email_to);
             //$message->cc('', ''); //gửi cho chủ cửa hàng
-            $message->subject('ARS.CODEDY | Booking confirmation');
+            $message->subject('Your Reservation Details');
         });
 
-        return redirect('booking/complete')->with('next', 'complete');
+        return redirect('booking/complete/' . $ticket->ticket_id)->with('next', 'complete');
     }
 
-    public function complete()
+    public function complete($id)
     {
         //Xóa session liên quan đến booking
-        Session::forget('booking_session');
+        //Session::forget('booking_session');
 
-        if (!session('next') == 'complete') {
-            return redirect('/')
-                ->withErrors('Session expires, please search again for your flight')
-                ->with('preloader', 'none');
-        }
+//        if (!session('next') == 'complete') {
+//            return redirect('/')
+//                ->withErrors('Session expires, please search again for your flight')
+//                ->with('preloader', 'none');
+//        }
 
-        return view('pages.booking.complete');
+        //get code from DataBase by ticket_id
+        $ticket = Ticket::find($id);
+
+        return view('pages.booking.complete', compact('ticket'));
     }
 
     private function updateSession($key, $data)

@@ -25,4 +25,15 @@ class Utility
         3 => 'Infant',
     ];
 
+    public static $passenger_type_vi = [
+        1 => 'Người lớn',
+        2 => 'Trẻ em',
+        3 => 'Em bé',
+    ];
+
+    public static $gender = [
+        1 => 'MR',
+        2 => 'MS',
+    ];
+
 }

@@ -37,7 +37,7 @@ Route::group(['prefix' => ''], function () {
             Route::post('', 'BookingController@postStep4');
         });
 
-        Route::get('complete', 'BookingController@complete');
+        Route::get('complete/{id}', 'BookingController@complete');
     });
 
     Route::group(['prefix' => 'ticket'], function () {
