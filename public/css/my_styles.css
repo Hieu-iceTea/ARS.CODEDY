@@ -13,6 +13,10 @@
 |
 */
 
+body {
+    background-color: #edf3f7;
+}
+
 /******************************
 
 [Table of Contents]
@@ -1147,3 +1151,9 @@
 }
 
 
+/************
+16. Member
+************/
+.content {
+    margin: -400px auto 45px auto;
+}

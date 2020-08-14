@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="home_slider_content">
-                            <div class="home_title"><h2>Manage your account</h2></div>
+                            {{--                            <div class="home_title"><h2>Manage your account</h2></div>--}}
                         </div>
                     </div>
                 </div>
@@ -31,27 +31,101 @@
 
     </div>
     <!-- Search -->
-    <div class="home_search page_ticket">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="home_search_container">
-                        <div class="home_search_title">Search code Filght</div>
-                        <div class="home_search_content">
-                            <form action="schedule/detail/VN-67" method="get" class="home_search_form"
-                                  id="home_search_form">
-                                <div
-                                    class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+    <div class="container content">
+        <div class="row">
+            {{--Aside menu--}}
+            @include('pages.member.component.aside_menu')
 
-                                    <input type="text" class="search_input search_input_1  w-75" id="code"
-                                           name="IDFightSchedule"
-                                           placeholder="Code">
-                                    <button class="home_search_button ml-5" type="submit">search</button>
-                                </div>
-                            </form>
-                        </div>
+            {{--Body--}}
+            <div class="col-9 px-4 py-4" style="background-color: white">
+                <div class="row mb-2">
+                    <div class="col-12">
+                        <h3>My Profile</h3>
                     </div>
                 </div>
+
+                <hr>
+
+                <div class="row mt-3 mb-2">
+                    <div class="col-12">
+                        <h4>Personal information</h4>
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-3">
+                        <p>User Name</p>
+                    </div>
+                    <div class="col-9">
+                        <p><b>Hieu iceTea</b></p>
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-3">
+                        <p>Name</p>
+                    </div>
+                    <div class="col-9">
+                        <p><b>Nguyen Dinh Hieu</b></p>
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-3">
+                        <p>Gender</p>
+                    </div>
+                    <div class="col-3">
+                        <p><b>Male</b></p>
+                    </div>
+
+                    <div class="col-3">
+                        <p>Date of birth</p>
+                    </div>
+                    <div class="col-3">
+                        <p><b>08/08/1996</b></p>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="row mt-4 mb-2">
+                    <div class="col-12">
+                        <h4>Contact details</h4>
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-3">
+                        <p>Email</p>
+                    </div>
+                    <div class="col-9">
+                        <p>
+                            <b>DinhHieu8896@gmail.com</b>
+                            (<a href="">Email verification</a>)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-3">
+                        <p>Phone</p>
+                    </div>
+                    <div class="col-9">
+                        <p><b>0868663315</b></p>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="row mb-2">
+                    <div class="col-3">
+                        <p>Created At</p>
+                    </div>
+                    <div class="col-9">
+                        <p><b>08/08/2020</b></p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
