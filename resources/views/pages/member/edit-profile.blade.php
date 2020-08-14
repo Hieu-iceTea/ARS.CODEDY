@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="home_slider_content">
-                            {{--                            <div class="home_title"><h2>Manage your account</h2></div>--}}
+                            {{--<div class="home_title"><h2>Manage your account</h2></div>--}}
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
     </div>
     <!-- Search -->
     <div class="container content">
-        <div class="row">
+        <div class="row shadow-lg">
             {{--Aside menu--}}
             @include('pages.member.component.aside_menu')
 
@@ -59,7 +59,7 @@
                             <p>User Name</p>
                         </div>
                         <div class="col-9">
-                            <p><b>Hieu iceTea</b></p>
+                            <p><b>{{ Auth::user()->user_name }}</b></p>
                         </div>
                     </div>
 
@@ -69,14 +69,14 @@
                         </div>
                         <div class="col-3">
                             <p><input class="form-control form-control-sm" type="text" name="first_name"
-                                      placeholder="First Name"></p>
+                                      placeholder="First Name" value="{{ Auth::user()->first_name }}"></p>
                         </div>
                         <div class="col-3">
                             <p>Last Name</p>
                         </div>
                         <div class="col-3">
                             <p><input class="form-control form-control-sm" type="text" name="last_name"
-                                      placeholder="Last Name"></p>
+                                      placeholder="Last Name" value="{{ Auth::user()->last_name }}"></p>
                         </div>
                     </div>
 
@@ -88,8 +88,8 @@
                             <p>
                                 <select class="form-control form-control-sm" name="gender">
                                     <option selected>-- Gender --</option>
-                                    <option value="1">Male</option>
-                                    <option value="2">Female</option>
+                                    <option {{ Auth::user()->gender == 1 ? 'selected' : '' }} value="1">Male</option>
+                                    <option {{ Auth::user()->gender == 2 ? 'selected' : '' }} value="2">Female</option>
                                 </select>
                             </p>
                         </div>
@@ -98,7 +98,8 @@
                             <p>Date of birth</p>
                         </div>
                         <div class="col-3">
-                            <p><input class="form-control form-control-sm" type="date" name="dob" placeholder="DOB"></p>
+                            <p><input class="form-control form-control-sm" type="date" name="dob" placeholder="DOB"
+                                      value="{{ Auth::user()->dob }}"></p>
                         </div>
                     </div>
 
@@ -117,7 +118,7 @@
                         <div class="col-9">
                             <p>
                                 <input class="form-control form-control-sm" type="email" name="email"
-                                       placeholder="Email">
+                                       placeholder="Email" value="{{ Auth::user()->email }}">
                             </p>
                         </div>
                     </div>
@@ -127,7 +128,19 @@
                             <p>Phone</p>
                         </div>
                         <div class="col-9">
-                            <p><input class="form-control form-control-sm" type="tel" name="phone" placeholder="Phone">
+                            <p><input class="form-control form-control-sm" type="tel" name="phone" placeholder="Phone"
+                                      value="{{ Auth::user()->phone }}">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col-3">
+                            <p>Address</p>
+                        </div>
+                        <div class="col-9">
+                            <p><input class="form-control form-control-sm" type="tel" name="address" placeholder="Phone"
+                                      value="{{ Auth::user()->address }}">
                             </p>
                         </div>
                     </div>

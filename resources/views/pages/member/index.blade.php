@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="home_slider_content">
-                            {{--                            <div class="home_title"><h2>Manage your account</h2></div>--}}
+                            {{--<div class="home_title"><h2>Manage your account</h2></div>--}}
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
     </div>
     <!-- Search -->
     <div class="container content">
-        <div class="row">
+        <div class="row shadow-lg">
             {{--Aside menu--}}
             @include('pages.member.component.aside_menu')
 
@@ -57,7 +57,7 @@
                         <p>User Name</p>
                     </div>
                     <div class="col-9">
-                        <p><b>Hieu iceTea</b></p>
+                        <p><b>{{ Auth::user()->user_name }}</b></p>
                     </div>
                 </div>
 
@@ -66,7 +66,7 @@
                         <p>Name</p>
                     </div>
                     <div class="col-9">
-                        <p><b>Nguyen Dinh Hieu</b></p>
+                        <p><b>{{ Auth::user()->first_name . ' ' . Auth::user()->last_name }}</b></p>
                     </div>
                 </div>
 
@@ -75,14 +75,14 @@
                         <p>Gender</p>
                     </div>
                     <div class="col-3">
-                        <p><b>Male</b></p>
+                        <p><b>{{ \App\Utilities\Utility::$gender[Auth::user()->gender] }}</b></p>
                     </div>
 
                     <div class="col-3">
                         <p>Date of birth</p>
                     </div>
                     <div class="col-3">
-                        <p><b>08/08/1996</b></p>
+                        <p><b>{{ date('d/m/Y', strtotime(Auth::user()->dob)) }}</b></p>
                     </div>
                 </div>
 
@@ -100,7 +100,7 @@
                     </div>
                     <div class="col-9">
                         <p>
-                            <b>DinhHieu8896@gmail.com</b>
+                            <b>{{ Auth::user()->email }}</b>
                             (<a href="">Email verification</a>)
                         </p>
                     </div>
@@ -111,7 +111,16 @@
                         <p>Phone</p>
                     </div>
                     <div class="col-9">
-                        <p><b>0868663315</b></p>
+                        <p><b>{{ Auth::user()->phone }}</b></p>
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-3">
+                        <p>Address</p>
+                    </div>
+                    <div class="col-9">
+                        <p><b>{{ Auth::user()->address }}</b></p>
                     </div>
                 </div>
 

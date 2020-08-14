@@ -1,7 +1,7 @@
 <div class="col-3 pl-4 py-4" style="background-color: #dde6ed">
     <div class="row mb-2">
         <div class="col-12">
-            <h3>Hello, Nguyen Dinh Hieu</h3>
+            <h3>Hello, {{ Auth::user()->first_name . ' ' . Auth::user()->last_name }}</h3>
         </div>
     </div>
 
@@ -10,7 +10,7 @@
             <p>Loyalty Number</p>
         </div>
         <div class="col-6">
-            <p>123456</p>
+            <p>{{ Auth::user()->loyalty_number }}</p>
         </div>
     </div>
 
@@ -48,7 +48,7 @@
             <p>Your Total Flight</p>
         </div>
         <div class="col-6">
-            <p>0</p>
+            <p>{{ count(Auth::user()->ticket) }}</p>
         </div>
     </div>
 

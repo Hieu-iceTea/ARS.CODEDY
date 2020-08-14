@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\User;
 use App\Utilities\Utility;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -33,7 +34,7 @@ class MemberController extends Controller
      */
     public function postLogin(Request $request)
     {
-        $credentials = ['user_name' => $request->user_name, 'password' => $request->password, 'level' => Utility::user_level_member];
+        $credentials = ['user_name' => $request->user_name, 'password' => $request->password, 'level' => Utility::user_level_member, 'deleted' => FALSE];
 
         if ($request->remember == 'remember') {
             $remember = true;
@@ -88,8 +89,20 @@ class MemberController extends Controller
      */
     public function updateProfile(Request $request)
     {
-        //
-        return redirect()->route('member')->with('notification', 'Update successful');
+        //get data from Request & Update to DataBase
+        User::where('user_id', Auth::user()->user_id)->update([
+            'email' => $request->get('email'),
+            'gender' => $request->get('gender'),
+            'first_name' => $request->get('first_name'),
+            'last_name' => $request->get('last_name'),
+            'dob' => $request->get('dob'),
+            'phone' => $request->get('phone'),
+            'address' => $request->get('address'),
+        ]);
+
+        return redirect()->route('member')
+            ->with('notification', 'Update successful')
+            ->with('preloader', 'none');
     }
 
     /**
@@ -109,7 +122,9 @@ class MemberController extends Controller
     public function postVerify(Request $request)
     {
         //
-        return redirect()->route('member')->with('status', 'complete');
+        return redirect()->route('member')
+            ->with('status', 'complete')
+            ->with('preloader', 'none');
     }
 
     /**
@@ -119,6 +134,8 @@ class MemberController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('home')->with('notification', 'Successfully logout');
+        return redirect()->route('home')
+            ->with('notification', 'Successfully logout')
+            ->with('preloader', 'none');
     }
 }
