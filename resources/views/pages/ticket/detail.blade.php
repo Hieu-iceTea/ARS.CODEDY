@@ -87,14 +87,16 @@
                         <p class="ticket_detail_fontfamily ticket_detail_fontsize ticket_detail_coloredit">
                             <span>{{ $ticket->flightSchedule->plane->code }}</span></p>
                     </div>
-                    <div class="col-2 ticket_arsplus mt-3 mr-5">
+                    <div class="col-2 ticket_arsplus mt-3">
                         <p class="ticket_detail_fontfamily">
                             ARS {{ \App\Utilities\Utility::$seat_type[$ticket->seat_type] }}</p>
                     </div>
                     <div class="col-3 my-3 ml-5">
-                        <button type="submit" class="btn tiket_detail_continue position-sticky continue">Change fligh
-                            schedules
-                            <span><i class="fa fa-angle-right"></i></span></button>
+                        <a href="ticket/edit-schedule/0000"
+                           class="btn btn-outline-primary tiket_detail_continue position-sticky continue">
+                            Change flight schedules
+                            <span><i class="fa fa-angle-right"></i></span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -135,7 +137,7 @@
                                     <td>Baby</td>
                                 @endif
 
-                                <td>Change passenger name</td>
+                                <td><a style="" href="ticket/edit-passenger/0000">Change passenger name ></a></td>
                             </tr>
                         @endforeach
                         </tbody>

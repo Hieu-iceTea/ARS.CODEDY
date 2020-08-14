@@ -422,11 +422,6 @@
     background-color: #33597C;
 }
 
-.body_booking .cart-info img {
-    width: 100%;
-    height: 120px;
-}
-
 .body_booking .cart-info h4 {
     font-size: 20px;
     color: #33597C;
@@ -830,10 +825,11 @@
 }
 
 .ticket_arsplus {
+    text-align: center;
     border: 1px solid #33597C;
     color: white;
     height: 30px;
-    max-width: 80px;
+    max-width: 110px;
     border-radius: 20px;
     background-color: #33597C;
 }
