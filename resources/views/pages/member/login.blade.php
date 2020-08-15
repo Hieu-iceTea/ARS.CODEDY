@@ -50,14 +50,18 @@
                             <form method="post">
                                 @csrf
                                 <div class="">
-                                    <input type="text" name="user_name" placeholder="Username">
+                                    <input type="text" name="user_name" placeholder="Username"
+                                           value="{{ old('user_name') }}">
                                 </div>
                                 <div class="mt-1">
-                                    <input type="password" name="password" placeholder="Password">
+                                    <input type="password" name="password" placeholder="Password"
+                                           value="{{ old('password') }}">
                                 </div>
                                 <div class="check d-flex">
                                     <div class="custom-control mr-5 custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" name="remember" value="remember" id="defaultChecked2">
+                                        <input type="checkbox" class="custom-control-input" name="remember"
+                                               value="remember"
+                                               id="defaultChecked2" {{ old('remember') == 'remember' ? 'checked' : '' }}>
                                         <label class="custom-control-label" for="defaultChecked2">
                                             Remember me
                                         </label>
