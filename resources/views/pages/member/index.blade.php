@@ -133,7 +133,16 @@
                         <p>Created At</p>
                     </div>
                     <div class="col-9">
-                        <p><b>{{ date('d/m/Y', strtotime(Auth::user()->created_at)) }}</b></p>
+                        <p><b>{{ date('d/m/Y H:i', strtotime(Auth::user()->created_at)) }}</b></p>
+                    </div>
+                </div>
+
+                <div class="row mt-0 mb-1">
+                    <div class="col-3">
+                        <p>Last Updated At</p>
+                    </div>
+                    <div class="col-9">
+                        <p><b>{{ date('d/m/Y H:i', strtotime(Auth::user()->updated_at)) }}</b></p>
                     </div>
                 </div>
 

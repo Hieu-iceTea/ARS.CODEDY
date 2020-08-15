@@ -40,7 +40,7 @@ Route::group(['prefix' => ''], function () {
         Route::get('complete/{id}', 'BookingController@complete');
     });
 
-    Route::group(['prefix' => 'ticket'], function () {
+    Route::group(['prefix' => 'ticket', 'middleware' => 'CheckMemberLogin'], function () {
         Route::get('', 'TicketController@index')->name('ticket');
 
         Route::get('detail/{id}', 'TicketController@detail')->name('detail');

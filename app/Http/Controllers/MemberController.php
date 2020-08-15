@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
 use App\Model\User;
 use App\Utilities\Utility;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\Mail;
@@ -33,9 +33,10 @@ class MemberController extends Controller
     /**
      * Receive data and Login.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param UserRequest $request
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function postLogin(Request $request)
+    public function postLogin(UserRequest $request)
     {
         $credentials = [
             'user_name' => $request->get('user_name'),
@@ -47,8 +48,8 @@ class MemberController extends Controller
         $remember = $request->get('remember') == 'remember';
 
         if (Auth::attempt($credentials, $remember)) {
-            return redirect()->intended('member');
-            //return redirect()->route('member');
+            return redirect()->intended('member'); //Làm như này để sau khi đăng nhập sẽ quay lại trang trước đó
+            //return redirect()->route('member'); //còn như này sẽ luôn chuyển hướng tới 'member'.
         } else {
             return redirect()->back()
                 ->withInput()
@@ -69,9 +70,10 @@ class MemberController extends Controller
     /**
      * Store a newly created account in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param UserRequest $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function postRegister(Request $request)
+    public function postRegister(UserRequest $request)
     {
         //Lấy data từ form và thêm bản ghi vào DB
         $user = new User();
@@ -129,9 +131,10 @@ class MemberController extends Controller
     /**
      * Update profile in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param UserRequest $request
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function updateProfile(Request $request)
+    public function updateProfile(UserRequest $request)
     {
         //get data from Request & Update to DataBase
         User::where('user_id', Auth::user()->user_id)->update([
@@ -152,16 +155,14 @@ class MemberController extends Controller
     /**
      * Show the form for verify a new account. & Activate a new account.
      *
-     * @param Request $request
-     * @param $user_id
+     * @param UserRequest $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      * @throws \Exception
      */
-    public function getVerify(Request $request)
+    public function getVerify(UserRequest $request)
     {
         $verification_code = $request->get('verification_code');
         $user_id = $request->get('user_id') ?? Auth::user()->user_id ?? null;
-
 
 
         //nếu có verification_code thì kiểm tra
@@ -207,7 +208,7 @@ class MemberController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('home')
+        return redirect()->route('member.login')
             ->with('notification', 'Successfully logout')
             ->with('preloader', 'none');
     }
