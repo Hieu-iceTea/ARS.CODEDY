@@ -20,9 +20,9 @@ class CheckMemberLogin
         // nếu user đã đăng nhập
         if (Auth::check()) {
             $user = Auth::user();
-            // nếu level =1 (admin), deleted = false (tài khoản chưa bị xóa) thì cho qua.
+            // nếu level = 3 (member), deleted = false (tài khoản chưa bị xóa) thì cho qua.
             if ($user->level == Utility::user_level_member && $user->deleted == false) {
-                //nếu tài khoản chưa xác nhận email thì yêu xác nhận (chỉ được vào trang verify hoặc logout)
+                //nếu tài khoản chưa xác nhận email thì yêu cầu xác nhận (chỉ được vào trang verify hoặc logout)
                 if ($user->active == FALSE && $request->segment(2) != 'verify' && $request->segment(2) != 'logout') {
                     return redirect('member/verify/' . $user->user_id)
                         ->with('notification', 'Enter the verification code sent to your email to activate your account')
@@ -35,13 +35,13 @@ class CheckMemberLogin
                 }
                 return $next($request);
             } else {
-                //Nếu sai level thì đăng xuất và đăng nhập lại
+                //Nếu sai level thì đăng xuất và chuyển hướng tới đăng nhập
                 Auth::logout();
                 return redirect()->route('member.login');
             }
         } else {
-            //nếu chưa đăng nhập thì chặn lại yêu cầu đăng nhập | Nếu đang vào trang login hoặc register thì cho qua
-            if ($request->segment(2) == 'login' || $request->segment(2) == 'register') {
+            //nếu chưa đăng nhập thì chặn lại & yêu cầu đăng nhập | Nếu đang vào trang login hoặc register hoặc verify thì cho qua
+            if ($request->segment(2) == 'login' || $request->segment(2) == 'register' || $request->segment(2) == 'verify') {
                 return $next($request);
             } else {
                 return redirect()->route('member.login');

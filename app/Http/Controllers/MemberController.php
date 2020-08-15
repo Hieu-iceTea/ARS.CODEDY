@@ -7,6 +7,7 @@ use App\Utilities\Utility;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
 class MemberController extends Controller
@@ -86,9 +87,17 @@ class MemberController extends Controller
         $user->address = $request->get('address');
         $user->save();
 
+        //Gửi email kèm mã xác nhận kích hoạt tài khoản:
+        $email_to = $user->email;
+        Mail::send('pages.member.email', compact('user'), function ($message) use ($email_to) {
+            $message->from('ars.codedy@gmail.com', 'ARS.CODEDY');
+            $message->to($email_to, $email_to);
+            //$message->cc('', ''); //gửi cho chủ cửa hàng
+            $message->subject('Activate your new account');
+        });
+
         //Tự động đăng nhập sau khi đăng ký thành công
         Auth::login($user);
-        //Auth::loginUsingId($user->user_id);
 
         //Chuyển hướng đến trang xác nhận email sau khi đăng nhập
         return redirect('member/verify/' . $user->user_id)
@@ -132,7 +141,7 @@ class MemberController extends Controller
      * Show the form for verify a new account. & Activate a new account.
      *
      * @param Request $request
-     * @param user_id $
+     * @param $user_id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      * @throws \Exception
      */
@@ -146,11 +155,13 @@ class MemberController extends Controller
                 ->where('user_id', $user_id)->first();
 
             if ($user == null) {
+                //Nếu mã xác thực sai
                 return back()
                     ->withErrors('Mã xác thực không hợp lệ!')
                     ->withInput()
                     ->with('preloader', 'none');
             } else {
+                //cập nhật DB
                 User::where('user_id', $user->user_id)
                     ->update([
                         'active' => TRUE,
@@ -158,6 +169,11 @@ class MemberController extends Controller
                         'verification_code' => null,
                         'loyalty_number' => random_int(111111, 999999),
                     ]);
+
+                //tự động đăng nhập
+                Auth::loginUsingId($user->user_id);
+
+                //Chuyển hướng tới trang member
                 return redirect()->route('member')
                     ->with('notification', 'Xác thực thành công! Bây giờ bạn có thể dùng mọi chức năng với tài khoản của bạn.')
                     ->with('preloader', 'none');
