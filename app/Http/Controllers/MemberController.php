@@ -87,9 +87,21 @@ class MemberController extends Controller
         $user->address = $request->get('address');
         $user->save();
 
+        //chỉ lấy những thông tin nào email cần chứ ko lấy hết (để tránh lộ mật khẩu)
+        // [vì chrome liên tục cảnh báo bảo mật, nhưng sau khi làm như này vẫn còn cảnh báo, :'( híc ]
+        $data_send_mail = [
+            'verification_code' => $user->verification_code,
+            'user_id' => $user->user_id,
+            'gender' => $user->gender,
+            'first_name' => $user->first_name,
+            'last_name' => $user->last_name,
+            'address' => $user->address,
+            'created_at' => $user->created_at,
+        ];
+
         //Gửi email kèm mã xác nhận kích hoạt tài khoản:
         $email_to = $user->email;
-        Mail::send('pages.member.email', compact('user'), function ($message) use ($email_to) {
+        Mail::send('pages.member.email', compact('data_send_mail'), function ($message) use ($email_to) {
             $message->from('ars.codedy@gmail.com', 'ARS.CODEDY');
             $message->to($email_to, $email_to);
             //$message->cc('', ''); //gửi cho chủ cửa hàng
@@ -97,11 +109,11 @@ class MemberController extends Controller
         });
 
         //Tự động đăng nhập sau khi đăng ký thành công
-        Auth::login($user);
+        Auth::loginUsingId($user->user_id);
 
         //Chuyển hướng đến trang xác nhận email sau khi đăng nhập
-        return redirect('member/verify/' . $user->user_id)
-            ->with('notification', 'Enter the verification code sent to your email to activate your account')
+        return redirect('member/verify')
+            ->with('notification', 'Sign Up Success! <br> Enter the verification code sent to your email to activate your account')
             ->with('preloader', 'none');
     }
 
@@ -145,10 +157,14 @@ class MemberController extends Controller
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      * @throws \Exception
      */
-    public function getVerify(Request $request, $user_id)
+    public function getVerify(Request $request)
     {
         $verification_code = $request->get('verification_code');
+        $user_id = $request->get('user_id') ?? Auth::user()->user_id ?? null;
 
+
+
+        //nếu có verification_code thì kiểm tra
         if (isset($verification_code)) {
             $user = User::all()
                 ->where('verification_code', $verification_code)
@@ -157,7 +173,7 @@ class MemberController extends Controller
             if ($user == null) {
                 //Nếu mã xác thực sai
                 return back()
-                    ->withErrors('Mã xác thực không hợp lệ!')
+                    ->withErrors('Mã xác thực không hợp lệ hoặc đã hết hạn!')
                     ->withInput()
                     ->with('preloader', 'none');
             } else {
@@ -180,9 +196,9 @@ class MemberController extends Controller
             }
         }
 
+        //nếu KHÔNG có verification_code thì hiện thị trang view
         return view('pages.member.verify');
     }
-
 
     /**
      * Logout your account.

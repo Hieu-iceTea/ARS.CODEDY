@@ -152,7 +152,7 @@
                             <p>Created At</p>
                         </div>
                         <div class="col-9">
-                            <p><b>08/08/2020</b></p>
+                            <p><b>{{ date('d/m/Y', strtotime(Auth::user()->created_at)) }}</b></p>
                         </div>
                     </div>
 

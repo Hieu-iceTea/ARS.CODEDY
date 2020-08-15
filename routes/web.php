@@ -78,7 +78,7 @@ Route::group(['prefix' => ''], function () {
             Route::post('', 'MemberController@postRegister');
         });
 
-        Route::get('verify/{user_id}', 'MemberController@getVerify');
+        Route::get('verify', 'MemberController@getVerify');
 
         Route::get('logout', 'MemberController@logout')->name('member.logout');
 

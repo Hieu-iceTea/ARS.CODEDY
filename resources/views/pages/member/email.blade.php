@@ -49,7 +49,7 @@
                         <br>
                         <strong
                             style="font-size: 32px; background-color: orange; padding: 10px; border-radius: 10px; color: white;">
-                            {{ $user->verification_code }}
+                            {{ $data_send_mail['verification_code'] }}
                         </strong>
                     </h3>
                     <div class="mt-4" style="margin-top: 25px;">
@@ -59,7 +59,7 @@
                     </div>
                     <h3 class="m-0 p-0 mt-4" style="margin-top: 20px; font-size: 18px; font-weight: 500;">
                         Nhập mã bảo mật ở trên hoặc click vào
-                        <a href="http://ars.codedy/member/verify/{{ $user->user_id }}?verification_code={{ $user->verification_code }}"
+                        <a href="http://ars.codedy/member/verify?user_id={{ $data_send_mail['user_id'] }}&verification_code={{ $data_send_mail['verification_code'] }}"
                            target="_blank" style="color: teal; font-size: 20px;">đây</a>
                         để kích hoạt tài khoản của bạn. Chúc bạn có một này vui vẻ!
                         <br>
@@ -68,12 +68,12 @@
                     <div class="row mt-5" style="margin-top: 50px; display: flex;">
                         <div class="col-6"
                              style="margin-bottom: 25px; flex: 0 0 50%; width: 50%; box-sizing: border-box;">
-                            <b>{{ \App\Utilities\Utility::$gender[$user->gender] . '. ' . $user->first_name . ' ' . $user->last_name }}</b>
+                            <b>{{ \App\Utilities\Utility::$gender[$data_send_mail['gender']] . '. ' . $data_send_mail['first_name'] . ' ' . $data_send_mail['last_name'] }}</b>
                             <br>
-                            <span>{{ $user->address }}</span>
+                            <span>{{ $data_send_mail['address'] }}</span>
                         </div>
                         <div class="col-6" style="flex: 0 0 50%; width: 50%; box-sizing: border-box;">
-                            <b>Ngày đăng ký: {{ date('d/m/Y H:i', strtotime($user->created_at)) }}</b>
+                            <b>Ngày đăng ký: {{ date('d/m/Y H:i', strtotime($data_send_mail['created_at'])) }}</b>
                             <br>
                             <b>Được cấp bởi: ARS.CODEDY</b>
                             <br>
@@ -94,7 +94,7 @@
                         <td class="pl-3" style=" padding-left:15px;">
                                 <span class="d-inline"
                                       style="color:#424853; font-family:trebuchet,sans-serif; font-size:16px; font-weight:normal; line-height:22px;">
-                                    Quý khách vui lòng kích hoạt tài khoản trước {{ date('d/m/Y, H:i', strtotime($user->created_at . ' +5 day')) }} LTC. Sau thời
+                                    Quý khách vui lòng kích hoạt tài khoản trước {{ date('d/m/Y, H:i', strtotime($data_send_mail['created_at'] . ' +5 day')) }} LTC. Sau thời
                                     gian đó, nếu chúng tôi vẫn chưa nhận được thông tin kích hoạt, hệ thống sẽ tự động
                                     xóa mã kích hoạt này.
                                 </span>
