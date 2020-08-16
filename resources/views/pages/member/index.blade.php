@@ -142,7 +142,11 @@
                         <p>Last Updated At</p>
                     </div>
                     <div class="col-9">
-                        <p><b>{{ date('d/m/Y H:i', strtotime(Auth::user()->updated_at)) }}</b></p>
+                        @if(Auth::user()->updated_at != null)
+                            <p><b>{{ date('d/m/Y H:i', strtotime(Auth::user()->updated_at)) }}</b></p>
+                        @else
+                            <p><b>Not updated yet</b></p>
+                        @endif
                     </div>
                 </div>
 

@@ -13,7 +13,7 @@
                     <div class="alert alert-danger" role="alert">
                         <ul style="list-style: disc" class="ml-3">
                             @foreach($errors->all() as $error)
-                                <li>{{ $error }}</li>
+                                <li>{!! $error  !!}</li>
                             @endforeach
                         </ul>
                     </div>

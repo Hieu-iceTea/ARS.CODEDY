@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Model\Ticket;
 use App\Model\Airport;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TicketController extends Controller
 {
@@ -16,7 +17,7 @@ class TicketController extends Controller
     {
         $code = $request->get('code');
 
-        $tickets = Ticket::all()->where('user_id', 1);
+        $tickets = Ticket::all()->where('user_id', Auth::user()->user_id);
         $addressAirports = Airport::select('name', 'airport_id', 'location', 'code')->get();
 
         return view('pages.ticket.index', compact('tickets', 'addressAirports'));

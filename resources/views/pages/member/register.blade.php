@@ -57,6 +57,14 @@
                         </label>
                     </div>
 
+                    <div class="pass">
+                        <label for="password">
+                            <input type="password" name="password_confirmation" id="password_confirmation"
+                                   placeholder="Password Confirmation"
+                                   value="{{ old('password_confirmation') }}">
+                        </label>
+                    </div>
+
                     <div class="name">
                         <label for="firstlabel">
                             <input type="text" id="firstlabel" name="first_name"

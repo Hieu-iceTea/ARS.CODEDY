@@ -40,7 +40,7 @@ class UserRequest extends FormRequest
         if ($this->is('member/register')) {
             $rules = [
                 'user_name' => 'required|min:6|max:64|unique:user,user_name' . $except,
-                'password' => 'required|max:64|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/',
+                'password' => 'required|max:64|confirmed|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/',
 
                 'email' => 'required|email',
                 'gender' => 'required|numeric',
@@ -79,6 +79,7 @@ class UserRequest extends FormRequest
         return [
             'user_name.unique' => '[User Name] Tên đăng nhập đã được đăng kí.',
             'password.regex' => '[Password] Tối thiểu sáu ký tự, ít nhất một ký tự hoa, một ký tự viết thường, một số và một ký tự đặc biệt',
+            'password.confirmed' => '[Password] Xác nhận mật khẩu không khớp.',
             'email.email' => '[Email] Phải là định dạng email',
             'gender.numeric' => '[Gender] Phải là ID (kiểu số)',
             'first_name.regex' => '[First Name] Không bao gồm số',
