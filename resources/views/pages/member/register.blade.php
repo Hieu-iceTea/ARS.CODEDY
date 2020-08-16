@@ -124,7 +124,7 @@
                     </div>
 
                     <div class="form-group text-center">
-                        <button class="btn" type="submit" name="button" onclick="preloaderActive()">Register</button>
+                        <button class="btn" type="submit" name="button" onclick="preloaderActive(9999)">Register</button>
                     </div>
                 </form>
             </div>
