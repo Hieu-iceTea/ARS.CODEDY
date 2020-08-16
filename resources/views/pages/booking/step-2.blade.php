@@ -21,12 +21,12 @@
                     <div class="col">
                         <div class="home_slider_content">
                             <div class="home_title mt-5"><h2>Get your flight</h2></div>
+                            <span id="target_when_failedValidation"></span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 
     <!-- Body -->
@@ -115,7 +115,7 @@
                         @for($i = 1; $i <= $passenger_count['adults']; ++$i)
                             <div class="row mb-4">
                                 <div class="card w-100">
-                                    <h5 class="card-header title_card">Passenger <span>(adults {{ $i }})</span></h5>
+                                    <h5 class="card-header title_card">Passenger {{$count}} <span>(Adults)</span></h5>
                                     <input type="hidden" name="passengers[{{$count}}][passenger_type]" value=1>
                                     <div class="card-body">
                                         <div class="row">
@@ -158,18 +158,9 @@
                                             <div class="col-4">
                                                 <div>Date of birth *</div>
                                                 <div class="input-group">
-                                                    <input name="passengers[{{$count}}][dob]" type="date"
+                                                    <input name="passengers[{{$count++}}][dob]" type="date"
                                                            class="form-control w-75"
                                                            placeholder="Departure">
-                                                </div>
-                                            </div>
-                                            <div class="col-8" style="display: none">
-                                                <div>Come with the passengers</div>
-                                                <div class="input-group">
-                                                    <input name="passengers[{{$count++}}][with_passenger]" type="text"
-                                                           class="form-control"
-                                                           placeholder=""
-                                                           aria-label="Username" aria-describedby="basic-addon1">
                                                 </div>
                                             </div>
                                         </div>
@@ -179,14 +170,13 @@
                                     <p>* required fields</p>
                                 </div>
                             </div>
-
                         @endfor
 
                         {{--Children--}}
                         @for($i = 1; $i <= $passenger_count['children']; ++$i)
                             <div class="row mb-4">
                                 <div class="card w-100">
-                                    <h5 class="card-header title_card">Passenger <span>(children {{ $i }})</span></h5>
+                                    <h5 class="card-header title_card">Passenger {{$count}} <span>(Children)</span></h5>
                                     <input type="hidden" name="passengers[{{$count}}][passenger_type]" value=2>
                                     <div class="card-body">
                                         <div class="row">
@@ -229,18 +219,9 @@
                                             <div class="col-4">
                                                 <div>Date of birth *</div>
                                                 <div class="input-group">
-                                                    <input name="passengers[{{$count}}][dob]" type="date"
+                                                    <input name="passengers[{{$count++}}][dob]" type="date"
                                                            class="form-control w-75"
                                                            placeholder="Departure">
-                                                </div>
-                                            </div>
-                                            <div class="col-8" style="display: none">
-                                                <div>Come with the passengers</div>
-                                                <div class="input-group">
-                                                    <input name="passengers[{{$count++}}][with_passenger]" type="text"
-                                                           class="form-control"
-                                                           placeholder=""
-                                                           aria-label="Username" aria-describedby="basic-addon1">
                                                 </div>
                                             </div>
                                         </div>
@@ -256,7 +237,7 @@
                         @for($i = 1; $i <= $passenger_count['infant']; ++$i)
                             <div class="row mb-4">
                                 <div class="card w-100">
-                                    <h5 class="card-header title_card">Passenger <span>(Infant {{ $i }})</span></h5>
+                                    <h5 class="card-header title_card">Passenger {{$count}} <span>(Infant)</span></h5>
                                     <input type="hidden" name="passengers[{{$count}}][passenger_type]" value=3>
                                     <div class="card-body">
                                         <div class="row">
@@ -429,7 +410,8 @@
                     {{-- cart_info bên phải --}}
                     <div class=" col-lg-3 mt-5">
                         <div class="card cart-info  w-100" style="width: 18rem;">
-                            <img class="card-img-top" src="img/airport/{{ $booking_session['flightSchedule']->airportTo->image }}"
+                            <img class="card-img-top"
+                                 src="img/airport/{{ $booking_session['flightSchedule']->airportTo->image }}"
                                  alt="Card image cap">
                             <div class="card-body text-center" style="position: sticky; top:0;z-index: 10">
                                 <h4><span>{{ $booking_session['flightSchedule']->airportFrom->name }}</span>
@@ -478,16 +460,22 @@
                                 <hr>
 
                                 <p class="card-text">Adults: {{ $booking_session['passenger_count']['adults'] }} *
-                                    <span class="sub_total">{{ number_format($booking_session['seat_price'], 0, ',', '.') }}</span>
-                                    = <span id="total_price_adults">{{ number_format($booking_session['passenger_count']['adults'] * $booking_session['seat_price'], 0, ',', '.') }}</span>
+                                    <span
+                                        class="sub_total">{{ number_format($booking_session['seat_price'], 0, ',', '.') }}</span>
+                                    = <span
+                                        id="total_price_adults">{{ number_format($booking_session['passenger_count']['adults'] * $booking_session['seat_price'], 0, ',', '.') }}</span>
                                 </p>
                                 <p class="card-text">Children: {{ $booking_session['passenger_count']['children'] }} *
-                                    <span class="sub_total">{{ number_format($booking_session['seat_price'], 0, ',', '.') }}</span>
-                                    = <span id="total_price_children">{{ number_format($booking_session['passenger_count']['children'] * $booking_session['seat_price'], 0, ',', '.') }}</span>
+                                    <span
+                                        class="sub_total">{{ number_format($booking_session['seat_price'], 0, ',', '.') }}</span>
+                                    = <span
+                                        id="total_price_children">{{ number_format($booking_session['passenger_count']['children'] * $booking_session['seat_price'], 0, ',', '.') }}</span>
                                 </p>
                                 <p class="card-text">Infant: {{ $booking_session['passenger_count']['infant'] }} *
-                                    <span class="sub_total">{{ number_format($booking_session['seat_price'], 0, ',', '.') }}</span>
-                                    = <span id="total_price_infant">{{ number_format($booking_session['passenger_count']['infant'] * $booking_session['seat_price'], 0, ',', '.') }}</span>
+                                    <span
+                                        class="sub_total">{{ number_format($booking_session['seat_price'], 0, ',', '.') }}</span>
+                                    = <span
+                                        id="total_price_infant">{{ number_format($booking_session['passenger_count']['infant'] * $booking_session['seat_price'], 0, ',', '.') }}</span>
                                 </p>
                             </div>
                         </div>

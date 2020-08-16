@@ -81,7 +81,7 @@
                         <td class="pl-3" style=" padding-left:15px;">
                             <span class="d-inline"
                                   style="color:#424853; font-family:trebuchet,sans-serif; font-size:16px; font-weight:normal; line-height:22px;">
-                                Quý khách vui lòng thanh toán trước {{ date('d/m/Y', strtotime($ticket->created_at . ' +5 day')) }} LTC. Sau thời
+                                Quý khách vui lòng thanh toán trước {{ date('d/m/Y H:i', strtotime($ticket->created_at . ' +5 day')) }} LTC. Sau thời
                                 gian đó, nếu chúng tôi vẫn chưa nhận được thanh toán, hệ thống sẽ tự động hủy đặt
                                 chỗ của bạn.
                             </span>
@@ -172,23 +172,27 @@
                         <b>Extra services</b>
                     </div>
                     <div class="row pl-3 py-2" style="background-color: #fff; padding: 10px 20px;">
-                        <table class="table table-sm table-hover"
-                               style="text-align: left;  width: 100%; margin-bottom: 5px; border-collapse: collapse;">
-                            <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Description</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($ticket->extraServices() as $extraService)
+                        @if(count($ticket->extraServices()) > 0)
+                            <table class="table table-sm table-hover"
+                                   style="text-align: left;  width: 100%; margin-bottom: 5px; border-collapse: collapse;">
+                                <thead>
                                 <tr>
-                                    <td style="border-top: 1px solid #dee2e6;">{{ $extraService->name }}</td>
-                                    <td style="border-top: 1px solid #dee2e6;">{!! $extraService->description !!}</td>
+                                    <th>Name</th>
+                                    <th>Description</th>
                                 </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                @foreach($ticket->extraServices() as $extraService)
+                                    <tr>
+                                        <td style="border-top: 1px solid #dee2e6;">{{ $extraService->name }}</td>
+                                        <td style="border-top: 1px solid #dee2e6;">{!! $extraService->description !!}</td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        @else
+                            <p>No extra services are included</p>
+                        @endif
                     </div>
                 </div>
             </div>

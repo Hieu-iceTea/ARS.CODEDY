@@ -21,12 +21,12 @@
                     <div class="col">
                         <div class="home_slider_content">
                             <div class="home_title mt-5"><h2>Get your flight</h2></div>
+                            <span id="target_when_failedValidation"></span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 
     <!-- Body -->

@@ -174,6 +174,7 @@
                                     </div>
                                     <button class="home_search_button" type="submit">search</button>
                                 </div>
+                                <input type="hidden" id="total_passenger" name="total_passenger">
                             </form>
                         </div>
                     </div>

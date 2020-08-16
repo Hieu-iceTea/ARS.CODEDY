@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BookingRequest;
 use App\Model\Airport;
 use App\Model\ExtraService;
 use App\Model\FlightSchedule;
@@ -13,13 +14,14 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
-use phpDocumentor\Reflection\Types\Mixed_;
 
 class BookingController extends Controller
 {
     /**
      * Show the form for Booking/Step-1.
      *
+     * @param BookingRequest $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
      */
     public function getStep1(Request $request)
     {
@@ -74,10 +76,16 @@ class BookingController extends Controller
     /**
      * Receive data and redirect to the next page.
      *
-     * @param Request $request
+     * @param BookingRequest $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function postStep1(Request $request)
+    public function postStep1(BookingRequest $request)
     {
+        $flight_schedule_id = $request->get('flight_schedule_id');
+        if ($flight_schedule_id == '') {
+            return redirect()->back()->withInput()->withErrors('Please choose flight');
+        }
+
         //get data from form (in hidden-field)
         $booking_session = [
             'flight_schedule_id' => $request->get('flight_schedule_id'),
@@ -119,9 +127,10 @@ class BookingController extends Controller
     /**
      * Receive data and redirect to the next page.
      *
-     * @param Request $request
+     * @param BookingRequest $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function postStep2(Request $request)
+    public function postStep2(BookingRequest $request)
     {
         //get data from request:
         $new_data = [
@@ -157,8 +166,10 @@ class BookingController extends Controller
     /**
      * Receive data and redirect to the next page.
      *
+     * @param BookingRequest $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function postStep3(Request $request)
+    public function postStep3(BookingRequest $request)
     {
         //get data from request:
         $new_data = [
@@ -196,10 +207,10 @@ class BookingController extends Controller
     /**
      * Receive data and redirect to the completed page.
      *
-     * @param Request $request
+     * @param BookingRequest $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function postStep4(Request $request)
+    public function postStep4(BookingRequest $request)
     {
         $pay_type = $request->get('pay_type');
 
@@ -248,7 +259,7 @@ class BookingController extends Controller
             $passenger->first_name = $item['first_name'];
             $passenger->last_name = $item['last_name'];
             $passenger->dob = $item['dob'];
-            $passenger->with_passenger = $item['with_passenger'];
+            $passenger->with_passenger = $item['with_passenger'] ?? null;
             $passenger->save();
             if ($passenger->passenger_id == '') {
                 return back()->withErrors('Cannot add data to table: [Passenger]')->with('preloader', 'none');
@@ -278,7 +289,16 @@ class BookingController extends Controller
         return view('pages.booking.complete', compact('ticket'));
     }
 
-    //Common method
+    // = = = = = = = = = = = = = = = = = = = = Common method = = = = = = = = = = = = = = = = = = = = //
+
+    /**
+     * Cập nhật session.
+     * Thêm $data mới vào session hiện tại theo $key.
+     * Nếu data mới trùng tên có sẵn trong session đang gọi thì ghi đè nó.
+     *
+     * @param $key
+     * @param $data
+     */
     private function updateSession($key, $data)
     {
         //get data from Session:

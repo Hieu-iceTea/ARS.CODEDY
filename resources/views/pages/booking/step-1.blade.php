@@ -21,13 +21,14 @@
                     <div class="col">
                         <div class="home_slider_content">
                             <div class="home_title mt-5"><h2>Get your flight</h2></div>
+                            <span id="target_when_failedValidation"></span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
+
 
     <!-- Body -->
     <div class="body_booking container-fluid">
@@ -125,7 +126,7 @@
                                                         <span>Select flight</span>
                                                         <input id="check_eco_{{ $flightSchedule->flight_schedule_id }}"
                                                                class="ml-1" name="select_flight" value="1" type="radio"
-                                                               required
+
                                                                onclick="setValue({{ $flightSchedule->flight_schedule_id }}, this.value, {{ $flightSchedule->priceSeatType->eco_price }}, {{ $searchInput['adults'] }}, {{ $searchInput['children'] }}, {{ $searchInput['infant'] }})">
                                                         <p>{{ number_format($flightSchedule->priceSeatType->eco_price, 0, ',', '.') }}
                                                             VND</p>
@@ -138,7 +139,7 @@
                                                         <span>Select flight </span>
                                                         <input id="check_plus_{{ $flightSchedule->flight_schedule_id }}"
                                                                class="ml-1" name="select_flight" value="2" type="radio"
-                                                               required
+
                                                                onclick="setValue({{ $flightSchedule->flight_schedule_id }}, this.value, {{ $flightSchedule->priceSeatType->plus_price }}, {{ $searchInput['adults'] }}, {{ $searchInput['children'] }}, {{ $searchInput['infant'] }})">
                                                         <p>{{ number_format($flightSchedule->priceSeatType->plus_price, 0, ',', '.') }}
                                                             VND</p>
@@ -152,7 +153,7 @@
                                                         <input
                                                             id="check_business_{{ $flightSchedule->flight_schedule_id }}"
                                                             class="ml-1" name="select_flight" value="3"
-                                                            type="radio" required
+                                                            type="radio"
                                                             onclick="setValue({{ $flightSchedule->flight_schedule_id }}, this.value, {{ $flightSchedule->priceSeatType->business_price }}, {{ $searchInput['adults'] }}, {{ $searchInput['children'] }}, {{ $searchInput['infant'] }})">
                                                         <p>{{ number_format($flightSchedule->priceSeatType->business_price, 0, ',', '.') }}
                                                             VND</p>

@@ -26,7 +26,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <!-- Body -->
@@ -204,7 +203,7 @@
                                                                    onclick="preloaderActive()"
                                                                    id="pay_type_{{ $payType->pay_type_id }}"
                                                                    value="{{ $payType->pay_type_id }}"
-                                                                   {{ old('pay_type') == $payType->pay_type_id ? 'checked' : '' }} required>
+                                                                   {{ old('pay_type') == $payType->pay_type_id ? 'checked' : '' }}>
                                                         </div>
                                                     </div>
                                                 </label>
