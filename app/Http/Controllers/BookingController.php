@@ -9,9 +9,11 @@ use App\Model\Passenger;
 use App\Model\PayType;
 use App\Model\Ticket;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
+use phpDocumentor\Reflection\Types\Mixed_;
 
 class BookingController extends Controller
 {
@@ -21,7 +23,7 @@ class BookingController extends Controller
      */
     public function getStep1(Request $request)
     {
-        //Kiểm tra phiên session còn tồn tại không? Nếu không thì quay về trang chủ và báo lỗi
+        //Kiểm tra dữ liệu nhập vào có null không? Nếu null thì quay về trang chủ và báo lỗi
         if ($request->get('from') == '') {
             return redirect('/')
                 ->with('notification', 'Please search for your flight first!')
@@ -73,7 +75,6 @@ class BookingController extends Controller
      * Receive data and redirect to the next page.
      *
      * @param Request $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function postStep1(Request $request)
     {
@@ -90,7 +91,7 @@ class BookingController extends Controller
         //put to session
         $this->updateSession('booking_session', $booking_session);
 
-        return redirect('booking/step-2')->with('next', 'step-2');
+        return redirect('booking/step-2');
     }
 
     /**
@@ -98,12 +99,12 @@ class BookingController extends Controller
      *
      * @param Request $request
      */
-    public function getStep2()
+    public function getStep2(Request $request)
     {
         //Kiểm tra phiên session còn tồn tại không? Nếu không thì quay về trang chủ và báo lỗi
         if (!Session::has('booking_session') || Session::get('booking_session') === null) {
             return redirect('/')
-                ->withErrors('Session expires, please search again for your flight')
+                ->withErrors('Session expires. <br> please search again for your flight')
                 ->with('preloader', 'none');
         }
 
@@ -118,6 +119,7 @@ class BookingController extends Controller
     /**
      * Receive data and redirect to the next page.
      *
+     * @param Request $request
      */
     public function postStep2(Request $request)
     {
@@ -130,7 +132,7 @@ class BookingController extends Controller
         //update booking_session:
         $this->updateSession('booking_session', $new_data);
 
-        return redirect('booking/step-3')->with('next', 'step-3');
+        return redirect('booking/step-3');
     }
 
     /**
@@ -139,16 +141,10 @@ class BookingController extends Controller
      */
     public function getStep3()
     {
-//        if (!session('next') == 'step-3') {
-//            return redirect('/')
-//                ->withErrors('Session expires, please search again for your flight')
-//                ->with('preloader', 'none');
-//        }
-
         //Kiểm tra phiên session còn tồn tại không? Nếu không thì quay về trang chủ và báo lỗi
         if (!Session::has('booking_session') || Session::get('booking_session') === null) {
             return redirect('/')
-                ->withErrors('Session expires, please search again for your flight')
+                ->withErrors('Session expires! <br> please search again for your flight')
                 ->with('preloader', 'none');
         }
 
@@ -173,7 +169,7 @@ class BookingController extends Controller
         //update booking_session:
         $this->updateSession('booking_session', $new_data);
 
-        return redirect('booking/step-4')->with('next', 'step-4');
+        return redirect('booking/step-4');
     }
 
     /**
@@ -182,16 +178,10 @@ class BookingController extends Controller
      */
     public function getStep4()
     {
-        //        if (!session('next') == 'step-4') {
-//            return redirect('/')
-//                ->withErrors('Session expires, please search again for your flight')
-//                ->with('preloader', 'none');
-//        }
-
         //Kiểm tra phiên session còn tồn tại không? Nếu không thì quay về trang chủ và báo lỗi
         if (!Session::has('booking_session') || Session::get('booking_session') === null) {
             return redirect('/')
-                ->withErrors('Session expires, please search again for your flight')
+                ->withErrors('Session expires! <br> please search again for your flight')
                 ->with('preloader', 'none');
         }
 
@@ -217,7 +207,7 @@ class BookingController extends Controller
             return back()
                 ->withInput()
                 ->setTargetUrl('#payment_details')
-                ->withErrors('Currently, we do not support online payments. Please choose "Pay Later" in the payment methods section.')
+                ->withErrors('Currently, we do not support online payments. <br> Please choose "Pay Later" in the payment methods section.')
                 ->with('preloader', 'none');
         }
         //Get data from Session & Request:
@@ -226,13 +216,13 @@ class BookingController extends Controller
 
         //Insert to Ticket:
         $ticket = new Ticket();
-        $ticket->user_id = 1;
+        $ticket->user_id = Auth::user()->user_id ?? null;
         $ticket->flight_schedule_id = $booking_session['flight_schedule_id'];
         //$ticket->promotion_id = 'promotion_id';
         $ticket->pay_type_id = $booking_session['seat_type'];
         $ticket->extra_service_ids = implode(',', $booking_session['extra_service_ids'] ?? []);
         $ticket->seat_type = $booking_session['seat_type'];
-        //$ticket->status = 'status';
+        //$ticket->status = 'status'; //đã đặt mặc định là 1 trong DB
         $ticket->code = Str::upper(Str::random(6));
         $ticket->contact_gender = $booking_session['contact']['contact_gender'];
         $ticket->contact_first_name = $booking_session['contact']['contact_firstname'];
@@ -274,19 +264,13 @@ class BookingController extends Controller
             $message->subject('Your Reservation Details');
         });
 
-        return redirect('booking/complete/' . $ticket->ticket_id)->with('next', 'complete');
+        return redirect('booking/complete/' . $ticket->ticket_id);
     }
 
     public function complete($id)
     {
         //Xóa session liên quan đến booking
-        //Session::forget('booking_session');
-
-//        if (!session('next') == 'complete') {
-//            return redirect('/')
-//                ->withErrors('Session expires, please search again for your flight')
-//                ->with('preloader', 'none');
-//        }
+        Session::forget('booking_session');
 
         //get code from DataBase by ticket_id
         $ticket = Ticket::find($id);
@@ -294,6 +278,7 @@ class BookingController extends Controller
         return view('pages.booking.complete', compact('ticket'));
     }
 
+    //Common method
     private function updateSession($key, $data)
     {
         //get data from Session:
