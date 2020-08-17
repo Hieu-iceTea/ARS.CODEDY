@@ -30,46 +30,193 @@
     </div>
     <div class="tiket_detail">
         <div class="container">
-            <div class="row ml-1 my-4 ticket_title_color">
-                <h2>Ticket details</h2>
+            <div class="row my-5">
+                <div class="card w-100">
+                    <h5 class="card-header title_card">Passenger <span>(Adults)</span></h5>
+                    <input type="hidden" name="" value=1>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-3">
+                                <div>Gender *</div>
+                                <div class="input-group">
+                                    <select name="" class="custom-select"
+                                            aria-label="select with button addon">
+                                        <option value="" selected>-- Gender --</option>
+                                        <option value="1">Male</option>
+                                        <option value="2">female</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div>Middle and First/Given name *</div>
+                                <div class="input-group">
+                                    <input name="" type="text"
+                                           class="form-control"
+                                           placeholder="Middle and First/Given name"
+                                           aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div>Last/Family Name *</div>
+                                <div class="input-group">
+                                    <input name="" type="text"
+                                           class="form-control"
+                                           placeholder="Last/Family Name"
+                                           aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="ml-3" style="font-size: 80%">
+                                Please enter your full name as it appears on your passport.
+                            </p>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-4">
+                                <div>Date of birth *</div>
+                                <div class="input-group">
+                                    <input name="" type="date"
+                                           class="form-control w-75"
+                                           placeholder="Departure">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+{{--            children--}}
+            <div class="row my-5">
+                <div class="card w-100">
+                    <h5 class="card-header title_card">Passenger  <span>(Children)</span></h5>
+                    <input type="hidden" name="" value=2>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-3">
+                                <div>Gender *</div>
+                                <div class="input-group">
+                                    <select name=" class="custom-select"
+                                            aria-label="select with button addon">
+                                        <option value="" selected>-- Gender --</option>
+                                        <option value="1">Male</option>
+                                        <option value="2">female</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div>Middle and First/Given name *</div>
+                                <div class="input-group">
+                                    <input name="" type="text"
+                                           class="form-control"
+                                           placeholder="Middle and First/Given name"
+                                           aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div>Last/Family Name *</div>
+                                <div class="input-group">
+                                    <input name="" type="text"
+                                           class="form-control"
+                                           placeholder="Last/Family Name"
+                                           aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="ml-3" style="font-size: 80%">
+                                Please enter your full name as it appears on your passport.
+                            </p>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-4">
+                                <div>Date of birth *</div>
+                                <div class="input-group">
+                                    <input name="" type="date"
+                                           class="form-control w-75"
+                                           placeholder="Departure">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+{{--            infant--}}
+            <div class="row mt-4">
+                <div class="card w-100">
+                    <h5 class="card-header title_card">Passenger  <span>(Infant)</span></h5>
+                    <input type="hidden" name="" value=3>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-3">
+                                <div>Gender *</div>
+                                <div class="input-group">
+                                    <select name="" class="custom-select"
+                                            aria-label="select with button addon">
+                                        <option value="" selected>-- Gender --</option>
+                                        <option value="1">Male</option>
+                                        <option value="2">female</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div>Middle and First/Given name *</div>
+                                <div class="input-group">
+                                    <input name="" type="text"
+                                           class="form-control"
+                                           placeholder="Middle and First/Given name"
+                                           aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div>Last/Family Name *</div>
+                                <div class="input-group">
+                                    <input name="" type="text"
+                                           class="form-control"
+                                           placeholder="Last/Family Name"
+                                           aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="ml-3" style="font-size: 80%">
+                                Please enter your full name as it appears on your passport.
+                            </p>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-4">
+                                <div>Date of birth *</div>
+                                <div class="input-group">
+                                    <input name="" type="date"
+                                           class="form-control w-75"
+                                           placeholder="Departure">
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div>Come with the passengers</div>
+                                <div class="input-group">
+                                    <input name="" type="text"
+                                           class="form-control"
+                                           placeholder=""
+                                           aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <table class="table table-bordered detail_font_family">
-                <thead class="thead-dark">
-                <tr>
-                    <th scope="col" colspan="5" class="detail-background" style="background-color: #1b4b72">Customer
-                        information
-                    </th>
-                </tr>
-                </thead>
-                <tbody class="font-style">
-                <tr>
-                    <th scope="row">#</th>
-                    <th>Full name</th>
-                    <th>Gender</th>
-                    <th>Date of birth</th>
-                    <th>Guest type</th>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td><input type="text" style="border: none"></td>
-                    <td>Male</td>
-                    <td>20/02/2001</td>
-                    <td>Adults</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Truong Thanh Tu</td>
-                    <td>Female</td>
-                    <td>01/01/2020</td>
-                    <td>Baby</td>
-                </tr>
-                </tbody>
-            </table>
-
-            <a type="button" href="" class="btn mt-3 mb-5 position-sticky"
-               style="background-color: #64AF53;font-size: 18px;color: white;font-family: 'Oswald', sans-serif;font-weight: bold;width: 135px">Save
-                <span><i class="fa fa-angle-right"></i></span></a>
+            <div class="row">
+                <div class=" my-3 ml-auto">
+                    <a href=""
+                       class="btn btn-outline-primary tiket_detail_continue position-sticky continue" style="width: 150px">
+                        <span><i class="fa fa-angle-left"></i></span>
+                        Cancel
+                    </a>
+                    <a href=""
+                       class="btn btn-outline-primary tiket_detail_continue position-sticky continue ml-3" style="width: 150px">
+                        Save
+                        <span><i class="fa fa-angle-right"></i></span>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
