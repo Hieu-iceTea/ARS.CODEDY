@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Model\Passenger;
 use App\Model\Ticket;
 use App\Model\Airport;
+use App\Utilities\Utility;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -81,8 +84,28 @@ class TicketController extends Controller
      */
     public function updatePassenger(Request $request, $id)
     {
-        //
-        return redirect('ticket/detail/' . $id)->with('notification', 'Update successful');
+        //get data from Request & Update to DataBase
+        foreach ($request->passengers as $passenger) {
+            //passenger_type == 3 là trẻ sơ sinh
+            if ($passenger['passenger_type'] == 3) {
+                $with_passenger = $passenger['with_passenger'];
+            } else {
+                $with_passenger = '';
+            }
+
+            Passenger::where('passenger_id', $passenger['passenger_id'])->update([
+                'gender' => $passenger['gender'],
+                'first_name' => $passenger['first_name'],
+                'last_name' => $passenger['last_name'],
+                'dob' => $passenger['dob'],
+                'with_passenger' => $with_passenger,
+            ]);
+        }
+
+
+        return redirect()->to('ticket/detail/' . $id)
+            ->with('notification', 'Update successful')
+            ->with('preloader', 'none');
     }
 
     /**

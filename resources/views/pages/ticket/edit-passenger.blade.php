@@ -33,7 +33,9 @@
 
             <form action="" method="post">
                 {{--item--}}
-                @foreach($passengers as $passenger)
+                @foreach($passengers as $key => $passenger)
+                    <input type="hidden" name="passengers[{{ $key }}][passenger_id]" value="{{$passenger->passenger_id}}">
+                    <input type="hidden" name="passengers[{{ $key }}][passenger_type]" value="{{$passenger->passenger_type}}">
                     <div class="row mt-4">
                         <div class="card w-100">
                             <h5 class="card-header title_card">Passenger <span>
@@ -53,7 +55,7 @@
                                     <div class="col-3">
                                         <div>Gender *</div>
                                         <div class="input-group">
-                                            <select name="gender" class="custom-select"
+                                            <select name="passengers[{{ $key }}][gender]" class="custom-select"
                                                     aria-label="select with button addon">
                                                 <option>-- Gender --</option>
                                                 <option value="1" @if($passenger->gender == 1) selected @endif>Male
@@ -66,7 +68,7 @@
                                     <div class="col-5">
                                         <div>Middle and First/Given name *</div>
                                         <div class="input-group">
-                                            <input name="first_name" type="text" value="{{$passenger->first_name}}"
+                                            <input name="passengers[{{ $key }}][first_name]" type="text" value="{{$passenger->first_name}}"
                                                    class="form-control"
                                                    placeholder="Middle and First/Given name"
                                                    aria-label="Username" aria-describedby="basic-addon1">
@@ -75,7 +77,7 @@
                                     <div class="col-4">
                                         <div>Last/Family Name *</div>
                                         <div class="input-group">
-                                            <input name="last_name" type="text" value="{{$passenger->last_name}}"
+                                            <input name="passengers[{{ $key }}][last_name]" type="text" value="{{$passenger->last_name}}"
                                                    class="form-control"
                                                    placeholder="Last/Family Name"
                                                    aria-label="Username" aria-describedby="basic-addon1">
@@ -91,7 +93,7 @@
                                     <div class="col-4">
                                         <div>Date of birth *</div>
                                         <div class="input-group">
-                                            <input name="bod" type="date" value="{{$passenger->dob}}"
+                                            <input name="passengers[{{ $key }}][dob]" type="date" value="{{$passenger->dob}}"
                                                    class="form-control w-75"
                                                    placeholder="Departure">
                                         </div>
@@ -100,7 +102,7 @@
                                         <div class="col-8">
                                             <div>Come with the passengers</div>
                                             <div class="input-group">
-                                                <input name="baby" type="text" value="{{$passenger->with_passenger}}"
+                                                <input name="passengers[{{ $key }}][with_passenger]" type="text" value="{{$passenger->with_passenger}}"
                                                        class="form-control"
                                                        placeholder=""
                                                        aria-label="Username" aria-describedby="basic-addon1">
