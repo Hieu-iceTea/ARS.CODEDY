@@ -67,7 +67,10 @@ class TicketController extends Controller
      */
     public function editPassenger($id)
     {
-        return view('pages.ticket.edit-passenger');
+        $ticket = Ticket::all()->where('ticket_id', $id)->first();
+        $passengers = $ticket->passenger;
+
+        return view('pages.ticket.edit-passenger', compact('passengers'));
     }
 
     /**

@@ -30,193 +30,103 @@
     </div>
     <div class="tiket_detail">
         <div class="container">
-            <div class="row my-5">
-                <div class="card w-100">
-                    <h5 class="card-header title_card">Passenger <span>(Adults)</span></h5>
-                    <input type="hidden" name="" value=1>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-3">
-                                <div>Gender *</div>
-                                <div class="input-group">
-                                    <select name="" class="custom-select"
-                                            aria-label="select with button addon">
-                                        <option value="" selected>-- Gender --</option>
-                                        <option value="1">Male</option>
-                                        <option value="2">female</option>
-                                    </select>
+
+            <form action="" method="post">
+                {{--item--}}
+                @foreach($passengers as $passenger)
+                    <div class="row mt-4">
+                        <div class="card w-100">
+                            <h5 class="card-header title_card">Passenger <span>
+                            @if($passenger->passenger_type==1)
+                                        (Adults)
+                                    @endif
+                                    @if($passenger->passenger_type==2)
+                                        (Childent)
+                                    @endif
+                                    @if($passenger->passenger_type==3)
+                                        (Baby)
+                                    @endif
+                                    </span></h5>
+                            <input type="hidden" name="" value=3>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <div>Gender *</div>
+                                        <div class="input-group">
+                                            <select name="gender" class="custom-select"
+                                                    aria-label="select with button addon">
+                                                <option>-- Gender --</option>
+                                                <option value="1" @if($passenger->gender == 1) selected @endif>Male
+                                                </option>
+                                                <option value="2" {{ $passenger->gender == 2 ? 'selected' : '' }}>Female
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-5">
+                                        <div>Middle and First/Given name *</div>
+                                        <div class="input-group">
+                                            <input name="first_name" type="text" value="{{$passenger->first_name}}"
+                                                   class="form-control"
+                                                   placeholder="Middle and First/Given name"
+                                                   aria-label="Username" aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div>Last/Family Name *</div>
+                                        <div class="input-group">
+                                            <input name="last_name" type="text" value="{{$passenger->last_name}}"
+                                                   class="form-control"
+                                                   placeholder="Last/Family Name"
+                                                   aria-label="Username" aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-5">
-                                <div>Middle and First/Given name *</div>
-                                <div class="input-group">
-                                    <input name="" type="text"
-                                           class="form-control"
-                                           placeholder="Middle and First/Given name"
-                                           aria-label="Username" aria-describedby="basic-addon1">
+                                <div class="row">
+                                    <p class="ml-3" style="font-size: 80%">
+                                        Please enter your full name as it appears on your passport.
+                                    </p>
                                 </div>
-                            </div>
-                            <div class="col-4">
-                                <div>Last/Family Name *</div>
-                                <div class="input-group">
-                                    <input name="" type="text"
-                                           class="form-control"
-                                           placeholder="Last/Family Name"
-                                           aria-label="Username" aria-describedby="basic-addon1">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <p class="ml-3" style="font-size: 80%">
-                                Please enter your full name as it appears on your passport.
-                            </p>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col-4">
-                                <div>Date of birth *</div>
-                                <div class="input-group">
-                                    <input name="" type="date"
-                                           class="form-control w-75"
-                                           placeholder="Departure">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </div>
-{{--            children--}}
-            <div class="row my-5">
-                <div class="card w-100">
-                    <h5 class="card-header title_card">Passenger  <span>(Children)</span></h5>
-                    <input type="hidden" name="" value=2>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-3">
-                                <div>Gender *</div>
-                                <div class="input-group">
-                                    <select name=" class="custom-select"
-                                            aria-label="select with button addon">
-                                        <option value="" selected>-- Gender --</option>
-                                        <option value="1">Male</option>
-                                        <option value="2">female</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-5">
-                                <div>Middle and First/Given name *</div>
-                                <div class="input-group">
-                                    <input name="" type="text"
-                                           class="form-control"
-                                           placeholder="Middle and First/Given name"
-                                           aria-label="Username" aria-describedby="basic-addon1">
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div>Last/Family Name *</div>
-                                <div class="input-group">
-                                    <input name="" type="text"
-                                           class="form-control"
-                                           placeholder="Last/Family Name"
-                                           aria-label="Username" aria-describedby="basic-addon1">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <p class="ml-3" style="font-size: 80%">
-                                Please enter your full name as it appears on your passport.
-                            </p>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col-4">
-                                <div>Date of birth *</div>
-                                <div class="input-group">
-                                    <input name="" type="date"
-                                           class="form-control w-75"
-                                           placeholder="Departure">
+                                <div class="row mt-3">
+                                    <div class="col-4">
+                                        <div>Date of birth *</div>
+                                        <div class="input-group">
+                                            <input name="bod" type="date" value="{{$passenger->dob}}"
+                                                   class="form-control w-75"
+                                                   placeholder="Departure">
+                                        </div>
+                                    </div>
+                                    @if($passenger->passenger_type==3)
+                                        <div class="col-8">
+                                            <div>Come with the passengers</div>
+                                            <div class="input-group">
+                                                <input name="baby" type="text" value="{{$passenger->with_passenger}}"
+                                                       class="form-control"
+                                                       placeholder=""
+                                                       aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                </div>
-{{--            infant--}}
-            <div class="row mt-4">
-                <div class="card w-100">
-                    <h5 class="card-header title_card">Passenger  <span>(Infant)</span></h5>
-                    <input type="hidden" name="" value=3>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-3">
-                                <div>Gender *</div>
-                                <div class="input-group">
-                                    <select name="" class="custom-select"
-                                            aria-label="select with button addon">
-                                        <option value="" selected>-- Gender --</option>
-                                        <option value="1">Male</option>
-                                        <option value="2">female</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-5">
-                                <div>Middle and First/Given name *</div>
-                                <div class="input-group">
-                                    <input name="" type="text"
-                                           class="form-control"
-                                           placeholder="Middle and First/Given name"
-                                           aria-label="Username" aria-describedby="basic-addon1">
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div>Last/Family Name *</div>
-                                <div class="input-group">
-                                    <input name="" type="text"
-                                           class="form-control"
-                                           placeholder="Last/Family Name"
-                                           aria-label="Username" aria-describedby="basic-addon1">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <p class="ml-3" style="font-size: 80%">
-                                Please enter your full name as it appears on your passport.
-                            </p>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col-4">
-                                <div>Date of birth *</div>
-                                <div class="input-group">
-                                    <input name="" type="date"
-                                           class="form-control w-75"
-                                           placeholder="Departure">
-                                </div>
-                            </div>
-                            <div class="col-8">
-                                <div>Come with the passengers</div>
-                                <div class="input-group">
-                                    <input name="" type="text"
-                                           class="form-control"
-                                           placeholder=""
-                                           aria-label="Username" aria-describedby="basic-addon1">
-                                </div>
-                            </div>
-                        </div>
+                @endforeach
+
+                <div class="row">
+                    <div class=" my-3 ml-auto">
+                        <button type="submit"
+                                class="btn mt-3 w-100 position-sticky continue btn-outline-primary tiket_detail_continue position-sticky continue">
+                            Cancel <span><i class="fa fa-angle-left"></i></span>
+                        </button>
+                        <button type="submit"
+                                class="btn mt-3 w-100 position-sticky continue btn-outline-primary tiket_detail_continue position-sticky continue">
+                            Save <span><i class="fa fa-angle-right"></i></span>
+                        </button>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class=" my-3 ml-auto">
-                    <a href=""
-                       class="btn btn-outline-primary tiket_detail_continue position-sticky continue" style="width: 150px">
-                        <span><i class="fa fa-angle-left"></i></span>
-                        Cancel
-                    </a>
-                    <a href=""
-                       class="btn btn-outline-primary tiket_detail_continue position-sticky continue ml-3" style="width: 150px">
-                        Save
-                        <span><i class="fa fa-angle-right"></i></span>
-                    </a>
-                </div>
-            </div>
+                @csrf
+            </form>
         </div>
     </div>
 
