@@ -49,7 +49,7 @@
             </div>
         </div>
         <div class="card w-100">
-            <h5 class="card-header booking2_color_title tiket_detail_title">Flight information</h5>
+            <h5 class="card-header booking2_color_title tiket_detail_title">Flight Information</h5>
             <div class="row mt-3">
                 <div class="col-7 ml-5">
                     <p class="ticket_detail_fontfamily ticket_detail_fontsize">Flight to go <span
@@ -103,7 +103,7 @@
         </div>
 
         <div class="card w-100 mt-5 ">
-            <h5 class="card-header tiket_detail_title">Flight information</h5>
+            <h5 class="card-header tiket_detail_title">Passenger Information</h5>
             <div class="row mt-3">
                 <div class="card w-100 my-4 mx-5">
                     <table class="table w-100">
@@ -137,7 +137,7 @@
                                     <td>Baby</td>
                                 @endif
 
-                                <td><a style="" href="ticket/edit-passenger/0000">Change passenger name ></a></td>
+                                <td><a style="" href="ticket/edit-passenger/{{$ticket->ticket_id}}">Change passenger name ></a></td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -147,7 +147,7 @@
         </div>
 
         <div class="card w-100 mt-5">
-            <h5 class="card-header tiket_detail_title">Flight information</h5>
+            <h5 class="card-header tiket_detail_title">Payment Details</h5>
             <div class="row mt-3">
                 <div class="card w-100 my-4 mx-5">
                     <table class="table w-100">
@@ -173,7 +173,7 @@
         </div>
 
         <div class="card w-100 mt-5">
-            <h5 class="card-header tiket_detail_title">Flight information</h5>
+            <h5 class="card-header tiket_detail_title">Additional Service</h5>
             <div class="row mt-3">
                 <div class="card w-100 my-4 mx-5">
                     <table class="table w-100 ticket_detail_table">
