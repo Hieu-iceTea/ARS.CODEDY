@@ -73,7 +73,7 @@ class TicketController extends Controller
         $ticket = Ticket::all()->where('ticket_id', $id)->first();
         $passengers = $ticket->passenger;
 
-        return view('pages.ticket.edit-passenger', compact('passengers'));
+        return view('pages.ticket.edit-passenger', compact('passengers','ticket'));
     }
 
     /**

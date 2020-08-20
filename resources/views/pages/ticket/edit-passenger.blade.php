@@ -117,12 +117,12 @@
 
                 <div class="row">
                     <div class=" my-3 ml-auto">
+                        <a href="ticket/detail/{{ $ticket->ticket_id }}" class="btn mt-3  position-sticky continue btn-outline-primary tiket_detail_continue position-sticky continue mr-2" style="width: 150px">
+                            <span><i class="fa fa-angle-left"></i></span>
+                            Cancel
+                        </a>
                         <button type="submit"
-                                class="btn mt-3 w-100 position-sticky continue btn-outline-primary tiket_detail_continue position-sticky continue">
-                            Cancel <span><i class="fa fa-angle-left"></i></span>
-                        </button>
-                        <button type="submit"
-                                class="btn mt-3 w-100 position-sticky continue btn-outline-primary tiket_detail_continue position-sticky continue">
+                                class="btn mt-3  position-sticky continue btn-outline-primary tiket_detail_continue position-sticky continue" style="width: 150px">
                             Save <span><i class="fa fa-angle-right"></i></span>
                         </button>
                     </div>
