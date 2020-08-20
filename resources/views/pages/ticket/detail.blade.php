@@ -163,7 +163,8 @@
                         <tr>
                             <th scope="row">{{$count = 1}}</th>
                             <td>{{ $ticket->payType->name }}</td>
-                            <td>{{ $ticket->total_price }} VND</td>
+                            <td>{{ number_format($ticket->total_price, 0, ',', '.') }}
+                                VND</td>
                             <td>{{ \App\Utilities\Utility::$ticket_status[$ticket->status] }}</td>
                         </tr>
                         </tbody>

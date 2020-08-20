@@ -88,7 +88,6 @@
             </div>
 
             <div class="row">
-
                 <table class="table table-info-tickets table-hover ">
                     <thead class="table-top">
                     <tr>
@@ -104,8 +103,8 @@
                     @foreach($tickets as $ticket)
                         <tr>
                             <th scope="row">{{ $ticket->flightSchedule->code }}</th>
-                            <td>{{ $ticket->flightSchedule->airportFrom->location }}</td>
-                            <td>{{ $ticket->flightSchedule->airportTo->location }}</td>
+                            <td style=" text-transform: capitalize;">{{ $ticket->flightSchedule->airportFrom->location }}</td>
+                            <td style=" text-transform: capitalize;">{{ $ticket->flightSchedule->airportTo->location }}</td>
                             <td>{{ $ticket->flightSchedule->departure_at }}</td>
                             <td>{{ count($ticket->passenger->where('ticket_id',$ticket->ticket_id)) }} (
                                 Adult: {{count($ticket->passenger->where('passenger_type',1))}},
@@ -119,9 +118,7 @@
                     @endforeach
                     </tbody>
                 </table>
-
             </div>
-
         </div>
     </div>
 

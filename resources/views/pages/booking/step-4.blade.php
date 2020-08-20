@@ -308,20 +308,20 @@
 
                                                 <div class="mt-2">
                                                     <p class="card-text d-inline">Airport security</p>
-                                                    <p class="card-text d-inline float-right ">30,000 VND</p>
+                                                    <p class="card-text d-inline float-right ">30.000 VND</p>
                                                 </div>
                                                 <div>
                                                     <p class="card-text d-inline">Passenger Service ChargePassenger
                                                         Service Charge</p>
-                                                    <p class="card-text d-inline float-right ">100,000 VND</p>
+                                                    <p class="card-text d-inline float-right ">100.000 VND</p>
                                                 </div>
                                                 <div>
                                                     <p class="card-text d-inline">Convenient payment</p>
-                                                    <p class="card-text d-inline float-right ">50,000 VND</p>
+                                                    <p class="card-text d-inline float-right ">50.000 VND</p>
                                                 </div>
                                                 <div>
                                                     <p class="card-text d-inline">System and Admin Surcharge</p>
-                                                    <p class="card-text d-inline float-right ">320,000 VND</p>
+                                                    <p class="card-text d-inline float-right ">320.000 VND</p>
                                                 </div>
                                                 <div class="mt-3">
                                                     <h4 class="card-text d-inline">Total Fare</h4>
