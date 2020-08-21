@@ -9,6 +9,7 @@
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
  */
 
+/* Logo */
 .app-header.header-text-light .app-header__logo .logo-src {
     width: 135px;
     background: url(assets/images/logo/logo_ars.codedy_1line.png)
@@ -28,4 +29,13 @@
 .app-header.header-text-dark .app-header__logo .logo-src {
     width: 135px;
     background: url(assets/images/logo/logo_ars.codedy_1line.png)
+}
+/* modal */
+.modal-dialog {
+    box-shadow: none;
+}
+
+ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }

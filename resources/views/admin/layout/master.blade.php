@@ -27,6 +27,10 @@
 </head>
 
 <body>
+
+@include('notifications.all')
+@include('errors.all')
+
 <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
     {{-- app-header --}}
     @include('admin.layout.components.header')
@@ -45,6 +49,13 @@
     </div>
 </div>
 <script type="text/javascript" src="./assets/scripts/main.js"></script>
+
+<!-- Mượn tạm đống JS của front-end này để hiện thị modal -->
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/popper.js"></script>
+<script src="../js/bootstrap4.min.js"></script>
+
+<script type="text/javascript" src="./assets/scripts/my_script.js"></script>
 </body>
 
 </html>

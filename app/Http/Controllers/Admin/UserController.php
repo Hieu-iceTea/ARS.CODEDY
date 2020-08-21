@@ -26,6 +26,13 @@ class UserController extends Controller
             ->orWhere('user_name', 'like', '%' . $search . '%')
             ->paginate();
 
+        //giúp chuyển trang page sẽ đính kèm theo từ khóa search của người dùng:
+        $users->appends(['search' => $search]);
+
+        if (count($users) <= 0) {
+            return view('admin.user.index', compact('users'))->withErrors('No search results. Try to search again!');
+        }
+
         return view('admin.user.index', compact('users'));
     }
 
