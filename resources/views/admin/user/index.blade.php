@@ -41,13 +41,14 @@
 
                             <form>
                                 <div class="input-group">
-                                    <input name="search" value="" placeholder="Search" class="form-control">
+                                    <input name="search" value="{{ request('search') }}" placeholder="Search"
+                                           class="form-control">
                                     <span class="input-group-append">
-                                                <button type="submit" class="btn btn-primary">
-                                                    <i class="fa fa-search"></i>&nbsp;
-                                                    Search
-                                                </button>
-                                            </span>
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fa fa-search"></i>&nbsp;
+                                            Search
+                                        </button>
+                                    </span>
                                 </div>
                             </form>
 
@@ -72,93 +73,46 @@
                                 </thead>
                                 <tbody>
 
-                                <tr>
-                                    <td class="text-center text-muted">#345</td>
-                                    <td>
-                                        <div class="widget-content p-0">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left mr-3">
-                                                    <div class="widget-content-left">
-                                                        <img width="40" class="rounded-circle"
-                                                             src="assets/images/avatars/default.jpg" alt="">
+                                @foreach($users as $user)
+                                    <tr>
+                                        <td class="text-center text-muted">#{{ $user->user_id }}</td>
+                                        <td>
+                                            <div class="widget-content p-0">
+                                                <div class="widget-content-wrapper">
+                                                    <div class="widget-content-left mr-3">
+                                                        <div class="widget-content-left">
+                                                            <img width="40" class="rounded-circle"
+                                                                 src="assets/images/avatars/default.jpg" alt="">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="widget-content-left flex2">
-                                                    <div class="widget-heading">Hieu-iceTea</div>
-                                                    <div class="widget-subheading opacity-7">Nguyễn Đình
-                                                        Hiếu
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-center">DinhHieu8896@gmail.com</td>
-                                    <td class="text-center">
-                                        <div class="badge badge-success">Ativate</div>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="#" class="btn btn-primary btn-sm">
-                                            Details
-                                        </a>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="text-center text-muted">#347</td>
-                                    <td>
-                                        <div class="widget-content p-0">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left mr-3">
-                                                    <div class="widget-content-left">
-                                                        <img width="40" class="rounded-circle"
-                                                             src="assets/images/avatars/default.jpg" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="widget-content-left flex2">
-                                                    <div class="widget-heading">Ruben Tillman</div>
-                                                    <div class="widget-subheading opacity-7">Etiam sit
-                                                        amet
-                                                        orci eget
+                                                    <div class="widget-content-left flex2">
+                                                        <div class="widget-heading">{{ $user->user_name }}</div>
+                                                        <div class="widget-subheading opacity-7">
+                                                            {{ $user->last_name . ' ' . $user->first_name }}
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-center">Berlin</td>
-                                    <td class="text-center">
-                                        <div class="badge badge-warning">Deactive</div>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="#" class="btn btn-primary btn-sm">
-                                            Details
-                                        </a>
-                                    </td>
-                                </tr>
+                                        </td>
+                                        <td class="text-center">{{ $user->email }}</td>
+                                        <td class="text-center">
+                                            <div
+                                                class="badge badge-success">{{ $user->active == 1 ? 'Active' : 'Inactive' }}</div>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="user/detail/{{ $user->user_id }}" class="btn btn-primary btn-sm">
+                                                Details
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
 
                                 </tbody>
                             </table>
                         </div>
 
                         <div class="d-block card-footer">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination m-0">
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Previous">
-                                            <span aria-hidden="true">&laquo;</span>
-                                            <span class="sr-only">Previous</span>
-                                        </a>
-                                    </li>
-                                    <li class="active page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Next">
-                                            <span aria-hidden="true">&raquo;</span>
-                                            <span class="sr-only">Next</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
+                            {{ $users->links() }}
                         </div>
 
                     </div>
