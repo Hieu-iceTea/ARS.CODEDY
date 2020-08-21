@@ -96,5 +96,7 @@ Route::group(['prefix' => ''], function () {
 });
 
 Route::group(['namespace' => 'Admin'], function () {
-    //Code is being completed here
+    Route::group(['prefix' => 'admin'], function () {
+        Route::get('user', 'UserController@index');
+    });
 });
