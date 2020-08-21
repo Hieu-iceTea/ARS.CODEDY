@@ -14,11 +14,12 @@ class ScheduleController extends Controller
      */
     public function index(Request $request)
     {
+
         $code = $request->get('code');
 
-        $flightScheduleModel = new FlightSchedule();
-        $flightSchedules = $flightScheduleModel->getFlightScheduleByCode($code);
+        $fs = new FlightSchedule();
+        $flightSchedules = $fs->getFlightScheduleByCode($code);
 
-        return view('pages.schedule.index', compact('flightSchedules','code'));
+        return view('pages.schedule.index', compact('flightSchedules', 'code'));
     }
 }

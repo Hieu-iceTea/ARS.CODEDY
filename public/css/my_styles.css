@@ -897,8 +897,9 @@ body {
     border: 0.5px solid #ECE9E9;
     box-shadow: 5px 10px 8px #dcdcdc;
     background-color: white;
-    text-transform: uppercase;
+    text-transform: capitalize !important;
 }
+
 
 .schedule-index .container .heade-table {
     background-color: #33597C;
@@ -908,6 +909,21 @@ body {
 .schedule-index .container .table .active tr:hover {
     background-color: #faf9f9;
     color: #33597C;
+}
+
+.schedule-index .pagination-lg .page-link {
+    padding: 5px 10px !important;
+    color: black !important;
+    background: none;
+    border: none !important;
+}
+
+.schedule-index .pagination .active .page-link {
+    background: #c0c5ce
+}
+
+.schedule-index .pagination-lg .page-link:hover {
+    background: #c0c5ce
 }
 
 /************
@@ -1038,10 +1054,12 @@ body {
     height: 40px;
     width: 400px;
 }
-.register_main .register form .form-group{
+
+.register_main .register form .form-group {
     width: 400px;
     margin-top: 10px;
 }
+
 .register_main .register form .form-group button {
     width: 200px;
     background-color: #77c23c;
@@ -1061,10 +1079,11 @@ body {
     padding: 20px;
 }
 
-.login_main a{
+.login_main a {
     color: #a5a5a5;
 }
-.login_main a:hover{
+
+.login_main a:hover {
     color: #33597C;
 }
 

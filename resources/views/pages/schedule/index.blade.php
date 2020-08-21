@@ -70,7 +70,7 @@
             @if(count($flightSchedules) != 0)
                 <div class="row">
                     <table class="table">
-                        <thead class="heade-table">
+                        <thead class="heade-table text-uppercase">
                         <tr>
                             <th scope="col">CODE</th>
                             <th scope="col">TO</th>
@@ -79,7 +79,7 @@
                             <th scope="col">Arrival At</th>
                         </tr>
                         </thead>
-                        <tbody class="active text-uppercase">
+                        <tbody class="active ">
                         @foreach($flightSchedules as $flightSchedule)
                             <tr class="">
                                 <th scope="row">{{ $flightSchedule->code }}</th>
@@ -91,6 +91,9 @@
                         @endforeach
                         </tbody>
                     </table>
+                    <div class ="pagination-lg mb-5">
+                        {{ $flightSchedules->links()  }}
+                    </div>
                 </div>
             @else
                 <div class="row">
