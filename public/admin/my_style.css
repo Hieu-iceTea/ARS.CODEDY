@@ -1,0 +1,31 @@
+/*!
+ =========================================================
+ * ArchitectUI HTML Theme Dashboard - v1.0.0
+ =========================================================
+ * Product Page: https://dashboardpack.com
+ * Copyright 2019 DashboardPack (https://dashboardpack.com)
+ * Licensed under MIT (https://github.com/DashboardPack/architectui-html-theme-free/blob/master/LICENSE)
+ =========================================================
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ */
+
+.app-header.header-text-light .app-header__logo .logo-src {
+    width: 135px;
+    background: url(assets/images/logo/logo_ars.codedy_1line.png)
+}
+
+.app-sidebar.sidebar-text-light .app-header__logo .logo-src {
+    width: 135px;
+    background: url(assets/images/logo/logo_ars.codedy_1line.png)
+}
+
+.app-header__logo .logo-src {
+    height: 23px;
+    width: 135px;
+    background: url(assets/images/logo/logo_ars.codedy_1line.png);
+}
+
+.app-header.header-text-dark .app-header__logo .logo-src {
+    width: 135px;
+    background: url(assets/images/logo/logo_ars.codedy_1line.png)
+}
