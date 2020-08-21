@@ -48,7 +48,9 @@ class TicketController extends Controller
      */
     public function editSchedule($id)
     {
-        return view('pages.ticket.edit-schedule');
+        $addressAirports = Airport::select('name', 'airport_id', 'location', 'code')->get();
+
+        return view('pages.ticket.edit-schedule', compact('addressAirports'));
     }
 
     /**
@@ -73,7 +75,7 @@ class TicketController extends Controller
         $ticket = Ticket::all()->where('ticket_id', $id)->first();
         $passengers = $ticket->passenger;
 
-        return view('pages.ticket.edit-passenger', compact('passengers','ticket'));
+        return view('pages.ticket.edit-passenger', compact('passengers', 'ticket'));
     }
 
     /**
@@ -89,6 +91,7 @@ class TicketController extends Controller
             //passenger_type == 3 là trẻ sơ sinh
             if ($passenger['passenger_type'] == 3) {
                 $with_passenger = $passenger['with_passenger'];
+
             } else {
                 $with_passenger = '';
             }

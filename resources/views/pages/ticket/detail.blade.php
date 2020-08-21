@@ -92,7 +92,7 @@
                             ARS {{ \App\Utilities\Utility::$seat_type[$ticket->seat_type] }}</p>
                     </div>
                     <div class="col-3 my-3 ml-5">
-                        <a href="ticket/edit-schedule/0000"
+                        <a href="ticket/edit-schedule/{{$ticket->ticket_id}}"
                            class="btn btn-outline-primary tiket_detail_continue position-sticky continue">
                             Change flight schedules
                             <span><i class="fa fa-angle-right"></i></span>
@@ -137,7 +137,7 @@
                                     <td>Baby</td>
                                 @endif
 
-                                <td><a style="" href="ticket/edit-passenger/{{$ticket->ticket_id}}">Change passenger name ></a></td>
+                                <td><a style="" href="ticket/edit-passenger/{{$ticket->ticket_id}}">Change passenger information ></a></td>
                             </tr>
                         @endforeach
                         </tbody>
