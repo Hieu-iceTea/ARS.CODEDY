@@ -102,6 +102,114 @@ Route::group(['namespace' => 'Admin'], function () {
 
         Route::group(['prefix' => 'user'], function () {
             Route::get('', 'UserController@index');
+
+            Route::get('add', 'UserController@create');
+            Route::post('add', 'UserController@store');
+
+            Route::get('{id}', 'UserController@show');
+
+            Route::get('{id}/edit', 'UserController@edit');
+            Route::post('{id}/edit', 'UserController@update');
+
+            Route::delete('{id}', 'UserController@destroy');
+        });
+
+        Route::group(['prefix' => 'extra-service'], function () {
+            Route::get('', 'ExtraServiceController@index');
+
+            Route::get('add', 'ExtraServiceController@create');
+            Route::post('add', 'ExtraServiceController@store');
+
+            Route::get('{id}', 'ExtraServiceController@show');
+
+            Route::get('{id}/edit', 'ExtraServiceController@edit');
+            Route::post('{id}/edit', 'ExtraServiceController@update');
+
+            Route::delete('{id}', 'ExtraServiceController@destroy');
+        });
+
+        Route::group(['prefix' => 'airport'], function () {
+            Route::get('', 'AirportController@index');
+
+            Route::get('add', 'AirportController@create');
+            Route::post('add', 'AirportController@store');
+
+            Route::get('{id}', 'AirportController@show');
+
+            Route::get('{id}/edit', 'AirportController@edit');
+            Route::post('{id}/edit', 'AirportController@update');
+
+            Route::delete('{id}', 'AirportController@destroy');
+        });
+
+        Route::group(['prefix' => 'plane'], function () {
+            Route::get('', 'PlaneController@index');
+
+            Route::get('add', 'PlaneController@create');
+            Route::post('add', 'PlaneController@store');
+
+            Route::get('{id}', 'PlaneController@show');
+
+            Route::get('{id}/edit', 'PlaneController@edit');
+            Route::post('{id}/edit', 'PlaneController@update');
+
+            Route::delete('{id}', 'PlaneController@destroy');
+        });
+
+        Route::group(['prefix' => 'promotion'], function () {
+            Route::get('', 'PromotionController@index');
+
+            Route::get('add', 'PromotionController@create');
+            Route::post('add', 'PromotionController@store');
+
+            Route::get('{id}', 'PromotionController@show');
+
+            Route::get('{id}/edit', 'PromotionController@edit');
+            Route::post('{id}/edit', 'PromotionController@update');
+
+            Route::delete('{id}', 'PromotionController@destroy');
+        });
+
+        Route::group(['prefix' => 'pay-type'], function () {
+            Route::get('', 'PayTypeController@index');
+
+            Route::get('add', 'PayTypeController@create');
+            Route::post('add', 'PayTypeController@store');
+
+            Route::get('{id}', 'PayTypeController@show');
+
+            Route::get('{id}/edit', 'PayTypeController@edit');
+            Route::post('{id}/edit', 'PayTypeController@update');
+
+            Route::delete('{id}', 'PayTypeController@destroy');
+        });
+
+        Route::group(['prefix' => 'ticket'], function () {
+            Route::get('', 'TicketController@index');
+
+            Route::get('add', 'TicketController@create');
+            Route::post('add', 'TicketController@store');
+
+            Route::get('{id}', 'TicketController@show');
+
+            Route::get('{id}/edit', 'TicketController@edit');
+            Route::post('{id}/edit', 'TicketController@update');
+
+            Route::delete('{id}', 'TicketController@destroy');
+        });
+
+        Route::group(['prefix' => 'flight-schedule'], function () {
+            Route::get('', 'FlightScheduleController@index');
+
+            Route::get('add', 'FlightScheduleController@create');
+            Route::post('add', 'FlightScheduleController@store');
+
+            Route::get('{id}', 'FlightScheduleController@show');
+
+            Route::get('{id}/edit', 'FlightScheduleController@edit');
+            Route::post('{id}/edit', 'FlightScheduleController@update');
+
+            Route::delete('{id}', 'FlightScheduleController@destroy');
         });
     });
 });

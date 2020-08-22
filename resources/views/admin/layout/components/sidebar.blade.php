@@ -38,23 +38,88 @@
             <ul class="vertical-nav-menu">
 
 
-                <li class="app-sidebar__heading">ARS Manage</li>
-                <li class="{{ (request()->segment(1) == 'admin') ? 'mm-active' : '' }}">
+                <li class="app-sidebar__heading">ARS Admin</li>
+                <li class="{{ (request()->segment(2) == '') ? 'mm-active' : '' }}">
                     <a href="#">
-                        <i class="metismenu-icon pe-7s-rocket"></i>Admin
+                        <i class="metismenu-icon pe-7s-rocket"></i>Dashboards
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul>
+
                         <li>
-                            <a href="/admin" class="{{ (request()->segment(2) == '') ? 'mm-active' : '' }}">
-                                <i class="metismenu-icon"></i>Analytics Dashboard
+                            <a href="/admin"
+                               class="{{ (request()->segment(2) == '') ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>Analytics
                             </a>
                         </li>
+
+                    </ul>
+                </li>
+
+                <li class="app-sidebar__heading">ARS Manage</li>
+                <li class="{{ (request()->segment(2) != '') ? 'mm-active' : '' }}">
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-plugin"></i>Database
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+
                         <li>
-                            <a href="/admin/user" class="{{ (request()->segment(2) == 'user') ? 'mm-active' : '' }}">
+                            <a href="/admin/user"
+                               class="{{ (request()->segment(2) == 'user') ? 'mm-active' : '' }}">
                                 <i class="metismenu-icon"></i>User Manage
                             </a>
                         </li>
+
+                        <li>
+                            <a href="/admin/extra-service"
+                               class="{{ (request()->segment(2) == 'extra-service') ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>Extra Service
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/admin/airport"
+                               class="{{ (request()->segment(2) == 'airport') ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>Airport
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/admin/plane"
+                               class="{{ (request()->segment(2) == 'plane') ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>Plane
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/admin/promotion"
+                               class="{{ (request()->segment(2) == 'promotion') ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>Promotion
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/admin/pay-type"
+                               class="{{ (request()->segment(2) == 'pay-type') ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>Pay Type
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/admin/ticket"
+                               class="{{ (request()->segment(2) == 'ticket') ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>Ticket
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/admin/flight-schedule"
+                               class="{{ (request()->segment(2) == 'flight-schedule') ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>Flight Schedule
+                            </a>
+                        </li>
+
                     </ul>
                 </li>
 
