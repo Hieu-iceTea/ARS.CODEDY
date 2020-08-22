@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\FlightSchedule;
 use App\Model\Passenger;
 use App\Model\Ticket;
 use App\Model\Airport;
 use App\Utilities\Utility;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class TicketController extends Controller
 {
@@ -22,6 +24,7 @@ class TicketController extends Controller
 
         $tickets = Ticket::all()->where('user_id', Auth::user()->user_id);
         $addressAirports = Airport::select('name', 'airport_id', 'location', 'code')->get();
+
 
         return view('pages.ticket.index', compact('tickets', 'addressAirports'));
 
@@ -46,9 +49,52 @@ class TicketController extends Controller
      *
      * @param int $id
      */
-    public function editSchedule($id)
+    public function editSchedule($id, Request $request)
     {
+        //lấy dữ liệu khi chưa tìm kiếm
         $addressAirports = Airport::select('name', 'airport_id', 'location', 'code')->get();
+
+        //lấy dữ liệu khi đã tìm kiếm
+
+        if ($request->get('search') == true) {
+            //Get data from request:
+            $airport_from_id = $request->get('from');
+            $airport_to_id = $request->get('to');
+            $departure_at = $request->get('departure');
+
+            $ticket = Ticket::all()->where('ticket_id', $id)->first();
+            $passengers = $ticket->passenger;
+
+
+            $adults = count($passengers->where('passenger_type', 1));
+            $children = count($passengers->where('passenger_type', 2));
+            $infant = count($passengers->where('passenger_type', 3));
+            $totalPassenger = $adults + $children + $infant;
+
+            //get data of Airport from DataBase:
+            $airport_from = Airport::all()->where('airport_id', $airport_from_id)->first();
+            $airport_to = Airport::all()->where('airport_id', $airport_to_id)->first();
+
+            $searchInput = [
+                'airport_from_name' => $airport_from->name,
+                'airport_from_code' => $airport_from->code,
+                'airport_to_name' => $airport_to->name,
+                'airport_to_code' => $airport_to->code,
+                'departure_at' => $departure_at,
+                'adults' => $adults,
+                'children' => $children,
+                'infant' => $infant,
+                'totalPassenger' => $totalPassenger,
+            ];
+
+            //get data Flight-Schedules from DataBase:
+            $flightSchedules = FlightSchedule::where('airport_from_id', $airport_from_id)
+                ->where('airport_to_id', $airport_to_id)
+                ->where('departure_at', 'like', '%' . $departure_at . '%')
+                ->get();
+
+            return view('pages.ticket.edit-schedule', compact('addressAirports', 'flightSchedules', 'searchInput', 'airport_to'));
+        }
 
         return view('pages.ticket.edit-schedule', compact('addressAirports'));
     }
@@ -61,7 +107,7 @@ class TicketController extends Controller
      */
     public function updateSchedule(Request $request, $id)
     {
-        //
+
         return redirect('ticket/detail/' . $id)->with('notification', 'Update successful');
     }
 
