@@ -15,7 +15,8 @@
     RewriteRule ^ %1 [L,R=301]
 
     # Send Requests To Front Controller...
-    RewriteCond %{REQUEST_FILENAME} !-d
+    # FIX lỗi [Admin 403 forbidden] - Đọc file [FIX Lỗi khác.txt] trong [_Docs\Config_Guide] để thêm chi tiết
+    # RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
