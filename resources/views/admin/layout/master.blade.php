@@ -7,21 +7,13 @@
     <meta http-equiv="Content-Language" content="en">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>@yield('title') | ARS.Admin</title>
-    <link rel="shortcut icon" type="image/gif" href="{{ asset('img/favicon.gif') }}">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"/>
-    <meta name="description" content="ARS.CODEDY">
+    <meta name="description" content="This is an example dashboard created using build-in elements and components.">
+
+    <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
-    <!--
-    =========================================================
-    * ArchitectUI HTML Theme Dashboard - v1.0.0
-    =========================================================
-    * Product Page: https://dashboardpack.com
-    * Copyright 2019 DashboardPack (https://dashboardpack.com)
-    * Licensed under MIT (https://github.com/DashboardPack/architectui-html-theme-free/blob/master/LICENSE)
-    =========================================================
-    * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-    -->
+
     <link href="./main.css" rel="stylesheet">
     <link href="./my_style.css" rel="stylesheet">
 </head>
@@ -31,7 +23,8 @@
 @include('notifications.all')
 @include('errors.all')
 
-<div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+<div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar">
+
     {{-- app-header --}}
     @include('admin.layout.components.header')
 
@@ -39,21 +32,31 @@
     @include('admin.layout.components.ui-theme-settings')
 
     <div class="app-main">
-        {{-- app-sidebar --}}
+
+        {{-- sidebar --}}
         @include('admin.layout.components.sidebar')
 
-        {{-- main --}}
-        @yield('main')
+        <div class="app-main__outer">
 
-        <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+            {{-- main --}}
+            @yield('main')
+
+            {{-- footer --}}
+            @include('admin.layout.components.footer')
+
+        </div>
+
     </div>
 </div>
-<script type="text/javascript" src="./assets/scripts/main.js"></script>
 
-<!-- Mượn tạm đống JS của front-end này để hiện thị modal -->
+{{-- app-drawer --}}
+@include('admin.layout.components.app-drawer')
+
+<!-- Mượn tạm đống JS này để hiện thị modal -->
 <script src="../js/jquery-3.2.1.min.js"></script>
-<script src="../js/popper.js"></script>
-<script src="../js/bootstrap4.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="./assets/scripts/main.js"></script>
 
 <script type="text/javascript" src="./assets/scripts/my_script.js"></script>
 </body>
