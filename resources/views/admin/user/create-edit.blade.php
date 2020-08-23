@@ -1,6 +1,6 @@
 @extends('admin.layout.master')
 
-@section('title', 'User Manage')
+@section('title', request()->segment(3) == 'create' ? 'Create User' : 'Edit User')
 
 @section('main')
 
@@ -17,38 +17,27 @@
                             <i class="pe-7s-users icon-gradient bg-mean-fruit">
                             </i>
                         </div>
-                        <div>User Management | {{ request()->segment(3) == 'create' ? 'New User' : 'Edit User' }}
+                        <div>User Management | {{ request()->segment(3) == 'create' ? 'Create User' : 'Edit User' }}
                             <div class="page-title-subheading">
                                 View, create, update, delete and activate user accounts.
                             </div>
                         </div>
                     </div>
 
+                    <div class="page-title-actions">
+                        <a href="/admin/user/create" data-toggle="tooltip" title="Add new user" data-placement="bottom"
+                           class="btn-shadow mr-3 btn btn-primary">
+                                    <span class="btn-icon-wrapper pr-2 opacity-7">
+                                        <i class="fa fa-plus fa-w-20"></i>
+                                    </span>
+                            New User
+                        </a>
+                    </div>
+
                 </div>
             </div>
 
-            <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
-
-                <li class="nav-item">
-                    <a href="{{ (!str_contains(url()->current(), 'create') && !str_contains(url()->previous(), 'edit') && str_contains(url()->previous(), '/admin/user')) ? url()->previous() : '/admin/user' }}"
-                       class="nav-link active">
-                        <span class="btn-icon-wrapper pr-2 opacity-8">
-                            <i class="fa fa-angle-left fa-w-20"></i>
-                        </span>
-                        <span>Back</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <button class="nav-link btn" type="submit">
-                        <span class="btn-icon-wrapper pr-2 opacity-8">
-                            <i class="fa fa-download fa-w-20"></i>
-                        </span>
-                        <span>Save</span>
-                    </button>
-                </li>
-
-            </ul>
+            @include('admin.components.nav-tab-btn', ['urlMain' => '/admin/user/'])
 
             <div class="row">
                 <div class="col-md-12">
