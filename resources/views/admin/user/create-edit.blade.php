@@ -37,7 +37,7 @@
                 </div>
             </div>
 
-            @include('admin.components.nav-tab-btn', ['urlMain' => '/admin/user/'])
+            @include('admin.components.nav-tab-btn', ['urlMain' => '/admin/user'])
 
             <div class="row">
                 <div class="col-md-12">

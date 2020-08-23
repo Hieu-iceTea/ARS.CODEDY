@@ -35,7 +35,7 @@
 
         {{-- btn Delete --}}
         <li class="nav-item delete">
-            <form action="{{ $urlMain . request()->segment(3)}}" method="post">
+            <form action="{{ $urlMain . '/' . request()->segment(3)}}" method="post">
                 @csrf
                 @method('DELETE')
                 <button class="nav-link btn" type="submit"
