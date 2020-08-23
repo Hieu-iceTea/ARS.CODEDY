@@ -103,8 +103,8 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::group(['prefix' => 'user'], function () {
             Route::get('', 'UserController@index');
 
-            Route::get('add', 'UserController@create');
-            Route::post('add', 'UserController@store');
+            Route::get('create', 'UserController@create');
+            Route::post('create', 'UserController@store');
 
             Route::get('{id}', 'UserController@show');
 
@@ -117,8 +117,8 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::group(['prefix' => 'extra-service'], function () {
             Route::get('', 'ExtraServiceController@index');
 
-            Route::get('add', 'ExtraServiceController@create');
-            Route::post('add', 'ExtraServiceController@store');
+            Route::get('create', 'ExtraServiceController@create');
+            Route::post('create', 'ExtraServiceController@store');
 
             Route::get('{id}', 'ExtraServiceController@show');
 
@@ -131,8 +131,8 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::group(['prefix' => 'airport'], function () {
             Route::get('', 'AirportController@index');
 
-            Route::get('add', 'AirportController@create');
-            Route::post('add', 'AirportController@store');
+            Route::get('create', 'AirportController@create');
+            Route::post('create', 'AirportController@store');
 
             Route::get('{id}', 'AirportController@show');
 
@@ -145,8 +145,8 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::group(['prefix' => 'plane'], function () {
             Route::get('', 'PlaneController@index');
 
-            Route::get('add', 'PlaneController@create');
-            Route::post('add', 'PlaneController@store');
+            Route::get('create', 'PlaneController@create');
+            Route::post('create', 'PlaneController@store');
 
             Route::get('{id}', 'PlaneController@show');
 
@@ -159,8 +159,8 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::group(['prefix' => 'promotion'], function () {
             Route::get('', 'PromotionController@index');
 
-            Route::get('add', 'PromotionController@create');
-            Route::post('add', 'PromotionController@store');
+            Route::get('create', 'PromotionController@create');
+            Route::post('create', 'PromotionController@store');
 
             Route::get('{id}', 'PromotionController@show');
 
@@ -173,8 +173,8 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::group(['prefix' => 'pay-type'], function () {
             Route::get('', 'PayTypeController@index');
 
-            Route::get('add', 'PayTypeController@create');
-            Route::post('add', 'PayTypeController@store');
+            Route::get('create', 'PayTypeController@create');
+            Route::post('create', 'PayTypeController@store');
 
             Route::get('{id}', 'PayTypeController@show');
 
@@ -187,8 +187,8 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::group(['prefix' => 'ticket'], function () {
             Route::get('', 'TicketController@index');
 
-            Route::get('add', 'TicketController@create');
-            Route::post('add', 'TicketController@store');
+            Route::get('create', 'TicketController@create');
+            Route::post('create', 'TicketController@store');
 
             Route::get('{id}', 'TicketController@show');
 
@@ -201,8 +201,8 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::group(['prefix' => 'flight-schedule'], function () {
             Route::get('', 'FlightScheduleController@index');
 
-            Route::get('add', 'FlightScheduleController@create');
-            Route::post('add', 'FlightScheduleController@store');
+            Route::get('create', 'FlightScheduleController@create');
+            Route::post('create', 'FlightScheduleController@store');
 
             Route::get('{id}', 'FlightScheduleController@show');
 
