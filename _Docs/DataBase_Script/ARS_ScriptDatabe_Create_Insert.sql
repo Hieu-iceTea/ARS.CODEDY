@@ -1,5 +1,6 @@
-# Create_by: Truong Thanh Tu
-# Create_at: 17:30 2020-08-10
+# Created_by: Hieu iceTea x Truong Thanh Tu
+# Created_at: 17:30 2020-08-10
+# Updated_at: 00:10 2020-08-24
 
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = #
 #                                           Create DataBase                                           #
@@ -275,7 +276,8 @@ CREATE TABLE IF NOT EXISTS `ticket`
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = #
 #                                             Insert Data                                             #
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = #
-#Password: 123456
+
+#Default password: 123456
 
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
 VALUES (1, 'Hieu-iceTea', 'DinhHieu8896@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 3, '2020-08-08', 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '0868663315', 'Nghệ An', 123456, TRUE);
@@ -441,6 +443,10 @@ INSERT INTO price_seat_type (price_seat_type_id,eco_price, eco_qty_remain, plus_
 VALUE (45, 1699000, 30, 1799000, 50, 2799000, 20);
 INSERT INTO price_seat_type (price_seat_type_id,eco_price, eco_qty_remain, plus_price, plus_qty_remain, business_price, business_qty_remain)
 VALUE (46, 1799000, 30, 1849000, 50, 2899000, 20);
+INSERT INTO price_seat_type (price_seat_type_id,eco_price, eco_qty_remain, plus_price, plus_qty_remain, business_price, business_qty_remain)
+VALUE (47, 1899000, 30, 1899000, 50, 2999000, 20);
+INSERT INTO price_seat_type (price_seat_type_id,eco_price, eco_qty_remain, plus_price, plus_qty_remain, business_price, business_qty_remain)
+VALUE (48, 1999000, 30, 1949000, 50, 3099000, 20);
 
 INSERT INTO promotion (promotion_id, code, title, discount, qty_total, qty_remain, expiration_date, description)
 VALUES (1, 'ABC123', 'Giảm giá tháng 8', 100000, 50, 28, '2020-08-08', 'Mô tả');
@@ -562,29 +568,33 @@ VALUE (33, 1, 4, 3, 33, 'VN-630', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, description)
 VALUE (34, 1, 4, 4, 34, 'VN-631', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 'Description');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, description)
-VALUE (35, 1, 6, 5, 35, 'VN-632', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 'Description');
+VALUE (35, 1, 5, 5, 35, 'VN-632', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 'Description');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, description)
-VALUE (36, 1, 6, 6, 36, 'VN-633', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 'Description');
+VALUE (36, 1, 5, 5, 36, 'VN-633', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 'Description');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, description)
-VALUE (37, 1, 7, 7, 37, 'VN-634', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 'Description');
+VALUE (37, 1, 6, 5, 37, 'VN-634', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 'Description');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, description)
-VALUE (38, 1, 7, 8, 38, 'VN-635', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 'Description');
+VALUE (38, 1, 6, 6, 38, 'VN-635', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 'Description');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, description)
-VALUE (39, 1, 8, 9, 39, 'VN-636', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 'Description');
+VALUE (39, 1, 7, 7, 39, 'VN-636', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 'Description');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, description)
-VALUE (40, 1, 8, 10, 40, 'VN-637', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 'Description');
+VALUE (40, 1, 7, 8, 40, 'VN-637', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 'Description');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, description)
-VALUE (41, 1, 9, 6, 41, 'VN-638', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 'Description');
+VALUE (41, 1, 8, 9, 41, 'VN-638', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 'Description');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, description)
-VALUE (42, 1, 9, 8, 42, 'VN-639', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 'Description');
+VALUE (42, 1, 8, 10, 42, 'VN-639', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 'Description');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, description)
-VALUE (43, 1, 10, 5, 43, 'VN-640', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 'Description');
+VALUE (43, 1, 9, 6, 43, 'VN-640', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 'Description');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, description)
-VALUE (44, 1, 10, 6, 44, 'VN-641', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 'Description');
+VALUE (44, 1, 9, 8, 44, 'VN-641', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 'Description');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, description)
-VALUE (45, 1, 11, 8, 45, 'VN-642', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 'Description');
+VALUE (45, 1, 10, 5, 45, 'VN-642', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 'Description');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, description)
-VALUE (46, 1, 11, 9, 46, 'VN-643', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 'Description');
+VALUE (46, 1, 10, 6, 46, 'VN-643', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 'Description');
+INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, description)
+VALUE (47, 1, 11, 8, 47, 'VN-644', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 'Description');
+INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, description)
+VALUE (48, 1, 11, 9, 48, 'VN-645', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 'Description');
 
 INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, extra_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, total_passenger, description)
 VALUES (1, 1, 18, NULL, 2, '', 1, 1, 'HIEU03', 1, 'Đình Hiếu', 'Nguyễn', 'DinhHieu8896@gmail.com', '0868663316', 'Hà Nội', 6888999, 1, 'Mô tả về vé này');
@@ -608,4 +618,3 @@ INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_ty
 VALUES (10, NULL, 1, NULL, 1, '', 2, 2, 'DEMO01', 0, 'Kiều Linh', 'Trần', 'DinhHieu8896@gmail.com', '0868663315', 'Hà Nội', 2200000, 1, 'Mô tả về vé này');
 INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, extra_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, total_passenger, description)
 VALUES (11, NULL, 10, NULL, 1, '', 3, 3, 'DEMO02', 0, 'Thanh Mai', 'Phạm', 'DinhHieu8896@gmail.com', '0868663315', 'Hà Nội', 2500000, 1, 'Mô tả về vé này');
-
