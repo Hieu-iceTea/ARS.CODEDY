@@ -98,7 +98,10 @@ Route::group(['prefix' => ''], function () {
 Route::group(['namespace' => 'Admin'], function () {
     Route::group(['prefix' => 'admin'], function () {
 
-        Route::get('/', 'PageController@index');
+        Route::get('', 'PageController@index');
+
+        Route::get('login', 'PageController@getLogin');
+        Route::post('login', 'PageController@postLogin');
 
         Route::group(['prefix' => 'user'], function () {
             Route::get('', 'UserController@index');

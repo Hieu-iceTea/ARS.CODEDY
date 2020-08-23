@@ -31,6 +31,12 @@
     background: url(assets/images/logo/logo_ars.codedy_1line.png)
 }
 
+.app-logo-inverse {
+    height: 23px;
+    width: 135px;
+    background: url(assets/images/logo/logo_ars.codedy_1line.png);
+}
+
 /* modal */
 .modal-dialog {
     box-shadow: none;

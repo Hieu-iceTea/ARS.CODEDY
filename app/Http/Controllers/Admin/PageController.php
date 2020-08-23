@@ -15,4 +15,22 @@ class PageController extends Controller
     {
         return view('admin.index');
     }
+
+    /**
+     *
+     *
+     */
+    public function getLogin()
+    {
+        return view('admin.login');
+    }
+
+    /**
+     *
+     *
+     */
+    public function postLogin()
+    {
+        return redirect('admin.index');
+    }
 }
