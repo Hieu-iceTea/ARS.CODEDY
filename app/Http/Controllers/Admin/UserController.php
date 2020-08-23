@@ -129,6 +129,6 @@ class UserController extends Controller
             'deleted' => true,
         ]);
 
-        return redirect('admin/user')->with('notification', 'Deleted successfully!');
+        return redirect()->back()->with('notification', 'Deleted successfully!');
     }
 }
