@@ -25,6 +25,31 @@ class User extends Authenticatable
         return $this->hasMany(Ticket::class, 'user_id', 'user_id');
     }
 
+    public static function getItems()
+    {
+        return User::where('deleted', '=', false)->paginate();
+    }
+
+    public static function getItemById($id)
+    {
+        return User::all()->where('user_id', $id)->first();
+    }
+
+    public static function search($keyword)
+    {
+        $users = User::where('user_id', '=', $keyword)
+            ->orWhere('first_name', 'like', '%' . $keyword . '%')
+            ->orWhere('last_name', 'like', '%' . $keyword . '%')
+            ->orWhere('email', 'like', '%' . $keyword . '%')
+            ->orWhere('user_name', 'like', '%' . $keyword . '%')
+            ->paginate();
+
+        //giúp chuyển trang page sẽ đính kèm theo từ khóa search của người dùng:
+        $users->appends(['search' => $keyword]);
+
+        return $users;
+    }
+
     /**
      * The attributes that are mass assignable.
      *
