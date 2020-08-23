@@ -46,6 +46,20 @@
                 </a>
             </li>
 
+            <li class="nav-item delete">
+                <form method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button class="nav-link btn" type="submit"
+                            onclick="return confirm('Do you really want to delete this item?')">
+                        <span class="btn-icon-wrapper pr-2 opacity-8">
+                            <i class="fa fa-trash fa-w-20"></i>
+                        </span>
+                        <span>Delete</span>
+                    </button>
+                </form>
+            </li>
+
         </ul>
 
         <div class="row">
@@ -128,10 +142,10 @@
                             <label for="active" class="col-md-3 text-md-right col-form-label">Status</label>
                             <div class="col-md-9 col-xl-8">
                                 <p>
-                                    <div
-                                        class="badge badge-{{ $user->active == 1 ? 'success' : 'warning' }} mt-2">
-                                        {{ $user->active == 1 ? 'Active' : 'Inactive' }}
-                                    </div>
+                                <div
+                                    class="badge badge-{{ $user->active == 1 ? 'success' : 'warning' }} mt-2">
+                                    {{ $user->active == 1 ? 'Active' : 'Inactive' }}
+                                </div>
                                 </p>
                             </div>
                         </div>

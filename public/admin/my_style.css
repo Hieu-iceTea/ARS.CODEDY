@@ -30,6 +30,7 @@
     width: 135px;
     background: url(assets/images/logo/logo_ars.codedy_1line.png)
 }
+
 /* modal */
 .modal-dialog {
     box-shadow: none;
@@ -47,4 +48,8 @@ ul {
 
 .display_data .form-group:last-child {
     margin-bottom: 0;
+}
+
+.tabs-animated .delete .nav-link::before {
+    background-color: #d92550; /*--danger*/
 }

@@ -125,6 +125,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::where('user_id', $id)->update([
+            'deleted' => true,
+        ]);
+
+        return redirect('admin/user')->with('notification', 'Deleted successfully!');
     }
 }
