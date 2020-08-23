@@ -17,22 +17,18 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $search = $request->get('search');
+        $keyword = $request->get('search');
 
-        $users = User::where('user_id', '=', $search)
-            ->orWhere('first_name', 'like', '%' . $search . '%')
-            ->orWhere('last_name', 'like', '%' . $search . '%')
-            ->orWhere('email', 'like', '%' . $search . '%')
-            ->orWhere('user_name', 'like', '%' . $search . '%')
-            ->paginate();
+        if ($keyword != '') {
+            $users = User::search($keyword);
 
-        //giúp chuyển trang page sẽ đính kèm theo từ khóa search của người dùng:
-        $users->appends(['search' => $search]);
-
-        if (count($users) <= 0) {
+            if (count($users) > 0) {
+                return view('admin.user.index', compact('users'));
+            }
             return view('admin.user.index', compact('users'))->withErrors('No search results. Try to search again!');
         }
 
+        $users = User::getItems();
         return view('admin.user.index', compact('users'));
     }
 
@@ -42,7 +38,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.user.create-edit');
     }
 
     /**
@@ -52,7 +48,24 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User();
+
+        $user->user_name = $request->get('user_name');
+        $user->email = $request->get('email');
+        $user->password = bcrypt($request->get('password'));
+        $user->level = $request->get('level');
+        $user->gender = $request->get('gender');
+        $user->first_name = $request->get('first_name');
+        $user->last_name = $request->get('last_name');
+        $user->dob = $request->get('dob');
+        $user->phone = $request->get('phone');
+        $user->address = $request->get('address');
+//        $user->loyalty_number = $request->get('loyalty_number');
+        $user->active = $request->get('active');
+
+        $user->save();
+
+        return redirect('admin/user/' . $user->user_id)->with('notification', 'Created successfully!');
     }
 
     /**
@@ -62,7 +75,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::getItemById($id);
+
+        return view('admin.user.show', compact('user'));
     }
 
     /**
@@ -72,7 +87,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::getItemById($id);
+
+        return view('admin.user.create-edit', compact('user'));
     }
 
     /**
@@ -83,7 +100,22 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        User::where('user_id', $id)->update([
+            'user_name' => $request->get('user_name'),
+            'email' => $request->get('email'),
+//            'password' => $request->get('password'),
+            'level' => $request->get('level'),
+            'gender' => $request->get('gender'),
+            'first_name' => $request->get('first_name'),
+            'last_name' => $request->get('last_name'),
+            'dob' => $request->get('dob'),
+            'phone' => $request->get('phone'),
+            'address' => $request->get('address'),
+//            'loyalty_number' => $request->get('loyalty_number'),
+            'active' => $request->get('active'),
+        ]);
+
+        return redirect('admin/user/' . $id)->with('notification', 'Updated successfully!');
     }
 
     /**

@@ -39,3 +39,12 @@ ul {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
+
+.display_data p {
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.display_data .form-group:last-child {
+    margin-bottom: 0;
+}

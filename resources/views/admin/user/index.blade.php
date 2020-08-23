@@ -14,13 +14,13 @@
                     </div>
                     <div>User Management
                         <div class="page-title-subheading">
-                            Add new, edit, delete and activate user accounts.
+                            View, create, update, delete and activate user accounts.
                         </div>
                     </div>
                 </div>
 
                 <div class="page-title-actions">
-                    <a href="#" data-toggle="tooltip" title="Add new user" data-placement="bottom"
+                    <a href="/admin/user/create" data-toggle="tooltip" title="Add new user" data-placement="bottom"
                        class="btn-shadow mr-3 btn btn-primary">
                                     <span class="btn-icon-wrapper pr-2 opacity-7">
                                         <i class="fa fa-plus fa-w-20"></i>
@@ -96,10 +96,12 @@
                                     <td class="text-center">{{ $user->email }}</td>
                                     <td class="text-center">
                                         <div
-                                            class="badge badge-success">{{ $user->active == 1 ? 'Active' : 'Inactive' }}</div>
+                                            class="badge badge-{{ $user->active == 1 ? 'success' : 'warning' }} mt-2">
+                                            {{ $user->active == 1 ? 'Active' : 'Inactive' }}
+                                        </div>
                                     </td>
                                     <td class="text-center">
-                                        <a href="user/detail/{{ $user->user_id }}" class="btn btn-primary btn-sm">
+                                        <a href="user/{{ $user->user_id }}" class="btn btn-primary btn-sm">
                                             Details
                                         </a>
                                     </td>
