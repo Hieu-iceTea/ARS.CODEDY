@@ -10,7 +10,7 @@
 
 <!-- Content Home -->
 @section('Content')
-    <div class="home page_ticket">
+    <div class="home page_ticket my_home">
 
         <div class="background_image" style="background-image:url(img/destinations.jpg)"></div>
         <div class="home_slider_content_container mt-5">
@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="home_slider_content">
-                            <div class="home_title"><h2>About Us</h2></div>
+                            <div class="home_title" style="margin-top: 2.5rem"><h2>About Us</h2></div>
                         </div>
                     </div>
                 </div>

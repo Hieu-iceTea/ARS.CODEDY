@@ -17,6 +17,14 @@ body {
     background-color: #edf3f7;
 }
 
+.my_home {
+    height: 300px;
+}
+
+.my_home .home_title {
+    margin-top: 5rem; /*mt-5*/
+}
+
 /******************************
 
 [Table of Contents]
@@ -248,7 +256,7 @@ body {
 ************/
 
 .home_booking {
-    height: 370px;
+    height: 300px;
 }
 
 .body_booking .flight_progress_row .col-3 {
