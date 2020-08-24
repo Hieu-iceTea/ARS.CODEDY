@@ -11,11 +11,20 @@ class Utility
     const ticket_status_Reservations = 2;
     const ticket_status_Paid = 3;
     const ticket_status_Finish = 4;
+    const ticket_status_Cancel = 5;
     public static $ticket_status = [
         self::ticket_status_Unverified => 'Unverified',
         self::ticket_status_Reservations => 'Reservations',
         self::ticket_status_Paid => 'Paid',
         self::ticket_status_Finish => 'Finish',
+        self::ticket_status_Cancel => 'Cancel',
+    ];
+    public static $ticket_status_badge = [
+        self::ticket_status_Unverified => 'warning',
+        self::ticket_status_Reservations => 'info',
+        self::ticket_status_Paid => 'success',
+        self::ticket_status_Finish => 'secondary',
+        self::ticket_status_Cancel => 'danger',
     ];
 
     public static $seat_type = [

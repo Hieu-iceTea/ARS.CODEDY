@@ -59,3 +59,24 @@ ul {
 .tabs-animated .delete .nav-link::before {
     background-color: #d92550; /*--danger*/
 }
+
+/*badge_seat_type*/
+.badge_seat_type {
+    background-color: #64AF53;
+    color: white;
+    border-radius: 6px;
+    padding: 0 5px 1px 6px;
+    opacity: 1;
+}
+
+.Eco {
+    background-color: #64AF53;
+}
+
+.Plus {
+    background-color: #4EBDEC;
+}
+
+.Business {
+    background-color: #33597C;
+}

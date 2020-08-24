@@ -270,9 +270,10 @@ class BookingController extends Controller
         if ($vnp_ResponseCode != null) {
             //Nếu giao dịch bị hủy do người dùng
             if ($vnp_ResponseCode == 24) {
-                //Xóa bản ghi trong DataBase
+                //Cập nhật bản ghi trong DataBase: status = Đã Hủy
                 $ticket = Ticket::where('ticket_id', '=', $vnp_TxnRef)->update([
-                    'deleted' => true,
+                    //'deleted' => true,
+                    'status' => Utility::ticket_status_Cancel,
                     'description' => 'vé bị HỦY khi thanh toán bằng VNPay (Demo test mới ghi thế này thôi. Ahihi)',
                 ]);
 
