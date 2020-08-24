@@ -37,6 +37,11 @@ Route::group(['prefix' => ''], function () {
             Route::post('', 'BookingController@postStep4');
         });
 
+        Route::group(['prefix' => 'payment'], function () {
+            Route::get('', 'BookingController@getPayment');
+            Route::post('', 'BookingController@postPayment');
+        });
+
         Route::get('complete/{id}', 'BookingController@complete');
     });
 

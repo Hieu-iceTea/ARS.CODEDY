@@ -104,6 +104,21 @@
                                         <a href="user/{{ $user->user_id }}" class="btn btn-primary btn-sm">
                                             Details
                                         </a>
+                                        <a href="user/{{ $user->user_id }}/edit" class="btn btn-warning btn-sm">
+                                            <span class="btn-icon-wrapper opacity-8">
+                                                <i class="fa fa-edit fa-w-20"></i>
+                                            </span>
+                                        </a>
+                                        <form class="d-inline" action="{{'/admin/user/' . $user->user_id }}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger btn-sm" type="submit"
+                                                    onclick="return confirm('Do you really want to delete this item?')">
+                                                    <span class="btn-icon-wrapper opacity-8">
+                                                        <i class="fa fa-trash fa-w-20"></i>
+                                                    </span>
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

@@ -9,11 +9,18 @@ use App\Model\FlightSchedule;
 use App\Model\Passenger;
 use App\Model\PayType;
 use App\Model\Ticket;
+use App\Utilities\Utility;
+use App\Utilities\VNPay;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
+use Illuminate\View\View;
 
 class BookingController extends Controller
 {
@@ -21,7 +28,7 @@ class BookingController extends Controller
      * Show the form for Booking/Step-1.
      *
      * @param BookingRequest $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
+     * @return Application|Factory|RedirectResponse|Redirector|View
      */
     public function getStep1(Request $request)
     {
@@ -77,7 +84,7 @@ class BookingController extends Controller
      * Receive data and redirect to the next page.
      *
      * @param BookingRequest $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return Application|RedirectResponse|Redirector
      */
     public function postStep1(BookingRequest $request)
     {
@@ -119,6 +126,7 @@ class BookingController extends Controller
         //get data from Session:
         $booking_session = Session::get('booking_session');
 
+
         $passenger_count = $booking_session['passenger_count'];
 
         return view('pages.booking.step-2', compact('passenger_count', 'booking_session'));
@@ -128,7 +136,7 @@ class BookingController extends Controller
      * Receive data and redirect to the next page.
      *
      * @param BookingRequest $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return Application|RedirectResponse|Redirector
      */
     public function postStep2(BookingRequest $request)
     {
@@ -167,7 +175,7 @@ class BookingController extends Controller
      * Receive data and redirect to the next page.
      *
      * @param BookingRequest $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return Application|RedirectResponse|Redirector
      */
     public function postStep3(BookingRequest $request)
     {
@@ -189,12 +197,12 @@ class BookingController extends Controller
      */
     public function getStep4()
     {
-        //Kiểm tra phiên session còn tồn tại không? Nếu không thì quay về trang chủ và báo lỗi
-        if (!Session::has('booking_session') || Session::get('booking_session') === null) {
-            return redirect('/')
-                ->withErrors('Session expires! <br> please search again for your flight')
-                ->with('preloader', 'none');
-        }
+//        //Kiểm tra phiên session còn tồn tại không? Nếu không thì quay về trang chủ và báo lỗi
+//        if (!Session::has('booking_session') || Session::get('booking_session') === null) {
+//            return redirect('/')
+//                ->withErrors('Session expires! <br> please search again for your flight')
+//                ->with('preloader', 'none');
+//        }
 
         $booking_session = Session::get('booking_session');
         $payTypes = PayType::all();
@@ -208,76 +216,94 @@ class BookingController extends Controller
      * Receive data and redirect to the completed page.
      *
      * @param BookingRequest $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return Application|RedirectResponse|Redirector
      */
     public function postStep4(BookingRequest $request)
     {
         $pay_type = $request->get('pay_type');
 
-        if ($pay_type != 1) {
+        //Nếu không thuộc những $pay_type này, thì quay lại trang cũ báo lỗi:
+        if ($pay_type != Utility::pay_type_PayLater && $pay_type != Utility::pay_type_VNPay) {
             return back()
                 ->withInput()
                 ->setTargetUrl('#payment_details')
-                ->withErrors('Currently, we do not support online payments. <br> Please choose "Pay Later" in the payment methods section.')
+                ->withErrors('Currently, we do not support this payment method. <br> Please choose another one. Thanks! 💜💜💜')
                 ->with('preloader', 'none');
         }
-        //Get data from Session & Request:
-        $booking_session = Session::get('booking_session');
-        $pay_type = $request->get('pay_type');
 
-        //Insert to Ticket:
-        $ticket = new Ticket();
-        $ticket->user_id = Auth::user()->user_id ?? null;
-        $ticket->flight_schedule_id = $booking_session['flight_schedule_id'];
-        //$ticket->promotion_id = 'promotion_id';
-        $ticket->pay_type_id = $booking_session['seat_type'];
-        $ticket->extra_service_ids = implode(',', $booking_session['extra_service_ids'] ?? []);
-        $ticket->seat_type = $booking_session['seat_type'];
-        //$ticket->status = 'status'; //đã đặt mặc định là 1 trong DB
-        $ticket->code = Str::upper(Str::random(6));
-        $ticket->contact_gender = $booking_session['contact']['contact_gender'];
-        $ticket->contact_first_name = $booking_session['contact']['contact_firstname'];
-        $ticket->contact_last_name = $booking_session['contact']['contact_lastname'];
-        $ticket->contact_email = $booking_session['contact']['contact_email'];
-        $ticket->contact_phone = $booking_session['contact']['contact_phone'];
-        $ticket->contact_address = $booking_session['contact']['contact_address'];
-        $ticket->total_price = $booking_session['passenger_count']['total'] * $booking_session['seat_price'] + $booking_session['extraService_total_price'] + 500000;
-        $ticket->total_passenger = $booking_session['passenger_count']['total'];
-        //$ticket->description = 'description';
-        $ticket->save();
-        if ($ticket->ticket_id == '') {
-            return back()->withErrors('Cannot add data to table: [Ticket]')->with('preloader', 'none');
+        //Insert data
+        $ticket = $this->createTicket($request);
+
+        //Nếu lựa chọn thanh toán sau
+        if ($pay_type == Utility::pay_type_PayLater) {
+            $this->sendEmail($ticket);
+
+            return redirect('booking/complete/' . $ticket->ticket_id);
         }
 
-        //Insert to Passenger:
-        $passengers = $booking_session['passengers'];
-        foreach ($passengers as $item) {
-            $passenger = new Passenger();
-            $passenger->ticket_id = $ticket->ticket_id;
-            $passenger->gender = $item['gender'];
-            $passenger->passenger_type = $item['passenger_type'];
-            $passenger->first_name = $item['first_name'];
-            $passenger->last_name = $item['last_name'];
-            $passenger->dob = $item['dob'];
-            $passenger->with_passenger = $item['with_passenger'] ?? null;
-            $passenger->save();
-            if ($passenger->passenger_id == '') {
-                return back()->withErrors('Cannot add data to table: [Passenger]')->with('preloader', 'none');
-            }
+        //Nếu lựa chọn thanh toán online qua VNPay
+        if ($pay_type == Utility::pay_type_VNPay) {
+            //Lấy Url cổng thanh toán
+            $data_url = VNPay::vnpay_create_payment([
+                'vnp_TxnRef' => $ticket->ticket_id,
+                'vnp_OrderInfo' => 'Thông tin mô tả đơn hàng này ở đây',
+                'vnp_Amount' => $ticket->total_price,
+            ]);
+
+            //Chuyển hướng đến cổng Url thanh toán vừa lấy được
+            return redirect()->to($data_url);
         }
-
-        //Send email:
-        $email_to = $ticket->contact_email;
-        Mail::send('pages.booking.email', compact('ticket'), function ($message) use ($email_to) {
-            $message->from('ars.codedy@gmail.com', 'ARS.CODEDY');
-            $message->to($email_to, $email_to);
-            //$message->cc('', ''); //gửi cho chủ cửa hàng
-            $message->subject('Your Reservation Details');
-        });
-
-        return redirect('booking/complete/' . $ticket->ticket_id);
     }
 
+    /**
+     * Hiện thị form thanh toán HOẶC xử lý thanh toán ở đây
+     *
+     * @param Request $request
+     * @return Application|RedirectResponse|Redirector
+     */
+    public function getPayment(Request $request)
+    {
+        //Lấy data từ URL (do VNPay gửi về qua $vnp_Returnurl)
+        $vnp_ResponseCode = $request->get('vnp_ResponseCode'); //Mã phản hồi kết quả thanh toán. 00 = Thành công
+        $vnp_TxnRef = $request->get('vnp_TxnRef'); //ticket_id
+
+        if ($vnp_ResponseCode != null) {
+            //Nếu giao dịch bị hủy do người dùng
+            if ($vnp_ResponseCode == 24) {
+                //Xóa bản ghi trong DataBase
+                $ticket = Ticket::where('ticket_id', '=', $vnp_TxnRef)->update([
+                    'deleted' => true,
+                    'description' => 'vé bị HỦY khi thanh toán bằng VNPay (Demo test mới ghi thế này thôi. Ahihi)',
+                ]);
+
+                echo "Lỗi: Bạn đã hủy giao dịch. Dữ liệu booking của bạn sẽ bị xóa khỏi hệ thống.";
+            }
+
+            //Nếu giao dịch thành công
+            if ($vnp_ResponseCode == 00) {
+                //cập nhật trạng thái đã thanh toán trong DataBase (status)
+                Ticket::where('ticket_id', '=', $vnp_TxnRef)->update([
+                    'status' => Utility::ticket_status_Paid,
+                    'description' => 'Vé được thanh toán bằng VNPay (Demo test mới ghi thế này thôi. Ahihi)',
+                ]);
+
+                $ticket = Ticket::all()->where('ticket_id', '=', $vnp_TxnRef)->first();
+                $this->sendEmail($ticket);
+
+                return redirect('booking/complete/' . $vnp_TxnRef);
+            }
+
+            //Nếu có bất cứ lỗi gì khác
+            echo "Lỗi: thanh toán VNPay không thành công. Chi tiết xin liên hệ quản trị viên.";
+        }
+    }
+
+    /**
+     * Hiện thị thông báo đặt vé thành công
+     *
+     * @param $id
+     * @return Application|Factory|View
+     */
     public function complete($id)
     {
         //Xóa session liên quan đến booking
@@ -309,5 +335,83 @@ class BookingController extends Controller
 
         //put new data to session:
         Session::put($key, $session);
+    }
+
+    /**
+     * Tạo vé mới trong Database với tất cả thông tin trong $request & $booking_session
+     *
+     * @param $request
+     * @return RedirectResponse|mixed
+     */
+    private function createTicket($request)
+    {
+        //Get data from Session & Request:
+        $booking_session = Session::get('booking_session');
+        $pay_type_id = $request->get('pay_type');
+
+        // = = = = = = = = = = = = = = = = = = = = [01] Insert to Ticket = = = = = = = = = = = = = = = = = = = =
+        $ticket = new Ticket(); //Khởi tạo Model mới
+        $ticket->user_id = Auth::user()->user_id ?? null;
+        $ticket->flight_schedule_id = $booking_session['flight_schedule_id'];
+        //$ticket->promotion_id = 'promotion_id';
+        $ticket->pay_type_id = $pay_type_id;
+        $ticket->extra_service_ids = implode(',', $booking_session['extra_service_ids'] ?? []);
+        $ticket->seat_type = $booking_session['seat_type'];
+        //$ticket->status = 'status'; //đã đặt mặc định là 1 trong DB
+        $ticket->code = Str::upper(Str::random(6));
+        $ticket->contact_gender = $booking_session['contact']['contact_gender'];
+        $ticket->contact_first_name = $booking_session['contact']['contact_firstname'];
+        $ticket->contact_last_name = $booking_session['contact']['contact_lastname'];
+        $ticket->contact_email = $booking_session['contact']['contact_email'];
+        $ticket->contact_phone = $booking_session['contact']['contact_phone'];
+        $ticket->contact_address = $booking_session['contact']['contact_address'];
+        $ticket->total_price = $booking_session['passenger_count']['total'] * $booking_session['seat_price'] + $booking_session['extraService_total_price'] + 500000;
+        $ticket->total_passenger = $booking_session['passenger_count']['total'];
+        //$ticket->description = 'description';
+        $ticket->save(); //Lưu Model vừa khởi tạo và gán giá trị
+
+        if ($ticket->ticket_id == '') {
+            return back()->withErrors('Cannot add data to table: [Ticket]')->with('preloader', 'none');
+        }
+
+        // = = = = = = = = = = = = = = = = = = = = [02] Insert to Passenger = = = = = = = = = = = = = = = = = = = =
+        $passengers = $booking_session['passengers'];
+        foreach ($passengers as $item) {
+            $passenger = new Passenger(); //Khởi tạo Model mới
+            $passenger->ticket_id = $ticket->ticket_id;
+            $passenger->gender = $item['gender'];
+            $passenger->passenger_type = $item['passenger_type'];
+            $passenger->first_name = $item['first_name'];
+            $passenger->last_name = $item['last_name'];
+            $passenger->dob = $item['dob'];
+            $passenger->with_passenger = $item['with_passenger'] ?? null;
+            $passenger->save(); //Lưu Model vừa khởi tạo và gán giá trị
+
+            if ($passenger->passenger_id == '') {
+                return back()->withErrors('Cannot add data to table: [Passenger]')->with('preloader', 'none');
+            }
+        }
+
+        // = = = = = = = = = = = = = = = = = = = = [03] Cập nhật bảng khác = = = = = = = = = = = = = = = = = = = =
+        //Trừ số lượng ghế (sẽ làm sớm...)
+
+        return $ticket;
+    }
+
+    /**
+     * Gửi email thông báo Booking
+     *
+     * @param Ticket $ticket
+     */
+    private function sendEmail(Ticket $ticket)
+    {
+        //Send email:
+        $email_to = $ticket->contact_email;
+        Mail::send('pages.booking.email', compact('ticket'), function ($message) use ($email_to) {
+            $message->from('ars.codedy@gmail.com', 'ARS.CODEDY');
+            $message->to($email_to, $email_to);
+            //$message->cc('', ''); //gửi cho chủ cửa hàng
+            $message->subject('Your Reservation Details');
+        });
     }
 }

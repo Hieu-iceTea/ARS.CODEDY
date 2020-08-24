@@ -78,14 +78,31 @@
                                 src="https://ci6.googleusercontent.com/proxy/8eUxMUXMkvgUKX8veBCRQM5N7-jXP0Wx8KjQLaGDch2DnV_5HYw9PMgJXsoqgSR_jonTY9jAftWPKNsN5W9cUUneQ9hz7IhxH4rIXNzHMm0ijbsNjHB9m7g6XfJJ=s0-d-e1-ft#https://www.bambooairways.com/reservation/common/hosted-images/tickets.jpg"
                                 alt="">
                         </td>
-                        <td class="pl-3" style=" padding-left:15px;">
-                            <span class="d-inline"
-                                  style="color:#424853; font-family:trebuchet,sans-serif; font-size:16px; font-weight:normal; line-height:22px;">
-                                Quý khách vui lòng thanh toán trước {{ date('d/m/Y H:i', strtotime($ticket->created_at . ' +5 day')) }} LTC. Sau thời
-                                gian đó, nếu chúng tôi vẫn chưa nhận được thanh toán, hệ thống sẽ tự động hủy đặt
-                                chỗ của bạn.
-                            </span>
-                        </td>
+
+                        @if($ticket->pay_type_id == \App\Utilities\Utility::pay_type_PayLater)
+                            <td class="pl-3" style=" padding-left:15px;">
+                                <span class="d-inline"
+                                      style="color:#424853; font-family:trebuchet,sans-serif; font-size:16px; font-weight:normal; line-height:22px;">
+                                    Quý khách vui lòng thanh toán trước {{ date('d/m/Y H:i', strtotime($ticket->created_at . ' +5 day')) }} LTC. Sau thời
+                                    gian đó, nếu chúng tôi vẫn chưa nhận được thanh toán, hệ thống sẽ tự động hủy đặt
+                                    chỗ của bạn.
+                                </span>
+                            </td>
+                        @endif
+
+                        @if($ticket->pay_type_id == \App\Utilities\Utility::pay_type_VNPay && $ticket->status == \App\Utilities\Utility::ticket_status_Paid)
+                            <td class="pl-3" style=" padding-left:15px;">
+                                <span class="d-inline"
+                                      style="color:#424853; font-family:trebuchet,sans-serif; font-size:16px; font-weight:normal; line-height:22px;">
+                                    Vé đã được thanh toán qua cổng thanh toán trực tuyến VNPay. Cảm ơn quý khách đã tin dùng dịch vụ của chúng tôi!
+                                </span>
+                            </td>
+                            <td class="pl-3" style=" padding-left:10px;">
+                                <img src="https://vnpay.vn/wp-content/uploads/2020/07/Logo-VNPAYQR-update.png"
+                                     width="130px" style="margin-top: 10px;" alt="">
+                            </td>
+                        @endif
+
                     </tr>
                 </table>
             </div>
@@ -158,7 +175,7 @@
                                 <a class="btn btn-info"
                                    href="http://ars.codedy/booking/complete/{{ $ticket->ticket_id }}" target="_blank"
                                    style="background-color: #17a2b8; padding: .375rem .75rem; border-radius: .25rem; color: #fff; text-decoration: none; display: inline-block; font-size: 1rem;">
-                                    Xác nhận hành trình
+                                    Xem hành trình trên web
                                 </a>
                             </div>
                         </div>

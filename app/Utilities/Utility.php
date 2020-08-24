@@ -4,16 +4,18 @@
 namespace App\Utilities;
 
 
-use phpDocumentor\Reflection\Types\This;
-
 class Utility
 {
 
+    const ticket_status_Unverified = 1;
+    const ticket_status_Reservations = 2;
+    const ticket_status_Paid = 3;
+    const ticket_status_Finish = 4;
     public static $ticket_status = [
-        1 => 'Unverified',
-        2 => 'Reservations',
-        3 => 'Paid',
-        4 => 'Finish',
+        self::ticket_status_Unverified => 'Unverified',
+        self::ticket_status_Reservations => 'Reservations',
+        self::ticket_status_Paid => 'Paid',
+        self::ticket_status_Finish => 'Finish',
     ];
 
     public static $seat_type = [
@@ -47,4 +49,10 @@ class Utility
         self::user_level_admin => 'admin',
         self::user_level_member => 'member',
     ];
+
+    /**
+     * pay_type
+     */
+    const pay_type_PayLater = 1;
+    const pay_type_VNPay = 2;
 }
