@@ -101,7 +101,7 @@ Route::group(['prefix' => ''], function () {
 });
 
 Route::group(['namespace' => 'Admin'], function () {
-    Route::group(['prefix' => 'admin'], function () {
+    Route::group(['prefix' => 'admin', 'middleware' => 'CheckAdminLogin'], function () {
 
         Route::get('', 'PageController@index')->name('admin');
 
