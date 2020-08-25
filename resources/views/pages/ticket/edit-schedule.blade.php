@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="home_slider_content">
-                            <div class="home_title"><h2>Manage your tickets</h2></div>
+                            <div class="home_title"><h2>Change flight schedules</h2></div>
                         </div>
                     </div>
                 </div>
@@ -149,9 +149,9 @@
                                                     <div class="check eco">
                                                         <span>Select flight</span>
                                                         <input id="check_eco_{{ $flightSchedule->flight_schedule_id }}"
-                                                               class="ml-1" name="select_flight" value="1" type="radio"
+                                                               class="ml-1" name="seat_type" value="1" type="radio"
 
-                                                               onclick="setValue({{ $flightSchedule->flight_schedule_id }}, this.value, {{ $flightSchedule->priceSeatType->eco_price }}, {{ $searchInput['adults'] }}, {{ $searchInput['children'] }}, {{ $searchInput['infant'] }})">
+                                                               onclick="setValue({{ $flightSchedule->flight_schedule_id }}, this.value, {{ $flightSchedule->priceSeatType->eco_price }})">
                                                         <p>{{ number_format($flightSchedule->priceSeatType->eco_price, 0, ',', '.') }}
                                                             VND</p>
                                                     </div>
@@ -162,9 +162,9 @@
                                                     <div class="check plus">
                                                         <span>Select flight </span>
                                                         <input id="check_plus_{{ $flightSchedule->flight_schedule_id }}"
-                                                               class="ml-1" name="select_flight" value="2" type="radio"
+                                                               class="ml-1" name="seat_type" value="2" type="radio"
 
-                                                               onclick="setValue({{ $flightSchedule->flight_schedule_id }}, this.value, {{ $flightSchedule->priceSeatType->plus_price }}, {{ $searchInput['adults'] }}, {{ $searchInput['children'] }}, {{ $searchInput['infant'] }})">
+                                                               onclick="setValue({{ $flightSchedule->flight_schedule_id }}, this.value, {{ $flightSchedule->priceSeatType->plus_price }})">
                                                         <p>{{ number_format($flightSchedule->priceSeatType->plus_price, 0, ',', '.') }}
                                                             VND</p>
                                                     </div>
@@ -176,9 +176,9 @@
                                                         <span>Select flight </span>
                                                         <input
                                                             id="check_business_{{ $flightSchedule->flight_schedule_id }}"
-                                                            class="ml-1" name="select_flight" value="3"
+                                                            class="ml-1" name="seat_type" value="3"
                                                             type="radio"
-                                                            onclick="setValue({{ $flightSchedule->flight_schedule_id }}, this.value, {{ $flightSchedule->priceSeatType->business_price }}, {{ $searchInput['adults'] }}, {{ $searchInput['children'] }}, {{ $searchInput['infant'] }})">
+                                                            onclick="setValue({{ $flightSchedule->flight_schedule_id }}, this.value, {{ $flightSchedule->priceSeatType->business_price }})">
                                                         <p>{{ number_format($flightSchedule->priceSeatType->business_price, 0, ',', '.') }}
                                                             VND</p>
                                                     </div>
@@ -269,19 +269,28 @@
                 </div>
                 <input type="hidden" id="flight_schedule_id" name="flight_schedule_id" value="">
                 <input type="hidden" id="seat_type" name="seat_type" value="">
-                <input type="hidden" id="seat_price" name="seat_price" value="">
+                <input type="hidden" id="seat_type_price" name="seat_type_price" value="">
 
-                <input type="hidden" id="adults" name="passenger_count[adults]" value="">
-                <input type="hidden" id="children" name="passenger_count[children]" value="">
-                <input type="hidden" id="infant" name="passenger_count[infant]" value="">
-                <input type="hidden" id="total_passenger" name="passenger_count[total]" value="">
                 @csrf
             </form>
         </div>
     </div>
     @endif
+
+    <script type="text/javascript">
+        function setValue(flight_schedule_id, seat_type, seat_type_price) {
+            preloaderActive();
+
+            //set value to hidden-field input
+            document.getElementById('flight_schedule_id').value = flight_schedule_id;
+            document.getElementById('seat_type').value = seat_type;
+            document.getElementById('seat_type_price').value = seat_type_price;
+
+        }
+    </script>
 @endsection
 
 @section('script')
     <script src="js/custom.js"></script>
+
 @endsection

@@ -6,6 +6,7 @@ use App\Model\FlightSchedule;
 use App\Model\Passenger;
 use App\Model\Ticket;
 use App\Model\Airport;
+use App\Utilities\Utility;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -34,7 +35,6 @@ class TicketController extends Controller
     public function detail($id)
     {
 
-
         $ticket = Ticket::all()->where('ticket_id', $id)->first();
 
         return view('pages.ticket.detail', compact('ticket'));
@@ -47,6 +47,11 @@ class TicketController extends Controller
      */
     public function editSchedule($id, Request $request)
     {
+        $ticket = Ticket::all()->where('ticket_id', $id)->first();
+        if ($ticket->status == Utility::ticket_status_Finish || $ticket->status == Utility::ticket_status_Cancel) {
+            return redirect()->back()->withErrors('Invalid action')->with('preloader', 'none');
+        }
+
         //lấy dữ liệu khi chưa tìm kiếm
         $addressAirports = Airport::select('name', 'airport_id', 'location', 'code')->get();
 
@@ -103,7 +108,40 @@ class TicketController extends Controller
      */
     public function updateSchedule(Request $request, $id)
     {
+        //lấy dữ liệu từ request
+        $seat_type_price = $request->get('seat_type_price');
+        $seat_type = $request->get('seat_type');
+        $flight_schedule_id = $request->get('flight_schedule_id');
 
+        $ticket = Ticket::all()->where('ticket_id', $id)->first();
+
+        //tính tổng số khách hàng trong 1 vé máy bay
+        $passengers = $ticket->passenger;
+        $adults = count($passengers->where('passenger_type', 1));
+        $children = count($passengers->where('passenger_type', 2));
+        $infant = count($passengers->where('passenger_type', 3));
+        $total_passenger = $adults + $children + $infant;
+
+        //tính tổng số tiền dịch vụ đi kèm khách hàng mua thêm
+        $total_extra_service = 0;
+        $extra_services = $ticket->extraServices();
+        foreach ($extra_services as $extra_service) {
+            $price = $extra_service->price;
+            $total_extra_service += $price;
+        }
+
+        //tổng số tiền mà khách hàng phải trả (500.000 là phí dịch vụ)
+        $total_price = ($seat_type_price * $total_passenger) + $total_extra_service + 500000;
+
+        //cập nhật dữ liệu lên database
+        Ticket::where('ticket_id', $id)->update([
+            'seat_type' => $seat_type,
+            'flight_schedule_id' => $flight_schedule_id,
+            'total_price' => $total_price,
+            'status' => Utility::ticket_status_Unverified,
+        ]);
+
+        //điều hướng cho người dùng
         return redirect('ticket/detail/' . $id)->with('notification', 'Update successful');
     }
 
@@ -115,6 +153,9 @@ class TicketController extends Controller
     public function editPassenger($id)
     {
         $ticket = Ticket::all()->where('ticket_id', $id)->first();
+        if ($ticket->status == Utility::ticket_status_Finish || $ticket->status == Utility::ticket_status_Cancel) {
+            return redirect()->back()->withErrors('Invalid action')->with('preloader', 'none');
+        }
         $passengers = $ticket->passenger;
 
         return view('pages.ticket.edit-passenger', compact('passengers', 'ticket'));
