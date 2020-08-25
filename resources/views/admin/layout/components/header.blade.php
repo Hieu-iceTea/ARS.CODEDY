@@ -938,8 +938,8 @@
                             </div>
                         </div>
                         <div class="widget-content-left  ml-3 header-user-info">
-                            <div class="widget-heading"> {{ \Illuminate\Support\Facades\Auth::user()->user_name }}</div>
-                            <div class="widget-subheading"> {{ \Illuminate\Support\Facades\Auth::user()->email }}</div>
+                            <div class="widget-heading"> {{ \Illuminate\Support\Facades\Auth::user()->user_name ?? 'not logged in' }}</div>
+                            <div class="widget-subheading"> {{ \Illuminate\Support\Facades\Auth::user()->email ?? 'no email' }}</div>
                         </div>
                         <div class="widget-content-right header-user-info ml-3">
                             <button type="button"
