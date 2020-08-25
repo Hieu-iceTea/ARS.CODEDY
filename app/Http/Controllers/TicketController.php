@@ -6,10 +6,9 @@ use App\Model\FlightSchedule;
 use App\Model\Passenger;
 use App\Model\Ticket;
 use App\Model\Airport;
-use App\Utilities\Utility;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
+
 
 class TicketController extends Controller
 {
@@ -21,13 +20,10 @@ class TicketController extends Controller
 
     {
         $code = $request->get('code');
-
-        $tickets = Ticket::all()->where('user_id', Auth::user()->user_id);
+        $tickets = Ticket::where('user_id', Auth::user()->user_id)->paginate(4);
         $addressAirports = Airport::select('name', 'airport_id', 'location', 'code')->get();
 
-
         return view('pages.ticket.index', compact('tickets', 'addressAirports'));
-
     }
 
     /**

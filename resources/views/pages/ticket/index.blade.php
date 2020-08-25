@@ -118,6 +118,9 @@
                     @endforeach
                     </tbody>
                 </table>
+                <div class ="pagination-lg mb-5">
+                    {{ $tickets->links()  }}
+                </div>
             </div>
         </div>
     </div>
