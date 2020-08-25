@@ -103,13 +103,17 @@ Route::group(['prefix' => ''], function () {
 Route::group(['namespace' => 'Admin'], function () {
     Route::group(['prefix' => 'admin'], function () {
 
-        Route::get('', 'PageController@index');
+        Route::get('', 'PageController@index')->name('admin');
 
-        Route::get('login', 'PageController@getLogin');
-        Route::post('login', 'PageController@postLogin');
+        Route::group(['prefix' => 'login'], function () {
+            Route::get('', 'PageController@getLogin')->name('admin.login');
+            Route::post('', 'PageController@postLogin');
+        });
+
+        Route::post('logout', 'PageController@logout')->name('admin.logout');
 
         Route::group(['prefix' => 'user'], function () {
-            Route::get('', 'UserController@index');
+            Route::get('', 'UserController@index')->name('admin.user');
 
             Route::get('create', 'UserController@create');
             Route::post('create', 'UserController@store');
@@ -123,7 +127,7 @@ Route::group(['namespace' => 'Admin'], function () {
         });
 
         Route::group(['prefix' => 'extra-service'], function () {
-            Route::get('', 'ExtraServiceController@index');
+            Route::get('', 'ExtraServiceController@index')->name('admin.extra-service');
 
             Route::get('create', 'ExtraServiceController@create');
             Route::post('create', 'ExtraServiceController@store');
@@ -137,7 +141,7 @@ Route::group(['namespace' => 'Admin'], function () {
         });
 
         Route::group(['prefix' => 'airport'], function () {
-            Route::get('', 'AirportController@index');
+            Route::get('', 'AirportController@index')->name('admin.airport');
 
             Route::get('create', 'AirportController@create');
             Route::post('create', 'AirportController@store');
@@ -151,7 +155,7 @@ Route::group(['namespace' => 'Admin'], function () {
         });
 
         Route::group(['prefix' => 'plane'], function () {
-            Route::get('', 'PlaneController@index');
+            Route::get('', 'PlaneController@index')->name('admin.plane');
 
             Route::get('create', 'PlaneController@create');
             Route::post('create', 'PlaneController@store');
@@ -165,7 +169,7 @@ Route::group(['namespace' => 'Admin'], function () {
         });
 
         Route::group(['prefix' => 'promotion'], function () {
-            Route::get('', 'PromotionController@index');
+            Route::get('', 'PromotionController@index')->name('admin.promotion');
 
             Route::get('create', 'PromotionController@create');
             Route::post('create', 'PromotionController@store');
@@ -179,7 +183,7 @@ Route::group(['namespace' => 'Admin'], function () {
         });
 
         Route::group(['prefix' => 'pay-type'], function () {
-            Route::get('', 'PayTypeController@index');
+            Route::get('', 'PayTypeController@index')->name('admin.pay-type');
 
             Route::get('create', 'PayTypeController@create');
             Route::post('create', 'PayTypeController@store');
@@ -193,7 +197,7 @@ Route::group(['namespace' => 'Admin'], function () {
         });
 
         Route::group(['prefix' => 'ticket'], function () {
-            Route::get('', 'TicketController@index');
+            Route::get('', 'TicketController@index')->name('admin.ticket');
 
             Route::get('create', 'TicketController@create');
             Route::post('create', 'TicketController@store');
@@ -207,7 +211,7 @@ Route::group(['namespace' => 'Admin'], function () {
         });
 
         Route::group(['prefix' => 'flight-schedule'], function () {
-            Route::get('', 'FlightScheduleController@index');
+            Route::get('', 'FlightScheduleController@index')->name('admin.flight-schedule');
 
             Route::get('create', 'FlightScheduleController@create');
             Route::post('create', 'FlightScheduleController@store');

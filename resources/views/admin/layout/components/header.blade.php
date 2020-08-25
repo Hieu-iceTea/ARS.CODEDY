@@ -859,10 +859,13 @@
                                                             </div>
                                                         </div>
                                                         <div class="widget-content-right mr-2">
-                                                            <button
-                                                                class="btn-pill btn-shadow btn-shine btn btn-focus">
-                                                                Logout
-                                                            </button>
+                                                            <form action="/admin/logout" method="post">
+                                                                @csrf
+                                                                <button
+                                                                    class="btn-pill btn-shadow btn-shine btn btn-focus">
+                                                                    Logout
+                                                                </button>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -935,8 +938,8 @@
                             </div>
                         </div>
                         <div class="widget-content-left  ml-3 header-user-info">
-                            <div class="widget-heading"> Hiếu iceTea</div>
-                            <div class="widget-subheading"> Nguyễn Đình Hiếu</div>
+                            <div class="widget-heading"> {{ \Illuminate\Support\Facades\Auth::user()->user_name }}</div>
+                            <div class="widget-subheading"> {{ \Illuminate\Support\Facades\Auth::user()->email }}</div>
                         </div>
                         <div class="widget-content-right header-user-info ml-3">
                             <button type="button"
