@@ -6,7 +6,7 @@ namespace App\Utilities;
 
 class Utility
 {
-
+    //ticket_status
     const ticket_status_Unverified = 1;
     const ticket_status_Reservations = 2;
     const ticket_status_Paid = 3;
@@ -64,4 +64,28 @@ class Utility
      */
     const pay_type_PayLater = 1;
     const pay_type_VNPay = 2;
+
+    //flight_schedule_status:
+    const flight_schedule_status_Unverified = 1;
+    const flight_schedule_status_Active = 2;
+    const flight_schedule_status_Inactive = 3;
+    const flight_schedule_status_Flying = 4;
+    const flight_schedule_status_Finish = 5;
+    const flight_schedule_status_Cancel = 6;
+    public static $flight_schedule_status = [
+        self::flight_schedule_status_Unverified => 'Unverified',
+        self::flight_schedule_status_Active => 'Active',
+        self::flight_schedule_status_Inactive => 'Inactive',
+        self::flight_schedule_status_Flying => 'Flying',
+        self::flight_schedule_status_Finish => 'Finish',
+        self::flight_schedule_status_Cancel => 'Cancel',
+    ];
+    public static $flight_schedule_status_badge = [
+        self::flight_schedule_status_Unverified => 'warning',
+        self::flight_schedule_status_Active => 'success',
+        self::flight_schedule_status_Inactive => 'danger',
+        self::flight_schedule_status_Flying => 'info',
+        self::flight_schedule_status_Finish => 'primary',
+        self::flight_schedule_status_Cancel => 'secondary',
+    ];
 }
