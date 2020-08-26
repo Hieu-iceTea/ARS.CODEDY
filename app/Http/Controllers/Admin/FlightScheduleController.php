@@ -90,9 +90,6 @@ class FlightScheduleController extends Controller
      */
     public function show($id)
     {
-        $airports = Airport::all();
-        $planes = Plane::all();
-
         $flightSchedule = FlightSchedule::all()->where('flight_schedule_id', $id)->first();
 
         return view('admin.flight-schedule.show', compact('airports', 'planes', 'flightSchedule'));
