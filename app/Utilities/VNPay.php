@@ -51,7 +51,7 @@ class VNPay
 //        $vnp_Locale = $_POST['language'];
         $vnp_Locale = 'vn';
 //        $vnp_BankCode = $_POST['bank_code'];
-        $vnp_BankCode = 'NCB';
+//        $vnp_BankCode = 'NCB'; //TODO
         $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
 
         $inputData = array(
