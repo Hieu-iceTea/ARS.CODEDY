@@ -107,7 +107,7 @@
                             <div class="col-md-9 col-xl-8">
                                 <p>{{ $user->image ?? 'null' }}</p>
                                 <small class="form-text text-muted">
-                                    Upload your avatar.
+                                    This feature is not available yet. We will update it soon.
                                 </small>
                             </div>
                         </div>

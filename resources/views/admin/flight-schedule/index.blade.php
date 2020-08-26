@@ -9,7 +9,7 @@
 
                 <div class="page-title-heading">
                     <div class="page-title-icon">
-                        <i class="pe-7s-ticket icon-gradient bg-mean-fruit">
+                        <i class="pe-7s-plane icon-gradient bg-mean-fruit">
                         </i>
                     </div>
                     <div>Flight Schedule Management
@@ -40,8 +40,8 @@
 
                         <form>
                             <div class="input-group">
-                                <input name="search" value="{{ request('search') }}" placeholder="Search"
-                                       class="form-control">
+                                <input type="search" name="search" id="search" value="{{ request('search') }}"
+                                       placeholder="Search everything" class="form-control">
                                 <span class="input-group-append">
                                         <button type="submit" class="btn btn-primary">
                                             <i class="fa fa-search"></i>&nbsp;
@@ -81,10 +81,13 @@
                                             <div class="widget-content-wrapper">
                                                 <div class="widget-content-left mr-3">
                                                     <div class="widget-content-left">
-                                                        <img width="40" class="rounded-circle"
-                                                             src="assets/images/avatars/default.jpg" alt="">
-                                                        {{--<img width="60" class=""
-                                                             src="../img/airport/{{ $flightSchedule->flightSchedule->airportTo->image }}" alt="">--}}
+                                                        {{--<img width="40" class="rounded-circle"
+                                                             src="assets/images/avatars/default.jpg" alt="">--}}
+                                                        <img height=60 class=""
+                                                             src="../img/airport/{{ $flightSchedule->airportTo->image }}"
+                                                             alt="image of arrival airport"
+                                                             data-toggle="tooltip" title="image of arrival airport"
+                                                             data-placement="bottom">
                                                     </div>
                                                 </div>
                                                 <div class="widget-content-left flex2">

@@ -174,7 +174,7 @@
                                            class="form-control-file"
                                            value="{{ old('image') ?? $user->image ?? ''}}">
                                     <small class="form-text text-muted">
-                                        Upload your avatar.
+                                        This feature is not available yet. We will update it soon.
                                     </small>
                                 </div>
                             </div>
