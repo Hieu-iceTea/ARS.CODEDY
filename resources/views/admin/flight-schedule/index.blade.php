@@ -20,9 +20,8 @@
                 </div>
 
                 <div class="page-title-actions">
-                    <a href="{{ url()->current() . '/create'}}" data-toggle="tooltip" title="Add new flight schedule"
-                       data-placement="bottom"
-                       class="btn-shadow mr-3 btn btn-primary">
+                    <a href="{{ url()->current() . '/create'}}"
+                       class="btn-shadow btn-hover-shine mr-3 btn btn-primary">
                                     <span class="btn-icon-wrapper pr-2 opacity-7">
                                         <i class="fa fa-plus fa-w-20"></i>
                                     </span>
@@ -124,10 +123,11 @@
                                     </td>
                                     <td class="text-center">
                                         <a href="{{ url()->current() . '/' . $flightSchedule->flight_schedule_id }}"
-                                           class="btn btn-primary btn-sm">
+                                           class="btn btn-hover-shine btn-primary btn-sm">
                                             Details
                                         </a>
                                         <a href="{{ url()->current() . '/' . $flightSchedule->flight_schedule_id . '/edit'}}"
+                                           data-toggle="tooltip" title="Edit" data-placement="bottom"
                                            class="btn btn-warning btn-sm">
                                             <span class="btn-icon-wrapper opacity-8">
                                                 <i class="fa fa-edit fa-w-20"></i>
@@ -138,7 +138,8 @@
                                               method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="btn btn-danger btn-sm" type="submit"
+                                            <button class="btn btn-danger btn-sm btn-hover-shine" type="submit"
+                                                    data-toggle="tooltip" title="Delete" data-placement="bottom"
                                                     onclick="return confirm('Do you really want to delete this item?')">
                                                     <span class="btn-icon-wrapper opacity-8">
                                                         <i class="fa fa-trash fa-w-20"></i>

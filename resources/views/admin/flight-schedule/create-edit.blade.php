@@ -28,7 +28,7 @@
                     <div class="page-title-actions">
                         <a href="flight-schedule/create" data-toggle="tooltip" title="Add new flight schedule"
                            data-placement="bottom"
-                           class="btn-shadow mr-3 btn btn-primary">
+                           class="btn-shadow btn-hover-shine mr-3 btn btn-primary">
                                 <span class="btn-icon-wrapper pr-2 opacity-7">
                                     <i class="fa fa-plus fa-w-20"></i>
                                 </span>
