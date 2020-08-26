@@ -20,11 +20,12 @@
                 </div>
 
                 <div class="page-title-actions">
-                    <a href="/admin/ticket/create" data-toggle="tooltip" title="Add new ticket" data-placement="bottom"
+                    <a href="{{ url()->current() . '/create' }}" data-toggle="tooltip" title="Add new ticket"
+                       data-placement="bottom"
                        class="btn-shadow mr-3 btn btn-primary">
-                                    <span class="btn-icon-wrapper pr-2 opacity-7">
-                                        <i class="fa fa-plus fa-w-20"></i>
-                                    </span>
+                        <span class="btn-icon-wrapper pr-2 opacity-7">
+                            <i class="fa fa-plus fa-w-20"></i>
+                        </span>
                         New Ticket
                     </a>
                 </div>
@@ -117,13 +118,9 @@
                                             <div class="widget-content-wrapper">
                                                 <div class="widget-content-left flex2">
                                                     <div class="widget-subheading opacity-10">
-                                                        @if($ticket->payType->pay_type_id == \App\Utilities\Utility::pay_type_VNPay)
                                                             <img
-                                                                src="https://vnpay.vn/wp-content/uploads/2020/07/Logo-VNPAYQR-update.png"
-                                                                width="55" alt="">
-                                                        @else
-                                                            {{ $ticket->payType->name }}
-                                                        @endif
+                                                                src="../img/pay_type/{{ $ticket->payType->image }}"
+                                                                height=25 alt="">
                                                     </div>
                                                     <div class="widget-subheading opacity-10">
                                                         {{ number_format($ticket->total_price, 0, ',', '.') }} VND
@@ -139,15 +136,18 @@
                                         </div>
                                     </td>
                                     <td class="text-center">
-                                        <a href="ticket/{{ $ticket->ticket_id }}" class="btn btn-primary btn-sm">
+                                        <a href="{{ url()->current() . '/' . $ticket->ticket_id }}"
+                                           class="btn btn-primary btn-sm">
                                             Details
                                         </a>
-                                        <a href="ticket/{{ $ticket->ticket_id }}/edit" class="btn btn-warning btn-sm">
+                                        <a href="{{ url()->current() . '/' . $ticket->ticket_id . '/edit' }}"
+                                           class="btn btn-warning btn-sm">
                                             <span class="btn-icon-wrapper opacity-8">
                                                 <i class="fa fa-edit fa-w-20"></i>
                                             </span>
                                         </a>
-                                        <form class="d-inline" action="{{'/admin/ticket/' . $ticket->ticket_id }}"
+                                        <form class="d-inline"
+                                              action="{{ url()->current() . '/' . $ticket->ticket_id }}"
                                               method="post">
                                             @csrf
                                             @method('DELETE')

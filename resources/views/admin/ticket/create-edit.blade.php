@@ -17,7 +17,7 @@
                             <i class="pe-7s-users icon-gradient bg-mean-fruit">
                             </i>
                         </div>
-                        <div>User Management | {{ request()->segment(3) == 'create' ? 'Create User' : 'Edit User' }}
+                        <div>User Management | {{ request()->segment(3) == 'create' ? 'Create' : 'Edit' }}
                             <div class="page-title-subheading">
                                 View, create, update, delete and activate user accounts.
                             </div>
@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="page-title-actions">
-                        <a href="/admin/user/create" data-toggle="tooltip" title="Add new user" data-placement="bottom"
+                        <a href="ticket/create" data-toggle="tooltip" title="Add new user" data-placement="bottom"
                            class="btn-shadow mr-3 btn btn-primary">
                                     <span class="btn-icon-wrapper pr-2 opacity-7">
                                         <i class="fa fa-plus fa-w-20"></i>
