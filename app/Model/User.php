@@ -38,11 +38,14 @@ class User extends Authenticatable
     public static function search($keyword)
     {
         $users = User::where('user_id', '=', $keyword)
+            ->orWhere('user_name', 'like', '%' . $keyword . '%')
             ->orWhere('first_name', 'like', '%' . $keyword . '%')
             ->orWhere('last_name', 'like', '%' . $keyword . '%')
             ->orWhere('email', 'like', '%' . $keyword . '%')
-            ->orWhere('user_name', 'like', '%' . $keyword . '%')
-            ->paginate();
+            ->orWhere('dob', 'like', '%' . $keyword . '%')
+            ->orWhere('phone', 'like', '%' . $keyword . '%')
+            ->orWhere('address', 'like', '%' . $keyword . '%')
+            ->paginate(); //Để phân trang theo config đã cài đặt trong Model.
 
         //giúp chuyển trang page sẽ đính kèm theo từ khóa search của người dùng:
         $users->appends(['search' => $keyword]);
