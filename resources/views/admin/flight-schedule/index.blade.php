@@ -12,20 +12,21 @@
                         <i class="pe-7s-ticket icon-gradient bg-mean-fruit">
                         </i>
                     </div>
-                    <div>Ticket Management
+                    <div>Flight Schedule Management
                         <div class="page-title-subheading">
-                            View, create, update, delete and manage ticket.
+                            View, create, update, delete and manage flight schedule.
                         </div>
                     </div>
                 </div>
 
                 <div class="page-title-actions">
-                    <a href="/admin/ticket/create" data-toggle="tooltip" title="Add new ticket" data-placement="bottom"
+                    <a href="{{ url()->current() . '/create'}}" data-toggle="tooltip" title="Add new flight schedule"
+                       data-placement="bottom"
                        class="btn-shadow mr-3 btn btn-primary">
                                     <span class="btn-icon-wrapper pr-2 opacity-7">
                                         <i class="fa fa-plus fa-w-20"></i>
                                     </span>
-                        New Ticket
+                        New Flight Schedule
                     </a>
                 </div>
 
@@ -122,18 +123,18 @@
                                         </div>
                                     </td>
                                     <td class="text-center">
-                                        <a href="ticket/{{ $flightSchedule->ticket_id }}"
+                                        <a href="{{ url()->current() . '/' . $flightSchedule->flight_schedule_id }}"
                                            class="btn btn-primary btn-sm">
                                             Details
                                         </a>
-                                        <a href="ticket/{{ $flightSchedule->ticket_id }}/edit"
+                                        <a href="{{ url()->current() . '/' . $flightSchedule->flight_schedule_id . '/edit'}}"
                                            class="btn btn-warning btn-sm">
                                             <span class="btn-icon-wrapper opacity-8">
                                                 <i class="fa fa-edit fa-w-20"></i>
                                             </span>
                                         </a>
                                         <form class="d-inline"
-                                              action="{{'/admin/ticket/' . $flightSchedule->ticket_id }}"
+                                              action="{{ url()->current() . '/' . $flightSchedule->flight_schedule_id }}"
                                               method="post">
                                             @csrf
                                             @method('DELETE')

@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Model\Airport;
 use App\Model\FlightSchedule;
+use App\Model\Plane;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -61,11 +62,13 @@ class FlightScheduleController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        $airports = Airport::all();
+        $planes = Plane::all();
+
+        return view('admin.flight-schedule.create-edit', compact('airports', 'planes'));
     }
 
     /**
@@ -94,11 +97,16 @@ class FlightScheduleController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function edit($id)
     {
-        //
+        $airports = Airport::all();
+        $planes = Plane::all();
+
+        $flightSchedule = FlightSchedule::all()->where('flight_schedule_id', $id)->first();
+
+        return view('admin.flight-schedule.create-edit', compact('airports', 'planes', 'flightSchedule'));
     }
 
     /**
