@@ -6,9 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Model\Airport;
 use App\Model\FlightSchedule;
 use App\Model\Plane;
+use App\Model\PriceSeatType;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
 use Illuminate\View\View;
 
 class FlightScheduleController extends Controller
@@ -74,12 +77,68 @@ class FlightScheduleController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Application|RedirectResponse|Redirector
      */
     public function store(Request $request)
     {
-        //
+        //Get data from request [01] schedule, airport, plane.
+        $airport_from_id = $request->get('airport_from_id');
+        $airport_to_id = $request->get('airport_to_id');
+        $plane_id = $request->get('plane_id');
+        $code = $request->get('code');
+        $departure_at = $request->get('departure_at');
+        $arrival_at = $request->get('arrival_at');
+        $status = $request->get('status');
+        $description = $request->get('description');
+
+        //Get data from request [02] price of seat types.
+        $eco_price = $request->get('eco_price');
+        $eco_qty_remain = $request->get('eco_qty_remain');
+        $eco_qty_total = $request->get('eco_qty_total');
+        $plus_price = $request->get('plus_price');
+        $plus_qty_remain = $request->get('plus_qty_remain');
+        $plus_qty_total = $request->get('plus_qty_total');
+        $business_price = $request->get('business_price');
+        $business_qty_remain = $request->get('business_qty_remain');
+        $business_qty_total = $request->get('business_qty_total');
+
+        //Chuẩn hóa tiền nhập vào (định dạng khi nhập vào [5,599,000.00 ₫] | định dạng mong muốn: [5599000.00])
+        $eco_price = str_replace([' ₫', '.'], '', $eco_price);
+        $eco_price = str_replace([','], '.', $eco_price);
+        $plus_price = str_replace([' ₫', '.'], '', $plus_price);
+        $plus_price = str_replace([','], '.', $plus_price);
+        $business_price = str_replace([' ₫', '.'], '', $business_price);
+        $business_price = str_replace([','], '.', $business_price);
+
+        //[01] Insert into table price_seat_type
+        $price_seat_type = new PriceSeatType();
+        $price_seat_type->eco_price = $eco_price;
+        $price_seat_type->eco_qty_remain = $eco_qty_remain;
+        $price_seat_type->eco_qty_total = $eco_qty_total;
+        $price_seat_type->plus_price = $plus_price;
+        $price_seat_type->plus_qty_remain = $plus_qty_remain;
+        $price_seat_type->plus_qty_total = $plus_qty_total;
+        $price_seat_type->business_price = $business_price;
+        $price_seat_type->business_qty_remain = $business_qty_remain;
+        $price_seat_type->business_qty_total = $business_qty_total;
+        $price_seat_type->save();
+
+        //[02] Insert into table flight_schedule
+        $flight_schedule = new FlightSchedule();
+        $flight_schedule->airport_from_id = $airport_from_id;
+        $flight_schedule->airport_to_id = $airport_to_id;
+        $flight_schedule->plane_id = $plane_id;
+        $flight_schedule->price_seat_type_id = $price_seat_type->price_seat_type_id; //Lấy từ record vừa mới Insert vào bảng price_seat_type
+        $flight_schedule->code = $code;
+        $flight_schedule->departure_at = $departure_at;
+        $flight_schedule->arrival_at = $arrival_at;
+        $flight_schedule->status = $status;
+        $flight_schedule->description = $description;
+        $flight_schedule->save();
+
+        return redirect('admin/flight-schedule/' . $flight_schedule->flight_schedule_id)
+            ->with('notification', 'Created successfully!');
     }
 
     /**
@@ -92,7 +151,7 @@ class FlightScheduleController extends Controller
     {
         $flightSchedule = FlightSchedule::all()->where('flight_schedule_id', $id)->first();
 
-        return view('admin.flight-schedule.show', compact('airports', 'planes', 'flightSchedule'));
+        return view('admin.flight-schedule.show', compact('flightSchedule'));
     }
 
     /**
@@ -114,7 +173,7 @@ class FlightScheduleController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param Request $request
      * @param int $id
      * @return \Illuminate\Http\Response
      */

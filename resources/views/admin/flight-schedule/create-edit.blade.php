@@ -120,7 +120,7 @@
                                 <div class="col-md-9 col-xl-8">
                                     <input required name="departure_at" id="departure_at" placeholder="departure_at"
                                            type="datetime-local" class="form-control"
-                                           value="{{ date('Y-m-d\TH:i', strtotime((old('departure_at') ?? $flightSchedule->departure_at ?? '')))}}">
+                                           value="{{ (old('departure_at') ?? $flightSchedule->departure_at ?? '') != null ? date('Y-m-d\TH:i', strtotime((old('departure_at') ?? $flightSchedule->departure_at))) : '' }}">
                                 </div>
                             </div>
 
@@ -129,7 +129,7 @@
                                 <div class="col-md-9 col-xl-8">
                                     <input required name="arrival_at" id="arrival_at" placeholder="arrival_at"
                                            type="datetime-local" class="form-control"
-                                           value="{{ date('Y-m-d\TH:i', strtotime((old('arrival_at') ?? $flightSchedule->arrival_at ?? '')))}}">
+                                           value="{{ (old('departure_at') ?? $flightSchedule->departure_at ?? '') != null ? date('Y-m-d\TH:i', strtotime((old('arrival_at') ?? $flightSchedule->arrival_at))) : '' }}">
                                 </div>
                             </div>
 
