@@ -20,7 +20,8 @@
                 </div>
 
                 <div class="page-title-actions">
-                    <a href="/admin/user/create" data-toggle="tooltip" title="Add new user" data-placement="bottom"
+                    <a href="{{ url()->current() . '/create' }}" data-toggle="tooltip" title="Add new user"
+                       data-placement="bottom"
                        class="btn-shadow mr-3 btn btn-primary">
                                     <span class="btn-icon-wrapper pr-2 opacity-7">
                                         <i class="fa fa-plus fa-w-20"></i>
@@ -101,15 +102,18 @@
                                         </div>
                                     </td>
                                     <td class="text-center">
-                                        <a href="user/{{ $user->user_id }}" class="btn btn-primary btn-sm">
+                                        <a href="{{ url()->current() . '/' . $user->user_id }}"
+                                           class="btn btn-primary btn-sm">
                                             Details
                                         </a>
-                                        <a href="user/{{ $user->user_id }}/edit" class="btn btn-warning btn-sm">
+                                        <a href="{{ url()->current() . '/' . $user->user_id . '/edit' }}"
+                                           class="btn btn-warning btn-sm">
                                             <span class="btn-icon-wrapper opacity-8">
                                                 <i class="fa fa-edit fa-w-20"></i>
                                             </span>
                                         </a>
-                                        <form class="d-inline" action="{{'/admin/user/' . $user->user_id }}" method="post">
+                                        <form class="d-inline" action="{{ url()->current() . '/' . $user->user_id }}"
+                                              method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-danger btn-sm" type="submit"
