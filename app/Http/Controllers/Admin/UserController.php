@@ -129,6 +129,12 @@ class UserController extends Controller
             'deleted' => true,
         ]);
 
-        return redirect()->back()->with('notification', 'Deleted successfully!');
+        if (url()->previous() != url()->current()) {
+            return redirect()->back()->with('notification', 'Deleted successfully!');
+        } else {
+            //Nếu trang trước giống trang hiện tại thì chuyển hướng về trang chủ
+            //(tức là ở trang detail, ấn nút xóa. xóa xong redirect()->back() sẽ quay lại trang detail để hiện thị item đã xóa gây ra lỗi)
+            return redirect('admin/user')->with('notification', 'Deleted successfully!');
+        }
     }
 }
