@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Model\PayType;
 use Illuminate\Http\Request;
 
 class PayTypeController extends Controller
@@ -11,9 +12,20 @@ class PayTypeController extends Controller
      * Display a listing of the resource.
      *
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('admin.pay-type.index');
+
+        $keyword = $request->get('search');
+
+        $pay_types = PayType::where('pay_type_id', '=', $keyword)
+            ->orWhere('name', 'like', '%' . $keyword . '%')
+            ->orderBy('pay_type_id', 'asc')
+            ->paginate(6);
+
+        //giúp chuyển trang page sẽ đính kèm theo từ khóa search của người dùng:
+        $pay_types->appends(['search' => $keyword]);
+
+        return view('admin.pay-type.index', compact('pay_types'));
     }
 
     /**
@@ -29,7 +41,7 @@ class PayTypeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -40,7 +52,7 @@ class PayTypeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -51,7 +63,7 @@ class PayTypeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -62,8 +74,8 @@ class PayTypeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -74,7 +86,7 @@ class PayTypeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
