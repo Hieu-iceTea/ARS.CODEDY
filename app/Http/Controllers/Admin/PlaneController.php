@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Model\Plane;
 use Illuminate\Http\Request;
 
 class PlaneController extends Controller
@@ -12,9 +13,18 @@ class PlaneController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index( Request $request)
     {
-        return view('admin.plane.index');
+        $keyword = $request->get('search');
+
+        $geDatatPlanes = Plane::where('code', '=', $keyword)
+            ->orWhere('name', 'like', '%' . $keyword . '%')
+            ->orderBy('plane_id', 'asc')
+            ->paginate();
+
+        //giúp chuyển trang page sẽ đính kèm theo từ khóa search của người dùng:
+        $geDatatPlanes->appends(['search' => $keyword]);
+        return view('admin.plane.index',compact('geDatatPlanes'));
     }
 
     /**
