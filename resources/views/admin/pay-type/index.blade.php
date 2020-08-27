@@ -13,21 +13,20 @@
                         <i class="pe-7s-ticket icon-gradient bg-mean-fruit">
                         </i>
                     </div>
-                    <div>Ticket Management
+                    <div>Pay Type Management
                         <div class="page-title-subheading">
-                            View, create, update, delete and manage ticket.
+                            View, create, update, delete and manage pay type.
                         </div>
                     </div>
                 </div>
 
                 <div class="page-title-actions">
-                    <a href="{{ url()->current() . '/create' }}" data-toggle="tooltip" title="Add new ticket"
-                       data-placement="bottom"
-                       class="btn-shadow mr-3 btn btn-primary">
-                        <span class="btn-icon-wrapper pr-2 opacity-7">
-                            <i class="fa fa-plus fa-w-20"></i>
-                        </span>
-                        New Ticket
+                    <a href="{{ url()->current() . '/create'}}"
+                       class="btn-shadow btn-hover-shine mr-3 btn btn-primary">
+                                    <span class="btn-icon-wrapper pr-2 opacity-7">
+                                        <i class="fa fa-plus fa-w-20"></i>
+                                    </span>
+                        New Pay Type
                     </a>
                 </div>
 
@@ -42,8 +41,8 @@
 
                         <form>
                             <div class="input-group">
-                                <input name="search" value="{{ request('search') }}" placeholder="Search"
-                                       class="form-control">
+                                <input type="search" name="search" id="search" value="{{ request('search') }}"
+                                       placeholder="Search everything" class="form-control">
                                 <span class="input-group-append">
                                         <button type="submit" class="btn btn-primary">
                                             <i class="fa fa-search"></i>&nbsp;
@@ -65,8 +64,8 @@
                         <table class="align-middle mb-0 table table-borderless table-striped table-hover">
                             <thead>
                             <tr>
-                                <th class="text-center">#Number</th>
-                                <th>Payment Type</th>
+                                <th class="text-center">#ID</th>
+                                <th>Name</th>
                                 <th class="text-center">Logo</th>
                                 <th class="text-center">Actions</th>
                             </tr>
@@ -136,9 +135,9 @@
                         </table>
                     </div>
 
-{{--                    <div class="d-block card-footer">--}}
-{{--                        {{ $pay_type->links() }}--}}
-{{--                    </div>--}}
+                    <div class="d-block card-footer">
+                        {{ $pay_types->links() }}
+                    </div>
 
                 </div>
             </div>

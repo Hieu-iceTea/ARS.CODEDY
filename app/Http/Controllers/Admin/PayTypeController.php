@@ -14,13 +14,12 @@ class PayTypeController extends Controller
      */
     public function index(Request $request)
     {
-
         $keyword = $request->get('search');
 
         $pay_types = PayType::where('pay_type_id', '=', $keyword)
             ->orWhere('name', 'like', '%' . $keyword . '%')
-            ->orderBy('pay_type_id', 'asc')
-            ->paginate(6);
+            ->orderBy('pay_type_id', 'desc')
+            ->paginate();
 
         //giúp chuyển trang page sẽ đính kèm theo từ khóa search của người dùng:
         $pay_types->appends(['search' => $keyword]);
