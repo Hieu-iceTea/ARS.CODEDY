@@ -56,7 +56,10 @@ class PlaneController extends Controller
      */
     public function show($id)
     {
-        //
+        $getDataPlane = Plane::all()
+            ->where('plane_id',$id)
+        ->first();
+        return view('admin.plane.show',compact('getDataPlane'));
     }
 
     /**
