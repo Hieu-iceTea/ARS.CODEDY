@@ -29,20 +29,6 @@ class PromotionController extends Controller
         $promotions->appends(['search' => $keyword]);
 
         return view('admin.promotion.index',compact('promotions'));
-//------------------------------
-//        $keyword = $request->get('search');
-//
-//        if ($keyword != '') {
-//            $promotions = Promotion::search($keyword);
-//
-//            if (count($promotions) > 0) {
-//                return view('admin.promotion.index', compact('promotions'));
-//            }
-//            return view('admin.promotion.index', compact('promotions'))->withErrors('No search results. Try to search again!');
-//        }
-//
-//        $promotions = Promotion::all();
-//        return view('admin.promotion.index', compact('promotions'));
     }
 
     /**
@@ -52,7 +38,7 @@ class PromotionController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.promotion.create-edit');
     }
 
     /**
@@ -63,7 +49,18 @@ class PromotionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $promotion = new Promotion;
+
+        $promotion->code = $request->code;
+        $promotion->title = $request->title;
+        $promotion->discount = $request->discount;
+        $promotion->qty_total = $request->qty_total;
+        $promotion->qty_remain = $request->qty_remain;
+        $promotion->expiration_date = $request->expiration_date;
+        $promotion->description = $request->description;
+        $promotion->save();
+
+        return redirect('admin/promotion/' . $promotion->promotion_id)->with('notification', 'Created successfully!');
     }
 
     /**
@@ -74,7 +71,8 @@ class PromotionController extends Controller
      */
     public function show($id)
     {
-        //
+        $promotion = Promotion::all()->where('promotion_id',$id)->first();
+        return view('admin.promotion.show', compact('promotion'));
     }
 
     /**
@@ -85,7 +83,8 @@ class PromotionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $promotion = Promotion::all()->where('promotion_id',$id)->first();
+        return view('admin.promotion.create-edit', compact('promotion'));
     }
 
     /**
@@ -97,7 +96,17 @@ class PromotionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Promotion::where('promotion_id',$id)->update([
+            'code'=>$request->code,
+            'title'=>$request->title,
+            'discount'=>$request->discount,
+            'qty_total'=>$request->qty_total,
+            'qty_remain'=>$request->qty_remain,
+            'expiration_date'=>$request->expiration_date,
+            'description'=>$request->description,
+        ]);
+
+        return redirect('admin/promotion')->with('notification','Updadate successfully!');
     }
 
     /**
