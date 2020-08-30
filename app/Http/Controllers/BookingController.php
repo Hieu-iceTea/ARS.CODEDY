@@ -197,12 +197,12 @@ class BookingController extends Controller
      */
     public function getStep4()
     {
-//        //Kiểm tra phiên session còn tồn tại không? Nếu không thì quay về trang chủ và báo lỗi
-//        if (!Session::has('booking_session') || Session::get('booking_session') === null) {
-//            return redirect('/')
-//                ->withErrors('Session expires! <br> please search again for your flight')
-//                ->with('preloader', 'none');
-//        }
+        //Kiểm tra phiên session còn tồn tại không? Nếu không thì quay về trang chủ và báo lỗi
+        if (!Session::has('booking_session') || Session::get('booking_session') === null) {
+            return redirect('/')
+                ->withErrors('Session expires! <br> please search again for your flight')
+                ->with('preloader', 'none');
+        }
 
         $booking_session = Session::get('booking_session');
         $payTypes = PayType::all();
@@ -220,14 +220,22 @@ class BookingController extends Controller
      */
     public function postStep4(BookingRequest $request)
     {
-        $pay_type = $request->get('pay_type');
+        $pay_type_id = $request->get('pay_type');
 
-        //Nếu không thuộc những $pay_type này, thì quay lại trang cũ báo lỗi:
-        if ($pay_type != Utility::pay_type_PayLater && $pay_type != Utility::pay_type_VNPay) {
+        //Nếu PayType chưa đươc kích hoạt, thì quay lại trang cũ báo lỗi:
+        if (PayType::where('pay_type_id', $pay_type_id)->first()->active == false) {
+
+            //Lấy tên các phương thức thanh toán được hỗ trợ
+            $Payment_methods_are_active = PayType::all()->where('active', true);
+            $Payment_methods_are_active_name = '<br><br>List of supported payment methods:<br>';
+            foreach ($Payment_methods_are_active as $item) {
+                $Payment_methods_are_active_name .= '- ' . $item->name . '<br>';
+            }
+
             return back()
                 ->withInput()
                 ->setTargetUrl('#payment_details')
-                ->withErrors('Currently, we do not support this payment method. <br> Please choose another one. Thanks! 💜💜💜')
+                ->withErrors('Currently, we do not support this payment method. <br> Please choose another one. Thanks! 💜💜💜' . $Payment_methods_are_active_name)
                 ->with('preloader', 'none');
         }
 
@@ -235,14 +243,14 @@ class BookingController extends Controller
         $ticket = $this->createTicket($request);
 
         //Nếu lựa chọn thanh toán sau
-        if ($pay_type == Utility::pay_type_PayLater) {
+        if ($pay_type_id == Utility::pay_type_PayLater) {
             $this->sendEmail($ticket);
 
             return redirect('booking/complete/' . $ticket->ticket_id);
         }
 
         //Nếu lựa chọn thanh toán online qua VNPay
-        if ($pay_type == Utility::pay_type_VNPay) {
+        if ($pay_type_id == Utility::pay_type_VNPay) {
             //Lấy Url cổng thanh toán
             $data_url = VNPay::vnpay_create_payment([
                 'vnp_TxnRef' => $ticket->ticket_id,

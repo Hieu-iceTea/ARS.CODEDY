@@ -175,14 +175,15 @@ CREATE TABLE IF NOT EXISTS `pay_type`
 
     `name`        VARCHAR(16)  NOT NULL,
     `image`       VARCHAR(128) NOT NULL,
+    `active`      BOOLEAN      NOT NULL DEFAULT FALSE,
     `description` TEXT,
 
-    `created_by`  NVARCHAR(32) DEFAULT 'ARS.CODEDY',
-    `created_at`  DATETIME     DEFAULT CURRENT_TIME,
-    `updated_by`  NVARCHAR(32) DEFAULT NULL,
-    `updated_at`  DATETIME     DEFAULT NULL,
-    `version`     INT          DEFAULT 1,
-    `deleted`     BOOLEAN      DEFAULT FALSE,
+    `created_by`  NVARCHAR(32)          DEFAULT 'ARS.CODEDY',
+    `created_at`  DATETIME              DEFAULT CURRENT_TIME,
+    `updated_by`  NVARCHAR(32)          DEFAULT NULL,
+    `updated_at`  DATETIME              DEFAULT NULL,
+    `version`     INT                   DEFAULT 1,
+    `deleted`     BOOLEAN               DEFAULT FALSE,
 
     PRIMARY KEY (`pay_type_id`)
 ) ENGINE InnoDB;
@@ -465,18 +466,18 @@ VALUES (4, 'HAHA96', 'Vừa bay vừa cười', 370000, 80, 60, '2020-11-20', '<
 INSERT INTO promotion (promotion_id, code, title, discount, qty_total, qty_remain, expiration_date, description)
 VALUES (5, 'VIP5000', 'Giảm giá đặc biệt cho khách hàng VIP', 500000, 20, 18, '2020-12-30', '<p>mô tả</p>');
 
-INSERT INTO pay_type (pay_type_id, name, image, description)
-VALUES (1, 'Pay Later', 'pay-later.png', '<p>mô tả</p>');
-INSERT INTO pay_type (pay_type_id, name, image, description)
-VALUES (2, 'VN Pay', 'vnpay.png', '<p>mô tả</p>');
-INSERT INTO pay_type (pay_type_id, name, image, description)
-VALUES (3, 'MOMO', 'momo.png', '<p>mô tả</p>');
-INSERT INTO pay_type (pay_type_id, name, image, description)
-VALUES (4, 'VISA', 'visa.png', '<p>mô tả</p>');
-INSERT INTO pay_type (pay_type_id, name, image, description)
-VALUES (5, 'Master Card', 'mastercard.png', '<p>mô tả</p>');
-INSERT INTO pay_type (pay_type_id, name, image, description)
-VALUES (6, 'JCB', 'jcb.png', '<p>mô tả</p>');
+INSERT INTO pay_type (pay_type_id, name, image, active, description)
+VALUES (1, 'Pay Later', 'pay-later.png', TRUE, '<p>mô tả</p>');
+INSERT INTO pay_type (pay_type_id, name, image, active, description)
+VALUES (2, 'VN Pay', 'vnpay.png', TRUE, '<p>mô tả</p>');
+INSERT INTO pay_type (pay_type_id, name, image, active, description)
+VALUES (3, 'MOMO', 'momo.png', FALSE, '<p>mô tả</p>');
+INSERT INTO pay_type (pay_type_id, name, image, active, description)
+VALUES (4, 'VISA', 'visa.png', FALSE, '<p>mô tả</p>');
+INSERT INTO pay_type (pay_type_id, name, image, active, description)
+VALUES (5, 'Master Card', 'mastercard.png', FALSE, '<p>mô tả</p>');
+INSERT INTO pay_type (pay_type_id, name, image, active, description)
+VALUES (6, 'JCB', 'jcb.png', FALSE, '<p>mô tả</p>');
 
 INSERT INTO passenger (passenger_id, ticket_id, gender, passenger_type, first_name, last_name, dob, with_passenger)
 VALUES (1, 8, 1, 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '');
@@ -624,3 +625,4 @@ INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_ty
 VALUES (10, NULL, 1, NULL, 2, '', 2, 3, 'DEMO01', 0, 'Kiều Linh', 'Trần', 'DinhHieu8896@gmail.com', '0868663315', 'Hà Nội', 1799000, 1799000, 1, '<p>mô tả</p>');
 INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, extra_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, amount_paid, total_passenger, description)
 VALUES (11, NULL, 9, NULL, 1, '', 3, 2, 'DEMO02', 0, 'Thanh Mai', 'Phạm', 'DinhHieu8896@gmail.com', '0868663315', 'Hà Nội', 2999000, 2999000, 1, '<p>mô tả</p>');
+
