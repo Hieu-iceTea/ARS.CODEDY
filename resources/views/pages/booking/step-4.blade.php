@@ -198,12 +198,20 @@
                                                        style="display: inline; cursor: pointer">
                                                     <div class="card">
                                                         <div class="card-body">
-                                                            <h5 class="card-title">{{ $payType->name }}</h5>
+                                                            <h5 class="card-title">
+                                                                @if(isset($payType->image))
+                                                                    <img
+                                                                        src="img/pay_type/{{ $payType->image }}"
+                                                                        height=45 alt="">
+                                                                @else
+                                                                    {{ $payType->name }}
+                                                                @endif
+                                                            </h5>
                                                             <input type="radio" name="pay_type"
-                                                                   onclick="preloaderActive()"
                                                                    id="pay_type_{{ $payType->pay_type_id }}"
                                                                    value="{{ $payType->pay_type_id }}"
-                                                                   {{ old('pay_type') == $payType->pay_type_id ? 'checked' : '' }}>
+                                                                   {{ old('pay_type') == $payType->pay_type_id ? 'checked' : '' }}
+                                                                   onchange="preloaderActive()">
                                                         </div>
                                                     </div>
                                                 </label>
