@@ -74,6 +74,10 @@
                             </div>
                         </div>
 
+                        <div class="row ml-1 booking2_color_logo">
+                            <p>* Required fields</p>
+                        </div>
+
                         <div style="display: none" class="row mb-5 booking2_color_logo">
                             <div class="card w-100">
                                 <div class="row">
@@ -125,8 +129,14 @@
                                                     <select name="passengers[{{$count}}][gender]" class="custom-select"
                                                             aria-label="select with button addon">
                                                         <option value="" selected>-- Gender --</option>
-                                                        <option value="1">Male</option>
-                                                        <option value="2">female</option>
+                                                        <option
+                                                            {{ old('passengers.' . $count . '.gender') == 1 ? 'selected' : '' }} value="1">
+                                                            Male
+                                                        </option>
+                                                        <option
+                                                            {{ old('passengers.' . $count . '.gender') == 2 ? 'selected' : '' }} value="2">
+                                                            female
+                                                        </option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -134,6 +144,7 @@
                                                 <div>Middle and First/Given name *</div>
                                                 <div class="input-group">
                                                     <input name="passengers[{{$count}}][first_name]" type="text"
+                                                           value="{{ old('passengers.' . $count . '.first_name') }}"
                                                            class="form-control"
                                                            placeholder="Middle and First/Given name"
                                                            aria-label="Username" aria-describedby="basic-addon1">
@@ -143,128 +154,7 @@
                                                 <div>Last/Family Name *</div>
                                                 <div class="input-group">
                                                     <input name="passengers[{{$count}}][last_name]" type="text"
-                                                           class="form-control"
-                                                           placeholder="Last/Family Name"
-                                                           aria-label="Username" aria-describedby="basic-addon1">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <p class="ml-3" style="font-size: 80%">
-                                                Please enter your full name as it appears on your passport.
-                                            </p>
-                                        </div>
-                                        <div class="row mt-3">
-                                            <div class="col-4">
-                                                <div>Date of birth *</div>
-                                                <div class="input-group">
-                                                    <input name="passengers[{{$count++}}][dob]" type="date"
-                                                           class="form-control w-75"
-                                                           placeholder="Departure">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row ml-1 booking2_color_logo">
-                                    <p>* required fields</p>
-                                </div>
-                            </div>
-                        @endfor
-
-                        {{--Children--}}
-                        @for($i = 1; $i <= $passenger_count['children']; ++$i)
-                            <div class="row mb-4">
-                                <div class="card w-100">
-                                    <h5 class="card-header title_card">Passenger {{$count}} <span>(Children)</span></h5>
-                                    <input type="hidden" name="passengers[{{$count}}][passenger_type]" value=2>
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-3">
-                                                <div>Gender *</div>
-                                                <div class="input-group">
-                                                    <select name="passengers[{{$count}}][gender]" class="custom-select"
-                                                            aria-label="select with button addon">
-                                                        <option value="" selected>-- Gender --</option>
-                                                        <option value="1">Male</option>
-                                                        <option value="2">female</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-5">
-                                                <div>Middle and First/Given name *</div>
-                                                <div class="input-group">
-                                                    <input name="passengers[{{$count}}][first_name]" type="text"
-                                                           class="form-control"
-                                                           placeholder="Middle and First/Given name"
-                                                           aria-label="Username" aria-describedby="basic-addon1">
-                                                </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <div>Last/Family Name *</div>
-                                                <div class="input-group">
-                                                    <input name="passengers[{{$count}}][last_name]" type="text"
-                                                           class="form-control"
-                                                           placeholder="Last/Family Name"
-                                                           aria-label="Username" aria-describedby="basic-addon1">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <p class="ml-3" style="font-size: 80%">
-                                                Please enter your full name as it appears on your passport.
-                                            </p>
-                                        </div>
-                                        <div class="row mt-3">
-                                            <div class="col-4">
-                                                <div>Date of birth *</div>
-                                                <div class="input-group">
-                                                    <input name="passengers[{{$count++}}][dob]" type="date"
-                                                           class="form-control w-75"
-                                                           placeholder="Departure">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row ml-1 booking2_color_logo">
-                                    <p>* required fields</p>
-                                </div>
-                            </div>
-                        @endfor
-
-                        {{--Infant--}}
-                        @for($i = 1; $i <= $passenger_count['infant']; ++$i)
-                            <div class="row mb-4">
-                                <div class="card w-100">
-                                    <h5 class="card-header title_card">Passenger {{$count}} <span>(Infant)</span></h5>
-                                    <input type="hidden" name="passengers[{{$count}}][passenger_type]" value=3>
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-3">
-                                                <div>Gender *</div>
-                                                <div class="input-group">
-                                                    <select name="passengers[{{$count}}][gender]" class="custom-select"
-                                                            aria-label="select with button addon">
-                                                        <option value="" selected>-- Gender --</option>
-                                                        <option value="1">Male</option>
-                                                        <option value="2">female</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-5">
-                                                <div>Middle and First/Given name *</div>
-                                                <div class="input-group">
-                                                    <input name="passengers[{{$count}}][first_name]" type="text"
-                                                           class="form-control"
-                                                           placeholder="Middle and First/Given name"
-                                                           aria-label="Username" aria-describedby="basic-addon1">
-                                                </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <div>Last/Family Name *</div>
-                                                <div class="input-group">
-                                                    <input name="passengers[{{$count}}][last_name]" type="text"
+                                                           value="{{ old('passengers.' . $count . '.last_name') }}"
                                                            class="form-control"
                                                            placeholder="Last/Family Name"
                                                            aria-label="Username" aria-describedby="basic-addon1">
@@ -281,6 +171,143 @@
                                                 <div>Date of birth *</div>
                                                 <div class="input-group">
                                                     <input name="passengers[{{$count}}][dob]" type="date"
+                                                           value="{{ old('passengers.' . $count . '.dob') }}"
+                                                           class="form-control w-75"
+                                                           placeholder="Departure">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @php($count++)
+                        @endfor
+
+                        {{--Children--}}
+                        @for($i = 1; $i <= $passenger_count['children']; ++$i)
+                            <div class="row mb-4">
+                                <div class="card w-100">
+                                    <h5 class="card-header title_card">Passenger {{$count}} <span>(Children)</span></h5>
+                                    <input type="hidden" name="passengers[{{$count}}][passenger_type]" value=2>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <div>Gender *</div>
+                                                <div class="input-group">
+                                                    <select name="passengers[{{$count}}][gender]" class="custom-select"
+                                                            aria-label="select with button addon">
+                                                        <option value="" selected>-- Gender --</option>
+                                                        <option
+                                                            {{ old('passengers.' . $count . '.gender') == 1 ? 'selected' : '' }} value="1">
+                                                            Male
+                                                        </option>
+                                                        <option
+                                                            {{ old('passengers.' . $count . '.gender') == 2 ? 'selected' : '' }} value="2">
+                                                            female
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-5">
+                                                <div>Middle and First/Given name *</div>
+                                                <div class="input-group">
+                                                    <input name="passengers[{{$count}}][first_name]" type="text"
+                                                           value="{{ old('passengers.' . $count . '.first_name') }}"
+                                                           class="form-control"
+                                                           placeholder="Middle and First/Given name"
+                                                           aria-label="Username" aria-describedby="basic-addon1">
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div>Last/Family Name *</div>
+                                                <div class="input-group">
+                                                    <input name="passengers[{{$count}}][last_name]" type="text"
+                                                           value="{{ old('passengers.' . $count . '.last_name') }}"
+                                                           class="form-control"
+                                                           placeholder="Last/Family Name"
+                                                           aria-label="Username" aria-describedby="basic-addon1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <p class="ml-3" style="font-size: 80%">
+                                                Please enter your full name as it appears on your passport.
+                                            </p>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-4">
+                                                <div>Date of birth *</div>
+                                                <div class="input-group">
+                                                    <input name="passengers[{{$count}}][dob]" type="date"
+                                                           value="{{ old('passengers.' . $count . '.dob') }}"
+                                                           class="form-control w-75"
+                                                           placeholder="Departure">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @php($count++)
+                        @endfor
+
+                        {{--Infant--}}
+                        @for($i = 1; $i <= $passenger_count['infant']; ++$i)
+                            <div class="row mb-4">
+                                <div class="card w-100">
+                                    <h5 class="card-header title_card">Passenger {{$count}} <span>(Infant)</span></h5>
+                                    <input type="hidden" name="passengers[{{$count}}][passenger_type]" value=3>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <div>Gender *</div>
+                                                <div class="input-group">
+                                                    <select name="passengers[{{$count}}][gender]" class="custom-select"
+                                                            aria-label="select with button addon">
+                                                        <option value="" selected>-- Gender --</option>
+                                                        <option
+                                                            {{ old('passengers.' . $count . '.gender') == 1 ? 'selected' : '' }} value="1">
+                                                            Male
+                                                        </option>
+                                                        <option
+                                                            {{ old('passengers.' . $count . '.gender') == 2 ? 'selected' : '' }} value="2">
+                                                            female
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-5">
+                                                <div>Middle and First/Given name *</div>
+                                                <div class="input-group">
+                                                    <input name="passengers[{{$count}}][first_name]" type="text"
+                                                           value="{{ old('passengers.' . $count . '.first_name') }}"
+                                                           class="form-control"
+                                                           placeholder="Middle and First/Given name"
+                                                           aria-label="Username" aria-describedby="basic-addon1">
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div>Last/Family Name *</div>
+                                                <div class="input-group">
+                                                    <input name="passengers[{{$count}}][last_name]" type="text"
+                                                           value="{{ old('passengers.' . $count . '.last_name') }}"
+                                                           class="form-control"
+                                                           placeholder="Last/Family Name"
+                                                           aria-label="Username" aria-describedby="basic-addon1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <p class="ml-3" style="font-size: 80%">
+                                                Please enter your full name as it appears on your passport.
+                                            </p>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-4">
+                                                <div>Date of birth *</div>
+                                                <div class="input-group">
+                                                    <input name="passengers[{{$count}}][dob]" type="date"
+                                                           value="{{ old('passengers.' . $count . '.dob') }}"
                                                            class="form-control w-75"
                                                            placeholder="Departure">
                                                 </div>
@@ -288,7 +315,8 @@
                                             <div class="col-8">
                                                 <div>Come with the passengers</div>
                                                 <div class="input-group">
-                                                    <input name="passengers[{{$count++}}][with_passenger]" type="text"
+                                                    <input name="passengers[{{$count}}][with_passenger]" type="text"
+                                                           value="{{ old('passengers.' . $count . '.with_passenger') }}"
                                                            class="form-control"
                                                            placeholder=""
                                                            aria-label="Username" aria-describedby="basic-addon1">
@@ -297,10 +325,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row ml-1 booking2_color_logo">
-                                    <p>* required fields</p>
-                                </div>
                             </div>
+                            @php($count++)
                         @endfor
                         {{--END Passenger--}}
 
@@ -326,16 +352,22 @@
                                                         id="inputGroupSelect04"
                                                         aria-label="Example select with button addon">
                                                     <option value="" selected>-- Gender -</option>
-                                                    <option value="1">Male</option>
-                                                    <option value="2">Female</option>
+                                                    <option
+                                                        {{ old('contact.contact_gender') == 1 ? 'selected' : '' }} value="1">
+                                                        Male
+                                                    </option>
+                                                    <option
+                                                        {{ old('contact.contact_gender') == 2 ? 'selected' : '' }} value="2">
+                                                        Female
+                                                    </option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-5">
                                             <div>Middle and First/Given name *</div>
                                             <div class="input-group">
-
                                                 <input name="contact[contact_firstname]" type="text"
+                                                       value="{{ old('contact.contact_firstname') }}"
                                                        class="form-control"
                                                        placeholder="Middle and First/Given name"
                                                        aria-label="Username" aria-describedby="basic-addon1">
@@ -344,8 +376,8 @@
                                         <div class="col-4">
                                             <div>Last/Family Name *</div>
                                             <div class="input-group">
-
                                                 <input name="contact[contact_lastname]" type="text" class="form-control"
+                                                       value="{{ old('contact.contact_lastname') }}"
                                                        placeholder="Last/Family Name"
                                                        aria-label="Username" aria-describedby="basic-addon1">
                                             </div>
@@ -361,6 +393,7 @@
                                             <div class="input-group mb-3 width_input_prepend">
 
                                                 <input name="contact[contact_email]" type="text" class="form-control"
+                                                       value="{{ old('contact.contact_email') }}"
                                                        placeholder="Email"
                                                        aria-label="Username" aria-describedby="basic-addon1">
                                             </div>
@@ -370,6 +403,7 @@
                                             <div class="input-group mb-3 width_input_prepend">
 
                                                 <input name="contact[contact_phone]" type="text" class="form-control"
+                                                       value="{{ old('contact.contact_phone') }}"
                                                        placeholder="Phone"
                                                        aria-label="Username" aria-describedby="basic-addon1">
                                             </div>
@@ -387,6 +421,7 @@
                                             <div>Address *</div>
                                             <div class="input-group">
                                                 <input name="contact[contact_address]" type="text" class="form-control"
+                                                       value="{{ old('contact.contact_address') }}"
                                                        placeholder="Address "
                                                        aria-label="Username" aria-describedby="basic-addon1">
                                             </div>
