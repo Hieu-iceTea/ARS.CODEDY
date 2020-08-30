@@ -20,7 +20,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="home_slider_content">
-                            <div class="home_title"><h2>Customer information </h2></div>
+                            <div class="home_title"><h2>Ticket information </h2></div>
                         </div>
                     </div>
                 </div>
@@ -29,9 +29,9 @@
 
     </div>
 
-    <div class="container mb-5">
-        <div class="row mt-4">
-            <div class="col-8 ml-3">
+    <div class="container mt-4 mb-5">
+        <div class="row  pl-3 pr-2">
+            <div class="col-8">
                 <div class="row mb-4 booking2_color_logo">
                     <div class="media">
                         <i class="fa fa-plane" aria-hidden="true" style="font-size: 400%"></i>
@@ -42,30 +42,40 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3 ticket_detail_fontfamily ticket_detail_fontsize ml-5">
-                <p class="ticket_detail_fontfamily ticket_detail_fontsize">Ticket code: <a href=""><span
-                            class="ticket_detail_coloredit">{{ $ticket->code }}</span></a></p>
-                <a href="">Cancellation</a> | <a href="">Pay</a>
+            <div class="col-4 ticket_detail_fontfamily ticket_detail_fontsize text-right">
+                <p class="ticket_detail_fontfamily ticket_detail_fontsize">
+                    Ticket code:
+                    <a href="#">
+                        <span class="ticket_detail_coloredit" style="font-weight: 500; font-size: 23px">
+                            {{ $ticket->code }}
+                        </span>
+                    </a>
+                </p>
+                <a href="">Cancel</a>
+                |
+                <a href="">Pay</a>
             </div>
         </div>
         <div class="card w-100">
             <h5 class="card-header booking2_color_title tiket_detail_title">Flight Information</h5>
-            <div class="row mt-3">
-                <div class="col-7 ml-5">
-                    <p class="ticket_detail_fontfamily ticket_detail_fontsize">Flight to go <span
-                            class="ticket_detail_coloredit"><strong>{{ date('l, F d, Y', strtotime($ticket->flightSchedule->departure_at)) }}.</strong></span>
-                        from <span>{{ $ticket->flightSchedule->airportFrom->location}}</span>
-                        to <span>{{ $ticket->flightSchedule->airportTo->location }}</span></p>
-                </div>
-                <div class="col-4 ml-4">
-                    <p class=" ticket_detail_fontsize ticket_detail_fontfamily">Time remaining before takeoff:
-                        <span class="ticket_detail_coloredit">
-                            {{ date(' m-d H:i', strtotime($ticket->flightSchedule->departure_at) - strtotime(\Carbon\Carbon::now()->toDateTimeString())) }}
+            <div class="container mt-3 mb-0 pl-4 pr-4">
+                <div class="row">
+                    <div class="col-6">
+                        <p class="ticket_detail_fontfamily ticket_detail_fontsize">Flight to go <span
+                                class="ticket_detail_coloredit"><strong>{{ date('l, F d, Y', strtotime($ticket->flightSchedule->departure_at)) }}.</strong></span>
+                            From <span>{{ $ticket->flightSchedule->airportFrom->location}}</span>
+                            to <span>{{ $ticket->flightSchedule->airportTo->location }}</span></p>
+                    </div>
+                    <div class="col-6 text-right">
+                        <p class=" ticket_detail_fontsize ticket_detail_fontfamily">Time remaining before takeoff:
+                            <span class="ticket_detail_coloredit" style="font-weight: 500">
+                            {{ date_diff(date_create($ticket->flightSchedule->arrival_at), date_create(\Carbon\Carbon::now()->toDateTimeString()))->format('%M month, %D day, %Hh:%Im') }}
                         </span>
-                    </p>
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="card m-4 ticket_detail_fontsize ticket_detail_fontfamily">
+            <div class="card mx-4 mb-4 mt-3 ticket_detail_fontsize ticket_detail_fontfamily">
                 <div class="row">
                     <div class="col-2 ml-4">
                         <p class=" ticket_detail_fontsize ticket_detail_fontfamily ticket_detail_coloredit">
@@ -91,7 +101,7 @@
                         <p class="ticket_detail_fontfamily">
                             ARS {{ \App\Utilities\Utility::$seat_type[$ticket->seat_type] }}</p>
                     </div>
-                    <div class="col-3 my-3 ml-5">
+                    <div class="col-3 my-3 text-right">
                         <a href="ticket/edit-schedule/{{$ticket->ticket_id}}"
                            class="btn btn-outline-primary tiket_detail_continue position-sticky continue">
                             Change flight schedules
@@ -137,7 +147,8 @@
                                     <td>Baby</td>
                                 @endif
 
-                                <td><a style="" href="ticket/edit-passenger/{{$ticket->ticket_id}}">Change passenger information ></a></td>
+                                <td><a style="" href="ticket/edit-passenger/{{$ticket->ticket_id}}">Change passenger
+                                        information ></a></td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -164,7 +175,8 @@
                             <th scope="row">{{$count = 1}}</th>
                             <td>{{ $ticket->payType->name }}</td>
                             <td>{{ number_format($ticket->total_price, 0, ',', '.') }}
-                                VND</td>
+                                VND
+                            </td>
                             <td>{{ \App\Utilities\Utility::$ticket_status[$ticket->status] }}</td>
                         </tr>
                         </tbody>
