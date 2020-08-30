@@ -6,7 +6,7 @@
 
     <div class="app-main__inner">
 
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             @csrf
 
             <div class="app-page-title">
@@ -43,6 +43,24 @@
                 <div class="col-md-12">
                     <div class="main-card mb-3 card">
                         <div class="card-body">
+
+                            <div class="position-relative row form-group">
+                                <label for="image" class="col-md-3 text-md-right col-form-label">Avatar</label>
+                                <div class="col-md-9 col-xl-8">
+                                    <img id="thumbnail" height="200" class="rounded-circle" style="cursor: pointer"
+                                         data-toggle="tooltip" title="Click to change the image" data-placement="bottom"
+                                         src="{{ isset($user->image) ? '../img/user/' . $user->image : '../img/icon/upload_select.png' }}"
+                                         alt="Avatar">
+                                    <input name="image" id="image" type="file" onchange="changeImg(this)"
+                                           class="form-control-file" style="display: none;"
+                                           value="{{ old('image') ?? $user->image ?? ''}}">
+                                    <input type="hidden" name="image_old" value="{{ $user->image ?? '' }}">
+                                    <small class="form-text text-muted">
+                                        {{ isset($user->image) ? 'Look at it, it looks great! (Click on the image to change)' : 'No images, upload them! (Click on the image to change)' }}
+                                    </small>
+                                </div>
+                            </div>
+
                             <div class="position-relative row form-group">
                                 <label for="user_name" class="col-md-3 text-md-right col-form-label">User Name</label>
                                 <div class="col-md-9 col-xl-8">
@@ -164,18 +182,6 @@
                                             User
                                         </option>
                                     </select>
-                                </div>
-                            </div>
-
-                            <div class="position-relative row form-group">
-                                <label for="image" class="col-md-3 text-md-right col-form-label">Avatar</label>
-                                <div class="col-md-9 col-xl-8">
-                                    <input name="image" id="image" type="file"
-                                           class="form-control-file"
-                                           value="{{ old('image') ?? $user->image ?? ''}}">
-                                    <small class="form-text text-muted">
-                                        This feature is not available yet. We will update it soon.
-                                    </small>
                                 </div>
                             </div>
 

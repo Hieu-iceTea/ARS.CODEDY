@@ -834,7 +834,7 @@
                             <div class="btn-group">
                                 <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                    class="p-0 btn">
-                                    <img width="42" class="rounded-circle" src="assets/images/avatars/default.jpg"
+                                    <img width="42" class="rounded-circle" src="../img/user/{{ \Illuminate\Support\Facades\Auth::user()->image ?? '_default.jpg' }}"
                                          alt="">
                                     <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                 </a>
@@ -850,7 +850,7 @@
                                                     <div class="widget-content-wrapper">
                                                         <div class="widget-content-left mr-3">
                                                             <img width="42" class="rounded-circle"
-                                                                 src="assets/images/avatars/default.jpg" alt="">
+                                                                 src="../img/user/{{ \Illuminate\Support\Facades\Auth::user()->image ?? '_default.jpg' }}" alt="">
                                                         </div>
                                                         <div class="widget-content-left">
                                                             <div class="widget-heading">Hieu-iceTea</div>

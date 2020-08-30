@@ -83,7 +83,7 @@
                                                         <img width="40" class="rounded-circle"
                                                              data-toggle="tooltip" title="Avatar"
                                                              data-placement="bottom"
-                                                             src="assets/images/avatars/default.jpg" alt="">
+                                                             src="../img/user/{{ $user->image ?? '_default.jpg' }}" alt="">
                                                     </div>
                                                 </div>
                                                 <div class="widget-content-left flex2">

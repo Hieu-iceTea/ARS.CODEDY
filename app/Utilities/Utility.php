@@ -4,8 +4,19 @@
 namespace App\Utilities;
 
 
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
+
 class Utility
 {
+    /*
+    |--------------------------------------------------------------------------
+    | Các hằng số, role dùng chung toàn hệ thống
+    |--------------------------------------------------------------------------
+    |
+    |
+    */
+
     //ticket_status
     const ticket_status_Unverified = 1;
     const ticket_status_Reservations = 2;
@@ -88,4 +99,34 @@ class Utility
         self::flight_schedule_status_Finish => 'primary',
         self::flight_schedule_status_Cancel => 'secondary',
     ];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Các hàm dùng chung toàn hệ thống
+    |--------------------------------------------------------------------------
+    |
+    |
+    */
+
+    /**
+     *
+     * Lấy tên duy nhất cho file.
+     *
+     * @param $file
+     * @return string
+     * @author Hiếu iceTea
+     * @copyright Hieu-iceTea@2020-08
+     *
+     */
+    public function getFileNameUniqueID($file)
+    {
+        $file_name_original = $file->getClientOriginalName();
+        $extension = $file->getClientOriginalExtension();
+        $file_name_without_extension = Str::replaceLast('.' . $extension, '', $file_name_original);
+
+        $str_time_now = Carbon::now()->format('ymd_his');
+        $file_name = Str::slug($file_name_without_extension) . '_' . uniqid() . '_' . $str_time_now . '.' . $extension;
+
+        return $file_name;
+    }
 }

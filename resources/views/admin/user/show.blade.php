@@ -41,6 +41,20 @@
                 <div class="main-card mb-3 card">
                     <div class="card-body display_data">
                         <div class="position-relative row form-group">
+                            <label for="image" class="col-md-3 text-md-right col-form-label">Avatar</label>
+                            <div class="col-md-9 col-xl-8">
+                                <p>
+                                    <img height="200" class="rounded-circle"
+                                         data-toggle="tooltip" title="Avatar" data-placement="bottom"
+                                         src="../img/user/{{ $user->image ?? '_default.jpg' }}" alt="Avatar">
+                                </p>
+                                <small class="form-text text-muted">
+                                    {{ isset($user->image) ? 'Look at it, it looks great!' : 'No images, upload them!' }}
+                                </small>
+                            </div>
+                        </div>
+
+                        <div class="position-relative row form-group">
                             <label for="user_name" class="col-md-3 text-md-right col-form-label">User Name</label>
                             <div class="col-md-9 col-xl-8">
                                 <p>{{ $user->user_name }}</p>
@@ -99,16 +113,6 @@
                             <label for="level" class="col-md-3 text-md-right col-form-label">Level</label>
                             <div class="col-md-9 col-xl-8">
                                 <p>{{ \App\Utilities\Utility::$user_level[$user->level] }}</p>
-                            </div>
-                        </div>
-
-                        <div class="position-relative row form-group">
-                            <label for="image" class="col-md-3 text-md-right col-form-label">Avatar</label>
-                            <div class="col-md-9 col-xl-8">
-                                <p>{{ $user->image ?? 'null' }}</p>
-                                <small class="form-text text-muted">
-                                    This feature is not available yet. We will update it soon.
-                                </small>
                             </div>
                         </div>
 

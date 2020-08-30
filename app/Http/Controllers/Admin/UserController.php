@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Model\User;
+use App\Utilities\Utility;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\View\View;
 
 class UserController extends Controller
@@ -48,12 +50,22 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $user = new User();
+        // * [01] * Xử lý dữ liệu:
+        //Nếu có file được chọn:
+        if ($request->hasFile('image')) {
+            $file = $request->image;
+            $file_name = (new Utility())->getFileNameUniqueID($file);
+        } else {
+            $file_name = null;
+        }
 
+        // * [02] * Insert database:
+        $user = new User();
         $user->user_name = $request->get('user_name');
         $user->email = $request->get('email');
         $user->password = bcrypt($request->get('password'));
         $user->level = $request->get('level');
+        $user->image = $file_name;
         $user->gender = $request->get('gender');
         $user->first_name = $request->get('first_name');
         $user->last_name = $request->get('last_name');
@@ -62,10 +74,22 @@ class UserController extends Controller
         $user->address = $request->get('address');
 //        $user->loyalty_number = $request->get('loyalty_number');
         $user->active = $request->get('active');
-
         $user->save();
 
-        return redirect('admin/user/' . $user->user_id)->with('notification', 'Created successfully!');
+        // * [03] * Lưu file:
+        //Nếu thêm bản ghi thành công && có file được chọn, Di chuyển file đã chọn vào thư mục public:
+        if ($user->user_id != null && $request->hasFile('image')) {
+            $file->move('img/user', $file_name);
+        }
+
+        // * Final * Thông báo kết quả:
+        if ($user->user_id != null) {
+            return redirect('admin/user/' . $user->user_id)
+                ->with('notification', 'Created successfully!');
+        } else {
+            return redirect()->back()
+                ->withErrors('Created failed!');
+        }
     }
 
     /**
@@ -100,7 +124,16 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        User::where('user_id', $id)->update([
+        // * [01] * Xử lý dữ liệu:
+        //Nếu có file được chọn:
+        if ($request->hasFile('image')) {
+            $file = $request->image;
+            $file_name = (new Utility())->getFileNameUniqueID($file);
+        }
+
+        // * [02] * Update database:
+        //Tạo danh sách giá trị sẽ được update:
+        $values = [
             'user_name' => $request->get('user_name'),
             'email' => $request->get('email'),
 //            'password' => $request->get('password'),
@@ -113,9 +146,35 @@ class UserController extends Controller
             'address' => $request->get('address'),
 //            'loyalty_number' => $request->get('loyalty_number'),
             'active' => $request->get('active'),
-        ]);
+        ];
 
-        return redirect('admin/user/' . $id)->with('notification', 'Updated successfully!');
+        //Nếu có file mới được chọn thì thêm tên file mới vào danh sách $values, nếu không thì bỏ qua:
+        if ($request->hasFile('image')) {
+            $values['image'] = $file_name;
+        }
+
+        //Update bản ghi trong database:
+        $user = User::where('user_id', $id)->update($values);
+
+        // * [03] * Update file:
+        //Nếu update database thành công && có file được chọn, Di chuyển file mới đã chọn vào thư mục public:
+        if ($user == true && $request->hasFile('image')) {
+            $file->move('img/user', $file_name);
+
+            //Đồng thời xóa file cũ đi (nếu có file cũ):
+            if ($request->image_old != '') {
+                unlink('img/user/' . $request->image_old);
+            }
+        }
+
+        // * Final * Thông báo kết quả:
+        if ($user == true) {
+            return redirect('admin/user/' . $id)->with('notification', 'Updated successfully!')
+                ->with('notification', 'Update successfully!');
+        } else {
+            return redirect()->back()
+                ->withErrors('Update failed!');
+        }
     }
 
     /**
@@ -125,16 +184,26 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        User::where('user_id', $id)->update([
+        // * [01] * Xóa trong database:
+        $user = User::where('user_id', $id)->update([
             'deleted' => true,
         ]);
 
-        if (url()->previous() != url()->current()) {
-            return redirect()->back()->with('notification', 'Deleted successfully!');
-        } else {
-            //Nếu trang trước giống trang hiện tại thì chuyển hướng về trang chủ
-            //(tức là ở trang detail, ấn nút xóa. xóa xong redirect()->back() sẽ quay lại trang detail để hiện thị item đã xóa gây ra lỗi)
-            return redirect('admin/user')->with('notification', 'Deleted successfully!');
+        // * [02] * Xóa file trong thư mục:
+        $fileName = User::where('user_id', $id)->first()->image;
+        $str = 'img/user/';
+        $File_move = File::move(public_path($str . $fileName), public_path($str . 'trash/' . $fileName)); //Di chuyển vào thùng rác
+        //$file_delete = File::delete(public_path($str . $fileName)); //Xóa vĩnh viễn
+
+        // * Final * Thông báo kết quả:
+        if ($user == true && $File_move == true) {
+            if (url()->previous() != url()->current()) {
+                return redirect()->back()->with('notification', 'Deleted successfully!');
+            } else {
+                //Nếu trang trước giống trang hiện tại thì chuyển hướng về trang danh sách (index).
+                //(tức là ở trang detail, ấn nút xóa. xóa xong redirect()->back() sẽ quay lại trang detail để hiện thị item đã xóa gây ra lỗi)
+                return redirect('admin/user')->with('notification', 'Deleted successfully!');
+            }
         }
     }
 }
