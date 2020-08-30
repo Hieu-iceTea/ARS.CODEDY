@@ -125,11 +125,21 @@
                                                     <div class="check eco">
                                                         <span>Select flight</span>
                                                         <input id="check_eco_{{ $flightSchedule->flight_schedule_id }}"
-                                                               class="ml-1" name="select_flight" value="1" type="radio"
-
-                                                               onclick="setValue({{ $flightSchedule->flight_schedule_id }}, this.value, {{ $flightSchedule->priceSeatType->eco_price }}, {{ $searchInput['adults'] }}, {{ $searchInput['children'] }}, {{ $searchInput['infant'] }})">
+                                                               class="ml-2" name="select_flight" value="1" type="radio"
+                                                               {{ $flightSchedule->priceSeatType->eco_qty_remain == 0 ? 'disabled' : '' }}
+                                                               onchange="setValue({{ $flightSchedule->flight_schedule_id }}, this.value, {{ $flightSchedule->priceSeatType->eco_price }}, {{ $searchInput['adults'] }}, {{ $searchInput['children'] }}, {{ $searchInput['infant'] }})">
                                                         <p>{{ number_format($flightSchedule->priceSeatType->eco_price, 0, ',', '.') }}
                                                             VND</p>
+
+                                                        @if($flightSchedule->priceSeatType->eco_qty_remain == 0)
+                                                            <div class="seats-left">
+                                                                <span>Sold out</span>
+                                                            </div>
+                                                        @elseif($flightSchedule->priceSeatType->eco_qty_remain < 20)
+                                                            <div class="seats-left">
+                                                                <span>Only {{ $flightSchedule->priceSeatType->eco_qty_remain }} seats left for this price</span>
+                                                            </div>
+                                                        @endif
                                                     </div>
                                                 </label>
                                             </div>
@@ -138,11 +148,21 @@
                                                     <div class="check plus">
                                                         <span>Select flight </span>
                                                         <input id="check_plus_{{ $flightSchedule->flight_schedule_id }}"
-                                                               class="ml-1" name="select_flight" value="2" type="radio"
-
-                                                               onclick="setValue({{ $flightSchedule->flight_schedule_id }}, this.value, {{ $flightSchedule->priceSeatType->plus_price }}, {{ $searchInput['adults'] }}, {{ $searchInput['children'] }}, {{ $searchInput['infant'] }})">
+                                                               class="ml-2" name="select_flight" value="2" type="radio"
+                                                               {{ $flightSchedule->priceSeatType->plus_qty_remain == 0 ? 'disabled' : '' }}
+                                                               onchange="setValue({{ $flightSchedule->flight_schedule_id }}, this.value, {{ $flightSchedule->priceSeatType->plus_price }}, {{ $searchInput['adults'] }}, {{ $searchInput['children'] }}, {{ $searchInput['infant'] }})">
                                                         <p>{{ number_format($flightSchedule->priceSeatType->plus_price, 0, ',', '.') }}
                                                             VND</p>
+
+                                                        @if($flightSchedule->priceSeatType->plus_qty_remain == 0)
+                                                            <div class="seats-left">
+                                                                <span>Sold out</span>
+                                                            </div>
+                                                        @elseif($flightSchedule->priceSeatType->plus_qty_remain < 20)
+                                                            <div class="seats-left">
+                                                                <span>Only {{ $flightSchedule->priceSeatType->plus_qty_remain }} seats left for this price</span>
+                                                            </div>
+                                                        @endif
                                                     </div>
                                                 </label>
                                             </div>
@@ -152,11 +172,21 @@
                                                         <span>Select flight </span>
                                                         <input
                                                             id="check_business_{{ $flightSchedule->flight_schedule_id }}"
-                                                            class="ml-1" name="select_flight" value="3"
-                                                            type="radio"
-                                                            onclick="setValue({{ $flightSchedule->flight_schedule_id }}, this.value, {{ $flightSchedule->priceSeatType->business_price }}, {{ $searchInput['adults'] }}, {{ $searchInput['children'] }}, {{ $searchInput['infant'] }})">
+                                                            class="ml-2" name="select_flight" value="3" type="radio"
+                                                            {{ $flightSchedule->priceSeatType->business_qty_remain == 0 ? 'disabled' : '' }}
+                                                            onchange="setValue({{ $flightSchedule->flight_schedule_id }}, this.value, {{ $flightSchedule->priceSeatType->business_price }}, {{ $searchInput['adults'] }}, {{ $searchInput['children'] }}, {{ $searchInput['infant'] }})">
                                                         <p>{{ number_format($flightSchedule->priceSeatType->business_price, 0, ',', '.') }}
                                                             VND</p>
+
+                                                        @if($flightSchedule->priceSeatType->business_qty_remain == 0)
+                                                            <div class="seats-left">
+                                                                <span>Sold out</span>
+                                                            </div>
+                                                        @elseif($flightSchedule->priceSeatType->business_qty_remain < 20)
+                                                            <div class="seats-left">
+                                                                <span>Only {{ $flightSchedule->priceSeatType->business_qty_remain }} seats left for this price</span>
+                                                            </div>
+                                                        @endif
                                                     </div>
                                                 </label>
                                             </div>

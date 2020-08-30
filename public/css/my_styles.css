@@ -408,6 +408,10 @@ body {
     color: white;
 }
 
+.body_booking .content-step1 .check input {
+    transform: scale(1.5);
+}
+
 .body_booking .content-step1 .check span {
     font-size: 15px;
     font-family: 'Oswald', sans-serif;
@@ -508,6 +512,18 @@ body {
 
 .body_booking a i {
     font-size: 20px;
+}
+
+.seats-left {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+}
+
+.seats-left span {
+    color: yellow !important;
+    font-size: 12px !important;
+    font-weight: normal !important;
 }
 
 /************
