@@ -27,9 +27,75 @@
 
     </div>
 
+    <!-- Meet the Team -->
+
+    <div class="team">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="section_subtitle">simply amazing places</div>
+                    <div class="section_title"><h2>Meet the Team</h2></div>
+                </div>
+            </div>
+            <div class="row team_row">
+                <!-- Team Item -->
+                <div class="col-xl-3 col-md-6 team_col">
+                    <div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
+                        <div class="team_image"><img src="img/about/vuquanghuy2001.jpg" alt=""></div>
+                        <div class="team_content">
+                            <div class="team_title"><a href="#">Quang Huy</a></div>
+                            <div class="team_text">
+                                <h5>Data Management</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Item -->
+                <div class="col-xl-3 col-md-6 team_col">
+                    <div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
+                        <div class="team_image"><img src="img/about/Hieu-iceTea.jpg" alt=""></div>
+                        <div class="team_content">
+                            <div class="team_title"><a href="#">Dinh Hieu</a></div>
+                            <div class="team_text">
+                                <h5>CEO & Founder</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Item -->
+                <div class="col-xl-3 col-md-6 team_col">
+                    <div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
+                        <div class="team_image"><img src="img/about/chanhoa.jpg" alt=""></div>
+                        <div class="team_content">
+                            <div class="team_title"><a href="#">Chan Hoa</a></div>
+                            <div class="team_text">
+                                <h5>Content Production</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Item -->
+                <div class="col-xl-3 col-md-6 team_col">
+                    <div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
+                        <div class="team_image"><img src="img/about/tuanpth1909.jpg" alt=""></div>
+                        <div class="team_content">
+                            <div class="team_title"><a href="#">Pham Tuan</a></div>
+                            <div class="team_text">
+                                <h5>UI/UX Designer</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- About -->
 
-    <div class="about">
+    <div class="about pt-0">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
@@ -58,7 +124,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="about_image"><img src="img/maybay.jpg" alt=""></div>
+                    <div class="about_image"><img src="img/about_plane-in-the-sky.jpg" alt=""></div>
                 </div>
             </div>
         </div>
@@ -173,74 +239,6 @@
                             <div class="why_title">Promotion</div>
                             <div class="why_text">
                                 <p>We always offer attractive promotions for customers, with cheap flights and diverse flight schedules.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- Team -->
-
-    <div class="team">
-        <div class="container">
-            <div class="row">
-                <div class="col text-center">
-                    <div class="section_subtitle">simply amazing places</div>
-                    <div class="section_title"><h2>Meet the Team</h2></div>
-                </div>
-            </div>
-            <div class="row team_row">
-
-                <!-- Team Item -->
-                <div class="col-xl-3 col-md-6 team_col">
-                    <div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
-                        <div class="team_image"><img src="img/hieu.jpg" alt=""></div>
-                        <div class="team_content">
-                            <div class="team_title"><a href="#">Dinh Hieu</a></div>
-                            <div class="team_text">
-                                <h5>Business Head</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Team Item -->
-                <div class="col-xl-3 col-md-6 team_col">
-                    <div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
-                        <div class="team_image"><img src="img/hoa.jpg" alt=""></div>
-                        <div class="team_content">
-                            <div class="team_title"><a href="#">Chan Hoa</a></div>
-                            <div class="team_text">
-                                <h5>CEO & Founder</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Team Item -->
-                <div class="col-xl-3 col-md-6 team_col">
-                    <div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
-                        <div class="team_image"><img src="img/huy.jpg" alt=""></div>
-                        <div class="team_content">
-                            <div class="team_title"><a href="#">Quang Huy</a></div>
-                            <div class="team_text">
-                                <h5>Web Deverloper</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Team Item -->
-                <div class="col-xl-3 col-md-6 team_col">
-                    <div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
-                        <div class="team_image"><img src="img/tuan.jpg" alt=""></div>
-                        <div class="team_content">
-                            <div class="team_title"><a href="#">Pham Tuan</a></div>
-                            <div class="team_text">
-                                <h5>UI/UX Designer</h5>
                             </div>
                         </div>
                     </div>
