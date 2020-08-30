@@ -402,7 +402,23 @@ class BookingController extends Controller
         }
 
         // = = = = = = = = = = = = = = = = = = = = [03] Cập nhật bảng khác = = = = = = = = = = = = = = = = = = = =
-        //Trừ số lượng ghế (sẽ làm sớm...)
+        //Trừ số lượng ghế trong bảng price_seat_type
+        $price_seat_type = FlightSchedule::all()
+            ->where('flight_schedule_id', $booking_session['flight_schedule_id'])
+            ->first()
+            ->priceSeatType;
+
+        $seat_type_name = Str::lower(Utility::$seat_type[$booking_session['seat_type']]); //Lấy tên kiểu ghế người dùng chọn (eco | plus | business)
+        $column = $seat_type_name . '_qty_remain'; //Lấy tên cột cần trừ số lượng  (eco_qty_remain | plus_qty_remain | business_qty_remain)
+        $qty_remain = $price_seat_type->getAttributeValue($column); //Lấy số lượng còn lại hiện tại trong DB theo tên cột
+
+        $price_seat_type_update = $price_seat_type->update([
+            $column => --$qty_remain,
+        ]);
+
+        if ($price_seat_type_update == false) {
+            return back()->withErrors('Cannot update data to table: [price_seat_type]')->with('preloader', 'none');
+        }
 
         return $ticket;
     }

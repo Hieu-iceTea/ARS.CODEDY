@@ -265,7 +265,7 @@ CREATE TABLE IF NOT EXISTS `ticket`
     `contact_address`    VARCHAR(128)               NOT NULL,
 
     `total_price`        INT(16) UNSIGNED           NOT NULL,
-    `amount_paid`        INT(16) UNSIGNED           NOT NULL,
+    `amount_paid`        INT(16) UNSIGNED DEFAULT 0 NOT NULL,
     `total_passenger`    INT(16) UNSIGNED           NOT NULL,
     `description`        TEXT,
 
