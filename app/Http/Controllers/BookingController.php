@@ -242,6 +242,11 @@ class BookingController extends Controller
         //Insert data
         $ticket = $this->createTicket($request);
 
+        //Nếu insert lỗi, thì quay lại. (một vài lỗi đã được viết trong hàm createTicket() vừa call ở trên)
+        if (!isset($ticket->ticket_id)) {
+            return redirect()->back();
+        }
+
         //Nếu lựa chọn thanh toán sau
         if ($pay_type_id == Utility::pay_type_PayLater) {
             $this->sendEmail($ticket);
@@ -358,6 +363,34 @@ class BookingController extends Controller
         $booking_session = Session::get('booking_session');
         $pay_type_id = $request->get('pay_type');
 
+        // = = = = = = = [00] Kiểm tra số lượng vé khả & trừ số lượng ghế trong bảng price_seat_type = = = = = = =
+        $price_seat_type = FlightSchedule::all()
+            ->where('flight_schedule_id', $booking_session['flight_schedule_id'])
+            ->first()
+            ->priceSeatType;
+
+        $seat_type_name = Str::lower(Utility::$seat_type[$booking_session['seat_type']]); //Lấy tên kiểu ghế người dùng chọn (eco | plus | business)
+        $column = $seat_type_name . '_qty_remain'; //Lấy tên cột cần trừ số lượng  (eco_qty_remain | plus_qty_remain | business_qty_remain)
+        $qty_remain = $price_seat_type->getAttributeValue($column); //Lấy số lượng còn lại hiện tại trong DB theo tên cột
+        $total_passengers = $booking_session['passenger_count']['total'];
+
+        //Kiểm tra số vé khả dụng, nếu số vé cần mua nhiều hơn số vé còn lại, báo lỗi và quay lại.
+        if ($total_passengers > $qty_remain) {
+            return redirect()->back()->withErrors('The number of passengers is more than the remaining number of tickets')
+                ->with('preloader', 'none');
+        }
+
+        //Trừ số lượng vé nè:
+        $price_seat_type_update = $price_seat_type->update([
+            $column => $qty_remain - $total_passengers,
+        ]);
+
+        //Nếu trừ lỗi (update bảng price_seat_type lỗi) thì báo lỗi nè:
+        if ($price_seat_type_update == false) {
+            return back()->withErrors('Cannot update data to table: [price_seat_type]')
+                ->with('preloader', 'none');
+        }
+
         // = = = = = = = = = = = = = = = = = = = = [01] Insert to Ticket = = = = = = = = = = = = = = = = = = = =
         $ticket = new Ticket(); //Khởi tạo Model mới
         $ticket->user_id = Auth::user()->user_id ?? null;
@@ -401,25 +434,7 @@ class BookingController extends Controller
             }
         }
 
-        // = = = = = = = = = = = = = = = = = = = = [03] Cập nhật bảng khác = = = = = = = = = = = = = = = = = = = =
-        //Trừ số lượng ghế trong bảng price_seat_type
-        $price_seat_type = FlightSchedule::all()
-            ->where('flight_schedule_id', $booking_session['flight_schedule_id'])
-            ->first()
-            ->priceSeatType;
-
-        $seat_type_name = Str::lower(Utility::$seat_type[$booking_session['seat_type']]); //Lấy tên kiểu ghế người dùng chọn (eco | plus | business)
-        $column = $seat_type_name . '_qty_remain'; //Lấy tên cột cần trừ số lượng  (eco_qty_remain | plus_qty_remain | business_qty_remain)
-        $qty_remain = $price_seat_type->getAttributeValue($column); //Lấy số lượng còn lại hiện tại trong DB theo tên cột
-
-        $price_seat_type_update = $price_seat_type->update([
-            $column => --$qty_remain,
-        ]);
-
-        if ($price_seat_type_update == false) {
-            return back()->withErrors('Cannot update data to table: [price_seat_type]')->with('preloader', 'none');
-        }
-
+        // = = = = = = = = = = = = = = = = = = = = [Final] Trả về $ticket = = = = = = = = = = = = = = = = = = = =
         return $ticket;
     }
 
