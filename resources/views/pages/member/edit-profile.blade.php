@@ -139,7 +139,7 @@
                             <p>Address</p>
                         </div>
                         <div class="col-9">
-                            <p><input class="form-control form-control-sm" type="tel" name="address" placeholder="Phone"
+                            <p><input class="form-control form-control-sm" type="tel" name="address" placeholder="Address"
                                       value="{{ Auth::user()->address }}">
                             </p>
                         </div>
