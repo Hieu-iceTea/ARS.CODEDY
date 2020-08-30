@@ -50,8 +50,10 @@ class FlightScheduleController extends Controller
                 ->orWhere('plane.name', 'like', '%' . $keyword . '%')
                 //Hoàn thiện: sắp xếp, phân trang
                 ->Where('flight_schedule.deleted', '=', false)
+                ->select(['*', 'flight_schedule.code as code']) //cột "code" có ở cả 3 bảng join nên phải chỉ định rõ muốn lấy ở bảng nào.
                 ->orderBy('departure_at', 'desc')
                 ->paginate();
+
 
             //giúp chuyển trang page sẽ đính kèm theo từ khóa search của người dùng:
             $flightSchedules->appends(['search' => $keyword]);
