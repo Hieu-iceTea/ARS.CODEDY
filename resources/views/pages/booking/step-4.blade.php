@@ -103,7 +103,7 @@
                                             <th scope="row"></th>
                                             <td>{{ $flightSchedule->code }}</td>
                                             <td>Travel time:
-                                                {{ date('H\\h i\\m', strtotime($flightSchedule->arrival_at) - strtotime($flightSchedule->departure_at)) }}
+                                                {{ date_diff(date_create($flightSchedule->arrival_at), date_create($flightSchedule->departure_at))->format('%Hh %im') }}
                                             </td>
                                         </tr>
                                         </tbody>
@@ -261,7 +261,7 @@
                                                         <th scope="row"></th>
                                                         <td>{{ $flightSchedule->code }}</td>
                                                         <td>Travel time:
-                                                            {{ date('H\\h i\\m', strtotime($flightSchedule->arrival_at) - strtotime($flightSchedule->departure_at)) }}
+                                                            {{ date_diff(date_create($flightSchedule->arrival_at), date_create($flightSchedule->departure_at))->format('%Hh %im') }}
                                                         </td>
                                                     </tr>
                                                     </tbody>

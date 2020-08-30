@@ -98,20 +98,26 @@
                                         <ul class="date-fly w-100">
                                             <li class="mr-3 w-25">
                                                 <ul class="text-center">
-                                                    <li>{{ date('H:i', strtotime($flightSchedule->departure_at)) }}</li>
+                                                    <li style="font-size: 18px">{{ date('H:i', strtotime($flightSchedule->departure_at)) }}</li>
                                                     <li>{{ $flightSchedule->airportFrom->code }}</li>
                                                 </ul>
                                             </li>
                                             <li class="mr-1 w-75 ">
                                                 <ul class="text-center">
-                                                    <li>{{ date('H\\h:i\\m', strtotime($flightSchedule->arrival_at) - strtotime($flightSchedule->departure_at)) }}</li>
+                                                    <li style="margin-bottom: 3px">
+                                                        <span
+                                                            style="font-size: 13px; font-weight: 400; background-color: #B1B3B6; color: white; padding: 3px 6px; border-radius: 12px;">
+                                                            {{ date_diff(date_create($flightSchedule->arrival_at), date_create($flightSchedule->departure_at))->format('%Hh %im') }}
+                                                        </span>
+
+                                                    </li>
                                                     <li style="font-size: 14px;">{{ $flightSchedule->code }}</li>
                                                     <li style="font-size: 10px;">{{ $flightSchedule->plane->name }}</li>
                                                 </ul>
                                             </li>
                                             <li>
                                                 <ul class="text-center">
-                                                    <li>{{ date('H:i', strtotime($flightSchedule->arrival_at)) }}</li>
+                                                    <li style="font-size: 18px">{{ date('H:i', strtotime($flightSchedule->arrival_at)) }}</li>
                                                     <li>{{ $flightSchedule->airportTo->code }}</li>
                                                 </ul>
                                             </li>
