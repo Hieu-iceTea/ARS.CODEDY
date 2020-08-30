@@ -279,6 +279,7 @@ class BookingController extends Controller
         //Lấy data từ URL (do VNPay gửi về qua $vnp_Returnurl)
         $vnp_ResponseCode = $request->get('vnp_ResponseCode'); //Mã phản hồi kết quả thanh toán. 00 = Thành công
         $vnp_TxnRef = $request->get('vnp_TxnRef'); //ticket_id
+        $vnp_Amount = $request->get('vnp_Amount'); //Số tiền thanh toán.
 
         if ($vnp_ResponseCode != null) {
             //Nếu giao dịch bị hủy do người dùng
@@ -295,9 +296,10 @@ class BookingController extends Controller
 
             //Nếu giao dịch thành công
             if ($vnp_ResponseCode == 00) {
-                //cập nhật trạng thái đã thanh toán trong DataBase (status)
+                //cập nhật trạng thái, số tiền đã thanh toán vào DataBase
                 Ticket::where('ticket_id', '=', $vnp_TxnRef)->update([
                     'status' => Utility::ticket_status_Paid,
+                    'amount_paid' => $vnp_Amount / 100,
                     'description' => 'Vé được thanh toán bằng VNPay (Demo test mới ghi thế này thôi. Ahihi)',
                 ]);
 
@@ -399,7 +401,7 @@ class BookingController extends Controller
         $ticket->pay_type_id = $pay_type_id;
         $ticket->extra_service_ids = implode(',', $booking_session['extra_service_ids'] ?? []);
         $ticket->seat_type = $booking_session['seat_type'];
-        //$ticket->status = 'status'; //đã đặt mặc định là 1 trong DB
+        //$ticket->status = 'status'; //đã đặt mặc định là 1 (Unverified) trong DB
         $ticket->code = Str::upper(Str::random(6));
         $ticket->contact_gender = $booking_session['contact']['contact_gender'];
         $ticket->contact_first_name = $booking_session['contact']['contact_firstname'];
@@ -408,6 +410,7 @@ class BookingController extends Controller
         $ticket->contact_phone = $booking_session['contact']['contact_phone'];
         $ticket->contact_address = $booking_session['contact']['contact_address'];
         $ticket->total_price = $booking_session['passenger_count']['total'] * $booking_session['seat_price'] + $booking_session['extraService_total_price'] + 500000;
+        //$ticket->amount_paid = 0; //Đã để mặc định = 0 (chưa thanh toán) trong DB
         $ticket->total_passenger = $booking_session['passenger_count']['total'];
         //$ticket->description = 'description';
         $ticket->save(); //Lưu Model vừa khởi tạo và gán giá trị
