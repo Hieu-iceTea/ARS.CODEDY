@@ -126,7 +126,7 @@
                                                         <span>Select flight</span>
                                                         <input id="check_eco_{{ $flightSchedule->flight_schedule_id }}"
                                                                class="ml-2" name="select_flight" value="1" type="radio"
-                                                               {{ $flightSchedule->priceSeatType->eco_qty_remain == 0 ? 'disabled' : '' }}
+                                                               {{ $flightSchedule->priceSeatType->eco_qty_remain == 0 || $flightSchedule->priceSeatType->eco_qty_remain < request('adults') + request('children') + request('infant') ? 'disabled' : '' }}
                                                                onchange="setValue({{ $flightSchedule->flight_schedule_id }}, this.value, {{ $flightSchedule->priceSeatType->eco_price }}, {{ $searchInput['adults'] }}, {{ $searchInput['children'] }}, {{ $searchInput['infant'] }})">
                                                         <p>{{ number_format($flightSchedule->priceSeatType->eco_price, 0, ',', '.') }}
                                                             VND</p>
@@ -149,7 +149,7 @@
                                                         <span>Select flight </span>
                                                         <input id="check_plus_{{ $flightSchedule->flight_schedule_id }}"
                                                                class="ml-2" name="select_flight" value="2" type="radio"
-                                                               {{ $flightSchedule->priceSeatType->plus_qty_remain == 0 ? 'disabled' : '' }}
+                                                               {{ $flightSchedule->priceSeatType->plus_qty_remain == 0 || $flightSchedule->priceSeatType->plus_qty_remain < request('adults') + request('children') + request('infant') ? 'disabled' : '' }}
                                                                onchange="setValue({{ $flightSchedule->flight_schedule_id }}, this.value, {{ $flightSchedule->priceSeatType->plus_price }}, {{ $searchInput['adults'] }}, {{ $searchInput['children'] }}, {{ $searchInput['infant'] }})">
                                                         <p>{{ number_format($flightSchedule->priceSeatType->plus_price, 0, ',', '.') }}
                                                             VND</p>
@@ -173,7 +173,7 @@
                                                         <input
                                                             id="check_business_{{ $flightSchedule->flight_schedule_id }}"
                                                             class="ml-2" name="select_flight" value="3" type="radio"
-                                                            {{ $flightSchedule->priceSeatType->business_qty_remain == 0 ? 'disabled' : '' }}
+                                                            {{ $flightSchedule->priceSeatType->business_qty_remain == 0 || $flightSchedule->priceSeatType->business_qty_remain < request('adults') + request('children') + request('infant') ? 'disabled' : '' }}
                                                             onchange="setValue({{ $flightSchedule->flight_schedule_id }}, this.value, {{ $flightSchedule->priceSeatType->business_price }}, {{ $searchInput['adults'] }}, {{ $searchInput['children'] }}, {{ $searchInput['infant'] }})">
                                                         <p>{{ number_format($flightSchedule->priceSeatType->business_price, 0, ',', '.') }}
                                                             VND</p>

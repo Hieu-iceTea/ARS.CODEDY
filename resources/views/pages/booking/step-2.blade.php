@@ -130,11 +130,11 @@
                                                             aria-label="select with button addon">
                                                         <option value="" selected>-- Gender --</option>
                                                         <option
-                                                            {{ old('passengers.' . $count . '.gender') == 1 ? 'selected' : '' }} value="1">
+                                                            {{ (old('passengers.' . $count . '.gender') ?? $count == 1 ? \Illuminate\Support\Facades\Auth::user()->gender ?? '' : '') == 1 ? 'selected' : '' }} value="1">
                                                             Male
                                                         </option>
                                                         <option
-                                                            {{ old('passengers.' . $count . '.gender') == 2 ? 'selected' : '' }} value="2">
+                                                            {{ (old('passengers.' . $count . '.gender') ?? $count == 1 ? \Illuminate\Support\Facades\Auth::user()->gender ?? '' : '') == 2 ? 'selected' : '' }} value="2">
                                                             female
                                                         </option>
                                                     </select>
@@ -144,7 +144,7 @@
                                                 <div>Middle and First/Given name *</div>
                                                 <div class="input-group">
                                                     <input name="passengers[{{$count}}][first_name]" type="text"
-                                                           value="{{ old('passengers.' . $count . '.first_name') }}"
+                                                           value="{{ old('passengers.' . $count . '.first_name') ?? $count == 1 ? \Illuminate\Support\Facades\Auth::user()->first_name ?? '' : '' }}"
                                                            class="form-control"
                                                            placeholder="Middle and First/Given name"
                                                            aria-label="Username" aria-describedby="basic-addon1">
@@ -154,7 +154,7 @@
                                                 <div>Last/Family Name *</div>
                                                 <div class="input-group">
                                                     <input name="passengers[{{$count}}][last_name]" type="text"
-                                                           value="{{ old('passengers.' . $count . '.last_name') }}"
+                                                           value="{{ old('passengers.' . $count . '.last_name') ?? $count == 1 ? \Illuminate\Support\Facades\Auth::user()->last_name ?? '' : '' }}"
                                                            class="form-control"
                                                            placeholder="Last/Family Name"
                                                            aria-label="Username" aria-describedby="basic-addon1">
@@ -171,7 +171,7 @@
                                                 <div>Date of birth *</div>
                                                 <div class="input-group">
                                                     <input name="passengers[{{$count}}][dob]" type="date"
-                                                           value="{{ old('passengers.' . $count . '.dob') }}"
+                                                           value="{{ old('passengers.' . $count . '.dob') ?? $count == 1 ? \Illuminate\Support\Facades\Auth::user()->dob ?? '' : '' }}"
                                                            class="form-control w-75"
                                                            placeholder="Departure">
                                                 </div>
@@ -353,11 +353,11 @@
                                                         aria-label="Example select with button addon">
                                                     <option value="" selected>-- Gender -</option>
                                                     <option
-                                                        {{ old('contact.contact_gender') == 1 ? 'selected' : '' }} value="1">
+                                                        {{ (old('contact.contact_gender') ?? \Illuminate\Support\Facades\Auth::user()->gender ?? '') == 1 ? 'selected' : '' }} value="1">
                                                         Male
                                                     </option>
                                                     <option
-                                                        {{ old('contact.contact_gender') == 2 ? 'selected' : '' }} value="2">
+                                                        {{ (old('contact.contact_gender') ?? \Illuminate\Support\Facades\Auth::user()->gender ?? '') == 2 ? 'selected' : '' }} value="2">
                                                         Female
                                                     </option>
                                                 </select>
@@ -367,7 +367,7 @@
                                             <div>Middle and First/Given name *</div>
                                             <div class="input-group">
                                                 <input name="contact[contact_firstname]" type="text"
-                                                       value="{{ old('contact.contact_firstname') }}"
+                                                       value="{{ old('contact.contact_firstname') ?? \Illuminate\Support\Facades\Auth::user()->first_name ?? '' }}"
                                                        class="form-control"
                                                        placeholder="Middle and First/Given name"
                                                        aria-label="Username" aria-describedby="basic-addon1">
@@ -377,7 +377,7 @@
                                             <div>Last/Family Name *</div>
                                             <div class="input-group">
                                                 <input name="contact[contact_lastname]" type="text" class="form-control"
-                                                       value="{{ old('contact.contact_lastname') }}"
+                                                       value="{{ old('contact.contact_lastname') ?? \Illuminate\Support\Facades\Auth::user()->last_name ?? '' }}"
                                                        placeholder="Last/Family Name"
                                                        aria-label="Username" aria-describedby="basic-addon1">
                                             </div>
@@ -393,7 +393,7 @@
                                             <div class="input-group mb-3 width_input_prepend">
 
                                                 <input name="contact[contact_email]" type="text" class="form-control"
-                                                       value="{{ old('contact.contact_email') }}"
+                                                       value="{{ old('contact.contact_email') ?? \Illuminate\Support\Facades\Auth::user()->email ?? '' }}"
                                                        placeholder="Email"
                                                        aria-label="Username" aria-describedby="basic-addon1">
                                             </div>
@@ -403,7 +403,7 @@
                                             <div class="input-group mb-3 width_input_prepend">
 
                                                 <input name="contact[contact_phone]" type="text" class="form-control"
-                                                       value="{{ old('contact.contact_phone') }}"
+                                                       value="{{ old('contact.contact_phone') ?? \Illuminate\Support\Facades\Auth::user()->phone ?? '' }}"
                                                        placeholder="Phone"
                                                        aria-label="Username" aria-describedby="basic-addon1">
                                             </div>
@@ -421,7 +421,7 @@
                                             <div>Address *</div>
                                             <div class="input-group">
                                                 <input name="contact[contact_address]" type="text" class="form-control"
-                                                       value="{{ old('contact.contact_address') }}"
+                                                       value="{{ old('contact.contact_address') ?? \Illuminate\Support\Facades\Auth::user()->address ?? '' }}"
                                                        placeholder="Address "
                                                        aria-label="Username" aria-describedby="basic-addon1">
                                             </div>

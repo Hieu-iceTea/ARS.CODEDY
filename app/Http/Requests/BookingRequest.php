@@ -54,7 +54,7 @@ class BookingRequest extends FormRequest
                 'contact.contact_firstname' => 'required|regex:/^([^0-9]*)$/',
                 'contact.contact_lastname' => 'required|regex:/^([^0-9]*)$/',
                 'contact.contact_email' => 'required|email',
-                'contact.contact_phone' => 'required|numeric',
+                'contact.contact_phone' => 'required|regex:/^([0-9\s\-\.\+\(\)]*)$/|min:10',
                 'contact.contact_address' => 'required',
             ];
 
@@ -91,7 +91,8 @@ class BookingRequest extends FormRequest
 
             'contact.contact_firstname.regex' => '[contact_firstname] does not include numbers.',
             'contact.contact_lastname.regex' => '[contact_lastname] does not include numbers.',
-            'contact.contact_phone.numeric' => '[contact_phone] must be a number.',
+            'contact.contact_phone.regex' => '[contact_phone] must be a phone number.',
+            'contact.contact_phone.min' => '[contact_phone] too short (Must contain at least 10 digits).',
         ];
 
         if ($this->is('booking/step-2')) {
