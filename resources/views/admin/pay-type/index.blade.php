@@ -67,6 +67,7 @@
                                 <th class="text-center">#ID</th>
                                 <th>Name</th>
                                 <th class="text-center">Logo</th>
+                                <th class="text-center">Active</th>
                                 <th class="text-center">Actions</th>
                             </tr>
                             </thead>
@@ -99,6 +100,13 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </td>
+                                    {{--Active--}}
+                                    <td class="text-center">
+                                        <div
+                                            class="badge badge-{{ $pay_type->active == 1 ? 'success' : 'warning' }} mt-2">
+                                            {{ $pay_type->active == 1 ? 'Active' : 'Inactive' }}
                                         </div>
                                     </td>
                                     {{--Action--}}
