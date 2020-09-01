@@ -822,6 +822,60 @@ body {
     font-size: 150%;
 }
 
+/*region ticket_query*/
+.ticket_query {
+    border-radius: 20px;
+}
+
+.ticket_query .newsletter_title {
+    color: #33597C;
+}
+
+.ticket_query .newsletter_input {
+    color: #33597C !important;
+    background-color: #33597c20;
+}
+
+.ticket_query .input_border {
+    background-color: #33597C !important;
+}
+
+.ticket_query .newsletter_button {
+    outline: none;
+    color: #33597C;
+    background-color: #33597c20;
+    /*border: 2px solid #33597C;*/
+}
+
+.ticket_query .newsletter_button:hover {
+    opacity: 0.8;
+}
+
+.ticket_query .newsletter_button:active {
+    opacity: 0.5;
+}
+
+.ticket_query .newsletter_input::-webkit-input-placeholder {
+    color: #33597C !important;
+}
+
+.ticket_query .newsletter_input:-moz-placeholder {
+    color: #33597C !important;
+}
+
+.ticket_query .newsletter_input::-moz-placeholder {
+    color: #33597C !important;
+}
+
+.ticket_query .newsletter_input:-ms-input-placeholder {
+    color: #33597C !important;
+}
+
+.ticket_query .newsletter_input::input-placeholder {
+    color: #33597C !important;
+}
+
+/*endregion*/
 
 /************
 8. Ticket/edit - Sửa chi tiết vé:

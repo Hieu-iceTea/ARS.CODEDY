@@ -60,16 +60,26 @@ class CheckMemberLogin
 
                 //Khác những trường hợp trên thì cho qua
                 return $next($request);
-            } else {
-                //Lưu đường dẫn hiện tại (trước khi bị chuyển hướng tới login) => để sau khi login thì quay lại trang đó
-                //(có cách hay hơn là dùng guest như ở dưới nè)
-                //if (!session()->has('url.intended')) {
-                //    session(['url.intended' => $request->url()]);
-                //}
-
-                return redirect()->guest('member/login'); //Create a new redirect response, while putting the current URL in the session.
-                //return redirect()->route('member.login');
             }
+
+            //Nếu đang vào "ticket/detail/query" thì cho qua
+            if (str_contains(url()->current(), 'ticket/detail/query')) {
+                return $next($request);
+            }
+
+            //Nếu chưa đăng nhập mà vào ticket thì chuyển hướng đến "ticket/detail/query"
+            if ($request->segment(1) == 'ticket') {
+                return redirect('ticket/detail/query');
+            }
+
+            //Lưu đường dẫn hiện tại (trước khi bị chuyển hướng tới login) => để sau khi login thì quay lại trang đó
+            //(có cách hay hơn là dùng guest như ở dưới nè)
+            //if (!session()->has('url.intended')) {
+            //    session(['url.intended' => $request->url()]);
+            //}
+
+            return redirect()->guest('member/login'); //Create a new redirect response, while putting the current URL in the session.
+            //return redirect()->route('member.login');
         }
     }
 }
