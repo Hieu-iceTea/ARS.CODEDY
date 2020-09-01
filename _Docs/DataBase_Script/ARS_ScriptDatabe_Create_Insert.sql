@@ -292,7 +292,7 @@ CREATE TABLE IF NOT EXISTS `ticket`
 #Default password: 123456
 
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, image, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
-VALUES (1, 'Hieu-iceTea', 'DinhHieu8896@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 3, '2020-08-08', 'Hieu-iceTea.jpg', 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '0868 6633 15', 'Nghệ An', 123456, TRUE);
+VALUES (1, 'Hieu-iceTea', 'DinhHieu8896@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 3, '2020-08-08', 'Hieu-iceTea.jpg', 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '0868663315', 'Nghệ An', 123456, TRUE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, image, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
 VALUES (2, 'truong-thanh-tu', 'TruongThanhTu03091998@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 3, '2020-08-08', 'truong-thanh-tu.jpg', 1, 'Thanh Tú', 'Trương', '1998-09-03', '0359077335', 'Huế', 123456, FALSE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, image, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
@@ -304,7 +304,7 @@ VALUES (5, 'tuanpth1909', 'PhamTuanCules20@gmail.com', '$2y$10$YKY51A9REcXLZVRAC
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, image, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
 VALUES (6, 'host', 'ars.codedy@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 1, '2020-08-08', 'logo_host.png', 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '032 87 99 000', 'Hà Nội', NULL, TRUE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, image, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
-VALUES (7, 'admin', 'ars.codedy@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 2, '2020-08-08', 'logo_admin.gif', 1, '', '', '2020-08-08', '', '', NULL, TRUE);
+VALUES (7, 'admin', 'ars.codedy@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 2, '2020-08-08', 'logo_admin.gif', 1, '', '', '2020-08-08', '0868 6633 15', 'Nghệ An', NULL, TRUE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, image, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
 VALUES (8, 'member', 'ars.codedy@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 3, '2020-08-08', 'logo_member.png', 1, '', '', '2020-08-08', '', '', NULL, TRUE);
 
