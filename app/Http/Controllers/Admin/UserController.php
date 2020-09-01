@@ -129,6 +129,10 @@ class UserController extends Controller
         if ($request->hasFile('image')) {
             $file = $request->image;
             $file_name = (new Utility())->getFileNameUniqueID($file);
+
+            //Giữ lại tên file cũ (để sau khi DB sửa thành tên file mới thì xóa file cũ đi trong thư mục)
+            $file_name_old = $request->get('image_old'); //Cách 1: lưu tên file cũ trong html
+            //$file_name_old = User::where('user_id', $id)->first()->image; //Cách 2: lấy từ DB lên, trước khi DB được update.
         }
 
         // * [02] * Update database:
@@ -154,21 +158,21 @@ class UserController extends Controller
         }
 
         //Update bản ghi trong database:
-        $user = User::where('user_id', $id)->update($values);
+        $update = User::where('user_id', $id)->update($values);
 
         // * [03] * Update file:
         //Nếu update database thành công && có file được chọn, Di chuyển file mới đã chọn vào thư mục public:
-        if ($user == true && $request->hasFile('image')) {
+        if ($update == true && $request->hasFile('image')) {
             $file->move('img/user', $file_name);
 
             //Đồng thời xóa file cũ đi (nếu có file cũ):
-            if ($request->image_old != '') {
-                unlink('img/user/' . $request->image_old);
+            if ($file_name_old != '') {
+                unlink('img/user/' . $file_name_old);
             }
         }
 
         // * Final * Thông báo kết quả:
-        if ($user == true) {
+        if ($update == true) {
             return redirect('admin/user/' . $id)->with('notification', 'Updated successfully!')
                 ->with('notification', 'Update successfully!');
         } else {
@@ -184,19 +188,25 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        // * [01] * Xóa trong database:
-        $user = User::where('user_id', $id)->update([
+        // * [01] * Chuẩn bị dữ liệu
+        //(Giữ lại tên file trước khi xóa bản ghi trong DB -> để xóa được file ấy sau khi tên file đã bị xóa trong DB)
+        $fileName = User::where('user_id', $id)->first()->image;
+
+        // * [02] * Xóa trong database:
+        $update = User::where('user_id', $id)->update([
             'deleted' => true,
         ]);
 
-        // * [02] * Xóa file trong thư mục:
-        $fileName = User::where('user_id', $id)->first()->image;
-        $str = 'img/user/';
-        $File_move = File::move(public_path($str . $fileName), public_path($str . 'trash/' . $fileName)); //Di chuyển vào thùng rác
-        //$file_delete = File::delete(public_path($str . $fileName)); //Xóa vĩnh viễn
+        // * [03] * Xóa file trong thư mục:
+        // (Nếu update DB thành công thì xóa file)
+        if ($update == true) {
+            $str = 'img/user/';
+            $file_move = File::move(public_path($str . $fileName), public_path($str . 'trash/' . $fileName)); //Di chuyển vào thùng rác
+            //$file_delete = File::delete(public_path($str . $fileName)); //Xóa vĩnh viễn
+        }
 
         // * Final * Thông báo kết quả:
-        if ($user == true && $File_move == true) {
+        if ($update == true && $file_move == true) {
             if (url()->previous() != url()->current()) {
                 return redirect()->back()->with('notification', 'Deleted successfully!');
             } else {

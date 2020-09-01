@@ -2,7 +2,8 @@
 
 namespace App\Model;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Scopes\DeletedScope;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -14,44 +15,6 @@ class User extends Authenticatable
     protected $primaryKey = 'user_id';
     protected $guarded = [];
     protected $perPage = 5;
-
-    public static function all($columns = ['*'])
-    {
-        return parent::all($columns)->where('deleted', false);
-    }
-
-    public function ticket()
-    {
-        return $this->hasMany(Ticket::class, 'user_id', 'user_id');
-    }
-
-    public static function getItems()
-    {
-        return User::where('deleted', '=', false)->paginate();
-    }
-
-    public static function getItemById($id)
-    {
-        return User::all()->where('user_id', $id)->first();
-    }
-
-    public static function search($keyword)
-    {
-        $users = User::where('user_id', '=', $keyword)
-            ->orWhere('user_name', 'like', '%' . $keyword . '%')
-            ->orWhere('first_name', 'like', '%' . $keyword . '%')
-            ->orWhere('last_name', 'like', '%' . $keyword . '%')
-            ->orWhere('email', 'like', '%' . $keyword . '%')
-            ->orWhere('dob', 'like', '%' . $keyword . '%')
-            ->orWhere('phone', 'like', '%' . $keyword . '%')
-            ->orWhere('address', 'like', '%' . $keyword . '%')
-            ->paginate(); //Để phân trang theo config đã cài đặt trong Model.
-
-        //giúp chuyển trang page sẽ đính kèm theo từ khóa search của người dùng:
-        $users->appends(['search' => $keyword]);
-
-        return $users;
-    }
 
     /**
      * The attributes that are mass assignable.
@@ -79,4 +42,97 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    // * * * * * * * * * * * * * * * * * * * * Relationships * * * * * * * * * * * * * * * * * * * *
+
+    /**
+     * Define a one-to-many relationship.
+     *
+     * @return HasMany
+     */
+    public function ticket()
+    {
+        return $this->hasMany(Ticket::class, 'user_id', 'user_id');
+    }
+
+
+    // * * * * * * * * * * * * * * * * * * * * Getter functions * * * * * * * * * * * * * * * * * * * *
+
+    /**
+     * Get all of the items from the database.
+     *
+     * @return mixed
+     */
+    public static function getItems()
+    {
+        return User::paginate();
+    }
+
+    /**
+     * Get an item by ID
+     *
+     * @param $id
+     * @return mixed
+     */
+    public static function getItemById($id)
+    {
+        return User::findOrFail($id);
+    }
+
+    /**
+     * Get all of the items from the database by search keyword.
+     *
+     * @param $keyword
+     * @return mixed
+     */
+    public static function search($keyword)
+    {
+        return User::where('user_id', '=', $keyword)
+            ->orWhere('user_name', 'like', '%' . $keyword . '%')
+            ->orWhere('first_name', 'like', '%' . $keyword . '%')
+            ->orWhere('last_name', 'like', '%' . $keyword . '%')
+            ->orWhere('email', 'like', '%' . $keyword . '%')
+            ->orWhere('dob', 'like', '%' . $keyword . '%')
+            ->orWhere('phone', 'like', '%' . $keyword . '%')
+            ->orWhere('address', 'like', '%' . $keyword . '%')
+
+            //Phân trang theo config mặc định đã cài đặt trong Model:
+            ->paginate()
+
+            //Giúp chuyển trang page sẽ đính kèm từ khóa search của người dùng:
+            ->appends(['search' => $keyword]);
+    }
+
+
+    // * * * * * * * * * * * * * * * * * * * * Scopes * * * * * * * * * * * * * * * * * * * *
+
+    /**
+     * Local Scopes
+     * Dynamic Scopes
+     *
+     * @param $query
+     * @param false $value
+     * @return mixed
+     */
+    public function scopeDeleted($query, $value = false)
+    {
+        return $query->where('deleted', '=', $value);
+    }
+
+    /**
+     * Perform any actions required after the model boots.
+     *
+     * @return void
+     */
+    protected static function booted()
+    {
+        //Applying Global Scopes
+        static::addGlobalScope(new DeletedScope());
+
+        //use: Anonymous Global Scopes
+        //static::addGlobalScope('deleted', function (Builder $builder) {
+        //    $builder->where('deleted', '=', false);
+        //});
+    }
 }
