@@ -41,6 +41,11 @@ class CheckMemberLogin
                     return redirect('member');
                 }
 
+                //Nếu đã đăng nhập mà vẫn vào "ticket/detail/query" thì chuyển hướng
+                if (str_contains(url()->current(), 'ticket/detail/query') && request('ticketCode') == null) {
+                    return redirect('ticket');
+                }
+
                 //Khác tất cả những trường hợp trên thì cho qua
                 return $next($request);
 

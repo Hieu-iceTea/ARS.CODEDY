@@ -28,7 +28,7 @@
     </div>
 
     {{-- Query form --}}
-    @guest()
+    @if(request()->segment(3) == 'query')
         <div class="container mt-4 mb-5">
             <div class="row ticket_query bg-light">
                 <div class="col">
@@ -70,7 +70,7 @@
                 </div>
             </div>
         </div>
-    @endguest
+    @endif
 
     {{-- Data --}}
     @if($ticket != null)

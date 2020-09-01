@@ -10,6 +10,7 @@ use App\Utilities\Utility;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 
@@ -77,19 +78,31 @@ class TicketController extends Controller
      */
     public function detail($id, Request $request)
     {
-        //Nếu ở trạng thái query (tức là chưa đăng nhập, chỉ truy vấn thông tin vé):
+        //Nếu ở trạng thái query
+        //Chưa đăng nhập, Vẫn có thể truy vấn thông tin vé:
         if ($id == 'query') {
             //Get data from request
             $code = $request->get('ticketCode');
             $email = $request->get('email');
             $phone = $request->get('phone');
 
+            //Nếu đang đăng nhập mà vẫn vào query thì kiểm tra mã vé theo tài khoản hiện tại. nếu có thì chuyển hướng tới detail:
+            if (Auth::check()) {
+                $ticket = Ticket::where('code', '=', $code)
+                    ->currentUser()
+                    ->first();
+
+                if ($ticket != null) {
+                    return redirect('ticket/detail/' . $ticket->ticket_id);
+                }
+            }
+
             $ticket = Ticket::where('code', '=', $code)
                 ->where('contact_email', '=', $email)
                 ->where('contact_phone', '=', $phone)
                 ->first();
         } else {
-            //Nếu đã đăng nhập thì tìm như bình thường:
+            //Nếu không ở trạng thái query thì hiện thị bình thường:
             $ticket = Ticket::findOrFail($id);
         }
 

@@ -173,9 +173,9 @@
                         <div class="col-6 p-0" style="flex: 0 0 30%; max-width: 30%;">
                             <div class="mt-2" style="margin-top: 25px;">
                                 <a class="btn btn-info"
-                                   href="http://ars.codedy/booking/complete/{{ $ticket->ticket_id }}" target="_blank"
+                                   href="http://ars.codedy/ticket/detail/query?ticketCode={{ $ticket->code }}" target="_blank"
                                    style="background-color: #17a2b8; padding: .375rem .75rem; border-radius: .25rem; color: #fff; text-decoration: none; display: inline-block; font-size: 1rem;">
-                                    Xem hành trình trên web
+                                    Xem chi tiết trên web
                                 </a>
                             </div>
                         </div>
