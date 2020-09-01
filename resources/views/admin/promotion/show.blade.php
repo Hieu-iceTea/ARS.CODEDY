@@ -58,7 +58,8 @@
                         <div class="position-relative row form-group">
                             <label for="discount" class="col-md-3 text-md-right col-form-label">Discount</label>
                             <div class="col-md-9 col-xl-8">
-                                <p>{{ $promotion->discount }}</p>
+                                <p>{{ number_format($promotion->discount, 0, ',', '.') }}
+                                    ₫</p>
                             </div>
                         </div>
                         {{--qty_total--}}
@@ -75,18 +76,37 @@
                                 <p>{{ $promotion->qty_remain }}</p>
                             </div>
                         </div>
+                        {{--start_date--}}
+                        <div class="position-relative row form-group">
+                            <label for="start_date" class="col-md-3 text-md-right col-form-label">Start Date</label>
+                            <div class="col-md-9 col-xl-8">
+                                <p>{{ date('H:i d/m/Y', strtotime($promotion->start_date))}}</p>
+                            </div>
+                        </div>
                         {{--expiration_date--}}
                         <div class="position-relative row form-group">
                             <label for="expiration_date" class="col-md-3 text-md-right col-form-label">Expiration Date</label>
                             <div class="col-md-9 col-xl-8">
-                                <p>{{ $promotion->expiration_date }}</p>
+                                <p>{{ date('H:i d/m/Y', strtotime($promotion->expiration_date)) }}</p>
+                            </div>
+                        </div>
+                        {{--active--}}
+                        <div class="position-relative row form-group">
+                            <label for="active" class="col-md-3 text-md-right col-form-label">Status</label>
+                            <div class="col-md-9 col-xl-8">
+                                <p>
+                                <div
+                                    class="badge badge-{{ $promotion->active == 1 ? 'success' : 'warning' }} mt-2">
+                                    {{ $promotion->active == 1 ? 'Active' : 'Inactive' }}
+                                </div>
+                                </p>
                             </div>
                         </div>
                         {{--description--}}
                         <div class="position-relative row form-group">
                             <label for="description" class="col-md-3 text-md-right col-form-label">Description</label>
                             <div class="col-md-9 col-xl-8">
-                                <p>{{ $promotion->description }}</p>
+                                <p>{!! $promotion->description !!} </p>
                             </div>
                         </div>
 

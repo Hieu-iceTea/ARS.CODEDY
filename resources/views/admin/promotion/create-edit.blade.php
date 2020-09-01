@@ -65,10 +65,8 @@
                                 <label for="discount" class="col-md-3 text-md-right col-form-label">Discount</label>
                                 <div class="col-md-9 col-xl-8">
                                     <input required name="discount" id="discount" placeholder="0,00 VND"
-                                           class="form-control input-mask-trigger" type="number"
-                                           data-inputmask="'alias': 'numeric', 'nullable': false, 'rightAlign': true, 'groupSeparator': '.',
-                                           'radixPoint': ',', 'autoGroup': true, 'digits': 2, 'digitsOptional': false, 'suffix': ' ₫',
-                                            'placeholder': '0'"
+                                           class="form-control input-mask-trigger"
+                                           data-inputmask="'alias': 'numeric', 'nullable': false, 'rightAlign': true, 'groupSeparator': '.', 'radixPoint': ',', 'autoGroup': true, 'digits': 2, 'digitsOptional': false, 'suffix': ' ₫', 'placeholder': '0'"
                                            value="{{ old('discount') ?? $promotion->discount ?? ''}}">
                                 </div>
                             </div>
@@ -91,6 +89,16 @@
                                            value="{{ old('qty_remain') ?? $promotion->qty_remain ?? ''}}">
                                 </div>
                             </div>
+{{--                            Start Date--}}
+                            <div class="position-relative row form-group">
+                                <label for="start_date"
+                                       class="col-md-3 text-md-right col-form-label">Start Date</label>
+                                <div class="col-md-9 col-xl-8">
+                                    <input required name="start_date" id="start_date" placeholder="start_date"
+                                           type="datetime-local" class="form-control"
+                                           value="{{ (old('expiration_date') ?? $promotion->expiration_date ?? '') != null ? date('Y-m-d\TH:i', strtotime((old('start_date') ?? $promotion->start_date))) : '' }}">
+                                </div>
+                            </div>
 {{--                            Expiration Date--}}
                             <div class="position-relative row form-group">
                                 <label for="expiration_date"
@@ -101,13 +109,25 @@
                                            value="{{ (old('expiration_date') ?? $promotion->expiration_date ?? '') != null ? date('Y-m-d\TH:i', strtotime((old('expiration_date') ?? $promotion->expiration_date))) : '' }}">
                                 </div>
                             </div>
+{{--                            Active--}}
+                            <div class="position-relative row form-group">
+                                <label for="active" class="col-md-3 text-md-right col-form-label">Status</label>
+                                <div class="col-md-9 col-xl-8">
+                                    <div class="position-relative form-check pt-sm-2">
+                                        <input name="active" id="active" type="checkbox" value=1
+                                               {{ (old('active') ?? $promotion->active ?? '') == 1 ? 'checked' : '' }}
+                                               class="form-check-input">
+                                        <label for="active" class="form-check-label">Active</label>
+                                    </div>
+                                </div>
+                            </div>
 {{--                            Description--}}
                             <div class="position-relative row form-group">
                                 <label for="description"
                                        class="col-md-3 text-md-right col-form-label">Description</label>
                                 <div class="col-md-9 col-xl-8">
                                     <textarea name="description" id="description">
-                                        {{ old('description') ?? $flightSchedule->description ?? '' }}
+                                        {{ old('description') ?? $promotion->description ?? '' }}
                                     </textarea>
                                 </div>
                             </div>
@@ -144,7 +164,7 @@
     <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
     <script>
         CKEDITOR.replace('description');
-        CKEDITOR.config.height = 100; //pixels wide.
+        // CKEDITOR.config.height = 100; //pixels wide.
     </script>
 
 @endsection

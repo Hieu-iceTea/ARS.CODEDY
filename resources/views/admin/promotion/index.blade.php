@@ -41,7 +41,8 @@
 
                         <form>
                             <div class="input-group">
-                                <input name="search" type="search" value="{{ request('search') }}" placeholder="Search everything"
+                                <input name="search" type="search" value="{{ request('search') }}"
+                                       placeholder="Search everything"
                                        class="form-control">
                                 <span class="input-group-append">
                                         <button type="submit" class="btn btn-primary">
@@ -60,14 +61,17 @@
                     </div>
 
                     <div class="table-responsive">
-                        <table class="align-middle mb-0 table table-borderless table-striped table-hover" style="overflow: hidden;">
+                        <table class="align-middle mb-0 table table-borderless table-striped table-hover"
+                               style="overflow: hidden;">
                             <thead>
                             <tr>
                                 <th class="text-center">#CODE</th>
                                 <th>Title</th>
                                 <th class="text-center">Discount</th>
                                 <th class="text-center">Qty</th>
+                                <th class="text-center">Start Date</th>
                                 <th class="text-center">Expiration Date</th>
+                                <th class="text-center">Status</th>
                                 <th class="text-center">Actions</th>
                             </tr>
                             </thead>
@@ -94,7 +98,7 @@
                                         <div class="widget-content p-0">
                                             <div class="widget-content-wrapper">
                                                 <div class="widget-content-left flex2">
-                                                    {{ number_format($promotion->discount, 0, ',', '.') }} VND
+                                                    {{ number_format($promotion->discount, 0, ',', '.') }}₫
                                                 </div>
                                             </div>
                                         </div>
@@ -109,18 +113,35 @@
                                             </div>
                                         </div>
                                     </td>
+                                    {{--Start Date--}}
+                                    <td class="text-center">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left flex2">
+                                                    <div class="widget-subheading opacity-10">
+                                                        {{ date('H:i d/m/Y', strtotime($promotion->start_date))}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
                                     {{--Expiration Date--}}
                                     <td class="text-center">
                                         <div class="widget-content p-0">
                                             <div class="widget-content-wrapper">
                                                 <div class="widget-content-left flex2">
-{{--                                                    <div--}}
-{{--                                                        class="widget-subheading opacity-10">{{ $ticket->flightSchedule->airportFrom->name . ' > ' . $ticket->flightSchedule->airportTo->name }}</div>--}}
                                                     <div class="widget-subheading opacity-10">
                                                         {{ date('H:i d/m/Y', strtotime($promotion->expiration_date))}}
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </td>
+                                    {{--Active--}}
+                                    <td class="text-center">
+                                        <div
+                                            class="badge badge-{{ $promotion->active == 1 ? 'success' : 'warning' }} mt-2">
+                                            {{ $promotion->active == 1 ? 'Active' : 'Inactive' }}
                                         </div>
                                     </td>
                                     {{--Action--}}
