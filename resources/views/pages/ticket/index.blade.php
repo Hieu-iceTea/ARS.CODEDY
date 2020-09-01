@@ -41,15 +41,17 @@
                                 <div
                                     class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
 
-                                    <input type="text" class="search_input search_input_1" id="code" name="code"
-                                           placeholder="Code">
+                                    <input type="text" id="code" name="code" value="{{ request('code') }}"
+                                           placeholder="Code"
+                                           class="search_input search_input_1">
 
                                     <select class="search_input search_input_2" id="from" name="from">
                                         <option selected value="">-- From --</option>
                                         @foreach($addressAirports as $addressAirport)
-                                            <option
-                                                value= {{ $addressAirport->airport_id }}>{{ $addressAirport->location }}
-                                                | {{ $addressAirport->name }} ( {{ $addressAirport->code }} )
+                                            <option value="{{ $addressAirport->airport_id }}"
+                                                {{ request('from') == $addressAirport->airport_id ? 'selected' : '' }}>
+                                                {{ $addressAirport->location }} | {{ $addressAirport->name }}
+                                                ({{ $addressAirport->code }})
                                             </option>
                                         @endforeach
                                     </select>
@@ -57,16 +59,16 @@
                                     <select class="search_input search_input_3" id="to" name="to">
                                         <option selected value="">-- To --</option>
                                         @foreach($addressAirports as $addressAirport)
-                                            <option
-                                                value= {{ $addressAirport->airport_id }}>{{ $addressAirport->location }}
-                                                | {{ $addressAirport->name }} ( {{ $addressAirport->code }} )
+                                            <option value= {{ $addressAirport->airport_id }}
+                                                {{ request('to') == $addressAirport->airport_id ? 'selected' : '' }}>
+                                                {{ $addressAirport->location }} | {{ $addressAirport->name }}
+                                                ({{ $addressAirport->code }})
                                             </option>
                                         @endforeach
                                     </select>
 
-                                    <input type="date" class="search_input search_input_4" id="departure"
-                                           name="departure" min="2020-07-31">
-
+                                    <input type="date" id="departure" name="departure" value="{{ request('departure') }}"
+                                           class="search_input search_input_4">
                                     <button class="home_search_button" type="submit">search</button>
                                 </div>
                             </form>
@@ -102,7 +104,7 @@
                     <tbody class="active">
                     @foreach($tickets as $ticket)
                         <tr>
-                            <th scope="row">{{ $ticket->flightSchedule->code }}</th>
+                            <th scope="row">{{ $ticket->code }}</th>
                             <td style=" text-transform: capitalize;">{{ $ticket->flightSchedule->airportFrom->location }}</td>
                             <td style=" text-transform: capitalize;">{{ $ticket->flightSchedule->airportTo->location }}</td>
                             <td>{{ $ticket->flightSchedule->departure_at }}</td>
@@ -118,7 +120,7 @@
                     @endforeach
                     </tbody>
                 </table>
-                <div class ="pagination-lg mb-5">
+                <div class="pagination-lg mb-5">
                     {{ $tickets->links()  }}
                 </div>
             </div>

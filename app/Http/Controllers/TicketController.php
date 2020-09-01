@@ -18,13 +18,51 @@ class TicketController extends Controller
      *
      */
     public function index(Request $request)
-
     {
-        $code = $request->get('code');
-        $tickets = Ticket::where('user_id', Auth::user()->user_id)->paginate(4);
+        //Lấy dữ liệu cho form tìm kiếm
         $addressAirports = Airport::select('name', 'airport_id', 'location', 'code')->get();
 
-        return view('pages.ticket.index', compact('tickets', 'addressAirports'));
+        //Lấy dữ liệu từ form tìm kiếm
+        $ticket_code = $request->get('code');
+        $airport_from_id = $request->get('from');
+        $airport_to_id = $request->get('to');
+        $departure_at = $request->get('departure');
+
+        //Truy vấn dữ liệu từ DataBase
+        $tickets = Ticket::leftJoin('flight_schedule', 'ticket.flight_schedule_id', '=', 'flight_schedule.flight_schedule_id')
+            ->where(function ($query) use ($departure_at, $airport_to_id, $airport_from_id, $ticket_code) {
+                if (isset($ticket_code)) {
+                    $query->where('ticket.code', '=', $ticket_code);
+                }
+
+                if (isset($airport_from_id)) {
+                    $query->where('flight_schedule.airport_from_id', '=', $airport_from_id);
+                }
+
+                if (isset($airport_to_id)) {
+                    $query->where('flight_schedule.airport_to_id', '=', $airport_to_id);
+                }
+
+                if (isset($departure_at)) {
+                    $query->where('flight_schedule.departure_at', 'like', '%' . $departure_at . '%');
+                }
+            })
+            //Chỉ lấy vé của user đang đăng nhập:
+            ->currentUser()
+            //Chỉ các thông tin của bảng "ticket" (bỏ qua bảng "flight_schedule"):
+            ->select(['ticket.*'])
+            ->orderBy('ticket_id', 'desc')
+            //Phân trang theo config mặc định đã cài đặt trong Model:
+            ->paginate()
+            //Giúp chuyển trang page sẽ đính kèm từ khóa search của người dùng:
+            ->appends([
+                'code' => $ticket_code,
+                'from' => $airport_from_id,
+                'to' => $airport_to_id,
+                'departure' => $departure_at,
+            ]);
+
+        return view('pages.ticket.index', compact('addressAirports', 'tickets'));
     }
 
     /**

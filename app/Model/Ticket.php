@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class Ticket extends Model
@@ -16,6 +17,9 @@ class Ticket extends Model
     {
         return parent::all($columns)->where('deleted', false);
     }
+
+
+    // * * * * * * * * * * * * * * * * * * * * Relationships * * * * * * * * * * * * * * * * * * * *
 
     public function user()
     {
@@ -59,5 +63,22 @@ class Ticket extends Model
     public function flightSchedule()
     {
         return $this->hasOne(FlightSchedule::class, 'flight_schedule_id', 'flight_schedule_id');
+    }
+
+
+    // * * * * * * * * * * * * * * * * * * * * Scopes * * * * * * * * * * * * * * * * * * * *
+
+    /**
+     * Thêm điều kiện là user hiện tại
+     *
+     * where user_id = Auth::user()->user_id
+     *
+     * @param $query
+     * @param false $value
+     * @return mixed
+     */
+    public function scopeCurrentUser($query)
+    {
+        return $query->where('user_id', '=', Auth::user()->user_id);
     }
 }
