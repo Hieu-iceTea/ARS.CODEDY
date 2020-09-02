@@ -10,8 +10,11 @@
 
 <!-- Content Home -->
 @section('Content')
-    <!-- Home -->
 
+    <!-- Modal Flight Search -->
+    @include('pages.booking.components.modal_flight_search')
+
+    <!-- Home -->
     <div class="home home_booking">
         <div class="background_image"
              style="background-image:url({{ asset('img/destinations.jpg') }})"></div>
@@ -28,7 +31,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- Body -->
     <div class="body_booking container-fluid">
@@ -204,7 +206,10 @@
                         @else
                             <div class="content-step1 row mt-3">
                                 <div class="col-12">
-                                    <div class="row">
+                                    <div class="row justify-content-center mt-3 mb-3">
+                                        <h4>No flights Available</h4>
+                                    </div>
+                                    <div class="row justify-content-center mb-2">
                                         <h5>Sorry, we don't have any flights yet with your chosen information!</h5>
                                     </div>
                                 </div>
@@ -226,6 +231,16 @@
                                     ({{ $searchInput['airport_to_code'] }})</h4>
                                 <p class="card-text">{{--One-way | --}}{{ $searchInput['totalPassenger'] }}
                                     Passenger</p>
+
+                                <!-- Button trigger modalFlightSearch -->
+                                <button type="button" class="btn btn-sm tiket_detail_continue btn-outline-primary mt-2 w-100" data-toggle="modal"
+                                        style="font-weight: 500"
+                                        data-target="#modalFlightSearch">
+                                    <i class="fa fa-plane mr-2"
+                                       style="position: relative; top: 2px; font-size: 150% !important;"></i>
+                                    Change flight details
+                                </button>
+
                             </div>
                         </div>
                         <div class="card-Clearfix card mt-3  w-100" style="width: 18rem;">

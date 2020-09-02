@@ -32,6 +32,9 @@ class BookingController extends Controller
      */
     public function getStep1(Request $request)
     {
+        //Lấy data cho form tìm kiếm ở modal
+        $addressAirports = Airport::select('name', 'airport_id', 'location', 'code')->get();
+
         //Kiểm tra dữ liệu nhập vào có null không? Nếu null thì quay về trang chủ và báo lỗi
         if ($request->get('from') == '') {
             return redirect('/')
@@ -71,13 +74,15 @@ class BookingController extends Controller
             ->where('departure_at', 'like', '%' . $departure_at . '%')
             ->get();
 
-        if (count($flightSchedules) > 0) {
-            return view('pages.booking.step-1', compact('flightSchedules', 'searchInput', 'airport_to'));
+        return view('pages.booking.step-1', compact('flightSchedules', 'searchInput', 'airport_to', 'addressAirports'));
+
+        /*if (count($flightSchedules) > 0) {
+            return view('pages.booking.step-1', compact('flightSchedules', 'searchInput', 'airport_to', 'addressAirports'));
         } else {
             return redirect('/')
                 ->with('notification', "Sorry, we don't have any flights yet with your chosen information!")
                 ->with('preloader', 'none');
-        }
+        }*/
     }
 
     /**
