@@ -288,12 +288,15 @@ class TicketController extends Controller
             ]);
 
             if ($update == true) {
-                return redirect()->back()->with('notification', 'Canceled Successfully!');
+                return redirect()->back()->with('notification', 'Canceled Successfully!')
+                    ->with('preloader', 'none');
             } else {
-                return redirect()->back()->withErrors('Canceled Fail 🙄');
+                return redirect()->back()->withErrors('Canceled Fail 🙄')
+                    ->with('preloader', 'none');
             }
         } else {
-            return redirect()->back()->withErrors('Invalid action! 🙄 <br> Your ticket status is: ' . Utility::$ticket_status[$current_status]);
+            return redirect()->back()->withErrors('<b>Invalid action! 🙄 </b><br> Your ticket status is: [' . Utility::$ticket_status[$current_status] . ']')
+                ->with('preloader', 'none');
         }
     }
 }
