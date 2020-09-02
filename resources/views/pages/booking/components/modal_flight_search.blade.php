@@ -7,14 +7,21 @@
             <div class="modal-header px-5 pt-4 pb-3" style="background-color: #f2f2f2; color: #00305B">
 
                 <h5 class="modal-title pl-3" id="modalFlightSearchLabel" style="font-size: 24px">
-                    <img class="logo mr-3" src="http://ars.codedy/img/iconfight.png"
+                    <img class="logo mr-3" src="img/iconfight.png"
                          style="width: 40px; height: 40px" alt="Generic placeholder image">
-                    Change flight details
+                    @if(isset($isShowModalFlightSearch))
+                        Search for your flights
+                    @else
+                        Change flight details
+                    @endif
                 </h5>
-                <button type="button" class="close pr-4" data-dismiss="modal" style="outline: none"
-                        aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+
+                @if(!isset($isShowModalFlightSearch))
+                    <button type="button" class="close pr-4" data-dismiss="modal" style="outline: none"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                @endif
             </div>
 
             <div class="modal-body px-5 pt-4 pb-4">
@@ -144,7 +151,7 @@
                                         class="newsletter_form d-flex flex-md-row flex-column align-items-start justify-content-between">
                                         <div>
                                             <button type="submit" class="newsletter_button"
-                                                    style="text-transform: none;  font-weight: 400">
+                                                    style="text-transform: none; font-weight: 400">
                                                 Find flights
                                                 <i class="fa fa-angle-right ml-1"
                                                    style="position: relative; top: 2px; font-size: 160%"></i>

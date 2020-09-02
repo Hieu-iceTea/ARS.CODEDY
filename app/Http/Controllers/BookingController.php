@@ -35,13 +35,6 @@ class BookingController extends Controller
         //Lấy data cho form tìm kiếm ở modal
         $addressAirports = Airport::select('name', 'airport_id', 'location', 'code')->get();
 
-        //Kiểm tra dữ liệu nhập vào có null không? Nếu null thì quay về trang chủ và báo lỗi
-        if ($request->get('from') == '') {
-            return redirect('/')
-                ->with('notification', 'Please search for your flight first!')
-                ->with('preloader', 'none');
-        }
-
         //Get data from request:
         $airport_from_id = $request->get('from');
         $airport_to_id = $request->get('to');
@@ -50,39 +43,50 @@ class BookingController extends Controller
         $adults = $request->get('adults');
         $children = $request->get('children');
         $infant = $request->get('infant');
-        $totalPassenger = $adults + $children + $infant;
 
-        //get data of Airport from DataBase:
-        $airport_from = Airport::all()->where('airport_id', $airport_from_id)->first();
-        $airport_to = Airport::all()->where('airport_id', $airport_to_id)->first();
+        //Kiểm tra dữ liệu nhập vào có null không? Nếu thiếu bất cứ thông tin gì thì yêu cầu người dùng nhập thêm
+        if (isset($airport_from_id) && isset($airport_to_id) && isset($departure_at) && isset($adults) && isset($children) && isset($infant)) {
 
-        $searchInput = [
-            'airport_from_name' => $airport_from->name,
-            'airport_from_code' => $airport_from->code,
-            'airport_to_name' => $airport_to->name,
-            'airport_to_code' => $airport_to->code,
-            'departure_at' => $departure_at,
-            'adults' => $adults,
-            'children' => $children,
-            'infant' => $infant,
-            'totalPassenger' => $totalPassenger,
-        ];
+            //Tính tổng số hành khách:
+            $totalPassenger = $adults + $children + $infant;
 
-        //get data Flight-Schedules from DataBase:
-        $flightSchedules = FlightSchedule::where('airport_from_id', $airport_from_id)
-            ->where('airport_to_id', $airport_to_id)
-            ->where('departure_at', 'like', '%' . $departure_at . '%')
-            ->get();
+            //get data of Airport from DataBase:
+            $airport_from = Airport::all()->where('airport_id', $airport_from_id)->first();
+            $airport_to = Airport::all()->where('airport_id', $airport_to_id)->first();
 
-        return view('pages.booking.step-1', compact('flightSchedules', 'searchInput', 'airport_to', 'addressAirports'));
+            $searchInput = [
+                'airport_from_name' => $airport_from->name,
+                'airport_from_code' => $airport_from->code,
+                'airport_to_name' => $airport_to->name,
+                'airport_to_code' => $airport_to->code,
+                'departure_at' => $departure_at,
+                'adults' => $adults,
+                'children' => $children,
+                'infant' => $infant,
+                'totalPassenger' => $totalPassenger,
+            ];
 
-        /*if (count($flightSchedules) > 0) {
+            //get data Flight-Schedules from DataBase:
+            $flightSchedules = FlightSchedule::where('airport_from_id', $airport_from_id)
+                ->where('airport_to_id', $airport_to_id)
+                ->where('departure_at', 'like', '%' . $departure_at . '%')
+                ->get();
+
             return view('pages.booking.step-1', compact('flightSchedules', 'searchInput', 'airport_to', 'addressAirports'));
+
+            /*if (count($flightSchedules) > 0) {
+                return view('pages.booking.step-1', compact('flightSchedules', 'searchInput', 'airport_to', 'addressAirports'));
+            } else {
+                return redirect('/')
+                    ->with('notification', "Sorry, we don't have any flights yet with your chosen information!")
+                    ->with('preloader', 'none');
+            }*/
         } else {
-            return redirect('/')
-                ->with('notification', "Sorry, we don't have any flights yet with your chosen information!")
+            $isShowModalFlightSearch = true;
+
+            return view('pages.booking.step-1', compact('addressAirports', 'isShowModalFlightSearch'))
                 ->with('preloader', 'none');
-        }*/
+        }
     }
 
     /**
