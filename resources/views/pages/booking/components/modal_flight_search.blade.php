@@ -150,9 +150,17 @@
                                     <div
                                         class="newsletter_form d-flex flex-md-row flex-column align-items-start justify-content-between">
                                         <div>
+                                            @if(isset($isShowModalFlightSearch))
+                                                <a href="?back=Cancel_flight_search" class="newsletter_button mr-2"
+                                                   style="text-transform: none; font-weight: 400; padding: 12px 22px;">
+                                                    <i class="fa fa-angle-left mr-1"
+                                                       style="position: relative; top: 2px; font-size: 160%"></i>
+                                                    Back Home
+                                                </a>
+                                            @endif
                                             <button type="submit" class="newsletter_button"
                                                     style="text-transform: none; font-weight: 400">
-                                                Find flights
+                                                Find Flights
                                                 <i class="fa fa-angle-right ml-1"
                                                    style="position: relative; top: 2px; font-size: 160%"></i>
                                             </button>
