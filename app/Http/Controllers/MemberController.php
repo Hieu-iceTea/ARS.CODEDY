@@ -59,6 +59,22 @@ class MemberController extends Controller
     }
 
     /**
+     *
+     */
+    public function getResetPassword()
+    {
+        return view('pages.member.reset-password');
+    }
+
+    /**
+     *
+     */
+    public function postResetPassword()
+    {
+
+    }
+
+    /**
      * Show the form for creating a new account.
      *
      */

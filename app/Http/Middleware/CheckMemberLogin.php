@@ -77,6 +77,11 @@ class CheckMemberLogin
                 return redirect('ticket/detail/query');
             }
 
+            //Nếu đang vào "reset-password" thì cho qua
+            if ($request->segment(2) == 'reset-password') {
+                return $next($request);
+            }
+
             //Lưu đường dẫn hiện tại (trước khi bị chuyển hướng tới login) => để sau khi login thì quay lại trang đó
             //(có cách hay hơn là dùng guest như ở dưới nè)
             //if (!session()->has('url.intended')) {

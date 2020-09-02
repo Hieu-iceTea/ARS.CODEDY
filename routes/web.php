@@ -70,15 +70,15 @@ Route::group(['prefix' => ''], function () {
         Route::get('', 'ScheduleController@index')->name('schedule');
     });
 
-
-    Route::group(['prefix' => 'member'], function () {
-
-    });
-
     Route::group(['prefix' => 'member', 'middleware' => 'CheckMemberLogin'], function () {
         Route::group(['prefix' => 'login'], function () {
             Route::get('', 'MemberController@getLogin')->name('member.login');
             Route::post('', 'MemberController@postLogin');
+        });
+
+        Route::group(['prefix' => 'reset-password'], function () {
+            Route::get('', 'MemberController@getResetPassword')->name('member.resetPassword');
+            Route::post('', 'MemberController@postResetPassword');
         });
 
         Route::group(['prefix' => 'register'], function () {

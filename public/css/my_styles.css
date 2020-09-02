@@ -43,6 +43,7 @@ body {
 .my_pagination .disabled .page-link {
     background: none !important;
 }
+
 /*endregion*/
 
 /******************************
@@ -1232,7 +1233,8 @@ body {
     margin-top: 50px;
 }
 
-#main .login-body .submit-form button {
+#main .login-body .submit-form button,
+#main .login-body .submit-form a {
     width: 200px;
     background-color: #77c23c;
     font-size: 20px;

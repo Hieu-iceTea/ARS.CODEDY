@@ -1,6 +1,6 @@
 @extends('pages.layout.master')
 
-@section('title', 'Schedule')
+@section('title', 'Login')
 
 <!-- Style Main_style-->
 @section('style')
@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="home_slider_content">
-                            {{--                            <div class="home_title "><h2>Flight Schedule</h2></div>--}}
+                            {{-- <div class="home_title "><h2>Flight Schedule</h2></div>--}}
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                                            value="{{ old('password') }}">
                                 </div>
                                 <div class="check d-flex">
-                                    <div class="custom-control mr-5 custom-checkbox">
+                                    <div class="custom-control mr-4 custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" name="remember"
                                                value="remember"
                                                id="defaultChecked2" {{ old('remember') == 'remember' ? 'checked' : '' }}>
@@ -67,8 +67,8 @@
                                         </label>
                                     </div>
                                     <div>
-                                        <a href="member/register" style="margin-left: 7rem">
-                                            Registration
+                                        <a href="member/reset-password" class="text-right" style="margin-left: 7.42rem">
+                                            Reset Password
                                         </a>
                                     </div>
                                 </div>
