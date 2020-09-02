@@ -27,7 +27,7 @@
             <div class="modal-body px-5 pt-4 pb-4">
                 <div class="container-fluid px-4">
 
-                    <form method="get">
+                    <form method="get" action="booking/step-1">
 
                         {{-- Row 1 --}}
                         <div class="row ticket_query mt-1">

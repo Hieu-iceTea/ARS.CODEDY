@@ -17,6 +17,8 @@ Route::group(['prefix' => ''], function () {
     Route::get('', 'PageController@index')->name('home');
 
     Route::group(['prefix' => 'booking'], function () {
+        Route::get('', 'BookingController@index');
+
         Route::group(['prefix' => 'step-1'], function () {
             Route::get('', 'BookingController@getStep1');
             Route::post('', 'BookingController@postStep1');

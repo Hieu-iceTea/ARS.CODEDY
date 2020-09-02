@@ -25,6 +25,34 @@ use Illuminate\View\View;
 class BookingController extends Controller
 {
     /**
+     * Show flight search form
+     *
+     */
+    public function index()
+    {
+        /*
+         *
+         * Phần này tương tự 'getStep1' ở ngay phía dưới.
+         *
+         * Nhưng chỉ hiện thị form tìm kiếm chuyến bay chứ không hiện thị dữ liệu tìm kiếm được
+         * Vì thế, phần này mượn view 'pages.booking.step-1' để dùng chung.
+         * Và đã xử lý phân luồng phần dùng chung.
+         *
+         * Hiếu iceTea
+         * 2020-09-02 18:30
+         *
+         */
+
+        //Lấy data cho form tìm kiếm ở modal
+        $addressAirports = Airport::select('name', 'airport_id', 'location', 'code')->get();
+
+        $isShowModalFlightSearch = true;
+
+        return view('pages.booking.step-1', compact('addressAirports', 'isShowModalFlightSearch'))
+            ->with('preloader', 'none');
+    }
+
+    /**
      * Show the form for Booking/Step-1.
      *
      * @param BookingRequest $request
