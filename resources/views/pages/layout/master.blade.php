@@ -26,7 +26,8 @@
 
 <body>
 <!-- Preloader Start -->
-<div id="preloader-active" style="{{ Session::get('preloader') == 'none' ? 'display: none' : '' }}">
+<div id="preloader-active"
+     style="{{ (Session::get('preloader') ?? $preloader ?? '') == 'none' ? 'display: none' : '' }}">
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="preloader-inner position-relative">
             <div class="preloader-circle"></div>
@@ -78,7 +79,8 @@
                                         {{ \Illuminate\Support\Facades\Auth::user()->user_name ?? '' }}
                                     </a>
                                     &nbsp;|&nbsp;
-                                    <a style="color: white" href="member/logout" onclick="return confirm('Are you sure you want to logout?')">
+                                    <a style="color: white" href="member/logout"
+                                       onclick="return confirm('Are you sure you want to logout?')">
                                         Logout
                                     </a>
                                 @else
