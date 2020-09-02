@@ -97,9 +97,25 @@
                         </a>
                     </p>
                     @if(\Illuminate\Support\Facades\Auth::id() == $ticket->user_id)
-                        <a href="">Cancel</a>
+                        <form class="d-inline" method="post" action="{{ 'ticket/detail/' . $ticket->ticket_id }}">
+                            @csrf
+                            @method('DELETE')
+                            <button class="border-0 btn btn-sm btn-outline-danger" type="submit"
+                                    data-toggle="tooltip" title="Cancel" data-placement="bottom"
+                                    onclick="return confirm('Do you really want to cancel this ticket?')">
+                                    <span class="btn-icon-wrapper pr-1 opacity-8">
+                                        <i class="fa fa-times fa-w-20"></i>
+                                    </span>
+                                <span>Cancel</span>
+                            </button>
+                        </form>
                         |
-                        <a href="">Pay</a>
+                        <a href="" class="border-0 btn btn-sm btn-outline-primary">
+                            <span class="btn-icon-wrapper pr-1 opacity-8">
+                                        <i class="fa fa-paypal fa-w-20"></i>
+                                    </span>
+                            <span>Pay now</span>
+                        </a>
                     @endif
                 </div>
             </div>

@@ -49,6 +49,7 @@ Route::group(['prefix' => ''], function () {
         Route::get('', 'TicketController@index')->name('ticket');
 
         Route::get('detail/{id}', 'TicketController@detail')->name('detail');
+        Route::delete('detail/{id}', 'TicketController@cancelTicket');
 
         Route::group(['prefix' => 'edit-schedule/{id}'], function () {
             Route::get('', 'TicketController@editSchedule');

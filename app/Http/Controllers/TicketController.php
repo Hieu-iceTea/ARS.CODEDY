@@ -272,4 +272,28 @@ class TicketController extends Controller
     {
         return view('pages.ticket.payment');
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param int $id
+     */
+    public function cancelTicket($id)
+    {
+        $current_status = Ticket::findOrFail($id)->status;
+
+        if ($current_status == Utility::ticket_status_Unverified || $current_status == Utility::ticket_status_Reservations) {
+            $update = Ticket::where('ticket_id', $id)->update([
+                'status' => Utility::ticket_status_Cancel,
+            ]);
+
+            if ($update == true) {
+                return redirect()->back()->with('notification', 'Canceled Successfully!');
+            } else {
+                return redirect()->back()->withErrors('Canceled Fail 🙄');
+            }
+        } else {
+            return redirect()->back()->withErrors('Invalid action! 🙄 <br> Your ticket status is: ' . Utility::$ticket_status[$current_status]);
+        }
+    }
 }
