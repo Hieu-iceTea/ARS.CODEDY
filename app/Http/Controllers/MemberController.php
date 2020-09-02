@@ -161,11 +161,13 @@ class MemberController extends Controller
      */
     public function getVerify(UserRequest $request)
     {
+        //Lấy dữ liệu từ request:
         $verification_code = $request->get('verification_code');
+        $action = $request->get('action');
+
         $user_id = $request->get('user_id') ?? Auth::user()->user_id ?? null;
 
-
-        //nếu có verification_code thì kiểm tra
+        //nếu có verification_code:
         if (isset($verification_code)) {
             $user = User::all()
                 ->where('verification_code', $verification_code)
@@ -197,7 +199,48 @@ class MemberController extends Controller
             }
         }
 
-        //nếu KHÔNG có verification_code thì hiện thị trang view
+        //nếu có action:
+        if (isset($action)) {
+            //Nếu action là "resend_email"
+            if ($action == 'resend_email') {
+                // * [01] * Cập nhật DB, (cập nhật verification_code):
+                User::where('user_id', $user_id)
+                    ->update([
+                        'verification_code' => Str::upper(Str::random(6)),
+                    ]);
+
+                // * [02] * Gửi email mới:
+                //chỉ lấy những thông tin nào email cần chứ ko lấy hết (để tránh lộ mật khẩu)
+                // [vì chrome liên tục cảnh báo bảo mật, nhưng sau khi làm như này vẫn còn cảnh báo, :'( híc ]
+                $user = User::findOrFail($user_id);
+
+                $data_send_mail = [
+                    'verification_code' => $user->verification_code,
+                    'user_id' => $user->user_id,
+                    'gender' => $user->gender,
+                    'first_name' => $user->first_name,
+                    'last_name' => $user->last_name,
+                    'address' => $user->address,
+                    'created_at' => $user->created_at,
+                ];
+
+                // * [03] * Gửi email kèm mã xác nhận kích hoạt tài khoản:
+                $email_to = $user->email;
+                Mail::send('pages.member.email', compact('data_send_mail'), function ($message) use ($email_to) {
+                    $message->from('ars.codedy@gmail.com', 'ARS.CODEDY');
+                    $message->to($email_to, $email_to);
+                    //$message->cc('', ''); //gửi cho chủ cửa hàng
+                    $message->subject('Resend account verification code');
+                });
+
+                // * Final * Chuyển hướng, quay lại trang hiện tại (trang verify) và thông báo:
+                return redirect()->back()
+                    ->with('notification', 'Chúng tôi đã gửi lại mã xác thực tài khoản vào email của bạn. <br>Hãy kiểm tra hòm thư của bạn.')
+                    ->with('preloader', 'none');
+            }
+        }
+
+        //nếu KHÔNG có verification_code & action thì hiện thị trang view
         return view('pages.member.verify');
     }
 

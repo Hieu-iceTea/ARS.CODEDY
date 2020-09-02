@@ -56,13 +56,30 @@
                 </div>
 
                 <form>
-                    <div class="row my-5 justify-content-center">
+                    <div class="row mt-5 mb-3 justify-content-center">
                         <div class="col-6">
-                            <p><input class="form-control" type="text" name="verification_code" required
-                                      placeholder="Verification code"></p>
+                            <p>
+                                <input class="form-control" type="text" name="verification_code" required
+                                       placeholder="Verification code">
+                            </p>
                         </div>
                         <div class="col-3">
-                            <p><input class="form-control btn btn-sm btn-outline-primary" type="submit" value="Check">
+                            <p>
+                                <input class="form-control btn btn-sm btn-outline-primary" type="submit" value="Check">
+                            </p>
+                        </div>
+                    </div>
+                </form>
+
+                <form>
+                    <div class="row mt-3 mb-5 justify-content-center text-center">
+                        <div class="col-9">
+                            <p>
+                                Didn't receive an email containing your account activation code?
+                                <input class="btn btn-sm border-0 btn-outline-primary" type="submit"
+                                       value="Resend email"
+                                       onclick="return confirm('Are you sure you want to resend the activation code?')">
+                                <input type="hidden" name="action" value="resend_email">
                             </p>
                         </div>
                     </div>
