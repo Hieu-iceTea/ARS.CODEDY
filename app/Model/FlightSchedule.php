@@ -3,7 +3,6 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
-use \Illuminate\Database\Eloquent\Collection;
 
 class FlightSchedule extends Model
 {
@@ -17,6 +16,9 @@ class FlightSchedule extends Model
         return parent::all($columns)->where('deleted', false);
     }
 
+
+    // * * * * * * * * * * * * * * * * * * * * Relationships * * * * * * * * * * * * * * * * * * * *
+
     public function airportFrom()
     {
         return $this->hasOne(Airport::class, 'airport_id', 'airport_from_id');
@@ -26,7 +28,6 @@ class FlightSchedule extends Model
     {
         return $this->hasOne(Airport::class, 'airport_id', 'airport_to_id');
     }
-
 
     public function plane()
     {
@@ -54,14 +55,13 @@ class FlightSchedule extends Model
     {
         if ($code == null) {
             $flightSchedules = FlightSchedule::where('deleted', false)
-                ->orderBy('departure_at', 'asc')
-                ->paginate(10);
+                ->orderBy('departure_at', 'desc')
+                ->paginate();
         } else {
             $flightSchedules = FlightSchedule::where('deleted', false)
                 ->where('code', 'like', '%' . $code . '%')
-                ->orderBy('departure_at', 'asc')
-                ->paginate(10);
-
+                ->orderBy('departure_at', 'desc')
+                ->paginate();
         }
 
         return $flightSchedules;

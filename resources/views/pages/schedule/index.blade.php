@@ -44,7 +44,7 @@
                                     class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
 
                                     <input type="text" class="search_input search_input_1  w-75" id="code" name="code"
-                                           placeholder="enter code" value="{{ $code ?? '' }}">
+                                           placeholder="enter code" value="{{ request('code') }}">
                                     <button class="home_search_button ml-5" type="submit">search</button>
                                 </div>
                             </form>
@@ -58,23 +58,23 @@
     <!-- Schedule index -->
     <div class="schedule-index">
         <div class="container">
-            <div class="row ">
-                <div class="title-flight">
-                    @if($code == null)
-                        <h4> Recent Flight</h4>
+            <div class="row">
+                <div class="title-flight mt-4 mb-3">
+                    @if(request('code') == null)
+                        <h4>Recent Flight</h4>
                     @else
-                        <h4>Result Research ({{ count($flightSchedules) }})</h4>
+                        <h4>Result Research</h4>
                     @endif
                 </div>
             </div>
-            @if(count($flightSchedules) != 0)
+            @if(count($flightSchedules) > 0)
                 <div class="row">
                     <table class="table">
-                        <thead class="heade-table text-uppercase">
+                        <thead class="heade-table">
                         <tr>
-                            <th scope="col">CODE</th>
-                            <th scope="col">TO</th>
-                            <th scope="col">FROM</th>
+                            <th scope="col">#Code</th>
+                            <th scope="col">To</th>
+                            <th scope="col">From</th>
                             <th scope="col">Departure At</th>
                             <th scope="col">Arrival At</th>
                         </tr>
@@ -82,16 +82,16 @@
                         <tbody class="active ">
                         @foreach($flightSchedules as $flightSchedule)
                             <tr class="">
-                                <th scope="row">{{ $flightSchedule->code }}</th>
-                                <td>{{ $flightSchedule->airportFrom->name }}</td>
-                                <td>{{ $flightSchedule->airportTo->name }}</td>
-                                <td>{{ $flightSchedule->departure_at }}</td>
-                                <td>{{ $flightSchedule->arrival_at }}</td>
+                                <th scope="row">#{{ $flightSchedule->code }}</th>
+                                <td>{{ $flightSchedule->airportFrom->location }} ({{ $flightSchedule->airportFrom->name }})</td>
+                                <td>{{ $flightSchedule->airportTo->location }} ({{ $flightSchedule->airportTo->name }})</td>
+                                <td>{{ date('H\hi, l, F d, Y', strtotime($flightSchedule->departure_at)) }}</td>
+                                <td>{{date('H\hi, l, F d, Y', strtotime($flightSchedule->arrival_at))  }}</td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
-                    <div class ="pagination-lg mb-5">
+                    <div class ="pagination my_pagination mb-5">
                         {{ $flightSchedules->links()  }}
                     </div>
                 </div>
@@ -100,7 +100,8 @@
                     <div class=" col resultSearch" style="height: 200px;">
                         <p class="text-black-50 bg-light"
                            style="padding: 30px;width: 100%; height: 100px;box-shadow: 5px 10px 8px #dcdcdc;font-size: 22px;font-weight: bold; font-family: 'Oswald', sans-serif;">
-                            Your flight was not found</p>
+                            Your flight was not found
+                        </p>
                     </div>
 
                 </div>

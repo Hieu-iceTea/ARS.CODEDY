@@ -41,7 +41,7 @@
                                 <div
                                     class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
 
-                                    <input type="text" id="code" name="code" value="{{ request('code') }}"
+                                    <input type="search" id="code" name="code" value="{{ request('code') }}"
                                            placeholder="Code"
                                            class="search_input search_input_1">
 
@@ -67,7 +67,8 @@
                                         @endforeach
                                     </select>
 
-                                    <input type="date" id="departure" name="departure" value="{{ request('departure') }}"
+                                    <input type="date" id="departure" name="departure"
+                                           value="{{ request('departure') }}"
                                            class="search_input search_input_4">
                                     <button class="home_search_button" type="submit">search</button>
                                 </div>
@@ -83,9 +84,15 @@
 
     <div class="ticket_list page_ticket" id="">
         <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="table_title"><h4>Your ticket list <span id="ticket_count">(03 ticket)</span></h4></div>
+            <div class="row mt-4 mb-3">
+                <div class="col pl-0">
+                    <div class="table_title">
+                        @if(request('code') == null && request('from') == null && request('to') == null && request('departure') == null)
+                            <h4>Your ticket list</h4>
+                        @else
+                            <h4>Result Research</h4>
+                        @endif
+                    </div>
                 </div>
             </div>
 
@@ -93,10 +100,10 @@
                 <table class="table table-info-tickets table-hover ">
                     <thead class="table-top">
                     <tr>
-                        <th scope="col">Code</th>
+                        <th scope="col">#Code</th>
                         <th scope="col">From</th>
                         <th scope="col">To</th>
-                        <th scope="col">DEPARTURE AT</th>
+                        <th scope="col">Departure At</th>
                         <th scope="col">Passenger</th>
                         <th scope="col">Function</th>
                     </tr>
@@ -104,12 +111,12 @@
                     <tbody class="active">
                     @foreach($tickets as $ticket)
                         <tr>
-                            <th scope="row">{{ $ticket->code }}</th>
-                            <td style=" text-transform: capitalize;">{{ $ticket->flightSchedule->airportFrom->location }}</td>
-                            <td style=" text-transform: capitalize;">{{ $ticket->flightSchedule->airportTo->location }}</td>
-                            <td>{{ $ticket->flightSchedule->departure_at }}</td>
-                            <td>{{ count($ticket->passenger->where('ticket_id',$ticket->ticket_id)) }} (
-                                Adult: {{count($ticket->passenger->where('passenger_type',1))}},
+                            <th scope="row">#{{ $ticket->code }}</th>
+                            <td style=" text-transform: capitalize;">{{ $ticket->flightSchedule->airportFrom->location }} ({{ $ticket->flightSchedule->airportFrom->name }})</td>
+                            <td style=" text-transform: capitalize;">{{ $ticket->flightSchedule->airportTo->location }} ({{ $ticket->flightSchedule->airportTo->name }})</td>
+                            <td>{{ date('H\hi d/m/Y', strtotime($ticket->flightSchedule->departure_at)) }}</td>
+                            <td>{{ count($ticket->passenger->where('ticket_id',$ticket->ticket_id)) }}
+                                (Adult: {{count($ticket->passenger->where('passenger_type',1))}},
                                 Children:{{count($ticket->passenger->where('passenger_type',2))}},
                                 Baby: {{count($ticket->passenger->where('passenger_type',3))}})
                             </td>
@@ -120,7 +127,7 @@
                     @endforeach
                     </tbody>
                 </table>
-                <div class="pagination-lg mb-5">
+                <div class="pagination my_pagination mb-5">
                     {{ $tickets->links()  }}
                 </div>
             </div>

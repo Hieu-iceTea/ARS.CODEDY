@@ -25,6 +25,26 @@ body {
     margin-top: 5rem; /*mt-5*/
 }
 
+/*region my_pagination*/
+.my_pagination .page-link {
+    color: black !important;
+    background: none;
+    border: none !important;
+}
+
+.my_pagination .active .page-link {
+    background: #c0c5ce !important;
+}
+
+.my_pagination .page-link:hover {
+    background: #c0c5ce !important;
+}
+
+.my_pagination .disabled .page-link {
+    background: none !important;
+}
+/*endregion*/
+
 /******************************
 
 [Table of Contents]
@@ -764,7 +784,6 @@ body {
 }
 
 .page_ticket .table_title h4 {
-    margin: 50px 0 30px 0;
     color: #33597C;
     font-weight: bold;
 }
@@ -774,11 +793,9 @@ body {
 }
 
 .ticket_list .row .table-info-tickets {
-    margin-bottom: 100px;
     border: 0.5px solid #ECE9E9;
     box-shadow: 5px 10px 8px #dcdcdc;
     background-color: white;
-    text-transform: uppercase;
 }
 
 .ticket_list .row .table-top {
@@ -964,14 +981,11 @@ body {
 }
 
 .schedule-index .container .row .title-flight h4 {
-    margin-top: 50px;
     color: #33597C;
     font-weight: bold;
-    margin-bottom: 50px;
 }
 
 .schedule-index .table {
-    margin-bottom: 100px;
     border: 0.5px solid #ECE9E9;
     box-shadow: 5px 10px 8px #dcdcdc;
     background-color: white;
@@ -987,21 +1001,6 @@ body {
 .schedule-index .container .table .active tr:hover {
     background-color: #faf9f9;
     color: #33597C;
-}
-
-.schedule-index .pagination-lg .page-link {
-    padding: 5px 10px !important;
-    color: black !important;
-    background: none;
-    border: none !important;
-}
-
-.schedule-index .pagination .active .page-link {
-    background: #c0c5ce
-}
-
-.schedule-index .pagination-lg .page-link:hover {
-    background: #c0c5ce
 }
 
 /************

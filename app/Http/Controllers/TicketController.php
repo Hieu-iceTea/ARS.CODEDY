@@ -36,7 +36,7 @@ class TicketController extends Controller
         $tickets = Ticket::leftJoin('flight_schedule', 'ticket.flight_schedule_id', '=', 'flight_schedule.flight_schedule_id')
             ->where(function ($query) use ($departure_at, $airport_to_id, $airport_from_id, $ticket_code) {
                 if (isset($ticket_code)) {
-                    $query->where('ticket.code', '=', $ticket_code);
+                    $query->where('ticket.code', 'like', '%' . $ticket_code . '%');
                 }
 
                 if (isset($airport_from_id)) {

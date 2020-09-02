@@ -20,6 +20,6 @@ class ScheduleController extends Controller
         $fs = new FlightSchedule();
         $flightSchedules = $fs->getFlightScheduleByCode($code);
 
-        return view('pages.schedule.index', compact('flightSchedules', 'code'));
+        return view('pages.schedule.index', compact('flightSchedules'));
     }
 }

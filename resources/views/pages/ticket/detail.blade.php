@@ -1,6 +1,6 @@
 @extends('pages.layout.master')
 
-@section('title', 'Edit Ticket')
+@section('title', 'Ticket Detail')
 
 <!-- Style Main_style-->
 @section('style')
