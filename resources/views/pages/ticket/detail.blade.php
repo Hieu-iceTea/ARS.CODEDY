@@ -102,19 +102,21 @@
                             @method('DELETE')
                             <button class="border-0 btn btn-sm btn-outline-danger" type="submit"
                                     data-toggle="tooltip" title="Cancel" data-placement="bottom"
+                                    {{ ($ticket->status != \App\Utilities\Utility::ticket_status_Unverified && $ticket->status != \App\Utilities\Utility::ticket_status_Reservations) ? 'disabled' : ''}}
                                     onclick="return confirm('Do you really want to cancel this ticket?')">
                                     <span class="btn-icon-wrapper pr-1 opacity-8">
                                         <i class="fa fa-times fa-w-20"></i>
                                     </span>
-                                <span>Cancel</span>
+                                <span>{{ $ticket->status == \App\Utilities\Utility::ticket_status_Cancel ? 'This ticket has been canceled' : 'Cancel' }}</span>
                             </button>
                         </form>
                         |
-                        <a href="" class="border-0 btn btn-sm btn-outline-primary">
+                        <a href=""
+                           class="border-0 btn btn-sm btn-outline-primary {{ ($ticket->status != \App\Utilities\Utility::ticket_status_Unverified && $ticket->status != \App\Utilities\Utility::ticket_status_Reservations) ? 'disabled' : ''}}">
                             <span class="btn-icon-wrapper pr-1 opacity-8">
                                         <i class="fa fa-paypal fa-w-20"></i>
                                     </span>
-                            <span>Pay now</span>
+                            <span>{{ $ticket->status == \App\Utilities\Utility::ticket_status_Paid ? 'This ticket has been paid' : ($ticket->status == \App\Utilities\Utility::ticket_status_Finish ? 'This flight has finish' : 'Pay now') }}</span>
                         </a>
                     @endif
                 </div>

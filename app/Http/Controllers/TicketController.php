@@ -288,7 +288,7 @@ class TicketController extends Controller
             ]);
 
             if ($update == true) {
-                return redirect()->back()->with('notification', 'Canceled Successfully!')
+                return redirect()->back()->with('notification', 'Successfully canceled your ticket!')
                     ->with('preloader', 'none');
             } else {
                 return redirect()->back()->withErrors('Canceled Fail 🙄')
