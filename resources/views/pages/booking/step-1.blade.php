@@ -1,6 +1,6 @@
 @extends('pages.layout.master')
 
-@section('title', 'Booking - Step 1')
+@section('title', 'Booking' . (request()->segment(2) == 'step-1' ? ' - Step 1' : ''))
 
 <!-- Style Main_style-->
 @section('style')
