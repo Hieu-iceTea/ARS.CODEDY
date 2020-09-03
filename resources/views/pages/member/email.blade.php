@@ -41,30 +41,59 @@
             <div class="row" style="background-color: whitesmoke;  padding: 35px 35px 10px 35px;">
                 <div class="container-fluid">
                     <h3 class="m-0 p-0 mt-4" style="margin-top: 0px; font-size: 28px; font-weight: 500;">
-                        <strong style="font-size: 32px;">Xác nhận đăng ký tài khoản mới</strong>
-                    </h3>
-                    <h3 class="m-0 p-0 mt-4"
-                        style="margin-top: 0px; font-size: 28px; font-weight: 500; line-height: 50px;">
-                        <span>Mã bảo mật:</span>
-                        <br>
-                        <strong
-                            style="font-size: 32px; background-color: orange; padding: 10px; border-radius: 10px; color: white;">
-                            {{ $data_send_mail['verification_code'] }}
+                        <strong style="font-size: 32px;">
+                            @if($data_send_mail['action'] != 'reset_password')
+                                Xác nhận đăng ký tài khoản mới
+                            @else
+                                Đặt lại mật khẩu của bạn
+                            @endif
                         </strong>
                     </h3>
-                    <div class="mt-4" style="margin-top: 25px;">
-                        <img style="align-items: baseline;" width="130" height="130"
-                             src="https://ci3.googleusercontent.com/proxy/Sn3izYiKYnZ6hdCg--Qh0k3hQILgNhK3jvPekpW-ebq6DNddUFPLYlsiNqz7dDAaqHqq33j6suRGg_vja6z1wstOEUjxuTzkk4g5d9CVOFjHv-9Maew=s0-d-e1-ft#https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=ZNA3P2%20"
-                             alt="">
-                    </div>
-                    <h3 class="m-0 p-0 mt-4" style="margin-top: 20px; font-size: 18px; font-weight: 500;">
-                        Nhập mã bảo mật ở trên hoặc click vào
-                        <a href="http://ars.codedy/member/verify?user_id={{ $data_send_mail['user_id'] }}&verification_code={{ $data_send_mail['verification_code'] }}"
-                           target="_blank" style="color: teal; font-size: 20px;">đây</a>
-                        để kích hoạt tài khoản của bạn. Chúc bạn có một này vui vẻ!
-                        <br>
-                        <span style="font-size: 15px;">(Mã sẽ hết hạn sau 5 ngày)</span>
-                    </h3>
+
+                    @if($data_send_mail['action'] != 'reset_password')
+                        <h3 class="m-0 p-0 mt-4"
+                            style="margin-top: 0px; font-size: 28px; font-weight: 500; line-height: 50px;">
+                            <span>Mã bảo mật:</span>
+                            <br>
+                            <strong
+                                style="font-size: 32px; background-color: orange; padding: 10px; border-radius: 10px; color: white;">
+                                {{ $data_send_mail['verification_code'] }}
+                            </strong>
+                        </h3>
+                        <div class="mt-4" style="margin-top: 25px;">
+                            <img style="align-items: baseline;" width="130" height="130"
+                                 src="https://ci3.googleusercontent.com/proxy/Sn3izYiKYnZ6hdCg--Qh0k3hQILgNhK3jvPekpW-ebq6DNddUFPLYlsiNqz7dDAaqHqq33j6suRGg_vja6z1wstOEUjxuTzkk4g5d9CVOFjHv-9Maew=s0-d-e1-ft#https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=ZNA3P2%20"
+                                 alt="">
+                        </div>
+                        <h3 class="m-0 p-0 mt-4" style="margin-top: 20px; font-size: 18px; font-weight: 500;">
+                            Nhập mã bảo mật ở trên hoặc click vào
+                            <a href="http://ars.codedy/member/verify?user_id={{ $data_send_mail['user_id'] }}&verification_code={{ $data_send_mail['verification_code'] }}"
+                               target="_blank" style="color: teal; font-size: 20px;">đây</a>
+                            để kích hoạt tài khoản của bạn. Chúc bạn có một này vui vẻ!
+                            <br>
+                            <span style="font-size: 15px;">(Mã sẽ hết hạn sau 5 ngày)</span>
+                        </h3>
+                    @else
+                        <h3 class="m-0 p-0 mt-4" style="margin-top: 20px; font-size: 18px; font-weight: 500;">
+                            Chúng tôi được biết rằng bạn đã mất mật khẩu ARS.CODEDY của mình. Xin lỗi vì điều đó!
+                            <br>
+                            Nhưng đừng lo lắng! Bạn có thể sử dụng liên kết sau để đặt lại mật khẩu của mình:
+                            <br>
+                            <a href="http://ars.codedy/member/reset-password?code={{ $data_send_mail['reset_password_code'] }}"
+                               target="_blank" style="color: teal; font-size: 20px;">http://ars.codedy/member/reset-password?code={{ $data_send_mail['reset_password_code'] }}</a>
+                            <br>
+                            Chúc bạn có một này vui vẻ!
+                            <br>
+                            <span style="font-size: 15px;">(Liên kết sẽ hết hạn sau 5 ngày)</span>
+                            <br>
+                            <br>
+                            Nếu bạn không sử dụng liên kết này trong vòng 5 ngày, liên kết này sẽ hết hạn. Để nhận liên
+                            kết đặt lại mật khẩu mới, hãy truy cập
+                            <a href="http://ars.codedy/member/reset-password"
+                               target="_blank" style="color: teal; font-size: 20px;">http://ars.codedy/member/reset-password</a>
+                        </h3>
+                    @endif
+
                     <div class="row mt-5" style="margin-top: 50px; display: flex;">
                         <div class="col-6"
                              style="margin-bottom: 25px; flex: 0 0 50%; width: 50%; box-sizing: border-box;">

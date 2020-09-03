@@ -21,34 +21,35 @@ SET time_zone = '+7:00';
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user`
 (
-    `user_id`           INT AUTO_INCREMENT,
+    `user_id`             INT AUTO_INCREMENT,
 
-    `user_name`         VARCHAR(64) UNIQUE         NOT NULL,
-    `email`             VARCHAR(64)                NOT NULL,
-    `password`          VARCHAR(128)               NOT NULL,
-    `level`             TINYINT UNSIGNED DEFAULT 3 NOT NULL,
+    `user_name`           VARCHAR(64) UNIQUE         NOT NULL,
+    `email`               VARCHAR(64) UNIQUE         NOT NULL,
+    `password`            VARCHAR(128)               NOT NULL,
+    `level`               TINYINT UNSIGNED DEFAULT 3 NOT NULL,
 
-    `email_verified_at` DATETIME,
-    `verification_code` VARCHAR(8)       DEFAULT NULL,
-    `remember_token`    VARCHAR(128)     DEFAULT NULL,
+    `email_verified_at`   DATETIME,
+    `verification_code`   VARCHAR(8)       DEFAULT NULL,
+    `reset_password_code` VARCHAR(16)      DEFAULT NULL,
+    `remember_token`      VARCHAR(128)     DEFAULT NULL,
 
-    `image`             VARCHAR(128),
-    `gender`            BOOLEAN                    NOT NULL,
-    `first_name`        VARCHAR(64),
-    `last_name`         VARCHAR(64),
-    `dob`               DATE,
-    `phone`             VARCHAR(16),
-    `address`           VARCHAR(128),
+    `image`               VARCHAR(128),
+    `gender`              BOOLEAN                    NOT NULL,
+    `first_name`          VARCHAR(64),
+    `last_name`           VARCHAR(64),
+    `dob`                 DATE,
+    `phone`               VARCHAR(16),
+    `address`             VARCHAR(128),
 
-    `loyalty_number`    INT(8),
-    `active`            BOOLEAN          DEFAULT FALSE,
+    `loyalty_number`      INT(8),
+    `active`              BOOLEAN          DEFAULT FALSE,
 
-    `created_by`        NVARCHAR(32)     DEFAULT 'ARS.CODEDY',
-    `created_at`        DATETIME         DEFAULT CURRENT_TIME,
-    `updated_by`        NVARCHAR(32)     DEFAULT NULL,
-    `updated_at`        DATETIME         DEFAULT NULL,
-    `version`           INT              DEFAULT 1,
-    `deleted`           BOOLEAN          DEFAULT FALSE,
+    `created_by`          NVARCHAR(32)     DEFAULT 'ARS.CODEDY',
+    `created_at`          DATETIME         DEFAULT CURRENT_TIME,
+    `updated_by`          NVARCHAR(32)     DEFAULT NULL,
+    `updated_at`          DATETIME         DEFAULT NULL,
+    `version`             INT              DEFAULT 1,
+    `deleted`             BOOLEAN          DEFAULT FALSE,
 
     PRIMARY KEY (`user_id`)
 ) ENGINE InnoDB;
@@ -302,11 +303,11 @@ VALUES (4, 'vuquanghuy2001', 'VuQuangHuyXL1234@gmail.com', '$2y$10$YKY51A9REcXLZ
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, image, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
 VALUES (5, 'tuanpth1909', 'PhamTuanCules20@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 3, '2020-08-08', 'tuanpth1909.jpg', 1, 'Tuân', 'Phạm', '2000-01-01', '0382548442', '', 123456, TRUE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, image, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
-VALUES (6, 'host', 'ars.codedy@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 1, '2020-08-08', 'logo_host.png', 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '032 87 99 000', 'Hà Nội', NULL, TRUE);
+VALUES (6, 'host', 'host@ars.codedy', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 1, '2020-08-08', 'logo_host.png', 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '032 87 99 000', 'Hà Nội', NULL, TRUE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, image, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
 VALUES (7, 'admin', 'ars.codedy@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 2, '2020-08-08', 'logo_admin.gif', 1, '', '', '2020-08-08', '0868 6633 15', 'Nghệ An', NULL, TRUE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, image, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
-VALUES (8, 'member', 'ars.codedy@gmail.com', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 3, '2020-08-08', 'logo_member.png', 1, '', '', '2020-08-08', '', '', NULL, TRUE);
+VALUES (8, 'member', 'member@ars.codedy', '$2y$10$YKY51A9REcXLZVRAC87AcuXnC.Nb8WK8rD/WgfAVxPSAelLZHQf06', 3, '2020-08-08', 'logo_member.png', 1, '', '', '2020-08-08', '', '', NULL, TRUE);
 
 INSERT INTO extra_service (extra_service_id, name, price, image, active, description)
 VALUE (1,  'Luggage and special services',  110000,  'luggage-and-special-services.jpg', TRUE, '<ul style=list-style-type: disc;><li>Total weight displayed includes free baggage allowance</li><li>Save up to 80 %</li><li>max. 40 kg per person</li></ul>');
@@ -644,4 +645,3 @@ INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_ty
 VALUES (10, NULL, 1, NULL, 2, '', 2, 3, 'DEMO01', 0, 'Kiều Linh', 'Trần', 'DinhHieu8896@gmail.com', '0868663315', 'Hà Nội', 1799000, 1799000, 1, '<p>mô tả</p>');
 INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, extra_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, amount_paid, total_passenger, description)
 VALUES (11, NULL, 9, NULL, 1, '', 3, 2, 'DEMO02', 0, 'Thanh Mai', 'Phạm', 'DinhHieu8896@gmail.com', '0868663315', 'Hà Nội', 2999000, 2999000, 1, '<p>mô tả</p>');
-

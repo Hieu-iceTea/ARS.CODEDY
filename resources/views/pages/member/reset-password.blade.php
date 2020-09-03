@@ -32,8 +32,8 @@
     </div>
     <!-- Search -->
 
-    <!-- Schedule index -->
-    @if(request('code') == null)
+    <!-- Main -->
+    @if(session()->get('step') == null && !isset($step))
         <div class="login_main" style="">
             <div class="container">
                 <div class=" row">
@@ -51,12 +51,13 @@
                                     link.</h4>
                             </div>
                             <div class="login-body">
-                                <form method="post">
+                                <form method="post" onsubmit="preloaderActive(9999)">
                                     @csrf
+                                    <input type="hidden" id="action" name="action" value="send_password_reset_email">
                                     <div class="">
                                         <input type="email" id="email" name="email"
                                                placeholder="Enter your email address"
-                                               value="{{ old('user_name') }}">
+                                               value="{{ old('email') }}" required>
                                     </div>
                                     <div class="submit-form w-100 mt-3 text-center container-login100-form-btn">
                                         <button type="submit" class="btn mt-3 w-100" style="font-weight: 400">
@@ -70,7 +71,9 @@
                 </div>
             </div>
         </div>
-    @elseif(request('code') == 1)
+    @endif
+
+    @if(session()->get('step') == 'mail_sent_successfully')
         <div class="login_main" style="">
             <div class="container">
                 <div class=" row">
@@ -82,14 +85,15 @@
                                 </div>
                             </div>--}}
                             <div class="title">
-                                <h3 class="mb-4">Reset your password</h3>
+                                <h3 class="mb-4">Mail sent successfully</h3>
                             </div>
                             <div class="login-body">
                                 <form method="post">
                                     @csrf
                                     <div>
                                         <p style="font-size: 13px; line-height: 20px">
-                                            Check your email for a link to reset your password. If it doesn’t appear within a few minutes, check your spam folder.
+                                            Check your email for a link to reset your password. If it doesn’t appear
+                                            within a few minutes, check your spam folder.
                                             <a href="http://fb.com/Hieu.iceTea" target="_blank">
                                                 Learn more.
                                             </a>
@@ -109,7 +113,9 @@
                 </div>
             </div>
         </div>
-    @else
+    @endif
+
+    @if(isset($step) && $step == 'change_password')
         <div class="login_main" style="">
             <div class="container">
                 <div class=" row">
@@ -123,19 +129,20 @@
                             <div class="title">
                                 <h3 class="mb-4">Change your password</h3>
                                 <h4>
-                                    Change password for @Hieu-iceTea
+                                    Change password for {{ '@' . $user->user_name }}
                                 </h4>
                             </div>
                             <div class="login-body">
-                                <form method="post">
+                                <form method="post" onsubmit="preloaderActive(9999)">
                                     @csrf
+                                    <input type="hidden" id="action" name="action" value="change_password">
                                     <div>
                                         <input type="password" id="password" name="password" class="mb-3"
                                                placeholder="Enter your new password" autocomplete="off"
-                                               value="{{ old('user_name') }}">
-                                        <input type="password" id="password" name="password" class="mb-4"
-                                               placeholder="Confirm password" autocomplete="off"
-                                               value="{{ old('user_name') }}">
+                                               value="{{ old('password') }}" required>
+                                        <input type="password" id="password_confirmation" name="password_confirmation"
+                                               class="mb-4" placeholder="Confirm password" autocomplete="off"
+                                               value="{{ old('password_confirmation') }}" required>
                                         <p style="font-size: 13px; line-height: 20px">
                                             Make sure it's at least 6 characters including a number and a uppercase a
                                             lowercase letter and a special character.

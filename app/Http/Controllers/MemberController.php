@@ -5,10 +5,15 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UserRequest;
 use App\Model\User;
 use App\Utilities\Utility;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
+use Illuminate\View\View;
 
 class MemberController extends Controller
 {
@@ -34,7 +39,7 @@ class MemberController extends Controller
      * Receive data and Login.
      *
      * @param UserRequest $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
     public function postLogin(UserRequest $request)
     {
@@ -59,19 +64,112 @@ class MemberController extends Controller
     }
 
     /**
-     *
+     * @param Request $request
+     * @return Application|Factory|RedirectResponse|View
      */
-    public function getResetPassword()
+    public function getResetPassword(Request $request)
     {
+        $reset_password_code = $request->get('code');
+
+        if ($reset_password_code != null) {
+            $user = User::where('reset_password_code', $reset_password_code)->first();
+
+            if ($user != null) {
+                return view('pages.member.reset-password', compact('user'))->with('step', 'change_password');
+            } else {
+                return view('pages.member.reset-password')
+                    ->withErrors('It looks like you clicked on an invalid password reset link. Please try again. 🙄')
+                    ->with('preloader', 'none');
+            }
+        }
+
         return view('pages.member.reset-password');
     }
 
     /**
-     *
+     * @param Request $request
+     * @return RedirectResponse
      */
-    public function postResetPassword()
+    public function postResetPassword(UserRequest $request)
     {
+        //Get data from request:
+        $action = $request->get('action');
 
+        //Nếu action là [send_password_reset_email]
+        if ($action == 'send_password_reset_email') {
+            //Get data from request:
+            $email = $request->get('email');
+
+            $user = User::firstWhere('email', $email);
+
+            if ($user != null) {
+                //update DB (thêm reset_password_code):
+                $update = User::where('email', $email)->update([
+                    'reset_password_code' => uniqid(),
+                ]);
+
+                //Gửi email chứa reset_password_code:
+                //chỉ lấy những thông tin nào email cần chứ ko lấy hết (để tránh lộ mật khẩu)
+                // [vì chrome liên tục cảnh báo bảo mật, nhưng sau khi làm như này vẫn còn cảnh báo, :'( híc ]
+                $user = User::firstWhere('email', $email);
+
+                $data_send_mail = [
+                    'verification_code' => $user->verification_code,
+                    'user_id' => $user->user_id,
+                    'gender' => $user->gender,
+                    'first_name' => $user->first_name,
+                    'last_name' => $user->last_name,
+                    'address' => $user->address,
+                    'created_at' => $user->created_at,
+
+                    'reset_password_code' => $user->reset_password_code,
+                    'action' => 'reset_password', //thêm cái này để phân luồng email (kích hoạt tài khoản mới hay là reset_password)
+                ];
+
+                //Gửi email kèm mã xác nhận kích hoạt tài khoản:
+                $email_to = $user->email;
+                Mail::send('pages.member.email', compact('data_send_mail'), function ($message) use ($email_to) {
+                    $message->from('ars.codedy@gmail.com', 'ARS.CODEDY');
+                    $message->to($email_to, $email_to);
+                    //$message->cc('', ''); //gửi cho chủ cửa hàng
+                    $message->subject('Reset Your Password');
+                });
+
+                return redirect()->back()
+                    ->with('step', 'mail_sent_successfully');
+            } else {
+                return redirect()->back()
+                    ->withErrors('Email does not exist')
+                    ->with('preloader', 'none')
+                    ->withInput();
+            }
+        }
+
+        //Nếu action là [change_password]
+        if ($action == 'change_password') {
+            //Get data from request:
+            $reset_password_code = $request->get('code');
+            $password = $request->get('password');
+
+            //Tìm user theo 'reset_password_code' (kiểm tra kỹ xem mã này còn dùng được không mới cho đổi pass)
+            $user = User::firstWhere('reset_password_code', $reset_password_code);
+
+            if ($user != null) {
+                //update DB (sửa mật khẩu):
+                $update = User::where('reset_password_code', $reset_password_code)->update([
+                    'password' => bcrypt($password),
+                    'reset_password_code' => null, //Xóa mã này đi để nó k dùng được nữa.
+                ]);
+
+                //Chuyển hướng tới trang login & Thông báo thanh công
+                return redirect()->route('member.login')
+                    ->with('notification', 'New password set successfully.');
+            } else {
+                //Nếu không tìm thấy user theo 'reset_password_code' (tức là mã này đã hết hạn) thì back và báo lỗi
+                // (Thông báo lỗi có sẵn ở get rồi, chỉ cần back lại là có thông báo lỗi lúc get)
+                return redirect()->back();
+            }
+        }
     }
 
     /**
@@ -87,7 +185,7 @@ class MemberController extends Controller
      * Store a newly created account in storage.
      *
      * @param UserRequest $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return Application|RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function postRegister(UserRequest $request)
     {
@@ -148,7 +246,7 @@ class MemberController extends Controller
      * Update profile in storage.
      *
      * @param UserRequest $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
     public function updateProfile(UserRequest $request)
     {
@@ -172,7 +270,7 @@ class MemberController extends Controller
      * Show the form for verify a new account. & Activate a new account.
      *
      * @param UserRequest $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     * @return Application|Factory|RedirectResponse|View
      * @throws \Exception
      */
     public function getVerify(UserRequest $request)

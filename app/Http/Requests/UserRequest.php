@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use http\Client\Request;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Session;
@@ -35,9 +36,9 @@ class UserRequest extends FormRequest
             ];
         }
 
-        $except = ',1,deleted'; //deleted <> 1 : Không bao gồm những bản ghi đã bị xóa
-
         if ($this->is('member/register')) {
+            $except = ',1,deleted'; //deleted <> 1 : Không bao gồm những bản ghi đã bị xóa
+
             $rules = [
                 'user_name' => 'required|min:6|max:64|unique:user,user_name' . $except,
                 'password' => 'required|max:64|confirmed|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/',
@@ -63,6 +64,12 @@ class UserRequest extends FormRequest
                 'dob' => 'nullable|date',
                 'phone' => 'required|numeric',
                 'address' => 'required',
+            ];
+        }
+
+        if ($this->is('member/reset-password') && request('code') != null) {
+            $rules = [
+                'password' => 'required|max:64|confirmed|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/',
             ];
         }
 
@@ -104,5 +111,4 @@ class UserRequest extends FormRequest
         //Chỗ này gọi hàm cha như mặc định
         parent::failedValidation($validator);
     }
-
 }
