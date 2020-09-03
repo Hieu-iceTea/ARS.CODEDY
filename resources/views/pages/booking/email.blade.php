@@ -27,12 +27,13 @@
 
             <div class="row"
                  style="height: 100px; padding: 10px 20px; line-height: 90px; background-color: white; box-sizing: border-box;">
-                <h1 class="pl-3" style="color: orange; line-height: 00px; float: left; padding-left: 20px;">
-                    <img width="45" height="40"
-                         src="http://raw.githubusercontent.com/Hieu-iceTea/ARS.CODEDY/master/public/img/icon/fa-plane.png">
+                <h1 class="pl-3"
+                    style="color: orange; line-height: 00px; float: left; padding-left: 20px; padding-top: 5px;">
+                    <img height="40"
+                         src="{{$message->embed(asset('img/icon/fa-plane.png'))}}" alt="fa-plane">
                 </h1>
                 <h1 class="pl-2"
-                    style="color: orange; line-height: 30px; float: left; padding-left: 5px; font-size: 40px; font-weight: 500;">
+                    style="color: orange; line-height: 30px; float: left; padding-left: 20px; font-size: 40px; font-weight: 500;">
                     <!-- <i class="fa fa-plane"></i> -->
                     ARS.CODEDY
                 </h1>
@@ -173,7 +174,8 @@
                         <div class="col-6 p-0" style="flex: 0 0 30%; max-width: 30%;">
                             <div class="mt-2" style="margin-top: 25px;">
                                 <a class="btn btn-info"
-                                   href="http://ars.codedy/ticket/detail/query?ticketCode={{ $ticket->code }}" target="_blank"
+                                   href="http://ars.codedy/ticket/detail/query?ticketCode={{ $ticket->code }}"
+                                   target="_blank"
                                    style="background-color: #17a2b8; padding: .375rem .75rem; border-radius: .25rem; color: #fff; text-decoration: none; display: inline-block; font-size: 1rem;">
                                     Xem chi tiết trên web
                                 </a>
