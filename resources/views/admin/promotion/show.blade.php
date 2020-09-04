@@ -62,13 +62,6 @@
                                     ₫</p>
                             </div>
                         </div>
-                        {{--qty_total--}}
-                        <div class="position-relative row form-group">
-                            <label for="qty_total" class="col-md-3 text-md-right col-form-label">Qty Total</label>
-                            <div class="col-md-9 col-xl-8">
-                                <p>{{ $promotion->qty_total }}</p>
-                            </div>
-                        </div>
                         {{--qty_remain--}}
                         <div class="position-relative row form-group">
                             <label for="Qty_remain" class="col-md-3 text-md-right col-form-label">Qty Remain</label>
@@ -76,6 +69,14 @@
                                 <p>{{ $promotion->qty_remain }}</p>
                             </div>
                         </div>
+                        {{--qty_total--}}
+                        <div class="position-relative row form-group">
+                            <label for="qty_total" class="col-md-3 text-md-right col-form-label">Qty Total</label>
+                            <div class="col-md-9 col-xl-8">
+                                <p>{{ $promotion->qty_total }}</p>
+                            </div>
+                        </div>
+
                         {{--start_date--}}
                         <div class="position-relative row form-group">
                             <label for="start_date" class="col-md-3 text-md-right col-form-label">Start Date</label>
@@ -85,7 +86,8 @@
                         </div>
                         {{--expiration_date--}}
                         <div class="position-relative row form-group">
-                            <label for="expiration_date" class="col-md-3 text-md-right col-form-label">Expiration Date</label>
+                            <label for="expiration_date" class="col-md-3 text-md-right col-form-label">Expiration
+                                Date</label>
                             <div class="col-md-9 col-xl-8">
                                 <p>{{ date('H:i d/m/Y', strtotime($promotion->expiration_date)) }}</p>
                             </div>

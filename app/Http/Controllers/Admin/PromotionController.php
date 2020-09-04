@@ -18,13 +18,15 @@ class PromotionController extends Controller
         $keyword = $request->get('search');
 
         if ($keyword != null) {
-            $promotions = Promotion::where('code', '=', $keyword)
-                // Tìm kiếm theo tên được search
-                ->orWhere('title', 'like', '%' . $keyword . '%')
-                ->orWhere('expiration_date', 'like', '%' . $keyword . '%')
-                ->where('deleted', false)
+            $promotions = Promotion::where('deleted', '=', false)
+                ->where(function ($query) use ($keyword) {
+                    $query->where('code', '=', $keyword);
+                    $query->orWhere('title', 'like', '%' . $keyword . '%');
+                    $query->orWhere('expiration_date', 'like', '%' . $keyword . '%');
+                    $query->orderBy('promotion_id', 'desc');
+                })
+
                 //Sắp xép theo thứ tự id
-                ->orderBy('promotion_id', 'desc')
                 ->paginate();
         } else {
             $promotions = Promotion::where('deleted', false)
@@ -71,6 +73,7 @@ class PromotionController extends Controller
         //Xử lí dữ liệu
         $discount = str_replace([' ₫', '.'], '', $discount);
         $discount = str_replace([','], '.', $discount);
+        $active = $active ?? false;
 
         //Insert dữ liệu vào db
         $promotion = new Promotion();
@@ -89,7 +92,7 @@ class PromotionController extends Controller
         if ($promotion->promotion_id != null) {
             return redirect('admin/promotion/' . $promotion->promotion_id)->with('notification', 'Created successfully!');
         } else {
-            return redirect('admin/promotion/' . $promotion->promotion_id)->withErrors('Created Fail');
+            return redirect()->back()->withErrors('Created Fail');
         }
     }
 
@@ -140,6 +143,7 @@ class PromotionController extends Controller
         //Sử lí dữ liệu đầu vào (định dạng cho discount)
         $discount = str_replace([' ₫', '.'], '', $discount);
         $discount = str_replace([','], '.', $discount);
+        $active = $active ?? false;
 
         //Update dữ liệu vào trong db
         $update_status = Promotion::where('promotion_id', $id)->update([

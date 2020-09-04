@@ -16,7 +16,8 @@
                             <i class="pe-7s-ticket icon-gradient bg-mean-fruit">
                             </i>
                         </div>
-                        <div>Promotion Management | {{ request()->segment(3) == 'create' ? 'Create Promotion' : 'Edit Promotion' }}
+                        <div>Promotion Management
+                            | {{ request()->segment(3) == 'create' ? 'Create Promotion' : 'Edit Promotion' }}
                             <div class="page-title-subheading">
                                 View, create, update, delete and manage promotion.
                             </div>
@@ -42,7 +43,7 @@
                     <div class="main-card mb-3 card">
 
                         <div class="card-body">
-{{--                            #Code--}}
+                            {{--                            #Code--}}
                             <div class="position-relative row form-group">
                                 <label for="code" class="col-md-3 text-md-right col-form-label">Code</label>
                                 <div class="col-md-9 col-xl-8">
@@ -51,7 +52,7 @@
                                            value="{{ old('code') ?? $promotion->code ?? ''}}">
                                 </div>
                             </div>
-{{--                            Title--}}
+                            {{--                            Title--}}
                             <div class="position-relative row form-group">
                                 <label for="title" class="col-md-3 text-md-right col-form-label">Title</label>
                                 <div class="col-md-9 col-xl-8">
@@ -60,7 +61,7 @@
                                            value="{{ old('title') ?? $promotion->title ?? ''}}">
                                 </div>
                             </div>
-{{--                            Discount--}}
+                            {{--                            Discount--}}
                             <div class="position-relative row form-group">
                                 <label for="discount" class="col-md-3 text-md-right col-form-label">Discount</label>
                                 <div class="col-md-9 col-xl-8">
@@ -70,16 +71,7 @@
                                            value="{{ old('discount') ?? $promotion->discount ?? ''}}">
                                 </div>
                             </div>
-{{--                            Qty Total--}}
-                            <div class="position-relative row form-group">
-                                <label for="qty_total" class="col-md-3 text-md-right col-form-label">Qty Total</label>
-                                <div class="col-md-9 col-xl-8">
-                                    <input required name="qty_total" id="qty_total" placeholder="Qty Total"
-                                           type="number" min="0" class="form-control"
-                                           value="{{ old('qty_total') ?? $promotion->qty_total ?? ''}}">
-                                </div>
-                            </div>
-{{--                            Qty Remain--}}
+                            {{--                            Qty Remain--}}
                             <div class="position-relative row form-group">
                                 <label for="qty_remain" class="col-md-3 text-md-right col-form-label">Qty Remain</label>
                                 <div class="col-md-9 col-xl-8">
@@ -89,7 +81,17 @@
                                            value="{{ old('qty_remain') ?? $promotion->qty_remain ?? ''}}">
                                 </div>
                             </div>
-{{--                            Start Date--}}
+                            {{--                            Qty Total--}}
+                            <div class="position-relative row form-group">
+                                <label for="qty_total" class="col-md-3 text-md-right col-form-label">Qty Total</label>
+                                <div class="col-md-9 col-xl-8">
+                                    <input required name="qty_total" id="qty_total" placeholder="Qty Total"
+                                           type="number" min="0" class="form-control"
+                                           value="{{ old('qty_total') ?? $promotion->qty_total ?? ''}}">
+                                </div>
+                            </div>
+
+                            {{--                            Start Date--}}
                             <div class="position-relative row form-group">
                                 <label for="start_date"
                                        class="col-md-3 text-md-right col-form-label">Start Date</label>
@@ -99,17 +101,18 @@
                                            value="{{ (old('expiration_date') ?? $promotion->expiration_date ?? '') != null ? date('Y-m-d\TH:i', strtotime((old('start_date') ?? $promotion->start_date))) : '' }}">
                                 </div>
                             </div>
-{{--                            Expiration Date--}}
+                            {{--                            Expiration Date--}}
                             <div class="position-relative row form-group">
                                 <label for="expiration_date"
                                        class="col-md-3 text-md-right col-form-label">Expiration Date</label>
                                 <div class="col-md-9 col-xl-8">
-                                    <input required name="expiration_date" id="expiration_date" placeholder="expiration_date"
+                                    <input required name="expiration_date" id="expiration_date"
+                                           placeholder="expiration_date"
                                            type="datetime-local" class="form-control"
                                            value="{{ (old('expiration_date') ?? $promotion->expiration_date ?? '') != null ? date('Y-m-d\TH:i', strtotime((old('expiration_date') ?? $promotion->expiration_date))) : '' }}">
                                 </div>
                             </div>
-{{--                            Active--}}
+                            {{--                            Active--}}
                             <div class="position-relative row form-group">
                                 <label for="active" class="col-md-3 text-md-right col-form-label">Status</label>
                                 <div class="col-md-9 col-xl-8">
@@ -121,7 +124,7 @@
                                     </div>
                                 </div>
                             </div>
-{{--                            Description--}}
+                            {{--                            Description--}}
                             <div class="position-relative row form-group">
                                 <label for="description"
                                        class="col-md-3 text-md-right col-form-label">Description</label>
