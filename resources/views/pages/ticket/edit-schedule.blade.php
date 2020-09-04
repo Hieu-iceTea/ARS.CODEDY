@@ -243,7 +243,7 @@
                             <div class="card mt-3 cart-content w-100" style="width: 18rem;">
                                 <div class="card-body text-center">
                                     <h5 class="card-title" style="">
-                                        <span style="font-size: 20px;color: #33597C;font-weight: 600">Total</span> :
+                                        <span style="font-size: 20px;color: #33597C;font-weight: 600">New Schedule Total</span> :
                                         <span id="total_price">
                                         0
                                     </span>
@@ -271,7 +271,7 @@
                             </div>
 
                             <button type="submit" class="btn mt-3 w-100 position-sticky continue"
-                                    onclick="return confirm('Are you sure to change to this new flight?')"
+                                    onclick="return confirm('Are you sure to change to this new flight? The fee for change schedule is 100.000 VND')"
                                     @if(count($flightSchedules) == 0) disabled @endif>
                                 Change
                                 <i class="fa fa-angle-right ml-1"></i>
@@ -296,6 +296,21 @@
             document.getElementById('flight_schedule_id').value = flight_schedule_id;
             document.getElementById('seat_type').value = seat_type;
             document.getElementById('seat_type_price').value = seat_type_price;
+
+            //set value to label info
+            const sub_totals = document.getElementsByClassName('sub_total');
+            for (const sub_total of sub_totals) {
+                sub_total.innerText = seat_type_price.toLocaleString("vi-vn");
+            }
+
+            const total_price_adults = {{ $searchInput['adults'] }} * seat_type_price;
+            const total_price_children = {{ $searchInput['children'] }} * seat_type_price;
+            const total_price_infant = {{ $searchInput['infant'] }} * seat_type_price;
+            const total_price = total_price_adults + total_price_children + total_price_infant;
+            document.getElementById('total_price_adults').innerText = total_price_adults.toLocaleString("vi-vn");
+            document.getElementById('total_price_children').innerText = total_price_children.toLocaleString("vi-vn");
+            document.getElementById('total_price_infant').innerText = total_price_infant.toLocaleString("vi-vn");
+            document.getElementById('total_price').innerText = total_price.toLocaleString("vi-vn");
 
         }
     </script>

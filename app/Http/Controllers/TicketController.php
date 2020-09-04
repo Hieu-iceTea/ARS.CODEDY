@@ -132,6 +132,21 @@ class TicketController extends Controller
         //lấy dữ liệu khi chưa tìm kiếm
         $addressAirports = Airport::select('name', 'airport_id', 'location', 'code')->get();
 
+        $ticket = Ticket::all()->where('ticket_id', $id)->first();
+        $passengers = $ticket->passenger;
+
+        $adults = count($passengers->where('passenger_type', 1));
+        $children = count($passengers->where('passenger_type', 2));
+        $infant = count($passengers->where('passenger_type', 3));
+        $totalPassenger = $adults + $children + $infant;
+
+        $searchInput = [
+            'adults' => $adults,
+            'children' => $children,
+            'infant' => $infant,
+            'totalPassenger' => $totalPassenger,
+        ];
+
         //lấy dữ liệu khi đã tìm kiếm
 
         if ($request->get('search') == true) {
@@ -140,30 +155,15 @@ class TicketController extends Controller
             $airport_to_id = $request->get('to');
             $departure_at = $request->get('departure');
 
-            $ticket = Ticket::all()->where('ticket_id', $id)->first();
-            $passengers = $ticket->passenger;
-
-
-            $adults = count($passengers->where('passenger_type', 1));
-            $children = count($passengers->where('passenger_type', 2));
-            $infant = count($passengers->where('passenger_type', 3));
-            $totalPassenger = $adults + $children + $infant;
-
             //get data of Airport from DataBase:
             $airport_from = Airport::all()->where('airport_id', $airport_from_id)->first();
             $airport_to = Airport::all()->where('airport_id', $airport_to_id)->first();
 
-            $searchInput = [
-                'airport_from_name' => $airport_from->name,
-                'airport_from_code' => $airport_from->code,
-                'airport_to_name' => $airport_to->name,
-                'airport_to_code' => $airport_to->code,
-                'departure_at' => $departure_at,
-                'adults' => $adults,
-                'children' => $children,
-                'infant' => $infant,
-                'totalPassenger' => $totalPassenger,
-            ];
+            $searchInput['airport_from_name'] = $airport_from->name;
+            $searchInput['airport_from_code'] = $airport_from->code;
+            $searchInput['airport_to_name'] = $airport_to->name;
+            $searchInput['airport_to_code'] = $airport_to->code;
+            $searchInput['departure_at'] = $departure_at;
 
             //get data Flight-Schedules from DataBase:
             $flightSchedules = FlightSchedule::where('airport_from_id', $airport_from_id)
@@ -174,7 +174,7 @@ class TicketController extends Controller
             return view('pages.ticket.edit-schedule', compact('addressAirports', 'flightSchedules', 'searchInput', 'airport_to'));
         }
 
-        return view('pages.ticket.edit-schedule', compact('addressAirports'));
+        return view('pages.ticket.edit-schedule', compact('addressAirports', 'searchInput'));
     }
 
     /**
@@ -207,8 +207,8 @@ class TicketController extends Controller
             $total_price_extra_service += $price;
         }
 
-        //tổng số tiền mà khách hàng phải trả (500.000 là phí dịch vụ)
-        $total_price = ($seat_type_price * $total_passenger) + $total_price_extra_service + 500000;
+        //tổng số tiền mà khách hàng phải trả (500.000 là phí dịch vụ, 100.000 là phí đổi hành trình)
+        $total_price = ($seat_type_price * $total_passenger) + $total_price_extra_service + 500000 + 100000;
 
         //cập nhật dữ liệu lên database
         Ticket::where('ticket_id', $id)->update([
