@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BookingRequest;
 use App\Model\FlightSchedule;
 use App\Model\Passenger;
 use App\Model\Ticket;
@@ -175,7 +176,7 @@ class TicketController extends Controller
      * @param \Illuminate\Http\Request $request
      * @param int $id
      */
-    public function updateSchedule(Request $request, $id)
+    public function updateSchedule(BookingRequest $request, $id)
     {
         //lấy dữ liệu từ request
         $seat_type_price = $request->get('seat_type_price');
@@ -192,15 +193,15 @@ class TicketController extends Controller
         $total_passenger = $adults + $children + $infant;
 
         //tính tổng số tiền dịch vụ đi kèm khách hàng mua thêm
-        $total_extra_service = 0;
+        $total_price_extra_service = 0;
         $extra_services = $ticket->extraServices();
         foreach ($extra_services as $extra_service) {
             $price = $extra_service->price;
-            $total_extra_service += $price;
+            $total_price_extra_service += $price;
         }
 
         //tổng số tiền mà khách hàng phải trả (500.000 là phí dịch vụ)
-        $total_price = ($seat_type_price * $total_passenger) + $total_extra_service + 500000;
+        $total_price = ($seat_type_price * $total_passenger) + $total_price_extra_service + 500000;
 
         //cập nhật dữ liệu lên database
         Ticket::where('ticket_id', $id)->update([
@@ -256,7 +257,6 @@ class TicketController extends Controller
                 'with_passenger' => $with_passenger,
             ]);
         }
-
 
         return redirect()->to('ticket/detail/' . $id)
             ->with('notification', 'Update successful')

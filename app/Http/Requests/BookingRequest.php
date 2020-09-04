@@ -72,6 +72,12 @@ class BookingRequest extends FormRequest
             ];
         }
 
+        if ($this->is('ticket/edit-schedule/*')) {
+            $rules = [
+                'seat_type' => 'required',
+            ];
+        }
+
         return $rules;
     }
 
@@ -93,6 +99,9 @@ class BookingRequest extends FormRequest
             'contact.contact_lastname.regex' => '[contact_lastname] does not include numbers.',
             'contact.contact_phone.regex' => '[contact_phone] must be a phone number.',
             'contact.contact_phone.min' => '[contact_phone] too short (Must contain at least 10 digits).',
+
+            //ticket/edit-schedule
+            'seat_type.required' => 'Please choose flight',
         ];
 
         if ($this->is('booking/step-2')) {
