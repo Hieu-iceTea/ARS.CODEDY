@@ -1,17 +1,23 @@
 # Created_by: Hieu iceTea x Truong Thanh Tu
 # Created_at: 17:30 2020-08-10
-# Updated_at: 22:00 2020-08-26
+# Updated_at: 12:00 2020-09-04
 
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = #
 #                                           Create DataBase                                           #
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = #
+
+# SET @DATABASE_Name = 'ARS_CODEDY';
 
 # Create DataBase
 DROP DATABASE IF EXISTS `ARS_CODEDY`;
 CREATE DATABASE IF NOT EXISTS `ARS_CODEDY` CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 USE `ARS_CODEDY`;
-SET time_zone = '+7:00';
+
+SET time_zone = '+07:00';
+#ALTER DATABASE `ARS_CODEDY` CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
+#SET SQL_MODE = 'ALLOW_INVALID_DATES';
 
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = #
 #                                            Create Tables                                            #
@@ -45,9 +51,9 @@ CREATE TABLE IF NOT EXISTS `user`
     `active`              BOOLEAN          DEFAULT FALSE,
 
     `created_by`          NVARCHAR(32)     DEFAULT 'ARS.CODEDY',
-    `created_at`          DATETIME         DEFAULT CURRENT_TIME,
+    `created_at`          TIMESTAMP        DEFAULT CURRENT_TIMESTAMP,
     `updated_by`          NVARCHAR(32)     DEFAULT NULL,
-    `updated_at`          DATETIME         DEFAULT NULL,
+    `updated_at`          TIMESTAMP        DEFAULT CURRENT_TIMESTAMP,
     `version`             INT              DEFAULT 1,
     `deleted`             BOOLEAN          DEFAULT FALSE,
 
@@ -67,9 +73,9 @@ CREATE TABLE IF NOT EXISTS `extra_service`
     `description`      TEXT,
 
     `created_by`       NVARCHAR(32) DEFAULT 'ARS.CODEDY',
-    `created_at`       DATETIME     DEFAULT CURRENT_TIME,
+    `created_at`       TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
     `updated_by`       NVARCHAR(32) DEFAULT NULL,
-    `updated_at`       DATETIME     DEFAULT NULL,
+    `updated_at`       TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
     `version`          INT          DEFAULT 1,
     `deleted`          BOOLEAN      DEFAULT FALSE,
 
@@ -91,9 +97,9 @@ CREATE TABLE IF NOT EXISTS `airport`
     `description` TEXT,
 
     `created_by`  NVARCHAR(32) DEFAULT 'ARS.CODEDY',
-    `created_at`  DATETIME     DEFAULT CURRENT_TIME,
+    `created_at`  TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
     `updated_by`  NVARCHAR(32) DEFAULT NULL,
-    `updated_at`  DATETIME     DEFAULT NULL,
+    `updated_at`  TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
     `version`     INT          DEFAULT 1,
     `deleted`     BOOLEAN      DEFAULT FALSE,
 
@@ -112,9 +118,9 @@ CREATE TABLE IF NOT EXISTS `plane`
     `description` TEXT,
 
     `created_by`  NVARCHAR(32) DEFAULT 'ARS.CODEDY',
-    `created_at`  DATETIME     DEFAULT CURRENT_TIME,
+    `created_at`  TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
     `updated_by`  NVARCHAR(32) DEFAULT NULL,
-    `updated_at`  DATETIME     DEFAULT NULL,
+    `updated_at`  TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
     `version`     INT          DEFAULT 1,
     `deleted`     BOOLEAN      DEFAULT FALSE,
 
@@ -138,9 +144,9 @@ CREATE TABLE IF NOT EXISTS `price_seat_type`
     `business_qty_total`  INT(16) UNSIGNED,
 
     `created_by`          NVARCHAR(32) DEFAULT 'ARS.CODEDY',
-    `created_at`          DATETIME     DEFAULT CURRENT_TIME,
+    `created_at`          TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
     `updated_by`          NVARCHAR(32) DEFAULT NULL,
-    `updated_at`          DATETIME     DEFAULT NULL,
+    `updated_at`          TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
     `version`             INT          DEFAULT 1,
     `deleted`             BOOLEAN      DEFAULT FALSE,
 
@@ -164,9 +170,9 @@ CREATE TABLE IF NOT EXISTS `promotion`
     `description`     TEXT,
 
     `created_by`      NVARCHAR(32) DEFAULT 'ARS.CODEDY',
-    `created_at`      DATETIME     DEFAULT CURRENT_TIME,
+    `created_at`      TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
     `updated_by`      NVARCHAR(32) DEFAULT NULL,
-    `updated_at`      DATETIME     DEFAULT NULL,
+    `updated_at`      TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
     `version`         INT          DEFAULT 1,
     `deleted`         BOOLEAN      DEFAULT FALSE,
 
@@ -185,9 +191,9 @@ CREATE TABLE IF NOT EXISTS `pay_type`
     `description` TEXT,
 
     `created_by`  NVARCHAR(32)          DEFAULT 'ARS.CODEDY',
-    `created_at`  DATETIME              DEFAULT CURRENT_TIME,
+    `created_at`  TIMESTAMP             DEFAULT CURRENT_TIMESTAMP,
     `updated_by`  NVARCHAR(32)          DEFAULT NULL,
-    `updated_at`  DATETIME              DEFAULT NULL,
+    `updated_at`  TIMESTAMP             DEFAULT CURRENT_TIMESTAMP,
     `version`     INT                   DEFAULT 1,
     `deleted`     BOOLEAN               DEFAULT FALSE,
 
@@ -210,9 +216,9 @@ CREATE TABLE IF NOT EXISTS `passenger`
     `with_passenger` VARCHAR(32),
 
     `created_by`     NVARCHAR(32) DEFAULT 'ARS.CODEDY',
-    `created_at`     DATETIME     DEFAULT CURRENT_TIME,
+    `created_at`     TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
     `updated_by`     NVARCHAR(32) DEFAULT NULL,
-    `updated_at`     DATETIME     DEFAULT NULL,
+    `updated_at`     TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
     `version`        INT          DEFAULT 1,
     `deleted`        BOOLEAN      DEFAULT FALSE,
 
@@ -237,9 +243,9 @@ CREATE TABLE IF NOT EXISTS `flight_schedule`
     `description`        TEXT,
 
     `created_by`         NVARCHAR(32) DEFAULT 'ARS.CODEDY',
-    `created_at`         DATETIME     DEFAULT CURRENT_TIME,
+    `created_at`         TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
     `updated_by`         NVARCHAR(32) DEFAULT NULL,
-    `updated_at`         DATETIME     DEFAULT NULL,
+    `updated_at`         TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
     `version`            INT          DEFAULT 1,
     `deleted`            BOOLEAN      DEFAULT FALSE,
 
@@ -276,9 +282,9 @@ CREATE TABLE IF NOT EXISTS `ticket`
     `description`        TEXT,
 
     `created_by`         NVARCHAR(32)     DEFAULT 'ARS.CODEDY',
-    `created_at`         DATETIME         DEFAULT CURRENT_TIME,
+    `created_at`         TIMESTAMP        DEFAULT CURRENT_TIMESTAMP,
     `updated_by`         NVARCHAR(32)     DEFAULT NULL,
-    `updated_at`         DATETIME         DEFAULT NULL,
+    `updated_at`         TIMESTAMP        DEFAULT CURRENT_TIMESTAMP,
     `version`            INT              DEFAULT 1,
     `deleted`            BOOLEAN          DEFAULT FALSE,
 
@@ -645,3 +651,4 @@ INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_ty
 VALUES (10, NULL, 1, NULL, 2, '', 2, 3, 'DEMO01', 0, 'Kiều Linh', 'Trần', 'DinhHieu8896@gmail.com', '0868663315', 'Hà Nội', 1799000, 1799000, 1, '<p>mô tả</p>');
 INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, extra_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, amount_paid, total_passenger, description)
 VALUES (11, NULL, 9, NULL, 1, '', 3, 2, 'DEMO02', 0, 'Thanh Mai', 'Phạm', 'DinhHieu8896@gmail.com', '0868663315', 'Hà Nội', 2999000, 2999000, 1, '<p>mô tả</p>');
+
