@@ -38,10 +38,13 @@ class Utility
         self::ticket_status_Cancel => 'danger',
     ];
 
+    const seat_type_Eco = 1;
+    const seat_type_Plus = 2;
+    const seat_type_Business = 3;
     public static $seat_type = [
-        1 => 'Eco',
-        2 => 'Plus',
-        3 => 'Business',
+        self::seat_type_Eco => 'Eco',
+        self::seat_type_Plus => 'Plus',
+        self::seat_type_Business => 'Business',
     ];
 
     public static $passenger_type = [

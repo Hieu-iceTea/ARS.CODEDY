@@ -241,7 +241,8 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Payment Type</th>
-                                <th scope="col">Amount of money</th>
+                                <th scope="col">Total</th>
+                                <th scope="col">Paid</th>
                                 <th scope="col">Status</th>
                             </tr>
                             </thead>
@@ -249,7 +250,12 @@
                             <tr>
                                 <th scope="row">{{$count = 1}}</th>
                                 <td>{{ $ticket->payType->name }}</td>
-                                <td>{{ number_format($ticket->total_price, 0, ',', '.') }}
+                                <td>
+                                    {{ number_format($ticket->total_price, 0, ',', '.') }}
+                                    VND
+                                </td>
+                                <td>
+                                    {{ number_format($ticket->amount_paid, 0, ',', '.') }}
                                     VND
                                 </td>
                                 <td>{{ \App\Utilities\Utility::$ticket_status[$ticket->status] }}</td>
@@ -261,7 +267,7 @@
             </div>
 
             <div class="card w-100 mt-5">
-                <h5 class="card-header tiket_detail_title">Additional Service</h5>
+                <h5 class="card-header tiket_detail_title">Extra Service</h5>
                 <div class="row mt-3">
                     <div class="card w-100 my-4 mx-5">
                         <table class="table w-100 ticket_detail_table">

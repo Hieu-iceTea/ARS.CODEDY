@@ -118,8 +118,15 @@ class TicketController extends Controller
     public function editSchedule($id, Request $request)
     {
         $ticket = Ticket::all()->where('ticket_id', $id)->first();
-        if ($ticket->status == Utility::ticket_status_Finish || $ticket->status == Utility::ticket_status_Cancel) {
-            return redirect()->back()->withErrors('Invalid action')->with('preloader', 'none');
+        if ($ticket->status == Utility::ticket_status_Unverified || $ticket->status == Utility::ticket_status_Finish
+            || $ticket->status == Utility::ticket_status_Cancel) {
+            return redirect()->back()->withErrors('<b>Invalid action</b><br>The status of the ticket must be [Reservations] or [Paid]')
+                ->with('preloader', 'none');
+        }
+
+        if ($ticket->seat_type == Utility::seat_type_Eco) {
+            return redirect()->back()->withErrors('<b>Invalid action</b><br>The seat type of the ticket must be [Plus] or [Business]')
+                ->with('preloader', 'none');
         }
 
         //lấy dữ liệu khi chưa tìm kiếm
@@ -223,9 +230,17 @@ class TicketController extends Controller
     public function editPassenger($id)
     {
         $ticket = Ticket::all()->where('ticket_id', $id)->first();
-        if ($ticket->status == Utility::ticket_status_Finish || $ticket->status == Utility::ticket_status_Cancel) {
-            return redirect()->back()->withErrors('Invalid action')->with('preloader', 'none');
+        if ($ticket->status == Utility::ticket_status_Unverified || $ticket->status == Utility::ticket_status_Finish
+            || $ticket->status == Utility::ticket_status_Cancel) {
+            return redirect()->back()->withErrors('<b>Invalid action</b><br>The status of the ticket must be [Reservations] or [Paid]')
+                ->with('preloader', 'none');
         }
+
+        if ($ticket->seat_type == Utility::seat_type_Eco) {
+            return redirect()->back()->withErrors('<b>Invalid action</b><br>The seat type of the ticket must be [Plus] or [Business]')
+                ->with('preloader', 'none');
+        }
+
         $passengers = $ticket->passenger;
 
         return view('pages.ticket.edit-passenger', compact('passengers', 'ticket'));

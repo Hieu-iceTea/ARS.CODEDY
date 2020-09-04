@@ -273,7 +273,8 @@
                             <button type="submit" class="btn mt-3 w-100 position-sticky continue"
                                     onclick="return confirm('Are you sure to change to this new flight?')"
                                     @if(count($flightSchedules) == 0) disabled @endif>
-                                Save<span><i class="fa fa-angle-right"></i></span>
+                                Change
+                                <i class="fa fa-angle-right ml-1"></i>
                             </button>
                         </div>
                     </div>
