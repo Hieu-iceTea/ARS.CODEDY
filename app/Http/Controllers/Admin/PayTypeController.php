@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Model\PayType;
+use App\Utilities\Utility;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -82,7 +83,7 @@ class PayTypeController extends Controller
      * Display the specified resource.
      *
      * @param int $id
-     * //     * @return \Illuminate\Http\Response
+     * //     * @return Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show($id)
     {
@@ -100,11 +101,19 @@ class PayTypeController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
     {
-        //
+        //Lấy dữ liệu cho các <Selection>
+        $pay_type = PayType::all()->where('pay_type_id', $id)->first();
+
+        //Kiểm tra, nếu k tìm thấy dữ liệu trong DB thì thông báo lỗi
+        if ($pay_type) {
+            return view('admin.pay-type.create-edit', compact('pay_type'));
+        } else {
+            return redirect('admin/pay-type')->withErrors('The record does not exist or has been deleted');
+        }
     }
 
     /**
@@ -112,11 +121,57 @@ class PayTypeController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return Application|RedirectResponse|Redirector
      */
     public function update(Request $request, $id)
     {
-        //
+        //xử lí dữ liệu
+        if ($request->hasFile('image')) {
+            $file = $request->image;
+            $file_name = (new Utility())->getFileNameUniqueID($file);
+
+            //Giữ lại tên file cũ (để sau khi DB sửa thành tên file mới thì xóa file cũ đi trong thư mục)
+            $file_name_old = $request->get('image_old');
+        }
+
+        //Xử lí dữ liệu
+        $active= $request->get('active');
+        $active = $active ?? false;
+
+        //Tạo danh sách giá trị sẽ được update:
+        $values = [
+            'name' => $request->get('name_pay_type'),
+//            'image'=>$request->get('image'),
+            'active' => $active,
+            'description' => $request->get('description'),
+        ];
+
+        //Nếu có file mới được chọn thì thêm tên file mới vào danh sách $values, nếu không thì bỏ qua:
+        if ($request->hasFile('image')) {
+            $values['image'] = $file_name;
+        }
+
+        //Update bản ghi trong database:
+        $update = PayType::where('pay_type_id', $id)->update($values);
+
+        //Nếu update database thành công && có file được chọn, Di chuyển file mới đã chọn vào thư mục public:
+        if ($update == true && $request->hasFile('image')) {
+            $file->move('img/pay_type', $file_name);
+
+            //Đồng thời xóa file cũ đi (nếu có file cũ):
+            if ($file_name_old != '') {
+                unlink('img/pay_type/' . $file_name_old);
+            }
+        }
+
+        //Kiểm tra, nếu k tìm thấy dữ liệu trong DB thì thông báo lỗi
+        if ($update == true) {
+            return redirect('admin/pay-type/' . $id)->with('notification', 'Updated successfully!')
+                ->with('notification', 'Update successfully!');
+        } else {
+            return redirect()->back()
+                ->withErrors('Update failed!');
+        }
     }
 
     /**

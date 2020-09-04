@@ -23,8 +23,8 @@
                     </div>
 
                     <div class="page-title-actions">
-                        <a href="{{ url()->current() . '/create'}}"
-                           class="btn-shadow btn-hover-shine mr-3 btn btn-primary">
+                        <a href="{{ url()->current() . '/create'}}" title="Add New Pay Type"
+                           class="btn-shadow btn-hover-shine mr-3 btn btn-primary" >
                                     <span class="btn-icon-wrapper pr-2 opacity-7">
                                         <i class="fa fa-plus fa-w-20"></i>
                                     </span>
@@ -41,38 +41,42 @@
                 <div class="col-md-12">
                     <div class="main-card mb-3 card">
                         <div class="card-body">
+                            {{--image--}}
+                            <div class="position-relative row form-group">
+                                <label for="image" class="col-md-3 text-md-right col-form-label">Logo</label>
+                                <div class="col-md-9 col-xl-8">
+                                    <img id="thumbnail" height="150" class="" style="cursor: pointer"
+                                         data-toggle="tooltip" title="Click to change the image" data-placement="bottom"
+                                         src="{{ isset($pay_type->image) ? '../img/pay_type/' . $pay_type->image : '../img/pay_type/upload_select.png' }}"
+                                         alt="Logo">
+                                    <input name="image" id="image" type="file" onchange="changeImg(this)"
+                                           class="form-control-file" style="display: none;"
+                                           value="{{ old('image') ?? $pay_type->image ?? ''}}">
+                                    <input type="hidden" name="image_old" value="{{ $pay_type->image ?? '' }}">
+                                    <small class="form-text text-muted">
+                                        {{ isset($pay_type->image) ? 'Look at it, it looks great! (Click on the image to change)' : 'No images, upload them! (Click on the image to change)' }}
+                                    </small>
+                                </div>
+                            </div>
                             {{--Name--}}
                             <div class="position-relative row form-group">
                                 <label for="user_name" class="col-md-3 text-md-right col-form-label">Name</label>
                                 <div class="col-md-9 col-xl-8">
                                     <input required name="name_pay_type" id="name" placeholder="Name"
                                            type="text" class="form-control"
-                                           value="">
-                                </div>
-                            </div>
-                            {{--image--}}
-                            <div class="position-relative row form-group">
-                                <label for="image" class="col-md-3 text-md-right col-form-label">Logo</label>
-                                <div class="col-md-9 col-xl-8">
-                                    <input required name="image" id="image" type="file"
-                                           class="form-control-file">
+                                           value="{{ old('name') ?? $pay_type->name ?? '' }}">
                                 </div>
                             </div>
                             {{--Active--}}
                             <div class="position-relative row form-group">
                                 <label for="active" class="col-md-3 text-md-right col-form-label">Active</label>
                                 <div class="col-md-9 col-xl-8">
-                                    <select name="active" id="active" class="form-control">
-                                        <option>-- Active --</option>
-                                        <option
-                                            value="0" {{ (old('active') ?? $pay_type->active ?? '') == 1 ? 'selected' : '' }}>
-                                            Inactive
-                                        </option>
-                                        <option
-                                            value="1" {{ (old('active') ?? $pay_type->active ?? '') == 2 ? 'selected' : '' }}>
-                                            Active
-                                        </option>
-                                    </select>
+                                    <div class="position-relative form-check pt-sm-2">
+                                        <input name="active" id="active" type="checkbox" value=1
+                                               {{ (old('active') ?? $pay_type->active ?? '') == 1 ? 'checked' : '' }}
+                                               class="form-check-input">
+                                        <label for="active" class="form-check-label">Active</label>
+                                    </div>
                                 </div>
                             </div>
                             {{--Description--}}
