@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Model\Ticket;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
@@ -63,11 +64,12 @@ class TicketController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return RedirectResponse
      */
     public function create()
     {
-        //
+        return redirect()->back()
+            ->with('notification', 'This feature is not yet supported. But dont worry, we will update it soon!');
     }
 
     /**
@@ -98,11 +100,12 @@ class TicketController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return Response
+     * @return RedirectResponse
      */
     public function edit($id)
     {
-        //
+        return redirect()->back()
+            ->with('notification', 'This feature is not yet supported. But dont worry, we will update it soon!');
     }
 
     /**
@@ -121,10 +124,11 @@ class TicketController extends Controller
      * Remove the specified resource from storage.
      *
      * @param int $id
-     * @return Response
+     * @return RedirectResponse
      */
     public function destroy($id)
     {
-        //
+        return redirect()->back()
+            ->with('notification', 'This feature is not yet supported. But dont worry, we will update it soon!');
     }
 }
