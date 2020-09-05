@@ -51,7 +51,7 @@
                         <span style="font-size: 15px; color: black">Please check your email for flight confirmation!
                         </span>
                     </h1>
-                    <a href="ticket/detail/{{ $ticket->ticket_id }}" style="display:block; max-width: 300px">
+                    <a href="ticket/detail/query?ticketCode={{ $ticket->code }}&email={{ $ticket->contact_email }}&phone={{ $ticket->contact_phone }}" style="display:block; max-width: 300px">
                         <div style="font-size: 20px; padding: 20px; border: 1px solid #B1B3B6; border-radius: 4px"
                              class="text-center mt-3">
                             Your Booking Code is
