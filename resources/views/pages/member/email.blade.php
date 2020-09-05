@@ -68,7 +68,7 @@
                         </div>
                         <h3 class="m-0 p-0 mt-4" style="margin-top: 20px; font-size: 18px; font-weight: 500;">
                             Nhập mã bảo mật ở trên hoặc click vào
-                            <a href="http://ars.codedy/member/verify?user_id={{ $data_send_mail['user_id'] }}&verification_code={{ $data_send_mail['verification_code'] }}"
+                            <a href="{{ env('APP_URL') }}{{ env('APP_URL') }}/member/verify?user_id={{ $data_send_mail['user_id'] }}&verification_code={{ $data_send_mail['verification_code'] }}"
                                target="_blank" style="color: teal; font-size: 20px;">đây</a>
                             để kích hoạt tài khoản của bạn. Chúc bạn có một này vui vẻ!
                             <br>
@@ -80,8 +80,8 @@
                             <br>
                             Nhưng đừng lo lắng! Bạn có thể sử dụng liên kết sau để đặt lại mật khẩu của mình:
                             <br>
-                            <a href="http://ars.codedy/member/reset-password?code={{ $data_send_mail['reset_password_code'] }}"
-                               target="_blank" style="color: teal; font-size: 20px;">http://ars.codedy/member/reset-password?code={{ $data_send_mail['reset_password_code'] }}</a>
+                            <a href="{{ env('APP_URL') }}/member/reset-password?code={{ $data_send_mail['reset_password_code'] }}"
+                               target="_blank" style="color: teal; font-size: 20px;">{{ env('APP_URL') }}/member/reset-password?code={{ $data_send_mail['reset_password_code'] }}</a>
                             <br>
                             Chúc bạn có một này vui vẻ!
                             <br>
@@ -90,8 +90,8 @@
                             <br>
                             Nếu bạn không sử dụng liên kết này trong vòng 5 ngày, liên kết này sẽ hết hạn. Để nhận liên
                             kết đặt lại mật khẩu mới, hãy truy cập
-                            <a href="http://ars.codedy/member/reset-password"
-                               target="_blank" style="color: teal; font-size: 20px;">http://ars.codedy/member/reset-password</a>
+                            <a href="{{ env('APP_URL') }}/member/reset-password"
+                               target="_blank" style="color: teal; font-size: 20px;">{{ env('APP_URL') }}/member/reset-password</a>
                         </h3>
                     @endif
 

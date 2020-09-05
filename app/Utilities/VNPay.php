@@ -15,7 +15,7 @@ class VNPay
     static $vnp_TmnCode = "SNGZ4EAY"; //Mã website tại VNPAY
     static $vnp_HashSecret = "ZDNHYSHNPRYZSNHUGARKGZHKDBXVVAKU"; //Chuỗi bí mật
     static $vnp_Url = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-    static $vnp_Returnurl = "http://ars.codedy/booking/payment";
+    static $vnp_Returnurl = "/booking/payment"; //Đã nối thêm env('APP_URL') lúc sử dụng biến này.
 
     /**
      * vnpay_create_payment.php
@@ -65,7 +65,7 @@ class VNPay
             "vnp_Locale" => $vnp_Locale,
             "vnp_OrderInfo" => $vnp_OrderInfo,
             "vnp_OrderType" => $vnp_OrderType,
-            "vnp_ReturnUrl" => self::$vnp_Returnurl,
+            "vnp_ReturnUrl" => env('APP_URL') . self::$vnp_Returnurl,
             "vnp_TxnRef" => $vnp_TxnRef,
         );
 
