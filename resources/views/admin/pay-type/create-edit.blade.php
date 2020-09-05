@@ -23,7 +23,7 @@
                     </div>
 
                     <div class="page-title-actions">
-                        <a href="{{ url()->current() . '/create'}}" title="Add New Pay Type"
+                        <a href="pay-type/create" title="Add New Pay Type"
                            class="btn-shadow btn-hover-shine mr-3 btn btn-primary" >
                                     <span class="btn-icon-wrapper pr-2 opacity-7">
                                         <i class="fa fa-plus fa-w-20"></i>
