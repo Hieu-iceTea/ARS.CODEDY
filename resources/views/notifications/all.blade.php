@@ -1,5 +1,5 @@
 <!-- Modal -->
-@if(Session::has('notification'))
+@if(Session::has('notification') || isset($notification))
     <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -10,7 +10,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>{!! Session::get('notification') !!}</p>
+                    <p>{!! Session::get('notification') ?? $notification !!}</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
