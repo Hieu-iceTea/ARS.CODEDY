@@ -68,7 +68,7 @@
                         </div>
                         <h3 class="m-0 p-0 mt-4" style="margin-top: 20px; font-size: 18px; font-weight: 500;">
                             Nhập mã bảo mật ở trên hoặc click vào
-                            <a href="{{ env('APP_URL') }}{{ env('APP_URL') }}/member/verify?user_id={{ $data_send_mail['user_id'] }}&verification_code={{ $data_send_mail['verification_code'] }}"
+                            <a href="{{ env('APP_URL') }}/member/verify?user_id={{ $data_send_mail['user_id'] }}&verification_code={{ $data_send_mail['verification_code'] }}"
                                target="_blank" style="color: teal; font-size: 20px;">đây</a>
                             để kích hoạt tài khoản của bạn. Chúc bạn có một này vui vẻ!
                             <br>
