@@ -47,10 +47,13 @@ class Utility
         self::seat_type_Business => 'Business',
     ];
 
+    const passenger_type_Adults = 1;
+    const passenger_type_Children = 2;
+    const passenger_type_Infant = 3;
     public static $passenger_type = [
-        1 => 'Adults',
-        2 => 'Children',
-        3 => 'Infant',
+        self::passenger_type_Adults => 'Adults',
+        self::passenger_type_Children => 'Children',
+        self::passenger_type_Infant => 'Infant',
     ];
 
     public static $passenger_type_vi = [

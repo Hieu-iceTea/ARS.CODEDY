@@ -38,7 +38,7 @@ class Ticket extends Model
 
     public function promotion()
     {
-        return $this->hasMany(Promotion::class, 'promotion_id', 'promotion_id');
+        return $this->hasOne(Promotion::class, 'promotion_id', 'promotion_id');
     }
 
     public function extraServices()
