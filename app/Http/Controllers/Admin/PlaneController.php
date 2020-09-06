@@ -13,18 +13,23 @@ class PlaneController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index( Request $request)
+    public function index(Request $request)
     {
+        //lấy dữ liệu từ request:
         $keyword = $request->get('search');
 
+        //lấy dữ liệu từ database theo từ khóa tìm kiếm:
         $geDatatPlanes = Plane::where('code', '=', $keyword)
             ->orWhere('name', 'like', '%' . $keyword . '%')
-            ->orderBy('plane_id', 'asc')
+            ->orderBy('plane_id', 'desc')
+            ->where('deleted', '<>', 1)
             ->paginate();
 
         //giúp chuyển trang page sẽ đính kèm theo từ khóa search của người dùng:
         $geDatatPlanes->appends(['search' => $keyword]);
-        return view('admin.plane.index',compact('geDatatPlanes'));
+
+        //trả về view kèm dữ liệu từ database:
+        return view('admin.plane.index', compact('geDatatPlanes'));
     }
 
     /**
@@ -35,64 +40,113 @@ class PlaneController extends Controller
     public function create()
     {
         //
+        return view('admin.plane.create-edit');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        /*input*/
+        $name = $request->name_plane;
+        $code = $request->code_plane;
+        $description = $request->description;
+        $active = $request->active;
+
+        // xử lý dữ liệu:
+        $active = $active ?? false;
+
+        //lưu dữ liệu mới:
+        $plane = new Plane();
+
+        $plane->code = $code;
+        $plane->name = $name;
+        $plane->description = $description;
+        $plane->active = $active;
+
+        $plane->save();
+
+        //thông báo cho người dùng:
+        $id = $plane->plane_id;
+        return redirect('admin/plane/' . $id)->with('notification', 'Created successfully!');
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         $getDataPlane = Plane::all()
-            ->where('plane_id',$id)
-        ->first();
-        return view('admin.plane.show',compact('getDataPlane'));
+            ->where('plane_id', $id)
+            ->first();
+        return view('admin.plane.show', compact('getDataPlane'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         //
+        $getDataPlane = Plane::all()
+            ->where('plane_id', $id)
+            ->first();
+        return view('admin.plane.create-edit', compact('getDataPlane'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         //
+        /*input*/
+        $name = $request->name_plane;
+        $code = $request->code_plane;
+        $description = $request->description;
+        $active = $request->active;
+
+        // xử lý dữ liệu:
+        $active = $active ?? false;
+
+        $getPlane = Plane::find($id);
+        $getPlane->code = $code;
+        $getPlane->name = $name;
+        $getPlane->description = $description;
+        $getPlane->active = $active;
+
+        $getPlane->save();
+        return redirect('admin/plane/' . $id)->with('notification', 'Updated successfully!');;
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
+        $update = Plane::find($id)->update([
+            'deleted' => true,
+        ]);
+
+        return redirect('admin/plane');
     }
 }

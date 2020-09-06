@@ -14,7 +14,7 @@
                     </div>
                     <div>Plane Management
                         <div class="page-title-subheading">
-                            View, create, update, delete and manage pay type.
+                            View, create, update, delete and manage plane.
                         </div>
                     </div>
                 </div>
@@ -60,31 +60,39 @@
                     </div>
 
                     <div class="table-responsive">
-                        <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                        <table class="align-middle mb-0 text-center  table table-borderless table-striped table-hover">
                             <thead>
-                            <tr class="text-center">
-                                <th>#ID</th>
-                                <th>Name</th>
+                            <tr>
+                                <th>#</th>
+                                <th class="text-left">Name</th>
                                 <th>Code</th>
-                                <th>Account</th>
+                                <th>Status</th>
+                                <th class="" style="margin-left: 20px !important;"><span>Action</span></th>
                             </tr>
                             </thead>
                             <tbody>
 
-                            @foreach($geDatatPlanes as $geDatatPlane)
-                                <tr class="text-center " >
+                            @foreach($geDatatPlanes as $key=> $geDatatPlane)
+                                <tr>
                                     {{--id--}}
-                                    <td class="text-center text-muted">#{{ $geDatatPlane->plane_id }}</td>
+                                    <td class="text-muted">#{{ ++$key}}</td>
                                     {{--name--}}
-                                    <td>
+                                    <td class="text-left">
                                         <h4 style="font-size:18px;font-weight: bold "> {{ $geDatatPlane->name }}</h4>
                                     </td>
-                                   {{-- Hien thi ma cua may bay--}}
+                                    {{-- Hien thi ma cua may bay--}}
                                     <td>
-                                        <h4 style="font-size:18px;font-weight: bold ">{{ $geDatatPlane->code }}</h4>
+                                        <h4 style="font-size:18px;">{{ $geDatatPlane->code }}</h4>
+                                    </td>
+                                    {{--Hiện thị trạng thái của máy bay--}}
+                                    <td>
+                                        <div
+                                            class="badge badge-{{ $geDatatPlane->active == 1 ? 'success' : 'warning' }} mt-2">
+                                            {{ $geDatatPlane->active == 1 ? 'Active' : 'Inactive' }}
+                                        </div>
                                     </td>
                                     {{--Action--}}
-                                    <td class="text-center">
+                                    <td>
                                         <a href="{{ url()->current() . '/' .  $geDatatPlane->plane_id }}"
                                            class="btn btn-primary btn-hover-shine btn-sm">
                                             Details

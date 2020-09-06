@@ -39,10 +39,10 @@
                 </div>
             </div>
 
-            @include('admin.components.nav-tab-btn', ['urlMain' => '/admin/flight-schedule'])
+            @include('admin.components.nav-tab-btn', ['urlMain' => '/admin/plane'])
 
             <div class="row">
-                <div class="col-lg-6 mx-auto">
+                <div class="col-lg-12 mx-auto">
                     <div class="main-card mb-3 pb-6 card">
                         <div class="card-header">
                             <i class="fa fa-plane pr-2"></i>
@@ -59,13 +59,29 @@
                                 </div>
                             </div>
 
-                            <div class="position-relative pb-5  row form-group">
+                            <div class="position-relative  row form-group">
                                 <label for="airport_to_id"
                                        class="col-md-3 text-md-right col-form-label">Name Plane</label>
                                 <div class="col-md-9 col-xl-8">
                                     <p>{{ $getDataPlane->name }}</p>
                                 </div>
-
+                            </div>
+                            <div class="position-relative  row form-group">
+                                <label for="airport_to_id"
+                                       class="col-md-3 text-md-right col-form-label">Status</label>
+                                <div class="col-md-9 col-xl-8">
+                                    <div
+                                        class="badge badge-{{ $getDataPlane->active == 1 ? 'success' : 'warning' }} mt-2">
+                                        {{ $getDataPlane->active == 1 ? 'Active' : 'Inactive' }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="position-relative pb-5  row form-group">
+                                <label for="airport_to_id"
+                                       class="col-md-3 text-md-right col-form-label">Description</label>
+                                <div class="col-md-9 col-xl-8">
+                                    <p>{!! $getDataPlane->description !!}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
