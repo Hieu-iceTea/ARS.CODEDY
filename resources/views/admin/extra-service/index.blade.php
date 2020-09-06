@@ -109,7 +109,7 @@
                                                 <div class="widget-content-left flex2">
                                                     <div class="widget-subheading opacity-10">
                                                         <img
-                                                            src="../img/extra_service/{{ $extra_service->image }}" alt="" height=60>
+                                                            src="../img/extra_service/{{ $extra_service->image }}" alt="" height=25>
                                                     </div>
                                                 </div>
                                             </div>
