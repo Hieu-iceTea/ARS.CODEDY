@@ -75,7 +75,7 @@ class ExtraServiceController extends Controller
 
         //output
         if ($extra_service->extra_service_id != null) {
-            return redirect('admin/extra-service/')
+            return redirect('admin/extra-service/'.$extra_service->extra_service_id)
                 ->with('notification', 'Created successfully!');
         } else {
             return redirect()->back()

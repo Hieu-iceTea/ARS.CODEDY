@@ -74,7 +74,7 @@ class PayTypeController extends Controller
 
         //output
         if ($pay_type->pay_type_id != null) {
-            return redirect('admin/pay-type/')
+            return redirect('admin/pay-type/'.$pay_type->pay_type_id)
                 ->with('notification', 'Created successfully!');
         } else {
             return redirect()->back()
@@ -159,7 +159,7 @@ class PayTypeController extends Controller
 
         //Nếu update database thành công && có file được chọn, Di chuyển file mới đã chọn vào thư mục public:
         if ($update == true && $request->hasFile('image')) {
-            $file->move('img/pay_type', $file_name);
+            $file->move('img/pay_type/show', $file_name);
 
             //Đồng thời xóa file cũ đi (nếu có file cũ):
             if ($file_name_old != '') {
