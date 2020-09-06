@@ -96,7 +96,7 @@
                                                 <div class="widget-content-left flex2">
                                                     <div class="widget-subheading opacity-10">
                                                         <img
-                                                            src="../img/pay_type/{{ $pay_type->image }}" alt="" height=25>
+                                                            src="../img/pay_type/{{ $pay_type->image }}" alt="" height=60>
                                                     </div>
                                                 </div>
                                             </div>
