@@ -61,6 +61,9 @@ class PayTypeController extends Controller
         //di chuyển file vào đường dẫn chỉ định
         $file->move('img/pay_type', $file_name_original);
 
+        //Xử lí dữ liệu
+        $active = $active ?? false;
+
         //lưu dữ liệu vào database
         $pay_type = new PayType();
         $pay_type->name = $name;
