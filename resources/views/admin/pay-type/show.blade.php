@@ -45,7 +45,7 @@
                             <label for="name"
                                    class="col-md-3 text-md-right col-form-label">Image</label>
                             <div class="col-md-9 col-xl-8">
-                                <img src="../img/pay_type/{{ $pay_type->image }}" alt="" height=200>
+                                <img src="../img/pay_type/{{ $pay_type->image }}" alt="" height=100>
                             </div>
                         </div>
                         {{--name--}}
