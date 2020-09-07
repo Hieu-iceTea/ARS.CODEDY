@@ -20,7 +20,6 @@ class ExtraServiceController extends Controller
         $extra_services = ExtraService::where('extra_service_id', '=', $keyword)
             ->orWhere('name', 'like', '%' . $keyword . '%')
             ->orWhere('price', 'like', '%' . $keyword . '%')
-            ->where('deleted', false)
             ->orderBy('extra_service_id', 'desc')
             ->paginate();
 
