@@ -64,7 +64,8 @@
                 </div>
             </div>
         </div>
-        <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
+
+        {{--<ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
             <li class="nav-item">
                 <a role="tab" class="nav-link active" href="index.html">
                     <span>Variation 1</span>
@@ -75,9 +76,668 @@
                     <span>Variation 2</span>
                 </a>
             </li>
-        </ul>
+        </ul>--}}
+
         <div class="tabs-animation">
-            <div class="mb-3 card">
+
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="widget-chart widget-chart2 text-left mb-3 card-btm-border card-shadow-primary border-primary card">
+                        <div class="widget-chat-wrapper-outer">
+                            <div class="widget-chart-content">
+                                <div class="widget-title opacity-5 text-uppercase">New accounts</div>
+                                <div class="widget-numbers mt-2 fsize-4 mb-0 w-100">
+                                    <div class="widget-chart-flex align-items-center">
+                                        <div>
+                                                    <span class="opacity-10 text-success pr-2">
+                                                        <i class="fa fa-angle-up"></i>
+                                                    </span>
+                                            234
+                                            <small class="opacity-5 pl-1">%</small>
+                                        </div>
+                                        <div class="widget-title ml-auto font-size-lg font-weight-normal text-muted">
+                                            <div class="circle-progress circle-progress-gradient-alt-sm d-inline-block">
+                                                <small></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="widget-chart widget-chart2 text-left mb-3 card-btm-border card-shadow-danger border-danger card">
+                        <div class="widget-chat-wrapper-outer">
+                            <div class="widget-chart-content">
+                                <div class="widget-title opacity-5 text-uppercase">Total Expenses</div>
+                                <div class="widget-numbers mt-2 fsize-4 mb-0 w-100">
+                                    <div class="widget-chart-flex align-items-center">
+                                        <div>
+                                                    <span class="opacity-10 text-danger pr-2">
+                                                        <i class="fa fa-angle-down"></i>
+                                                    </span>
+                                            71
+                                            <small class="opacity-5 pl-1">%</small>
+                                        </div>
+                                        <div class="widget-title ml-auto font-size-lg font-weight-normal text-muted">
+                                            <div class="circle-progress circle-progress-danger-sm d-inline-block">
+                                                <small></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="widget-chart widget-chart2 text-left mb-3 card-btm-border card-shadow-warning border-warning card">
+                        <div class="widget-chat-wrapper-outer">
+                            <div class="widget-chart-content">
+                                <div class="widget-title opacity-5 text-uppercase">Company Value</div>
+                                <div class="widget-numbers mt-2 fsize-4 mb-0 w-100">
+                                    <div class="widget-chart-flex align-items-center">
+                                        <div>
+                                            <small class="opacity-5 pr-1">$</small>
+                                            1,45M
+                                        </div>
+                                        <div class="widget-title ml-auto font-size-lg font-weight-normal text-muted">
+                                            <div class="circle-progress circle-progress-warning-sm d-inline-block">
+                                                <small></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{--<div class="col-md-6 col-lg-3">
+                    <div class="widget-chart widget-chart2 text-left mb-3 card-btm-border card-shadow-success border-success card">
+                        <div class="widget-chat-wrapper-outer">
+                            <div class="widget-chart-content">
+                                <div class="widget-title opacity-5 text-uppercase">New Employees</div>
+                                <div class="widget-numbers mt-2 fsize-4 mb-0 w-100">
+                                    <div class="widget-chart-flex align-items-center">
+                                        <div>
+                                            <small class="text-success pr-1">+</small>
+                                            34
+                                            <small class="opacity-5 pl-1">hires</small>
+                                        </div>
+                                        <div class="widget-title ml-auto font-size-lg font-weight-normal text-muted">
+                                            <div class="circle-progress circle-progress-success-sm d-inline-block">
+                                                <small></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>--}}
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 col-xl-6">
+                    <div class="main-card mb-3 card">
+                        <div class="card-body">
+                            <h5 class="card-title">Income Report</h5>
+                            <div class="widget-chart-wrapper widget-chart-wrapper-lg opacity-10 m-0">
+                                <div style="height: 227px;">
+                                    <canvas id="line-chart"></canvas>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Target Sales</h5>
+                            <div class="mt-3 row">
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-outer">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left">
+                                                    <div class="widget-numbers text-dark">65%</div>
+                                                </div>
+                                            </div>
+                                            <div class="widget-progress-wrapper mt-1">
+                                                <div class="progress-bar-xs progress-bar-animated-alt progress">
+                                                    <div class="progress-bar bg-info" role="progressbar"
+                                                         aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"
+                                                         style="width: 65%;">
+                                                    </div>
+                                                </div>
+                                                <div class="progress-sub-label">
+                                                    <div class="sub-label-left font-size-md">Sales</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-outer">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left">
+                                                    <div class="widget-numbers text-dark">22%</div>
+                                                </div>
+                                            </div>
+                                            <div class="widget-progress-wrapper mt-1">
+                                                <div class="progress-bar-xs progress-bar-animated-alt progress">
+                                                    <div class="progress-bar bg-warning" role="progressbar"
+                                                         aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"
+                                                         style="width: 22%;">
+                                                    </div>
+                                                </div>
+                                                <div class="progress-sub-label">
+                                                    <div class="sub-label-left font-size-md">Profiles</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-outer">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left">
+                                                    <div class="widget-numbers text-dark">83%</div>
+                                                </div>
+                                            </div>
+                                            <div class="widget-progress-wrapper mt-1">
+                                                <div class="progress-bar-xs progress-bar-animated-alt progress">
+                                                    <div class="progress-bar bg-success" role="progressbar"
+                                                         aria-valuenow="83" aria-valuemin="0" aria-valuemax="100"
+                                                         style="width: 83%;">
+                                                    </div>
+                                                </div>
+                                                <div class="progress-sub-label">
+                                                    <div class="sub-label-left font-size-md">Tickets</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-xl-6">
+                    <div class="main-card mb-3 card">
+                        <div class="grid-menu grid-menu-2col">
+                            <div class="no-gutters row">
+                                <div class="col-sm-6">
+                                    <div class="widget-chart widget-chart-hover">
+                                        <div class="icon-wrapper rounded-circle">
+                                            <div class="icon-wrapper-bg bg-primary"></div>
+                                            <i class="lnr-cog text-primary"></i>
+                                        </div>
+                                        <div class="widget-numbers">45.8k</div>
+                                        <div class="widget-subheading">Total Views</div>
+                                        <div class="widget-description text-success">
+                                            <i class="fa fa-angle-up"></i>
+                                            <span class="pl-1">175.5%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="widget-chart widget-chart-hover">
+                                        <div class="icon-wrapper rounded-circle">
+                                            <div class="icon-wrapper-bg bg-info"></div>
+                                            <i class="lnr-graduation-hat text-info"></i>
+                                        </div>
+                                        <div class="widget-numbers">63.2k</div>
+                                        <div class="widget-subheading">Bugs Fixed</div>
+                                        <div class="widget-description text-info">
+                                            <i class="fa fa-arrow-right"></i>
+                                            <span class="pl-1">175.5%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="widget-chart widget-chart-hover">
+                                        <div class="icon-wrapper rounded-circle">
+                                            <div class="icon-wrapper-bg bg-danger"></div>
+                                            <i class="lnr-laptop-phone text-danger"></i>
+                                        </div>
+                                        <div class="widget-numbers">5.82k</div>
+                                        <div class="widget-subheading">Reports Submitted</div>
+                                        <div class="widget-description text-primary">
+                                            <span class="pr-1">54.1%</span>
+                                            <i class="fa fa-angle-up"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="widget-chart widget-chart-hover br-br">
+                                        <div class="icon-wrapper rounded-circle">
+                                            <div class="icon-wrapper-bg bg-success"></div>
+                                            <i class="lnr-screen"></i>
+                                        </div>
+                                        <div class="widget-numbers">17.2k</div>
+                                        <div class="widget-subheading">Profiles</div>
+                                        <div class="widget-description text-warning">
+                                            <span class="pr-1">175.5%</span>
+                                            <i class="fa fa-arrow-left"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 col-md-7 col-lg-8">
+                    <div class="mb-3 card">
+                        <div class="tabs-lg-alternate card-header">
+                            <ul class="nav nav-justified">
+                                <li class="nav-item">
+                                    <a href="#tab-minimal-1" data-toggle="tab" class="nav-link minimal-tab-btn-1">
+                                        <div class="widget-number"><span>$15,065</span></div>
+                                        <div class="tab-subheading">
+                                            <span class="pr-2 opactiy-6">
+                                                <i class="fa fa-comment-dots"></i>
+                                            </span>
+                                            Totals
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#tab-minimal-2" data-toggle="tab"
+                                       class="nav-link active minimal-tab-btn-2">
+                                        <div class="widget-number">
+                                            <span class="pr-2 text-success">
+                                                <i class="fa fa-angle-up"></i>
+                                            </span>
+                                            <span>4531</span>
+                                        </div>
+                                        <div class="tab-subheading">Products</div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#tab-minimal-3" data-toggle="tab" class="nav-link minimal-tab-btn-3">
+                                        <div class="widget-number text-danger">
+                                            <span>$6,784.0</span>
+                                        </div>
+                                        <div class="tab-subheading">
+                                            <span class="pr-2 opactiy-6">
+                                                <i class="fa fa-bullhorn"></i>
+                                            </span>
+                                            Income
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-content">
+                            <div class="tab-pane" id="tab-minimal-1">
+                                <div class="card-body">
+                                    <div id="chart-combined-tab"></div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade active show" id="tab-minimal-2">
+                                <div class="card-body">
+                                    <div class="widget-chart-wrapper widget-chart-wrapper-lg opacity-10 m-0">
+                                        <div id="chart-apex-negative"></div>
+                                    </div>
+                                    <h5 class="card-title">Target Sales</h5>
+                                    <div class="mt-3 row">
+                                        <div class="col-sm-12 col-md-4">
+                                            <div class="widget-content p-0">
+                                                <div class="widget-content-outer">
+                                                    <div class="widget-content-wrapper">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-numbers text-dark">65%</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="widget-progress-wrapper mt-1">
+                                                        <div class="progress-bar-xs progress-bar-animated-alt progress">
+                                                            <div class="progress-bar bg-info" role="progressbar"
+                                                                 aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"
+                                                                 style="width: 65%;"></div>
+                                                        </div>
+                                                        <div class="progress-sub-label">
+                                                            <div class="sub-label-left font-size-md">Sales</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-4">
+                                            <div class="widget-content p-0">
+                                                <div class="widget-content-outer">
+                                                    <div class="widget-content-wrapper">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-numbers text-dark">22%</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="widget-progress-wrapper mt-1">
+                                                        <div class="progress-bar-xs progress-bar-animated-alt progress">
+                                                            <div class="progress-bar bg-warning" role="progressbar"
+                                                                 aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"
+                                                                 style="width: 22%;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="progress-sub-label">
+                                                            <div class="sub-label-left font-size-md">Profiles</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-4">
+                                            <div class="widget-content p-0">
+                                                <div class="widget-content-outer">
+                                                    <div class="widget-content-wrapper">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-numbers text-dark">83%</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="widget-progress-wrapper mt-1">
+                                                        <div class="progress-bar-xs progress-bar-animated-alt progress">
+                                                            <div class="progress-bar bg-success" role="progressbar"
+                                                                 aria-valuenow="83" aria-valuemin="0" aria-valuemax="100"
+                                                                 style="width: 83%;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="progress-sub-label">
+                                                            <div class="sub-label-left font-size-md">Tickets</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="tab-minimal-3">
+                                <div class="rm-border card-header">
+                                    <div>
+                                        <h5 class="menu-header-title text-capitalize text-primary">Income Report</h5>
+                                    </div>
+                                    <div class="btn-actions-pane-right text-capitalize">
+                                        <div class="btn-group dropdown">
+                                            <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                    class="btn-wide mr-1 dropdown-toggle btn btn-outline-focus btn-sm">Options
+                                            </button>
+                                            <div tabindex="-1" role="menu" aria-hidden="true"
+                                                 class="dropdown-menu-lg rm-pointers dropdown-menu dropdown-menu-right">
+                                                <div class="dropdown-menu-header">
+                                                    <div class="dropdown-menu-header-inner bg-primary">
+                                                        <div class="menu-header-image"
+                                                             style="background-image: url('assets/images/dropdown-header/abstract2.jpg');">
+                                                        </div>
+                                                        <div class="menu-header-content">
+                                                            <div>
+                                                                <h5 class="menu-header-title">Settings</h5>
+                                                                <h6 class="menu-header-subtitle">Example Dropdown Menu
+                                                                </h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="scroll-area-xs">
+                                                    <div class="scrollbar-container">
+                                                        <ul class="nav flex-column">
+                                                            <li class="nav-item-header nav-item">Activity</li>
+                                                            <li class="nav-item">
+                                                                <a href="javascript:void(0);" class="nav-link">Chat
+                                                                    <div class="ml-auto badge badge-pill badge-info">8
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a href="javascript:void(0);" class="nav-link">Recover
+                                                                    Password</a>
+                                                            </li>
+                                                            <li class="nav-item-header nav-item">My Account</li>
+                                                            <li class="nav-item">
+                                                                <a href="javascript:void(0);" class="nav-link">Settings
+                                                                    <div class="ml-auto badge badge-success">New</div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a href="javascript:void(0);" class="nav-link">Messages
+                                                                    <div class="ml-auto badge badge-warning">512</div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a href="javascript:void(0);" class="nav-link">Logs</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body p-2">
+                                    <div class="widget-chart-wrapper widget-chart-wrapper-lg opacity-10 m-0">
+                                        <div style="height: 274px;">
+                                            <div id="chart-combined-tab-3"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border-top bg-light card-header">
+                                    <div class="actions-icon-btn mx-auto">
+                                        <div>
+                                            <div role="group" class="btn-group-lg btn-group nav">
+                                                <button type="button" data-toggle="tab" href="#tab-content-income"
+                                                        class="btn-pill pl-3 active btn btn-focus">Income</button>
+                                                <button type="button" data-toggle="tab" href="#tab-content-expenses"
+                                                        class="btn-pill pr-3  btn btn-focus">Expenses</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="tab-content">
+                                        <div class="tab-pane active fade show" id="tab-content-income" role="tabpanel">
+                                            <h5 class="menu-header-title">Target Sales</h5>
+                                            <h6 class="menu-header-subtitle opacity-6">Total performance for this month
+                                            </h6>
+                                            <div class="mt-3 row">
+                                                <div class="col-sm-12 col-md-6">
+                                                    <div
+                                                        class="card-border mb-sm-3 mb-md-0 border-light no-shadow card">
+                                                        <div class="widget-content">
+                                                            <div class="widget-content-outer">
+                                                                <div class="widget-content-wrapper">
+                                                                    <div class="widget-content-left">
+                                                                        <div class="widget-heading">Orders</div>
+                                                                    </div>
+                                                                    <div class="widget-content-right">
+                                                                        <div
+                                                                            class="widget-numbers line-height-1 text-primary">
+                                                                            <span>366</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="widget-progress-wrapper mt-1">
+                                                                    <div class="progress-bar-xs progress">
+                                                                        <div class="progress-bar bg-success"
+                                                                             role="progressbar" aria-valuenow="76"
+                                                                             aria-valuemin="0" aria-valuemax="100"
+                                                                             style="width: 76%;">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="progress-sub-label">
+                                                                        <div class="sub-label-left">Monthly Target</div>
+                                                                        <div class="sub-label-right">100%</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-6">
+                                                    <div class="card-border border-light no-shadow card">
+                                                        <div class="widget-content">
+                                                            <div class="widget-content-outer">
+                                                                <div class="widget-content-wrapper">
+                                                                    <div class="widget-content-left">
+                                                                        <div class="widget-heading">Income</div>
+                                                                    </div>
+                                                                    <div class="widget-content-right">
+                                                                        <div
+                                                                            class="widget-numbers line-height-1 text-success">
+                                                                            <span>$2797</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="widget-progress-wrapper mt-1">
+                                                                    <div
+                                                                        class="progress-bar-xs progress-bar-animated progress">
+                                                                        <div class="progress-bar bg-danger"
+                                                                             role="progressbar" aria-valuenow="23"
+                                                                             aria-valuemin="0" aria-valuemax="100"
+                                                                             style="width: 23%;">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="progress-sub-label">
+                                                                        <div class="sub-label-left">Monthly Target</div>
+                                                                        <div class="sub-label-right">100%</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="tab-content-expenses" role="tabpanel">
+                                            <h5 class="menu-header-title">Tabbed Content</h5>
+                                            <h6 class="menu-header-subtitle opacity-6">Example of various options built
+                                                with
+                                                ArchitectUI</h6>
+                                            <div class="mt-3 row">
+                                                <div class="col-sm-12 col-md-6">
+                                                    <div
+                                                        class="card-hover-shadow-2x mb-sm-3 mb-md-0 widget-chart widget-chart2 bg-premium-dark text-left card">
+                                                        <div class="widget-chart-content text-white">
+                                                            <div class="widget-chart-flex">
+                                                                <div class="widget-title">Sales</div>
+                                                                <div class="widget-subtitle opacity-7">Monthly Goals
+                                                                </div>
+                                                            </div>
+                                                            <div class="widget-chart-flex">
+                                                                <div class="widget-numbers text-success">
+                                                                    <small>$</small>
+                                                                    976
+                                                                    <small class="opacity-8 pl-2">
+                                                                        <i class="fa fa-angle-up"></i>
+                                                                    </small>
+                                                                </div>
+                                                                <div class="widget-description ml-auto opacity-7">
+                                                                    <i class="fa fa-angle-up"></i>
+                                                                    <span class="pl-1">175%</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-6">
+                                                    <div
+                                                        class="card-hover-shadow-2x widget-chart widget-chart2 bg-premium-dark text-left card">
+                                                        <div class="widget-chart-content text-white">
+                                                            <div class="widget-chart-flex">
+                                                                <div class="widget-title">Clients</div>
+                                                                <div class="widget-subtitle text-warning">Returning
+                                                                </div>
+                                                            </div>
+                                                            <div class="widget-chart-flex">
+                                                                <div class="widget-numbers text-warning">84
+                                                                    <small>%</small>
+                                                                    <small class="opacity-8 pl-2">
+                                                                        <i class="fa fa-angle-down"></i>
+                                                                    </small>
+                                                                </div>
+                                                                <div class="widget-description ml-auto text-warning">
+                                                                    <span class="pr-1">45</span>
+                                                                    <i class="fa fa-angle-up"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-sm-12 col-md-5 col-lg-4">
+                    <div class="mb-3 card">
+                        <div class="card-header-tab card-header">
+                            <div class="card-header-title font-size-lg text-capitalize font-weight-normal">Income</div>
+                            <div class="btn-actions-pane-right text-capitalize actions-icon-btn">
+                                <div class="btn-group">
+                                    <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                            class="btn-icon btn-icon-only btn btn-link">
+                                        <i class="lnr-cog btn-icon-wrapper"></i>
+                                    </button>
+                                    <div tabindex="-1" role="menu" aria-hidden="true"
+                                         class="dropdown-menu-right rm-pointers dropdown-menu-shadow dropdown-menu-hover-link dropdown-menu dropdown-menu-right">
+                                        <h6 tabindex="-1" class="dropdown-header">
+                                            Header
+                                        </h6>
+                                        <button type="button" tabindex="0" class="dropdown-item">
+                                            <i class="dropdown-icon lnr-inbox"> </i><span>Menus</span>
+                                        </button>
+                                        <button type="button" tabindex="0" class="dropdown-item">
+                                            <i class="dropdown-icon lnr-file-empty"> </i><span>Settings</span>
+                                        </button>
+                                        <button type="button" tabindex="0" class="dropdown-item">
+                                            <i class="dropdown-icon lnr-book"> </i><span>Actions</span>
+                                        </button>
+                                        <div tabindex="-1" class="dropdown-divider"></div>
+                                        <div class="p-1 text-right">
+                                            <button class="mr-2 btn-shadow btn-sm btn btn-link">View Details</button>
+                                            <button class="mr-2 btn-shadow btn-sm btn btn-primary">Action</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-0 card-body">
+                            <div id="chart-radial"></div>
+                            <div class="widget-content pt-0 w-100">
+                                <div class="widget-content-outer">
+                                    <div class="widget-content-wrapper">
+                                        <div class="widget-content-left pr-2 fsize-1">
+                                            <div class="widget-numbers mt-0 fsize-3 text-warning">32%</div>
+                                        </div>
+                                        <div class="widget-content-right w-100">
+                                            <div class="progress-bar-xs progress">
+                                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="32"
+                                                     aria-valuemin="0" aria-valuemax="100" style="width: 32%;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="widget-content-left fsize-1">
+                                        <div class="text-muted opacity-6">Spendings Target</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{--<div class="mb-3 card">
                 <div class="card-header-tab card-header">
                     <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
                         <i class="header-icon lnr-charts icon-gradient bg-happy-green"> </i>
@@ -158,7 +818,8 @@
                         <span class="mr-1">View Complete Report</span>
                     </button>
                 </div>
-            </div>
+            </div>--}}
+
             <div class="row">
                 <div class="col-sm-12 col-lg-6">
                     <div class="mb-3 card">
