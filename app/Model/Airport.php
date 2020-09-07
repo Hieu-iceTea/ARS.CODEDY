@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use App\Scopes\DeletedScope;
 use Illuminate\Database\Eloquent\Model;
 
 class Airport extends Model
@@ -24,5 +25,16 @@ class Airport extends Model
     public function flightScheduleFrom()
     {
         return $this->hasMany(FlightSchedule::class, 'airport_from_id', 'airport_id');
+    }
+
+    /**
+     * Perform any actions required after the model boots.
+     *
+     * @return void
+     */
+    protected static function booted()
+    {
+        //thêm scope (chỉ lấy những bản ghi chưa bị xóa)
+        static::addGlobalScope(new DeletedScope());
     }
 }
