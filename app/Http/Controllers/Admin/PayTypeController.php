@@ -22,7 +22,6 @@ class PayTypeController extends Controller
 
         $pay_types = PayType::where('pay_type_id', '=', $keyword)
             ->orWhere('name', 'like', '%' . $keyword . '%')
-            ->where('deleted', false)
             ->orderBy('pay_type_id', 'desc')
             ->paginate();
 

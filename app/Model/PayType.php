@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use App\Scopes\DeletedScope;
 use Illuminate\Database\Eloquent\Model;
 
 class PayType extends Model
@@ -20,4 +21,16 @@ class PayType extends Model
     {
         return $this->hasMany(Ticket::class, 'pay_type_id', 'pay_type_id');
     }
+
+    /**
+     * Perform any actions required after the model boots.
+     *
+     * @return void
+     */
+    protected static function booted()
+    {
+        static::addGlobalScope(new DeletedScope());
+    }
+
+
 }

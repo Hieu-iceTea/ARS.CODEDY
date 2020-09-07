@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use App\Scopes\DeletedScope;
 use Illuminate\Database\Eloquent\Model;
 
 class ExtraService extends Model
@@ -15,4 +16,16 @@ class ExtraService extends Model
     {
         return parent::all($columns)->where('deleted', false);
     }
+
+    /**
+     * Perform any actions required after the model boots.
+     *
+     * @return void
+     */
+    protected static function booted()
+    {
+        static::addGlobalScope(new DeletedScope());
+    }
+
+
 }
