@@ -307,7 +307,9 @@
     </div>
 
     {{-- ckeditor --}}
-    <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+    {{--<script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>--}}
+    <script src="../plugins/ckeditor_4.14.1_standard/ckeditor.js"></script>
+
     <script>
         /*CKEDITOR.replace('description');*/
         CKEDITOR.config.height = 100; //pixels wide.
