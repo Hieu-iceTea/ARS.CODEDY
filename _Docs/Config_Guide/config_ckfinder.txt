@@ -1,0 +1,4 @@
+ckfinder_php_3.5.1.1\core\connector\php\vendor\cksource
+ -> .git\objects (đổi tên objects thành _objects)
+
+https://ckeditor.com/docs/ckfinder/ckfinder3/#!/guide/dev_ckeditor
