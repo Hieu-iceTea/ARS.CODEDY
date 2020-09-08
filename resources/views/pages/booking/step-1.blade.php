@@ -304,9 +304,9 @@
                     <input type="hidden" id="seat_type" name="seat_type" value="">
                     <input type="hidden" id="seat_price" name="seat_price" value="">
 
-                    <input type="hidden" id="adults" name="passenger_count[adults]" value="">
-                    <input type="hidden" id="children" name="passenger_count[children]" value="">
-                    <input type="hidden" id="infant" name="passenger_count[infant]" value="">
+                    <input type="hidden" id="count_adults" name="passenger_count[adults]" value="">
+                    <input type="hidden" id="count_children" name="passenger_count[children]" value="">
+                    <input type="hidden" id="count_infant" name="passenger_count[infant]" value="">
                     <input type="hidden" id="total_passenger" name="passenger_count[total]" value="">
                     @csrf
                 </form>
@@ -321,9 +321,9 @@
                 document.getElementById('flight_schedule_id').value = flight_schedule_id;
                 document.getElementById('seat_type').value = seat_type;
                 document.getElementById('seat_price').value = seat_price;
-                document.getElementById('adults').value = adults;
-                document.getElementById('children').value = children;
-                document.getElementById('infant').value = infant;
+                document.getElementById('count_adults').value = adults;
+                document.getElementById('count_children').value = children;
+                document.getElementById('count_infant').value = infant;
                 document.getElementById('total_passenger').value = adults + children + infant;
 
                 //set value to label info
