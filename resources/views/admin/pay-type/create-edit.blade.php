@@ -121,8 +121,26 @@
     {{-- ckeditor --}}
     <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
     <script>
-        CKEDITOR.replace('description');
+        /*CKEDITOR.replace('description');*/
         // CKEDITOR.config.height = 100; //pixels wide.
+    </script>
+
+    <script>
+        /*CKEDITOR.replace('description', {
+            filebrowserBrowseUrl: '../plugins/ckfinder_php_3.5.1.1/ckfinder.html',
+            filebrowserUploadUrl: '../plugins/ckfinder_php_3.5.1.1/core/connector/php/connector.php?command=QuickUpload&type=Files'
+        });*/
+
+        CKEDITOR.replace('description', {
+            filebrowserBrowseUrl: '../plugins/ckfinder_php_3.5.1.1/ckfinder.html',
+            filebrowserImageBrowseUrl: '../plugins/ckfinder_php_3.5.1.1/ckfinder.html?type=Images',
+            filebrowserFlashBrowseUrl: '../plugins/ckfinder_php_3.5.1.1/ckfinder.html?type=Flash',
+            filebrowserUploadUrl: '../plugins/ckfinder_php_3.5.1.1/connector?command=QuickUpload&type=Files',
+            filebrowserImageUploadUrl: '../plugins/ckfinder_php_3.5.1.1/connector?command=QuickUpload&type=Images',
+            filebrowserFlashUploadUrl: '../plugins/ckfinder_php_3.5.1.1/connector?command=QuickUpload&type=Flash'
+        });
+
+        //https://ckeditor.com/docs/ckfinder/ckfinder3/#!/guide/dev_ckeditor
     </script>
 
 @endsection
