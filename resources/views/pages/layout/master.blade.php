@@ -125,7 +125,7 @@
     <!-- Menu -->
     <div class="menu">
         <div class="menu_header d-flex flex-row align-items-center justify-content-start">
-            <div class="menu_logo"><a href="/">Travello</a></div>
+            <div class="menu_logo"><a href="/">ARS.CODEDY</a></div>
             <div class="menu_close_container ml-auto">
                 <div class="menu_close">
                     <div></div>
@@ -137,13 +137,35 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About us</a></li>
-                <li><a href="/news">News</a></li>
-                <li><a href="/ticket">Ticket</a></li>
                 <li><a href="/schedule">Schedule</a></li>
+                <li><a href="/ticket">Ticket</a></li>
+                <li><a href="/member">Member</a></li>
+                <br>
+                <li>
+                    @auth
+                        <a href="/member">
+                            {{ \Illuminate\Support\Facades\Auth::user()->user_name ?? '' }}
+                        </a>
+                        &nbsp;|&nbsp;
+                        <a href="/member/logout"
+                           onclick="return confirm('Are you sure you want to logout?')">
+                            Logout
+                        </a>
+                    @else
+                        <a href="/member/register">
+                            Register
+                        </a>
+                        &nbsp;|&nbsp;
+                        <a href="/member/login">
+                            Login
+                        </a>
+                    @endauth
+                </li>
             </ul>
+
         </div>
         <div class="menu_social">
-            <div class="menu_phone ml-auto">Call us: 00-56 445 678 33</div>
+            <div class="menu_phone ml-auto">Call us: 0868 6633 15 (Hiếu iceTea - sales)</div>
             <ul class="d-flex flex-row align-items-start justify-content-start">
                 <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
