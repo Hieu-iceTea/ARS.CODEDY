@@ -200,7 +200,7 @@
                                     <div class="intro_icon"><img src="img/beach.svg" alt=""></div>
                                     <div class="intro_content">
                                         <div class="intro_title">Top Destinations</div>
-                                        <div class="intro_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
+                                        <div class="intro_subtitle"><p>ARS is always updating the most attractive places for you.</p></div>
                                     </div>
                                 </div>
                             </div>
@@ -211,7 +211,7 @@
                                     <div class="intro_icon"><img src="img/wallet.svg" alt=""></div>
                                     <div class="intro_content">
                                         <div class="intro_title">The Best Prices</div>
-                                        <div class="intro_subtitle"><p>Sollicitudin mauris lobortis in.</p></div>
+                                        <div class="intro_subtitle"><p>ARS is committed to good prices for everyone.</p></div>
                                     </div>
                                 </div>
                             </div>
@@ -222,7 +222,7 @@
                                     <div class="intro_icon"><img src="img/suitcase.svg" alt=""></div>
                                     <div class="intro_content">
                                         <div class="intro_title">Amazing Services</div>
-                                        <div class="intro_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
+                                        <div class="intro_subtitle"><p>Experience the services that are only available at ARS.</p></div>
                                     </div>
                                 </div>
                             </div>
@@ -256,8 +256,8 @@
                             </div>
                             <div class="destination_content">
                                 <div class="destination_title"><a href="destinations.html">Bali</a></div>
-                                <div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-                                <div class="destination_price">From $679</div>
+                                <div class="destination_subtitle"><p>The most attractive marine tourist destination in Southeast Asia.</p></div>
+                                <div class="destination_price">From $4679</div>
                             </div>
                         </div>
 
@@ -268,8 +268,8 @@
                             </div>
                             <div class="destination_content">
                                 <div class="destination_title"><a href="destinations.html">Indonesia</a></div>
-                                <div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-                                <div class="destination_price">From $679</div>
+                                <div class="destination_subtitle"><p>Beautiful wild nature of the land of thousands of islands.</p></div>
+                                <div class="destination_price">From $3679</div>
                             </div>
                         </div>
 
@@ -280,8 +280,8 @@
                             </div>
                             <div class="destination_content">
                                 <div class="destination_title"><a href="destinations.html">San Francisco</a></div>
-                                <div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-                                <div class="destination_price">From $679</div>
+                                <div class="destination_subtitle"><p>Beautiful wild nature of the land of thousands of islands.</p></div>
+                                <div class="destination_price">From $8679</div>
                             </div>
                         </div>
 
@@ -292,8 +292,8 @@
                             </div>
                             <div class="destination_content">
                                 <div class="destination_title"><a href="destinations.html">Paris</a></div>
-                                <div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-                                <div class="destination_price">From $679</div>
+                                <div class="destination_subtitle"><p>Paris where history associated with the same period.</p></div>
+                                <div class="destination_price">From $5379</div>
                             </div>
                         </div>
 
@@ -304,8 +304,8 @@
                             </div>
                             <div class="destination_content">
                                 <div class="destination_title"><a href="destinations.html">Phi Phi Island</a></div>
-                                <div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-                                <div class="destination_price">From $679</div>
+                                <div class="destination_subtitle"><p>Phi Phi Island is Thailand's must-see beach.</p></div>
+                                <div class="destination_price">From $2379</div>
                             </div>
                         </div>
 
@@ -316,8 +316,8 @@
                             </div>
                             <div class="destination_content">
                                 <div class="destination_title"><a href="destinations.html">Mykonos</a></div>
-                                <div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-                                <div class="destination_price">From $679</div>
+                                <div class="destination_subtitle"><p>The beautiful Greek city of Mykonos.</p></div>
+                                <div class="destination_price">From $6279</div>
                             </div>
                         </div>
 
@@ -348,9 +348,7 @@
 
                             <!-- Slide -->
                             <div class="owl-item text-center">
-                                <div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    lobortis dolor. Cras placerat lectus a posuere aliquet. Curabitur quis vehicula
-                                    odio.
+                                <div class="testimonial">Experience traveling with ARS makes me feel very secure and excited
                                 </div>
                                 <div class="testimonial_author">
                                     <div
@@ -363,14 +361,12 @@
 
                             <!-- Slide -->
                             <div class="owl-item text-center">
-                                <div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    lobortis dolor. Cras placerat lectus a posuere aliquet. Curabitur quis vehicula
-                                    odio.
+                                <div class="testimonial">When I fly, price is one thing that makes me very concerned, but for ARS it's easy.
                                 </div>
                                 <div class="testimonial_author">
                                     <div
                                         class="testimonial_author_content d-flex flex-row align-items-end justify-content-start">
-                                        <div>john turner,</div>
+                                        <div>xavi,</div>
                                         <div>client</div>
                                     </div>
                                 </div>
@@ -378,14 +374,12 @@
 
                             <!-- Slide -->
                             <div class="owl-item text-center">
-                                <div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    lobortis dolor. Cras placerat lectus a posuere aliquet. Curabitur quis vehicula
-                                    odio.
+                                <div class="testimonial">ARS is a part of my life.
                                 </div>
                                 <div class="testimonial_author">
                                     <div
                                         class="testimonial_author_content d-flex flex-row align-items-end justify-content-start">
-                                        <div>john turner,</div>
+                                        <div>leo,</div>
                                         <div>client</div>
                                     </div>
                                 </div>
@@ -421,15 +415,14 @@
                                     <div>02</div>
                                     <div>june</div>
                                 </div>
-                                <div class="news_post_title"><a href="#">Best tips to travel light</a></div>
+                                <div class="news_post_title"><a href="#">Experience smart domestic ticket booking</a></div>
                                 <div class="news_post_category">
                                     <ul>
                                         <li><a href="#">lifestyle & travel</a></li>
                                     </ul>
                                 </div>
                                 <div class="news_post_text">
-                                    <p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo.
-                                        Vivamus massa.Tempor massa et laoreet.</p>
+                                    <p>Book flights often, but not sure everyone knows these good tips..</p>
                                 </div>
                             </div>
                         </div>
@@ -442,15 +435,14 @@
                                     <div>01</div>
                                     <div>june</div>
                                 </div>
-                                <div class="news_post_title"><a href="#">Best tips to travel light</a></div>
+                                <div class="news_post_title"><a href="#">Unique poses and check-in styles when traveling</a></div>
                                 <div class="news_post_category">
                                     <ul>
                                         <li><a href="#">lifestyle & travel</a></li>
                                     </ul>
                                 </div>
                                 <div class="news_post_text">
-                                    <p>Tempor massa et laoreet malesuada. Pellentesque sit amet elementum ccumsan sit
-                                        amet mattis eget, tristique at leo.</p>
+                                    <p>Check-in with new designs is quite popular among young people. If you are going with a group of "muddy" friends, you do not have to worry about taking pictures so funny.</p>
                                 </div>
                             </div>
                         </div>
@@ -463,15 +455,14 @@
                                     <div>29</div>
                                     <div>may</div>
                                 </div>
-                                <div class="news_post_title"><a href="#">Best tips to travel light</a></div>
+                                <div class="news_post_title"><a href="#">Tips to fly during the epidemic season</a></div>
                                 <div class="news_post_category">
                                     <ul>
                                         <li><a href="#">lifestyle & travel</a></li>
                                     </ul>
                                 </div>
                                 <div class="news_post_text">
-                                    <p>Vivamus massa.Tempor massa et laoreet malesuada. Aliquam nulla nisl, accumsan sit
-                                        amet mattis.</p>
+                                    <p>You should wear a mask, disposable rubber gloves, eyeglasses, and protective gear to ensure you won't come into contact with any of the aircraft's sources of infection.</p>
                                 </div>
                             </div>
                         </div>
