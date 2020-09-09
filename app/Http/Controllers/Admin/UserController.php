@@ -3,9 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminRequest;
 use App\Model\User;
 use App\Utilities\Utility;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\File;
 use Illuminate\View\View;
 
@@ -46,9 +50,10 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param AdminRequest $request
+     * @return Application|RedirectResponse|Redirector
      */
-    public function store(Request $request)
+    public function store(AdminRequest $request)
     {
         // * [01] * Xử lý dữ liệu:
         //Nếu có file được chọn:
@@ -119,10 +124,11 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param AdminRequest $request
      * @param int $id
+     * @return Application|RedirectResponse|Redirector
      */
-    public function update(Request $request, $id)
+    public function update(AdminRequest $request, $id)
     {
         // * [01] * Xử lý dữ liệu:
         //Nếu có file được chọn:

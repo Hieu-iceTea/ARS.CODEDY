@@ -25,7 +25,7 @@
 
                     <div class="page-title-actions">
                         <a href="airport/create" title="Add New Airport"
-                           class="btn-shadow btn-hover-shine mr-3 btn btn-primary" >
+                           class="btn-shadow btn-hover-shine mr-3 btn btn-primary">
                                     <span class="btn-icon-wrapper pr-2 opacity-7">
                                         <i class="fa fa-plus fa-w-20"></i>
                                     </span>
@@ -46,12 +46,11 @@
                             <div class="position-relative row form-group">
                                 <label for="image" class="col-md-3 text-md-right col-form-label">Image</label>
                                 <div class="col-md-9 col-xl-8">
-                                    <img id="thumbnail" height="100" class="" style="cursor: pointer"
+                                    <img id="thumbnail" height="200" class="" style="cursor: pointer"
                                          data-toggle="tooltip" title="Click to change the image" data-placement="bottom"
                                          src="{{ isset($airport->image) ? '../img/airport/' . $airport->image : '../img/icon/upload_select.png' }}"
                                          alt="Logo">
-                                    <input @if(request()->segment(3) == 'create') required @endif
-                                    name="image" id="image" type="file" onchange="changeImg(this)"
+                                    <input name="image" id="image" type="file" onchange="changeImg(this)"
                                            class="form-control-file" style="display: none;"
                                            value="{{ old('image') ?? $airport->image ?? ''}}">
                                     <input type="hidden" name="image_old" value="{{ $airport->image ?? '' }}">

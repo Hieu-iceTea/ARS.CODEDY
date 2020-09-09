@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminRequest;
 use App\Model\PayType;
 use App\Utilities\Utility;
 use Illuminate\Contracts\Foundation\Application;
@@ -48,7 +49,7 @@ class PayTypeController extends Controller
      * //     * @return Application|RedirectResponse|Redirector
      * * @return Application|RedirectResponse|Redirector
      */
-    public function store(Request $request)
+    public function store(AdminRequest $request)
     {
         //input
         $name = $request->get('name_pay_type');
@@ -125,7 +126,7 @@ class PayTypeController extends Controller
      * @param int $id
      * @return Application|RedirectResponse|Redirector
      */
-    public function update(Request $request, $id)
+    public function update(AdminRequest $request, $id)
     {
         //xử lí dữ liệu
         if ($request->hasFile('image')) {

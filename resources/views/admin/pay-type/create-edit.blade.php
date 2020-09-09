@@ -47,7 +47,7 @@
                                 <div class="col-md-9 col-xl-8">
                                     <img id="thumbnail" height="100" class="" style="cursor: pointer"
                                          data-toggle="tooltip" title="Click to change the image" data-placement="bottom"
-                                         src="{{ isset($pay_type->image) ? '../img/pay_type/' . $pay_type->image : '../img/pay_type/upload_select.png' }}"
+                                         src="{{ isset($pay_type->image) ? '../img/pay_type/' . $pay_type->image : '../img/icon/upload_select.png' }}"
                                          alt="Logo">
                                     <input name="image" id="image" type="file" onchange="changeImg(this)"
                                            class="form-control-file" style="display: none;"
@@ -64,7 +64,7 @@
                                 <div class="col-md-9 col-xl-8">
                                     <input required name="name_pay_type" id="name" placeholder="Name"
                                            type="text" class="form-control"
-                                           value="{{ old('name') ?? $pay_type->name ?? '' }}">
+                                           value="{{ old('name_pay_type') ?? $pay_type->name ?? '' }}">
                                 </div>
                             </div>
                             {{--Active--}}

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminRequest;
 use App\Model\ExtraService;
 use App\Utilities\Utility;
 use Illuminate\Http\Request;
@@ -45,7 +46,7 @@ class ExtraServiceController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request)
+    public function store(AdminRequest $request)
     {
         //input
         $name = $request->get('name');
@@ -126,7 +127,7 @@ class ExtraServiceController extends Controller
      * @param int $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update(Request $request, $id)
+    public function update(AdminRequest $request, $id)
     {
         //xử lí dữ liệu
         if ($request->hasFile('image')) {

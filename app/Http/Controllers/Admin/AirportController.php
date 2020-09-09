@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminRequest;
 use App\Model\Airport;
 use App\Utilities\Utility;
 use Illuminate\Http\Request;
@@ -28,7 +29,7 @@ class AirportController extends Controller
         //giúp chuyển trang page sẽ đính kèm theo từ khóa search của người dùng:
         $airports->appends(['search' => $keyword]);
 
-        return view('admin.airport.index',compact('airports'));
+        return view('admin.airport.index', compact('airports'));
     }
 
     /**
@@ -47,12 +48,12 @@ class AirportController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request)
+    public function store(AdminRequest $request)
     {
         //input
         $name = $request->get('name');
-        $location=$request->get('location');
-        $code=$request->get('code');
+        $location = $request->get('location');
+        $code = $request->get('code');
         $file = $request->image;
         $file_name_original = $file->getClientOriginalName();
         $active = $request->get('active');
@@ -66,8 +67,8 @@ class AirportController extends Controller
 
         //lưu dữ liệu vào database
         $airport = new Airport();
-        $airport->location=$location;
-        $airport->code=$code;
+        $airport->location = $location;
+        $airport->code = $code;
         $airport->name = $name;
         $airport->image = $file_name_original;
         $airport->active = $active;
@@ -76,7 +77,7 @@ class AirportController extends Controller
 
         //output
         if ($airport->airport_id != null) {
-            return redirect('admin/airport/'.$airport->airport_id)
+            return redirect('admin/airport/' . $airport->airport_id)
                 ->with('notification', 'Created successfully!');
         } else {
             return redirect()->back()
@@ -128,7 +129,7 @@ class AirportController extends Controller
      * @param int $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update(Request $request, $id)
+    public function update(AdminRequest $request, $id)
     {
         //xử lí dữ liệu
         if ($request->hasFile('image')) {
@@ -140,13 +141,13 @@ class AirportController extends Controller
         }
 
         //Xử lí dữ liệu
-        $active= $request->get('active');
+        $active = $request->get('active');
         $active = $active ?? false;
 
         //Tạo danh sách giá trị sẽ được update:
         $values = [
-            'location'=>$request->get('location'),
-            'code'=>$request->get('code'),
+            'location' => $request->get('location'),
+            'code' => $request->get('code'),
             'name' => $request->get('name'),
 //            'image'=>$request->get('image'),
             'active' => $active,

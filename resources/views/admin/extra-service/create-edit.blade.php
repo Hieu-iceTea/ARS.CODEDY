@@ -46,12 +46,11 @@
                             <div class="position-relative row form-group">
                                 <label for="image" class="col-md-3 text-md-right col-form-label">Image</label>
                                 <div class="col-md-9 col-xl-8">
-                                    <img id="thumbnail" height="100" class="" style="cursor: pointer"
+                                    <img id="thumbnail" height="200" class="" style="cursor: pointer"
                                          data-toggle="tooltip" title="Click to change the image" data-placement="bottom"
                                          src="{{ isset($extra_service->image) ? '../img/extra_service/' . $extra_service->image : '../img/icon/upload_select.png' }}"
                                          alt="Logo">
-                                    <input @if(request()->segment(3) == 'create') required @endif
-                                           name="image" id="image" type="file" onchange="changeImg(this)"
+                                    <input name="image" id="image" type="file" onchange="changeImg(this)"
                                            class="form-control-file" style="display: none;"
                                            value="{{ old('image') ?? $extra_service->image ?? ''}}">
                                     <input type="hidden" name="image_old" value="{{ $extra_service->image ?? '' }}">

@@ -45,7 +45,7 @@
                             <label for="name"
                                    class="col-md-3 text-md-right col-form-label">Image</label>
                             <div class="col-md-9 col-xl-8">
-                                <img src="../img/airport/{{ $airport->image }}" alt="" height=100>
+                                <img src="../img/airport/{{ $airport->image }}" alt="" height=200>
                             </div>
                         </div>
                         {{--location--}}
