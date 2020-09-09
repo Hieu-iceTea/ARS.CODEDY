@@ -86,9 +86,8 @@
                                         <div class="widget-content p-0">
                                             <div class="widget-content-wrapper">
                                                 <div class="widget-content-left flex2">
-                                                    <div class="widget-subheading opacity-10 widget-heading">
-                                                        {{$promotion->title}}
-                                                    </div>
+                                                    <div class="widget-heading">{{$promotion->title}}</div>
+
                                                 </div>
                                             </div>
                                         </div>

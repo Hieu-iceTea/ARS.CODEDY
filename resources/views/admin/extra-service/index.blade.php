@@ -65,9 +65,8 @@
                             <thead>
                             <tr>
                                 <th class="text-center">#ID</th>
-                                <th>Name</th>
+                                <th>Image/Name</th>
                                 <th class="text-center">Price</th>
-                                <th class="text-center">Image</th>
                                 <th class="text-center">Active</th>
                                 <th class="text-center">Actions</th>
                             </tr>
@@ -82,39 +81,27 @@
                                     <td>
                                         <div class="widget-content p-0">
                                             <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="widget-content-left">
+                                                        <img height="60"
+                                                             data-toggle="tooltip" title="Image"
+                                                             data-placement="bottom"
+                                                             src="../img/extra_service/{{ $extra_service->image ?? '' }}"
+                                                             alt="Image Error">
+                                                    </div>
+                                                </div>
                                                 <div class="widget-content-left flex2">
-                                                    <div class="widget-subheading opacity-10 widget-heading">
-                                                        {{ $extra_service->name }}
+                                                    <div class="widget-heading">{{ $extra_service->name }}</div>
+                                                    <div class="widget-subheading opacity-7">
+
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </td>
+
                                     {{--price--}}
-                                    <td>
-                                        <div class="widget-content p-0 text-center">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left flex2">
-                                                    <div class="widget-subheading opacity-10 widget-heading">
-                                                        {{ number_format($extra_service->price, 0, ',', '.') }} ₫
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    {{--image--}}
-                                    <td class="text-center">
-                                        <div class="widget-content p-0">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left flex2">
-                                                    <div class="widget-subheading opacity-10">
-                                                        <img
-                                                            src="../img/extra_service/{{ $extra_service->image }}" alt="" height=25>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
+                                    <td class="text-center">{{ number_format($extra_service->price, 0, ',', '.') }} ₫</td>
                                     {{--Active--}}
                                     <td class="text-center">
                                         <div

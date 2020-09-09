@@ -86,7 +86,7 @@
                                                         <img height=60 class=""
                                                              src="../img/airport/{{ $flightSchedule->airportTo->image }}"
                                                              alt="image of arrival airport"
-                                                             data-toggle="tooltip" title="image of arrival airport"
+                                                             data-toggle="tooltip" title="Image of arrival airport"
                                                              data-placement="bottom">
                                                     </div>
                                                 </div>

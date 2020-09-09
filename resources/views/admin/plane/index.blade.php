@@ -60,39 +60,45 @@
                     </div>
 
                     <div class="table-responsive">
-                        <table class="align-middle mb-0 text-center  table table-borderless table-striped table-hover">
+                        <table class="align-middle mb-0 table table-borderless table-striped table-hover">
                             <thead>
                             <tr>
-                                <th>#</th>
-                                <th class="text-left">Name</th>
-                                <th>Code</th>
-                                <th>Status</th>
-                                <th class="" style="margin-left: 20px !important;"><span>Action</span></th>
+                                <th class="text-center">#ID</th>
+                                <th>Name</th>
+                                <th class="text-center">Code</th>
+                                <th class="text-center">Status</th>
+                                <th class="text-center"><span>Action</span></th>
                             </tr>
                             </thead>
                             <tbody>
 
-                            @foreach($geDatatPlanes as $key=> $geDatatPlane)
+                            @foreach($geDatatPlanes as $geDatatPlane)
                                 <tr>
                                     {{--id--}}
-                                    <td class="text-muted">#{{ ++$key}}</td>
+                                    <td class="text-center text-muted">#{{ $geDatatPlane->plane_id }}</td>
                                     {{--name--}}
-                                    <td class="text-left">
-                                        <h4 style="font-size:18px;font-weight: bold "> {{ $geDatatPlane->name }}</h4>
+                                    <td>
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left flex2">
+                                                    <div class="widget-heading">{{ $geDatatPlane->name }}</div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </td>
                                     {{-- Hien thi ma cua may bay--}}
-                                    <td>
-                                        <h4 style="font-size:18px;">{{ $geDatatPlane->code }}</h4>
+                                    <td class="text-center">
+                                        {{ $geDatatPlane->code }}
                                     </td>
                                     {{--Hiện thị trạng thái của máy bay--}}
-                                    <td>
+                                    <td class="text-center">
                                         <div
                                             class="badge badge-{{ $geDatatPlane->active == 1 ? 'success' : 'warning' }} mt-2">
                                             {{ $geDatatPlane->active == 1 ? 'Active' : 'Inactive' }}
                                         </div>
                                     </td>
                                     {{--Action--}}
-                                    <td>
+                                    <td class="text-center">
                                         <a href="{{ url()->current() . '/' .  $geDatatPlane->plane_id }}"
                                            class="btn btn-primary btn-hover-shine btn-sm">
                                             Details

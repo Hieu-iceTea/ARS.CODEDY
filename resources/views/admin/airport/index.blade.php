@@ -65,7 +65,7 @@
                             <thead>
                             <tr>
                                 <th class="text-center">#ID</th>
-                                <th>Name</th>
+                                <th>Image/Name</th>
                                 <th class="text-center">Location</th>
                                 <th class="text-center">Code</th>
                                 <th class="text-center">Active</th>
@@ -84,10 +84,10 @@
                                             <div class="widget-content-wrapper">
                                                 <div class="widget-content-left mr-3">
                                                     <div class="widget-content-left">
-                                                        <img height=25 class=""
+                                                        <img height=60 class=""
                                                              src="../img/airport/{{ $airport->image }}"
                                                              alt="image of arrival airport"
-                                                             data-toggle="tooltip" title="image of arrival airport"
+                                                             data-toggle="tooltip" title="Image of airport"
                                                              data-placement="bottom">
                                                     </div>
                                                 </div>
