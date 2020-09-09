@@ -213,6 +213,8 @@ class MemberController extends Controller
             'last_name' => $user->last_name,
             'address' => $user->address,
             'created_at' => $user->created_at,
+
+            'action' => 'register', //thêm cái này để phân luồng email (kích hoạt tài khoản mới hay là reset_password)
         ];
 
         //Gửi email kèm mã xác nhận kích hoạt tài khoản:
@@ -336,6 +338,8 @@ class MemberController extends Controller
                     'last_name' => $user->last_name,
                     'address' => $user->address,
                     'created_at' => $user->created_at,
+
+                    'action' => 'resend_email', //thêm cái này để phân luồng email (kích hoạt tài khoản mới hay là reset_password)
                 ];
 
                 // * [03] * Gửi email kèm mã xác nhận kích hoạt tài khoản:
