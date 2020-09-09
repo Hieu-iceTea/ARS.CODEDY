@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\BookingRequest;
 use App\Model\FlightSchedule;
 use App\Model\Passenger;
+use App\Model\PayType;
 use App\Model\Ticket;
 use App\Model\Airport;
 use App\Utilities\Utility;
@@ -285,7 +286,9 @@ class TicketController extends Controller
      */
     public function payment($id)
     {
-        return view('pages.ticket.payment');
+        $payTypes = PayType::all();
+
+        return view('pages.ticket.payment', compact('payTypes'));
     }
 
     /**

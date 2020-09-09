@@ -111,7 +111,7 @@
                             </button>
                         </form>
                         |
-                        <a href=""
+                        <a href="ticket/payment/{{ $ticket->ticket_id }}"
                            class="border-0 btn btn-sm btn-outline-primary {{ ($ticket->status != \App\Utilities\Utility::ticket_status_Unverified && $ticket->status != \App\Utilities\Utility::ticket_status_Reservations) ? 'disabled' : ''}}">
                             <span class="btn-icon-wrapper pr-1 opacity-8">
                                         <i class="fa fa-paypal fa-w-20"></i>
