@@ -133,12 +133,14 @@ body {
     padding-top: 6px;
     -webkit-transition: .6s;
     -o-transition: .6s;
-    transition: .6s
+    transition: .6s;
 }
 
 .preloader .preloader-img img {
     /*Default: 55px*/
-    max-width: 66px
+    border-radius: 25px;
+    max-width: 85px
+    /*max-width: 66px*/
 }
 
 .preloader .pere-text strong {

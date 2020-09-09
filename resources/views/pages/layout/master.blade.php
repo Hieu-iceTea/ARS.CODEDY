@@ -8,7 +8,7 @@
     <title>@yield('title') | ARS.CODEDY</title>
 
     {{--<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">--}}
-    <link rel="shortcut icon" type="image/gif" href="img/favicon.gif">
+    {{--<link rel="shortcut icon" type="image/gif" href="img/favicon.gif">--}}
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,7 +37,7 @@
         <div class="preloader-inner position-relative">
             <div class="preloader-circle"></div>
             <div class="preloader-img pere-text">
-                <img src="img/logo/logo_ars.codedy_2line.png" alt="">
+                <img src="img/logo/logo_animation.gif" alt="">
                 {{--<img src="img/logo/logo_animation.gif" alt="">--}}
             </div>
         </div>
