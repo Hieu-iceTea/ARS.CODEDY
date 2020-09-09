@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use App\Scopes\DeletedScope;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -12,12 +13,6 @@ class Ticket extends Model
     protected $primaryKey = 'ticket_id';
     protected $guarded = [];
     protected $perPage = 5;
-
-    public static function all($columns = ['*'])
-    {
-        return parent::all($columns)->where('deleted', false);
-    }
-
 
     // * * * * * * * * * * * * * * * * * * * * Relationships * * * * * * * * * * * * * * * * * * * *
 
@@ -80,5 +75,16 @@ class Ticket extends Model
     public function scopeCurrentUser($query)
     {
         return $query->where('user_id', '=', Auth::user()->user_id);
+    }
+
+    /**
+     * Perform any actions required after the model boots.
+     *
+     * @return void
+     */
+    protected static function booted()
+    {
+        //Applying Global Scopes
+        static::addGlobalScope(new DeletedScope());
     }
 }

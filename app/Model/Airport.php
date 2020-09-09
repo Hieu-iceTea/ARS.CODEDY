@@ -12,10 +12,6 @@ class Airport extends Model
     protected $guarded = [];
     protected $perPage = 5;
 
-    public static function all($columns = ['*'])
-    {
-        return parent::all($columns)->where('deleted', false);
-    }
 
     public function flightScheduleTo()
     {
@@ -27,6 +23,9 @@ class Airport extends Model
         return $this->hasMany(FlightSchedule::class, 'airport_from_id', 'airport_id');
     }
 
+
+    // * * * * * * * * * * * * * * * * * * * * Scopes * * * * * * * * * * * * * * * * * * * *
+
     /**
      * Perform any actions required after the model boots.
      *
@@ -34,7 +33,7 @@ class Airport extends Model
      */
     protected static function booted()
     {
-        //thêm scope (chỉ lấy những bản ghi chưa bị xóa)
+        //Applying Global Scopes
         static::addGlobalScope(new DeletedScope());
     }
 }

@@ -12,15 +12,13 @@ class PayType extends Model
     protected $guarded = [];
     protected $perPage = 5;
 
-    public static function all($columns = ['*'])
-    {
-        return parent::all($columns)->where('deleted', false);
-    }
-
     public function ticket()
     {
         return $this->hasMany(Ticket::class, 'pay_type_id', 'pay_type_id');
     }
+
+
+    // * * * * * * * * * * * * * * * * * * * * Scopes * * * * * * * * * * * * * * * * * * * *
 
     /**
      * Perform any actions required after the model boots.
@@ -29,8 +27,7 @@ class PayType extends Model
      */
     protected static function booted()
     {
+        //Applying Global Scopes
         static::addGlobalScope(new DeletedScope());
     }
-
-
 }

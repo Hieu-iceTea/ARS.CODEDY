@@ -19,6 +19,7 @@ class DeletedScope implements Scope
      */
     public function apply(Builder $builder, Model $model)
     {
-        $builder->where('deleted', '=', false);
+        //Lấy thêm tên của bảng, để nếu Join nhiều bảng có dùng tên cột thì biết rõ cột ở bảng nào.
+        $builder->where($model->getTable() . '.deleted', '=', false);
     }
 }

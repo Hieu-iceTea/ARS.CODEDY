@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use App\Scopes\DeletedScope;
 use Illuminate\Database\Eloquent\Model;
 
 class PriceSeatType extends Model
@@ -11,13 +12,22 @@ class PriceSeatType extends Model
     protected $guarded = [];
     protected $perPage = 5;
 
-    public static function all($columns = ['*'])
-    {
-        return parent::all($columns)->where('deleted', false);
-    }
-
     public function flightSchedule()
     {
         return $this->belongsTo(FlightSchedule::class, 'price_seat_type_id', 'price_seat_type_id');
+    }
+
+
+    // * * * * * * * * * * * * * * * * * * * * Scopes * * * * * * * * * * * * * * * * * * * *
+
+    /**
+     * Perform any actions required after the model boots.
+     *
+     * @return void
+     */
+    protected static function booted()
+    {
+        //Applying Global Scopes
+        static::addGlobalScope(new DeletedScope());
     }
 }

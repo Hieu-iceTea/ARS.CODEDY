@@ -12,10 +12,7 @@ class ExtraService extends Model
     protected $guarded = [];
     protected $perPage = 5;
 
-    public static function all($columns = ['*'])
-    {
-        return parent::all($columns)->where('deleted', false);
-    }
+    // * * * * * * * * * * * * * * * * * * * * Scopes * * * * * * * * * * * * * * * * * * * *
 
     /**
      * Perform any actions required after the model boots.
@@ -24,8 +21,7 @@ class ExtraService extends Model
      */
     protected static function booted()
     {
+        //Applying Global Scopes
         static::addGlobalScope(new DeletedScope());
     }
-
-
 }

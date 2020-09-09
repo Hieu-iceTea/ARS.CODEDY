@@ -18,8 +18,7 @@ class PromotionController extends Controller
         $keyword = $request->get('search');
 
         if ($keyword != null) {
-            $promotions = Promotion::where('deleted', '=', false)
-                ->where(function ($query) use ($keyword) {
+            $promotions = Promotion::where(function ($query) use ($keyword) {
                     $query->where('code', '=', $keyword);
                     $query->orWhere('title', 'like', '%' . $keyword . '%');
                     $query->orWhere('expiration_date', 'like', '%' . $keyword . '%');
@@ -29,9 +28,7 @@ class PromotionController extends Controller
                 //Sắp xép theo thứ tự id
                 ->paginate();
         } else {
-            $promotions = Promotion::where('deleted', false)
-                //Sắp xép theo thứ tự id
-                ->orderBy('promotion_id', 'desc')
+            $promotions = Promotion::orderBy('promotion_id', 'desc')
                 ->paginate();
         }
 
@@ -104,7 +101,7 @@ class PromotionController extends Controller
      */
     public function show($id)
     {
-        $promotion = Promotion::all()->where('promotion_id', $id)->first();
+        $promotion = Promotion::findOrFail($id);
         return view('admin.promotion.show', compact('promotion'));
     }
 
@@ -116,7 +113,7 @@ class PromotionController extends Controller
      */
     public function edit($id)
     {
-        $promotion = Promotion::all()->where('promotion_id', $id)->first();
+        $promotion = Promotion::findOrFail($id);
         return view('admin.promotion.create-edit', compact('promotion'));
     }
 

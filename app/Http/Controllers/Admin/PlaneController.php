@@ -22,7 +22,6 @@ class PlaneController extends Controller
         $geDatatPlanes = Plane::where('code', '=', $keyword)
             ->orWhere('name', 'like', '%' . $keyword . '%')
             ->orderBy('plane_id', 'desc')
-            ->where('deleted', '<>', 1)
             ->paginate();
 
         //giúp chuyển trang page sẽ đính kèm theo từ khóa search của người dùng:
@@ -84,9 +83,7 @@ class PlaneController extends Controller
      */
     public function show($id)
     {
-        $getDataPlane = Plane::all()
-            ->where('plane_id', $id)
-            ->first();
+        $getDataPlane = Plane::findOrFail($id);
         return view('admin.plane.show', compact('getDataPlane'));
     }
 
@@ -99,9 +96,7 @@ class PlaneController extends Controller
     public function edit($id)
     {
         //
-        $getDataPlane = Plane::all()
-            ->where('plane_id', $id)
-            ->first();
+        $getDataPlane = Plane::findOrFail($id);
         return view('admin.plane.create-edit', compact('getDataPlane'));
     }
 

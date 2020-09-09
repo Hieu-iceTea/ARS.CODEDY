@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use App\Scopes\DeletedScope;
 use Illuminate\Database\Eloquent\Model;
 
 class FlightSchedule extends Model
@@ -10,11 +11,6 @@ class FlightSchedule extends Model
     protected $primaryKey = 'flight_schedule_id';
     protected $guarded = [];
     protected $perPage = 5;
-
-    public static function all($columns = ['*'])
-    {
-        return parent::all($columns)->where('deleted', false);
-    }
 
 
     // * * * * * * * * * * * * * * * * * * * * Relationships * * * * * * * * * * * * * * * * * * * *
@@ -44,6 +40,9 @@ class FlightSchedule extends Model
         return $this->hasMany(Ticket::class, 'ticket_id', 'ticket_id');
     }
 
+
+    // * * * * * * * * * * * * * * * * * * * * Getter Functions * * * * * * * * * * * * * * * * * * * *
+
     /**
      * get result search flight schedule by code flight schedule
      *
@@ -65,5 +64,19 @@ class FlightSchedule extends Model
         }
 
         return $flightSchedules;
+    }
+
+
+    // * * * * * * * * * * * * * * * * * * * * Scopes * * * * * * * * * * * * * * * * * * * *
+
+    /**
+     * Perform any actions required after the model boots.
+     *
+     * @return void
+     */
+    protected static function booted()
+    {
+        //Applying Global Scopes
+        static::addGlobalScope(new DeletedScope());
     }
 }
