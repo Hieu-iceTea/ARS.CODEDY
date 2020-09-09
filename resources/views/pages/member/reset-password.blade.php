@@ -16,7 +16,7 @@
     <div class="home page_ticket">
 
         <div class="background_image"
-             style="background-image:url({{ asset('img/destinations.jpg') }})"></div>
+             style="background-image:url({{ asset('img/planes_login.jpg') }})"></div>
         <div class="home_slider_content_container">
             <div class="container">
                 <div class="row">

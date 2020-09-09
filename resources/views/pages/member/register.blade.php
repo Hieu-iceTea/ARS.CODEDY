@@ -16,7 +16,7 @@
     <div class="home page_ticket">
 
         <div class="background_image"
-             style="background-image:url({{ asset('img/destinations.jpg') }})"></div>
+             style="background-image:url({{ asset('img/planes_login.jpg') }})"></div>
         <div class="home_slider_content_container">
             <div class="container">
                 <div class="row">
@@ -37,7 +37,7 @@
         <div class="container">
             <div class="register">
                 <div class="title">
-                    <h4 style="">Are you ready to join the ARS Club program? Come on, let's get
+                    <h4 class="mt-3">Are you ready to join the ARS Club program? Come on, let's get
                         started!</h4>
                     <p>We need some details about you to create a membership account</p>
                 </div>

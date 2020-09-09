@@ -12,7 +12,7 @@
 @section('Content')
     <div class="home page_ticket my_home">
 
-        <div class="background_image" style="background-image:url(img/destinations.jpg)"></div>
+        <div class="background_image" style="background-image:url(img/news.jpg)"></div>
         <div class="home_slider_content_container mt-5">
             <div class="container">
                 <div class="row">
