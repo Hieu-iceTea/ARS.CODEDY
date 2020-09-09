@@ -51,7 +51,8 @@
                                          data-toggle="tooltip" title="Click to change the image" data-placement="bottom"
                                          src="{{ isset($user->image) ? '../img/user/' . $user->image : '../img/icon/upload_select.png' }}"
                                          alt="Avatar">
-                                    <input name="image" id="image" type="file" onchange="changeImg(this)"
+                                    <input @if(request()->segment(3) == 'create') required @endif
+                                    name="image" id="image" type="file" onchange="changeImg(this)"
                                            class="form-control-file" style="display: none;"
                                            value="{{ old('image') ?? $user->image ?? ''}}">
                                     <input type="hidden" name="image_old" value="{{ $user->image ?? '' }}">
