@@ -311,7 +311,7 @@ VALUES (5, 'tuanpth1909', 'PhamTuanCules20@gmail.com', '$2y$10$//Od0OmEqRwFepW3w
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, image, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
 VALUES (4, 'Host', 'DinhHieu8896@gmail.com', '$2y$10$oW..IGNT/CH2muKpN/8LAuNJ1ahnwLoyCBWRQyBj4p6ITOJFb.gs2', 1, '2020-08-08', 'logo_host.png', 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '032 87 99 000', 'Hà Nội', NULL, TRUE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, image, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
-VALUES (3, 'Admin', 'ars.codedy@gmail.com', '$2y$10$ASdaJmmfOQZnoPgtGFYwS.OSF3J9YN6am0H1cElDWEEMyEGgC1.fe', 2, '2020-08-08', 'logo_admin.gif', 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '0868 6633 15', 'Nghệ An', NULL, TRUE);
+VALUES (3, 'Admin', 'ars.codedy@gmail.com', '$2y$10$/AmOQGhkVS8otOSJbAv.6OHxseW/AOdVw7wxNbopMHgy0Btbp3Anu', 2, '2020-08-08', 'logo_admin.gif', 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '0868 6633 15', 'Nghệ An', NULL, TRUE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, image, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
 VALUES (2, 'Member', 'DinhHieu8896@gmail.com', '$2y$10$//Od0OmEqRwFepW3wynrYOwslyvaS.snzBbpWwskF1Zrg5fNI.eTe', 3, '2020-08-08', 'logo_member.png', 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '0868 6633 15', 'Nghệ An', NULL, TRUE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, image, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
