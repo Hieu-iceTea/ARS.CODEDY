@@ -142,6 +142,13 @@ class UserController extends Controller
      */
     public function update(AdminRequest $request, $id)
     {
+        //nếu đang đăng nhập tài khoản admin, thì không thêm/sửa/xóa được tài khoản admin/host
+        if (Auth::user()->level == Utility::user_level_admin && ($request->get('level') == Utility::user_level_admin || $request->get('level') == Utility::user_level_host)) {
+            return redirect()->back()
+                ->withInput()
+                ->withErrors('<b>Bạn đang dùng tài khoản <i>Admin</i>, không có quyền cập nhật nhóm tài khoản <i>Admin/Host</i>.</b><br><br>Hãy chuyển sang tài khoản <i>Host</i> để có thể thêm/sửa/xóa tài khoản thuộc nhóm tài khoản này.');
+        }
+
         // * [01] * Xử lý dữ liệu:
         //Nếu có file được chọn:
         if ($request->hasFile('image')) {
