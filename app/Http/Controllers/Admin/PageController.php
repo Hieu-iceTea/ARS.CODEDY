@@ -36,7 +36,7 @@ class PageController extends Controller
         $credentials = [
             'user_name' => $request->get('user_name'),
             'password' => $request->get('password'),
-            'level' => Utility::user_level_admin,
+            'level' => [Utility::user_level_admin, Utility::user_level_host],
             'active' => TRUE,
             'deleted' => FALSE,
         ];

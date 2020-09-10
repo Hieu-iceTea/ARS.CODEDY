@@ -10,6 +10,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\View\View;
 
@@ -55,6 +56,12 @@ class UserController extends Controller
      */
     public function store(AdminRequest $request)
     {
+        if (Auth::user()->level == Utility::user_level_admin && ($request->get('level') == Utility::user_level_admin || $request->get('level') == Utility::user_level_host)) {
+            return redirect()->back()
+                ->withInput()
+                ->withErrors('<b>Bạn đang dùng tài khoản <i>Admin</i>, không có quyền cập nhật nhóm tài khoản <i>Admin/Host</i>.</b><br><br>Hãy chuyển sang tài khoản <i>Host</i> để có thể thêm/sửa/xóa tài khoản thuộc nhóm tài khoản này.');
+        }
+
         // * [01] * Xử lý dữ liệu:
         //Nếu có file được chọn:
         if ($request->hasFile('image')) {
@@ -117,6 +124,11 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::getItemById($id);
+
+        //nếu đang đăng nhập tài khoản admin, thì không thêm/sửa/xóa được tài khoản admin/host
+        if (Auth::user()->level == Utility::user_level_admin && ($user->level == Utility::user_level_admin || $user->level == Utility::user_level_host)) {
+            return redirect()->back()->withErrors('<b>Bạn đang dùng tài khoản <i>Admin</i>, không có quyền cập nhật nhóm tài khoản <i>Admin/Host</i>.</b><br><br>Hãy chuyển sang tài khoản <i>Host</i> để có thể thêm/sửa/xóa tài khoản thuộc nhóm tài khoản này.');
+        }
 
         return view('admin.user.create-edit', compact('user'));
     }
@@ -194,6 +206,12 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+        //nếu đang đăng nhập tài khoản admin, thì không thêm/sửa/xóa được tài khoản admin/host
+        $user = User::getItemById($id);
+        if (Auth::user()->level == Utility::user_level_admin && ($user->level == Utility::user_level_admin || $user->level == Utility::user_level_host)) {
+            return redirect()->back()->withErrors('<b>Bạn đang dùng tài khoản <i>Admin</i>, không có quyền cập nhật nhóm tài khoản <i>Admin/Host</i>.</b><br><br>Hãy chuyển sang tài khoản <i>Host</i> để có thể thêm/sửa/xóa tài khoản thuộc nhóm tài khoản này.');
+        }
+
         // * [01] * Chuẩn bị dữ liệu
         //(Giữ lại tên file trước khi xóa bản ghi trong DB -> để xóa được file ấy sau khi tên file đã bị xóa trong DB)
         $fileName = User::where('user_id', $id)->first()->image;
