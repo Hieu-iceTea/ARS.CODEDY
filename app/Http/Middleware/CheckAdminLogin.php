@@ -18,15 +18,22 @@ class CheckAdminLogin
      */
     public function handle($request, Closure $next)
     {
-        // nếu user đã đăng nhập
+        // nếu admin/host đã đăng nhập
         if (Auth::check()) {
             $user = Auth::user();
-            // nếu level = admin, deleted = false (tài khoản chưa bị xóa) thì kiểm tra tiếp.
-            if ($user->level == Utility::user_level_admin && $user->deleted == false) {
+            // nếu level = admin/host, deleted = false (tài khoản chưa bị xóa) thì kiểm tra tiếp.
+            if (($user->level == Utility::user_level_admin || $user->level == Utility::user_level_host) && $user->deleted == false) {
 
                 //Nếu đã đăng nhập mà vẫn vào login hoặc register thì chuyển hướng
                 if ($request->segment(2) == 'login' || $request->segment(2) == 'register') {
                     return redirect('admin');
+                }
+
+                //Nếu dùng tài khoản "Admin_Demo" thì ngăn không cho sửa/thêm mới/xóa
+                if ($user->user_name == 'Admin_Demo') {
+                    if ($request->is('*/create') || $request->is('*/edit') || $request->isMethod('DELETE')) {
+                        return redirect()->back()->with('notification', '<b>Tài khoản <i>Admin_Demo</i> không có quyền sửa hoặc thêm mới dữ liệu.</b><br><br>Liên hệ với Hiếu để được tạo tài khoản admin có đủ quyền của riêng bạn & được hướng dẫn chi tiết cách sử dụng.<br><br>Cảm ơn. 💜');
+                    }
                 }
 
                 //Khác tất cả những trường hợp trên thì cho qua
