@@ -66,7 +66,7 @@ class User extends Authenticatable
      */
     public static function getItems()
     {
-        return User::paginate();
+        return User::orderBy('user_id', 'desc')->paginate();
     }
 
     /**
@@ -96,6 +96,7 @@ class User extends Authenticatable
             ->orWhere('dob', 'like', '%' . $keyword . '%')
             ->orWhere('phone', 'like', '%' . $keyword . '%')
             ->orWhere('address', 'like', '%' . $keyword . '%')
+            ->orderBy('user_id', 'desc')
 
             //Phân trang theo config mặc định đã cài đặt trong Model:
             ->paginate()
