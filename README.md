@@ -45,7 +45,20 @@ Contributors:
 
     Go to the folder `_Docs/DataBase_Script` in the project root directory, find the file `ARS_ScriptDatabe_Create_Insert.sql` and run it with MyPHPAdmin.
 
+4. Start server.
+
+    ```bash
+    php artisan serve
+    ```
+
 ## Using
+
+* Sample search data:
+
+    ```
+    From: Ha Noi
+    Departure day: 10/10/2020
+    ```
 
 * Member account:
 
@@ -57,17 +70,16 @@ Contributors:
 * Admin account:
 
     ```
-    Username: Admin_Demo
+    Username: Admin
     Password: 123456
     ```
 
-* Sample search data:
+* Link admin page:
 
     ```
-    From: Ha Noi
-    Departure day: 10/10/2020
+    http://Root_URL/admin
     ```
-   
+
 * Online payment using VNPay (test account):
 
     ```
@@ -83,24 +95,3 @@ Contributors:
 <> Web Deployed: [ars.codedy.epizy.com](http://ars.codedy.epizy.com)
 
 <> Link GitHub: [github.com/Hieu-iceTea/ARS.CODEDY](http://github.com/Hieu-iceTea/ARS.CODEDY)
-
---> project start date: 25-07-2020 09:35 (first commit by Hieu_iceTea)
-
-```
-dd-mm-2020 
-dd-mm-2020 
-dd-mm-2020 
-dd-mm-2020 
-dd-mm-2020 
-dd-mm-2020 
-dd-mm-2020 
-dd-mm-2020 
-dd-mm-2020 
-dd-mm-2020 
-```
-
---> project end date: 10-09-2020 09:00 (project report)
-
-[FB.com/Hieu.iceTea](http://fb.com/Hieu.iceTea)
-<br>
-[Hieu-iceTea.github.io](http://hieu-icetea.github.io)
