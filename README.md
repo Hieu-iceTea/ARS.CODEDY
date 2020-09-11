@@ -70,7 +70,7 @@ Contributors:
 * Admin account:
 
     ```
-    Username: Admin
+    Username: Admin_Demo
     Password: 123456
     ```
 
