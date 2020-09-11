@@ -255,7 +255,7 @@
                                 <div class="spec_offer text-center"><a href="#">Special Offer</a></div>
                             </div>
                             <div class="destination_content">
-                                <div class="destination_title"><a href="destinations.html">Bali</a></div>
+                                <div class="destination_title"><a href="#">Bali</a></div>
                                 <div class="destination_subtitle"><p>The most attractive marine tourist destination in Southeast Asia.</p></div>
                                 <div class="destination_price">From $4679</div>
                             </div>
@@ -267,7 +267,7 @@
                                 <img src="img/destination_2.jpg" alt="">
                             </div>
                             <div class="destination_content">
-                                <div class="destination_title"><a href="destinations.html">Indonesia</a></div>
+                                <div class="destination_title"><a href="#">Indonesia</a></div>
                                 <div class="destination_subtitle"><p>Beautiful wild nature of the land of thousands of islands.</p></div>
                                 <div class="destination_price">From $3679</div>
                             </div>
@@ -279,7 +279,7 @@
                                 <img src="img/destination_3.jpg" alt="">
                             </div>
                             <div class="destination_content">
-                                <div class="destination_title"><a href="destinations.html">San Francisco</a></div>
+                                <div class="destination_title"><a href="#">San Francisco</a></div>
                                 <div class="destination_subtitle"><p>Beautiful wild nature of the land of thousands of islands.</p></div>
                                 <div class="destination_price">From $8679</div>
                             </div>
@@ -291,7 +291,7 @@
                                 <img src="img/destination_4.jpg" alt="">
                             </div>
                             <div class="destination_content">
-                                <div class="destination_title"><a href="destinations.html">Paris</a></div>
+                                <div class="destination_title"><a href="#">Paris</a></div>
                                 <div class="destination_subtitle"><p>Paris where history associated with the same period.</p></div>
                                 <div class="destination_price">From $5379</div>
                             </div>
@@ -303,7 +303,7 @@
                                 <img src="img/destination_5.jpg" alt="">
                             </div>
                             <div class="destination_content">
-                                <div class="destination_title"><a href="destinations.html">Phi Phi Island</a></div>
+                                <div class="destination_title"><a href="#">Phi Phi Island</a></div>
                                 <div class="destination_subtitle"><p>Phi Phi Island is Thailand's must-see beach.</p></div>
                                 <div class="destination_price">From $2379</div>
                             </div>
@@ -315,7 +315,7 @@
                                 <img src="img/destination_6.jpg" alt="">
                             </div>
                             <div class="destination_content">
-                                <div class="destination_title"><a href="destinations.html">Mykonos</a></div>
+                                <div class="destination_title"><a href="#">Mykonos</a></div>
                                 <div class="destination_subtitle"><p>The beautiful Greek city of Mykonos.</p></div>
                                 <div class="destination_price">From $6279</div>
                             </div>

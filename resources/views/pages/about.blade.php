@@ -4,6 +4,9 @@
 
 <!-- Style Main_style-->
 @section('style')
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
     <link rel="stylesheet" type="text/css" href="css/about.css">
     <link rel="stylesheet" type="text/css" href="css/about_responsive.css">
 @endsection
@@ -34,18 +37,29 @@
             <div class="row">
                 <div class="col text-center">
                     <div class="section_subtitle">simply amazing places</div>
-                    <div class="section_title"><h2>Meet the Team</h2></div>
+                    <div class="section_title mb-4"><h2>Meet the Team</h2></div>
                 </div>
             </div>
-            <div class="row team_row">
+            <div class="row team_row mt-5">
                 <!-- Team Item -->
                 <div class="col-xl-3 col-md-6 team_col">
                     <div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
                         <div class="team_image"><img src="img/about/vuquanghuy2001.jpg" alt=""></div>
                         <div class="team_content">
-                            <div class="team_title"><a href="#">Quang Huy</a></div>
+                            <div class="team_title"><a href="http://fb.com/quanghuyvu123">Quang Huy</a></div>
                             <div class="team_text">
                                 <h5>Data Management</h5>
+                            </div>
+                            <div class="team_text">
+                                <h5>
+                                    <a target="_blank" href="http://fb.com/quanghuyvu123" class="fab fa-facebook"
+                                       data-toggle="tooltip" data-placement="bottom" title="Facebook"></a>
+
+                                    <a target="_blank" href="http://github.com/vuquanghuy2001" class="fab fa-github"
+                                       data-toggle="tooltip" data-placement="bottom" title="GitHub"></a>
+                                    <a href="skype:live:.cid.77ea544d224687ef?chat" class="fab fa-skype"
+                                       data-toggle="tooltip" data-placement="bottom" title="Skype"></a>
+                                </h5>
                             </div>
                         </div>
                     </div>
@@ -56,9 +70,21 @@
                     <div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
                         <div class="team_image"><img src="img/about/Hieu-iceTea.jpg" alt=""></div>
                         <div class="team_content">
-                            <div class="team_title"><a href="#">Dinh Hieu</a></div>
+                            <div class="team_title"><a target="_blank" href="http://fb.com/Hieu.iceTea">Hiếu iceTea</a>
+                            </div>
                             <div class="team_text">
-                                <h5>CEO & Founder</h5>
+                                <h5>Team Leader</h5>
+                            </div>
+                            <div class="team_text">
+                                <h5>
+                                    <a target="_blank" href="http://facebook.com/Hieu.iceTea" class="fab fa-facebook"
+                                       data-toggle="tooltip" data-placement="bottom" title="Hiếu iceTea"></a>
+
+                                    <a target="_blank" href="http://github.com/Hieu-iceTea" class="fab fa-github"
+                                       data-toggle="tooltip" data-placement="bottom" title="Hieu-iceTea"></a>
+                                    <a href="skype:live:hieu.icetea?chat" class="fab fa-skype" data-toggle="tooltip"
+                                       data-placement="bottom" title="Hieu.iceTea@hotmail.com"></a>
+                                </h5>
                             </div>
                         </div>
                     </div>
@@ -69,9 +95,22 @@
                     <div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
                         <div class="team_image"><img src="img/about/chanhoa.jpg" alt=""></div>
                         <div class="team_content">
-                            <div class="team_title"><a href="#">Chan Hoa</a></div>
+                            <div class="team_title"><a href="http://fb.com/profile.php?id=100023632567398">Chan Hòa</a>
+                            </div>
                             <div class="team_text">
                                 <h5>Content Production</h5>
+                            </div>
+                            <div class="team_text">
+                                <h5>
+                                    <a target="_blank" href="http://fb.com/profile.php?id=100023632567398"
+                                       class="fab fa-facebook" data-toggle="tooltip" data-placement="bottom"
+                                       title="Facebook"></a>
+
+                                    <a target="_blank" href="http://github.com/Practice-KhongTen" class="fab fa-github"
+                                       data-toggle="tooltip" data-placement="bottom" title="GitHub"></a>
+                                    <a href="skype:live:.cid.5309a30f6e87dcea?chat" class="fab fa-skype"
+                                       data-toggle="tooltip" data-placement="bottom" title="Skype"></a>
+                                </h5>
                             </div>
                         </div>
                     </div>
@@ -82,9 +121,22 @@
                     <div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
                         <div class="team_image"><img src="img/about/tuanpth1909.jpg" alt=""></div>
                         <div class="team_content">
-                            <div class="team_title"><a href="#">Pham Tuan</a></div>
+                            <div class="team_title"><a href="http://facebook.com/profile.php?id=100015041566405">Phạm
+                                    Tuân</a></div>
                             <div class="team_text">
                                 <h5>UI/UX Designer</h5>
+                            </div>
+                            <div class="team_text">
+                                <h5>
+                                    <a target="_blank" href="http://facebook.com/profile.php?id=100015041566405"
+                                       class="fab fa-facebook" data-toggle="tooltip" data-placement="bottom"
+                                       title="Facebook"></a>
+
+                                    <a target="_blank" href="http://github.com/tuanpth1909" class="fab fa-github"
+                                       data-toggle="tooltip" data-placement="bottom" title="GitHub"></a>
+                                    <a href="skype:live:.cid.c5bab3533c62cc3f?chat" class="fab fa-skype"
+                                       data-toggle="tooltip" data-placement="bottom" title="Skype"></a>
+                                </h5>
                             </div>
                         </div>
                     </div>
@@ -118,7 +170,8 @@
                                 ARS.CODEDY began to receive and put into operation a modern aircraft with many
                                 outstanding features of Boeing 777 first among 6 Boeing 777 ordered by Boeing.
                                 This event marked the start of the airline's modernization program. Today, ARS.CODEDY
-                                has become one of the youngest and most modern airlines in the region with an average fleet age of 5.4 years.</p>
+                                has become one of the youngest and most modern airlines in the region with an average
+                                fleet age of 5.4 years.</p>
                         </div>
                         <div class="button about_button"><a href="#">read more</a></div>
                     </div>
@@ -202,7 +255,8 @@
                         <div class="why_content text-center">
                             <div class="why_title">Fast Services</div>
                             <div class="why_text">
-                                <p>With 4-star standard we always bring satisfaction to customers about flight experience.</p>
+                                <p>With 4-star standard we always bring satisfaction to customers about flight
+                                    experience.</p>
                             </div>
                         </div>
                     </div>
@@ -220,7 +274,8 @@
                         <div class="why_content text-center">
                             <div class="why_title">Great Team</div>
                             <div class="why_text">
-                                <p>Our team of pilots and flight attendants with top experience will give customers the safest flight.</p>
+                                <p>Our team of pilots and flight attendants with top experience will give customers the
+                                    safest flight.</p>
                             </div>
                         </div>
                     </div>
@@ -238,7 +293,8 @@
                         <div class="why_content text-center">
                             <div class="why_title">Promotion</div>
                             <div class="why_text">
-                                <p>We always offer attractive promotions for customers, with cheap flights and diverse flight schedules.</p>
+                                <p>We always offer attractive promotions for customers, with cheap flights and diverse
+                                    flight schedules.</p>
                             </div>
                         </div>
                     </div>
