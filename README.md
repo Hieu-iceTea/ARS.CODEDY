@@ -43,7 +43,7 @@ Contributors:
 
 3. Building the database structure and sample data.
 
-    Go to the folder `_Docs / DataBase_Script` in the project root directory, find the file `ARS_ScriptDatabe_Create_Insert.sql` and run it with MyPHPAdmin.
+    Go to the folder `_Docs/DataBase_Script` in the project root directory, find the file `ARS_ScriptDatabe_Create_Insert.sql` and run it with MyPHPAdmin.
 
 ## Using
 
