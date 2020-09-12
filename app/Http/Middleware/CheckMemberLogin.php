@@ -52,10 +52,23 @@ class CheckMemberLogin
             } else {
                 //Nếu sai level (!= member) hoặc tài khoản bị xóa thì đăng xuất và chuyển hướng tới đăng nhập
                 Auth::logout();
-                return redirect()->route('member.login');
+
+                //Nếu không vào "booking" thì chuyển hướng, nếu đang vào booking thì ở lại
+                if ($request->segment(1) == 'booking') {
+                    return redirect(request()->fullUrl());
+                } else {
+                    return redirect()->route('member.login');
+                }
             }
         } else {
-            //nếu chưa đăng nhập thì chặn lại & yêu cầu đăng nhập | Nếu đang vào trang login hoặc register hoặc verify thì cho qua
+            //nếu chưa đăng nhập:
+
+            //Nếu đang vào "booking" thì cho qua
+            if ($request->segment(1) == 'booking') {
+                return $next($request);
+            }
+
+            //Nếu đang vào trang login hoặc register hoặc verify thì cho qua
             if ($request->segment(2) == 'login' || $request->segment(2) == 'register' || $request->segment(2) == 'verify') {
 
                 //Nếu chưa đăng nhập, đang vào verify mà một trong 2 $request (user_id verification_code) NULL thì chuyển hướng tới đăng nhập

@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => ''], function () {
     Route::get('', 'PageController@index')->name('home');
 
-    Route::group(['prefix' => 'booking'], function () {
+    Route::group(['prefix' => 'booking', 'middleware' => 'CheckMemberLogin'], function () {
         Route::get('', 'BookingController@index');
 
         Route::group(['prefix' => 'step-1'], function () {
