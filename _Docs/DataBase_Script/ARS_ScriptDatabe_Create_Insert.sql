@@ -632,23 +632,23 @@ INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id
 VALUE (50, 1, 12, 6, 50, 'VN-647', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 1, '<p>mô tả</p>');
 
 INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, extra_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, amount_paid, total_passenger, description)
-VALUES (1, 1, 18, NULL, 2, '', 1, 1, 'HIEUAB', 1, 'Đình Hiếu', 'Nguyễn', 'DinhHieu8896@gmail.com', '0868663316', 'Hà Nội', 6888999, 6888999, 1, '<p>mô tả</p>');
+VALUES (1, 9, 18, NULL, 2, '', 1, 1, 'HIEUAB', 1, 'Đình Hiếu', 'Nguyễn', 'DinhHieu8896@gmail.com', '0868663316', 'Hà Nội', 6888999, 6888999, 1, '<p>mô tả</p>');
 INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, extra_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, amount_paid, total_passenger, description)
-VALUES (2, 1, 20, NULL, 3, '', 2, 3, 'HIEUBC', 1, 'Đình Hiếu', 'Nguyễn', 'DinhHieu8896@gmail.com', '0868663317', 'Nghệ An', 6888999, 6888999, 1, '<p>mô tả</p>');
+VALUES (2, 9, 20, NULL, 3, '', 2, 3, 'HIEUBC', 1, 'Đình Hiếu', 'Nguyễn', 'DinhHieu8896@gmail.com', '0868663317', 'Nghệ An', 6888999, 6888999, 1, '<p>mô tả</p>');
 INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, extra_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, amount_paid, total_passenger, description)
-VALUES (3, 1, 23, NULL, 4, '', 3, 4, 'HIEUCD', 1, 'Đình Hiếu', 'Nguyễn', 'DinhHieu8896@gmail.com', '0868663318', 'Hà Nội', 6888999, 6888999, 1, '<p>mô tả</p>');
+VALUES (3, 9, 23, NULL, 4, '', 3, 4, 'HIEUCD', 1, 'Đình Hiếu', 'Nguyễn', 'DinhHieu8896@gmail.com', '0868663318', 'Hà Nội', 6888999, 6888999, 1, '<p>mô tả</p>');
 INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, extra_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, amount_paid, total_passenger, description)
-VALUES (4, 1, 26, NULL, 5, '', 1, 3, 'HIEUDE', 1, 'Đình Hiếu', 'Nguyễn', 'DinhHieu8896@gmail.com', '0868663319', 'tp Vinh, Nghệ An', 6888999, 6888999, 1, '<p>mô tả</p>');
+VALUES (4, 9, 26, NULL, 5, '', 1, 3, 'HIEUDE', 1, 'Đình Hiếu', 'Nguyễn', 'DinhHieu8896@gmail.com', '0868663319', 'tp Vinh, Nghệ An', 6888999, 6888999, 1, '<p>mô tả</p>');
 INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, extra_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, amount_paid, total_passenger, description)
-VALUES (5, 1, 28, NULL, 6, '', 2, 2, 'HIEUEF', 1, 'Đình Hiếu', 'Nguyễn', 'DinhHieu8896@gmail.com', '0868663320', 'Hà Nội', 6888999, 6888999, 1, '<p>mô tả</p>');
+VALUES (5, 9, 28, NULL, 6, '', 2, 2, 'HIEUEF', 1, 'Đình Hiếu', 'Nguyễn', 'DinhHieu8896@gmail.com', '0868663320', 'Hà Nội', 6888999, 6888999, 1, '<p>mô tả</p>');
 INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, extra_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, amount_paid, total_passenger, description)
-VALUES (6, 1, 29, NULL, 5, '', 3, 1, 'HIEUGH', 1, 'Đình Hiếu', 'Nguyễn', 'DinhHieu8896@gmail.com', '0868663321', 'Nghệ An', 6888999, 6888999, 1, '<p>mô tả</p>');
+VALUES (6, 9, 29, NULL, 5, '', 3, 1, 'HIEUGH', 1, 'Đình Hiếu', 'Nguyễn', 'DinhHieu8896@gmail.com', '0868663321', 'Nghệ An', 6888999, 6888999, 1, '<p>mô tả</p>');
 INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, extra_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, amount_paid, total_passenger, description)
-VALUES (7, 1, 10, NULL, 4, '', 3, 2, 'HIEU88', 1, 'Đình Hiếu', 'Nguyễn', 'DinhHieu8896@gmail.com', '0868663315', 'tp Vinh, Nghệ An', 3099000, 3099000, 1, '<p>mô tả</p>');
+VALUES (7, 9, 10, NULL, 4, '', 3, 2, 'HIEU88', 1, 'Đình Hiếu', 'Nguyễn', 'DinhHieu8896@gmail.com', '0868663315', 'tp Vinh, Nghệ An', 3099000, 3099000, 1, '<p>mô tả</p>');
 INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, extra_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, amount_paid, total_passenger, description)
-VALUES (8, 1, 1, 1, 5, '1,3', 2, 4, 'HIEUOK', 1, 'Đình Hiếu', 'Nguyễn', 'DinhHieu8896@gmail.com', '0868663315', 'tp Vinh, Nghệ An', 4637000, 4637000, 3, '<p>mô tả</p>');
+VALUES (8, 9, 1, 1, 5, '1,3', 2, 4, 'HIEUOK', 1, 'Đình Hiếu', 'Nguyễn', 'DinhHieu8896@gmail.com', '0868663315', 'tp Vinh, Nghệ An', 4637000, 4637000, 3, '<p>mô tả</p>');
 INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, extra_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, amount_paid, total_passenger, description)
-VALUES (9, 2, 6, NULL, 3, '', 1, 1, 'TUDEMO', 1, 'Thanh Tú', 'Trương', 'DinhHieu8896@gmail.com', '0868663315', 'Hà Nội', 2699000, 2699000, 1, '<p>mô tả</p>');
+VALUES (9, 8, 6, NULL, 3, '', 1, 1, 'TUDEMO', 1, 'Thanh Tú', 'Trương', 'DinhHieu8896@gmail.com', '0868663315', 'Hà Nội', 2699000, 2699000, 1, '<p>mô tả</p>');
 INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, extra_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, amount_paid, total_passenger, description)
 VALUES (10, NULL, 1, NULL, 2, '', 2, 3, 'DEMO01', 0, 'Kiều Linh', 'Trần', 'DinhHieu8896@gmail.com', '0868663315', 'Hà Nội', 1799000, 1799000, 1, '<p>mô tả</p>');
 INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, extra_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, amount_paid, total_passenger, description)
