@@ -132,17 +132,17 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="index.html">
+                            <a href="#" onclick="return alert('Tính năng chưa có sẵn và đang được hoàn thiện. Vui lòng chờ những bản cập nhật tiếp theo. Hoặc liên hệ với Hiếu để được hỗ trợ.\nCảm ơn 💜')">
                                 <i class="metismenu-icon"></i>Analytics
                             </a>
                         </li>
                         <li>
-                            <a href="dashboards-commerce.html">
+                            <a href="#" onclick="return alert('Tính năng chưa có sẵn và đang được hoàn thiện. Vui lòng chờ những bản cập nhật tiếp theo. Hoặc liên hệ với Hiếu để được hỗ trợ.\nCảm ơn 💜')">
                                 <i class="metismenu-icon"></i>Commerce
                             </a>
                         </li>
                         <li>
-                            <a href="dashboards-sales.html">
+                            <a href="#" onclick="return alert('Tính năng chưa có sẵn và đang được hoàn thiện. Vui lòng chờ những bản cập nhật tiếp theo. Hoặc liên hệ với Hiếu để được hỗ trợ.\nCảm ơn 💜')">
                                 <i class="metismenu-icon">
                                 </i>Sales
                             </a>
@@ -154,19 +154,19 @@
                             </a>
                             <ul>
                                 <li>
-                                    <a href="dashboards-minimal-1.html">
+                                    <a href="#" onclick="return alert('Tính năng chưa có sẵn và đang được hoàn thiện. Vui lòng chờ những bản cập nhật tiếp theo. Hoặc liên hệ với Hiếu để được hỗ trợ.\nCảm ơn 💜')">
                                         <i class="metismenu-icon"></i>Variation 1
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="dashboards-minimal-2.html">
+                                    <a href="#" onclick="return alert('Tính năng chưa có sẵn và đang được hoàn thiện. Vui lòng chờ những bản cập nhật tiếp theo. Hoặc liên hệ với Hiếu để được hỗ trợ.\nCảm ơn 💜')">
                                         <i class="metismenu-icon"></i>Variation 2
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="dashboards-crm.html">
+                            <a href="#" onclick="return alert('Tính năng chưa có sẵn và đang được hoàn thiện. Vui lòng chờ những bản cập nhật tiếp theo. Hoặc liên hệ với Hiếu để được hỗ trợ.\nCảm ơn 💜')">
                                 <i class="metismenu-icon"></i> CRM
                             </a>
                         </li>
@@ -179,32 +179,32 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="pages-login.html">
+                            <a href="#" onclick="return alert('Tính năng chưa có sẵn và đang được hoàn thiện. Vui lòng chờ những bản cập nhật tiếp theo. Hoặc liên hệ với Hiếu để được hỗ trợ.\nCảm ơn 💜')">
                                 <i class="metismenu-icon"></i> Login
                             </a>
                         </li>
                         <li>
-                            <a href="pages-login-boxed.html">
+                            <a href="#" onclick="return alert('Tính năng chưa có sẵn và đang được hoàn thiện. Vui lòng chờ những bản cập nhật tiếp theo. Hoặc liên hệ với Hiếu để được hỗ trợ.\nCảm ơn 💜')">
                                 <i class="metismenu-icon"></i>Login Boxed
                             </a>
                         </li>
                         <li>
-                            <a href="pages-register.html">
+                            <a href="#" onclick="return alert('Tính năng chưa có sẵn và đang được hoàn thiện. Vui lòng chờ những bản cập nhật tiếp theo. Hoặc liên hệ với Hiếu để được hỗ trợ.\nCảm ơn 💜')">
                                 <i class="metismenu-icon"></i>Register
                             </a>
                         </li>
                         <li>
-                            <a href="pages-register-boxed.html">
+                            <a href="#" onclick="return alert('Tính năng chưa có sẵn và đang được hoàn thiện. Vui lòng chờ những bản cập nhật tiếp theo. Hoặc liên hệ với Hiếu để được hỗ trợ.\nCảm ơn 💜')">
                                 <i class="metismenu-icon"></i>Register Boxed
                             </a>
                         </li>
                         <li>
-                            <a href="pages-forgot-password.html">
+                            <a href="#" onclick="return alert('Tính năng chưa có sẵn và đang được hoàn thiện. Vui lòng chờ những bản cập nhật tiếp theo. Hoặc liên hệ với Hiếu để được hỗ trợ.\nCảm ơn 💜')">
                                 <i class="metismenu-icon"></i>Forgot Password
                             </a>
                         </li>
                         <li>
-                            <a href="pages-forgot-password-boxed.html">
+                            <a href="#" onclick="return alert('Tính năng chưa có sẵn và đang được hoàn thiện. Vui lòng chờ những bản cập nhật tiếp theo. Hoặc liên hệ với Hiếu để được hỗ trợ.\nCảm ơn 💜')">
                                 <i class="metismenu-icon"></i>Forgot Password Boxed
                             </a>
                         </li>
@@ -217,38 +217,38 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="apps-mailbox.html">
+                            <a href="#" onclick="return alert('Tính năng chưa có sẵn và đang được hoàn thiện. Vui lòng chờ những bản cập nhật tiếp theo. Hoặc liên hệ với Hiếu để được hỗ trợ.\nCảm ơn 💜')">
                                 <i class="metismenu-icon"></i>Mailbox
                             </a>
                         </li>
                         <li>
-                            <a href="apps-chat.html">
+                            <a href="#" onclick="return alert('Tính năng chưa có sẵn và đang được hoàn thiện. Vui lòng chờ những bản cập nhật tiếp theo. Hoặc liên hệ với Hiếu để được hỗ trợ.\nCảm ơn 💜')">
                                 <i class="metismenu-icon"></i>Chat
                             </a>
                         </li>
                         <li>
-                            <a href="apps-faq-section.html">
+                            <a href="#" onclick="return alert('Tính năng chưa có sẵn và đang được hoàn thiện. Vui lòng chờ những bản cập nhật tiếp theo. Hoặc liên hệ với Hiếu để được hỗ trợ.\nCảm ơn 💜')">
                                 <i class="metismenu-icon"></i>FAQ Section
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="#" onclick="return alert('Tính năng chưa có sẵn và đang được hoàn thiện. Vui lòng chờ những bản cập nhật tiếp theo. Hoặc liên hệ với Hiếu để được hỗ trợ.\nCảm ơn 💜')">
                                 <i class="metismenu-icon"></i>Forums
                                 <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                             </a>
                             <ul>
                                 <li>
-                                    <a href="apps-forum-list.html">
+                                    <a href="#" onclick="return alert('Tính năng chưa có sẵn và đang được hoàn thiện. Vui lòng chờ những bản cập nhật tiếp theo. Hoặc liên hệ với Hiếu để được hỗ trợ.\nCảm ơn 💜')">
                                         <i class="metismenu-icon"></i>Forum Listing
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="apps-forum-threads.html">
+                                    <a href="#" onclick="return alert('Tính năng chưa có sẵn và đang được hoàn thiện. Vui lòng chờ những bản cập nhật tiếp theo. Hoặc liên hệ với Hiếu để được hỗ trợ.\nCảm ơn 💜')">
                                         <i class="metismenu-icon"></i>Forum Threads
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="apps-forum-discussion.html">
+                                    <a href="#" onclick="return alert('Tính năng chưa có sẵn và đang được hoàn thiện. Vui lòng chờ những bản cập nhật tiếp theo. Hoặc liên hệ với Hiếu để được hỗ trợ.\nCảm ơn 💜')">
                                         <i class="metismenu-icon"></i>Forum Discussion
                                     </a>
                                 </li>
@@ -257,7 +257,7 @@
                     </ul>
                 </li>
 
-                <li class="app-sidebar__heading">UI Components</li>
+                {{--<li class="app-sidebar__heading">UI Components</li>
                 <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-diamond"></i> Elements
@@ -576,7 +576,7 @@
                     <a href="charts-sparklines.html">
                         <i class="metismenu-icon pe-7s-graph1"></i>Chart Sparklines
                     </a>
-                </li>
+                </li>--}}
 
             </ul>
         </div>
