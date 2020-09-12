@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Model\User;
 use App\Utilities\Utility;
 use Closure;
 use Illuminate\Http\Request;
@@ -31,8 +32,12 @@ class CheckAdminLogin
 
                 //Nếu dùng tài khoản "Admin_Demo" thì ngăn không cho sửa/thêm mới/xóa
                 if ($user->user_name == 'Admin_Demo') {
-                    if ($request->is('*/create') || $request->is('*/edit') || $request->isMethod('DELETE')) {
-                        return redirect()->back()->with('notification', '<b>Tài khoản <i>Admin_Demo</i> không có quyền sửa hoặc thêm mới dữ liệu.</b><br><br>Liên hệ với Hiếu để được tạo tài khoản admin có đủ quyền của riêng bạn & được hướng dẫn chi tiết cách sử dụng.<br><br>Cảm ơn. 💜');
+                    $name = User::where('user_name', '=', 'Host')->first()->first_name ?? 'Hiếu-iceTea';
+                    if (!$request->isMethod('GET')) {
+                        return redirect()
+                            ->back()
+                            ->withInput()
+                            ->with('notification', '<b>Tài khoản <i>Admin_Demo</i> không có quyền sửa hoặc thêm mới dữ liệu.</b><br><br>Liên hệ với <i>' . $name . '</i> để được tạo tài khoản admin có đủ quyền của riêng bạn & được hướng dẫn chi tiết cách sử dụng.<br><br>Cảm ơn. 💜');
                     }
                 }
 
