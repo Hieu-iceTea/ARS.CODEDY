@@ -112,12 +112,24 @@
         </div>
         <div class="header_social d-flex flex-row align-items-center justify-content-start">
             <ul class="d-flex flex-row align-items-start justify-content-start">
-                <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <li><a href="#"
+                       onclick="return alert('Liên hệ ngay với Hiếu-iceTea (0868 6633 15) Nếu bạn có bất kỳ câu hỏi hay góp ý gì nhé. Cảm ơn bạn 💜')"><i
+                            class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                <li><a href="#"
+                       onclick="return alert('Liên hệ ngay với Hiếu-iceTea (0868 6633 15) Nếu bạn có bất kỳ câu hỏi hay góp ý gì nhé. Cảm ơn bạn 💜')"><i
+                            class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"
+                       onclick="return alert('Liên hệ ngay với Hiếu-iceTea (0868 6633 15) Nếu bạn có bất kỳ câu hỏi hay góp ý gì nhé. Cảm ơn bạn 💜')"><i
+                            class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#"
+                       onclick="return alert('Liên hệ ngay với Hiếu-iceTea (0868 6633 15) Nếu bạn có bất kỳ câu hỏi hay góp ý gì nhé. Cảm ơn bạn 💜')"><i
+                            class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                <li><a href="#"
+                       onclick="return alert('Liên hệ ngay với Hiếu-iceTea (0868 6633 15) Nếu bạn có bất kỳ câu hỏi hay góp ý gì nhé. Cảm ơn bạn 💜')"><i
+                            class="fa fa-behance" aria-hidden="true"></i></a></li>
+                <li><a href="#"
+                       onclick="return alert('Liên hệ ngay với Hiếu-iceTea (0868 6633 15) Nếu bạn có bất kỳ câu hỏi hay góp ý gì nhé. Cảm ơn bạn 💜')"><i
+                            class="fa fa-linkedin" aria-hidden="true"></i></a></li>
             </ul>
         </div>
     </header>
@@ -167,12 +179,24 @@
         <div class="menu_social">
             <div class="menu_phone ml-auto">Call us: 0868 6633 15 (Hiếu iceTea - sales)</div>
             <ul class="d-flex flex-row align-items-start justify-content-start">
-                <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <li><a href="#"
+                       onclick="return alert('Liên hệ ngay với Hiếu-iceTea (0868 6633 15) Nếu bạn có bất kỳ câu hỏi hay góp ý gì nhé. Cảm ơn bạn 💜')"><i
+                            class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                <li><a href="#"
+                       onclick="return alert('Liên hệ ngay với Hiếu-iceTea (0868 6633 15) Nếu bạn có bất kỳ câu hỏi hay góp ý gì nhé. Cảm ơn bạn 💜')"><i
+                            class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"
+                       onclick="return alert('Liên hệ ngay với Hiếu-iceTea (0868 6633 15) Nếu bạn có bất kỳ câu hỏi hay góp ý gì nhé. Cảm ơn bạn 💜')"><i
+                            class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#"
+                       onclick="return alert('Liên hệ ngay với Hiếu-iceTea (0868 6633 15) Nếu bạn có bất kỳ câu hỏi hay góp ý gì nhé. Cảm ơn bạn 💜')"><i
+                            class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                <li><a href="#"
+                       onclick="return alert('Liên hệ ngay với Hiếu-iceTea (0868 6633 15) Nếu bạn có bất kỳ câu hỏi hay góp ý gì nhé. Cảm ơn bạn 💜')"><i
+                            class="fa fa-behance" aria-hidden="true"></i></a></li>
+                <li><a href="#"
+                       onclick="return alert('Liên hệ ngay với Hiếu-iceTea (0868 6633 15) Nếu bạn có bất kỳ câu hỏi hay góp ý gì nhé. Cảm ơn bạn 💜')"><i
+                            class="fa fa-linkedin" aria-hidden="true"></i></a></li>
             </ul>
         </div>
     </div>
@@ -191,7 +215,7 @@
                         <div class="newsletter_title_container text-center">
                             <div class="newsletter_title">Subscribe to our newsletter to get the latest trends & news
                             </div>
-                            <div class="newsletter_subtitle">Join our database NOW!</div>
+                            <div class="newsletter_subtitle">Join our team NOW!</div>
                         </div>
                         <div class="newsletter_form_container">
                             <form action="#"
@@ -199,7 +223,8 @@
                                   id="newsletter_form">
                                 <div class="d-flex flex-md-row flex-column align-items-start justify-content-between">
                                     <div><input type="text" class="newsletter_input newsletter_input_name"
-                                                id="newsletter_input_name" placeholder="Name" required="required">
+                                                id="newsletter_input_name" placeholder="Name"
+                                                required="required">
                                         <div class="input_border"></div>
                                     </div>
                                     <div><input type="email" class="newsletter_input newsletter_input_email"
@@ -209,7 +234,10 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <button class="newsletter_button">subscribe</button>
+                                    <button class="newsletter_button" type="button"
+                                            onclick="return alert('Tính năng chưa sẵn sàng.\nLiên hệ ngay với Hiếu-iceTea (0868 6633 15) Nếu bạn có bất kỳ câu hỏi hay góp ý gì nhé. Cảm ơn bạn 💜')">
+                                        subscribe
+                                    </button>
                                 </div>
                             </form>
                         </div>
@@ -229,8 +257,8 @@
                                 <div class="footer_contact_title">give us a call</div>
                                 <div class="footer_contact_list">
                                     <ul>
-                                        <li>Office Landline: +44 5567 32 664 567</li>
-                                        <li>Mobile: +44 5567 89 3322 332</li>
+                                        <li>Office Landline: +84 868 6633 15</li>
+                                        <li>Mobile: +84 868 6633 15</li>
                                     </ul>
                                 </div>
                             </div>
@@ -245,7 +273,7 @@
                                 <div class="footer_contact_title">come & drop by</div>
                                 <div class="footer_contact_list">
                                     <ul style="max-width:190px">
-                                        <li>4124 Barnes Street, Sanford, FL 32771</li>
+                                        <li>Thanh Xuan, Ha Noi</li>
                                     </ul>
                                 </div>
                             </div>
@@ -260,8 +288,8 @@
                                 <div class="footer_contact_title">send us a message</div>
                                 <div class="footer_contact_list">
                                     <ul>
-                                        <li>youremail@gmail.com</li>
-                                        <li>Office@yourbusinessname.com</li>
+                                        <li>DinhHieu8896@gmail.com</li>
+                                        <li>FB.com/Hieu.iceTea</li>
                                     </ul>
                                 </div>
                             </div>
@@ -274,7 +302,7 @@
         <div class="col text-center">
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-            All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
+            All rights reserved | This website is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
                 href="#">CODEDY</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </div>
     </footer>

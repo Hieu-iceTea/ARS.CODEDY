@@ -173,7 +173,7 @@
                                 has become one of the youngest and most modern airlines in the region with an average
                                 fleet age of 5.4 years.</p>
                         </div>
-                        <div class="button about_button"><a href="#">read more</a></div>
+                        <div class="button about_button"><a href="contact">Contact now</a></div>
                     </div>
                 </div>
                 <div class="col-lg-6">

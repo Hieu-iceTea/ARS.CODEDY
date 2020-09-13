@@ -42,23 +42,23 @@
                     <div class="contact_content">
                         <div class="contact_title">Get in touch with us</div>
                         <div class="contact_text">
-                            <p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus
-                                massa.Tempor massa et laoreet. Pellentesque sit amet elementum ccumsan sit amet mattis
-                                eget, tristique at leo. Vivamus massa.</p>
+                            <p>We are always ready to assist you wherever you are. Please feel free to leave your
+                                questions and suggestions. We will try our best to perfect the product better.
+                                Thank you very much!</p>
                         </div>
                         <div class="contact_list">
                             <ul>
                                 <li>
                                     <div>address:</div>
-                                    <div>1481 Creekside Lane Avila Beach, CA 931</div>
+                                    <div>Thanh Xuan, Ha Noi</div>
                                 </li>
                                 <li>
                                     <div>phone:</div>
-                                    <div>+53 345 7953 32453</div>
+                                    <div>+84 868 6633 15</div>
                                 </li>
                                 <li>
                                     <div>email:</div>
-                                    <div>yourmail@gmail.com</div>
+                                    <div>DinhHieu8896@gmail.com</div>
                                 </li>
                             </ul>
                         </div>
@@ -92,7 +92,10 @@
                                            required="required"></textarea>
                                 <div class="input_border" style="bottom:3px"></div>
                             </div>
-                            <button class="contact_button">send</button>
+                            <button class="contact_button" type="button"
+                                    onclick="return alert('Tính năng chưa sẵn sàng.\nLiên hệ ngay với Hiếu-iceTea (0868 6633 15) Nếu bạn có bất kỳ câu hỏi hay góp ý gì nhé. Cảm ơn bạn 💜')">
+                                send
+                            </button>
                         </form>
                     </div>
                 </div>
