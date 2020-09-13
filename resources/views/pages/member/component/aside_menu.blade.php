@@ -1,4 +1,14 @@
 <div class="col-3 pl-4 py-4" style="background-color: #dde6ed">
+    <div class="row mb-3">
+        <div class="col-12">
+            <div class="row">
+                <img class="rounded-circle m-auto" src="img/user/{{ Auth::user()->image ?? '_default.png' }}"
+                     alt="Avatar" data-toggle="tooltip" title="Your avatar is here, it looks great"
+                     data-placement="bottom" width="80%">
+            </div>
+        </div>
+    </div>
+
     <div class="row mb-2">
         <div class="col-12">
             <h3>Hello, {{ Auth::user()->first_name . ' ' . Auth::user()->last_name }}</h3>
@@ -16,7 +26,7 @@
 
     <div class="row">
         <div class="col-6">
-            <p>Loyalty Card Tier</p>
+            <p>Card Tier</p>
         </div>
         <div class="col-6">
             <p>Registered</p>
@@ -34,7 +44,7 @@
 
     <div class="row">
         <div class="col-6">
-            <p>Qualifying Points</p>
+            <p>Qualifying Point</p>
         </div>
         <div class="col-6">
             <p>0</p>

@@ -46,7 +46,7 @@
                                 <p>
                                     <img height="200" class="rounded-circle"
                                          data-toggle="tooltip" title="Avatar" data-placement="bottom"
-                                         src="../img/user/{{ $user->image ?? '_default.jpg' }}" alt="Avatar">
+                                         src="../img/user/{{ $user->image ?? '_default.png' }}" alt="Avatar">
                                 </p>
                                 <small class="form-text text-muted">
                                     {{ isset($user->image) ? 'Look at it, it looks great!' : 'No images, upload them!' }}

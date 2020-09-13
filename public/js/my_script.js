@@ -78,3 +78,7 @@ function preloaderActive(time = 250) {
     $('#preloader-active').delay(0).fadeIn(10);
     $('#preloader-active').delay(time).fadeOut('slow');
 }
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
