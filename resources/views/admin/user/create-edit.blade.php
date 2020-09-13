@@ -97,29 +97,28 @@
                                 </div>
                             </div>
 
-                            @if(request()->segment(3) == 'create')
-
-                                <div class="position-relative row form-group">
-                                    <label for="password"
-                                           class="col-md-3 text-md-right col-form-label">Password</label>
-                                    <div class="col-md-9 col-xl-8">
-                                        <input required name="password" id="password"
-                                               placeholder="Password" type="password"
-                                               class="form-control" value="{{ old('password') ?? ''}}">
-                                    </div>
+                            <div class="position-relative row form-group">
+                                <label for="password"
+                                       class="col-md-3 text-md-right col-form-label">{{ request()->segment(3) == 'create' ? 'Password' : 'New Password' }}</label>
+                                <div class="col-md-9 col-xl-8">
+                                    <input {{ request()->segment(3) == 'create' ? 'required' : '' }}
+                                           name="password" id="password" type="password"
+                                           placeholder="{{ request()->segment(3) == 'create' ? 'Password' : 'New Password' }}"
+                                           class="form-control" value="{{ old('password') ?? ''}}">
                                 </div>
+                            </div>
 
-                                <div class="position-relative row form-group">
-                                    <label for="password_confirmation"
-                                           class="col-md-3 text-md-right col-form-label">Confirm Password</label>
-                                    <div class="col-md-9 col-xl-8">
-                                        <input required name="password_confirmation" id="password_confirmation"
-                                               placeholder="Confirm Password" type="password"
-                                               class="form-control" value="{{ old('password_confirmation') ?? ''}}">
-                                    </div>
+                            <div class="position-relative row form-group">
+                                <label for="password_confirmation"
+                                       class="col-md-3 text-md-right col-form-label">{{ request()->segment(3) == 'create' ? 'Confirm Password' : 'Confirm New Password' }}</label>
+                                <div class="col-md-9 col-xl-8">
+                                    <input
+                                        {{ request()->segment(3) == 'create' ? 'required' : '' }}
+                                        name="password_confirmation" id="password_confirmation" type="password"
+                                        placeholder="{{ request()->segment(3) == 'create' ? 'Confirm Password' : 'Confirm New Password' }}"
+                                        class="form-control" value="{{ old('password_confirmation') ?? ''}}">
                                 </div>
-
-                            @endif
+                            </div>
 
                             <div class="position-relative row form-group">
                                 <label for="gender" class="col-md-3 text-md-right col-form-label">Gender</label>

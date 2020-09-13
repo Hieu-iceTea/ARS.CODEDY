@@ -58,7 +58,9 @@ class AdminRequest extends FormRequest
         //user/edit
         if ($this->is('admin/user/*/edit')) {
             $rules['user_name'] = 'required|min:6|max:64';
-            $rules['password'] = '';
+
+            //Không bắt buộc phải sửa password, nếu có sửa thì mới validate
+            $rules['password'] = 'nullable|max:64|confirmed|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/';
         }
 
         return $rules;

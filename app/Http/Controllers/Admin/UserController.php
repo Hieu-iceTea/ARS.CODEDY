@@ -182,6 +182,11 @@ class UserController extends Controller
             $values['image'] = $file_name;
         }
 
+        //Nếu nhập password mới thì thêm vào danh sách $values, nếu không thì bỏ qua:
+        if ($request->get('password')) {
+            $values['password'] = bcrypt($request->get('password')); //Mã hóa password
+        }
+
         //Update bản ghi trong database:
         $update = User::where('user_id', $id)->update($values);
 
