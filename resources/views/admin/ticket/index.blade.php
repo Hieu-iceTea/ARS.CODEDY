@@ -40,7 +40,8 @@
 
                         <form>
                             <div class="input-group">
-                                <input type="search" name="search" value="{{ request('search') }}" placeholder="Search everything"
+                                <input type="search" name="search" value="{{ request('search') }}"
+                                       placeholder="Search everything"
                                        class="form-control">
                                 <span class="input-group-append">
                                         <button type="submit" class="btn btn-primary">
@@ -120,9 +121,8 @@
                                             <div class="widget-content-wrapper">
                                                 <div class="widget-content-left flex2">
                                                     <div class="widget-subheading opacity-10">
-                                                            <img
-                                                                src="../img/pay_type/{{ $ticket->payType->image }}"
-                                                                height=25 alt="">
+                                                        <img style="height: 25px;" alt="" class="m-auto"
+                                                             src="../img/pay_type/{{ $ticket->payType->image }}">
                                                     </div>
                                                     <div class="widget-subheading opacity-10">
                                                         {{ number_format($ticket->total_price, 0, ',', '.') }} ₫

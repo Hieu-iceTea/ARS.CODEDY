@@ -94,8 +94,8 @@
                                             <div class="widget-content-wrapper">
                                                 <div class="widget-content-left flex2">
                                                     <div class="widget-subheading opacity-10">
-                                                        <img
-                                                            src="../img/pay_type/{{ $pay_type->image }}" alt="" height=25>
+                                                        <img class="m-auto"
+                                                            src="../img/pay_type/{{ $pay_type->image }}" alt="" style="height: 25px;">
                                                     </div>
                                                 </div>
                                             </div>

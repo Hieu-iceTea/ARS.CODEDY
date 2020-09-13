@@ -85,7 +85,7 @@
     <div class="ticket_list page_ticket" id="">
         <div class="container">
             <div class="row mt-4 mb-3">
-                <div class="col pl-0">
+                <div class="col-12">
                     <div class="table_title">
                         @if(request('code') == null && request('from') == null && request('to') == null && request('departure') == null)
                             <h4>Your ticket list</h4>
@@ -97,38 +97,40 @@
             </div>
 
             <div class="row">
-                <table class="table table-info-tickets table-hover ">
-                    <thead class="table-top">
-                    <tr>
-                        <th scope="col">#Code</th>
-                        <th scope="col">From</th>
-                        <th scope="col">To</th>
-                        <th scope="col">Departure At</th>
-                        <th scope="col">Passenger</th>
-                        <th scope="col">Function</th>
-                    </tr>
-                    </thead>
-                    <tbody class="active">
-                    @foreach($tickets as $ticket)
+                <div class="col-12">
+                    <table class="table table-info-tickets table-hover ">
+                        <thead class="table-top">
                         <tr>
-                            <th scope="row">#{{ $ticket->code }}</th>
-                            <td style=" text-transform: capitalize;">{{ $ticket->flightSchedule->airportFrom->location }} ({{ $ticket->flightSchedule->airportFrom->name }})</td>
-                            <td style=" text-transform: capitalize;">{{ $ticket->flightSchedule->airportTo->location }} ({{ $ticket->flightSchedule->airportTo->name }})</td>
-                            <td>{{ date('H\hi d/m/Y', strtotime($ticket->flightSchedule->departure_at)) }}</td>
-                            <td>{{ count($ticket->passenger->where('ticket_id',$ticket->ticket_id)) }}
-                                (Adult: {{count($ticket->passenger->where('passenger_type',1))}},
-                                Children:{{count($ticket->passenger->where('passenger_type',2))}},
-                                Baby: {{count($ticket->passenger->where('passenger_type',3))}})
-                            </td>
-                            <td>
-                                <a href="{{ Route('detail',$ticket->ticket_id) }}">View</a>
-                            </td>
+                            <th scope="col">#Code</th>
+                            <th scope="col">From</th>
+                            <th scope="col">To</th>
+                            <th scope="col">Departure At</th>
+                            <th scope="col">Passenger</th>
+                            <th scope="col">Function</th>
                         </tr>
-                    @endforeach
-                    </tbody>
-                </table>
-                <div class="pagination my_pagination mb-5">
-                    {{ $tickets->links()  }}
+                        </thead>
+                        <tbody class="active">
+                        @foreach($tickets as $ticket)
+                            <tr>
+                                <th scope="row">#{{ $ticket->code }}</th>
+                                <td style=" text-transform: capitalize;">{{ $ticket->flightSchedule->airportFrom->location }} ({{ $ticket->flightSchedule->airportFrom->name }})</td>
+                                <td style=" text-transform: capitalize;">{{ $ticket->flightSchedule->airportTo->location }} ({{ $ticket->flightSchedule->airportTo->name }})</td>
+                                <td>{{ date('H\hi d/m/Y', strtotime($ticket->flightSchedule->departure_at)) }}</td>
+                                <td>{{ count($ticket->passenger->where('ticket_id',$ticket->ticket_id)) }}
+                                    (Adult: {{count($ticket->passenger->where('passenger_type',1))}},
+                                    Children:{{count($ticket->passenger->where('passenger_type',2))}},
+                                    Baby: {{count($ticket->passenger->where('passenger_type',3))}})
+                                </td>
+                                <td>
+                                    <a href="{{ Route('detail',$ticket->ticket_id) }}">View</a>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                    <div class="my_pagination mb-5">
+                        {{ $tickets->links()  }}
+                    </div>
                 </div>
             </div>
         </div>

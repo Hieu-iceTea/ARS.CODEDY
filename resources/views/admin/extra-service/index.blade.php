@@ -83,7 +83,7 @@
                                             <div class="widget-content-wrapper">
                                                 <div class="widget-content-left mr-3">
                                                     <div class="widget-content-left">
-                                                        <img height="60"
+                                                        <img style="height: 60px;"
                                                              data-toggle="tooltip" title="Image"
                                                              data-placement="bottom"
                                                              src="../img/extra_service/{{ $extra_service->image ?? '' }}"

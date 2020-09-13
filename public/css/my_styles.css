@@ -26,6 +26,34 @@ body {
 }
 
 /*region my_pagination*/
+nav[aria-label="Pagination Navigation"] span[aria-current=page] > span {
+    background-color: #33597C !important;
+    color: #fff;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+nav[aria-label="Pagination Navigation"] a {
+    text-decoration: none;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+nav[aria-label="Pagination Navigation"] a:first-child {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+}
+
+nav[aria-label="Pagination Navigation"] a:last-child {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+}
+
+nav[aria-label="Pagination Navigation"] a:hover {
+    background-color: #e9ecef !important;
+    color: #0056b3;
+}
+
 .my_pagination .page-link {
     color: black !important;
     background: none;

@@ -314,7 +314,7 @@
                                 <div class="col-md-9 col-xl-8">
                                     <p>{{ $ticket->payType->name }}</p>
                                     <img src="../img/pay_type/{{ $ticket->payType->image }}"
-                                         height=50 alt="Pay type">
+                                         style="height: 50px" alt="Pay type">
                                 </div>
                             </div>
 

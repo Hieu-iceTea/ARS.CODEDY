@@ -18,6 +18,8 @@
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
 
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
     <link href="./main.css" rel="stylesheet">
     <link href="./my_style.css" rel="stylesheet">
 </head>

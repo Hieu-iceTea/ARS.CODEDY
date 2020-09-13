@@ -84,7 +84,7 @@
                                             <div class="widget-content-wrapper">
                                                 <div class="widget-content-left mr-3">
                                                     <div class="widget-content-left">
-                                                        <img height=60 class=""
+                                                        <img style="height: 60px;" class=""
                                                              src="../img/airport/{{ $airport->image }}"
                                                              alt="image of arrival airport"
                                                              data-toggle="tooltip" title="Image of airport"

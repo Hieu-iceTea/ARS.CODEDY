@@ -47,7 +47,7 @@
                             <div class="position-relative row form-group">
                                 <label for="image" class="col-md-3 text-md-right col-form-label">Avatar</label>
                                 <div class="col-md-9 col-xl-8">
-                                    <img id="thumbnail" height="200" class="rounded-circle" style="cursor: pointer"
+                                    <img id="thumbnail" style="height: 200px;" class="rounded-circle" style="cursor: pointer"
                                          data-toggle="tooltip" title="Click to change the image" data-placement="bottom"
                                          src="{{ isset($user->image) ? '../img/user/' . $user->image : '../img/icon/upload_select.png' }}"
                                          alt="Avatar Error">

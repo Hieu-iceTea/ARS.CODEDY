@@ -58,41 +58,49 @@
     <!-- Schedule index -->
     <div class="schedule-index">
         <div class="container">
-            <div class="row">
-                <div class="title-flight mt-4 mb-3">
-                    @if(request('code') == null)
-                        <h4>Recent Flight</h4>
-                    @else
-                        <h4>Result Research</h4>
-                    @endif
+            <div class="row mt-2">
+                <div class="col-12">
+                    <div class="title-flight mt-4 mb-3">
+                        @if(request('code') == null)
+                            <h4>Recent Flight</h4>
+                        @else
+                            <h4>Result Research</h4>
+                        @endif
+                    </div>
                 </div>
             </div>
             @if(count($flightSchedules) > 0)
-                <div class="row">
-                    <table class="table">
-                        <thead class="heade-table">
-                        <tr>
-                            <th scope="col">#Code</th>
-                            <th scope="col">To</th>
-                            <th scope="col">From</th>
-                            <th scope="col">Departure At</th>
-                            <th scope="col">Arrival At</th>
-                        </tr>
-                        </thead>
-                        <tbody class="active ">
-                        @foreach($flightSchedules as $flightSchedule)
-                            <tr class="">
-                                <th scope="row">#{{ $flightSchedule->code }}</th>
-                                <td>{{ $flightSchedule->airportFrom->location }} ({{ $flightSchedule->airportFrom->name }})</td>
-                                <td>{{ $flightSchedule->airportTo->location }} ({{ $flightSchedule->airportTo->name }})</td>
-                                <td>{{ date('H\hi, l, F d, Y', strtotime($flightSchedule->departure_at)) }}</td>
-                                <td>{{date('H\hi, l, F d, Y', strtotime($flightSchedule->arrival_at))  }}</td>
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <table class="table">
+                            <thead class="heade-table">
+                            <tr>
+                                <th scope="col">#Code</th>
+                                <th scope="col">To</th>
+                                <th scope="col">From</th>
+                                <th scope="col">Departure At</th>
+                                <th scope="col">Arrival At</th>
                             </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                    <div class ="pagination my_pagination mb-5">
-                        {{ $flightSchedules->links()  }}
+                            </thead>
+                            <tbody class="active ">
+                            @foreach($flightSchedules as $flightSchedule)
+                                <tr class="">
+                                    <th scope="row">#{{ $flightSchedule->code }}</th>
+                                    <td>{{ $flightSchedule->airportFrom->location }}
+                                        ({{ $flightSchedule->airportFrom->name }})
+                                    </td>
+                                    <td>{{ $flightSchedule->airportTo->location }}
+                                        ({{ $flightSchedule->airportTo->name }})
+                                    </td>
+                                    <td>{{ date('H\hi, l, F d, Y', strtotime($flightSchedule->departure_at)) }}</td>
+                                    <td>{{date('H\hi, l, F d, Y', strtotime($flightSchedule->arrival_at))  }}</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                        <div class="my_pagination">
+                            {{ $flightSchedules->links()  }}
+                        </div>
                     </div>
                 </div>
             @else
@@ -103,7 +111,6 @@
                             Your flight was not found
                         </p>
                     </div>
-
                 </div>
             @endif
         </div>

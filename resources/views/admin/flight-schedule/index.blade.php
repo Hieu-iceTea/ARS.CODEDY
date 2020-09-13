@@ -83,7 +83,7 @@
                                                     <div class="widget-content-left">
                                                         {{--<img width="40" class="rounded-circle"
                                                              src="assets/images/avatars/default.jpg" alt="">--}}
-                                                        <img height=60 class=""
+                                                        <img style="height: 60px" class=""
                                                              src="../img/airport/{{ $flightSchedule->airportTo->image }}"
                                                              alt="image of arrival airport"
                                                              data-toggle="tooltip" title="Image of arrival airport"
