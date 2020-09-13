@@ -168,9 +168,10 @@
                                         </div>
                                         <div class="row mt-3">
                                             <div class="col-4">
-                                                <div>Date of birth *</div>
+                                                <div>Date of birth (from 12 years) *</div>
                                                 <div class="input-group">
                                                     <input name="passengers[{{$count}}][dob]" type="date"
+                                                           max="{{ date('Y-m-d', strtotime(\Carbon\Carbon::now()->subYear(12)->toDateTimeString())) }}"
                                                            value="{{ old('passengers.' . $count . '.dob') ?? $count == 1 ? \Illuminate\Support\Facades\Auth::user()->dob ?? '' : '' }}"
                                                            class="form-control w-75"
                                                            placeholder="Departure">
@@ -236,9 +237,11 @@
                                         </div>
                                         <div class="row mt-3">
                                             <div class="col-4">
-                                                <div>Date of birth *</div>
+                                                <div>Date of birth (from 2 - 12 years) *</div>
                                                 <div class="input-group">
                                                     <input name="passengers[{{$count}}][dob]" type="date"
+                                                           max="{{ date('Y-m-d', strtotime(\Carbon\Carbon::now()->subYear(2)->toDateTimeString())) }}"
+                                                           min="{{ date('Y-m-d', strtotime(\Carbon\Carbon::now()->subYear(12)->toDateTimeString())) }}"
                                                            value="{{ old('passengers.' . $count . '.dob') }}"
                                                            class="form-control w-75"
                                                            placeholder="Departure">
@@ -304,9 +307,10 @@
                                         </div>
                                         <div class="row mt-3">
                                             <div class="col-4">
-                                                <div>Date of birth *</div>
+                                                <div>Date of birth (under 2 years) *</div>
                                                 <div class="input-group">
                                                     <input name="passengers[{{$count}}][dob]" type="date"
+                                                           min="{{ date('Y-m-d', strtotime(\Carbon\Carbon::now()->subYear(2)->toDateTimeString())) }}"
                                                            value="{{ old('passengers.' . $count . '.dob') }}"
                                                            class="form-control w-75"
                                                            placeholder="Departure">

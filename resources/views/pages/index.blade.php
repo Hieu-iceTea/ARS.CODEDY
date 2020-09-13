@@ -116,7 +116,9 @@
 
                                     </select>
 
-                                    <input type="date" class="search_input search_input_3" id="departure"
+                                    <input type="date"
+                                           min="{{ date('Y-m-d', strtotime(\Carbon\Carbon::now()->toDateTimeString())) }}"
+                                           class="search_input search_input_3" id="departure"
                                            name="departure" placeholder="Departure" required>
 
 

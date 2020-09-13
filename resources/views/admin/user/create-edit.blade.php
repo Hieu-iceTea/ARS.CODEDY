@@ -138,10 +138,12 @@
                             </div>
 
                             <div class="position-relative row form-group">
-                                <label for="dob" class="col-md-3 text-md-right col-form-label">DOB</label>
+                                <label for="dob" class="col-md-3 text-md-right col-form-label">DOB (from 12
+                                    years)</label>
                                 <div class="col-md-9 col-xl-8">
                                     <input required name="dob" id="dob" placeholder="DOB"
                                            type="date" class="form-control"
+                                           max="{{ date('Y-m-d', strtotime(\Carbon\Carbon::now()->subYear(12)->toDateTimeString())) }}"
                                            value="{{ old('dob') ?? $user->dob ?? ''}}">
                                 </div>
                             </div>

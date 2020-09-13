@@ -93,6 +93,7 @@
                                             <div style="width: 49%">
                                                 <label for="departure">Leave</label>
                                                 <input type="date" id="departure" name="departure"
+                                                       min="{{ date('Y-m-d', strtotime(\Carbon\Carbon::now()->toDateTimeString())) }}"
                                                        value="{{ request('departure') }}" placeholder="Departure"
                                                        class="newsletter_input" required>
                                                 <div class="input_border"></div>
