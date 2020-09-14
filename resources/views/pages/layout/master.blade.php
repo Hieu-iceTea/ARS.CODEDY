@@ -39,7 +39,7 @@
         <div class="preloader-inner position-relative">
             <div class="preloader-circle"></div>
             <div class="preloader-img pere-text">
-                <img src="img/logo/logo_animation.gif" alt="">
+                <img class="m-auto" src="img/logo/logo_animation.gif" alt="ARS">
                 {{--<img src="img/logo/logo_animation.gif" alt="">--}}
             </div>
         </div>

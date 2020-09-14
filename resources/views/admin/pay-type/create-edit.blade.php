@@ -45,7 +45,7 @@
                             <div class="position-relative row form-group">
                                 <label for="image" class="col-md-3 text-md-right col-form-label">Logo</label>
                                 <div class="col-md-9 col-xl-8">
-                                    <img id="thumbnail" height="100" class="" style="cursor: pointer"
+                                    <img id="thumbnail" style="height: 100px;" class="" style="cursor: pointer"
                                          data-toggle="tooltip" title="Click to change the image" data-placement="bottom"
                                          src="{{ isset($pay_type->image) ? '../img/pay_type/' . $pay_type->image : '../img/icon/upload_select.png' }}"
                                          alt="Logo">

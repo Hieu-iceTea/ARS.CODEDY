@@ -83,7 +83,8 @@ ul {
 
 /*region my_pagination*/
 nav[aria-label="Pagination Navigation"] span[aria-current=page] > span {
-    background-color: #3f6ad8e0 !important;
+    background-color: #3f6ad8f0 !important;
+    border: 1px solid #3f6ad8 !important;
     /*opacity: 0.9;*/
     color: #fff;
     padding-left: 1rem !important;

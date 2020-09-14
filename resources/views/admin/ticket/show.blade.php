@@ -388,7 +388,7 @@
                                         <div class="col-md-9 col-xl-8">
                                             <p>{{ $extraService->name }}</p>
                                             <img src="../img/extra_service/{{ $extraService->image }}"
-                                                 height=90 alt="Pay type">
+                                            style="height: 90px;" alt="Pay type">
                                         </div>
                                     </div>
 

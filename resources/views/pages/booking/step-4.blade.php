@@ -202,7 +202,7 @@
                                                                 @if(isset($payType->image))
                                                                     <img
                                                                         src="img/pay_type/{{ $payType->image }}"
-                                                                        height=45 alt="">
+                                                                        class="m-auto" style="height: 45px;" alt="">
                                                                 @else
                                                                     {{ $payType->name }}
                                                                 @endif

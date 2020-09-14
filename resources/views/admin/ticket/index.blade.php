@@ -82,9 +82,9 @@
                                             <div class="widget-content-wrapper">
                                                 <div class="widget-content-left mr-3">
                                                     <div class="widget-content-left">
-                                                        <img width="40" class="rounded-circle"
+                                                        <img style="width: 45px;" class="rounded-circle"
                                                              src="../img/favicon.gif" alt="">
-                                                        {{--<img height=60 class=""
+                                                        {{--<img style="height: 60px;" class=""
                                                              src="../img/airport/{{ $ticket->flightSchedule->airportTo->image }}"
                                                              alt="image of arrival airport"
                                                              data-toggle="tooltip" title="image of arrival airport"
