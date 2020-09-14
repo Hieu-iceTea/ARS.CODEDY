@@ -42,7 +42,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="home_slider_content">
-                                        <div class="home_title"><h2>Let us take you away</h2></div>
+                                        <div class="home_title"><h2>Let your ideas fly high</h2></div>
                                     </div>
                                 </div>
                             </div>
@@ -58,7 +58,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="home_slider_content">
-                                        <div class="home_title"><h2>Let us take you away</h2></div>
+                                        <div class="home_title"><h2>Wonders of the world</h2></div>
                                     </div>
                                 </div>
                             </div>
