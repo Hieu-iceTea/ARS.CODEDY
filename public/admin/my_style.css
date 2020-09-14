@@ -9,6 +9,11 @@
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
  */
 
+/* Khôi phục mặc định thẻ img, lý do: khi dùng tailwindcss sẽ chuyển sang block */
+img {
+    display: inline;
+}
+
 /* Logo */
 .app-header.header-text-light .app-header__logo .logo-src {
     width: 135px;

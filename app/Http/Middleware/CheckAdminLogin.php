@@ -33,7 +33,7 @@ class CheckAdminLogin
                 //Nếu dùng tài khoản "Admin_Demo" thì ngăn không cho sửa/thêm mới/xóa
                 if ($user->user_name == 'Admin_Demo') {
                     $name = User::where('user_name', '=', 'Host')->first()->first_name ?? 'Hiếu-iceTea';
-                    if (!$request->isMethod('GET')) {
+                    if (!$request->isMethod('GET') && !$request->is('*/logout')) {
                         return redirect()
                             ->back()
                             ->withInput()

@@ -834,7 +834,8 @@
                             <div class="btn-group">
                                 <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                    class="p-0 btn">
-                                    <img width="42" class="rounded-circle" src="../img/user/{{ \Illuminate\Support\Facades\Auth::user()->image ?? '_default.jpg' }}"
+                                    <img class="rounded-circle" {{--style="display: inline"--}} width="42"
+                                         src="../img/user/{{ \Illuminate\Support\Facades\Auth::user()->image ?? '_default.jpg' }}"
                                          alt="">
                                     <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                 </a>
@@ -850,7 +851,8 @@
                                                     <div class="widget-content-wrapper">
                                                         <div class="widget-content-left mr-3">
                                                             <img width="42" class="rounded-circle"
-                                                                 src="../img/user/{{ \Illuminate\Support\Facades\Auth::user()->image ?? '_default.jpg' }}" alt="">
+                                                                 src="../img/user/{{ \Illuminate\Support\Facades\Auth::user()->image ?? '_default.jpg' }}"
+                                                                 alt="">
                                                         </div>
                                                         <div class="widget-content-left">
                                                             <div class="widget-heading">Hieu-iceTea</div>
@@ -938,8 +940,10 @@
                             </div>
                         </div>
                         <div class="widget-content-left  ml-3 header-user-info">
-                            <div class="widget-heading"> {{ \Illuminate\Support\Facades\Auth::user()->user_name ?? 'not logged in' }}</div>
-                            <div class="widget-subheading"> {{ \Illuminate\Support\Facades\Auth::user()->email ?? 'no email' }}</div>
+                            <div
+                                class="widget-heading"> {{ \Illuminate\Support\Facades\Auth::user()->user_name ?? 'not logged in' }}</div>
+                            <div
+                                class="widget-subheading"> {{ \Illuminate\Support\Facades\Auth::user()->email ?? 'no email' }}</div>
                         </div>
                         <div class="widget-content-right header-user-info ml-3">
                             <button type="button"
