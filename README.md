@@ -19,7 +19,8 @@ Airlines Reservation System by CODEDY team - Project SEM2, FPT Aptech
 
 The project has been deployed at the link: <b> [https://ars.codedy.epizy.com](http://ars.codedy.epizy.com). </b>
 
-Laravel version: 7.x
+Laravel version: 7.x (has updated to version 8.x)
+PHP version: 7.x (has updated to version 8.x)
 
 Power by: CODEDY team
 
@@ -57,7 +58,7 @@ Contributors:
 
     ```
     From: Ha Noi
-    Departure day: 10/10/2020
+    Departure day: 10/10/2022
     ```
 
 * Member account:
