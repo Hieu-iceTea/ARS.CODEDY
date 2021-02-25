@@ -1,6 +1,6 @@
 # Created_by: Hieu iceTea x Truong Thanh Tu
 # Created_at: 17:30 2020-08-10
-# Updated_at: 12:00 2020-09-04
+# Updated_at: 00:00 2021-02-26
 
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = #
 #                                           Create DataBase                                           #
@@ -299,23 +299,23 @@ CREATE TABLE IF NOT EXISTS `ticket`
 #Default password: 123456
 
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, image, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
-VALUES (9, 'Hieu-iceTea', 'DinhHieu8896@gmail.com', '$2y$10$//Od0OmEqRwFepW3wynrYOwslyvaS.snzBbpWwskF1Zrg5fNI.eTe', 3, '2020-08-08', 'Hieu-iceTea.jpg', 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '0868663315', 'Nghệ An', 123456, TRUE);
+VALUES (9, 'Hieu-iceTea', 'DinhHieu8896@gmail.com', '$2y$10$//Od0OmEqRwFepW3wynrYOwslyvaS.snzBbpWwskF1Zrg5fNI.eTe', 3, '2022-08-08', 'Hieu-iceTea.jpg', 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '0868663315', 'Nghệ An', 123456, TRUE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, image, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
-VALUES (8, 'truong-thanh-tu', 'TruongThanhTu03091998@gmail.com', '$2y$10$//Od0OmEqRwFepW3wynrYOwslyvaS.snzBbpWwskF1Zrg5fNI.eTe', 3, '2020-08-08', 'truong-thanh-tu.jpg', 1, 'Thanh Tú', 'Trương', '1998-09-03', '0359077335', 'Huế', 123456, FALSE);
+VALUES (8, 'truong-thanh-tu', 'TruongThanhTu03091998@gmail.com', '$2y$10$//Od0OmEqRwFepW3wynrYOwslyvaS.snzBbpWwskF1Zrg5fNI.eTe', 3, '2022-08-08', 'truong-thanh-tu.jpg', 1, 'Thanh Tú', 'Trương', '1998-09-03', '0359077335', 'Huế', 123456, FALSE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, image, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
-VALUES (7, 'chanhoa', 'ChanHoa28112k@gmail.com', '$2y$10$//Od0OmEqRwFepW3wynrYOwslyvaS.snzBbpWwskF1Zrg5fNI.eTe', 3, '2020-08-08', 'chanhoa.jpg', 2, 'Chan Hòa', 'Đỗ Thị', '2000-01-01', '0981159826', '', 123456, TRUE);
+VALUES (7, 'chanhoa', 'ChanHoa28112k@gmail.com', '$2y$10$//Od0OmEqRwFepW3wynrYOwslyvaS.snzBbpWwskF1Zrg5fNI.eTe', 3, '2022-08-08', 'chanhoa.jpg', 2, 'Chan Hòa', 'Đỗ Thị', '2000-01-01', '0981159826', '', 123456, TRUE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, image, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
-VALUES (6, 'vuquanghuy2001', 'VuQuangHuyXL1234@gmail.com', '$2y$10$//Od0OmEqRwFepW3wynrYOwslyvaS.snzBbpWwskF1Zrg5fNI.eTe', 3, '2020-08-08', 'vuquanghuy2001.jpg', 1, 'Quang Huy', 'Vũ', '2000-01-01', '0981159826', '', 123456, TRUE);
+VALUES (6, 'vuquanghuy2001', 'VuQuangHuyXL1234@gmail.com', '$2y$10$//Od0OmEqRwFepW3wynrYOwslyvaS.snzBbpWwskF1Zrg5fNI.eTe', 3, '2022-08-08', 'vuquanghuy2001.jpg', 1, 'Quang Huy', 'Vũ', '2000-01-01', '0981159826', '', 123456, TRUE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, image, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
-VALUES (5, 'tuanpth1909', 'PhamTuanCules20@gmail.com', '$2y$10$//Od0OmEqRwFepW3wynrYOwslyvaS.snzBbpWwskF1Zrg5fNI.eTe', 3, '2020-08-08', 'tuanpth1909.jpg', 1, 'Tuân', 'Phạm', '2000-01-01', '0382548442', '', 123456, TRUE);
+VALUES (5, 'tuanpth1909', 'PhamTuanCules20@gmail.com', '$2y$10$//Od0OmEqRwFepW3wynrYOwslyvaS.snzBbpWwskF1Zrg5fNI.eTe', 3, '2022-08-08', 'tuanpth1909.jpg', 1, 'Tuân', 'Phạm', '2000-01-01', '0382548442', '', 123456, TRUE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, image, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
-VALUES (4, 'Host', 'DinhHieu8896@gmail.com', '$2y$10$oW..IGNT/CH2muKpN/8LAuNJ1ahnwLoyCBWRQyBj4p6ITOJFb.gs2', 1, '2020-08-08', 'logo_host.png', 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '032 87 99 000', 'Hà Nội', NULL, TRUE);
+VALUES (4, 'Host', 'DinhHieu8896@gmail.com', '$2y$10$oW..IGNT/CH2muKpN/8LAuNJ1ahnwLoyCBWRQyBj4p6ITOJFb.gs2', 1, '2022-08-08', 'logo_host.png', 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '032 87 99 000', 'Hà Nội', NULL, TRUE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, image, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
-VALUES (3, 'Admin', 'ars.codedy@gmail.com', '$2y$10$/AmOQGhkVS8otOSJbAv.6OHxseW/AOdVw7wxNbopMHgy0Btbp3Anu', 2, '2020-08-08', 'logo_admin.gif', 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '0868 6633 15', 'Nghệ An', NULL, TRUE);
+VALUES (3, 'Admin', 'ars.codedy@gmail.com', '$2y$10$/AmOQGhkVS8otOSJbAv.6OHxseW/AOdVw7wxNbopMHgy0Btbp3Anu', 2, '2022-08-08', 'logo_admin.gif', 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '0868 6633 15', 'Nghệ An', NULL, TRUE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, image, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
-VALUES (2, 'Member', 'DinhHieu8896@gmail.com', '$2y$10$//Od0OmEqRwFepW3wynrYOwslyvaS.snzBbpWwskF1Zrg5fNI.eTe', 3, '2020-08-08', 'logo_member.png', 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '0868 6633 15', 'Nghệ An', NULL, TRUE);
+VALUES (2, 'Member', 'DinhHieu8896@gmail.com', '$2y$10$//Od0OmEqRwFepW3wynrYOwslyvaS.snzBbpWwskF1Zrg5fNI.eTe', 3, '2022-08-08', 'logo_member.png', 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '0868 6633 15', 'Nghệ An', NULL, TRUE);
 INSERT INTO user (user_id, user_name, email, password, level, email_verified_at, image, gender, first_name, last_name, dob, phone, address, loyalty_number, active)
-VALUES (1, 'Admin_Demo', 'DinhHieu8896@gmail.com', '$2y$10$//Od0OmEqRwFepW3wynrYOwslyvaS.snzBbpWwskF1Zrg5fNI.eTe', 2, '2020-08-08', 'logo_admin.gif', 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '0868 6633 15', 'Nghệ An', NULL, TRUE);
+VALUES (1, 'Admin_Demo', 'DinhHieu8896@gmail.com', '$2y$10$//Od0OmEqRwFepW3wynrYOwslyvaS.snzBbpWwskF1Zrg5fNI.eTe', 2, '2022-08-08', 'logo_admin.gif', 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '0868 6633 15', 'Nghệ An', NULL, TRUE);
 
 INSERT INTO extra_service (extra_service_id, name, price, image, active, description)
 VALUE (1,  'Luggage and special services',  110000,  'luggage-and-special-services.jpg', TRUE, '<ul style=list-style-type: disc;><li>Total weight displayed includes free baggage allowance</li><li>Save up to 80 %</li><li>max. 40 kg per person</li></ul>');
@@ -478,17 +478,17 @@ INSERT INTO price_seat_type (price_seat_type_id, eco_price, eco_qty_remain, eco_
 VALUE (50, 1999000, 0, 360, 1949000, 118, 120, 3099000, 80, 80);
 
 INSERT INTO promotion (promotion_id, code, title, discount, qty_total, qty_remain, start_date, expiration_date, active, description)
-VALUES (1, 'ABC123', 'Giảm giá tháng 8', 100000, 50, 28, '2020-08-08', '2020-08-30', TRUE, '<p>mô tả</p>');
+VALUES (1, 'ABC123', 'Giảm giá tháng 8', 100000, 50, 28, '2022-08-08', '2022-08-30', TRUE, '<p>mô tả</p>');
 INSERT INTO promotion (promotion_id, code, title, discount, qty_total, qty_remain, start_date, expiration_date, active, description)
-VALUES (2, 'BAY888', 'Bay lắc tưng bừng', 256000, 100, 86, '2020-08-30', '2020-09-30', TRUE, '<p>mô tả</p>');
+VALUES (2, 'BAY888', 'Bay lắc tưng bừng', 256000, 100, 86, '2022-08-30', '2022-09-30', TRUE, '<p>mô tả</p>');
 INSERT INTO promotion (promotion_id, code, title, discount, qty_total, qty_remain, start_date, expiration_date, active, description)
-VALUES (3, 'LAX999', 'Giảm giá quốc khách 2/9', 209000, 30, 29, '2020-10-01', '2020-10-30', TRUE, '<p>mô tả</p>');
+VALUES (3, 'LAX999', 'Giảm giá quốc khách 2/9', 209000, 30, 29, '2022-10-01', '2022-10-30', TRUE, '<p>mô tả</p>');
 INSERT INTO promotion (promotion_id, code, title, discount, qty_total, qty_remain, start_date, expiration_date, active, description)
-VALUES (4, 'HAHA96', 'Vừa bay vừa cười', 370000, 80, 60, '2020-11-15', '2020-11-25', TRUE, '<p>mô tả</p>');
+VALUES (4, 'HAHA96', 'Vừa bay vừa cười', 370000, 80, 60, '2022-11-15', '2022-11-25', TRUE, '<p>mô tả</p>');
 INSERT INTO promotion (promotion_id, code, title, discount, qty_total, qty_remain, start_date, expiration_date, active, description)
-VALUES (5, 'VIP5000', 'Giảm giá đặc biệt cho khách hàng VIP', 500000, 20, 18, '2020-12-10', '2020-12-30', TRUE, '<p>mô tả</p>');
+VALUES (5, 'VIP5000', 'Giảm giá đặc biệt cho khách hàng VIP', 500000, 20, 18, '2022-12-10', '2022-12-30', TRUE, '<p>mô tả</p>');
 INSERT INTO promotion (promotion_id, code, title, discount, qty_total, qty_remain, start_date, expiration_date, active, description)
-VALUES (6, 'VIP5000', 'Giảm giá cuối năm', 699000, 50, 26, '2020-12-15', '2020-12-25', FALSE, '<p>mô tả</p>');
+VALUES (6, 'VIP5000', 'Giảm giá cuối năm', 699000, 50, 26, '2022-12-15', '2022-12-25', FALSE, '<p>mô tả</p>');
 
 INSERT INTO pay_type (pay_type_id, name, image, active, description)
 VALUES (1, 'Pay Later', 'pay-later.png', TRUE, '<p>mô tả</p>');
@@ -508,7 +508,7 @@ VALUES (1, 8, 1, 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '');
 INSERT INTO passenger (passenger_id, ticket_id, gender, passenger_type, first_name, last_name, dob, with_passenger)
 VALUES (2, 8, 2, 2, 'Khánh Vy', 'Phạm', '2010-06-25', '');
 INSERT INTO passenger (passenger_id, ticket_id, gender, passenger_type, first_name, last_name, dob, with_passenger)
-VALUES (3, 8, 1, 3, 'Thanh Tùng', 'Trần', '2020-01-02', 'Nguyễn Đình Hiếu');
+VALUES (3, 8, 1, 3, 'Thanh Tùng', 'Trần', '2022-01-02', 'Nguyễn Đình Hiếu');
 INSERT INTO passenger (passenger_id, ticket_id, gender, passenger_type, first_name, last_name, dob, with_passenger)
 VALUES (4, 7, 1, 1, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '');
 INSERT INTO passenger (passenger_id, ticket_id, gender, passenger_type, first_name, last_name, dob, with_passenger)
@@ -531,105 +531,105 @@ INSERT INTO passenger (passenger_id, ticket_id, gender, passenger_type, first_na
 VALUES (13, 6, 2, 2, 'Đình Hiếu', 'Nguyễn', '1996-08-08', '');
 
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (1, 1, 2, 1, 1, 'VN-599', '2020-10-10 06:15:00', '2020-10-10 08:25:00', 1, '<p>mô tả</p>');
+VALUE (1, 1, 2, 1, 1, 'VN-599', '2022-10-10 06:15:00', '2022-10-10 08:25:00', 1, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (2, 1, 2, 2, 2, 'VN-600', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 2, '<p>mô tả</p>');
+VALUE (2, 1, 2, 2, 2, 'VN-600', '2022-10-10 09:10:00', '2022-10-10 11:45:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (3, 1, 2, 3, 3, 'VN-601', '2020-10-10 12:35:00', '2020-10-10 14:10:00', 3, '<p>mô tả</p>');
+VALUE (3, 1, 2, 3, 3, 'VN-601', '2022-10-10 12:35:00', '2022-10-10 14:10:00', 3, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (4, 1, 2, 4, 4, 'VN-602', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 4, '<p>mô tả</p>');
+VALUE (4, 1, 2, 4, 4, 'VN-602', '2022-10-10 20:55:00', '2022-10-10 22:15:00', 4, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (5, 1, 2, 5, 5, 'VN-603', '2020-10-10 23:05:00', '2020-10-11 01:50:00', 5, '<p>mô tả</p>');
+VALUE (5, 1, 2, 5, 5, 'VN-603', '2022-10-10 23:05:00', '2022-10-11 01:50:00', 5, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (6, 2, 1, 6, 6, 'VN-604', '2020-10-10 08:10:00', '2020-10-10 10:30:00', 6, '<p>mô tả</p>');
+VALUE (6, 2, 1, 6, 6, 'VN-604', '2022-10-10 08:10:00', '2022-10-10 10:30:00', 6, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (7, 2, 1, 7, 7, 'VN-605', '2020-10-10 14:55:00', '2020-10-10 16:30:00', 2, '<p>mô tả</p>');
+VALUE (7, 2, 1, 7, 7, 'VN-605', '2022-10-10 14:55:00', '2022-10-10 16:30:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (8, 2, 1, 8, 8, 'VN-606', '2020-10-10 21:30:00', '2020-10-10 23:15:00', 2, '<p>mô tả</p>');
+VALUE (8, 2, 1, 8, 8, 'VN-606', '2022-10-10 21:30:00', '2022-10-10 23:15:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (9, 1, 5, 9, 9, 'VN-607', '2020-10-15 10:15:00', '2020-10-15 11:25:00', 2, '<p>mô tả</p>');
+VALUE (9, 1, 5, 9, 9, 'VN-607', '2022-10-15 10:15:00', '2022-10-15 11:25:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (10, 1, 5, 10, 10, 'VN-608', '2020-10-15 19:10:00', '2020-10-15 20:15:00', 2, '<p>mô tả</p>');
+VALUE (10, 1, 5, 10, 10, 'VN-608', '2022-10-15 19:10:00', '2022-10-15 20:15:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (11, 1, 5, 5, 11, 'VN-609', '2020-10-15 21:30:00', '2020-10-15 23:05:00', 2, '<p>mô tả</p>');
+VALUE (11, 1, 5, 5, 11, 'VN-609', '2022-10-15 21:30:00', '2022-10-15 23:05:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (12, 1, 3, 10, 12, 'VN-610', '2020-10-15 06:15:00', '2020-10-15 08:25:00', 2, '<p>mô tả</p>');
+VALUE (12, 1, 3, 10, 12, 'VN-610', '2022-10-15 06:15:00', '2022-10-15 08:25:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (13, 1, 3, 9, 13, 'VN-611', '2020-10-15 09:10:00', '2020-10-15 11:45:00', 2, '<p>mô tả</p>');
+VALUE (13, 1, 3, 9, 13, 'VN-611', '2022-10-15 09:10:00', '2022-10-15 11:45:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (14, 1, 3, 8, 14, 'VN-612', '2020-10-15 12:35:00', '2020-10-15 14:10:00', 2, '<p>mô tả</p>');
+VALUE (14, 1, 3, 8, 14, 'VN-612', '2022-10-15 12:35:00', '2022-10-15 14:10:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (15, 1, 3, 7, 15, 'VN-613', '2020-10-15 20:55:00', '2020-10-15 22:15:00', 2, '<p>mô tả</p>');
+VALUE (15, 1, 3, 7, 15, 'VN-613', '2022-10-15 20:55:00', '2022-10-15 22:15:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (16, 1, 3, 6, 16, 'VN-614', '2020-10-15 23:05:00', '2020-10-16 01:50:00', 2, '<p>mô tả</p>');
+VALUE (16, 1, 3, 6, 16, 'VN-614', '2022-10-15 23:05:00', '2022-10-16 01:50:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (17, 3, 1, 5, 17, 'VN-615', '2020-10-15 08:10:00', '2020-10-15 10:30:00', 2, '<p>mô tả</p>');
+VALUE (17, 3, 1, 5, 17, 'VN-615', '2022-10-15 08:10:00', '2022-10-15 10:30:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (18, 3, 1, 4, 18, 'VN-616', '2020-10-15 14:55:00', '2020-10-15 16:30:00', 2, '<p>mô tả</p>');
+VALUE (18, 3, 1, 4, 18, 'VN-616', '2022-10-15 14:55:00', '2022-10-15 16:30:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (19, 3, 1, 3, 19, 'VN-617', '2020-10-15 21:30:00', '2020-10-15 23:15:00', 2, '<p>mô tả</p>');
+VALUE (19, 3, 1, 3, 19, 'VN-617', '2022-10-15 21:30:00', '2022-10-15 23:15:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (20, 1, 4, 2, 20, 'VN-618', '2020-10-20 10:15:00', '2020-10-20 11:25:00', 2, '<p>mô tả</p>');
+VALUE (20, 1, 4, 2, 20, 'VN-618', '2022-10-20 10:15:00', '2022-10-20 11:25:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (21, 1, 4, 1, 21, 'VN-619', '2020-10-20 19:10:00', '2020-10-20 20:15:00', 2, '<p>mô tả</p>');
+VALUE (21, 1, 4, 1, 21, 'VN-619', '2022-10-20 19:10:00', '2022-10-20 20:15:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (22, 1, 4, 6, 22, 'VN-620', '2020-10-20 21:30:00', '2020-10-20 23:05:00', 2, '<p>mô tả</p>');
+VALUE (22, 1, 4, 6, 22, 'VN-620', '2022-10-20 21:30:00', '2022-10-20 23:05:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (23, 11, 10, 8, 23, 'VN-621', '2020-10-25 09:10:00', '2020-10-25 11:45:00', 2, '<p>mô tả</p>');
+VALUE (23, 11, 10, 8, 23, 'VN-621', '2022-10-25 09:10:00', '2022-10-25 11:45:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (24, 11, 10, 7, 24, 'VN-622', '2020-10-25 20:55:00', '2020-10-25 22:15:00', 2, '<p>mô tả</p>');
+VALUE (24, 11, 10, 7, 24, 'VN-622', '2022-10-25 20:55:00', '2022-10-25 22:15:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (25, 6, 8, 6, 25, 'VN-623', '2020-10-30 14:55:00', '2020-10-30 16:30:00', 6, '<p>mô tả</p>');
+VALUE (25, 6, 8, 6, 25, 'VN-623', '2022-10-30 14:55:00', '2022-10-30 16:30:00', 6, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (26, 6, 8, 5, 26, 'VN-624', '2020-10-30 21:30:00', '2020-10-30 23:15:00', 5, '<p>mô tả</p>');
+VALUE (26, 6, 8, 5, 26, 'VN-624', '2022-10-30 21:30:00', '2022-10-30 23:15:00', 5, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (27, 9, 7, 9, 27, 'VN-625', '2020-11-05 10:15:00', '2020-11-05 11:25:00', 4, '<p>mô tả</p>');
+VALUE (27, 9, 7, 9, 27, 'VN-625', '2022-11-05 10:15:00', '2022-11-05 11:25:00', 4, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (28, 9, 7, 10, 28, 'VN-626', '2020-11-05 19:10:00', '2020-11-05 20:15:00', 3, '<p>mô tả</p>');
+VALUE (28, 9, 7, 10, 28, 'VN-626', '2022-11-05 19:10:00', '2022-11-05 20:15:00', 3, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (29, 2, 1, 2, 29, 'VN-627', '2020-11-10 06:15:00', '2020-11-10 08:25:00', 2, '<p>mô tả</p>');
+VALUE (29, 2, 1, 2, 29, 'VN-627', '2022-11-10 06:15:00', '2022-11-10 08:25:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (30, 2, 1, 3, 30, 'VN-628', '2020-11-10 09:10:00', '2020-11-10 11:45:00', 1, '<p>mô tả</p>');
+VALUE (30, 2, 1, 3, 30, 'VN-628', '2022-11-10 09:10:00', '2022-11-10 11:45:00', 1, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (31, 1, 3, 1, 31, 'VN-628', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 3, '<p>mô tả</p>');
+VALUE (31, 1, 3, 1, 31, 'VN-628', '2022-10-10 09:10:00', '2022-10-10 11:45:00', 3, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (32, 1, 3, 2, 32, 'VN-629', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 2, '<p>mô tả</p>');
+VALUE (32, 1, 3, 2, 32, 'VN-629', '2022-10-10 20:55:00', '2022-10-10 22:15:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (33, 1, 4, 3, 33, 'VN-630', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 4, '<p>mô tả</p>');
+VALUE (33, 1, 4, 3, 33, 'VN-630', '2022-10-10 09:10:00', '2022-10-10 11:45:00', 4, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (34, 1, 4, 4, 34, 'VN-631', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 2, '<p>mô tả</p>');
+VALUE (34, 1, 4, 4, 34, 'VN-631', '2022-10-10 20:55:00', '2022-10-10 22:15:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (35, 1, 5, 5, 35, 'VN-632', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 5, '<p>mô tả</p>');
+VALUE (35, 1, 5, 5, 35, 'VN-632', '2022-10-10 09:10:00', '2022-10-10 11:45:00', 5, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (36, 1, 5, 5, 36, 'VN-633', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 2, '<p>mô tả</p>');
+VALUE (36, 1, 5, 5, 36, 'VN-633', '2022-10-10 20:55:00', '2022-10-10 22:15:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (37, 1, 6, 5, 37, 'VN-634', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 2, '<p>mô tả</p>');
+VALUE (37, 1, 6, 5, 37, 'VN-634', '2022-10-10 09:10:00', '2022-10-10 11:45:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (38, 1, 6, 6, 38, 'VN-635', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 2, '<p>mô tả</p>');
+VALUE (38, 1, 6, 6, 38, 'VN-635', '2022-10-10 20:55:00', '2022-10-10 22:15:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (39, 1, 7, 7, 39, 'VN-636', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 2, '<p>mô tả</p>');
+VALUE (39, 1, 7, 7, 39, 'VN-636', '2022-10-10 09:10:00', '2022-10-10 11:45:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (40, 1, 7, 8, 40, 'VN-637', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 2, '<p>mô tả</p>');
+VALUE (40, 1, 7, 8, 40, 'VN-637', '2022-10-10 20:55:00', '2022-10-10 22:15:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (41, 1, 8, 9, 41, 'VN-638', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 2, '<p>mô tả</p>');
+VALUE (41, 1, 8, 9, 41, 'VN-638', '2022-10-10 09:10:00', '2022-10-10 11:45:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (42, 1, 8, 10, 42, 'VN-639', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 2, '<p>mô tả</p>');
+VALUE (42, 1, 8, 10, 42, 'VN-639', '2022-10-10 20:55:00', '2022-10-10 22:15:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (43, 1, 9, 6, 43, 'VN-640', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 3, '<p>mô tả</p>');
+VALUE (43, 1, 9, 6, 43, 'VN-640', '2022-10-10 09:10:00', '2022-10-10 11:45:00', 3, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (44, 1, 9, 8, 44, 'VN-641', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 4, '<p>mô tả</p>');
+VALUE (44, 1, 9, 8, 44, 'VN-641', '2022-10-10 20:55:00', '2022-10-10 22:15:00', 4, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (45, 1, 10, 5, 45, 'VN-642', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 6, '<p>mô tả</p>');
+VALUE (45, 1, 10, 5, 45, 'VN-642', '2022-10-10 09:10:00', '2022-10-10 11:45:00', 6, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (46, 1, 10, 6, 46, 'VN-643', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 5, '<p>mô tả</p>');
+VALUE (46, 1, 10, 6, 46, 'VN-643', '2022-10-10 20:55:00', '2022-10-10 22:15:00', 5, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (47, 1, 11, 8, 47, 'VN-644', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 4, '<p>mô tả</p>');
+VALUE (47, 1, 11, 8, 47, 'VN-644', '2022-10-10 09:10:00', '2022-10-10 11:45:00', 4, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (48, 1, 11, 9, 48, 'VN-645', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 3, '<p>mô tả</p>');
+VALUE (48, 1, 11, 9, 48, 'VN-645', '2022-10-10 20:55:00', '2022-10-10 22:15:00', 3, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (49, 1, 12, 2, 49, 'VN-646', '2020-10-10 09:10:00', '2020-10-10 11:45:00', 2, '<p>mô tả</p>');
+VALUE (49, 1, 12, 2, 49, 'VN-646', '2022-10-10 09:10:00', '2022-10-10 11:45:00', 2, '<p>mô tả</p>');
 INSERT INTO flight_schedule ( flight_schedule_id, airport_from_id, airport_to_id, plane_id,  price_seat_type_id, code, departure_at, arrival_at, status, description)
-VALUE (50, 1, 12, 6, 50, 'VN-647', '2020-10-10 20:55:00', '2020-10-10 22:15:00', 1, '<p>mô tả</p>');
+VALUE (50, 1, 12, 6, 50, 'VN-647', '2022-10-10 20:55:00', '2022-10-10 22:15:00', 1, '<p>mô tả</p>');
 
 INSERT INTO ticket (ticket_id, user_id, flight_schedule_id, promotion_id, pay_type_id, extra_service_ids, seat_type, status, code, contact_gender, contact_first_name, contact_last_name, contact_email, contact_phone, contact_address, total_price, amount_paid, total_passenger, description)
 VALUES (1, 9, 18, NULL, 2, '', 1, 1, 'HIEUAB', 1, 'Đình Hiếu', 'Nguyễn', 'DinhHieu8896@gmail.com', '0868663316', 'Hà Nội', 6888999, 6888999, 1, '<p>mô tả</p>');
