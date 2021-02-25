@@ -59,6 +59,7 @@ Contributors:
 
     ```
     From: Ha Noi
+    To: Ho Chi Minh
     Departure day: 10/10/2022
     ```
 
