@@ -2,3 +2,11 @@ ckfinder_php_3.5.1.1\core\connector\php\vendor\cksource
  -> .git\objects (đổi tên objects thành _objects)
 
 https://ckeditor.com/docs/ckfinder/ckfinder3/#!/guide/dev_ckeditor
+
+
+- - - - -
+PHP 8: kích hoạt "GD"
+
+1. go to php.ini file (Thư mục: xampp/php/php.ini)
+2. search this ;extension=gd
+3. remove ; then
