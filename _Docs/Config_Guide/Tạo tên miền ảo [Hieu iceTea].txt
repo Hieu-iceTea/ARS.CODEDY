@@ -1,0 +1,49 @@
+# Hiếu iceTea
+# create: 17:30 2020-07-28
+# update: 13:45 2022-04-28
+- - - - -
+
+0. Mở NotePad chế độ Admin > chọn "Open" để mở và sửa lần lượt 2 file sau:
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+1. C:\Windows\System32\drivers\etc  -> chọn file: [host]
+
+
+127.0.0.1		localhost
+127.0.0.1		ARS.CODEDY
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+
+2. C:\xampp\apache\conf\extra  ->  chọn file: [httpd-vhosts.conf]
+
+
+
+<VirtualHost *:80>
+    DocumentRoot "C:/xampp/htdocs"
+    ServerName localhost
+</VirtualHost>
+
+<VirtualHost *:80>
+    DocumentRoot "C:\xampp\htdocs\ARS.CODEDY\public"
+    ServerName ARS.CODEDY
+</VirtualHost>
+
+
+# Tùy chọn này cài SSL (https) -> dùng chứng chỉ có sẵn của apache.
+# -> nếu muốn có chứng chỉ màu xanh trên trình duyệt thì cài chứng chỉ ...
+# Tham khảo: https://wiki.ngoisaoso.vn/May-chu/meo-huong-dan-cau-hinh-ssl-tren-localhost-cho-xampp-329.html
+<VirtualHost *:443>
+    DocumentRoot "C:\xampp\htdocs\ARS.CODEDY\public"
+    ServerName ARS.CODEDY
+
+    SSLEngine on
+    SSLCertificateFile "conf/ssl.crt/server.crt"
+    SSLCertificateKeyFile "conf/ssl.key/server.key"
+</VirtualHost> 
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 

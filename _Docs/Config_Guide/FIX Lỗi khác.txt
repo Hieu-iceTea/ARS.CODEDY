@@ -1,0 +1,25 @@
+# Hiếu iceTea
+# 2020-08-22 21:00
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+* Admin 403 forbidden
+Có một thư mục trong thư mục /public/ trùng tên với một trong các
+tên route của bạn có thể gây ra lỗi 403.
+
+* Khác phục:
+Cách 1. Đổi tên thư mục trong public đó đi
+Cách 2. vào file /.htaccess/ trong thư mục /public/, bỏ dòng sau:
+
+    # Send Requests To Front Controller...
+ -> # RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+* Tham khảo:
+https://stackoverflow.com/questions/28457280/laravel-admin-controllers-403-forbidden
+https://stackoverflow.com/questions/24974578/single-route-giving-a-403-forbidden-error-in-laravel-4
+https://maxkostinevich.com/blog/how-to-fix-403-error-in-laravel
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
