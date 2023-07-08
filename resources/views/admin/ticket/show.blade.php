@@ -416,6 +416,27 @@
 
                         </div>
                     </div>
+
+                    {{-- More info. --}}
+                    <div class="main-card mb-3 card">
+                        <div class="card-header">
+                            <i class="fa fa-info-circle pr-2"></i>
+                            More info.
+                        </div>
+
+                        <div class="card-body display_data">
+                            <div class="position-relative row form-group">
+                                <label for="total_price" class="col-md-4 text-md-right col-form-label">
+                                    Created at
+                                </label>
+                                <div class="col-md-9 col-xl-8">
+                                    <p style="font-weight: 500">
+                                        {{ date('H:i d/m/Y', strtotime($ticket->flightSchedule->created_at)) }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
