@@ -1,6 +1,6 @@
 
 # Set the value of the year to change:
-SET @year = '2022';
+SET @year = '2025';
 
 # execute
 UPDATE flight_schedule
